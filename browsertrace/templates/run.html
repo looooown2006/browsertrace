@@ -6,19 +6,31 @@
 <style>
   .run-header { background: var(--panel); padding: 16px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 24px; }
   .run-header h1 { margin: 0 0 8px; }
-  .run-header .meta { color: var(--muted); font-size: 13px; display: flex; gap: 16px; flex-wrap: wrap; }
-  .run-error { margin-top: 12px; padding: 12px; background: #fee2e2; color: var(--err); border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .run-header .meta { color: var(--muted); font-size: 13px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .run-header .meta code { cursor: copy; }
+  .run-header .meta code:hover { background: #e5e7eb; }
+  .run-error { margin-top: 12px; padding: 12px; background: #fee2e2; color: var(--err); border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; white-space: pre-wrap; word-break: break-word; }
   .timeline { display: flex; flex-direction: column; gap: 12px; }
-  .step { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: grid; grid-template-columns: 240px 1fr; gap: 16px; }
-  .step-thumb { background: #f3f4f6; border-radius: 6px; min-height: 140px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .step-thumb img { max-width: 100%; max-height: 240px; cursor: zoom-in; }
+  .step { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: grid; grid-template-columns: 280px 1fr; gap: 16px; position: relative; }
+  .step.step-error { border-color: #fca5a5; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08); }
+  .step-status { position: absolute; top: 16px; right: 16px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .step-status.ok { background: #d1fae5; color: var(--ok); }
+  .step-status.error { background: #fee2e2; color: var(--err); }
+  .step-thumb { background: #f3f4f6; border-radius: 6px; min-height: 160px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .step-thumb img { max-width: 100%; max-height: 280px; cursor: zoom-in; transition: transform 0.15s; }
+  .step-thumb img:hover { transform: scale(1.02); }
+  .step-thumb .zoom-hint { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.6); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; pointer-events: none; opacity: 0.85; }
   .step-thumb .placeholder { color: var(--muted); font-size: 12px; }
-  .step-info { display: flex; flex-direction: column; gap: 8px; }
-  .step-num { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; }
-  .step-action { font-size: 15px; font-weight: 500; }
+  .step-info { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .step-meta-row { display: flex; gap: 12px; align-items: baseline; font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .step-action { font-size: 15px; font-weight: 500; word-break: break-word; }
   .step-url { font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+  .step-error-msg { padding: 8px 10px; background: #fee2e2; color: var(--err); border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; white-space: pre-wrap; word-break: break-word; }
   details { font-size: 12px; }
-  details summary { cursor: pointer; color: var(--accent); padding: 4px 0; }
+  details summary { cursor: pointer; color: var(--accent); padding: 4px 0; user-select: none; }
+  details[open] summary { font-weight: 500; }
+  .copy-btn { background: none; border: none; padding: 0 4px; cursor: pointer; color: var(--muted); font-size: 12px; }
+  .copy-btn:hover { color: var(--accent); }
   @media (max-width: 700px) { .step { grid-template-columns: 1fr; } }
 </style>
 
@@ -28,7 +40,10 @@
     <span><span class="status status-{{ run.status }}">{{ run.status }}</span></span>
     <span>{{ steps|length }} step{{ '' if steps|length == 1 else 's' }}</span>
     <span>{{ run.duration }}</span>
-    <span><code>{{ run.id }}</code></span>
+    <span>
+      <code id="run-id" title="click to copy">{{ run.id }}</code>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('{{ run.id }}'); this.textContent='copied'; setTimeout(()=>this.textContent='copy',1200)">copy</button>
+    </span>
   </div>
   {% if run.error %}<div class="run-error">{{ run.error }}</div>{% endif %}
 </div>
@@ -36,23 +51,29 @@
 {% if steps %}
 <div class="timeline">
   {% for s in steps %}
-  <div class="step">
+  <div class="step{% if s.status == 'error' %} step-error{% endif %}">
+    <span class="step-status {{ s.status }}">{{ '✗ ' + s.status if s.status == 'error' else '✓ ' + s.status }}</span>
     <div class="step-thumb">
       {% if s.screenshot_path %}
         <img src="/screenshot/{{ run.id }}/{{ s.step_index }}" alt="step {{ s.step_index }}" onclick="window.open(this.src)">
+        <span class="zoom-hint">click to enlarge</span>
       {% else %}
         <div class="placeholder">no screenshot</div>
       {% endif %}
     </div>
     <div class="step-info">
-      <div class="step-num">STEP {{ s.step_index }}</div>
+      <div class="step-meta-row">
+        <span>STEP {{ s.step_index }}</span>
+        <span>{{ s.offset }}</span>
+      </div>
       <div class="step-action">{{ s.action or '(no action)' }}</div>
       {% if s.url %}<div class="step-url">{{ s.url }}</div>{% endif %}
+      {% if s.error %}<div class="step-error-msg">{{ s.error }}</div>{% endif %}
       {% if s.model_input %}
         <details><summary>Model input</summary><pre>{{ s.model_input | tojson(indent=2) }}</pre></details>
       {% endif %}
       {% if s.model_output %}
-        <details><summary>Model output</summary><pre>{{ s.model_output | tojson(indent=2) }}</pre></details>
+        <details {% if s.status == 'error' %}open{% endif %}><summary>Model output{% if s.status == 'error' %} (the decision that failed){% endif %}</summary><pre>{{ s.model_output | tojson(indent=2) }}</pre></details>
       {% endif %}
       {% if s.metadata %}
         <details><summary>Metadata</summary><pre>{{ s.metadata | tojson(indent=2) }}</pre></details>

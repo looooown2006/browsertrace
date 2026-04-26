@@ -68,6 +68,7 @@ def _run_detail(run_id: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]
         f"{run['ended_at'] - run['started_at']:.1f}s" if run["ended_at"] else "running..."
     )
     steps = []
+    base_ts = run["started_at"]
     for s in step_rows:
         d = dict(s)
         for k in ("model_input", "model_output", "metadata"):
@@ -76,6 +77,8 @@ def _run_detail(run_id: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]
                     d[k] = json.loads(d[k])
                 except (TypeError, ValueError):
                     pass
+        offset = (d.get("timestamp") or base_ts) - base_ts
+        d["offset"] = f"+{offset:.2f}s" if offset >= 0 else f"{offset:.2f}s"
         steps.append(d)
     return run, steps
 

@@ -42,12 +42,20 @@ CREATE TABLE IF NOT EXISTS steps (
     model_input     TEXT,
     model_output    TEXT,
     metadata        TEXT,
+    status          TEXT NOT NULL DEFAULT 'ok',
+    error           TEXT,
     FOREIGN KEY(run_id) REFERENCES runs(id)
 );
 
 CREATE INDEX IF NOT EXISTS idx_steps_run ON steps(run_id, step_index);
 CREATE INDEX IF NOT EXISTS idx_runs_started ON runs(started_at DESC);
 """
+
+# Columns added after v0.1.0 — applied via best-effort ALTER for existing dbs.
+_MIGRATIONS = [
+    "ALTER TABLE steps ADD COLUMN status TEXT NOT NULL DEFAULT 'ok'",
+    "ALTER TABLE steps ADD COLUMN error TEXT",
+]
 
 
 class Tracer:
@@ -60,6 +68,11 @@ class Tracer:
         self.db_path = self.home / "db.sqlite"
         with self._conn() as c:
             c.executescript(SCHEMA)
+            for sql in _MIGRATIONS:
+                try:
+                    c.execute(sql)
+                except sqlite3.OperationalError:
+                    pass  # already applied
 
     def _conn(self) -> sqlite3.Connection:
         return sqlite3.connect(self.db_path)
@@ -107,17 +120,26 @@ class Run:
         screenshot: Optional[Union[bytes, str, Path]] = None,
         model_input: Any = None,
         model_output: Any = None,
+        status: str = "ok",
+        error: Optional[str] = None,
         **metadata: Any,
     ) -> str:
-        """Record one step. Returns the step id."""
+        """Record one step. Returns the step id.
+
+        `status` is "ok" by default; pass "error" to mark this step as the failure
+        point. You can also call `update_step(step_id, status="error", error=...)`
+        later (useful when the action throws AFTER you've already recorded
+        the screenshot + model decision).
+        """
         screenshot_path = self._save_screenshot(screenshot)
         step_id = str(uuid.uuid4())
         with self.tracer._conn() as c:
             c.execute(
                 """INSERT INTO steps
                    (id, run_id, step_index, timestamp, action, url,
-                    screenshot_path, model_input, model_output, metadata)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                    screenshot_path, model_input, model_output, metadata,
+                    status, error)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     step_id,
                     self.id,
@@ -129,10 +151,30 @@ class Run:
                     _dump_json(model_input),
                     _dump_json(model_output),
                     _dump_json(metadata) if metadata else None,
+                    status,
+                    error,
                 ),
             )
         self._step_count += 1
         return step_id
+
+    def update_step(self, step_id: str, *, status: Optional[str] = None, error: Optional[str] = None) -> None:
+        """Update a step's status/error after the fact.
+
+        Typical use: record a step BEFORE attempting an action (so screenshot
+        and model decision are captured), then mark it as 'error' if the action
+        throws.
+        """
+        sets, values = [], []
+        if status is not None:
+            sets.append("status=?"); values.append(status)
+        if error is not None:
+            sets.append("error=?"); values.append(error)
+        if not sets:
+            return
+        values.append(step_id)
+        with self.tracer._conn() as c:
+            c.execute(f"UPDATE steps SET {', '.join(sets)} WHERE id=?", values)
 
     def _save_screenshot(self, screenshot: Optional[Union[bytes, str, Path]]) -> Optional[str]:
         if screenshot is None:
