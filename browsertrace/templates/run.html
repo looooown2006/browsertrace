@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}{{ run.name or run.id[:8] }} · BrowserTrace{% endblock %}
+{% block subtitle %}<a href="/">← all runs</a>{% endblock %}
+{% block content %}
+
+<style>
+  .run-header { background: var(--panel); padding: 16px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 24px; }
+  .run-header h1 { margin: 0 0 8px; }
+  .run-header .meta { color: var(--muted); font-size: 13px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .run-error { margin-top: 12px; padding: 12px; background: #fee2e2; color: var(--err); border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .timeline { display: flex; flex-direction: column; gap: 12px; }
+  .step { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: grid; grid-template-columns: 240px 1fr; gap: 16px; }
+  .step-thumb { background: #f3f4f6; border-radius: 6px; min-height: 140px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .step-thumb img { max-width: 100%; max-height: 240px; cursor: zoom-in; }
+  .step-thumb .placeholder { color: var(--muted); font-size: 12px; }
+  .step-info { display: flex; flex-direction: column; gap: 8px; }
+  .step-num { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; }
+  .step-action { font-size: 15px; font-weight: 500; }
+  .step-url { font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+  details { font-size: 12px; }
+  details summary { cursor: pointer; color: var(--accent); padding: 4px 0; }
+  @media (max-width: 700px) { .step { grid-template-columns: 1fr; } }
+</style>
+
+<div class="run-header">
+  <h1>{{ run.name or run.id[:8] }}</h1>
+  <div class="meta">
+    <span><span class="status status-{{ run.status }}">{{ run.status }}</span></span>
+    <span>{{ steps|length }} step{{ '' if steps|length == 1 else 's' }}</span>
+    <span>{{ run.duration }}</span>
+    <span><code>{{ run.id }}</code></span>
+  </div>
+  {% if run.error %}<div class="run-error">{{ run.error }}</div>{% endif %}
+</div>
+
+{% if steps %}
+<div class="timeline">
+  {% for s in steps %}
+  <div class="step">
+    <div class="step-thumb">
+      {% if s.screenshot_path %}
+        <img src="/screenshot/{{ run.id }}/{{ s.step_index }}" alt="step {{ s.step_index }}" onclick="window.open(this.src)">
+      {% else %}
+        <div class="placeholder">no screenshot</div>
+      {% endif %}
+    </div>
+    <div class="step-info">
+      <div class="step-num">STEP {{ s.step_index }}</div>
+      <div class="step-action">{{ s.action or '(no action)' }}</div>
+      {% if s.url %}<div class="step-url">{{ s.url }}</div>{% endif %}
+      {% if s.model_input %}
+        <details><summary>Model input</summary><pre>{{ s.model_input | tojson(indent=2) }}</pre></details>
+      {% endif %}
+      {% if s.model_output %}
+        <details><summary>Model output</summary><pre>{{ s.model_output | tojson(indent=2) }}</pre></details>
+      {% endif %}
+      {% if s.metadata %}
+        <details><summary>Metadata</summary><pre>{{ s.metadata | tojson(indent=2) }}</pre></details>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty">No steps recorded for this run.</div>
+{% endif %}
+{% endblock %}

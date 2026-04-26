@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Runs · BrowserTrace{% endblock %}
+{% block subtitle %}{{ runs|length }} run{{ '' if runs|length == 1 else 's' }}{% endblock %}
+{% block content %}
+<h1>Runs</h1>
+
+{% if runs %}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Started</th>
+      <th>Duration</th>
+      <th>Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in runs %}
+    <tr onclick="window.location='/run/{{ r.id }}'">
+      <td><a href="/run/{{ r.id }}">{{ r.name or r.id[:8] }}</a></td>
+      <td><span class="status status-{{ r.status }}">{{ r.status }}</span></td>
+      <td>{{ r.started_at | int }}</td>
+      <td>{{ r.duration }}</td>
+      <td>{% if r.error %}<code>{{ r.error[:80] }}</code>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="empty">
+  <p>No runs yet.</p>
+  <p>Wrap your agent code with <code>Tracer().run(...)</code> to start recording.</p>
+  <p>See <a href="https://github.com/yourname/browsertrace#quickstart" target="_blank">quickstart</a>.</p>
+</div>
+{% endif %}
+{% endblock %}
