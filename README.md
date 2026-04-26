@@ -9,7 +9,7 @@ When AI browser agents (Browser Use, Stagehand, Playwright + LLM, computer use, 
 ## Quickstart
 
 ```bash
-git clone https://github.com/yourname/browsertrace
+git clone https://github.com/aaronagent/browsertrace
 cd browsertrace
 pip install -e .
 python examples/basic_example.py    # records a fake run
@@ -20,13 +20,28 @@ You should see one run in the list. Click in to see the timeline.
 
 ## Use it in your own code
 
+### Decorator (simplest)
+
+```python
+from browsertrace import trace
+
+@trace
+def my_agent(run, query: str):
+    run.step(action=f"search: {query}")
+    # ... your agent logic ...
+    run.step(action="click first result")
+
+my_agent("browser agent debugging")
+```
+
+### Context manager (more control)
+
 ```python
 from browsertrace import Tracer
 
 tracer = Tracer()
 
 with tracer.run("my-task") as run:
-    # Each step records what your agent did at that moment.
     run.step(
         action="click login button",
         url=page.url,
@@ -35,6 +50,20 @@ with tracer.run("my-task") as run:
         model_output={"selector": "#login"},    # optional
         retries=0,                              # extra metadata via kwargs
     )
+```
+
+### Browser Use integration
+
+```python
+from browser_use import Agent
+from browsertrace import Tracer
+from browsertrace.integrations.browser_use import attach_tracer
+
+tracer = Tracer()
+agent = Agent(task="...", llm=ChatOpenAI(model="gpt-4o"))
+
+with attach_tracer(agent, tracer, name="my run"):
+    await agent.run()
 ```
 
 Storage defaults to `~/.browsertrace/`. Pass `Tracer(home="/path/to/dir")` to override.

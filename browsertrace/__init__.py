@@ -1,6 +1,6 @@
 """BrowserTrace — see what your AI browser agent did and why it failed."""
 
-from .tracer import Tracer, Run
+from .tracer import Run, Tracer, trace
 
 __version__ = "0.1.0"
-__all__ = ["Tracer", "Run"]
+__all__ = ["Tracer", "Run", "trace"]

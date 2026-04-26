@@ -9,13 +9,15 @@ Public API:
 
 from __future__ import annotations
 
+import functools
+import inspect
 import json
 import sqlite3
 import time
 import uuid
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Any, Iterator, Optional, Union
+from typing import Any, Callable, Iterator, Optional, Union
 
 DEFAULT_HOME = Path.home() / ".browsertrace"
 
@@ -152,3 +154,58 @@ def _dump_json(value: Any) -> Optional[str]:
         return json.dumps(value, ensure_ascii=False, default=str)
     except (TypeError, ValueError):
         return json.dumps(str(value))
+
+
+_DEFAULT_TRACER: Optional[Tracer] = None
+
+
+def _default_tracer() -> Tracer:
+    global _DEFAULT_TRACER
+    if _DEFAULT_TRACER is None:
+        _DEFAULT_TRACER = Tracer()
+    return _DEFAULT_TRACER
+
+
+def trace(_fn: Optional[Callable] = None, *, name: Optional[str] = None, tracer: Optional[Tracer] = None) -> Callable:
+    """Decorator: wrap a function so each call records a run.
+
+    The decorated function receives the active `Run` as its first argument
+    (or via keyword `run=`) so it can call `run.step(...)` from inside.
+
+    Sync usage:
+        @trace
+        def my_agent(run, query: str):
+            run.step(action=f"search: {query}")
+            ...
+
+    Async usage:
+        @trace(name="my-agent")
+        async def my_agent(run, query: str):
+            run.step(action=...)
+            ...
+
+    Plain usage (no run injection): pass tracer.run(...) yourself.
+    """
+
+    def _wrap(fn: Callable) -> Callable:
+        run_name = name or fn.__name__
+        is_async = inspect.iscoroutinefunction(fn)
+
+        if is_async:
+            @functools.wraps(fn)
+            async def awrapped(*args: Any, **kwargs: Any) -> Any:
+                t = tracer or _default_tracer()
+                with t.run(run_name) as run:
+                    return await fn(run, *args, **kwargs)
+            return awrapped
+
+        @functools.wraps(fn)
+        def wrapped(*args: Any, **kwargs: Any) -> Any:
+            t = tracer or _default_tracer()
+            with t.run(run_name) as run:
+                return fn(run, *args, **kwargs)
+        return wrapped
+
+    if _fn is not None and callable(_fn):
+        return _wrap(_fn)
+    return _wrap
