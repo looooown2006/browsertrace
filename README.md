@@ -2,6 +2,8 @@
 
 > See what your AI browser agent did and why it failed.
 
+![demo](docs/demo.gif)
+
 **Status**: v0.1 — alpha. Single-machine, OSS, no signup, no cloud.
 
 When AI browser agents (Browser Use, Stagehand, Playwright + LLM, computer use, etc.) fail in production, you usually get a stack trace and nothing else. BrowserTrace records every step (screenshot, action, model I/O, URL, timing) and gives you a local web UI to play it back.
