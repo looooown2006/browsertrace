@@ -20,7 +20,7 @@
     <tr onclick="window.location='/run/{{ r.id }}'">
       <td><a href="/run/{{ r.id }}">{{ r.name or r.id[:8] }}</a></td>
       <td><span class="status status-{{ r.status }}">{{ r.status }}</span></td>
-      <td>{{ r.started_at | int }}</td>
+      <td>{{ r.started_human }}</td>
       <td>{{ r.duration }}</td>
       <td>{% if r.error %}<code>{{ r.error[:80] }}</code>{% endif %}</td>
     </tr>

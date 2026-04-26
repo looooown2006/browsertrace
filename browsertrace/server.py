@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import time
 from pathlib import Path
 from typing import Any
 
@@ -37,8 +38,21 @@ def _runs() -> list[dict[str, Any]]:
             if d["ended_at"]
             else "running..."
         )
+        d["started_human"] = _format_started(d["started_at"])
         runs.append(d)
     return runs
+
+
+def _format_started(epoch: float) -> str:
+    import datetime as _dt
+    delta = time.time() - epoch
+    if delta < 60:
+        return f"{int(delta)}s ago"
+    if delta < 3600:
+        return f"{int(delta // 60)}m ago"
+    if delta < 86400:
+        return f"{int(delta // 3600)}h ago"
+    return _dt.datetime.fromtimestamp(epoch).strftime("%Y-%m-%d %H:%M")
 
 
 def _run_detail(run_id: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
