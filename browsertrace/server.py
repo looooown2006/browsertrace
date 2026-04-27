@@ -88,11 +88,31 @@ def _run_detail(run_id: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]
                     pass
         offset = (d.get("timestamp") or base_ts) - base_ts
         d["offset"] = f"+{offset:.2f}s" if offset >= 0 else f"{offset:.2f}s"
-        if first_error_index is None and d.get("status") == "error":
+        # Treat anything that isn't "ok" as a failure (accepts "error", "failed",
+        # "warn", custom values).
+        d["is_error"] = (d.get("status") or "ok") != "ok"
+        if first_error_index is None and d["is_error"]:
             first_error_index = d["step_index"]
+        # Build a short metadata preview so the user sees signal without expanding.
+        d["meta_preview"] = _meta_preview(d.get("metadata"))
         steps.append(d)
     run["first_error_index"] = first_error_index
     return run, steps
+
+
+def _meta_preview(meta: Any, max_keys: int = 3, max_len: int = 60) -> str:
+    """Render metadata as 'k=v, k=v' for quick scanning."""
+    if not isinstance(meta, dict) or not meta:
+        return ""
+    parts = []
+    for k, v in list(meta.items())[:max_keys]:
+        if isinstance(v, (dict, list)):
+            v = type(v).__name__
+        s = f"{k}={v}"
+        parts.append(s if len(s) <= max_len else s[: max_len - 1] + "…")
+    if len(meta) > max_keys:
+        parts.append(f"+{len(meta) - max_keys} more")
+    return " · ".join(parts)
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -122,6 +142,7 @@ def api_run(run_id: str) -> JSONResponse:
             "action": s.get("action") or "",
             "url": s.get("url") or "",
             "status": s.get("status") or "ok",
+            "is_error": s.get("is_error", False),
             "error": s.get("error"),
             "model_input": s.get("model_input"),
             "model_output": s.get("model_output"),
@@ -147,6 +168,33 @@ def api_run(run_id: str) -> JSONResponse:
             "steps": payload_steps,
         }
     )
+
+
+@app.get("/api/runs")
+def api_runs(limit: int = 200, status: str | None = None) -> JSONResponse:
+    """JSON list of runs. Use ?status=failed or ?status=completed to filter."""
+    limit = max(1, min(limit, 1000))
+    with _db() as c:
+        if status:
+            rows = c.execute(
+                "SELECT id, name, status, started_at, ended_at, error FROM runs "
+                "WHERE status = ? ORDER BY started_at DESC LIMIT ?",
+                (status, limit),
+            ).fetchall()
+        else:
+            rows = c.execute(
+                "SELECT id, name, status, started_at, ended_at, error FROM runs "
+                "ORDER BY started_at DESC LIMIT ?",
+                (limit,),
+            ).fetchall()
+    runs = []
+    for r in rows:
+        d = dict(r)
+        d["duration"] = (
+            f"{d['ended_at'] - d['started_at']:.1f}s" if d["ended_at"] else None
+        )
+        runs.append(d)
+    return JSONResponse({"runs": runs, "count": len(runs)})
 
 
 @app.get("/screenshot/{run_id}/{step_index}")

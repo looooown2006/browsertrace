@@ -85,3 +85,54 @@ def test_trace_decorator_async(tmp_path):
     with sqlite3.connect(tmp_path / "db.sqlite") as c:
         steps = c.execute("SELECT action FROM steps ORDER BY step_index").fetchall()
     assert [s[0] for s in steps] == ["async step 1", "async step 2"]
+
+
+def test_snapshot_extracts_url_and_screenshot_from_page(tmp_path):
+    """run.snapshot(page) should pull url + screenshot from a Playwright-shaped object."""
+    import asyncio
+
+    class FakePage:
+        url = "https://example.com/login"
+
+        async def screenshot(self):
+            return b"\x89PNG\r\n\x1a\n" + b"\x00" * 16
+
+    tracer = Tracer(home=tmp_path)
+
+    async def go():
+        with tracer.run("snapshot-test") as run:
+            await run.snapshot(FakePage(), action="opened login")
+            return run.id
+
+    run_id = asyncio.run(go())
+
+    import sqlite3
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        rows = c.execute(
+            "SELECT action, url, screenshot_path FROM steps WHERE run_id=?",
+            (run_id,),
+        ).fetchall()
+
+    assert len(rows) == 1
+    assert rows[0][0] == "opened login"
+    assert rows[0][1] == "https://example.com/login"
+    assert rows[0][2] is not None  # screenshot file path saved
+
+
+def test_snapshot_sync_extracts_url_and_screenshot(tmp_path):
+    class FakePage:
+        url = "https://example.com/checkout"
+        def screenshot(self):
+            return b"\x89PNG\r\n\x1a\n" + b"\x00" * 16
+
+    tracer = Tracer(home=tmp_path)
+    with tracer.run("sync-snapshot") as run:
+        run.snapshot_sync(FakePage(), action="filled card")
+        run_id = run.id
+
+    import sqlite3
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        row = c.execute(
+            "SELECT action, url FROM steps WHERE run_id=?", (run_id,)
+        ).fetchone()
+    assert row == ("filled card", "https://example.com/checkout")

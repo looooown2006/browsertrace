@@ -183,6 +183,38 @@ class Run:
         with self.tracer._conn() as c:
             c.execute(f"UPDATE steps SET {', '.join(sets)} WHERE id=?", values)
 
+    async def snapshot(self, page: Any, action: str = "", **kwargs: Any) -> str:
+        """Convenience wrapper for Playwright pages.
+
+        Equivalent to:
+            run.step(
+                action=...,
+                url=page.url,
+                screenshot=await page.screenshot(),
+                **kwargs,
+            )
+
+        Async because `page.screenshot()` is async in playwright.async_api.
+        For Playwright's sync API, use `snapshot_sync(page, ...)` instead.
+        """
+        screenshot = await page.screenshot()
+        return self.step(
+            action=action,
+            url=getattr(page, "url", "") or "",
+            screenshot=screenshot,
+            **kwargs,
+        )
+
+    def snapshot_sync(self, page: Any, action: str = "", **kwargs: Any) -> str:
+        """Sync version of snapshot() for playwright.sync_api."""
+        screenshot = page.screenshot()
+        return self.step(
+            action=action,
+            url=getattr(page, "url", "") or "",
+            screenshot=screenshot,
+            **kwargs,
+        )
+
     def _save_screenshot(self, screenshot: Optional[Union[bytes, str, Path]]) -> Optional[str]:
         if screenshot is None:
             return None

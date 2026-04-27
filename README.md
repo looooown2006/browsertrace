@@ -40,17 +40,42 @@ inline showing the bad decision.
 
 ### Decorator (simplest)
 
+`@trace` works on both sync and async functions. The first argument receives the
+active `Run`, so you can call `run.step(...)` (or `await run.snapshot(page)`)
+from inside.
+
 ```python
 from browsertrace import trace
 
+# sync
 @trace
 def my_agent(run, query: str):
     run.step(action=f"search: {query}", screenshot=...)
-    # ... your agent logic ...
     run.step(action="click first result", screenshot=...)
+
+# async
+@trace
+async def my_async_agent(run, page, query: str):
+    await run.snapshot(page, action=f"search: {query}")
+    await run.snapshot(page, action="click first result")
 
 my_agent("browser agent debugging")
 ```
+
+### Playwright shortcut
+
+If you have a Playwright `page`, use `run.snapshot(page, action=...)` to skip
+the `url=page.url, screenshot=await page.screenshot()` boilerplate:
+
+```python
+async with tracer.run("my-task") as run:
+    await page.goto("https://example.com")
+    await run.snapshot(page, action="opened example.com")
+    await page.click("#login")
+    await run.snapshot(page, action="clicked login")
+```
+
+For `playwright.sync_api`, use `run.snapshot_sync(page, ...)` instead.
 
 ### Context manager (more control)
 
@@ -114,14 +139,20 @@ See `examples/playwright_example.py` and `examples/multipage_failure.py`.
 
 ## Programmatic access
 
-Every run is also a JSON object you can feed back to an LLM for self-debugging:
+Every trace is also a JSON object you can feed back to an LLM for self-debugging
+or pipe into other tools.
 
 ```bash
+# List runs (most recent first; ?status=failed to filter)
+curl http://127.0.0.1:3000/api/runs
+curl 'http://127.0.0.1:3000/api/runs?status=failed&limit=20'
+
+# Full timeline for one run
 curl http://127.0.0.1:3000/api/run/<run_id>
 ```
 
-Returns the full timeline (run, every step, model I/O, status, errors,
-relative timestamps) in a flat JSON shape suitable for prompting.
+Each run JSON includes the run, every step, model I/O, status, errors, relative
+timestamps, and `first_error_index` so an LLM can jump straight to what broke.
 
 ## Why not just use ___?
 
