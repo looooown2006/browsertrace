@@ -63,7 +63,9 @@ def attach_tracer(
     the returned object as a context manager).
     """
     run = Run(tracer, run_id=__import__("uuid").uuid4().hex, name=name)
-    run._start()
+    # NB: do NOT call run._start() until we've actually attached a hook.
+    # Otherwise a hook-attachment failure leaves a stuck "running" trace
+    # in the DB forever.
 
     async def _on_step(browser_state: Any, agent_output: Any, step_count: int) -> None:
         url = _safe_attr(browser_state, "url", default="")
@@ -86,16 +88,23 @@ def attach_tracer(
     # Browser Use exposes this hook to register a per-step callback.
     # Some versions accept a positional arg, others use a setter — try both.
     if hasattr(agent, "register_new_step_callback"):
-        with contextlib.suppress(Exception):
+        try:
             agent.register_new_step_callback(_on_step)
+        except Exception:
+            pass
+        else:
+            run._start()
             return BrowserUseRun(tracer, run)
 
     # Fallback: try direct attribute assignment for older / forked versions.
     for attr in ("on_step_start", "on_step", "_new_step_callback"):
         if hasattr(agent, attr):
-            with contextlib.suppress(Exception):
+            try:
                 setattr(agent, attr, _on_step)
-                return BrowserUseRun(tracer, run)
+            except Exception:
+                continue
+            run._start()
+            return BrowserUseRun(tracer, run)
 
     raise RuntimeError(
         "Could not attach to this Agent — no known step hook found. "

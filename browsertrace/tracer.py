@@ -16,9 +16,8 @@ import os
 import sqlite3
 import time
 import uuid
-from contextlib import contextmanager
 from pathlib import Path
-from typing import Any, Callable, Iterator, Optional, Union
+from typing import Any, Callable, Optional, Union
 
 
 def _resolve_default_home() -> Path:
@@ -84,17 +83,51 @@ class Tracer:
     def _conn(self) -> sqlite3.Connection:
         return sqlite3.connect(self.db_path)
 
-    @contextmanager
-    def run(self, name: str = "") -> Iterator["Run"]:
-        run = Run(self, run_id=str(uuid.uuid4()), name=name)
-        run._start()
-        try:
-            yield run
-        except Exception as exc:
-            run._end(status="failed", error=f"{type(exc).__name__}: {exc}")
-            raise
+    def run(self, name: str = "") -> "_RunContext":
+        """Open a new run as a context manager. Works with both `with` and
+        `async with` so the same code works in sync + async (Playwright)
+        codebases.
+
+        On exception inside the block, the run is marked `failed` AND — if
+        steps have been recorded — the last step is marked `error` with the
+        exception message (only if it was still `ok`; explicit step-level
+        statuses are preserved).
+        """
+        return _RunContext(self, name)
+
+
+class _RunContext:
+    """Sync + async context manager for a Run."""
+
+    __slots__ = ("_tracer", "_name", "run")
+
+    def __init__(self, tracer: "Tracer", name: str):
+        self._tracer = tracer
+        self._name = name
+        self.run: Optional["Run"] = None
+
+    def __enter__(self) -> "Run":
+        self.run = Run(self._tracer, run_id=str(uuid.uuid4()), name=self._name)
+        self.run._start()
+        return self.run
+
+    def __exit__(self, exc_type, exc, tb) -> bool:
+        assert self.run is not None
+        if exc_type is None:
+            self.run._end(status="completed")
         else:
-            run._end(status="completed")
+            err = f"{exc_type.__name__}: {exc}"
+            # Mark the last recorded step as error too (helps first_error_index).
+            if self.run._step_count > 0:
+                self.run._mark_last_step_error_if_ok(err)
+            self.run._end(status="failed", error=err)
+        return False  # never suppress
+
+    async def __aenter__(self) -> "Run":
+        return self.__enter__()
+
+    async def __aexit__(self, exc_type, exc, tb) -> bool:
+        return self.__exit__(exc_type, exc, tb)
 
 
 class Run:
@@ -118,6 +151,21 @@ class Run:
             c.execute(
                 "UPDATE runs SET status=?, ended_at=?, error=? WHERE id=?",
                 (status, time.time(), error, self.id),
+            )
+
+    def _mark_last_step_error_if_ok(self, error: str) -> None:
+        """Promote the last step to status='error' iff it's still 'ok'.
+
+        Preserves explicit step-level statuses set by the caller.
+        """
+        last_index = self._step_count - 1
+        if last_index < 0:
+            return
+        with self.tracer._conn() as c:
+            c.execute(
+                "UPDATE steps SET status=?, error=? "
+                "WHERE run_id=? AND step_index=? AND status='ok'",
+                ("error", error, self.id, last_index),
             )
 
     def step(

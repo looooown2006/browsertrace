@@ -25,8 +25,27 @@ def _home() -> Path:
     return Path(override).expanduser() if override else DEFAULT_HOME
 
 
+_INITIALIZED_HOMES: set[str] = set()
+
+
+def _ensure_initialized(home: Path) -> None:
+    """Make sure the storage dir + SQLite schema exist before any read.
+
+    Without this, a fresh user running `browsertrace` with no prior trace
+    would 500 on the runs table not existing.
+    """
+    key = str(home)
+    if key in _INITIALIZED_HOMES:
+        return
+    from .tracer import Tracer
+    Tracer(home=home)  # idempotent: creates dir, schema, runs migrations
+    _INITIALIZED_HOMES.add(key)
+
+
 def _db() -> sqlite3.Connection:
-    conn = sqlite3.connect(_home() / "db.sqlite", timeout=5.0)
+    home = _home()
+    _ensure_initialized(home)
+    conn = sqlite3.connect(home / "db.sqlite", timeout=5.0)
     conn.row_factory = sqlite3.Row
     return conn
 

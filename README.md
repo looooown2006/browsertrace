@@ -17,16 +17,25 @@ captured, local timeline UI. Find the bug in 30 seconds, not 30 minutes.
 
 ## Install
 
+Requires Python 3.11+.
+
 ```bash
+# Library only (record traces from your code, no UI):
 pip install git+https://github.com/aaronagent/browsertrace
-playwright install chromium    # only needed for the example below
+
+# With the local web UI (`browsertrace` command + screenshots viewer):
+pip install "browsertrace[ui] @ git+https://github.com/aaronagent/browsertrace"
+
+# Optional, for the Playwright examples:
+playwright install chromium
 ```
 
 ## See it in 60 seconds
 
 ```bash
 git clone https://github.com/aaronagent/browsertrace && cd browsertrace
-pip install -e ".[ui]" && pip install playwright && playwright install chromium
+pip install -e ".[ui]"
+pip install playwright && playwright install chromium
 python examples/multipage_failure.py    # a research agent fails on Wikipedia
 browsertrace                            # opens http://127.0.0.1:3000
 ```
@@ -156,15 +165,15 @@ timestamps, and `first_error_index` so an LLM can jump straight to what broke.
 
 ## Why not just use ___?
 
-| Tool | What it does | What it doesn't |
+| Tool | Strength | Why you might still want BrowserTrace |
 |---|---|---|
-| Langfuse / LangSmith / Helicone | Trace LLM API calls (prompts, tokens, latency) | No DOM, no screenshots, no replay UI |
-| Browserbase | Hosted browser runtime with recordings | Locks you into Browserbase's runtime |
-| Laminar | Generic agent observability | Heavy, hosted, more setup |
-| **BrowserTrace** | **Local replay debugger for any browser agent** | No cloud, no signup, runtime-agnostic |
+| Langfuse / LangSmith / Helicone | Great LLM call tracing, prompt + token + cost | Not browser-agent-first: no DOM, no screenshot, no replay UI built around browser state |
+| Browserbase | Hosted browser runtime with built-in recordings | Locks you into their runtime; BrowserTrace works with any local Playwright, Browser Use, computer use |
+| Laminar | Generic agent observability with browser session replay | Heavier, hosted-first; BrowserTrace is local-first, ~700 LOC, drop in via decorator |
+| **BrowserTrace** | **Local replay debugger built around the browser-agent failure loop** | OSS, runtime-agnostic, no signup, JSON API for AI self-debug |
 
-We're the smallest useful thing for the specific "my browser agent failed,
-what happened" loop. ~600 LOC, drop in, fix the bug.
+Smallest useful thing for "my browser agent failed, what happened" — drop in,
+fix the bug, get back to building.
 
 ## Roadmap
 
