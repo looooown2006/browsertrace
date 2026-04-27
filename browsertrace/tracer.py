@@ -12,6 +12,7 @@ from __future__ import annotations
 import functools
 import inspect
 import json
+import os
 import sqlite3
 import time
 import uuid
@@ -19,7 +20,13 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Callable, Iterator, Optional, Union
 
-DEFAULT_HOME = Path.home() / ".browsertrace"
+
+def _resolve_default_home() -> Path:
+    override = os.environ.get("BROWSERTRACE_HOME")
+    return Path(override).expanduser() if override else Path.home() / ".browsertrace"
+
+
+DEFAULT_HOME = _resolve_default_home()
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS runs (

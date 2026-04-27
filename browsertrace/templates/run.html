@@ -31,6 +31,12 @@
   details[open] summary { font-weight: 500; }
   .copy-btn { background: none; border: none; padding: 0 4px; cursor: pointer; color: var(--muted); font-size: 12px; }
   .copy-btn:hover { color: var(--accent); }
+  .jump-to-error { color: var(--err); font-weight: 500; }
+  .jump-to-error:hover { text-decoration: underline; }
+  .api-link { color: var(--muted); font-size: 12px; }
+  .api-link:hover { color: var(--accent); }
+  :target.step { animation: flash 1s ease-out; }
+  @keyframes flash { 0% { box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.25); } 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); } }
   @media (max-width: 700px) { .step { grid-template-columns: 1fr; } }
 </style>
 
@@ -44,6 +50,14 @@
       <code id="run-id" title="click to copy">{{ run.id }}</code>
       <button class="copy-btn" onclick="navigator.clipboard.writeText('{{ run.id }}'); this.textContent='copied'; setTimeout(()=>this.textContent='copy',1200)">copy</button>
     </span>
+    {% if run.first_error_index is not none %}
+    <span>
+      <a href="#step-{{ run.first_error_index }}" class="jump-to-error">↓ jump to failed step ({{ run.first_error_index }})</a>
+    </span>
+    {% endif %}
+    <span>
+      <a href="/api/run/{{ run.id }}" target="_blank" class="api-link" title="JSON export — feed this to an LLM for self-debug">view as JSON</a>
+    </span>
   </div>
   {% if run.error %}<div class="run-error">{{ run.error }}</div>{% endif %}
 </div>
@@ -51,7 +65,7 @@
 {% if steps %}
 <div class="timeline">
   {% for s in steps %}
-  <div class="step{% if s.status == 'error' %} step-error{% endif %}">
+  <div class="step{% if s.status == 'error' %} step-error{% endif %}" id="step-{{ s.step_index }}">
     <span class="step-status {{ s.status }}">{{ '✗ ' + s.status if s.status == 'error' else '✓ ' + s.status }}</span>
     <div class="step-thumb">
       {% if s.screenshot_path %}

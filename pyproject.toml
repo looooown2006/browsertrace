@@ -1,19 +1,45 @@
 [project]
 name = "browsertrace"
 version = "0.1.0"
-description = "See what your AI browser agent did and why it failed"
+description = "See what your AI browser agent did and why it failed."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
-keywords = ["ai", "agent", "browser", "observability", "debugging", "llm"]
-dependencies = [
+authors = [{name = "aaronagent"}]
+keywords = ["ai", "agent", "browser", "observability", "debugging", "llm", "playwright", "browser-use"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+# SDK-only deps. The web UI deps are in [project.optional-dependencies.ui]
+# so users who only want to record traces don't have to install FastAPI etc.
+dependencies = []
+
+[project.optional-dependencies]
+ui = [
+    "fastapi>=0.100",
+    "uvicorn>=0.20",
+    "jinja2>=3.0",
+]
+dev = [
+    "pytest>=7.0",
     "fastapi>=0.100",
     "uvicorn>=0.20",
     "jinja2>=3.0",
 ]
 
-[project.optional-dependencies]
-dev = ["pytest>=7.0"]
+[project.urls]
+Homepage = "https://github.com/aaronagent/browsertrace"
+Repository = "https://github.com/aaronagent/browsertrace"
+Issues = "https://github.com/aaronagent/browsertrace/issues"
 
 [project.scripts]
 browsertrace = "browsertrace.server:main"

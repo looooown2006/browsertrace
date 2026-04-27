@@ -4,21 +4,37 @@
 
 ![demo](docs/demo.gif)
 
-**Status**: v0.1 — alpha. Single-machine, OSS, no signup, no cloud.
+**v0.1 alpha · MIT · single-machine · no signup · no cloud**
 
-When AI browser agents (Browser Use, Stagehand, Playwright + LLM, computer use, etc.) fail in production, you usually get a stack trace and nothing else. BrowserTrace records every step (screenshot, action, model I/O, URL, timing) and gives you a local web UI to play it back.
+---
 
-## Quickstart
+It's 3 AM. Your browser agent crashed mid-run. You have 1500 lines of logs, no
+screenshots, an expired cookie, and a closed browser. You don't know what page
+it was on, what selector it tried, or what the model thought before clicking.
+
+BrowserTrace is the recorder you wish you had. One decorator, every step
+captured, local timeline UI. Find the bug in 30 seconds, not 30 minutes.
+
+## Install
 
 ```bash
-git clone https://github.com/aaronagent/browsertrace
-cd browsertrace
-pip install -e .
-python examples/basic_example.py    # records a fake run
-browsertrace                         # opens http://127.0.0.1:3000
+pip install git+https://github.com/aaronagent/browsertrace
+playwright install chromium    # only needed for the example below
 ```
 
-You should see one run in the list. Click in to see the timeline.
+## See it in 60 seconds
+
+```bash
+git clone https://github.com/aaronagent/browsertrace && cd browsertrace
+pip install -e ".[ui]" && pip install playwright && playwright install chromium
+python examples/multipage_failure.py    # a research agent fails on Wikipedia
+browsertrace                            # opens http://127.0.0.1:3000
+```
+
+Click the failed `research agent: find Tokyo's population` run.
+You'll see 4 screenshots (Wikipedia → search → article → failure), the exact
+moment the agent picked the wrong selector, and the model output expanded
+inline showing the bad decision.
 
 ## Use it in your own code
 
@@ -29,9 +45,9 @@ from browsertrace import trace
 
 @trace
 def my_agent(run, query: str):
-    run.step(action=f"search: {query}")
+    run.step(action=f"search: {query}", screenshot=...)
     # ... your agent logic ...
-    run.step(action="click first result")
+    run.step(action="click first result", screenshot=...)
 
 my_agent("browser agent debugging")
 ```
@@ -54,6 +70,9 @@ with tracer.run("my-task") as run:
     )
 ```
 
+If the `with` block raises, the run is marked `failed` and the error message
+is recorded against the last step.
+
 ### Browser Use integration
 
 ```python
@@ -68,15 +87,18 @@ with attach_tracer(agent, tracer, name="my run"):
     await agent.run()
 ```
 
-Storage defaults to `~/.browsertrace/`. Pass `Tracer(home="/path/to/dir")` to override.
+### Playwright
 
-If the `with` block raises, the run is marked `failed` and the error message is recorded.
+See `examples/playwright_example.py` and `examples/multipage_failure.py`.
 
-## With Playwright
+## Storage and config
 
-See `examples/playwright_example.py` for a real-browser version.
+| What | Where | How to override |
+|---|---|---|
+| SQLite db + screenshots | `~/.browsertrace/` | `Tracer(home="...")` or `BROWSERTRACE_HOME=/path browsertrace` |
+| UI port | `3000` | `BROWSERTRACE_PORT=4000 browsertrace` |
 
-## What's recorded
+## What gets recorded per step
 
 | field           | type              | notes                                  |
 |-----------------|-------------------|----------------------------------------|
@@ -85,41 +107,52 @@ See `examples/playwright_example.py` for a real-browser version.
 | `screenshot`    | PNG bytes / path  | saved to `~/.browsertrace/screenshots/`|
 | `model_input`   | any JSON-able     | prompt / messages sent to the LLM      |
 | `model_output`  | any JSON-able     | LLM response / decision                |
+| `status`        | `"ok"` / `"error"`| step-level status (red badge if error) |
+| `error`         | string            | error message if status is `"error"`   |
 | `**metadata`    | any JSON-able     | retries, latency, anything else        |
 | `timestamp`     | float (epoch)     | auto                                   |
 
-## Run the UI
+## Programmatic access
+
+Every run is also a JSON object you can feed back to an LLM for self-debugging:
 
 ```bash
-browsertrace
-# or:
-python -m browsertrace.server
+curl http://127.0.0.1:3000/api/run/<run_id>
 ```
 
-UI features (v0.1):
-- Run list (status, duration, error)
-- Timeline view per run with screenshots inline
-- Click any screenshot to open full size
-- Model input/output expandable per step
+Returns the full timeline (run, every step, model I/O, status, errors,
+relative timestamps) in a flat JSON shape suitable for prompting.
+
+## Why not just use ___?
+
+| Tool | What it does | What it doesn't |
+|---|---|---|
+| Langfuse / LangSmith / Helicone | Trace LLM API calls (prompts, tokens, latency) | No DOM, no screenshots, no replay UI |
+| Browserbase | Hosted browser runtime with recordings | Locks you into Browserbase's runtime |
+| Laminar | Generic agent observability | Heavy, hosted, more setup |
+| **BrowserTrace** | **Local replay debugger for any browser agent** | No cloud, no signup, runtime-agnostic |
+
+We're the smallest useful thing for the specific "my browser agent failed,
+what happened" loop. ~600 LOC, drop in, fix the bug.
 
 ## Roadmap
 
-- [ ] **v0.1 (this release)**: SDK + local UI + screenshots + model I/O
-- [ ] **v0.2**: AI root-cause classification (DOM drift / race / model error / ...)
-- [ ] **v0.3**: One-click public share link
-- [ ] **v0.4**: Replay from step N
-- [ ] **v0.5**: Generate regression tests from failed runs
-- [ ] **v0.6**: First-class Browser Use / Stagehand / Skyvern adapters
+- [x] **v0.1 (you are here)**: SDK + local UI + screenshots + model I/O + step status
+- [ ] **v0.2**: One-command `browsertrace export <run_id>` static HTML bundle (shareable, redactable)
+- [ ] **v0.3**: Search and filter the run list + timeline (action / URL / model text)
+- [ ] **v0.4**: AI root-cause summary on failed runs (consumes `/api/run/<id>` JSON)
+- [ ] **v0.5**: Multi-run comparison ("did this regression appear after my last commit?")
+- [ ] **v0.6**: First-class Stagehand / Skyvern adapters
+- [ ] **v0.7**: Optional cloud share links
 
-## Why
+## Contributing
 
-Existing tools either:
-- Trace LLM API calls but ignore the browser (Langfuse, LangSmith, Helicone)
-- Lock you into one runtime (Browserbase recordings)
-- Ship a heavy generic observability stack you have to host (Laminar)
+This is a v0.1 alpha. The fastest way to help:
 
-BrowserTrace is a 200-line SDK and a single-file FastAPI app. Drop in, see what happened, fix the bug. That's it.
+1. Try it on a real agent. Open an issue with what broke or what you wished worked.
+2. If you build a Stagehand / Skyvern / computer use adapter, PRs welcome.
+3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronagent` — it's launch fuel.
 
 ## License
 
-MIT.
+MIT — see [LICENSE](LICENSE).
