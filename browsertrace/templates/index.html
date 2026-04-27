@@ -1,8 +1,29 @@
 {% extends "base.html" %}
 {% block title %}Runs · BrowserTrace{% endblock %}
-{% block subtitle %}{{ runs|length }} run{{ '' if runs|length == 1 else 's' }}{% endblock %}
+{% block subtitle %}{{ runs|length }} run{{ '' if runs|length == 1 else 's' }}{% if q or status_filter %} · filtered{% endif %}{% endblock %}
 {% block content %}
+<style>
+  .filters { background: var(--panel); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 16px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .filters input[type=search] { flex: 1; min-width: 200px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font: inherit; }
+  .filters select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font: inherit; background: white; }
+  .filters button { padding: 6px 14px; background: var(--accent); color: white; border: none; border-radius: 6px; font: inherit; cursor: pointer; }
+  .filters .clear { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+  .empty-quickstart pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; background: #f3f4f6; padding: 12px; border-radius: 6px; text-align: left; max-width: 540px; margin: 12px auto; }
+</style>
+
 <h1>Runs</h1>
+
+<form class="filters" method="get" action="/">
+  <input type="search" name="q" placeholder="Search by name, error, or id…" value="{{ q }}">
+  <select name="status">
+    <option value="" {% if not status_filter %}selected{% endif %}>any status</option>
+    <option value="completed" {% if status_filter == 'completed' %}selected{% endif %}>completed</option>
+    <option value="failed" {% if status_filter == 'failed' %}selected{% endif %}>failed</option>
+    <option value="running" {% if status_filter == 'running' %}selected{% endif %}>running</option>
+  </select>
+  <button type="submit">Filter</button>
+  {% if q or status_filter %}<a class="clear" href="/" style="text-decoration:none;padding:6px 14px;border:1px solid var(--border);border-radius:6px;color:var(--muted)">clear</a>{% endif %}
+</form>
 
 {% if runs %}
 <table>
@@ -28,10 +49,24 @@
   </tbody>
 </table>
 {% else %}
-<div class="empty">
-  <p>No runs yet.</p>
-  <p>Wrap your agent code with <code>Tracer().run(...)</code> to start recording.</p>
-  <p>See <a href="https://github.com/aaronagent/browsertrace#quickstart" target="_blank">quickstart</a>.</p>
+<div class="empty empty-quickstart">
+  {% if q or status_filter %}
+    <p>No runs match these filters.</p>
+    <p><a href="/">show all runs</a></p>
+  {% else %}
+    <p><strong>No runs yet.</strong> Record your first one in 30 seconds:</p>
+<pre>from browsertrace import trace
+
+@trace
+def my_agent(run, query):
+    run.step(action=f"search: {query}")
+    # ... your agent logic ...
+
+my_agent("hello world")</pre>
+    <p>Then refresh this page. Or run the bundled demo:</p>
+<pre>python examples/multipage_failure.py</pre>
+    <p>Full docs: <a href="https://github.com/aaronagent/browsertrace#readme" target="_blank">github.com/aaronagent/browsertrace</a></p>
+  {% endif %}
 </div>
 {% endif %}
 {% endblock %}

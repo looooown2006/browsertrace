@@ -121,6 +121,23 @@ with attach_tracer(agent, tracer, name="my run"):
     await agent.run()
 ```
 
+### Stagehand integration
+
+```python
+from stagehand import Stagehand
+from browsertrace import Tracer
+from browsertrace.integrations.stagehand import wrap_stagehand
+
+tracer = Tracer()
+stagehand = await Stagehand(...).init()
+page = wrap_stagehand(stagehand.page, tracer, name="my run")
+
+await page.goto("https://example.com")
+await page.act("click the login button")   # auto-recorded
+await page.extract("get the headline")      # auto-recorded
+page.bt_run.close()
+```
+
 ### Playwright
 
 See `examples/playwright_example.py` and `examples/multipage_failure.py`.
@@ -152,16 +169,31 @@ Every trace is also a JSON object you can feed back to an LLM for self-debugging
 or pipe into other tools.
 
 ```bash
-# List runs (most recent first; ?status=failed to filter)
+# List runs (most recent first; ?status=failed and ?q= filters work)
 curl http://127.0.0.1:3000/api/runs
-curl 'http://127.0.0.1:3000/api/runs?status=failed&limit=20'
+curl 'http://127.0.0.1:3000/api/runs?status=failed&q=tokyo&limit=20'
 
 # Full timeline for one run
 curl http://127.0.0.1:3000/api/run/<run_id>
+
+# AI root-cause summary (set OPENAI_API_KEY first; or pip install browsertrace[ai])
+curl http://127.0.0.1:3000/api/run/<run_id>/summary
 ```
 
 Each run JSON includes the run, every step, model I/O, status, errors, relative
 timestamps, and `first_error_index` so an LLM can jump straight to what broke.
+
+## Command line
+
+```bash
+browsertrace                      # serve the web UI
+browsertrace list                 # list recent runs in the terminal
+browsertrace show <id-or-prefix>  # print a run's timeline
+browsertrace export <id> -o run.html   # self-contained HTML bundle (screenshots inlined)
+```
+
+`export` produces a single HTML file you can email, attach to an issue, or
+upload anywhere. No server, no DB, fully portable.
 
 ## Why not just use ___?
 

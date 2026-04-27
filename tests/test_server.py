@@ -255,3 +255,61 @@ def test_browsertrace_home_override_isolates_data(tmp_path, monkeypatch):
     r = client.get("/")
     assert r.status_code == 200
     assert "No runs yet" in r.text  # the tmp home is empty
+
+
+# ---------- search & filter ----------
+
+def test_index_search_matches_by_run_name(isolated_server):
+    _, tracer, client = isolated_server
+    _make_run(tracer, name="apple")
+    _make_run(tracer, name="banana")
+    r = client.get("/", params={"q": "appl"})
+    assert r.status_code == 200
+    assert "apple" in r.text
+    assert "banana" not in r.text
+
+
+def test_index_filters_by_status(isolated_server):
+    _, tracer, client = isolated_server
+    _make_run(tracer, name="happy-run")
+    _make_run(tracer, name="sad-run", steps=[{"action": "x"}], fail_last=True)
+    r = client.get("/", params={"status": "failed"})
+    assert "sad-run" in r.text
+    assert "happy-run" not in r.text
+
+
+def test_index_search_matches_error_text(isolated_server):
+    _, tracer, client = isolated_server
+    _make_run(tracer, name="run-a", steps=[{"action": "x"}], fail_last=True)
+    # The intentional exception message includes "intentional"
+    r = client.get("/", params={"q": "intentional"})
+    assert "run-a" in r.text
+
+
+# ---------- AI summary endpoint ----------
+
+def test_api_summary_503_when_no_api_key(isolated_server, monkeypatch):
+    """Without an API key the endpoint should fail gracefully, not 500."""
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("BROWSERTRACE_LLM_API_KEY", raising=False)
+    _, tracer, client = isolated_server
+    rid = _make_run(tracer, name="needs summary", steps=[{"action": "x"}], fail_last=True)
+    r = client.get(f"/api/run/{rid}/summary")
+    assert r.status_code == 503
+    assert "API key" in r.text or "OPENAI_API_KEY" in r.text
+
+
+def test_api_summary_uses_cache_after_first_call(isolated_server, monkeypatch):
+    """The second call should be served from the in-memory cache (cached: True)."""
+    _, tracer, client = isolated_server
+    rid = _make_run(tracer, name="cache-me", steps=[{"action": "x"}], fail_last=True)
+
+    # Pre-seed the cache to skip the LLM call entirely.
+    import browsertrace.server as server_mod
+    server_mod._SUMMARY_CACHE[rid] = "fake summary"
+
+    r = client.get(f"/api/run/{rid}/summary")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["summary"] == "fake summary"
+    assert body["cached"] is True

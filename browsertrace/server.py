@@ -19,6 +19,10 @@ app = FastAPI(title="BrowserTrace", docs_url=None, redoc_url=None)
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
 
+# Cache AI summaries per run id so re-asking is free.
+_SUMMARY_CACHE: dict[str, str] = {}
+
+
 def _home() -> Path:
     """Resolve storage home each call so env override / CLI flag work after import."""
     override = os.environ.get("BROWSERTRACE_HOME")
@@ -50,12 +54,19 @@ def _db() -> sqlite3.Connection:
     return conn
 
 
-def _runs() -> list[dict[str, Any]]:
+def _runs(q: str | None = None, status: str | None = None) -> list[dict[str, Any]]:
+    sql = "SELECT id, name, status, started_at, ended_at, error FROM runs WHERE 1=1"
+    args: list[Any] = []
+    if status:
+        sql += " AND status = ?"
+        args.append(status)
+    if q:
+        sql += " AND (name LIKE ? OR error LIKE ? OR id LIKE ?)"
+        like = f"%{q}%"
+        args.extend([like, like, like])
+    sql += " ORDER BY started_at DESC LIMIT 200"
     with _db() as c:
-        rows = c.execute(
-            "SELECT id, name, status, started_at, ended_at, error FROM runs "
-            "ORDER BY started_at DESC LIMIT 200"
-        ).fetchall()
+        rows = c.execute(sql, args).fetchall()
     runs = []
     for r in rows:
         d = dict(r)
@@ -135,8 +146,12 @@ def _meta_preview(meta: Any, max_keys: int = 3, max_len: int = 60) -> str:
 
 
 @app.get("/", response_class=HTMLResponse)
-def index(request: Request) -> HTMLResponse:
-    return templates.TemplateResponse(request, "index.html", {"runs": _runs()})
+def index(request: Request, q: str | None = None, status: str | None = None) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request,
+        "index.html",
+        {"runs": _runs(q=q, status=status), "q": q or "", "status_filter": status or ""},
+    )
 
 
 @app.get("/run/{run_id}", response_class=HTMLResponse)
@@ -214,6 +229,110 @@ def api_runs(limit: int = 200, status: str | None = None) -> JSONResponse:
         )
         runs.append(d)
     return JSONResponse({"runs": runs, "count": len(runs)})
+
+
+@app.get("/api/run/{run_id}/summary")
+def api_run_summary(run_id: str, force: bool = False) -> JSONResponse:
+    """AI-generated root-cause summary for a run.
+
+    Reads the run trace and asks an OpenAI-compatible LLM to diagnose what
+    went wrong. Cached per-run; pass ?force=1 to recompute.
+
+    Auth: set OPENAI_API_KEY (or BROWSERTRACE_LLM_API_KEY for a custom
+    endpoint). Override the model with BROWSERTRACE_LLM_MODEL (default
+    'gpt-4o-mini'). Override base URL with BROWSERTRACE_LLM_BASE_URL.
+    """
+    run, steps = _run_detail(run_id)
+    if not run:
+        raise HTTPException(404, "Run not found")
+
+    if not force and run_id in _SUMMARY_CACHE:
+        return JSONResponse({"run_id": run_id, "summary": _SUMMARY_CACHE[run_id], "cached": True})
+
+    try:
+        summary = _llm_diagnose(run, steps)
+    except _LLMUnavailable as e:
+        raise HTTPException(503, str(e))
+
+    _SUMMARY_CACHE[run_id] = summary
+    return JSONResponse({"run_id": run_id, "summary": summary, "cached": False})
+
+
+class _LLMUnavailable(RuntimeError):
+    pass
+
+
+def _llm_diagnose(run: dict[str, Any], steps: list[dict[str, Any]]) -> str:
+    """Send a compact trace to an OpenAI-compatible chat endpoint, return the
+    summary text. Raises _LLMUnavailable if no API key is configured or the
+    `openai` package is missing.
+    """
+    api_key = (
+        os.environ.get("OPENAI_API_KEY")
+        or os.environ.get("BROWSERTRACE_LLM_API_KEY")
+    )
+    if not api_key:
+        raise _LLMUnavailable(
+            "Set OPENAI_API_KEY (or BROWSERTRACE_LLM_API_KEY) to enable AI summaries."
+        )
+    try:
+        from openai import OpenAI  # type: ignore
+    except ImportError:
+        raise _LLMUnavailable(
+            "AI summaries need the openai package. Install with `pip install \"browsertrace[ai]\"`."
+        )
+
+    base_url = os.environ.get("BROWSERTRACE_LLM_BASE_URL")
+    model = os.environ.get("BROWSERTRACE_LLM_MODEL", "gpt-4o-mini")
+    client = OpenAI(api_key=api_key, base_url=base_url) if base_url else OpenAI(api_key=api_key)
+
+    # Build a compact representation: skip screenshots, trim long fields.
+    compact_steps = []
+    for s in steps:
+        compact_steps.append(
+            {
+                "i": s["step_index"],
+                "t": s.get("offset"),
+                "status": s.get("status") or "ok",
+                "action": (s.get("action") or "")[:300],
+                "url": (s.get("url") or "")[:300],
+                "model_input": _trim(s.get("model_input"), 800),
+                "model_output": _trim(s.get("model_output"), 800),
+                "error": s.get("error"),
+            }
+        )
+
+    prompt = (
+        "You are a senior debugger of AI browser agents (Browser Use, Stagehand, "
+        "computer use). The user's agent run failed. Given the structured trace, "
+        "diagnose the root cause in 5 bullets max.\n\n"
+        "Format:\n"
+        "**TL;DR**: <one sentence>\n"
+        "**Failed at**: step N, <action>\n"
+        "**Root cause**: <what specifically broke and why>\n"
+        "**Evidence**: <which fields in the trace prove it>\n"
+        "**Suggested fix**: <concrete change to selector / wait / model prompt>\n"
+        "Be specific. Cite step indexes. Do not pad.\n\n"
+        f"RUN: name={run.get('name')!r}, status={run.get('status')!r}, "
+        f"duration={run.get('duration')!r}, error={run.get('error')!r}\n"
+        f"first_error_index={run.get('first_error_index')}\n\n"
+        f"STEPS:\n{json.dumps(compact_steps, indent=2, default=str)[:12000]}"
+    )
+
+    resp = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=600,
+        temperature=0.2,
+    )
+    return resp.choices[0].message.content or "(no summary)"
+
+
+def _trim(v: Any, n: int) -> Any:
+    if v is None:
+        return None
+    s = json.dumps(v, default=str) if not isinstance(v, str) else v
+    return s if len(s) <= n else s[: n - 1] + "…"
 
 
 @app.get("/screenshot/{run_id}/{step_index}")
