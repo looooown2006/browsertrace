@@ -175,6 +175,29 @@ timestamps, and `first_error_index` so an LLM can jump straight to what broke.
 Smallest useful thing for "my browser agent failed, what happened" — drop in,
 fix the bug, get back to building.
 
+## Cloud / Team (coming soon)
+
+Local BrowserTrace will always be free OSS. We're working on a hosted version
+for teams that need:
+
+- **One-click share links** for failed runs (send to a teammate, paste in a Slack
+  thread, attach to a GitHub issue, no `git clone` required)
+- **CI ingestion** — upload traces from your test runs, get a digest of failures
+- **Multi-run regression detection** — "this DOM changed since last passing run"
+- **Team workspaces, comments, retention beyond a single laptop**
+
+If you want it, **[open an issue with the `cloud-interest` label](https://github.com/aaronagent/browsertrace/issues/new?title=Cloud+interest:+%5Byour+use+case%5D&labels=cloud-interest)** describing your agent setup and team size. Pricing will likely be:
+
+| Tier | Price | For |
+|---|---:|---|
+| OSS Local | Free | Solo, local debugging |
+| Solo Cloud | $19/mo | Individual dev, hosted share + AI summaries |
+| Team | $99/mo | 5 seats, CI, workspaces, regression detection |
+| Scale | $249/mo | High-volume, long retention |
+| Enterprise | Custom | SSO, VPC, SOC2 |
+
+Real-world feedback shapes what ships first.
+
 ## Roadmap
 
 - [x] **v0.1 (you are here)**: SDK + local UI + screenshots + model I/O + step status
