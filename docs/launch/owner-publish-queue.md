@@ -69,6 +69,9 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "after X p
 
 ## Day 3-5 Broader Posts
 
+Use `docs/launch/day-3-targeted-communities-packet.md` before posting in
+Browser Use, Stagehand, Playwright, or Skyvern communities.
+
 0. PyPI publishing
    - Configure PyPI Trusted Publishing from `docs/release/pypi-publishing.md`.
    - Run the `Publish` workflow only after PyPI is configured.

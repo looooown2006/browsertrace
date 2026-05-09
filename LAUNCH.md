@@ -41,7 +41,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 | 1 | X + LinkedIn | `docs/launch/day-1-publish-packet.md` | Warm public launch and first feedback | Post from personal accounts |
 | 1 | WeChat + Jike | `docs/launch/day-1-publish-packet.md` | Reach Chinese AI-builder circles | Post manually and monitor replies |
 | 2 | Hacker News Show HN | `docs/launch/day-2-show-hn-packet.md` | Devtools discovery and hard feedback | Submit only when available to reply |
-| 3 | Targeted communities | `docs/launch/outreach-targets.md` | Reach Browser Use, Stagehand, Playwright users | Post only where rules allow |
+| 3 | Targeted communities | `docs/launch/day-3-targeted-communities-packet.md` | Reach Browser Use, Stagehand, Playwright users | Post only where rules allow |
 | 4 | Product Hunt draft | Product Hunt section in channel copy | Prepare broader maker launch | Create draft from personal account |
 | 5 | Long-form tutorial | `docs/launch/tutorial-post.md` | Give people useful debugging content | Publish on preferred blog/social channel |
 | 6 | Integration outreach | Outreach target list | Invite adapters and issue feedback | Comment or post manually |
@@ -110,6 +110,7 @@ Reddit and Discord:
 - Channel copy: `docs/launch/channel-copy.md`
 - Day 1 publish packet: `docs/launch/day-1-publish-packet.md`
 - Day 2 Show HN packet: `docs/launch/day-2-show-hn-packet.md`
+- Day 3 targeted communities packet: `docs/launch/day-3-targeted-communities-packet.md`
 - Owner publish queue: `docs/launch/owner-publish-queue.md`
 - Press kit: `docs/launch/press-kit.md`
 - Response templates: `docs/launch/response-templates.md`
