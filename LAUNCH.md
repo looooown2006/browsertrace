@@ -7,6 +7,10 @@ Owner account: `aaronlab`
 ## Current State
 
 - Repo is public, MIT licensed, and positioned as a local flight recorder for AI browser agents.
+- Current account and repo are `aaronlab/browsertrace`; do not use the old
+  `aaronagent` name in new launch links.
+- PyPI publishing is the highest-priority conversion blocker. Until PyPI is
+  live, public install commands must use the GitHub URL form.
 - Current audited star count should be checked before every public push:
 
 ```bash
@@ -53,7 +57,16 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 
 Codex can prepare assets, update the repo, write copy, audit links, and monitor GitHub. The owner must personally do these actions because they require platform login, 2FA, or human conversation:
 
+- Configure PyPI Trusted Publisher for project `browsertrace` with GitHub owner
+  `aaronlab`, repository `browsertrace`, workflow `publish.yml`, and environment
+  `pypi`; then run `gh workflow run Publish --repo aaronlab/browsertrace`.
+- Create or update the `aaronlab/aaronlab` GitHub profile repository with
+  `docs/launch/github-profile-readme.md`.
 - Upload `docs/social-preview.png` as the GitHub repository social preview in Settings -> Social preview. If PNG generation is unavailable, use `docs/social-preview.svg` as source for a manual export first.
+- Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
+  Console and Bing Webmaster Tools.
+- Open the prepared third-party awesome-list PRs from the owner's GitHub
+  account, starting with `angrykoala/awesome-browser-automation`.
 - Publish X, LinkedIn, WeChat, Jike, Xiaohongshu, Reddit, Discord, and community posts.
 - Submit Show HN from a real Hacker News account and reply in your own voice.
 - Create or schedule the Product Hunt draft from a personal Product Hunt account.
@@ -80,7 +93,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T11:27:21+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.10 public export release and launch surface update |
+| 2026-05-09T13:08:53+00:00 | 3 | 998 | 1 | 0 | 13 | 0 | 6 | after v0.1.10 release notes conversion update |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
@@ -116,6 +129,7 @@ Reddit and Discord:
 - Day 4 Product Hunt packet: `docs/launch/day-4-product-hunt-packet.md`
 - Chinese tutorial post: `docs/launch/chinese-tutorial-post.md`
 - Owner publish queue: `docs/launch/owner-publish-queue.md`
+- Chinese owner checklist: `docs/launch/owner-next-actions.zh-CN.md`
 - Press kit: `docs/launch/press-kit.md`
 - Response templates: `docs/launch/response-templates.md`
 - Outreach targets: `docs/launch/outreach-targets.md`
