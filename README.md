@@ -428,8 +428,10 @@ When reporting a real failure from Browser Use, Stagehand, Skyvern, Playwright +
 - `browsertrace show <run_id>` output for the failed run.
 - A public-safe export when available: `browsertrace export <run_id> --public -o public.html`.
 
-For broader browser-agent workflow feedback, use the
+For ordinary workflow feedback and broader browser-agent workflow feedback, use the
 [launch discussion](https://github.com/aaronlab/browsertrace/discussions/6).
+For private or sensitive reports, follow [SECURITY.md](SECURITY.md) instead of
+opening a public issue.
 
 ## Why not just use ___?
 
