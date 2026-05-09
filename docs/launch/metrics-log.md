@@ -39,3 +39,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T09:59:00+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after README GitHub install pinned to v0.1.3: https://github.com/aaronlab/browsertrace/commit/16d33636ef7890fc13dc44e7cf5593f1943feb8d |
 | 2026-05-09T10:01:19+00:00 | 3 | 998 | 0 | 0 | 4 | 0 | 1 | after roadmap cleanup: milestone v0.2 updated, Stagehand issue https://github.com/aaronlab/browsertrace/issues/8, Skyvern help-wanted label https://github.com/aaronlab/browsertrace/issues/4 |
 | 2026-05-09T10:03:53+00:00 | 3 | 998 | 0 | 0 | 4 | 0 | 1 | after changelog added: https://github.com/aaronlab/browsertrace/blob/main/CHANGELOG.md |
+| 2026-05-09T10:05:56+00:00 | 3 | 998 | 0 | 0 | 4 | 0 | 1 | after v0.1.3 release notes refresh: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.3 |
