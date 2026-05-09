@@ -12,6 +12,10 @@ Value-first tutorial link for Reddit, Discord, and community posts:
 
 https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 
+Public-safe demo export for privacy-sensitive replies:
+
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+
 ## X
 
 ```text

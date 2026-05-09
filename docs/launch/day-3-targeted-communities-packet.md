@@ -28,6 +28,8 @@ Submit only if all are true:
 - The post asks for adapter/workflow feedback, not stars.
 - The post is customized to the community and does not look cross-posted.
 - The post uses the walkthrough or live demo before asking people to install.
+- The public-safe demo export is used when someone asks for a downloadable
+  artifact that omits prompts, model output, screenshots, and URLs.
 - The community allows this kind of post or there is an existing relevant thread.
 
 Do not post if:
@@ -271,6 +273,7 @@ redaction flags when users want to keep some fields visible.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
 ```

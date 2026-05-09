@@ -69,6 +69,12 @@ Secondary URL for maker comment and replies:
 https://github.com/aaronlab/browsertrace
 ```
 
+Public-safe demo export for replies:
+
+```text
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+```
+
 Description:
 
 ```text
@@ -108,7 +114,8 @@ BrowserTrace keeps the missing context locally:
 - actions
 - model input/output
 - failed-step errors
-- exportable HTML traces
+- exportable HTML traces, including public-safe exports that omit prompts,
+  model output, screenshots, and URLs
 
 It is MIT licensed and designed for Browser Use, Stagehand, Playwright + LLM
 scripts, Skyvern-style workflows, and custom computer-use agents.
