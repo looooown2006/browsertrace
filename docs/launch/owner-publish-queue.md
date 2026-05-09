@@ -30,6 +30,12 @@ people building browser agents.
 
 Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
 
+0. GitHub profile README
+   - Use `docs/launch/github-profile-readme.md` once `aaronlab/aaronlab` is
+     available as the profile repository.
+   - Keep BrowserTrace as the first featured project during launch.
+   - Do not keep profile links pointing to the old `aaronagent` account name.
+
 1. X
    - Use the `## X` draft in `docs/launch/channel-copy.md`.
    - Attach `docs/demo.mp4`.
