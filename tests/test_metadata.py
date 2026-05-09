@@ -424,6 +424,19 @@ def test_readme_links_first_run_feedback_near_install_tag():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_launch_discussion_near_install_tag():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+
+    assert "Workflow discussion after `browsertrace demo`" in install_section
+    assert "https://github.com/aaronlab/browsertrace/discussions/6" in install_section
+    assert "@v0.1.14" in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_explains_show_near_install_tag():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -524,6 +537,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- `browsertrace demo` runs without API keys or external services",
         "- After `browsertrace demo`, `browsertrace list` shows demo run IDs",
         "- First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3",
+        "- Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6",
         "- `browsertrace show <run_id>` inspects a listed run",
         "- `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export",
         "- `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port",
@@ -1296,7 +1310,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T23:51:49+00:00" in launch
-    assert "after issue #91 closed and good-first issue #92 rotation" in launch
+    assert "2026-05-09T23:54:46+00:00" in launch
+    assert "after README launch discussion note for issue #92" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
