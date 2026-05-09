@@ -201,3 +201,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T17:50:58+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 2 | after good-first issue #26 opened and launch docs/discussion linked it; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:53:26+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 2 | after live profile and profile draft linked good-first issue #26; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:58:02+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after IndexNow key published and Bing IndexNow submission returned 202: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4413214819; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T17:59:59+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after generic IndexNow API submission returned 200: https://github.com/aaronlab/browsertrace/issues/16; traffic views 52/29 unique, clones 103/54 unique |
