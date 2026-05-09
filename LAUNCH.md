@@ -110,6 +110,7 @@ Reddit and Discord:
 - Tutorial draft: `docs/launch/tutorial-post.md`
 - Published tutorial: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 - Crawler files: `docs/robots.txt`, `docs/sitemap.xml`, `docs/llms.txt`
+- PyPI publishing notes: `docs/release/pypi-publishing.md`
 - Growth design: `docs/superpowers/specs/2026-05-09-browsertrace-7-day-launch-growth-design.md`
 - Execution plan: `docs/superpowers/plans/2026-05-09-browsertrace-7-day-launch-growth.md`
 - Live static demo: https://aaronlab.github.io/browsertrace/

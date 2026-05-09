@@ -62,6 +62,11 @@ After each post, save the post URL and notable replies in the metrics table in
 
 ## Day 3-5 Broader Posts
 
+0. PyPI publishing
+   - Configure PyPI Trusted Publishing from `docs/release/pypi-publishing.md`.
+   - Run the `Publish` workflow only after PyPI is configured.
+   - After publish verification, update public posts to use
+     `pip install "browsertrace[ui]"`.
 1. Reddit or Discord
    - Use the value-first Reddit draft in `docs/launch/channel-copy.md`.
    - Lead with the debugging walkthrough, not the repo.
