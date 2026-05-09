@@ -70,3 +70,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T11:14:35+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.8 launch discussion and owner issue update |
 | 2026-05-09T11:18:45+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.9 URL redaction release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.9 |
 | 2026-05-09T11:19:07+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.9 launch discussion and owner issue update |
+| 2026-05-09T11:27:21+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.10 public export release and launch surface update: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10 |
