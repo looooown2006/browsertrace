@@ -92,6 +92,7 @@ from a listed run.
 `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port
 when 3000 is busy.
 `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
+`browsertrace --help` lists local CLI commands and options.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
