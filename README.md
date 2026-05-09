@@ -95,6 +95,9 @@ For a compact command cheat sheet covering `browsertrace doctor`, `browsertrace 
 `browsertrace list`, `browsertrace show`, and public-safe export, see
 [BrowserTrace command cheat sheet](examples/#browsertrace-command-cheat-sheet).
 
+For CLI help, see [Discover CLI options](examples/#discover-cli-options),
+covering `browsertrace --help` and `browsertrace export --help`.
+
 If a first local run fails, the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist)
 walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`,
