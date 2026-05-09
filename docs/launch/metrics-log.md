@@ -73,3 +73,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T11:27:21+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.10 public export release and launch surface update: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10 |
 | 2026-05-09T11:44:57+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.2 milestone and public feedback issue cleanup |
 | 2026-05-09T11:48:03+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after public-safe demo release asset added: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html |
+| 2026-05-09T11:51:36+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after public-safe demo asset linked from launch docs |

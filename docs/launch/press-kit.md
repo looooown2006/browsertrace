@@ -13,6 +13,7 @@ or short descriptions for people who want to share BrowserTrace.
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 - Feedback discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Short Description
@@ -51,6 +52,7 @@ failed step, and export a shareable HTML trace.
 | Social preview | `docs/social-preview.png` | GitHub social preview, Product Hunt gallery, link preview |
 | Editable social preview | `docs/social-preview.svg` | Manual edits before exporting another PNG |
 | Raw exported trace | `docs/trace.html` | Zero-install proof that export is self-contained |
+| Public-safe demo export | `browsertrace-demo-public.html` release asset | Share-safe proof with prompt/model I/O, screenshots, and URLs omitted |
 
 ## Product Hunt Gallery Order
 

@@ -18,6 +18,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
 - Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.10`
+- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.10`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist

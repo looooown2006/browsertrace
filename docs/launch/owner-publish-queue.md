@@ -13,6 +13,7 @@ people building browser agents.
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
@@ -22,6 +23,7 @@ people building browser agents.
 - Poster image: `docs/demo-poster.png`
 - Backup GIF: `docs/demo.gif`
 - Social preview: `docs/social-preview.png`
+- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.10`
 - Press kit: `docs/launch/press-kit.md`
 
 ## Day 1 Warm Launch

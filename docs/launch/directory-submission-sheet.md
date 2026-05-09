@@ -15,6 +15,7 @@ upvotes, swaps, or artificial engagement.
 - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 
 ## One-Line Pitch
 
@@ -99,6 +100,7 @@ custom computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
 ```
