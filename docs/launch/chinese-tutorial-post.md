@@ -117,6 +117,13 @@ demo: checkout agent fails on disabled button
 https://aaronlab.github.io/browsertrace/
 ```
 
+如果你更关心公开分享时的隐私边界，可以先看这个 public-safe demo
+HTML。它去掉了 prompt / model input/output、截图和 URL：
+
+```text
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+```
+
 ## 在代码里怎么用
 
 最简单的方式是 decorator：
@@ -200,4 +207,10 @@ Launch kit:
 
 ```text
 https://aaronlab.github.io/browsertrace/launch/
+```
+
+Public-safe demo export:
+
+```text
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 ```

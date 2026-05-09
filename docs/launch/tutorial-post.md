@@ -32,6 +32,13 @@ Open `http://127.0.0.1:3000`, then click `demo: checkout agent fails on disabled
 
 The timeline shows the steps the agent took, including screenshots, actions, model input/output, and the failed step.
 
+If you only want to inspect a share-safe export before installing anything, use
+the public-safe demo HTML:
+
+```text
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+```
+
 ## What to inspect first
 
 Start at the first red step. Ask:
@@ -80,5 +87,9 @@ Cloud sharing may make sense later for teams, but the first useful loop is local
 ## Try it
 
 Repo: https://github.com/aaronlab/browsertrace
+
+Live demo: https://aaronlab.github.io/browsertrace/
+
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 
 If you are building with Browser Use, Stagehand, Playwright + LLM scripts, Skyvern, or custom computer-use agents, the most useful feedback is: what state do you wish your traces captured at failure time?
