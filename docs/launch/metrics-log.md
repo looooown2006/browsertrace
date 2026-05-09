@@ -51,3 +51,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:29:51+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after v0.1.5 packaged demo command release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.5 |
 | 2026-05-09T10:30:32+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after owner-action issues updated to v0.1.5 and browsertrace demo quickstart |
 | 2026-05-09T10:34:09+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after v0.1.6 full model I/O HTML export release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.6 |
+| 2026-05-09T10:34:48+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after owner-action issues updated to v0.1.6 full model I/O export |
