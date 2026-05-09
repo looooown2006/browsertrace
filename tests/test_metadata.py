@@ -62,6 +62,21 @@ def test_pyproject_has_launch_discovery_metadata():
     assert urls["Discussions"] == "https://github.com/aaronlab/browsertrace/discussions/6"
 
 
+def test_publish_workflow_is_ready_for_trusted_publishing():
+    project_root = Path(__file__).resolve().parents[1]
+    workflow = (project_root / ".github" / "workflows" / "publish.yml").read_text()
+
+    assert "workflow_dispatch:" in workflow
+    assert re.search(r"publish:\n(?: {4}.*\n)* {4}environment: pypi", workflow)
+    assert re.search(
+        r"publish:\n(?: {4}.*\n)* {4}permissions:\n"
+        r"(?: {6}.*\n)* {6}contents: read\n"
+        r"(?: {6}.*\n)* {6}id-token: write",
+        workflow,
+    )
+    assert "pypa/gh-action-pypi-publish@release/v1" in workflow
+
+
 def test_homepage_has_software_source_code_json_ld():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()

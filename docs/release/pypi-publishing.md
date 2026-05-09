@@ -12,6 +12,8 @@ As of 2026-05-09:
 - GitHub release `v0.1.10` has the wheel and sdist ready.
 - The GitHub repository has a `pypi` environment.
 - The `Publish` workflow exists and has not been run yet.
+- The `publish` job has `contents: read` and `id-token: write`, so it can
+  download the built artifact and request the PyPI Trusted Publisher token.
 
 ## Owner Setup
 
