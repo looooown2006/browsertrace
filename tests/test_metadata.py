@@ -198,6 +198,7 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert f'uvx --from "{github_spec}" browsertrace doctor' in profile_draft
     assert f'uvx --from "{github_spec}" browsertrace demo' in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/23" in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/25" in profile_draft
 
 
 def test_owner_profile_actions_include_browsertrace_pin_step():
