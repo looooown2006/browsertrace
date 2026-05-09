@@ -38,8 +38,8 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 | Day | Channel | Asset | Goal | Owner action |
 |---|---|---|---|---|
 | 0 | GitHub | README, demo GIF, release asset, social preview | Make the repo shareable | Upload social preview in repo settings |
-| 1 | X + LinkedIn | `docs/launch/channel-copy.md` | Warm public launch and first feedback | Post from personal accounts |
-| 1 | WeChat + Jike | `docs/launch/channel-copy.md` | Reach Chinese AI-builder circles | Post manually and monitor replies |
+| 1 | X + LinkedIn | `docs/launch/day-1-publish-packet.md` | Warm public launch and first feedback | Post from personal accounts |
+| 1 | WeChat + Jike | `docs/launch/day-1-publish-packet.md` | Reach Chinese AI-builder circles | Post manually and monitor replies |
 | 2 | Hacker News Show HN | Repo URL + HN first comment draft | Devtools discovery and hard feedback | Submit only when available to reply |
 | 3 | Targeted communities | `docs/launch/outreach-targets.md` | Reach Browser Use, Stagehand, Playwright users | Post only where rules allow |
 | 4 | Product Hunt draft | Product Hunt section in channel copy | Prepare broader maker launch | Create draft from personal account |
@@ -108,6 +108,7 @@ Reddit and Discord:
 ## Links
 
 - Channel copy: `docs/launch/channel-copy.md`
+- Day 1 publish packet: `docs/launch/day-1-publish-packet.md`
 - Owner publish queue: `docs/launch/owner-publish-queue.md`
 - Press kit: `docs/launch/press-kit.md`
 - Response templates: `docs/launch/response-templates.md`

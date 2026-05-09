@@ -26,6 +26,8 @@ people building browser agents.
 
 ## Day 1 Warm Launch
 
+Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
+
 1. X
    - Use the `## X` draft in `docs/launch/channel-copy.md`.
    - Attach `docs/demo.mp4`.
