@@ -72,6 +72,16 @@ browsertrace export --help
 browsertrace export <run_id> --public -o public.html
 ```
 
+### BrowserTrace command cheat sheet
+
+| Command | Use when |
+|---|---|
+| `browsertrace doctor` | Check the local install and trace-store status |
+| `browsertrace demo` | Create a deterministic failed run |
+| `browsertrace list` | Find recent run IDs |
+| `browsertrace show <run_id>` | Inspect a run timeline in the terminal |
+| `browsertrace export <run_id> --public -o public.html` | Create a public-safe HTML export |
+
 ## Example Matrix
 
 | Example | Use when | Extra services | Command |
