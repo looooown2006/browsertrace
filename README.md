@@ -37,10 +37,10 @@ Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
 GitHub release tag:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 Open `http://127.0.0.1:3000`, click
@@ -53,10 +53,10 @@ tag:
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -64,9 +64,9 @@ browsertrace
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
@@ -348,7 +348,7 @@ This is a v0.1 alpha. The fastest way to help:
 4. If you have a public-safe screenshot or exported trace from a real failure,
    share it in the launch discussion.
 
-Launch discussion: [BrowserTrace v0.1.11](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace launch thread](https://github.com/aaronlab/browsertrace/discussions/6).
 
 Changelog: [CHANGELOG.md](CHANGELOG.md).
 

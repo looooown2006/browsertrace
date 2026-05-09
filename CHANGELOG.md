@@ -7,6 +7,14 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.12 - 2026-05-09
+
+- Added a custom computer-use debugging guide and a no-browser
+  observe-decide-act example for custom browser-agent loops.
+- Added copy buttons to core guide quickstarts so users can run the GitHub tag
+  demo with less manual selection.
+- Updated launch, guide, and owner-action docs to point at `v0.1.12`.
+
 ## 0.1.11 - 2026-05-09
 
 - Added `browsertrace doctor` to print local install, UI dependency, database,
