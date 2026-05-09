@@ -130,6 +130,12 @@ def cmd_export(args) -> int:
     if run["error"]:
         parts.append(f"<pre style='background:#fee2e2;color:#dc2626'>{_html_escape(run['error'])}</pre>")
 
+    no_screenshot_html = (
+        '<div style="color:#6b7280;text-align:center;padding:48px">'
+        "no screenshot"
+        "</div>"
+    )
+
     for s in steps:
         is_err = (s["status"] or "ok") != "ok"
         klass = "step error" if is_err else "step"
@@ -140,7 +146,7 @@ def cmd_export(args) -> int:
             img_html = f"<img src='data:image/png;base64,{data}' alt='step {s['step_index']}'>"
         parts.append(
             f"<div class='{klass}'>"
-            f"<div>{img_html or '<div style=\"color:#6b7280;text-align:center;padding:48px\">no screenshot</div>'}</div>"
+            f"<div>{img_html or no_screenshot_html}</div>"
             f"<div>"
             f"<div style='font-size:11px;color:#6b7280;font-weight:600'>STEP {s['step_index']}</div>"
             f"<div style='font-size:15px'>{_html_escape(s['action'] or '')} <span class='badge {badge}'>{s['status'] or 'ok'}</span></div>"

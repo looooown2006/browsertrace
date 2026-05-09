@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import py_compile
 import sqlite3
+from pathlib import Path
 from io import StringIO
 from contextlib import redirect_stdout
 
@@ -35,6 +37,16 @@ def _seed(tmp_path, name, fail=False):
         with tracer.run(name) as run:
             run.step(action="step 0")
     return run.id
+
+
+def test_cli_module_compiles_on_python311():
+    """Guard against Python 3.11 f-string syntax regressions.
+
+    The package supports Python 3.11, so CLI source must parse on 3.11 before
+    any import-time tests can run.
+    """
+    root = Path(__file__).resolve().parents[1]
+    py_compile.compile(str(root / "browsertrace" / "cli.py"), doraise=True)
 
 
 def test_cli_list_prints_recent_runs(cli):
