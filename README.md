@@ -5,6 +5,8 @@
 [![CI](https://github.com/aaronlab/browsertrace/actions/workflows/ci.yml/badge.svg)](https://github.com/aaronlab/browsertrace/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/aaronlab/browsertrace?color=blue)](https://github.com/aaronlab/browsertrace/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/aaronlab/browsertrace)](https://github.com/aaronlab/browsertrace/graphs/contributors)
+[![Good first issues](https://img.shields.io/github/issues/aaronlab/browsertrace/good%20first%20issue?label=good%20first%20issues)](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
 [![GitHub stars](https://img.shields.io/github/stars/aaronlab/browsertrace?style=social)](https://github.com/aaronlab/browsertrace/stargazers)
 
 ![demo](docs/demo.gif)
