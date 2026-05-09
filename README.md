@@ -34,10 +34,10 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install git+https://github.com/aaronlab/browsertrace
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.3"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.3"
 ```
 
 ## See a failure trace in 60 seconds
