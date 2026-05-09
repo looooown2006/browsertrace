@@ -238,6 +238,21 @@ def test_readme_links_llms_txt_for_ai_coding_agents():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_examples_command_cheat_sheet():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "examples/#browsertrace-command-cheat-sheet" in readme
+    assert "command cheat sheet" in readme
+    assert "browsertrace doctor" in readme
+    assert "browsertrace demo" in readme
+    assert "browsertrace list" in readme
+    assert "browsertrace show" in readme
+    assert "public-safe export" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_examples_readme_includes_windows_public_safe_export_flow():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -684,7 +699,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T20:15:57+00:00" in launch
-    assert "after issue #44 closed and good-first issue #45 rotation" in launch
+    assert "2026-05-09T20:18:46+00:00" in launch
+    assert "after README command cheat sheet link for issue #45" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

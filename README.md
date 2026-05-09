@@ -91,6 +91,10 @@ For custom browser agents, read
 For all runnable examples, including no-browser Playwright + LLM and custom
 computer-use loops, see the [examples guide](examples/).
 
+For a compact command cheat sheet covering `browsertrace doctor`, `browsertrace demo`,
+`browsertrace list`, `browsertrace show`, and public-safe export, see
+[BrowserTrace command cheat sheet](examples/#browsertrace-command-cheat-sheet).
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash

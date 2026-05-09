@@ -250,3 +250,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T20:10:07+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #43 closed and good-first issue #44 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T20:13:35+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after README llms.txt discovery link for issue #44; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T20:15:57+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #44 closed and good-first issue #45 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T20:18:46+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after README command cheat sheet link for issue #45; traffic views 52/29 unique, clones 103/54 unique |
