@@ -26,3 +26,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T09:17:29+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | after v0.1.2 public follow-up: discussion https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16861042 and PyPI issue https://github.com/aaronlab/browsertrace/issues/5#issuecomment-4412137133 |
 | 2026-05-09T09:19:19+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | after GitHub repo description update to include Skyvern |
 | 2026-05-09T09:21:06+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | after PyPI issue title update: https://github.com/aaronlab/browsertrace/issues/5 |
+| 2026-05-09T09:25:05+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | after integrations landing page published: https://aaronlab.github.io/browsertrace/integrations.html |
