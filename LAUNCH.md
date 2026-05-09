@@ -73,8 +73,9 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
 - Upload `docs/social-preview.png` as the GitHub repository social preview in Settings -> Social preview. If PNG generation is unavailable, use `docs/social-preview.svg` as source for a manual export first.
 - Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
   Console and Bing Webmaster Tools.
-- Open the prepared third-party awesome-list PRs from the owner's GitHub
-  account, starting with `angrykoala/awesome-browser-automation`.
+- Monitor the three open third-party awesome-list PRs and respond only if
+  maintainers ask for changes. Do not open additional list PRs until there is
+  maintainer feedback.
 - Publish X, LinkedIn, WeChat, Jike, Xiaohongshu, Reddit, Discord, and community posts.
 - Submit Show HN from a real Hacker News account and reply in your own voice.
 - Create or schedule the Product Hunt draft from a personal Product Hunt account.

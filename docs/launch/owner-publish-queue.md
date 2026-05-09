@@ -47,8 +47,8 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      in Google Search Console and Bing Webmaster Tools.
    - Search indexing tracking issue:
      https://github.com/aaronlab/browsertrace/issues/16
-   - GitHub awesome lists: start with `angrykoala/awesome-browser-automation`
-     using `docs/launch/github-awesome-list-submissions.md`.
+   - GitHub awesome lists: the three prepared PRs are already open. Monitor
+     maintainer feedback and do not open additional list PRs yet.
    - Awesome list tracking issue:
      https://github.com/aaronlab/browsertrace/issues/18
 

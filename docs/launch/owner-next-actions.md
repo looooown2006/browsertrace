@@ -131,7 +131,7 @@ Submit once per target. Do not repeatedly submit or ask for votes.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/10
 
-## 7. Submit High-Fit GitHub Awesome List PRs
+## 7. Monitor High-Fit GitHub Awesome List PRs
 
 Use:
 
@@ -139,8 +139,14 @@ Use:
 docs/launch/github-awesome-list-submissions.md
 ```
 
-Start with `angrykoala/awesome-browser-automation`. Submit one focused PR and
-wait for maintainer feedback before trying lower-fit lists.
+The three prepared PRs are already open:
+
+- `angrykoala/awesome-browser-automation#112`
+- `mxschmitt/awesome-playwright#136`
+- `Jenqyang/Awesome-AI-Agents#220`
+
+Monitor maintainer feedback and do not open additional list PRs until one of
+these receives a response.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 
