@@ -87,6 +87,8 @@ run it before `browsertrace demo` on a fresh machine.
 After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open
 or export.
 `browsertrace show <run_id>` inspects a listed run from the terminal.
+`browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export
+from a listed run.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
