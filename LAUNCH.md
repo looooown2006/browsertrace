@@ -14,7 +14,8 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 ```
 
 - Primary launch asset: `docs/demo.gif`
-- Zero-install demo trace: `browsertrace-demo.html` attached to release `v0.1.1`
+- Live zero-install demo: https://aaronlab.github.io/browsertrace/
+- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.1`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist
@@ -26,7 +27,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - [ ] `scripts/record_demo.py` records the latest failed run, or `BROWSERTRACE_DEMO_RUN_ID`.
 - [ ] Demo GIF or screenshot sequence clearly shows the failed-step timeline.
 - [ ] README first screen has hook, demo, install, and 60-second demo path.
-- [ ] GitHub repo homepage points to `https://github.com/aaronlab/browsertrace`.
+- [ ] GitHub repo homepage points to `https://aaronlab.github.io/browsertrace/`.
 - [ ] Social preview image is ready at `docs/social-preview.png` or exported from `docs/social-preview.svg`.
 - [ ] No launch copy directly asks for upvotes or stars.
 
@@ -103,3 +104,4 @@ Reddit and Discord:
 - Tutorial draft: `docs/launch/tutorial-post.md`
 - Growth design: `docs/superpowers/specs/2026-05-09-browsertrace-7-day-launch-growth-design.md`
 - Execution plan: `docs/superpowers/plans/2026-05-09-browsertrace-7-day-launch-growth.md`
+- Live static demo: https://aaronlab.github.io/browsertrace/

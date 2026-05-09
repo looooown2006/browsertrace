@@ -1,6 +1,6 @@
 # BrowserTrace Channel Copy
 
-All copy points to https://github.com/aaronlab/browsertrace and asks for feedback or real use, not upvotes or stars.
+All copy points to https://github.com/aaronlab/browsertrace and the live demo at https://aaronlab.github.io/browsertrace/. Ask for feedback or real use, not upvotes or stars.
 
 ## X
 
@@ -22,6 +22,7 @@ Drop it into a Browser Use / Stagehand / Playwright + LLM run and it records a l
 
 No signup, no cloud, MIT.
 
+Live demo: https://aaronlab.github.io/browsertrace/
 https://github.com/aaronlab/browsertrace
 ```
 
@@ -59,6 +60,7 @@ BrowserTrace records each step as a local timeline:
 
 It is MIT licensed, local-first, and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
 
+Live demo: https://aaronlab.github.io/browsertrace/
 Repo: https://github.com/aaronlab/browsertrace
 
 I am looking for feedback from people debugging real browser-agent runs. What should it record that your current logs miss?
@@ -94,7 +96,8 @@ It is intentionally local-first:
 - MIT licensed
 - works with Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents
 
-The repo has a no-API deterministic demo and an exported HTML trace if you want to inspect the output before installing anything.
+The repo has a no-API deterministic demo and a live exported HTML trace if you want to inspect the output before installing anything:
+https://aaronlab.github.io/browsertrace/
 
 I'd like feedback from people who are building or testing browser agents. What browser state do you wish your current traces captured?
 ```
@@ -183,6 +186,7 @@ I built a small OSS tool for this called BrowserTrace. It records a local timeli
 It is local-first, MIT licensed, and works with Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
+Live demo: https://aaronlab.github.io/browsertrace/
 
 I am mainly looking for workflow feedback: if you are building browser agents, what context do you need at failure time that your current logs do not capture?
 ```
@@ -203,6 +207,7 @@ BrowserTrace 会本地记录每一步：
 
 本地跑，不上云，MIT 开源。
 
+Live demo: https://aaronlab.github.io/browsertrace/
 GitHub: https://github.com/aaronlab/browsertrace
 
 如果你在用 Browser Use / Stagehand / Playwright + LLM / computer use，想听听你觉得还应该记录什么。
@@ -219,6 +224,7 @@ BrowserTrace 会把每一步录成 timeline：截图、URL、动作、模型输�
 
 适合 Browser Use / Stagehand / Playwright + LLM / computer-use agent。
 
+Live demo: https://aaronlab.github.io/browsertrace/
 GitHub: https://github.com/aaronlab/browsertrace
 
 想找正在做 browser agent 的朋友试一下，主要求真实反馈。
