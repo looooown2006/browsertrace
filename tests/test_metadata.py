@@ -150,3 +150,18 @@ def test_awesome_list_submission_notes_include_trial_and_demo_links():
     assert "https://aaronlab.github.io/browsertrace/" in notes
     assert "browsertrace-demo-public.html" in notes
     assert f'uvx --from "{github_spec}" browsertrace demo' in notes
+
+
+def test_owner_next_actions_include_uvx_fallback_before_pypi():
+    project_root = Path(__file__).resolve().parents[1]
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10'
+    )
+
+    for relpath in [
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert f'uvx --from "{github_spec}" browsertrace demo' in text, relpath
+        assert "pypi" in text.lower(), relpath

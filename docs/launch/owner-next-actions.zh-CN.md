@@ -14,6 +14,14 @@ browser agent 的人，失败时最缺什么调试信息？
 pip install "browsertrace[ui]"
 ```
 
+如果必须在 PyPI 配置前先发帖或回复，用已经验证过的 uvx 试用路径：
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 在 PyPI 配置 Trusted Publisher：
 
 | 字段 | 值 |
