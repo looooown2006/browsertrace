@@ -32,11 +32,15 @@ Shortest owner checklist: `docs/launch/owner-next-actions.md`
 
 Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
 
-0. GitHub profile README
-   - Use `docs/launch/github-profile-readme.md` once `aaronlab/aaronlab` is
-     available as the profile repository.
+0. GitHub pre-flight
+   - Profile README: use `docs/launch/github-profile-readme.md` once
+     `aaronlab/aaronlab` is available as the profile repository.
    - Keep BrowserTrace as the first featured project during launch.
    - Do not keep profile links pointing to the old `aaronagent` account name.
+   - Repository social preview: upload `docs/social-preview.png` in Settings ->
+     General -> Social preview before external posts.
+   - Social preview tracking issue:
+     https://github.com/aaronlab/browsertrace/issues/15
 
 1. X
    - Use the `## X` draft in `docs/launch/channel-copy.md`.

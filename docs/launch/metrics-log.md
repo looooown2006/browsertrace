@@ -94,3 +94,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:26:05+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 6 | after directory submission issue updated with current targets: https://github.com/aaronlab/browsertrace/issues/10#issuecomment-4412513951; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:27:40+00:00 | 3 | 998 | 1 | 0 | 10 | 0 | 6 | after live audit observed first fork; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:28:59+00:00 | 3 | 998 | 1 | 0 | 10 | 0 | 6 | after first external fork source verified: Jah-yee/browsertrace; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:32:28+00:00 | 3 | 998 | 1 | 0 | 11 | 0 | 6 | after social preview owner-action issue #15; traffic views 48/25 unique, clones 100/52 unique |

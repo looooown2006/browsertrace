@@ -55,7 +55,22 @@ Keep BrowserTrace as the first featured project during launch.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/13
 
-## 3. Publish Day 1 Posts
+## 3. Upload The GitHub Social Preview
+
+GitHub link previews still need the repository-level image uploaded manually.
+Use the ready asset:
+
+```text
+docs/social-preview.png
+```
+
+In GitHub, open repository Settings -> General -> Social preview and upload the
+PNG. This should happen before external posts so shared links show the
+BrowserTrace card instead of a generated GitHub card.
+
+Tracking issue: https://github.com/aaronlab/browsertrace/issues/15
+
+## 4. Publish Day 1 Posts
 
 Use this packet:
 
@@ -74,7 +89,7 @@ Use `docs/demo.mp4` as primary media and `docs/demo-poster.png` as backup.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/9
 
-## 4. Submit Directories And Newsletters
+## 5. Submit Directories And Newsletters
 
 Use:
 
@@ -87,7 +102,7 @@ Submit once per target. Do not repeatedly submit or ask for votes.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/10
 
-## 5. Record Metrics After Each Action
+## 6. Record Metrics After Each Action
 
 After every public post, profile update, PyPI publish, or directory submission:
 
