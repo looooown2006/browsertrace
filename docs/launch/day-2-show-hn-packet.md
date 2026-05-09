@@ -84,6 +84,11 @@ pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.
 browsertrace demo
 browsertrace
 
+Before PyPI publishing is enabled, people can also try it with uvx:
+
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+
 There is also a zero-install exported trace:
 https://aaronlab.github.io/browsertrace/
 

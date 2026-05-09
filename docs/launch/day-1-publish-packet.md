@@ -60,6 +60,11 @@ pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.
 browsertrace demo
 browsertrace
 
+Before PyPI publishing is enabled, the no-install uvx path is:
+
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+
 Then open http://127.0.0.1:3000 and click the failed checkout demo.
 
 If someone only wants to inspect a share-safe export first, send:

@@ -49,6 +49,10 @@ pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.
 browsertrace demo
 browsertrace
 
+Or, before PyPI publishing is enabled, run it with uvx:
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+
 Open localhost:3000 and click the failed checkout demo.
 
 I want feedback from people building browser agents.
@@ -110,6 +114,9 @@ It is intentionally local-first:
 
 The repo has a no-API deterministic demo and a live exported HTML trace if you want to inspect the output before installing anything:
 https://aaronlab.github.io/browsertrace/
+
+Before PyPI publishing is enabled, the no-install uvx path is:
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
 
 I'd like feedback from people who are building or testing browser agents. What browser state do you wish your current traces captured?
 ```

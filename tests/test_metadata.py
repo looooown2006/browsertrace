@@ -93,3 +93,19 @@ def test_docs_include_uvx_github_quickstart_before_pypi():
     assert f'uvx --from "{github_spec}" browsertrace demo' in docs_text
     assert f'uvx --from "{github_spec}" browsertrace list' in docs_text
     assert "before PyPI publishing is enabled" in docs_text
+
+
+def test_launch_copy_includes_uvx_github_trial_before_pypi():
+    project_root = Path(__file__).resolve().parents[1]
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10'
+    )
+
+    for relpath in [
+        "docs/launch/channel-copy.md",
+        "docs/launch/day-1-publish-packet.md",
+        "docs/launch/day-2-show-hn-packet.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert f'uvx --from "{github_spec}" browsertrace demo' in text, relpath
+        assert "before pypi publishing is enabled" in text.lower(), relpath
