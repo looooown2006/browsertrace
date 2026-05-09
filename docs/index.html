@@ -196,6 +196,44 @@
       font-size: 14px;
     }
 
+    .quickstart {
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .quickstart h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .quickstart p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    pre {
+      margin: 0;
+      padding: 14px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0f172a;
+      color: #e5edf6;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
     @media (max-width: 820px) {
       .intro {
         grid-template-columns: 1fr;
@@ -208,6 +246,10 @@
       .trace {
         height: 72vh;
         min-height: 460px;
+      }
+
+      .quickstart {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -266,6 +308,16 @@
       <span>Release asset: <a href="https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo.html">download browsertrace-demo.html</a></span>
       <span>Public-safe export: <a href="https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html">download browsertrace-demo-public.html</a></span>
     </div>
+
+    <section class="quickstart" aria-labelledby="quickstart-title">
+      <div>
+        <h2 id="quickstart-title">Run the same failure locally</h2>
+        <p>Before PyPI publishing is enabled, try the deterministic no-API demo from the GitHub release tag.</p>
+      </div>
+      <pre><code>uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace</code></pre>
+    </section>
   </main>
 </body>
 </html>

@@ -141,3 +141,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T14:37:58+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 0 | after owner-action issues #9 and #10 uvx-first sync; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T14:39:32+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 0 | after launch feedback issue #3 uvx-first sync; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T14:42:27+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 0 | after PyPI metadata twine-check audit; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T14:44:08+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 0 | after homepage uvx quickstart added; traffic views 52/29 unique, clones 103/54 unique |
