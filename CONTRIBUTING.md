@@ -44,6 +44,8 @@ Roadmap context:
 
 https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
 
+- Good first issues:
+  https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 - Framework integrations: Browser Use, Stagehand, Skyvern, Playwright, and
   computer-use agents.
 - Export improvements: portable HTML, redaction, and issue attachments.

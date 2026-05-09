@@ -336,9 +336,12 @@ More detail: [ROADMAP.md](ROADMAP.md).
 This is a v0.1 alpha. The fastest way to help:
 
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
-2. If you need a Browser Use / Stagehand / Skyvern / Playwright adapter,
+2. Pick a [good first issue](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
+   if you want a small documentation or example task.
+3. If you need a Browser Use / Stagehand / Skyvern / Playwright adapter,
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
-3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
+4. If you have a public-safe screenshot or exported trace from a real failure,
+   share it in the launch discussion.
 
 Launch discussion: [BrowserTrace v0.1.11](https://github.com/aaronlab/browsertrace/discussions/6).
 
