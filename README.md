@@ -98,6 +98,10 @@ For a compact command cheat sheet covering `browsertrace doctor`, `browsertrace 
 For CLI help, see [Discover CLI options](examples/#discover-cli-options),
 covering `browsertrace --help` and `browsertrace export --help`.
 
+To narrow recent runs before choosing one to inspect or export, use the
+[recent runs list-limit recipe](examples/#show-only-recent-runs) with
+`browsertrace list --limit 5`.
+
 If `browsertrace export <run_id>` matches more than one run, the
 [run ID prefix troubleshooting recipe](examples/#run-id-prefixes-for-export)
 shows how to copy a longer unique prefix.

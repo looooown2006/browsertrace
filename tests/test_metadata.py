@@ -365,6 +365,18 @@ def test_readme_links_failed_run_terminal_inspection_recipe():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_recent_runs_list_limit_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "examples/#show-only-recent-runs" in readme
+    assert "recent runs" in readme
+    assert "browsertrace list --limit 5" in readme
+    assert "inspect or export" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_examples_readme_includes_windows_public_safe_export_flow():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -811,7 +823,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T21:05:24+00:00" in launch
-    assert "after issue #55 closed and good-first issue #56 rotation" in launch
+    assert "2026-05-09T21:08:46+00:00" in launch
+    assert "after README recent-runs list-limit link for issue #56" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
