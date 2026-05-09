@@ -42,3 +42,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:05:56+00:00 | 3 | 998 | 0 | 0 | 4 | 0 | 1 | after v0.1.3 release notes refresh: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.3 |
 | 2026-05-09T10:07:48+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 1 | after owner Day 1 launch checklist issue: https://github.com/aaronlab/browsertrace/issues/9 |
 | 2026-05-09T10:15:25+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after v0.1.4 redacted export release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.4 |
+| 2026-05-09T10:16:44+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after PyPI issue and Day 1 checklist refresh for v0.1.4: https://github.com/aaronlab/browsertrace/issues/5 and https://github.com/aaronlab/browsertrace/issues/9#issuecomment-4412270684 |
