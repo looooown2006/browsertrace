@@ -81,6 +81,7 @@ Browser Use, Stagehand, Playwright, or Skyvern communities.
    - Use the value-first Reddit draft in `docs/launch/channel-copy.md`.
    - Lead with the debugging walkthrough, not the repo.
 2. Product Hunt draft
+   - Use `docs/launch/day-4-product-hunt-packet.md` as the listing checklist.
    - Use the Product Hunt tagline, description, maker comment, and first comment
      from `docs/launch/channel-copy.md`.
    - Prepare the listing before launch day; do not launch unless the owner can
