@@ -256,6 +256,13 @@ browsertrace
 Every trace is also a JSON object you can feed back to an LLM for self-debugging
 or pipe into other tools.
 
+For AI summaries before PyPI publishing is enabled, install the `ai` extra from
+the release tag you are using:
+
+```bash
+pip install "browsertrace[ui,ai] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+```
+
 ```bash
 # List runs (most recent first; ?status=failed and ?q= filters work)
 curl http://127.0.0.1:3000/api/runs
@@ -264,7 +271,7 @@ curl 'http://127.0.0.1:3000/api/runs?status=failed&q=tokyo&limit=20'
 # Full timeline for one run
 curl http://127.0.0.1:3000/api/run/<run_id>
 
-# AI root-cause summary (set OPENAI_API_KEY first; or pip install browsertrace[ai])
+# AI root-cause summary (set OPENAI_API_KEY first)
 curl http://127.0.0.1:3000/api/run/<run_id>/summary
 ```
 

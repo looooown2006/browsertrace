@@ -187,3 +187,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T17:11:40+00:00 | 3 | 998 | 2 | 0 | 14 | 0 | 0 | after good-first public-safe export docs issue added to llms.txt: https://github.com/aaronlab/browsertrace/issues/25; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:16:10+00:00 | 3 | 998 | 2 | 0 | 14 | 0 | 0 | after live aaronlab profile linked public-safe export docs issue: https://github.com/aaronlab/browsertrace/issues/25; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:18:33+00:00 | 3 | 998 | 2 | 0 | 14 | 0 | 0 | after v0.1.12 release notes linked public-safe export docs issue: https://github.com/aaronlab/browsertrace/issues/25; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T17:21:56+00:00 | 3 | 998 | 2 | 0 | 14 | 0 | 0 | after README AI extra install path updated for pre-PyPI users; traffic views 52/29 unique, clones 103/54 unique |
