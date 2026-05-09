@@ -328,6 +328,15 @@ That makes the standalone file safer to share publicly.
 Do not include private prompts, credentials, cookies, tokens, customer data, or
 private screenshots in docs, examples, issues, or community posts.
 
+## Report A Browser-Agent Failure
+
+When reporting a real failure from Browser Use, Stagehand, Skyvern, Playwright + LLM, or custom computer-use users, include:
+
+- agent framework and version.
+- failure symptom and what you expected the agent to do.
+- `browsertrace show <run_id>` output for the failed run.
+- A public-safe export when available: `browsertrace export <run_id> --public -o public.html`.
+
 ## Why not just use ___?
 
 Detailed comparison page:
