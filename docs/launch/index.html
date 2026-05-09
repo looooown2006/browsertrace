@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BrowserTrace launch kit with product copy, demo links, media assets, and sharing notes for an open-source AI browser-agent debugger.">
+  <meta property="og:title" content="BrowserTrace launch kit">
+  <meta property="og:description" content="Product copy, demo links, media assets, and sharing notes for BrowserTrace.">
+  <meta property="og:image" content="https://aaronlab.github.io/browsertrace/social-preview.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://aaronlab.github.io/browsertrace/launch/">
+  <title>BrowserTrace launch kit</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #5c6770;
+      --line: #d8e0e6;
+      --paper: #f7f9fb;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #8a4b08;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: #0369a1;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .topbar,
+    main,
+    footer {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 34px 0 48px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.45;
+      max-width: 760px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .hero-image {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: block;
+      background: var(--panel);
+    }
+
+    .band {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .asset {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+
+    .asset img,
+    .asset video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #eef3f5;
+    }
+
+    .asset .body {
+      padding: 12px;
+    }
+
+    .asset h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .asset p,
+    .copy p,
+    footer p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .copy {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+    }
+
+    .copy h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    pre {
+      margin: 10px 0 0;
+      padding: 12px;
+      overflow: auto;
+      border-radius: 8px;
+      background: #102026;
+      color: #eef7f6;
+      font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .links li {
+      min-width: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 0 34px;
+    }
+
+    @media (max-width: 860px) {
+      .intro,
+      .grid,
+      .asset-grid,
+      .links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">BrowserTrace</div>
+      <nav aria-label="Primary">
+        <a href="../">Live demo</a>
+        <a href="../debug-browser-agent-failure.html">Walkthrough</a>
+        <a href="https://github.com/aaronlab/browsertrace">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div>
+        <h1 id="title">BrowserTrace launch kit</h1>
+        <p class="dek">Product copy, demo links, media assets, and safe sharing notes for BrowserTrace, an open-source local debugger for AI browser-agent failures.</p>
+        <div class="actions" aria-label="Primary links">
+          <a class="button primary" href="https://github.com/aaronlab/browsertrace">View repo</a>
+          <a class="button" href="../">Open live demo</a>
+          <a class="button" href="../debug-browser-agent-failure.html">Read walkthrough</a>
+        </div>
+      </div>
+      <img class="hero-image" src="../social-preview.png" alt="BrowserTrace social preview showing an AI browser-agent failure timeline">
+    </section>
+
+    <section class="band" aria-labelledby="copy">
+      <h2 id="copy">Copy</h2>
+      <div class="grid">
+        <article class="copy">
+          <h3>One sentence</h3>
+          <p>BrowserTrace helps Browser Use, Stagehand, Playwright + LLM, Skyvern, and computer-use builders debug failed browser-agent runs with local step timelines.</p>
+        </article>
+        <article class="copy">
+          <h3>Short description</h3>
+          <p>BrowserTrace is a local flight recorder for AI browser agents. It records each step with screenshots, URL, action, model input/output, status, and error so you can jump straight to the first failed browser state.</p>
+        </article>
+        <article class="copy">
+          <h3>Safe ask</h3>
+          <pre>What browser state do you wish your current agent logs captured at failure time?</pre>
+        </article>
+        <article class="copy">
+          <h3>Product Hunt description</h3>
+          <p>BrowserTrace records each AI browser-agent step locally: screenshot, URL, action, model input/output, status, and error. Open a timeline, jump to the failed step, and export a shareable HTML trace.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="assets">
+      <h2 id="assets">Assets</h2>
+      <div class="asset-grid">
+        <article class="asset">
+          <img src="../demo-poster.png" alt="BrowserTrace demo poster showing a failed run timeline">
+          <div class="body">
+            <h3>Poster</h3>
+            <p><a href="../demo-poster.png">Download PNG</a></p>
+          </div>
+        </article>
+        <article class="asset">
+          <video src="../demo.mp4" controls preload="metadata" poster="../demo-poster.png"></video>
+          <div class="body">
+            <h3>Demo video</h3>
+            <p><a href="../demo.mp4">Download MP4</a></p>
+          </div>
+        </article>
+        <article class="asset">
+          <img src="../social-preview.png" alt="BrowserTrace social preview for link sharing">
+          <div class="body">
+            <h3>Social preview</h3>
+            <p><a href="../social-preview.png">Download PNG</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="links">
+      <h2 id="links">Links</h2>
+      <ul class="links">
+        <li><a href="https://github.com/aaronlab/browsertrace">GitHub repository</a></li>
+        <li><a href="../">Live demo</a></li>
+        <li><a href="../trace.html">Raw exported trace</a></li>
+        <li><a href="../debug-browser-agent-failure.html">Debugging walkthrough</a></li>
+        <li><a href="press-kit.md">Press kit source</a></li>
+        <li><a href="https://github.com/aaronlab/browsertrace/releases/tag/v0.1.1">Release v0.1.1</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ask for workflow feedback from browser-agent builders. Do not ask for stars, upvotes, vote swaps, or artificial engagement.</p>
+  </footer>
+</body>
+</html>
