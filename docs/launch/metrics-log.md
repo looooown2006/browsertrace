@@ -241,3 +241,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T19:48:58+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after public-safe export attachment docs for issue #39; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T19:50:39+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #39 closed and good-first issue #40 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T19:53:30+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after first-run troubleshooting checklist docs for issue #40; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T19:54:58+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #40 closed and good-first issue #41 rotation; traffic views 52/29 unique, clones 103/54 unique |
