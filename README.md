@@ -69,6 +69,7 @@ Open `http://127.0.0.1:3000`, click
 PyPI publishing is not enabled yet. Until then, install from the GitHub release
 tag. Track publishing in the
 [PyPI tracking issue](https://github.com/aaronlab/browsertrace/issues/5):
+Requires Python 3.11+.
 
 ```bash
 # SDK only
