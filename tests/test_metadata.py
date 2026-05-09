@@ -181,6 +181,22 @@ def test_owner_launch_checklists_include_doctor_fallback_before_pypi():
         assert "pypi" in text.lower(), relpath
 
 
+def test_github_profile_draft_links_current_trial_and_contribution_paths():
+    project_root = Path(__file__).resolve().parents[1]
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
+    )
+    profile_draft = (
+        project_root / "docs" / "launch" / "github-profile-readme.md"
+    ).read_text()
+
+    assert "https://github.com/aaronlab/browsertrace" in profile_draft
+    assert "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html" in profile_draft
+    assert f'uvx --from "{github_spec}" browsertrace doctor' in profile_draft
+    assert f'uvx --from "{github_spec}" browsertrace demo' in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/23" in profile_draft
+
+
 def test_first_run_docs_include_doctor_command():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(

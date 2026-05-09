@@ -39,6 +39,19 @@ Repo: https://github.com/aaronlab/browsertrace
 
 Live demo: https://aaronlab.github.io/browsertrace/
 
+Try locally before PyPI publishing is enabled:
+
+~~~bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+~~~
+
+Computer-use guide:
+https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
+Runnable examples:
+https://github.com/aaronlab/browsertrace/tree/main/examples
+
 Roadmap: https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
 
 Good first issue:
