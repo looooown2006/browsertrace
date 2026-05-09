@@ -387,6 +387,10 @@ browsertrace list
 browsertrace export <run_id> --public -o public.html
 ```
 
+For the compact recipe, see
+[Creating a Share-Safe Export](examples/#creating-a-share-safe-export), which
+uses `browsertrace export <run_id> --public -o public.html`.
+
 Attach `public.html` yourself to the issue, discussion, or message. BrowserTrace
 does not do a hosted upload.
 The `--public` export omits prompts/model I/O, screenshots, and URLs.
