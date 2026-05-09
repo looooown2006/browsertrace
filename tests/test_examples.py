@@ -141,3 +141,46 @@ def test_computer_use_loop_example_creates_failed_trace(tmp_path, monkeypatch):
     assert json.loads(steps[1][4])["task"] == "complete checkout"
     assert json.loads(steps[2][5])["selector"] == "button.checkout.primary"
     assert json.loads(steps[2][6])["agent_loop"] == "observe-decide-act"
+
+
+def test_playwright_llm_loop_example_creates_failed_trace(tmp_path, monkeypatch):
+    monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))
+
+    runpy.run_path("examples/playwright_llm_loop_example.py", run_name="__main__")
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        run = c.execute(
+            "SELECT id, name, status, error FROM runs ORDER BY started_at DESC LIMIT 1"
+        ).fetchone()
+        steps = c.execute(
+            "SELECT action, url, status, error, model_input, model_output, metadata "
+            "FROM steps WHERE run_id=? ORDER BY step_index",
+            (run[0],),
+        ).fetchall()
+
+    assert run[1] == "demo: playwright llm checkout selector failure"
+    assert run[2] == "failed"
+    assert "RuntimeError" in run[3]
+    assert [step[0] for step in steps] == [
+        "observe checkout page",
+        "choose checkout selector",
+        "click model-selected button",
+    ]
+    assert steps[0][1] == "https://shop.example.test/checkout"
+    assert steps[2][2] == "error"
+    assert "button.checkout.primary was disabled" in steps[2][3]
+
+    choose_input = json.loads(steps[1][4])
+    choose_output = json.loads(steps[1][5])
+    click_metadata = json.loads(steps[2][6])
+
+    assert choose_input["messages"][1]["content"] == "Pick the checkout submit selector."
+    assert choose_input["page"]["url"] == "https://shop.example.test/checkout"
+    assert "checkout primary" in choose_input["page"]["dom_snippet"]
+    assert "Checkout" in choose_input["page"]["accessibility_tree"]
+    assert choose_input["retry_count"] == 0
+    assert choose_output["selector"] == "button.checkout.primary"
+    assert choose_output["action"] == "click"
+    assert click_metadata["agent_stack"] == "playwright+llm"
+    assert click_metadata["selector"] == "button.checkout.primary"
+    assert click_metadata["retry"] == 0

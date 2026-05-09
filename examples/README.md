@@ -1,8 +1,8 @@
 # BrowserTrace Examples
 
 Use these examples to create local traces before wiring BrowserTrace into a real
-agent. The first three examples do not require API keys or hosted browser
-accounts.
+agent. The no-service examples do not require API keys, hosted browser accounts,
+or network access.
 
 ## Fastest Path
 
@@ -53,6 +53,7 @@ https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-
 | `browser_use_callback_demo.py` | You want to see Browser Use-shaped step callbacks recorded | None | `python examples/browser_use_callback_demo.py` |
 | `stagehand_wrapper_example.py` | You want to see Stagehand-style `act` and `extract` calls recorded | None | `python examples/stagehand_wrapper_example.py` |
 | `skyvern_wrapper_example.py` | You want to see Skyvern-style task calls recorded | None | `python examples/skyvern_wrapper_example.py` |
+| `playwright_llm_loop_example.py` | You want Playwright + LLM-shaped prompt, DOM, selector, retry, and failure fields without a browser | None | `python examples/playwright_llm_loop_example.py` |
 | `computer_use_loop_example.py` | You want a generic observe-decide-act computer-use trace | None | `python examples/computer_use_loop_example.py` |
 | `basic_example.py` | You want the smallest manual SDK example | None | `python examples/basic_example.py` |
 | `failure_example.py` | You want a deterministic failed run with richer steps | None | `python examples/failure_example.py` |

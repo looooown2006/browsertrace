@@ -48,6 +48,12 @@ def test_collect_snapshot_calculates_goal_and_release_downloads():
     assert snapshot.traffic_clone_uniques == 52
 
 
+def test_default_launch_metrics_release_tag_matches_current_release():
+    from scripts import launch_metrics
+
+    assert launch_metrics.RELEASE_TAG == "v0.1.14"
+
+
 def test_markdown_row_escapes_note_separator():
     from scripts import launch_metrics
 

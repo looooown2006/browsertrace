@@ -85,8 +85,8 @@ For a walkthrough, read
 For custom browser agents, read
 [Debug custom computer-use agent failures](https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html).
 
-For all runnable examples, including a no-browser custom computer-use loop,
-see the [examples guide](examples/).
+For all runnable examples, including no-browser Playwright + LLM and custom
+computer-use loops, see the [examples guide](examples/).
 
 For a real browser demo with screenshots from Wikipedia:
 
@@ -228,8 +228,9 @@ For a no-network wrapper demo that does not require a Skyvern install, run
 
 See `examples/playwright_example.py`, `examples/failure_example.py`, and
 `examples/multipage_failure.py`. If you want a no-browser deterministic demo,
-run `browsertrace demo`; for a generic observe-decide-act loop, run
-`examples/computer_use_loop_example.py`.
+run `browsertrace demo`; for Playwright + LLM-shaped prompt, DOM, selector,
+retry, and error fields, run `examples/playwright_llm_loop_example.py`; for a
+generic observe-decide-act loop, run `examples/computer_use_loop_example.py`.
 
 ## Storage and config
 

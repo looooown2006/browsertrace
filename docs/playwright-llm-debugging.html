@@ -259,7 +259,7 @@
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace</code></pre>
       </div>
-      <p>Open <code>http://127.0.0.1:3000</code> and inspect the failed checkout-agent run before adding BrowserTrace to your own Playwright script.</p>
+      <p>Open <code>http://127.0.0.1:3000</code> and inspect the failed checkout-agent run before adding BrowserTrace to your own Playwright script. From a source checkout, <code>python examples/playwright_llm_loop_example.py</code> creates a no-network Playwright + LLM-shaped trace with prompt/messages, DOM and accessibility snippets, selector, retry, and error fields.</p>
     </section>
 
     <section>
@@ -290,6 +290,7 @@ async with tracer.run("playwright llm agent") as run:
       <ul>
         <li>The LLM prompt or messages that caused the browser action.</li>
         <li>The model response, selected selector, or structured action plan.</li>
+        <li>DOM snippets, accessibility tree text, console errors, network errors, and retry counters when you pass them as model input or metadata.</li>
         <li>The screenshot and URL at the moment the decision was made.</li>
         <li>A browser-agent-first timeline that marks the first failed step.</li>
         <li>A standalone HTML export for issues, pull requests, and team review.</li>
