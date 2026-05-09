@@ -167,3 +167,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T16:04:57+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after TechArticle structured data deployed on core guide pages; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T16:08:37+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after Show HN first-run replies refreshed with doctor, uvx troubleshooting, and #23 contribution path; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T16:11:42+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after README contributors and good-first issue badges added; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T16:14:08+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after owner-action issues #5 and #9 refreshed for v0.1.12 and PyPI 404 audit; traffic views 52/29 unique, clones 103/54 unique |
