@@ -105,6 +105,11 @@ For help threads, the
 shows how to attach an export to a GitHub issue or PR comment; public-safe
 export omits prompt/model I/O, screenshots, and URLs.
 
+For CI runs, the
+[GitHub Actions artifact recipe](examples/#github-actions-artifact-for-public-safe-exports)
+uploads `public.html` as a GitHub Actions artifact.
+BrowserTrace does not upload traces by itself.
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash
