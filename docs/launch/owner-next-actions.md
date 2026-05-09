@@ -74,6 +74,9 @@ Profile -> Customize your pins -> aaronlab/browsertrace
 The GitHub API available here does not expose profile pinning, so this must be
 done once in the GitHub UI.
 
+Profile pinning tracking issue:
+https://github.com/aaronlab/browsertrace/issues/24
+
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/13
 
 ## 3. Upload The GitHub Social Preview

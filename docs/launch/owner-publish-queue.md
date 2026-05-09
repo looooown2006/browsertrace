@@ -40,6 +40,7 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
    - Keep BrowserTrace as the first featured project during launch.
    - Pin BrowserTrace on the public GitHub profile with
      `Profile -> Customize your pins -> aaronlab/browsertrace`.
+     Tracking issue: https://github.com/aaronlab/browsertrace/issues/24
    - Keep `aaronlab/aaronagent` only as an old-traffic redirect.
    - Repository social preview: upload `docs/social-preview.png` in Settings ->
      General -> Social preview before external posts.

@@ -213,6 +213,7 @@ def test_owner_profile_actions_include_browsertrace_pin_step():
         text = (project_root / relpath).read_text()
         assert phrase in text, relpath
         assert "aaronlab/browsertrace" in text, relpath
+        assert "https://github.com/aaronlab/browsertrace/issues/24" in text, relpath
 
 
 def test_first_run_docs_include_doctor_command():
