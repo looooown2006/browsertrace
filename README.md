@@ -82,18 +82,16 @@ browsertrace demo
 browsertrace
 ```
 
-`browsertrace doctor` is a safe local status check for install and trace-store status;
-run it before `browsertrace demo` on a fresh machine.
-After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open
-or export.
-`browsertrace show <run_id>` inspects a listed run from the terminal.
-`browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export
-from a listed run.
-`BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port
-when 3000 is busy.
-`BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
-`browsertrace --help` lists local CLI commands and options.
-`browsertrace export --help` lists export options before creating a public-safe HTML report.
+Useful local checks:
+
+- `browsertrace doctor` is a safe local status check for install and trace-store status.
+- After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
+- `browsertrace show <run_id>` inspects a listed run from the terminal.
+- `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
+- `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
+- `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
+- `browsertrace --help` lists local CLI commands and options.
+- `browsertrace export --help` lists export options before creating a public-safe HTML report.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
