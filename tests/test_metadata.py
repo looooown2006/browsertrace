@@ -373,6 +373,19 @@ def test_readme_links_first_run_troubleshooting_near_install_tag():
     assert "hosted sharing" not in readme
 
 
+def test_readme_explains_doctor_near_install_tag():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+
+    assert "`browsertrace doctor` is a safe local status check" in install_section
+    assert "install and trace-store status" in install_section
+    assert "@v0.1.14" in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_browser_use_debugging_guide():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1132,7 +1145,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T22:54:00+00:00" in launch
-    assert "after issue #80 closed and good-first issue #81 rotation" in launch
+    assert "2026-05-09T22:56:10+00:00" in launch
+    assert "after README doctor command note for issue #81" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
