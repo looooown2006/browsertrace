@@ -1,0 +1,51 @@
+name: Bug report
+description: Report a BrowserTrace bug or broken trace/debugging workflow.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the broken behavior and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: BrowserTrace version
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: integration
+    attributes:
+      label: Agent/browser stack
+      options:
+        - Playwright
+        - Browser Use
+        - Stagehand
+        - Skyvern
+        - Custom browser agent
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include the smallest script or command sequence that reproduces the issue.
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: trace
+    attributes:
+      label: Trace/export details
+      description: Attach an exported HTML trace or paste relevant `browsertrace show <id>` output if possible.
+    validations:
+      required: false
+

@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Launch feedback
+    url: https://github.com/aaronagent/browsertrace/issues/3
+    about: Share first-run feedback, framework requests, and browser-agent debugging pain points.
+

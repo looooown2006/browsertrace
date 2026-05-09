@@ -1,0 +1,27 @@
+name: Integration request
+description: Request or propose support for an agent/browser framework.
+title: "Integration: "
+labels: ["enhancement", "integration"]
+body:
+  - type: input
+    id: framework
+    attributes:
+      label: Framework or runtime
+      placeholder: "Skyvern, Browser Use, Stagehand, Playwright, custom agent..."
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow
+      description: What actions, screenshots, model decisions, or errors should BrowserTrace capture?
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Relevant API hooks
+      description: Link docs or paste small code snippets showing where BrowserTrace could attach.
+    validations:
+      required: false
+
