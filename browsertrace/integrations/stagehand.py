@@ -70,6 +70,7 @@ class _TracedPage:
                     step_id, status="error", error=f"{type(e).__name__}: {e}"
                 )
                 raise
+            self.bt_run.update_step(step_id, model_output={"result": result})
             return result
         return traced
 

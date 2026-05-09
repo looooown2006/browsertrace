@@ -10,6 +10,8 @@ UTC.
 - Clarified the first-contribution path for good-first issues and PR templates.
 - Added compact Browser Use browser-state context to adapter `model_input` and
   documented callback compatibility/troubleshooting in the Browser Use guide.
+- Captured successful Stagehand wrapper return values as step `model_output`
+  so `observe` and `extract` results are visible in exported traces.
 
 ## 0.1.13 - 2026-05-09
 

@@ -275,6 +275,7 @@ await page.act("click the checkout button")
 await page.extract("get the order total")
 page.bt_run.close()</code></pre>
       <p>The wrapper records <code>goto</code>, <code>act</code>, <code>extract</code>, <code>observe</code>, and <code>click</code> calls while preserving the original page methods.</p>
+      <p>Arguments and keyword arguments are saved as <code>model_input</code>. Successful Stagehand return values are written back to the same trace step as <code>model_output</code>.</p>
     </section>
 
     <section>
@@ -283,6 +284,7 @@ page.bt_run.close()</code></pre>
         <li>The Stagehand method and instruction.</li>
         <li>The current page URL.</li>
         <li>A screenshot before the action when available.</li>
+        <li>The successful Stagehand result, including observe or extract output when returned by the wrapped method.</li>
         <li>Step status and exception text if the action fails.</li>
         <li>Exportable HTML with optional model I/O redaction.</li>
       </ol>

@@ -194,6 +194,9 @@ await page.extract("get the headline")      # auto-recorded
 page.bt_run.close()
 ```
 
+The wrapper records method args/kwargs as `model_input`, then writes the
+successful Stagehand return value back to the same step as `model_output`.
+
 For a no-network wrapper demo that does not require a Stagehand install, run
 `python examples/stagehand_wrapper_example.py`.
 

@@ -221,7 +221,14 @@ class Run:
         self._step_count += 1
         return step_id
 
-    def update_step(self, step_id: str, *, status: Optional[str] = None, error: Optional[str] = None) -> None:
+    def update_step(
+        self,
+        step_id: str,
+        *,
+        status: Optional[str] = None,
+        error: Optional[str] = None,
+        model_output: Any = None,
+    ) -> None:
         """Update a step's status/error after the fact.
 
         Typical use: record a step BEFORE attempting an action (so screenshot
@@ -233,6 +240,8 @@ class Run:
             sets.append("status=?"); values.append(status)
         if error is not None:
             sets.append("error=?"); values.append(error)
+        if model_output is not None:
+            sets.append("model_output=?"); values.append(_dump_json(model_output))
         if not sets:
             return
         values.append(step_id)

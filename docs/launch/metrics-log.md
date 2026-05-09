@@ -209,3 +209,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T18:18:45+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Browser Use troubleshooting guide update for issue #11; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:21:16+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Browser Use callback compatibility docs for issue #11; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:24:18+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Browser Use model input context update for issue #11; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T18:26:58+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Stagehand result capture update for issue #8; traffic views 52/29 unique, clones 103/54 unique |
