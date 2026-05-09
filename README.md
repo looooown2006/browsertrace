@@ -161,6 +161,9 @@ browsertrace
 
 ## Use it in your own code
 
+For Browser Use, Stagehand, Skyvern, and Playwright guide paths, see the
+[integrations overview](https://aaronlab.github.io/browsertrace/integrations.html).
+
 ### Decorator (simplest)
 
 `@trace` works on both sync and async functions. The first argument receives the
