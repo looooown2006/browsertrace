@@ -279,6 +279,18 @@ def test_examples_readme_includes_doctor_output_example():
     assert "hosted sharing" not in examples_readme
 
 
+def test_examples_readme_includes_cli_help_discovery_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### Discover CLI options" in examples_readme
+    assert "browsertrace --help" in examples_readme
+    assert "browsertrace export --help" in examples_readme
+    assert "browsertrace export <run_id> --public -o public.html" in examples_readme
+    assert "@v0.1.14" in examples_readme
+    assert "hosted sharing" not in examples_readme
+
+
 def test_examples_readme_includes_pytest_isolated_storage_recipe():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -577,7 +589,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T19:37:23+00:00" in launch
-    assert "after issue #36 closed and good-first issue #37 rotation" in launch
+    assert "2026-05-09T19:39:49+00:00" in launch
+    assert "after CLI help docs for issue #37" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

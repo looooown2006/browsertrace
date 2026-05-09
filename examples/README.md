@@ -61,6 +61,17 @@ and URLs, inspect the release asset:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 ```
 
+### Discover CLI options
+
+Use the built-in help when you want to inspect available commands or export
+flags from the terminal:
+
+```bash
+browsertrace --help
+browsertrace export --help
+browsertrace export <run_id> --public -o public.html
+```
+
 ## Example Matrix
 
 | Example | Use when | Extra services | Command |
