@@ -166,8 +166,8 @@ GitHub-tag pip install path until PyPI publishing is enabled.
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The current one is #64,
-which asks for a concise README Browser Use debugging guide link. For adapter work,
+Yes. Good first issues are kept small and reviewable. The current one is #65,
+which asks for a concise README Stagehand debugging guide link. For adapter work,
 the most useful first step is an integration request describing the framework
 and failure state you need to debug.
 ```
