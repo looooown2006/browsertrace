@@ -42,6 +42,10 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 ```
 
+If you see `uvx: command not found`, install `uv` from the
+[official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/),
+or use the persistent GitHub-tag `pip install` path below.
+
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
 
