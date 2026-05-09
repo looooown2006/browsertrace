@@ -26,6 +26,7 @@ computer-use agents.
 **Try it:** [live demo](https://aaronlab.github.io/browsertrace/) ·
 [debugging walkthrough](https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html) ·
 [integrations](https://aaronlab.github.io/browsertrace/integrations.html) ·
+[examples](examples/) ·
 [integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml) ·
 [launch discussion](https://github.com/aaronlab/browsertrace/discussions/6)
 
@@ -59,6 +60,8 @@ from the latest release.
 
 For a walkthrough, read
 [How to debug an AI browser-agent failure](https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html).
+
+For all runnable examples, see the [examples guide](examples/).
 
 For a real browser demo with screenshots from Wikipedia:
 
