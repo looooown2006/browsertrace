@@ -292,6 +292,18 @@ browsertrace export &lt;run_id&gt; --public -o public.html</code></pre>
     </section>
 
     <section>
+      <h2>Troubleshooting Browser Use traces</h2>
+      <dl>
+        <dt><code>Could not attach to this Agent</code></dt>
+        <dd>BrowserTrace first tries <code>register_new_step_callback</code>, then common step callback attributes used by older or forked Browser Use agents. If your version exposes a different hook, comment on issue #11 with the Browser Use version and callback surface.</dd>
+        <dt>No screenshots appear</dt>
+        <dd>Some Browser Use states do not expose a screenshot for every step. BrowserTrace still records the URL, action summary, model thought/actions, status, and error when those fields are available.</dd>
+        <dt>The trace includes private page or prompt data</dt>
+        <dd>Keep the full trace local. Before attaching anything to a public issue or community post, run <code>browsertrace export &lt;run_id&gt; --public -o public.html</code> to omit prompt/model I/O, screenshots, and URLs.</dd>
+      </dl>
+    </section>
+
+    <section>
       <h2>What to inspect first</h2>
       <ol>
         <li>Did the screenshot match the model's assumption?</li>

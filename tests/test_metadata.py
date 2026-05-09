@@ -283,6 +283,17 @@ def test_core_guides_advertise_llms_txt():
         ), filename
 
 
+def test_browser_use_guide_has_troubleshooting_section():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-use-debugging.html").read_text()
+
+    assert "Troubleshooting Browser Use traces" in page
+    assert "Could not attach to this Agent" in page
+    assert "register_new_step_callback" in page
+    assert "No screenshots appear" in page
+    assert "browsertrace export &lt;run_id&gt; --public -o public.html" in page
+
+
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
     project_root = Path(__file__).resolve().parents[1]
     sitemap = (project_root / "docs" / "sitemap.xml").read_text()
@@ -434,7 +445,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:16:10+00:00" in launch
-    assert "after security policy private-reporting path update" in launch
+    assert "2026-05-09T18:18:45+00:00" in launch
+    assert "after Browser Use troubleshooting guide update for issue #11" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
