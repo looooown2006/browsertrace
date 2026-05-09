@@ -150,3 +150,5 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T14:59:30+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 1 | after good-first issue #20 closed; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:01:44+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 1 | after social preview asset upload instructions verified; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:04:05+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 1 | after guide pages uvx-first quickstart sync; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:06:30+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after CI/Pages verification and external PR monitoring; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:07:09+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after awesome-list monitoring update on issue 18; traffic views 52/29 unique, clones 103/54 unique |
