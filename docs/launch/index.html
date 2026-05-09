@@ -206,6 +206,42 @@
       letter-spacing: 0;
     }
 
+    .quickstart {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .quickstart p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .command-block {
+      position: relative;
+      min-width: 0;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      min-height: 30px;
+      padding: 0 10px;
+      border: 1px solid rgba(238, 247, 246, 0.35);
+      border-radius: 6px;
+      background: rgba(16, 32, 38, 0.92);
+      color: #eef7f6;
+      font: 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      cursor: pointer;
+    }
+
+    .copy-button:focus-visible {
+      outline: 2px solid #38bdf8;
+      outline-offset: 2px;
+    }
+
     pre {
       margin: 10px 0 0;
       padding: 12px;
@@ -238,6 +274,7 @@
     @media (max-width: 860px) {
       .intro,
       .grid,
+      .quickstart,
       .asset-grid,
       .links {
         grid-template-columns: 1fr;
@@ -270,6 +307,19 @@
         </div>
       </div>
       <img class="hero-image" src="../social-preview.png" alt="BrowserTrace social preview showing an AI browser-agent failure timeline">
+    </section>
+
+    <section class="band quickstart" aria-labelledby="try-locally">
+      <div>
+        <h2 id="try-locally">Try locally</h2>
+        <p>Before PyPI publishing is enabled, use the GitHub release tag to run the no-API demo.</p>
+      </div>
+      <div class="command-block">
+        <button class="copy-button" type="button" data-copy-target="launch-quickstart-command">Copy</button>
+        <pre><code id="launch-quickstart-command">uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace</code></pre>
+      </div>
     </section>
 
     <section class="band" aria-labelledby="copy">
@@ -345,5 +395,22 @@
   <footer>
     <p>Ask for workflow feedback from browser-agent builders. Do not ask for stars, upvotes, vote swaps, or artificial engagement.</p>
   </footer>
+  <script>
+    document.querySelectorAll("[data-copy-target]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const target = document.getElementById(button.dataset.copyTarget);
+        if (!target) return;
+        try {
+          await navigator.clipboard.writeText(target.textContent.trim());
+          button.textContent = "Copied";
+        } catch {
+          button.textContent = "Select";
+        }
+        window.setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1400);
+      });
+    });
+  </script>
 </body>
 </html>
