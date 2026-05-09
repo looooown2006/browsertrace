@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+import re
 import tomllib
 from pathlib import Path
 
@@ -14,3 +16,23 @@ def test_package_version_matches_module_version():
 
     assert pyproject["project"]["version"] == "0.1.10"
     assert pyproject["project"]["version"] == browsertrace.__version__
+
+
+def test_homepage_has_software_source_code_json_ld():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+
+    match = re.search(
+        r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+        homepage,
+        re.S,
+    )
+
+    assert match is not None
+    metadata = json.loads(match.group(1))
+    assert metadata["@context"] == "https://schema.org"
+    assert metadata["@type"] == "SoftwareSourceCode"
+    assert metadata["name"] == "BrowserTrace"
+    assert metadata["codeRepository"] == "https://github.com/aaronlab/browsertrace"
+    assert metadata["programmingLanguage"] == "Python"
+    assert metadata["license"] == "https://opensource.org/license/mit"
