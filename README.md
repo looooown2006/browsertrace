@@ -163,6 +163,8 @@ browsertrace
 
 For Browser Use, Stagehand, Skyvern, and Playwright guide paths, see the
 [integrations overview](https://aaronlab.github.io/browsertrace/integrations.html).
+For Browser Use, Stagehand, Skyvern, or Playwright adapter requests, open an
+[integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 
 ### Decorator (simplest)
 

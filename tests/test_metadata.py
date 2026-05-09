@@ -278,6 +278,19 @@ def test_readme_links_integrations_overview():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_adapter_request_near_integrations():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert (
+        "https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
+        in readme
+    )
+    assert "Browser Use, Stagehand, Skyvern, or Playwright adapter requests" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_comparison_guide_with_named_text():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -973,7 +986,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T22:06:38+00:00" in launch
-    assert "after issue #69 closed and good-first issue #70 rotation" in launch
+    assert "2026-05-09T22:09:00+00:00" in launch
+    assert "after README adapter request link for issue #70" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
