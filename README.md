@@ -54,6 +54,8 @@ Open `http://127.0.0.1:3000`, click
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
 [`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo.html)
+or the public-safe
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
