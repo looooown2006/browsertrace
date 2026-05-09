@@ -28,6 +28,14 @@ Submit only if all are true:
 - The post asks for adapter/workflow feedback, not stars.
 - The post is customized to the community and does not look cross-posted.
 - The post uses the walkthrough or live demo before asking people to install.
+- If someone asks how to try it locally before PyPI publishing is enabled, use
+  the GitHub `uvx` path:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 - The public-safe demo export is used when someone asks for a downloadable
   artifact that omits prompts, model output, screenshots, and URLs.
 - The community allows this kind of post or there is an existing relevant thread.
@@ -270,6 +278,12 @@ screenshot, URL, action, model input/output, status, and error.
 The v0.1.10 release includes `browsertrace demo` for first-run onboarding,
 `browsertrace export --public` for public-safe sharing, and individual
 redaction flags when users want to keep some fields visible.
+
+Try locally before PyPI publishing is enabled:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+```
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/

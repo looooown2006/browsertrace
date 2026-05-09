@@ -59,6 +59,13 @@ The v0.1.10 release includes `browsertrace demo` for first-run onboarding,
 `browsertrace export --public` for public-safe sharing, and individual
 redaction flags when users want to keep some fields visible.
 
+Try locally before PyPI publishing is enabled:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 Useful for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
 computer-use agents.
 
@@ -76,6 +83,9 @@ Submission notes:
 - If a directory has no visible submission form, use this as an owner email or
   contact-form pitch.
 - Track every submission URL or email target in `docs/launch/metrics-log.md`.
+- For community replies, share the live walkthrough first. Use the GitHub `uvx`
+  command only when someone asks how to run it locally before PyPI publishing is
+  enabled.
 
 ## First Targeted Community Posts
 
