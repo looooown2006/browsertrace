@@ -36,5 +36,6 @@ env/
 # Project
 .worktrees/
 .browsertrace/
+uv.lock
 *.sqlite
 screenshots/
