@@ -6,7 +6,22 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [{name = "aaronlab"}]
-keywords = ["ai", "agent", "browser", "observability", "debugging", "llm", "playwright", "browser-use"]
+keywords = [
+    "ai",
+    "agent",
+    "agent-observability",
+    "browser",
+    "browser-agent",
+    "browser-automation",
+    "browser-use",
+    "debugging",
+    "llm",
+    "local-first",
+    "observability",
+    "playwright",
+    "skyvern",
+    "stagehand",
+]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -41,9 +56,11 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/aaronlab/browsertrace"
+Homepage = "https://aaronlab.github.io/browsertrace/"
+Documentation = "https://aaronlab.github.io/browsertrace/"
 Repository = "https://github.com/aaronlab/browsertrace"
 Issues = "https://github.com/aaronlab/browsertrace/issues"
+Release = "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.2"
 
 [project.scripts]
 browsertrace = "browsertrace.cli:main"
