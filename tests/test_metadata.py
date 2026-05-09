@@ -240,6 +240,24 @@ def test_examples_readme_includes_pytest_isolated_storage_recipe():
     assert "no browser, network, or API key" in " ".join(examples_readme.split())
 
 
+def test_examples_readme_includes_github_actions_public_export_artifact_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### GitHub Actions artifact for public-safe exports" in examples_readme
+    assert "actions/upload-artifact@v4" in examples_readme
+    assert (
+        "RUN_ID=$(browsertrace demo | awk -F': ' '/Run ID:/ {print $2}')"
+        in examples_readme
+    )
+    assert 'browsertrace export "$RUN_ID" --public -o public.html' in examples_readme
+    assert "BrowserTrace does not upload traces by itself" in examples_readme
+    assert (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        in examples_readme
+    )
+
+
 def test_owner_profile_actions_include_browsertrace_pin_step():
     project_root = Path(__file__).resolve().parents[1]
     owner_docs = {
@@ -483,7 +501,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T19:01:01+00:00" in launch
-    assert "after issue #29 closed and good-first issue #30 rotation" in launch
+    assert "2026-05-09T19:03:54+00:00" in launch
+    assert "after GitHub Actions public-safe export artifact docs for issue #30" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

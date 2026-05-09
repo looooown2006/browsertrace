@@ -188,3 +188,29 @@ browsertrace export <run_id> --public -o public.html
 > Note: `--public` omits prompts/model I/O, screenshots, and URLs.
 > BrowserTrace does not upload the file anywhere; attach the generated
 > `public.html` file manually to share it.
+
+### GitHub Actions artifact for public-safe exports
+
+Use an Actions artifact when a CI job should keep a public-safe trace for review.
+BrowserTrace does not upload traces by itself; the upload step below is the
+standard GitHub artifact action.
+
+```yaml
+- name: Install BrowserTrace
+  run: |
+    python -m pip install \
+      "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
+
+- name: Create public-safe BrowserTrace export
+  shell: bash
+  run: |
+    export BROWSERTRACE_HOME="$RUNNER_TEMP/browsertrace"
+    RUN_ID=$(browsertrace demo | awk -F': ' '/Run ID:/ {print $2}')
+    browsertrace export "$RUN_ID" --public -o public.html
+
+- name: Upload public-safe BrowserTrace export
+  uses: actions/upload-artifact@v4
+  with:
+    name: browsertrace-public-export
+    path: public.html
+```

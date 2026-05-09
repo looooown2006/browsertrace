@@ -220,3 +220,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T18:55:17+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after launch discussion update for #29 and Playwright LLM example; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:58:29+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after pytest isolated trace storage docs for issue #29; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T19:01:01+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #29 closed and good-first issue #30 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T19:03:54+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after GitHub Actions public-safe export artifact docs for issue #30; traffic views 52/29 unique, clones 103/54 unique |
