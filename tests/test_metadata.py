@@ -57,6 +57,9 @@ def test_pyproject_has_launch_discovery_metadata():
     assert "Topic :: Software Development :: Testing" in classifiers
 
     urls = project["urls"]
+    assert urls["Debugging Guide"] == "https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html"
+    assert urls["Computer Use Guide"] == "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html"
+    assert urls["Browser Use Guide"] == "https://aaronlab.github.io/browsertrace/browser-use-debugging.html"
     assert urls["Changelog"] == "https://github.com/aaronlab/browsertrace/blob/main/CHANGELOG.md"
     assert urls["Roadmap"] == "https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md"
     assert urls["Discussions"] == "https://github.com/aaronlab/browsertrace/discussions/6"
