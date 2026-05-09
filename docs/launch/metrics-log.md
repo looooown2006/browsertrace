@@ -214,3 +214,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T18:36:14+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Skyvern nested run metadata extraction update; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:41:40+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after Playwright LLM no-network example for issue #12; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:45:36+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after Windows public-safe export docs for issue #28; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T18:48:27+00:00 | 3 | 998 | 3 | 0 | 14 | 0 | 0 | after good-first issue #29 rotation and live profile sync; traffic views 52/29 unique, clones 103/54 unique |
