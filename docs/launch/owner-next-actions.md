@@ -3,6 +3,8 @@
 This is the shortest owner-facing checklist. Use it when the repo is ready and
 the owner can perform account/login actions personally.
 
+Chinese version: `docs/launch/owner-next-actions.zh-CN.md`
+
 Do not ask for stars, upvotes, reposts, vote swaps, or artificial engagement.
 Ask for workflow feedback from people building browser agents.
 

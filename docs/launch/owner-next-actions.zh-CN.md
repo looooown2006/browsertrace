@@ -1,0 +1,166 @@
+# BrowserTrace Owner 下一步动作
+
+这是给 `aaronlab/browsertrace` 发布用的最短中文执行清单。这里列的都是
+需要你本人登录账号、2FA、发帖或提交的动作。
+
+不要买 star、刷 star、互赞、求 upvote、求转发。对外只问一件事：正在做
+browser agent 的人，失败时最缺什么调试信息？
+
+## 1. 先解锁 PyPI
+
+这是当前最大安装转化阻塞。完成后公开文案可以从 GitHub 安装 URL 改成：
+
+```bash
+pip install "browsertrace[ui]"
+```
+
+在 PyPI 配置 Trusted Publisher：
+
+| 字段 | 值 |
+|---|---|
+| PyPI project | `browsertrace` |
+| GitHub owner | `aaronlab` |
+| GitHub repository | `browsertrace` |
+| Workflow filename | `publish.yml` |
+| Environment name | `pypi` |
+
+配置完后运行：
+
+```bash
+gh workflow run Publish --repo aaronlab/browsertrace
+```
+
+验证：
+
+```bash
+python -m pip index versions browsertrace
+pipx run --spec "browsertrace[ui]" browsertrace --help
+```
+
+跟踪 issue: https://github.com/aaronlab/browsertrace/issues/5
+
+## 2. 修 GitHub 个人 Profile README
+
+账号已经改成 `aaronlab`，但旧 profile repo 是 `aaronlab/aaronagent`，不会
+作为 `aaronlab` 的个人主页 README 渲染。
+
+目标是创建或恢复：
+
+```text
+aaronlab/aaronlab
+```
+
+然后使用这个草稿：
+
+```text
+docs/launch/github-profile-readme.md
+```
+
+跟踪 issue: https://github.com/aaronlab/browsertrace/issues/13
+
+## 3. 上传 GitHub Social Preview
+
+打开 GitHub 仓库设置：
+
+```text
+Settings -> General -> Social preview
+```
+
+上传：
+
+```text
+docs/social-preview.png
+```
+
+这样别人分享 repo 链接时会显示 BrowserTrace 卡片，而不是 GitHub 默认图。
+
+跟踪 issue: https://github.com/aaronlab/browsertrace/issues/15
+
+## 4. 提交搜索引擎收录
+
+sitemap 和 robots 已经在线：
+
+```text
+https://aaronlab.github.io/browsertrace/sitemap.xml
+https://aaronlab.github.io/browsertrace/robots.txt
+```
+
+按这个文件操作：
+
+```text
+docs/launch/search-indexing-submission.md
+```
+
+跟踪 issue: https://github.com/aaronlab/browsertrace/issues/16
+
+## 5. 发 Day 1 warm launch
+
+使用：
+
+```text
+docs/launch/day-1-publish-packet.md
+docs/launch/channel-copy.md
+```
+
+推荐顺序：
+
+1. X
+2. LinkedIn
+3. 一两个真正相关的微信 AI builder 群
+4. 即刻
+
+主素材用：
+
+```text
+docs/demo.mp4
+```
+
+备用图：
+
+```text
+docs/demo-poster.png
+```
+
+跟踪 issue: https://github.com/aaronlab/browsertrace/issues/9
+
+## 6. 提交目录、newsletter、awesome lists
+
+目录和 newsletter：
+
+```text
+docs/launch/directory-submission-sheet.md
+docs/launch/outreach-targets.md
+```
+
+GitHub awesome lists：
+
+```text
+docs/launch/github-awesome-list-submissions.md
+```
+
+已经准备好的本地 PR 分支：
+
+| 目标 | 本地目录 | 分支 |
+|---|---|---|
+| `angrykoala/awesome-browser-automation` | `/Users/enyuanzhang/Desktop/github/awesome-browser-automation-browsertrace` | `add-browsertrace-ai-tool` |
+| `mxschmitt/awesome-playwright` | `/Users/enyuanzhang/Desktop/github/awesome-playwright-browsertrace` | `add-browsertrace-playwright-utility` |
+| `Jenqyang/Awesome-AI-Agents` | `/Users/enyuanzhang/Desktop/github/awesome-ai-agents-browsertrace` | `add-browsertrace-agent-tool` |
+
+先提交第一个最高匹配目标。每个列表只开一个 focused PR。
+
+目录/newsletter 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/10
+
+Awesome list 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/18
+
+## 7. 每做完一个动作就记录指标
+
+```bash
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after <action>: <URL or note>"
+uv run --python 3.11 python scripts/launch_metrics.py --json
+```
+
+目标只有一个：GitHub 实时显示超过 1000 stars 才算完成。
+
+```bash
+gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
+```
