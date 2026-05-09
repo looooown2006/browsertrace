@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aaronlab.github.io/browsertrace/sitemap.xml

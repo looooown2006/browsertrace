@@ -1,0 +1,43 @@
+# BrowserTrace
+
+BrowserTrace is an MIT-licensed local flight recorder for AI browser agents.
+It records browser-agent runs as step timelines with screenshots, URLs, actions,
+model input/output, status, and errors.
+
+Use BrowserTrace when debugging Browser Use, Stagehand, Playwright + LLM scripts,
+Skyvern-style workflows, or custom computer-use agents where logs are not enough
+to explain why a browser run failed.
+
+## Important Links
+
+- GitHub repository: https://github.com/aaronlab/browsertrace
+- Live exported trace demo: https://aaronlab.github.io/browsertrace/
+- Debugging walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.1
+- Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
+
+## Core Capabilities
+
+- Capture screenshots and URLs at each agent step.
+- Store action labels, model inputs, model outputs, status, and error messages.
+- Inspect runs in a local web UI.
+- Export a self-contained HTML trace for sharing with teammates or issues.
+- Run a deterministic no-API-key failure demo for quick evaluation.
+
+## Quickstart
+
+```bash
+git clone https://github.com/aaronlab/browsertrace
+cd browsertrace
+pip install -e ".[ui]"
+python examples/no_api_failure_demo.py
+browsertrace
+```
+
+Then open `http://127.0.0.1:3000` and inspect the failed checkout-agent run.
+
+## Positioning
+
+BrowserTrace is not a hosted observability platform. It is a local-first,
+open-source debugging tool for the browser state and model decisions around
+AI browser-agent failures.
