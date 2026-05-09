@@ -7,7 +7,7 @@ accounts.
 ## Fastest Path
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.9"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
 browsertrace demo
 browsertrace
 ```
@@ -15,6 +15,13 @@ browsertrace
 Open `http://127.0.0.1:3000` and inspect
 `demo: checkout agent fails on disabled button`. From a source checkout,
 `python examples/no_api_failure_demo.py` creates the same trace.
+
+For a downloadable public-safe export that omits prompt/model I/O, screenshots,
+and URLs, inspect the release asset:
+
+```text
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+```
 
 ## Example Matrix
 
