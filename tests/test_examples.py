@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import runpy
 import sqlite3
 
@@ -29,3 +30,28 @@ def test_no_api_failure_demo_creates_failed_trace(tmp_path, monkeypatch):
     assert steps[3][2] == "error"
     assert "button was disabled" in steps[3][3]
     assert "button.checkout.primary" in steps[3][4]
+
+
+def test_skyvern_wrapper_example_creates_completed_trace(tmp_path, monkeypatch):
+    monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))
+
+    runpy.run_path("examples/skyvern_wrapper_example.py", run_name="__main__")
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        run = c.execute(
+            "SELECT id, name, status, error FROM runs ORDER BY started_at DESC LIMIT 1"
+        ).fetchone()
+        step = c.execute(
+            "SELECT action, status, model_input, model_output, metadata "
+            "FROM steps WHERE run_id=? ORDER BY step_index",
+            (run[0],),
+        ).fetchone()
+
+    assert run[1] == "demo: skyvern invoice extraction"
+    assert run[2] == "completed"
+    assert run[3] is None
+    assert step[0] == "run_task: extract the invoice total"
+    assert step[1] == "ok"
+    assert json.loads(step[2])["kwargs"]["url"] == "https://example.com/invoice"
+    assert json.loads(step[3])["task_run_id"] == "tsk_demo_001"
+    assert json.loads(step[4])["skyvern_run_id"] == "tsk_demo_001"

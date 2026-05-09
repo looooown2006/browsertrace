@@ -183,6 +183,9 @@ await skyvern.run_task(
 skyvern.close()
 ```
 
+For a no-network wrapper demo that does not require a Skyvern install, run
+`python examples/skyvern_wrapper_example.py`.
+
 ### Playwright
 
 See `examples/playwright_example.py`, `examples/failure_example.py`, and
