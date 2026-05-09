@@ -6,9 +6,13 @@ Use these as notes, not as pasted auto-replies. Keep launch replies personal and
 
 Langfuse and LangSmith are strong for LLM call tracing. BrowserTrace is narrower: it is built around the browser-agent failure loop. The timeline puts screenshots, URL, action, model input/output, status, and error in one local view so you can see what the agent actually saw when it failed.
 
+Detailed comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+
 ## How is this different from Browserbase recordings?
 
 Browserbase is a hosted browser runtime with recordings. BrowserTrace is runtime-agnostic and local-first. You can use it with a local Playwright page, Browser Use, Stagehand, or custom computer-use code without moving the run into a hosted browser environment.
+
+Detailed comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
 
 ## Does data leave my machine?
 

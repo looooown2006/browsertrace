@@ -255,11 +255,15 @@ errors while omitting prompt/model I/O.
 
 ## Why not just use ___?
 
+Detailed comparison page:
+https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+
 | Tool | Strength | Why you might still want BrowserTrace |
 |---|---|---|
-| Langfuse / LangSmith / Helicone | Great LLM call tracing, prompt + token + cost | Not browser-agent-first: no DOM, no screenshot, no replay UI built around browser state |
-| Browserbase | Hosted browser runtime with built-in recordings | Locks you into their runtime; BrowserTrace works with any local Playwright, Browser Use, computer use |
-| Laminar | Generic agent observability with browser session replay | Heavier, hosted-first; BrowserTrace is local-first, ~700 LOC, drop in via decorator |
+| Langfuse / LangSmith / Helicone | LLM call tracing, prompt/cost/latency, evals, monitoring | BrowserTrace adds the visual browser failure story: screenshot, URL, action, model I/O, status, and first failed step |
+| Browserbase | Hosted browser runtime, live debugging, session recordings | BrowserTrace is local-first and runtime-agnostic for Playwright, Browser Use, Stagehand, Skyvern, and custom code |
+| Playwright Trace Viewer | Deep Playwright action, DOM, console, network, and timing inspection | BrowserTrace adds the LLM decision context and a standalone browser-agent failure report |
+| Laminar | Agent observability with browser session replay | BrowserTrace is smaller, local-first, and focused on shareable failed browser-agent traces |
 | **BrowserTrace** | **Local replay debugger built around the browser-agent failure loop** | OSS, runtime-agnostic, no signup, JSON API for AI self-debug |
 
 Smallest useful thing for "my browser agent failed, what happened" — drop in,
