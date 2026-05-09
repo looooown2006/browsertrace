@@ -41,7 +41,7 @@ https://github.com/aaronlab/browsertrace
 ```text
 The shortest way to try BrowserTrace:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.6"
 browsertrace demo
 browsertrace
 

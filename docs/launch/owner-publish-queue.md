@@ -12,7 +12,7 @@ people building browser agents.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.5
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.6
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 

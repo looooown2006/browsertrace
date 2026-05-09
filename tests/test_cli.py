@@ -98,6 +98,27 @@ def test_cli_export_writes_html_with_inlined_screenshots(cli, tmp_path):
     assert "data:image/png;base64" in body  # screenshot inlined
 
 
+def test_cli_export_writes_model_input_and_output(cli, tmp_path):
+    cli_mod, home = cli
+    tracer = Tracer(home=home)
+    with tracer.run("model-io") as run:
+        run.step(
+            action="choose button",
+            model_input={"prompt": "Which checkout button should I click?"},
+            model_output={"selector": "button.checkout.primary"},
+        )
+
+    out_file = tmp_path / "model-io.html"
+    rc = cli_mod.main(["export", run.id, "-o", str(out_file)])
+
+    assert rc == 0
+    body = out_file.read_text()
+    assert "Model input" in body
+    assert "Which checkout button should I click?" in body
+    assert "Model output" in body
+    assert "button.checkout.primary" in body
+
+
 def test_cli_export_redact_hides_model_io(cli, tmp_path):
     cli_mod, home = cli
     tracer = Tracer(home=home)

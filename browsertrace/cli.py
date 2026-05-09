@@ -171,8 +171,17 @@ def cmd_export(args) -> int:
                 "<details><summary>Model I/O redacted</summary>"
                 "<pre>Prompt and model output omitted from this export.</pre></details>"
             )
-        elif s["model_output"]:
-            parts.append(f"<details><summary>Model output</summary><pre>{_html_escape(s['model_output'])}</pre></details>")
+        else:
+            if s["model_input"]:
+                parts.append(
+                    "<details><summary>Model input</summary>"
+                    f"<pre>{_html_escape(s['model_input'])}</pre></details>"
+                )
+            if s["model_output"]:
+                parts.append(
+                    "<details><summary>Model output</summary>"
+                    f"<pre>{_html_escape(s['model_output'])}</pre></details>"
+                )
         parts.append("</div></div>")
     parts.append("</body></html>")
 

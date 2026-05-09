@@ -7,6 +7,13 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.6 - 2026-05-09
+
+- HTML exports now show both model input and model output by default, matching
+  the recorded trace data and public positioning.
+- `browsertrace export --redact` still omits both prompt/model I/O for public
+  sharing.
+
 ## 0.1.5 - 2026-05-09
 
 - Added `browsertrace demo`, a packaged no-browser/no-API demo command that
