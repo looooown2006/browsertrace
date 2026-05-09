@@ -53,7 +53,7 @@ Open `http://127.0.0.1:3000`, click
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.1/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.2/browsertrace-demo.html)
 from the latest release.
 
 For a walkthrough, read
@@ -296,7 +296,7 @@ This is a v0.1 alpha. The fastest way to help:
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
-Launch discussion: [BrowserTrace v0.1.1](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace v0.1.2](https://github.com/aaronlab/browsertrace/discussions/6).
 
 ## License
 
