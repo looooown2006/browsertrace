@@ -12,8 +12,8 @@ people building browser agents.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.12
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.13
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
@@ -25,7 +25,7 @@ Shortest owner checklist: `docs/launch/owner-next-actions.md`
 - Poster image: `docs/demo-poster.png`
 - Backup GIF: `docs/demo.gif`
 - Social preview: `docs/social-preview.png`
-- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.12`
+- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.13`
 - Press kit: `docs/launch/press-kit.md`
 - Search indexing submission: `docs/launch/search-indexing-submission.md`
 - GitHub awesome list submissions: `docs/launch/github-awesome-list-submissions.md`

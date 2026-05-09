@@ -24,8 +24,8 @@ to explain why a browser run failed.
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.md
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.12
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.13
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Good first issue: https://github.com/aaronlab/browsertrace/issues/23
 - Public-safe export docs issue: https://github.com/aaronlab/browsertrace/issues/25
@@ -46,17 +46,17 @@ to explain why a browser run failed.
 ## Quickstart
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
 ```
 
 Persistent install from the GitHub release tag before PyPI publishing is
 enabled:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
 browsertrace doctor
 browsertrace demo
 browsertrace

@@ -5,9 +5,16 @@ UTC.
 
 ## Unreleased
 
-- Refreshed the roadmap and launch queues with the current `v0.1.12` release,
+- Refreshed the roadmap and launch queues with the current `v0.1.13` release,
   open awesome-list PR status, and remaining owner-only blockers.
 - Clarified the first-contribution path for good-first issues and PR templates.
+
+## 0.1.13 - 2026-05-09
+
+- Updated `browsertrace doctor` so missing UI dependency guidance points to the
+  current GitHub release tag while PyPI publishing is still pending.
+- Added a first-run `browsertrace doctor` troubleshooting note to the README.
+- Updated launch, guide, and owner-action docs to point at `v0.1.13`.
 
 ## 0.1.12 - 2026-05-09
 

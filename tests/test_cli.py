@@ -244,6 +244,33 @@ def test_cli_doctor_reports_missing_database_without_failing(cli):
     assert "Next: browsertrace demo" in out
 
 
+def test_cli_doctor_missing_ui_deps_points_to_release_tag_install(cli, monkeypatch):
+    cli_mod, _ = cli
+    import importlib.util
+
+    original_find_spec = importlib.util.find_spec
+
+    def fake_find_spec(name):
+        if name in {"fastapi", "uvicorn", "jinja2"}:
+            return None
+        return original_find_spec(name)
+
+    monkeypatch.setattr(importlib.util, "find_spec", fake_find_spec)
+
+    buf = StringIO()
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["doctor"])
+
+    out = buf.getvalue()
+    assert rc == 0
+    assert "UI dependencies: missing fastapi, uvicorn, jinja2" in out
+    assert (
+        'Install: pip install "browsertrace[ui] @ '
+        'git+https://github.com/aaronlab/browsertrace@v0.1.13"'
+    ) in out
+    assert 'Install: pip install "browsertrace[ui]"' not in out
+
+
 def test_cli_no_args_routes_to_serve(cli, monkeypatch):
     """`browsertrace` with no args should call serve."""
     cli_mod, _ = cli

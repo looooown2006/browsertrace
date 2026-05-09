@@ -39,15 +39,20 @@ Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
 GitHub release tag:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
 ```
 
 If you see `uvx: command not found`, install `uv` from the
 [official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/),
 or use the persistent GitHub-tag `pip install` path below.
+
+`browsertrace doctor` is safe to run before any trace exists. On a fresh
+machine, `Database: missing` and `Runs: 0` mean setup is working and the next
+step is `browsertrace demo`. If it reports missing UI dependencies, install the
+release tag with `[ui]` as shown below; PyPI publishing is still pending.
 
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
@@ -59,10 +64,10 @@ tag:
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -70,9 +75,9 @@ browsertrace
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
@@ -260,7 +265,7 @@ For AI summaries before PyPI publishing is enabled, install the `ai` extra from
 the release tag you are using:
 
 ```bash
-pip install "browsertrace[ui,ai] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+pip install "browsertrace[ui,ai] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
 ```
 
 ```bash
