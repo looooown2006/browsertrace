@@ -159,3 +159,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T15:23:24+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after search indexing checklist key URL update; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:26:15+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use guide copy button; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:30:28+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after copy buttons added to guide quickstarts; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:36:42+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 0 | after v0.1.12 release published and verified; traffic views 52/29 unique, clones 103/54 unique |
