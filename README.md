@@ -2,6 +2,11 @@
 
 > Local flight recorder for AI browser agents.
 
+[![CI](https://github.com/aaronlab/browsertrace/actions/workflows/ci.yml/badge.svg)](https://github.com/aaronlab/browsertrace/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/aaronlab/browsertrace?color=blue)](https://github.com/aaronlab/browsertrace/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/aaronlab/browsertrace?style=social)](https://github.com/aaronlab/browsertrace/stargazers)
+
 ![demo](docs/demo.gif)
 
 **MIT · local-first · no signup · no cloud · Python 3.11+**
