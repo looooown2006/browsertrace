@@ -1,0 +1,57 @@
+name: Cloud / team interest
+description: Tell us what hosted sharing or team workflow you need.
+title: "Cloud interest: "
+labels: ["cloud-interest"]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Team workflow
+      description: How would your team use hosted BrowserTrace?
+      placeholder: "Example: upload traces from CI, share failed runs in Slack, compare failures across commits..."
+    validations:
+      required: true
+  - type: dropdown
+    id: team-size
+    attributes:
+      label: Team size
+      options:
+        - 1 person
+        - 2-5 people
+        - 6-20 people
+        - 21-100 people
+        - 100+ people
+    validations:
+      required: true
+  - type: dropdown
+    id: stack
+    attributes:
+      label: Browser-agent stack
+      options:
+        - Browser Use
+        - Stagehand
+        - Playwright + LLM
+        - Skyvern
+        - Custom computer-use agent
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: needs
+    attributes:
+      label: Needed capabilities
+      options:
+        - label: One-click share links for failed runs
+        - label: CI trace upload
+        - label: Slack or GitHub issue unfurls
+        - label: Multi-run regression comparison
+        - label: Team workspaces and comments
+        - label: Longer retention
+        - label: SSO or enterprise controls
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Data and security constraints
+      description: Mention privacy, retention, customer-data, or deployment constraints.
+    validations:
+      required: false

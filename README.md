@@ -235,7 +235,7 @@ for teams that need:
 - **Multi-run regression detection** — "this DOM changed since last passing run"
 - **Team workspaces, comments, retention beyond a single laptop**
 
-If you want it, **[open an issue with the `cloud-interest` label](https://github.com/aaronlab/browsertrace/issues/new?title=Cloud+interest:+%5Byour+use+case%5D&labels=cloud-interest)** describing your agent setup and team size. Pricing will likely be:
+If you want it, **[open a cloud/team interest issue](https://github.com/aaronlab/browsertrace/issues/new?template=cloud_interest.yml)** describing your agent setup and team size. Pricing will likely be:
 
 | Tier | Price | For |
 |---|---:|---|

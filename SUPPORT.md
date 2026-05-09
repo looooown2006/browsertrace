@@ -40,6 +40,10 @@ Open an integration request:
 
 https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
 
+For hosted sharing or team workflows, open a cloud/team interest issue:
+
+https://github.com/aaronlab/browsertrace/issues/new?template=cloud_interest.yml
+
 Current roadmap:
 
 https://github.com/aaronlab/browsertrace/milestone/1
@@ -50,4 +54,3 @@ Do not post secrets, private screenshots, customer data, cookies, tokens, or
 private prompts in public issues.
 
 See `SECURITY.md` for security reporting guidance.
-
