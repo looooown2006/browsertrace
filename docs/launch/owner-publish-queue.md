@@ -22,6 +22,7 @@ people building browser agents.
 - Poster image: `docs/demo-poster.png`
 - Backup GIF: `docs/demo.gif`
 - Social preview: `docs/social-preview.png`
+- Press kit: `docs/launch/press-kit.md`
 
 ## Day 1 Warm Launch
 

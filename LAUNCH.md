@@ -104,6 +104,7 @@ Reddit and Discord:
 
 - Channel copy: `docs/launch/channel-copy.md`
 - Owner publish queue: `docs/launch/owner-publish-queue.md`
+- Press kit: `docs/launch/press-kit.md`
 - Response templates: `docs/launch/response-templates.md`
 - Outreach targets: `docs/launch/outreach-targets.md`
 - Tutorial draft: `docs/launch/tutorial-post.md`
