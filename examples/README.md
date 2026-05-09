@@ -132,6 +132,21 @@ browsertrace list
 
 This shows run IDs, timestamps, and status for each stored trace.
 
+### Inspect a failed run in the terminal
+
+Use `show` when you want to confirm the failed step before opening the UI or
+exporting HTML:
+
+```bash
+browsertrace demo
+browsertrace list
+browsertrace show <run_id>
+browsertrace export <run_id> --public -o public.html
+```
+
+`browsertrace show <run_id>` prints the run status, error, and step timeline in
+the terminal, including the failed step.
+
 ### Creating a Share-Safe Export
 
 To export a trace without sensitive data (prompt/model I/O, screenshots, URLs):
