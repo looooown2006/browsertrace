@@ -1,5 +1,16 @@
 # BrowserTrace launch — 文案草稿
 
+## Launch readiness gates
+
+- [ ] `uv run --python 3.11 --extra dev pytest -q` passes.
+- [ ] `python examples/no_api_failure_demo.py` creates a failed run without API keys.
+- [ ] `browsertrace list` shows the deterministic demo run.
+- [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
+- [ ] README first screen shows the value prop, GIF/screenshot, install, and 60-second demo.
+- [ ] GitHub repo has description, topics, MIT license, and `v0.1.0` release.
+- [ ] Demo GIF is under 60 seconds and shows the failed-step timeline.
+- [ ] Show HN copy points to the repo and mentions no signup, no cloud, local-first.
+
 ## English (X / Twitter)
 
 ### 草稿 1（功能向，简短）
@@ -151,16 +162,31 @@ github.com/aaronagent/browsertrace
 
 ## 配套素材清单
 
-要发推之前必须先准备：
+要发推之前必须准备：
 
-- [ ] **demo GIF**（关键）：录屏 30-60 秒，展示
-  - 跑 `python examples/playwright_example.py`
-  - 打开 `localhost:3000` 看 run 列表
-  - 点进 timeline 看 3 个 step 的截图
-  - **不要超过 60 秒，不要加音乐，不要花哨字幕**
+- [ ] **demo GIF**：30-60 秒，展示
+  - 运行 `python examples/no_api_failure_demo.py`
+  - 运行 `browsertrace`
+  - 打开 `localhost:3000`
+  - 进入失败 run
+  - 展开 failed step 的 model output
 
-- [ ] **README 第一屏**：要有一张 hero screenshot（timeline 视图）
-- [ ] **GitHub repo 首页**：description、topics（`ai-agents`、`browser-automation`、`observability`、`debugging`、`llm`）、license、第一个 release tag (v0.1.0)
+- [ ] **真实浏览器 GIF**：可选但推荐，展示
+  - 运行 `python examples/multipage_failure.py`
+  - Wikipedia 搜索 Tokyo
+  - timeline 跳到失败 selector
+
+- [ ] **README 第一屏**：必须有
+  - hero GIF 或 screenshot
+  - 本地优先、无注册、无云
+  - 60 秒 demo
+  - Browser Use / Stagehand / Playwright 关键词
+
+- [ ] **GitHub repo 首页**：必须有
+  - description
+  - topics: `ai-agents`, `browser-automation`, `observability`, `debugging`, `llm`, `playwright`
+  - MIT license
+  - `v0.1.0` release
 
 ---
 
