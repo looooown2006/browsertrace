@@ -230,3 +230,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T19:21:01+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #33 closed and good-first issue #34 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T19:24:33+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after browsertrace show failed-run docs for issue #34; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T19:27:57+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #34 closed and good-first issue #35 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T19:31:02+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after browsertrace list limit docs for issue #35; traffic views 52/29 unique, clones 103/54 unique |

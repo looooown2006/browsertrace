@@ -252,6 +252,18 @@ def test_examples_readme_includes_browsertrace_show_failed_run_recipe():
     assert "failed step" in examples_readme
 
 
+def test_examples_readme_includes_list_limit_recent_runs_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### Show only recent runs" in examples_readme
+    assert "browsertrace list --limit 5" in examples_readme
+    assert "most recent runs" in examples_readme
+    assert "browsertrace show <run_id>" in examples_readme
+    assert "browsertrace export <run_id> --public -o public.html" in examples_readme
+    assert "hosted sharing" not in examples_readme
+
+
 def test_examples_readme_includes_pytest_isolated_storage_recipe():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -550,7 +562,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T19:27:57+00:00" in launch
-    assert "after issue #34 closed and good-first issue #35 rotation" in launch
+    assert "2026-05-09T19:31:02+00:00" in launch
+    assert "after browsertrace list limit docs for issue #35" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

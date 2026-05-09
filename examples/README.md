@@ -132,6 +132,18 @@ browsertrace list
 
 This shows run IDs, timestamps, and status for each stored trace.
 
+### Show only recent runs
+
+Use `--limit` when you only need the most recent runs before choosing one to
+inspect or export:
+
+```bash
+browsertrace demo
+browsertrace list --limit 5
+browsertrace show <run_id>
+browsertrace export <run_id> --public -o public.html
+```
+
 ### Inspect a failed run in the terminal
 
 Use `show` when you want to confirm the failed step before opening the UI or
