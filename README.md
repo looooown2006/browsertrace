@@ -84,6 +84,8 @@ browsertrace
 
 `browsertrace doctor` is a safe local status check for install and trace-store status;
 run it before `browsertrace demo` on a fresh machine.
+After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open
+or export.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
