@@ -245,8 +245,7 @@ def test_llms_txt_points_to_current_contribution_path():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
 
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/23" in llms
-    assert "Public-safe export docs issue: https://github.com/aaronlab/browsertrace/issues/25" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/26" in llms
     assert (
         "Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
         in llms
@@ -262,7 +261,7 @@ def test_press_kit_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in press_kit
     assert f'uvx --from "{github_spec}" browsertrace demo' in press_kit
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/23" in press_kit
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/26" in press_kit
 
 
 def test_core_guides_advertise_llms_txt():
@@ -357,7 +356,7 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in packet
     assert f'uvx --from "{github_spec}" browsertrace demo' in packet
-    assert "https://github.com/aaronlab/browsertrace/issues/23" in packet
+    assert "https://github.com/aaronlab/browsertrace/issues/26" in packet
 
 
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
