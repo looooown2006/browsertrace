@@ -22,16 +22,16 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install git+https://github.com/aaronagent/browsertrace
+pip install git+https://github.com/aaronlab/browsertrace
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronagent/browsertrace"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace"
 ```
 
 ## See a failure trace in 60 seconds
 
 ```bash
-git clone https://github.com/aaronagent/browsertrace
+git clone https://github.com/aaronlab/browsertrace
 cd browsertrace
 pip install -e ".[ui]"
 python examples/no_api_failure_demo.py
@@ -225,7 +225,7 @@ for teams that need:
 - **Multi-run regression detection** — "this DOM changed since last passing run"
 - **Team workspaces, comments, retention beyond a single laptop**
 
-If you want it, **[open an issue with the `cloud-interest` label](https://github.com/aaronagent/browsertrace/issues/new?title=Cloud+interest:+%5Byour+use+case%5D&labels=cloud-interest)** describing your agent setup and team size. Pricing will likely be:
+If you want it, **[open an issue with the `cloud-interest` label](https://github.com/aaronlab/browsertrace/issues/new?title=Cloud+interest:+%5Byour+use+case%5D&labels=cloud-interest)** describing your agent setup and team size. Pricing will likely be:
 
 | Tier | Price | For |
 |---|---:|---|

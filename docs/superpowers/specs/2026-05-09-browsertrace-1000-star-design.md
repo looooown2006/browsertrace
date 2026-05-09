@@ -1,7 +1,7 @@
 # BrowserTrace 1000-Star Design
 
 Date: 2026-05-09
-Project: `aaronagent/browsertrace`
+Project: `aaronlab/browsertrace`
 Goal owner: aaronagent
 
 ## Objective
@@ -10,7 +10,7 @@ Build BrowserTrace into an AI-related open-source project that can credibly
 reach more than 1000 GitHub stars.
 
 The final objective is only complete when an actual GitHub star count check
-shows `aaronagent/browsertrace` has more than 1000 stars. Engineering work,
+shows `aaronlab/browsertrace` has more than 1000 stars. Engineering work,
 launch assets, releases, tests, and distribution are necessary supporting
 artifacts, but none of them are completion proof by themselves.
 

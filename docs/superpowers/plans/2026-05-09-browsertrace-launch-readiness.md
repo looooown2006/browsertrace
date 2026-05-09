@@ -362,16 +362,16 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install git+https://github.com/aaronagent/browsertrace
+pip install git+https://github.com/aaronlab/browsertrace
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronagent/browsertrace"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace"
 ```
 
 ## See a failure trace in 60 seconds
 
 ```bash
-git clone https://github.com/aaronagent/browsertrace
+git clone https://github.com/aaronlab/browsertrace
 cd browsertrace
 pip install -e ".[ui]"
 python examples/no_api_failure_demo.py
@@ -608,7 +608,7 @@ git status --short
 Run:
 
 ```bash
-gh repo view aaronagent/browsertrace --json name,owner,visibility,stargazerCount,repositoryTopics,licenseInfo
+gh repo view aaronlab/browsertrace --json name,owner,visibility,stargazerCount,repositoryTopics,licenseInfo
 ```
 
 Expected audit interpretation:

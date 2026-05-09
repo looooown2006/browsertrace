@@ -41,9 +41,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/aaronagent/browsertrace"
-Repository = "https://github.com/aaronagent/browsertrace"
-Issues = "https://github.com/aaronagent/browsertrace/issues"
+Homepage = "https://github.com/aaronlab/browsertrace"
+Repository = "https://github.com/aaronlab/browsertrace"
+Issues = "https://github.com/aaronlab/browsertrace/issues"
 
 [project.scripts]
 browsertrace = "browsertrace.cli:main"

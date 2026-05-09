@@ -24,7 +24,7 @@ model I/O, URL). Open localhost → see exactly where it broke.
 
 Works with Browser Use, Playwright, anything.
 
-github.com/aaronagent/browsertrace
+github.com/aaronlab/browsertrace
 [GIF]
 ```
 
@@ -40,7 +40,7 @@ So I built BrowserTrace.
 Find the bug in 30 seconds, not 30 minutes.
 
 Free, OSS, runs locally.
-github.com/aaronagent/browsertrace
+github.com/aaronlab/browsertrace
 [GIF]
 ```
 
@@ -53,7 +53,7 @@ Screenshots: gone. DOM: changed. Logs: useless.
 BrowserTrace records every step the agent took.
 Replay it like a debugger.
 
-OSS, 1-line setup. github.com/aaronagent/browsertrace
+OSS, 1-line setup. github.com/aaronlab/browsertrace
 [GIF]
 ```
 
@@ -81,7 +81,7 @@ log 一堆乱七八糟，截图没存，浏览器关了。
 
 完全开源，本地跑，不上云。
 
-GitHub：aaronagent/browsertrace
+GitHub：aaronlab/browsertrace
 （首页星标更新中）
 
 #AIagent #browseruse #开发者工具 #开源
@@ -97,7 +97,7 @@ agent 挂了不知道为什么的痛，应该懂。
 装一行 Python decorator → 每步自动录截图 + action + LLM 输入输出 →
 本地 web UI 1 分钟看清楚挂在哪。
 
-github.com/aaronagent/browsertrace
+github.com/aaronlab/browsertrace
 
 求 star 求 issue 求骂🙏
 ```
@@ -136,7 +136,7 @@ broader generic observability stacks (Laminar). I wanted the smallest
 useful thing for the specific "my browser agent failed, what happened"
 loop, so I built it.
 
-Repo: https://github.com/aaronagent/browsertrace
+Repo: https://github.com/aaronlab/browsertrace
 
 Roadmap: AI root-cause classification, public share links (Loom-style),
 replay-from-step-N, regression-test generation. Happy to take feedback on
@@ -153,7 +153,7 @@ priorities.
 BrowserTrace —— agent 挂了，1 分钟找到挂在哪一步。
 开源、本地、装一行代码。
 
-github.com/aaronagent/browsertrace
+github.com/aaronlab/browsertrace
 
 求各位试试，bug 反馈直接私我或 issue。
 ```

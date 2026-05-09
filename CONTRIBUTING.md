@@ -9,7 +9,7 @@ export, or integrate with real agent frameworks.
 ## Development Setup
 
 ```bash
-git clone https://github.com/aaronagent/browsertrace
+git clone https://github.com/aaronlab/browsertrace
 cd browsertrace
 uv run --python 3.11 --extra dev pytest -q
 ```
