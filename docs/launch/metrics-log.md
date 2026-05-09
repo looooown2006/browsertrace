@@ -170,3 +170,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T16:14:08+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after owner-action issues #5 and #9 refreshed for v0.1.12 and PyPI 404 audit; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T16:17:34+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after llms.txt contribution links deployed; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T16:21:02+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after core guide pages advertised llms.txt alternate link; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T16:24:09+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after press kit trial and contribution paths deployed; traffic views 52/29 unique, clones 103/54 unique |
