@@ -153,6 +153,14 @@ class Run:
                 (status, time.time(), error, self.id),
             )
 
+    def close(self, error: Optional[str] = None) -> None:
+        """Mark a manually-started run completed or failed.
+
+        Integration wrappers create `Run` objects outside `tracer.run(...)`, so
+        they need a public close path that matches the documented examples.
+        """
+        self._end(status="failed" if error else "completed", error=error)
+
     def _mark_last_step_error_if_ok(self, error: str) -> None:
         """Promote the last step to status='error' iff it's still 'ok'.
 
