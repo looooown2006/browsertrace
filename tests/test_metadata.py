@@ -248,6 +248,16 @@ def test_readme_links_stagehand_debugging_guide():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_skyvern_debugging_guide():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "https://aaronlab.github.io/browsertrace/skyvern-debugging.html" in readme
+    assert "Skyvern task and workflow debugging" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_llms_txt_for_ai_coding_agents():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -929,7 +939,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T21:48:34+00:00" in launch
-    assert "after issue #65 closed and good-first issue #66 rotation" in launch
+    assert "2026-05-09T21:50:43+00:00" in launch
+    assert "after README Skyvern guide link for issue #66" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

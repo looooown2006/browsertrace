@@ -292,6 +292,8 @@ skyvern.close()
 
 For a no-network wrapper demo that does not require a Skyvern install, run
 `python examples/skyvern_wrapper_example.py`.
+For Skyvern task and workflow debugging, see
+[Debug Skyvern task failures with BrowserTrace](https://aaronlab.github.io/browsertrace/skyvern-debugging.html).
 
 ### Playwright
 
