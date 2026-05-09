@@ -1,7 +1,7 @@
 # BrowserTrace Launch Control Room
 
 Canonical repo: https://github.com/aaronlab/browsertrace
-Current release: `v0.1.13`
+Current release: `v0.1.14`
 Owner account: `aaronlab`
 
 ## Current State
@@ -14,10 +14,10 @@ Owner account: `aaronlab`
 - If posting before PyPI is live, use the tested no-install `uvx` fallback:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
 ```
 
 - Current audited star count should be checked before every public push:
@@ -30,8 +30,8 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - README animation: `docs/demo.gif`
 - Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
-- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.13`
-- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.13`
+- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.14`
+- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.14`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist

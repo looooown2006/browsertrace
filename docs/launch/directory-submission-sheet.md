@@ -1,6 +1,6 @@
 # BrowserTrace Directory And Newsletter Submission Sheet
 
-Use this sheet after `v0.1.13`. Submit only where the target accepts tool
+Use this sheet after `v0.1.14`. Submit only where the target accepts tool
 suggestions, launches, or editorial pitches. Do not ask for stars, votes,
 upvotes, swaps, or artificial engagement.
 
@@ -14,8 +14,8 @@ upvotes, swaps, or artificial engagement.
 - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
 - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.13
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
 ## Try-It Commands
 
@@ -23,16 +23,16 @@ Before PyPI publishing is enabled, use the `uvx` path first in directory replies
 when an editor asks how to try the project:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
 ```
 
 Persistent install from the GitHub release tag:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
 browsertrace demo
 browsertrace
 ```
@@ -49,7 +49,7 @@ runs.
 BrowserTrace is an MIT-licensed local debugger for AI browser agents. It records
 each browser-agent step as a timeline with screenshot, URL, action, model
 input/output, status, and error, then exports a standalone HTML trace with
-optional redaction. The `v0.1.13` release includes the public-safe
+optional redaction. The `v0.1.14` release includes the public-safe
 `browsertrace export --public` mode, a packaged `browsertrace demo` command,
 Browser Use/Stagehand/Skyvern/Playwright guides, and a no-dependency Browser
 Use-shaped callback demo.
@@ -125,9 +125,9 @@ custom computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.13
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
 ```
 
 ## Tracking

@@ -12,8 +12,8 @@ or short descriptions for people who want to share BrowserTrace.
 - Primary URL: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.13
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 - Feedback discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Short Description
@@ -38,15 +38,15 @@ failed step, and export a shareable HTML trace.
 Before PyPI publishing is enabled, use the verified GitHub-tag trial path:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
 ```
 
 Persistent install from the same tag:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
 browsertrace doctor
 browsertrace demo
 browsertrace

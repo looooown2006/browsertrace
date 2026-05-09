@@ -9,7 +9,7 @@ As of 2026-05-09:
 
 - PyPI still returns `404` for `https://pypi.org/pypi/browsertrace/json`, so
   the package is not published yet.
-- GitHub release `v0.1.13` has the wheel and sdist ready.
+- GitHub release `v0.1.14` has the wheel and sdist ready.
 - The GitHub repository has a `pypi` environment.
 - The `Publish` workflow exists and has not been run yet.
 - The `publish` job has `contents: read` and `id-token: write`, so it can

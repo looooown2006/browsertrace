@@ -9,7 +9,7 @@ upvotes, or artificial engagement.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Primary media: `docs/demo.mp4`
 - Backup image: `docs/demo-poster.png`
@@ -56,13 +56,13 @@ Trying it:
 ```text
 The fastest path is the no-API demo with uvx:
 
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
 
 Before PyPI publishing is enabled, a persistent install from the GitHub tag also works:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -70,7 +70,7 @@ browsertrace
 Then open http://127.0.0.1:3000 and click the failed checkout demo.
 
 If someone only wants to inspect a share-safe export first, send:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 ```
 
 Privacy:

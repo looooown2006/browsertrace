@@ -6,7 +6,7 @@ LLM, and computer-use runs easier to inspect, export, and discuss.
 
 ## Current Release
 
-`v0.1.13` is the current launch release.
+`v0.1.14` is the current launch release.
 
 Shipped:
 
@@ -43,9 +43,9 @@ Completed launch prep:
 
 - [#13 GitHub profile README](https://github.com/aaronlab/browsertrace/issues/13)
   now points the `aaronlab` profile at BrowserTrace.
-- GitHub Release `v0.1.13` includes the wheel, sdist, full demo export,
+- GitHub Release `v0.1.14` includes the wheel, sdist, full demo export,
   public-safe demo export, demo video, poster, and GIF.
-- `v0.1.13` also includes the `browsertrace doctor` onboarding fix for
+- `v0.1.14` also includes the `browsertrace doctor` onboarding fix for
   pre-PyPI UI dependency guidance.
 - IndexNow submission is prepared and submitted for the main GitHub Pages
   launch URLs.

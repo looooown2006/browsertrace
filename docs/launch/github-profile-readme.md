@@ -42,8 +42,8 @@ Live demo: https://aaronlab.github.io/browsertrace/
 Try locally before PyPI publishing is enabled:
 
 ~~~bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
 ~~~
 
 Computer-use guide:
@@ -61,7 +61,7 @@ Good first issue:
 https://github.com/aaronlab/browsertrace/issues/28
 
 Public-safe demo export:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
 ## Current Focus
 

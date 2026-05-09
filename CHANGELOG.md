@@ -5,7 +5,11 @@ UTC.
 
 ## Unreleased
 
-- Refreshed the roadmap and launch queues with the current `v0.1.13` release,
+- Nothing yet.
+
+## 0.1.14 - 2026-05-09
+
+- Refreshed the roadmap and launch queues with the current `v0.1.14` release,
   open awesome-list PR status, and remaining owner-only blockers.
 - Clarified the first-contribution path for good-first issues and PR templates.
 - Added compact Browser Use browser-state context to adapter `model_input` and

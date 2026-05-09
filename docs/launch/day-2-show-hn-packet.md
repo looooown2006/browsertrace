@@ -24,7 +24,7 @@ Open these in a browser:
 - https://github.com/aaronlab/browsertrace
 - https://aaronlab.github.io/browsertrace/
 - https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+- https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
 Submit only if all are true:
 
@@ -80,13 +80,13 @@ straight to the failed step.
 
 It is MIT licensed, local-first, and has a deterministic no-API demo. Before PyPI publishing is enabled, the quickest trial is uvx from the GitHub tag:
 
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
 
 A persistent install from the same tag also works:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.13"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
 browsertrace demo
 browsertrace
 
@@ -95,7 +95,7 @@ https://aaronlab.github.io/browsertrace/
 
 And a public-safe downloadable export with prompts, model output, screenshots,
 and URLs omitted:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
 I would especially value feedback from people building Browser Use, Stagehand,
 Playwright + LLM, Skyvern, or custom computer-use agents. What state do you
