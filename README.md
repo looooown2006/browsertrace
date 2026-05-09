@@ -82,6 +82,9 @@ browsertrace demo
 browsertrace
 ```
 
+If install or demo startup fails, use the
+[first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
+
 For changes in this pinned tag, read the
 [v0.1.14 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14).
 
