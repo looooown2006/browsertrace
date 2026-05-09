@@ -100,6 +100,11 @@ If a first local run fails, the
 walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`,
 `browsertrace show`, and public-safe export.
 
+For help threads, the
+[public-safe attachment note](examples/#attach-a-public-safe-export-to-an-issue)
+shows how to attach an export to a GitHub issue or PR comment; public-safe
+export omits prompt/model I/O, screenshots, and URLs.
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash

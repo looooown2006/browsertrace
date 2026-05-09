@@ -268,6 +268,18 @@ def test_readme_links_first_run_troubleshooting_checklist():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_public_safe_attachment_note():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "examples/#attach-a-public-safe-export-to-an-issue" in readme
+    assert "public-safe export" in readme
+    assert "omits prompt/model I/O, screenshots, and URLs" in readme
+    assert "GitHub issue or PR comment" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_examples_readme_includes_windows_public_safe_export_flow():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -714,7 +726,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T20:24:56+00:00" in launch
-    assert "after issue #46 closed and good-first issue #47 rotation" in launch
+    assert "2026-05-09T20:27:53+00:00" in launch
+    assert "after README public-safe attachment note link for issue #47" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
