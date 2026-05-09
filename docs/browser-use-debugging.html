@@ -278,7 +278,7 @@ agent = Agent(task="...", llm=ChatOpenAI(model="gpt-4o"))
 
 with attach_tracer(agent, tracer, name="browser-use checkout run"):
     await agent.run()</code></pre>
-      <p>The adapter hooks Browser Use step callbacks and records URL, screenshot, action summary, model thought/actions, status, and errors into the same local timeline.</p>
+      <p>The adapter hooks Browser Use step callbacks and records URL, screenshot, action summary, compact browser-state context, model thought/actions, status, and errors into the same local timeline.</p>
       <p>For adapter field requests, use the Browser Use feedback issue and include the Browser Use version, failure shape, and which context your logs missed.</p>
     </section>
 

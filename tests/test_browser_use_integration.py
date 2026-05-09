@@ -7,6 +7,7 @@ tests fast and stable across browser-use versions.
 from __future__ import annotations
 
 import asyncio
+import json
 import sqlite3
 
 import pytest
@@ -37,9 +38,17 @@ class FakeAgentNoHook:
 
 
 class FakeBrowserState:
-    def __init__(self, url="https://example.com", screenshot=None):
+    def __init__(
+        self,
+        url="https://example.com",
+        screenshot=None,
+        title=None,
+        tabs=None,
+    ):
         self.url = url
         self.screenshot = screenshot
+        self.title = title
+        self.tabs = tabs
 
 
 class FakeAgentOutput:
@@ -97,6 +106,34 @@ def test_attach_register_new_step_callback_records_step(tmp_path):
     assert len(rows) == 1
     assert "click" in rows[0][0]
     assert rows[0][1] == "https://example.com/page"
+
+    bt_run.close()
+
+
+def test_attach_records_browser_state_context_as_model_input(tmp_path):
+    tracer = Tracer(home=tmp_path)
+    agent = FakeAgentWithRegister()
+    bt_run = attach_tracer(agent, tracer, name="state-context")
+
+    state = FakeBrowserState(
+        url="https://example.com/checkout",
+        title="Checkout",
+        tabs=["Cart", "Checkout"],
+    )
+    output = FakeAgentOutput({"click": {"selector": "#place-order"}}, thought="submit")
+    asyncio.run(agent._cb(state, output, 3))
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        row = c.execute(
+            "SELECT model_input FROM steps WHERE run_id=?", (bt_run.run.id,)
+        ).fetchone()
+
+    model_input = json.loads(row[0])
+    assert model_input["step_count"] == 3
+    assert model_input["browser_state"]["url"] == "https://example.com/checkout"
+    assert model_input["browser_state"]["title"] == "Checkout"
+    assert model_input["browser_state"]["tabs"] == ["Cart", "Checkout"]
+    assert model_input["browser_state"]["has_screenshot"] is False
 
     bt_run.close()
 

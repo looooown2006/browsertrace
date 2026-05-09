@@ -8,6 +8,8 @@ UTC.
 - Refreshed the roadmap and launch queues with the current `v0.1.13` release,
   open awesome-list PR status, and remaining owner-only blockers.
 - Clarified the first-contribution path for good-first issues and PR templates.
+- Added compact Browser Use browser-state context to adapter `model_input` and
+  documented callback compatibility/troubleshooting in the Browser Use guide.
 
 ## 0.1.13 - 2026-05-09
 

@@ -70,6 +70,11 @@ def attach_tracer(
     async def _on_step(browser_state: Any, agent_output: Any, step_count: int) -> None:
         url = _safe_attr(browser_state, "url", default="")
         screenshot = _extract_screenshot(browser_state)
+        model_input = _serialize_browser_state(
+            browser_state,
+            step_count=step_count,
+            has_screenshot=screenshot is not None,
+        )
         action_desc = _format_actions(agent_output)
         thought = _safe_attr(
             _safe_attr(agent_output, "current_state", default=None),
@@ -80,7 +85,7 @@ def attach_tracer(
             action=action_desc or "(no action)",
             url=url,
             screenshot=screenshot,
-            model_input=None,
+            model_input=model_input,
             model_output={"thought": thought, "actions": _serialize_actions(agent_output)},
             step_count=step_count,
         )
@@ -114,6 +119,36 @@ def attach_tracer(
 
 def _safe_attr(obj: Any, name: str, default: Any = None) -> Any:
     return getattr(obj, name, default) if obj is not None else default
+
+
+def _serialize_browser_state(
+    state: Any,
+    *,
+    step_count: int,
+    has_screenshot: bool,
+) -> dict:
+    browser_state = {"has_screenshot": has_screenshot}
+    for name in ("url", "title", "tabs"):
+        value = _safe_attr(state, name, default=None)
+        if value is not None:
+            browser_state[name] = _json_safe(value)
+    return {"step_count": step_count, "browser_state": browser_state}
+
+
+def _json_safe(value: Any) -> Any:
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    if isinstance(value, (list, tuple)):
+        return [_json_safe(item) for item in value]
+    if isinstance(value, dict):
+        return {str(key): _json_safe(val) for key, val in value.items()}
+    if hasattr(value, "model_dump"):
+        with contextlib.suppress(Exception):
+            return _json_safe(value.model_dump(exclude_none=True))
+    if hasattr(value, "dict"):
+        with contextlib.suppress(Exception):
+            return _json_safe(value.dict())
+    return str(value)
 
 
 def _extract_screenshot(state: Any) -> Optional[bytes]:

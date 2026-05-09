@@ -173,6 +173,10 @@ with attach_tracer(agent, tracer, name="my run"):
     await agent.run()
 ```
 
+The adapter records the step URL, screenshot when exposed by Browser Use,
+action summary, model thought/actions, and compact browser-state context such
+as step count, title, tabs, and whether a screenshot was captured.
+
 ### Stagehand integration
 
 ```python
