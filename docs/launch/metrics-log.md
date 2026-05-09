@@ -96,3 +96,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:28:59+00:00 | 3 | 998 | 1 | 0 | 10 | 0 | 6 | after first external fork source verified: Jah-yee/browsertrace; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:32:28+00:00 | 3 | 998 | 1 | 0 | 11 | 0 | 6 | after social preview owner-action issue #15; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:35:45+00:00 | 3 | 998 | 1 | 0 | 11 | 0 | 6 | after launch discussion social-preview/SEO update: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16862100; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:38:51+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after search indexing owner-action issue #16; traffic views 48/25 unique, clones 100/52 unique |

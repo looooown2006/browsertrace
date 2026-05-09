@@ -27,6 +27,7 @@ Shortest owner checklist: `docs/launch/owner-next-actions.md`
 - Social preview: `docs/social-preview.png`
 - Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.10`
 - Press kit: `docs/launch/press-kit.md`
+- Search indexing submission: `docs/launch/search-indexing-submission.md`
 
 ## Day 1 Warm Launch
 
@@ -41,6 +42,10 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      General -> Social preview before external posts.
    - Social preview tracking issue:
      https://github.com/aaronlab/browsertrace/issues/15
+   - Search indexing: submit `https://aaronlab.github.io/browsertrace/sitemap.xml`
+     in Google Search Console and Bing Webmaster Tools.
+   - Search indexing tracking issue:
+     https://github.com/aaronlab/browsertrace/issues/16
 
 1. X
    - Use the `## X` draft in `docs/launch/channel-copy.md`.

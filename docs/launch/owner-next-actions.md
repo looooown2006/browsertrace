@@ -70,7 +70,25 @@ BrowserTrace card instead of a generated GitHub card.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/15
 
-## 4. Publish Day 1 Posts
+## 4. Submit The Sitemap To Search Consoles
+
+Search indexing is a slower growth channel, but it compounds after launch. The
+sitemap and robots file are already live:
+
+```text
+https://aaronlab.github.io/browsertrace/sitemap.xml
+https://aaronlab.github.io/browsertrace/robots.txt
+```
+
+Use:
+
+```text
+docs/launch/search-indexing-submission.md
+```
+
+Tracking issue: https://github.com/aaronlab/browsertrace/issues/16
+
+## 5. Publish Day 1 Posts
 
 Use this packet:
 
@@ -89,7 +107,7 @@ Use `docs/demo.mp4` as primary media and `docs/demo-poster.png` as backup.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/9
 
-## 5. Submit Directories And Newsletters
+## 6. Submit Directories And Newsletters
 
 Use:
 
@@ -102,7 +120,7 @@ Submit once per target. Do not repeatedly submit or ask for votes.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/10
 
-## 6. Record Metrics After Each Action
+## 7. Record Metrics After Each Action
 
 After every public post, profile update, PyPI publish, or directory submission:
 
