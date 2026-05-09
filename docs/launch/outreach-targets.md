@@ -101,6 +101,7 @@ real reply or question to reference.
    - Best angle: "I am planning a Skyvern adapter and want to know which failure
      artifacts are most useful: screenshots, step prompts, model outputs, or
      workflow state."
+   - Link order: Skyvern guide first, live trace second, repo third.
    - Link to the existing BrowserTrace Skyvern adapter issue if asked for a
      tracking thread.
 

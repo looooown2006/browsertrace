@@ -200,12 +200,6 @@ I'm building BrowserTrace, a local timeline/debugger for failed AI browser-agent
 runs. It records screenshots, URL, action, model input/output, status, and
 failed-step errors.
 
-Live exported trace:
-https://aaronlab.github.io/browsertrace/
-
-Repo:
-https://github.com/aaronlab/browsertrace
-
 BrowserTrace now has a basic Skyvern wrapper for high-level task/workflow calls.
 I want to know what a deeper adapter should capture to debug failed workflows:
 
@@ -217,6 +211,18 @@ I want to know what a deeper adapter should capture to debug failed workflows:
 - browser URL
 - retry/history state
 - extracted data
+
+Skyvern guide:
+https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+
+Live exported trace:
+https://aaronlab.github.io/browsertrace/trace.html
+
+Repo:
+https://github.com/aaronlab/browsertrace
+
+Skyvern adapter feedback issue:
+https://github.com/aaronlab/browsertrace/issues/4
 
 Which artifacts would be most useful when a Skyvern workflow fails?
 ```
