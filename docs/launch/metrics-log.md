@@ -194,3 +194,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T17:33:05+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after v0.1.13 owner issues updated and doctor docs issue closed: https://github.com/aaronlab/browsertrace/issues/23; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:33:48+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after launch discussion updated to v0.1.13 and #25 contribution path: https://github.com/aaronlab/browsertrace/discussions/6; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:35:42+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after profile draft moved to v0.1.13 and open contribution issue #25; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T17:37:22+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 2 | after owner-action issue bodies synced to v0.1.13: #5 #9; traffic views 52/29 unique, clones 103/54 unique |
