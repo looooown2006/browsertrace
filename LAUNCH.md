@@ -103,6 +103,7 @@ Reddit and Discord:
 ## Links
 
 - Channel copy: `docs/launch/channel-copy.md`
+- Owner publish queue: `docs/launch/owner-publish-queue.md`
 - Response templates: `docs/launch/response-templates.md`
 - Outreach targets: `docs/launch/outreach-targets.md`
 - Tutorial draft: `docs/launch/tutorial-post.md`
