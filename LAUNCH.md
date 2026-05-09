@@ -11,6 +11,14 @@ Owner account: `aaronlab`
   `aaronagent` name in new launch links.
 - PyPI publishing is the highest-priority conversion blocker. Until PyPI is
   live, public install commands must use the GitHub URL form.
+- If posting before PyPI is live, use the tested no-install `uvx` fallback:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 - Current audited star count should be checked before every public push:
 
 ```bash
@@ -93,7 +101,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T13:08:53+00:00 | 3 | 998 | 1 | 0 | 13 | 0 | 6 | after v0.1.10 release notes conversion update |
+| 2026-05-09T13:34:59+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after LAUNCH control room refreshed with current audit and uvx fallback |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
