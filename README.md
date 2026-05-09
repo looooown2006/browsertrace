@@ -263,6 +263,8 @@ page.bt_run.close()
 
 The wrapper records method args/kwargs as `model_input`, then writes the
 successful Stagehand return value back to the same step as `model_output`.
+For Stagehand `act` and `extract` debugging, see
+[Debug Stagehand runs with BrowserTrace](https://aaronlab.github.io/browsertrace/stagehand-debugging.html).
 
 For a no-network wrapper demo that does not require a Stagehand install, run
 `python examples/stagehand_wrapper_example.py`.
