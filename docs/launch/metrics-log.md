@@ -92,3 +92,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:21:48+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 4 | after shortest owner next-actions checklist added; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:24:36+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 4 | after current AI/OSS directory targets added to submission queue; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:26:05+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 6 | after directory submission issue updated with current targets: https://github.com/aaronlab/browsertrace/issues/10#issuecomment-4412513951; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:27:40+00:00 | 3 | 998 | 1 | 0 | 10 | 0 | 6 | after live audit observed first fork; traffic views 48/25 unique, clones 100/52 unique |
