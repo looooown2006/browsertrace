@@ -93,6 +93,7 @@ from a listed run.
 when 3000 is busy.
 `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
 `browsertrace --help` lists local CLI commands and options.
+`browsertrace export --help` lists export options before creating a public-safe HTML report.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
