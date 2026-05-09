@@ -236,3 +236,23 @@ standard GitHub artifact action.
     name: browsertrace-public-export
     path: public.html
 ```
+
+### GitLab CI artifact for public-safe exports
+
+Use GitLab CI artifacts when a pipeline should keep a public-safe trace for
+review. BrowserTrace does not upload traces by itself; GitLab stores the
+`public.html` file because it is listed under `artifacts`.
+
+```yaml
+browsertrace-public-export:
+  image: python:3.11
+  script:
+    - python -m pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
+    - export BROWSERTRACE_HOME="$CI_PROJECT_DIR/.browsertrace"
+    - RUN_ID=$(browsertrace demo | awk -F': ' '/Run ID:/ {print $2}')
+    - browsertrace export "$RUN_ID" --public -o public.html
+  artifacts:
+    when: always
+    paths:
+      - public.html
+```

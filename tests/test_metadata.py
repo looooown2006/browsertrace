@@ -258,6 +258,22 @@ def test_examples_readme_includes_github_actions_public_export_artifact_recipe()
     )
 
 
+def test_examples_readme_includes_gitlab_ci_public_export_artifact_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### GitLab CI artifact for public-safe exports" in examples_readme
+    assert "browsertrace-public-export:" in examples_readme
+    assert (
+        "RUN_ID=$(browsertrace demo | awk -F': ' '/Run ID:/ {print $2}')"
+        in examples_readme
+    )
+    assert 'browsertrace export "$RUN_ID" --public -o public.html' in examples_readme
+    assert "artifacts:" in examples_readme
+    assert "public.html" in examples_readme
+    assert "BrowserTrace does not upload traces by itself" in examples_readme
+
+
 def test_examples_readme_includes_playwright_sync_snapshot_recipe():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -511,7 +527,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T19:10:25+00:00" in launch
-    assert "after issue #31 closed and good-first issue #32 rotation" in launch
+    assert "2026-05-09T19:12:56+00:00" in launch
+    assert "after GitLab CI public-safe export artifact docs for issue #32" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

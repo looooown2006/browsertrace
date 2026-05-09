@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T19:10:25+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #31 closed and good-first issue #32 rotation |
+| 2026-05-09T19:12:56+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after GitLab CI public-safe export artifact docs for issue #32 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
