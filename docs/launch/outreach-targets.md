@@ -28,7 +28,8 @@ Post only where the community rules allow it. The ask is feedback from people bu
 2. Hacker News once the first-run path is clearly understandable.
 3. Browser Use and Stagehand communities because they match the product.
 4. Reddit only with a useful write-up and after checking local rules.
-5. Directory/newsletter submissions after `v0.1.7` links are stable.
+5. Directory/newsletter submissions after `v0.1.7` links are stable. Use
+   `docs/launch/directory-submission-sheet.md` as the queue.
 6. Product Hunt after the visual assets are strong enough for a broader audience.
 
 ## Directory And Newsletter Pitch
