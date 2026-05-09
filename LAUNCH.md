@@ -14,6 +14,7 @@ Owner account: `aaronlab`
 - If posting before PyPI is live, use the tested no-install `uvx` fallback:
 
 ```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
@@ -102,7 +103,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T13:34:59+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after LAUNCH control room refreshed with current audit and uvx fallback |
+| 2026-05-09T16:28:39+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after launch packets synced with doctor and contribution path |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

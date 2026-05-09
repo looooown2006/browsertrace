@@ -164,6 +164,23 @@ def test_docs_include_uvx_github_quickstart_before_pypi():
     assert "before PyPI publishing is enabled" in docs_text
 
 
+def test_owner_launch_checklists_include_doctor_fallback_before_pypi():
+    project_root = Path(__file__).resolve().parents[1]
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
+    )
+
+    for relpath in [
+        "LAUNCH.md",
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert f'uvx --from "{github_spec}" browsertrace doctor' in text, relpath
+        assert f'uvx --from "{github_spec}" browsertrace demo' in text, relpath
+        assert "pypi" in text.lower(), relpath
+
+
 def test_first_run_docs_include_doctor_command():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
@@ -326,6 +343,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T13:34:59+00:00" in launch
-    assert "after LAUNCH control room refreshed with current audit and uvx fallback" in launch
+    assert "2026-05-09T16:28:39+00:00" in launch
+    assert "after launch packets synced with doctor and contribution path" in launch
+    assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
