@@ -188,6 +188,18 @@ def test_llms_txt_points_to_current_contribution_path():
     )
 
 
+def test_press_kit_includes_current_trial_and_contribution_paths():
+    project_root = Path(__file__).resolve().parents[1]
+    press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
+    )
+
+    assert f'uvx --from "{github_spec}" browsertrace doctor' in press_kit
+    assert f'uvx --from "{github_spec}" browsertrace demo' in press_kit
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/23" in press_kit
+
+
 def test_core_guides_advertise_llms_txt():
     project_root = Path(__file__).resolve().parents[1]
 

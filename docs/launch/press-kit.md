@@ -33,6 +33,25 @@ BrowserTrace records each AI browser-agent step locally: screenshot, URL,
 action, model input/output, status, and error. Open a timeline, jump to the
 failed step, and export a shareable HTML trace.
 
+## Trial Path
+
+Before PyPI publishing is enabled, use the verified GitHub-tag trial path:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
+```
+
+Persistent install from the same tag:
+
+```bash
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+browsertrace doctor
+browsertrace demo
+browsertrace
+```
+
 ## Audience
 
 - Browser-agent builders
@@ -69,6 +88,13 @@ failed step, and export a shareable HTML trace.
 - Includes a no-API-key deterministic failure demo.
 - Works with generic Python code and has Browser Use, Stagehand, Skyvern, and
   Playwright examples or wrappers.
+- External contributor PRs have started landing.
+
+## Contribution Links
+
+- Good first issue: https://github.com/aaronlab/browsertrace/issues/23
+- Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
+- Contributor guide: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md
 
 ## Safe Ask
 
