@@ -3,6 +3,16 @@
 BrowserTrace should use PyPI Trusted Publishing instead of long-lived API
 tokens. The GitHub workflow is `.github/workflows/publish.yml`.
 
+## Current Status
+
+As of 2026-05-09:
+
+- PyPI still returns `404` for `https://pypi.org/pypi/browsertrace/json`, so
+  the package is not published yet.
+- GitHub release `v0.1.10` has the wheel and sdist ready.
+- The GitHub repository has a `pypi` environment.
+- The `Publish` workflow exists and has not been run yet.
+
 ## Owner Setup
 
 Configure a PyPI trusted publisher with these values:
