@@ -35,7 +35,9 @@ After PyPI trusted publishing is configured:
 gh workflow run Publish --repo aaronlab/browsertrace
 ```
 
-The workflow builds the wheel and sdist, then publishes with OpenID Connect.
+The workflow is manual on purpose. GitHub releases should not attempt PyPI
+publishing until the trusted publisher is configured by the owner. The workflow
+builds the wheel and sdist, then publishes with OpenID Connect.
 
 ## Verify
 
