@@ -96,6 +96,7 @@ real reply or question to reference.
    - Best angle: "This is for Playwright scripts that include LLM decisions, not
      a replacement for Playwright trace viewer."
    - Link order: Playwright + LLM guide first, live trace second, repo third.
+   - Link to the Playwright + LLM feedback issue if asked for a tracking thread.
    - Use Discord or LinkedIn only when the topic is LLM-guided automation.
      Share only the debugging write-up unless people ask for the repo.
 4. Skyvern Discussions

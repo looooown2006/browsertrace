@@ -60,3 +60,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:49:38+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after owner launch checklist issues updated with stack landing pages |
 | 2026-05-09T10:52:41+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after comparison landing page added |
 | 2026-05-09T10:55:33+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Browser Use no-dependency callback demo added |
+| 2026-05-09T10:57:03+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after Playwright LLM feedback issue: https://github.com/aaronlab/browsertrace/issues/12 |

@@ -178,6 +178,9 @@ https://aaronlab.github.io/browsertrace/trace.html
 Repo:
 https://github.com/aaronlab/browsertrace
 
+Playwright + LLM feedback issue:
+https://github.com/aaronlab/browsertrace/issues/12
+
 It records screenshot, URL, action label, model input/output, and failed-step
 error into a local timeline. It is not a replacement for Playwright Trace Viewer;
 it is for Playwright scripts where an LLM is part of the control loop.

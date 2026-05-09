@@ -25,6 +25,7 @@ to explain why a browser run failed.
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.html
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.6
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
+- Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
 
 ## Core Capabilities
 
