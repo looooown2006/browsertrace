@@ -110,3 +110,34 @@ def test_browser_use_callback_demo_creates_completed_trace(tmp_path, monkeypatch
     assert steps[0][1] == "https://example.com/search"
     assert steps[1][2] == "ok"
     assert json.loads(steps[1][3])["thought"] == "open the first useful result"
+
+
+def test_computer_use_loop_example_creates_failed_trace(tmp_path, monkeypatch):
+    monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))
+
+    runpy.run_path("examples/computer_use_loop_example.py", run_name="__main__")
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        run = c.execute(
+            "SELECT id, name, status, error FROM runs ORDER BY started_at DESC LIMIT 1"
+        ).fetchone()
+        steps = c.execute(
+            "SELECT action, url, status, error, model_input, model_output, metadata "
+            "FROM steps WHERE run_id=? ORDER BY step_index",
+            (run[0],),
+        ).fetchall()
+
+    assert run[1] == "demo: custom computer-use checkout"
+    assert run[2] == "failed"
+    assert "RuntimeError" in run[3]
+    assert [step[0] for step in steps] == [
+        "open checkout page",
+        "observe checkout form",
+        "click model-selected submit button",
+    ]
+    assert steps[0][1] == "https://shop.example.test/checkout"
+    assert steps[2][2] == "error"
+    assert "disabled submit button" in steps[2][3]
+    assert json.loads(steps[1][4])["task"] == "complete checkout"
+    assert json.loads(steps[2][5])["selector"] == "button.checkout.primary"
+    assert json.loads(steps[2][6])["agent_loop"] == "observe-decide-act"
