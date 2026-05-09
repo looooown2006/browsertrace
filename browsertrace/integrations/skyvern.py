@@ -176,16 +176,28 @@ def _first_present(data: dict[str, Any], *keys: str) -> Any:
 
 
 def _extract_run_id(output: Any) -> Optional[str]:
-    if isinstance(output, dict):
-        for key in ("task_run_id", "workflow_run_id", "run_id", "id", "task_id"):
-            value = output.get(key)
-            if value:
-                return str(value)
-    return None
+    value = _find_first(output, "task_run_id", "workflow_run_id", "run_id", "id", "task_id")
+    return str(value) if value else None
 
 
 def _extract_status(output: Any) -> Optional[str]:
-    if isinstance(output, dict):
-        value = output.get("status") or output.get("state")
-        return str(value) if value else None
+    value = _find_first(output, "status", "state")
+    return str(value) if value else None
+
+
+def _find_first(value: Any, *keys: str) -> Any:
+    if isinstance(value, dict):
+        for key in keys:
+            found = value.get(key)
+            if found:
+                return found
+        for child in value.values():
+            found = _find_first(child, *keys)
+            if found:
+                return found
+    elif isinstance(value, (list, tuple)):
+        for child in value:
+            found = _find_first(child, *keys)
+            if found:
+                return found
     return None

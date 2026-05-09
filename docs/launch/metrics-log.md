@@ -211,3 +211,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T18:24:18+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Browser Use model input context update for issue #11; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:26:58+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Stagehand result capture update for issue #8; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:33:35+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after v0.1.14 release, profile sync, issue sync, and discussion update: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T18:36:14+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Skyvern nested run metadata extraction update; traffic views 52/29 unique, clones 103/54 unique |

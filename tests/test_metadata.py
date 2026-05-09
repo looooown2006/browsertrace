@@ -456,11 +456,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:33:35+00:00" in launch
-    assert (
-        "after v0.1.14 release, profile sync, issue sync, and discussion update: "
-        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14"
-        in launch
-    )
+    assert "2026-05-09T18:36:14+00:00" in launch
+    assert "after Skyvern nested run metadata extraction update" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

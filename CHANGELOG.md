@@ -5,7 +5,8 @@ UTC.
 
 ## Unreleased
 
-- Nothing yet.
+- Improved Skyvern metadata extraction so nested task/workflow run IDs and
+  statuses are promoted into step metadata.
 
 ## 0.1.14 - 2026-05-09
 

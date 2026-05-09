@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T18:33:35+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after v0.1.14 release, profile sync, issue sync, and discussion update: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14 |
+| 2026-05-09T18:36:14+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after Skyvern nested run metadata extraction update |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

@@ -31,6 +31,17 @@ class FakeSyncSkyvern:
         return {"workflow_run_id": "wr_123", "status": "completed", "data": data}
 
 
+class FakeNestedSkyvern:
+    def run_task(self, *, prompt: str):
+        return {
+            "task": {
+                "task_run_id": "tsk_nested",
+                "state": "failed",
+                "prompt": prompt,
+            }
+        }
+
+
 class FakeFailingSkyvern:
     async def run_task(self, **kwargs):
         raise RuntimeError("skyvern task failed")
@@ -95,6 +106,23 @@ def test_wrap_skyvern_records_sync_run_workflow(tmp_path):
     assert json.loads(row[1])["kwargs"]["workflow_id"] == "wf_invoice"
     assert json.loads(row[2])["workflow_run_id"] == "wr_123"
     assert json.loads(row[3])["skyvern_run_id"] == "wr_123"
+
+
+def test_wrap_skyvern_extracts_nested_run_id_and_status(tmp_path):
+    tracer = Tracer(home=tmp_path)
+    client = wrap_skyvern(FakeNestedSkyvern(), tracer, name="skyvern nested")
+
+    client.run_task(prompt="extract rows")
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        metadata = c.execute(
+            "SELECT metadata FROM steps WHERE run_id=?",
+            (client.bt_run.id,),
+        ).fetchone()[0]
+
+    parsed = json.loads(metadata)
+    assert parsed["skyvern_run_id"] == "tsk_nested"
+    assert parsed["skyvern_status"] == "failed"
 
 
 def test_wrap_skyvern_records_failed_async_task(tmp_path):
