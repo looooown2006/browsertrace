@@ -258,6 +258,16 @@ def test_readme_links_skyvern_debugging_guide():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_playwright_llm_debugging_guide():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html" in readme
+    assert "prompt, DOM, selector, retry, and error fields" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_llms_txt_for_ai_coding_agents():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -939,7 +949,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T21:52:30+00:00" in launch
-    assert "after issue #66 closed and good-first issue #67 rotation" in launch
+    assert "2026-05-09T21:55:16+00:00" in launch
+    assert "after README Playwright LLM guide link for issue #67" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

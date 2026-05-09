@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T21:52:30+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #66 closed and good-first issue #67 rotation |
+| 2026-05-09T21:55:16+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README Playwright LLM guide link for issue #67 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

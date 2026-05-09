@@ -302,6 +302,9 @@ See `examples/playwright_example.py`, `examples/failure_example.py`, and
 run `browsertrace demo`; for Playwright + LLM-shaped prompt, DOM, selector,
 retry, and error fields, run `examples/playwright_llm_loop_example.py`; for a
 generic observe-decide-act loop, run `examples/computer_use_loop_example.py`.
+For Playwright + LLM trace fields, see
+[Debug Playwright + LLM failures with BrowserTrace](https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html),
+which covers prompt, DOM, selector, retry, and error fields.
 
 ## Storage and config
 
