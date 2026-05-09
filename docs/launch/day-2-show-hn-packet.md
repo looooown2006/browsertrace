@@ -1,0 +1,176 @@
+# BrowserTrace Day 2 Show HN Packet
+
+Use this packet only when the owner can personally submit, watch the thread, and
+reply for several hours. Hacker News is high-signal and unforgiving of launch
+automation, vote requests, and generic replies.
+
+Rules checked:
+
+- https://news.ycombinator.com/showhn.html
+- https://news.ycombinator.com/newsguidelines.html
+- https://news.ycombinator.com/newsfaq.html#ring
+
+## Preflight Gate
+
+Run these checks before submitting:
+
+```bash
+gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "before Show HN"
+```
+
+Open these in a browser:
+
+- https://github.com/aaronlab/browsertrace
+- https://aaronlab.github.io/browsertrace/
+- https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+
+Submit only if all are true:
+
+- The owner can reply in the thread for at least the first 3-4 hours.
+- The live demo works without signup, email, API keys, or paid services.
+- The README first screen explains what BrowserTrace does and how to run it.
+- The first comment is edited into the owner's real voice.
+- No one is asked to upvote, comment, repost, or "support" the submission.
+
+Defer if any are true:
+
+- The owner is about to be offline.
+- The demo page is down or slow.
+- The project is not ready for strangers to try.
+- The only available post would be a marketing landing page or blog post.
+
+## Submission
+
+Submission URL:
+
+```text
+https://github.com/aaronlab/browsertrace
+```
+
+Title:
+
+```text
+Show HN: BrowserTrace - record and replay AI browser-agent runs to find bugs
+```
+
+After submission, immediately add the first comment. Start from the `## Hacker
+News` draft in `docs/launch/channel-copy.md`, but edit it before posting. Keep
+it concrete:
+
+- What you built.
+- Which debugging failure caused you to build it.
+- How people can try it without signing up.
+- What feedback you want from browser-agent builders.
+
+## First Comment Draft
+
+```text
+Hi HN,
+
+I built BrowserTrace after repeatedly losing the state of failed browser-agent
+runs. Logs showed tool calls, but not what the model saw in the browser, which
+screenshot led to the decision, or where the first wrong assumption entered the
+run.
+
+BrowserTrace records each step locally: screenshot, URL, action, model input,
+model output, status, and error. You open the local UI, click a run, and jump
+straight to the failed step.
+
+It is MIT licensed, local-first, and has a deterministic no-API demo:
+
+git clone https://github.com/aaronlab/browsertrace
+cd browsertrace
+pip install -e ".[ui]"
+python examples/no_api_failure_demo.py
+browsertrace
+
+There is also a zero-install exported trace:
+https://aaronlab.github.io/browsertrace/
+
+I would especially value feedback from people building Browser Use, Stagehand,
+Playwright + LLM, Skyvern, or custom computer-use agents. What state do you
+wish your traces captured when a run fails?
+```
+
+## Response Rules
+
+Do:
+
+- Reply as the owner, not as a generated support bot.
+- Answer criticism directly and technically.
+- Ask follow-up questions when someone describes a real workflow.
+- Admit rough edges; BrowserTrace is v0.1.
+- Link the live demo before asking someone to install locally.
+
+Do not:
+
+- Ask for votes, stars, reposts, or comments.
+- Post generic "thanks for feedback" replies.
+- Use generated replies verbatim.
+- Defend the project against every negative comment.
+- Delete and repost if the first submission performs badly.
+
+## Likely Questions
+
+How is this different from Playwright Trace Viewer?
+
+```text
+Playwright Trace Viewer is excellent for browser automation traces. BrowserTrace
+is for the browser-agent layer: screenshot plus URL, action label, model
+input/output, status, and failed-step error in one timeline. It is meant for
+runs where the LLM decision is part of the bug.
+```
+
+How is this different from LangSmith or Langfuse?
+
+```text
+Those are strong for LLM call tracing. BrowserTrace is narrower: local
+browser-agent failure replay, with screenshots and URL/action context next to
+the model I/O.
+```
+
+Why not hosted?
+
+```text
+The OSS path is local-first on purpose. A hosted/team version may make sense
+later for share links and CI ingestion, but the first useful loop is: record a
+failed run locally, inspect it, export HTML if needed.
+```
+
+Does data leave my machine?
+
+```text
+No by default. It stores SQLite data and screenshots under ~/.browsertrace/
+unless you override the home directory. The optional AI summary endpoint only
+calls an OpenAI-compatible API if you configure a key and request a summary.
+```
+
+## Metrics
+
+After submission:
+
+```bash
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Show HN submit: <HN item URL>"
+```
+
+After the first comment window:
+
+```bash
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Show HN first 4 hours: <HN item URL>"
+```
+
+Record thread data:
+
+| HN item URL | Submitted at | First comment at | Stars before | Stars after 4h | Useful feedback | Follow-up issue |
+|---|---|---|---:|---:|---|---|
+|  |  |  |  |  |  |  |
+
+## Follow-Up
+
+Within 24 hours:
+
+- Open issues for concrete bugs or adapter requests.
+- Update `docs/launch/metrics-log.md` with the HN URL and star delta.
+- Add a short launch discussion update with the most useful feedback.
+- Do not repost the same Show HN.

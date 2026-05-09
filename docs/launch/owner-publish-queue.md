@@ -55,6 +55,7 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "after X p
 ## Day 2 Developer Discovery
 
 1. Hacker News Show HN
+   - Use `docs/launch/day-2-show-hn-packet.md` as the submission checklist.
    - Use the `## Hacker News` title and first comment draft in
      `docs/launch/channel-copy.md`.
    - Submit only when the owner can reply for several hours.
