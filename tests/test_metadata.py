@@ -234,6 +234,7 @@ def test_llms_txt_points_to_current_contribution_path():
     llms = (project_root / "docs" / "llms.txt").read_text()
 
     assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/23" in llms
+    assert "Public-safe export docs issue: https://github.com/aaronlab/browsertrace/issues/25" in llms
     assert (
         "Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
         in llms
