@@ -455,6 +455,21 @@ def test_llms_txt_points_to_current_contribution_path():
     )
 
 
+def test_llms_txt_includes_troubleshooting_prompt_snippet():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "## Troubleshooting Prompt" in llms
+    assert "browsertrace doctor" in llms
+    assert "browsertrace demo" in llms
+    assert "browsertrace list" in llms
+    assert "browsertrace show <run_id>" in llms
+    assert "browsertrace export <run_id> --public -o public.html" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/43" in llms
+    assert "@v0.1.14" in llms
+    assert "hosted sharing" not in llms
+
+
 def test_press_kit_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
@@ -658,7 +673,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T20:04:43+00:00" in launch
-    assert "after issue #42 closed and good-first issue #43 rotation" in launch
+    assert "2026-05-09T20:08:29+00:00" in launch
+    assert "after llms troubleshooting prompt docs for issue #43" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

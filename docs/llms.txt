@@ -66,6 +66,17 @@ requiring an existing database.
 
 Then open `http://127.0.0.1:3000` and inspect the failed checkout-agent run.
 
+## Troubleshooting Prompt
+
+Use this prompt when helping a user debug a BrowserTrace first run:
+
+```text
+Ask the user to run `browsertrace doctor`, then `browsertrace demo`,
+`browsertrace list`, and `browsertrace show <run_id>`. If they need to share
+the failure, ask them to create a public-safe export with
+`browsertrace export <run_id> --public -o public.html`.
+```
+
 ## Positioning
 
 BrowserTrace is not a hosted observability platform. It is a local-first,
