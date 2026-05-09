@@ -11,6 +11,7 @@ Then open http://127.0.0.1:3000 and click
 from __future__ import annotations
 
 import base64
+import os
 
 from browsertrace import Tracer
 
@@ -21,7 +22,7 @@ PNG_1X1 = base64.b64decode(
 
 
 def main() -> None:
-    tracer = Tracer()
+    tracer = Tracer(home=os.environ.get("BROWSERTRACE_HOME"))
 
     try:
         with tracer.run("demo: checkout agent fails on disabled button") as run:
