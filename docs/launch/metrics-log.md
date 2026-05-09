@@ -44,3 +44,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:15:25+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after v0.1.4 redacted export release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.4 |
 | 2026-05-09T10:16:44+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after PyPI issue and Day 1 checklist refresh for v0.1.4: https://github.com/aaronlab/browsertrace/issues/5 and https://github.com/aaronlab/browsertrace/issues/9#issuecomment-4412270684 |
 | 2026-05-09T10:17:59+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after GitHub topic refresh: added browser-agents topic |
+| 2026-05-09T10:19:14+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after redacted sharing docs in walkthrough and tutorial drafts |
