@@ -102,6 +102,10 @@ For a compact command cheat sheet covering `browsertrace doctor`, `browsertrace 
 For CLI help, see [Discover CLI options](examples/#discover-cli-options),
 covering `browsertrace --help` and `browsertrace export --help`.
 
+After `browsertrace demo`, the
+[demo run lookup recipe](examples/#finding-your-demo-run) uses
+`browsertrace list` to show run IDs, timestamps, and status.
+
 To narrow recent runs before choosing one to inspect or export, use the
 [recent runs list-limit recipe](examples/#show-only-recent-runs) with
 `browsertrace list --limit 5`.

@@ -391,6 +391,19 @@ def test_readme_links_recent_runs_list_limit_recipe():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_demo_run_lookup_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "examples/#finding-your-demo-run" in readme
+    assert "browsertrace list" in readme
+    assert "run IDs" in readme
+    assert "timestamps" in readme
+    assert "status" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_port_already_in_use_recipe():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -849,7 +862,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T21:20:40+00:00" in launch
-    assert "after issue #58 closed and good-first issue #59 rotation" in launch
+    assert "2026-05-09T21:23:08+00:00" in launch
+    assert "after README demo run lookup link for issue #59" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
