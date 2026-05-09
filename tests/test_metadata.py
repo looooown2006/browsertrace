@@ -200,6 +200,21 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert "https://github.com/aaronlab/browsertrace/issues/23" in profile_draft
 
 
+def test_owner_profile_actions_include_browsertrace_pin_step():
+    project_root = Path(__file__).resolve().parents[1]
+    owner_docs = {
+        "LAUNCH.md": "Pin BrowserTrace",
+        "docs/launch/owner-next-actions.md": "Pin BrowserTrace",
+        "docs/launch/owner-next-actions.zh-CN.md": "置顶 BrowserTrace",
+        "docs/launch/owner-publish-queue.md": "Pin BrowserTrace",
+    }
+
+    for relpath, phrase in owner_docs.items():
+        text = (project_root / relpath).read_text()
+        assert phrase in text, relpath
+        assert "aaronlab/browsertrace" in text, relpath
+
+
 def test_first_run_docs_include_doctor_command():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(

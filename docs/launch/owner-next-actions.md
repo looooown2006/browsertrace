@@ -65,6 +65,15 @@ docs/launch/github-profile-readme.md
 
 Keep BrowserTrace as the first featured project during launch.
 
+Pin BrowserTrace on the public GitHub profile:
+
+```text
+Profile -> Customize your pins -> aaronlab/browsertrace
+```
+
+The GitHub API available here does not expose profile pinning, so this must be
+done once in the GitHub UI.
+
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/13
 
 ## 3. Upload The GitHub Social Preview

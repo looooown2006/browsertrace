@@ -65,6 +65,15 @@ aaronlab/aaronlab
 docs/launch/github-profile-readme.md
 ```
 
+在 GitHub 个人主页置顶 BrowserTrace：
+
+```text
+Profile -> Customize your pins -> aaronlab/browsertrace
+```
+
+当前可用的 GitHub API 不暴露 profile pinning，所以这一步需要你在 GitHub UI
+里手动做一次。
+
 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/13
 
 ## 3. 上传 GitHub Social Preview

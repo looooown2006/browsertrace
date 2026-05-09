@@ -71,6 +71,8 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
   `pypi`; then run `gh workflow run Publish --repo aaronlab/browsertrace`.
 - Create or update the `aaronlab/aaronlab` GitHub profile repository with
   `docs/launch/github-profile-readme.md`.
+- Pin BrowserTrace (`aaronlab/browsertrace`) on the public GitHub profile so it
+  stays above older experiments during launch.
 - Upload `docs/social-preview.png` as the GitHub repository social preview in Settings -> Social preview. If PNG generation is unavailable, use `docs/social-preview.svg` as source for a manual export first.
 - Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
   Console and Bing Webmaster Tools.
