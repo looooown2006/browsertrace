@@ -47,18 +47,18 @@ pipx run --spec "browsertrace[ui]" browsertrace --help
 
 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/5
 
-## 2. 修 GitHub 个人 Profile README
+## 2. 维护 GitHub 个人 Profile README
 
-账号已经改成 `aaronlab`，但旧 profile repo 是 `aaronlab/aaronagent`，不会
-作为 `aaronlab` 的个人主页 README 渲染。
+当前真正会渲染个人主页的 profile repo 是 `aaronlab/aaronlab`。旧 repo
+`aaronlab/aaronagent` 只作为旧流量 redirect 使用。
 
-目标是创建或恢复：
+正确的 repo 是：
 
 ```text
 aaronlab/aaronlab
 ```
 
-然后使用这个草稿：
+刷新 README 时使用这个源草稿：
 
 ```text
 docs/launch/github-profile-readme.md

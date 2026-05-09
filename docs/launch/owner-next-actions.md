@@ -51,12 +51,12 @@ pipx run --spec "browsertrace[ui]" browsertrace --help
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/5
 
-## 2. Fix The GitHub Profile README
+## 2. Maintain The GitHub Profile README
 
-The old public profile README repo is `aaronlab/aaronagent`, which no longer
-matches the renamed account. The profile README should be `aaronlab/aaronlab`.
+The live public profile README repo is now `aaronlab/aaronlab`. The old
+`aaronlab/aaronagent` repo is only a redirect for old traffic.
 
-Use this draft once the profile repository is available:
+Use this source draft when refreshing the profile README:
 
 ```text
 docs/launch/github-profile-readme.md

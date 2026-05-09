@@ -1,12 +1,12 @@
 # aaronlab GitHub Profile README Draft
 
-Use this after the profile repository is available as `aaronlab/aaronlab`.
+This is the source draft for the live profile repository `aaronlab/aaronlab`.
 GitHub only renders a personal profile README when the repository name matches
 the account name exactly.
 
-Current note: the old public profile README repository is
-`aaronlab/aaronagent`, which no longer matches the renamed account. Do not keep
-launch links pointing to `aaronagent`.
+Current note: the old public profile README repository `aaronlab/aaronagent`
+now acts as a redirect for old traffic. Keep the live profile README in
+`aaronlab/aaronlab`.
 
 ## README Draft
 
@@ -41,8 +41,8 @@ Live demo: https://aaronlab.github.io/browsertrace/
 
 Roadmap: https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
 
-Good first issue:
-https://github.com/aaronlab/browsertrace/issues/19
+Help wanted:
+https://github.com/aaronlab/browsertrace/issues/11
 
 Public-safe demo export:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
@@ -79,7 +79,7 @@ https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Owner Action
 
-1. Make the profile repository available as `aaronlab/aaronlab`.
-2. Put the draft above in `README.md`.
+1. Keep the profile repository available as `aaronlab/aaronlab`.
+2. Keep the draft above in `README.md`.
 3. Keep BrowserTrace as the first featured project during launch.
-4. Recheck the profile page after publishing.
+4. Recheck the profile page after publishing profile changes.
