@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T18:41:40+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after Playwright LLM no-network example for issue #12 |
+| 2026-05-09T18:45:36+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after Windows public-safe export docs for issue #28 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

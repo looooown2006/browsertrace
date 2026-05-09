@@ -147,5 +147,14 @@ browsertrace list
 browsertrace export <run_id> --public -o public.html
 ```
 
-> Note: `--public` omits prompts, model I/O, screenshots, and URLs.
-> Attach the generated `public.html` file manually to share it.
+Windows PowerShell:
+
+```powershell
+browsertrace demo
+browsertrace list
+browsertrace export <run_id> --public -o public.html
+```
+
+> Note: `--public` omits prompts/model I/O, screenshots, and URLs.
+> BrowserTrace does not upload the file anywhere; attach the generated
+> `public.html` file manually to share it.
