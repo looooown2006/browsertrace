@@ -240,6 +240,9 @@ with attach_tracer(agent, tracer, name="my run"):
 The adapter records the step URL, screenshot when exposed by Browser Use,
 action summary, model thought/actions, and compact browser-state context such
 as step count, title, tabs, and whether a screenshot was captured.
+For Browser Use callback compatibility, see
+[Debug Browser Use failures with BrowserTrace](https://aaronlab.github.io/browsertrace/browser-use-debugging.html),
+including `register_new_step_callback` notes.
 
 ### Stagehand integration
 
