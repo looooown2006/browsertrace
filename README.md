@@ -86,6 +86,7 @@ browsertrace
 run it before `browsertrace demo` on a fresh machine.
 After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open
 or export.
+`browsertrace show <run_id>` inspects a listed run from the terminal.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
