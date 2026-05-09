@@ -1,49 +1,54 @@
 # BrowserTrace
 
-> See what your AI browser agent did and why it failed.
+> Local flight recorder for AI browser agents.
 
 ![demo](docs/demo.gif)
 
-**v0.1 alpha · MIT · single-machine · no signup · no cloud**
+**MIT · local-first · no signup · no cloud · Python 3.11+**
 
 ---
 
-It's 3 AM. Your browser agent crashed mid-run. You have 1500 lines of logs, no
-screenshots, an expired cookie, and a closed browser. You don't know what page
-it was on, what selector it tried, or what the model thought before clicking.
+Your AI browser agent failed. Logs say what code ran, but not what the agent
+actually saw, clicked, or decided.
 
-BrowserTrace is the recorder you wish you had. One decorator, every step
-captured, local timeline UI. Find the bug in 30 seconds, not 30 minutes.
+BrowserTrace records each browser-agent step as a timeline: screenshot, URL,
+action, model input, model output, status, and error. Open the local UI and jump
+straight to the failure.
+
+Built for Browser Use, Stagehand, Playwright + LLM scripts, and custom
+computer-use agents.
 
 ## Install
 
-Requires Python 3.11+.
-
 ```bash
-# Library only (record traces from your code, no UI):
+# SDK only
 pip install git+https://github.com/aaronagent/browsertrace
 
-# With the local web UI (`browsertrace` command + screenshots viewer):
+# SDK + local web UI
 pip install "browsertrace[ui] @ git+https://github.com/aaronagent/browsertrace"
-
-# Optional, for the Playwright examples:
-playwright install chromium
 ```
 
-## See it in 60 seconds
+## See a failure trace in 60 seconds
 
 ```bash
-git clone https://github.com/aaronagent/browsertrace && cd browsertrace
+git clone https://github.com/aaronagent/browsertrace
+cd browsertrace
 pip install -e ".[ui]"
-pip install playwright && playwright install chromium
-python examples/multipage_failure.py    # a research agent fails on Wikipedia
-browsertrace                            # opens http://127.0.0.1:3000
+python examples/no_api_failure_demo.py
+browsertrace
 ```
 
-Click the failed `research agent: find Tokyo's population` run.
-You'll see 4 screenshots (Wikipedia → search → article → failure), the exact
-moment the agent picked the wrong selector, and the model output expanded
-inline showing the bad decision.
+Open `http://127.0.0.1:3000`, click
+`demo: checkout agent fails on disabled button`, and inspect the failed step.
+
+For a real browser demo with screenshots from Wikipedia:
+
+```bash
+pip install playwright
+playwright install chromium
+python examples/multipage_failure.py
+browsertrace
+```
 
 ## Use it in your own code
 
@@ -140,7 +145,9 @@ page.bt_run.close()
 
 ### Playwright
 
-See `examples/playwright_example.py` and `examples/multipage_failure.py`.
+See `examples/playwright_example.py`, `examples/failure_example.py`, and
+`examples/multipage_failure.py`. If you want a no-browser deterministic demo,
+run `examples/no_api_failure_demo.py`.
 
 ## Storage and config
 
@@ -232,13 +239,13 @@ Real-world feedback shapes what ships first.
 
 ## Roadmap
 
-- [x] **v0.1 (you are here)**: SDK + local UI + screenshots + model I/O + step status
-- [ ] **v0.2**: One-command `browsertrace export <run_id>` static HTML bundle (shareable, redactable)
-- [ ] **v0.3**: Search and filter the run list + timeline (action / URL / model text)
-- [ ] **v0.4**: AI root-cause summary on failed runs (consumes `/api/run/<id>` JSON)
-- [ ] **v0.5**: Multi-run comparison ("did this regression appear after my last commit?")
-- [ ] **v0.6**: First-class Stagehand / Skyvern adapters
-- [ ] **v0.7**: Optional cloud share links
+- [x] **v0.1**: SDK + local UI + screenshots + model I/O + step status
+- [x] **CLI export**: `browsertrace export <run_id>` static HTML bundle
+- [x] **Search/filter**: Filter the run list by status and query text
+- [x] **AI summaries**: Optional OpenAI-compatible root-cause endpoint
+- [ ] **Multi-run comparison**: "Did this regression appear after my last commit?"
+- [ ] **First-class Skyvern adapter**
+- [ ] **Optional cloud share links**
 
 ## Contributing
 
