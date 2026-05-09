@@ -58,7 +58,7 @@ Launch feedback:
 https://github.com/aaronlab/browsertrace/issues/3
 
 Good first issue:
-https://github.com/aaronlab/browsertrace/issues/26
+https://github.com/aaronlab/browsertrace/issues/28
 
 Public-safe demo export:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.13/browsertrace-demo-public.html
