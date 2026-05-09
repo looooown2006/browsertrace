@@ -1,7 +1,7 @@
 # BrowserTrace Launch Control Room
 
 Canonical repo: https://github.com/aaronlab/browsertrace
-Current release: `v0.1.9`
+Current release: `v0.1.10`
 Owner account: `aaronlab`
 
 ## Current State
@@ -17,7 +17,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - README animation: `docs/demo.gif`
 - Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
-- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.9`
+- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.10`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist
@@ -26,7 +26,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - [ ] `browsertrace demo` creates a failed run without API keys.
 - [ ] `browsertrace list` shows the deterministic demo run.
 - [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
-- [ ] `browsertrace export <run_id> --redact -o public.html` creates a public-safe report without model I/O.
+- [ ] `browsertrace export <run_id> --public -o public.html` creates a public-safe report without model I/O, screenshots, or URLs.
 - [ ] `scripts/record_demo.py` records the latest failed run, or `BROWSERTRACE_DEMO_RUN_ID`.
 - [ ] `docs/demo.mp4` and `docs/demo-poster.png` clearly show the failed-step timeline.
 - [ ] README first screen has hook, demo, install, and 60-second demo path.
@@ -72,14 +72,14 @@ Record owner-post URLs and qualitative feedback next to the metrics row in
 
 ```bash
 gh issue list --repo aaronlab/browsertrace --state all --limit 20
-gh discussion list --repo aaronlab/browsertrace --limit 20
+gh api repos/aaronlab/browsertrace/discussions --jq '.[].html_url'
 ```
 
-Current baseline:
+Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T08:30:00+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | Baseline before owner Day 1 publish actions |
+| 2026-05-09T11:27:21+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after v0.1.10 public export release and launch surface update |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
