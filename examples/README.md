@@ -6,8 +6,21 @@ accounts.
 
 ## Fastest Path
 
+Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
+GitHub release tag:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+```
+
+Persistent install from the GitHub release tag:
+
 ```bash
 pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+browsertrace doctor
 browsertrace demo
 browsertrace
 ```
