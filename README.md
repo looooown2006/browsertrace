@@ -110,6 +110,11 @@ For CI runs, the
 uploads `public.html` as a GitHub Actions artifact.
 BrowserTrace does not upload traces by itself.
 
+For GitLab pipelines, the
+[GitLab CI artifact recipe](examples/#gitlab-ci-artifact-for-public-safe-exports)
+stores `public.html` as a GitLab CI artifact.
+BrowserTrace does not upload traces by itself.
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash
