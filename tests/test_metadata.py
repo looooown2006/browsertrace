@@ -332,6 +332,18 @@ def test_readme_links_isolated_trace_storage_testing_recipe():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_trace_storage_location_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "examples/#where-traces-are-stored" in readme
+    assert "~/.browsertrace/" in readme
+    assert "BROWSERTRACE_HOME" in readme
+    assert "local traces" in readme
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_environment_variable_quick_reference():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -862,7 +874,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T21:24:45+00:00" in launch
-    assert "after issue #59 closed and good-first issue #60 rotation" in launch
+    assert "2026-05-09T21:26:18+00:00" in launch
+    assert "after README trace storage link for issue #60" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
