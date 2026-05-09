@@ -58,7 +58,7 @@ body:
     id: sample
     attributes:
       label: Minimal safe sample
-      description: Link docs or paste a small sanitized snippet showing where BrowserTrace could attach. Do not include private prompts, secrets, or customer data.
+      description: Link docs or paste a small sanitized snippet showing where BrowserTrace could attach. Do not include private prompts, secrets, or customer data. If attaching a trace publicly, use `browsertrace export <run_id> --public -o public.html`.
     validations:
       required: false
   - type: checkboxes

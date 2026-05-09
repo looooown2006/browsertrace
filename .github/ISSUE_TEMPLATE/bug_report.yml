@@ -14,7 +14,7 @@ body:
     id: version
     attributes:
       label: BrowserTrace version
-      placeholder: "0.1.3"
+      placeholder: "0.1.10"
     validations:
       required: true
   - type: dropdown
@@ -45,6 +45,6 @@ body:
     id: trace
     attributes:
       label: Trace/export details
-      description: Attach an exported HTML trace or paste relevant `browsertrace show <id>` output if possible.
+      description: Attach an exported HTML trace or paste relevant `browsertrace show <id>` output if possible. For public sharing, run `browsertrace export <run_id> --public -o public.html` to omit prompt/model I/O, screenshots, and URLs.
     validations:
       required: false
