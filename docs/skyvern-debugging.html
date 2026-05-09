@@ -155,6 +155,34 @@
       white-space: pre-wrap;
     }
 
+    .command-block {
+      position: relative;
+      max-width: 880px;
+    }
+
+    .command-block pre {
+      padding-top: 46px;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 1px solid #31515d;
+      border-radius: 6px;
+      background: #17313a;
+      color: #eef7f6;
+      min-height: 30px;
+      padding: 0 10px;
+      font: 12px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      cursor: pointer;
+    }
+
+    .copy-button:focus-visible {
+      outline: 2px solid #38bdf8;
+      outline-offset: 2px;
+    }
+
     code {
       background: #eef3f6;
       border-radius: 4px;
@@ -206,9 +234,12 @@
 
     <section>
       <h2>Try the trace viewer first</h2>
-      <pre><code>uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+      <div class="command-block">
+        <button class="copy-button" type="button" data-copy-target="quickstart-command">Copy</button>
+        <pre><code id="quickstart-command">uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace</code></pre>
+      </div>
       <p>Open <code>http://127.0.0.1:3000</code> and inspect the failed checkout-agent run before wiring a real Skyvern client.</p>
     </section>
 
@@ -261,5 +292,22 @@ browsertrace export &lt;run_id&gt; --public -o public.html</code></pre>
   <footer>
     <p>Repo: <a href="https://github.com/aaronlab/browsertrace">github.com/aaronlab/browsertrace</a></p>
   </footer>
+  <script>
+    document.querySelectorAll("[data-copy-target]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const target = document.getElementById(button.dataset.copyTarget);
+        if (!target) return;
+        try {
+          await navigator.clipboard.writeText(target.textContent.trim());
+          button.textContent = "Copied";
+        } catch {
+          button.textContent = "Select";
+        }
+        window.setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1400);
+      });
+    });
+  </script>
 </body>
 </html>
