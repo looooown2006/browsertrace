@@ -298,6 +298,8 @@ Real-world feedback shapes what ships first.
 
 ## Roadmap
 
+More detail: [ROADMAP.md](ROADMAP.md).
+
 - [x] **v0.1**: SDK + local UI + screenshots + model I/O + step status
 - [x] **CLI export**: `browsertrace export <run_id>` static HTML bundle
 - [x] **Search/filter**: Filter the run list by status and query text

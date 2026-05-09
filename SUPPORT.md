@@ -48,6 +48,10 @@ https://github.com/aaronlab/browsertrace/issues/new?template=cloud_interest.yml
 
 Current roadmap:
 
+https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
+
+Current milestone:
+
 https://github.com/aaronlab/browsertrace/milestone/1
 
 ## Security

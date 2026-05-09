@@ -101,3 +101,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:42:51+00:00 | 3 | 998 | 1 | 0 | 11 | 0 | 6 | after first external contributor PR merged: https://github.com/aaronlab/browsertrace/pull/17; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:46:09+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after GitHub awesome-list owner-action issue #18; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:49:11+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after fresh PyPI blocker audit: https://github.com/aaronlab/browsertrace/issues/5#issuecomment-4412558067; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:51:29+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after standalone roadmap added for contributor onboarding; traffic views 48/25 unique, clones 100/52 unique |

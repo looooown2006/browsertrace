@@ -40,6 +40,10 @@ browsertrace
 
 ## Contribution Areas
 
+Roadmap context:
+
+https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
+
 - Framework integrations: Browser Use, Stagehand, Skyvern, Playwright, and
   computer-use agents.
 - Export improvements: portable HTML, redaction, and issue attachments.
