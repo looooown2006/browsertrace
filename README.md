@@ -89,6 +89,8 @@ or export.
 `browsertrace show <run_id>` inspects a listed run from the terminal.
 `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export
 from a listed run.
+`BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port
+when 3000 is busy.
 
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
