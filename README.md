@@ -33,6 +33,9 @@ computer-use agents.
 [integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml) ·
 [launch discussion](https://github.com/aaronlab/browsertrace/discussions/6)
 
+For AI/coding agents, [`docs/llms.txt`](docs/llms.txt) provides concise project context,
+links, and troubleshooting prompts.
+
 ## See a failure trace in 60 seconds
 
 Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
