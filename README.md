@@ -56,6 +56,10 @@ or use the persistent GitHub-tag `pip install` path below.
 machine, `Database: missing` and `Runs: 0` mean setup is working and the next
 step is `browsertrace demo`. If it reports missing UI dependencies, install the
 release tag with `[ui]` as shown below; PyPI publishing is still pending.
+For a healthy output sample, see
+[Check a healthy local install](examples/#check-a-healthy-local-install), which
+shows healthy `browsertrace doctor` output for the `Home:`, `Database:`,
+`Runs:`, and `UI dependencies:` status lines.
 
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
