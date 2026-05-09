@@ -12,7 +12,7 @@ or short descriptions for people who want to share BrowserTrace.
 - Primary URL: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.2
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.3
 - Feedback discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Short Description
