@@ -76,3 +76,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T11:51:36+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after public-safe demo asset linked from launch docs |
 | 2026-05-09T11:53:36+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after owner action issues linked public-safe demo asset: #9 #10 |
 | 2026-05-09T11:55:38+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after homepage SoftwareSourceCode structured data update |
+| 2026-05-09T11:56:57+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 0 | after PyPI blocker issue refreshed for v0.1.10 |
