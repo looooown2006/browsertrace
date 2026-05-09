@@ -16,6 +16,9 @@ uv run --python 3.11 --extra dev pytest -q
 
 The test suite should pass before opening a pull request.
 
+Please also follow `CODE_OF_CONDUCT.md` in issues, discussions, reviews, and
+pull requests.
+
 ## Before Coding
 
 For a new framework adapter or integration, open an integration request first:
