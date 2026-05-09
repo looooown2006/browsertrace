@@ -90,6 +90,10 @@ Browser Use, Stagehand, Playwright, or Skyvern communities.
    - Use the `## Xiaohongshu` draft in `docs/launch/channel-copy.md`.
    - Use `docs/demo-poster.png` as the first image and mention
      `aaronlab/browsertrace` plainly.
+4. Chinese long-form
+   - Use `docs/launch/chinese-tutorial-post.md`.
+   - Publish only where technical OSS posts are welcome.
+   - Ask for browser-agent debugging workflow feedback, not stars or reposts.
 
 ## Reply Workflow
 
