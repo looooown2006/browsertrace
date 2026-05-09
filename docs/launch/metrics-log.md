@@ -125,3 +125,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T13:43:55+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after launch feedback issue #3 uvx trial update; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T13:47:14+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after awesome-browser-automation PR #112 submitted; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T13:49:51+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after Publish workflow trusted-publisher permission guard; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T13:54:02+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after old aaronagent profile repo redirected to BrowserTrace; traffic views 52/29 unique, clones 103/54 unique |
