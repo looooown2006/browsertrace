@@ -198,7 +198,7 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert f'uvx --from "{github_spec}" browsertrace doctor' in profile_draft
     assert f'uvx --from "{github_spec}" browsertrace demo' in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/3" in profile_draft
-    assert "https://github.com/aaronlab/browsertrace/issues/86" in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/87" in profile_draft
 
 
 def test_readme_has_public_safe_export_sharing_example():
@@ -993,7 +993,7 @@ def test_llms_txt_points_to_current_contribution_path():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
 
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/86" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/87" in llms
     assert (
         "Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
         in llms
@@ -1010,7 +1010,7 @@ def test_llms_txt_includes_troubleshooting_prompt_snippet():
     assert "browsertrace list" in llms
     assert "browsertrace show <run_id>" in llms
     assert "browsertrace export <run_id> --public -o public.html" in llms
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/86" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/87" in llms
     assert "@v0.1.14" in llms
     assert "hosted sharing" not in llms
 
@@ -1024,7 +1024,7 @@ def test_press_kit_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in press_kit
     assert f'uvx --from "{github_spec}" browsertrace demo' in press_kit
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/86" in press_kit
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/87" in press_kit
 
 
 def test_core_guides_advertise_llms_txt():
@@ -1141,7 +1141,7 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in packet
     assert f'uvx --from "{github_spec}" browsertrace demo' in packet
-    assert "https://github.com/aaronlab/browsertrace/issues/86" in packet
+    assert "https://github.com/aaronlab/browsertrace/issues/87" in packet
 
 
 def test_pull_request_template_prompts_for_real_contributor_details():
@@ -1218,7 +1218,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T23:23:38+00:00" in launch
-    assert "after README isolated trace storage note for issue #86" in launch
+    assert "2026-05-09T23:26:08+00:00" in launch
+    assert "after issue #86 closed and good-first issue #87 rotation" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
