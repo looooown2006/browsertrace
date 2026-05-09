@@ -247,6 +247,7 @@ def test_launch_copy_includes_uvx_github_trial_before_pypi():
         "docs/launch/day-2-show-hn-packet.md",
     ]:
         text = (project_root / relpath).read_text()
+        assert f'uvx --from "{github_spec}" browsertrace doctor' in text, relpath
         assert f'uvx --from "{github_spec}" browsertrace demo' in text, relpath
         assert "before pypi publishing is enabled" in text.lower(), relpath
 
@@ -263,6 +264,7 @@ def test_longform_launch_posts_include_uvx_github_trial_before_pypi():
         "docs/launch/response-templates.md",
     ]:
         text = (project_root / relpath).read_text()
+        assert f'uvx --from "{github_spec}" browsertrace doctor' in text, relpath
         assert f'uvx --from "{github_spec}" browsertrace demo' in text, relpath
         assert "pypi" in text.lower(), relpath
 
@@ -302,6 +304,7 @@ def test_awesome_list_submission_notes_include_trial_and_demo_links():
 
     assert "https://aaronlab.github.io/browsertrace/" in notes
     assert "browsertrace-demo-public.html" in notes
+    assert f'uvx --from "{github_spec}" browsertrace doctor' in notes
     assert f'uvx --from "{github_spec}" browsertrace demo' in notes
 
 

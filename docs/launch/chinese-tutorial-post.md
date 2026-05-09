@@ -92,6 +92,7 @@ BrowserTrace 关注的是这个交界面：浏览器状态 + agent action + mode
 BrowserTrace 有一个不需要 API key、不需要真实浏览器的 deterministic demo：
 
 ```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
@@ -100,6 +101,7 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 
 ```bash
 pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+browsertrace doctor
 browsertrace demo
 browsertrace
 ```

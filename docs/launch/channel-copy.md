@@ -45,11 +45,13 @@ https://github.com/aaronlab/browsertrace
 ```text
 The shortest way to try BrowserTrace:
 
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 
 Persistent install from the GitHub tag also works:
 pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+browsertrace doctor
 browsertrace demo
 browsertrace
 

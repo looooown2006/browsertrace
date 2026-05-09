@@ -23,6 +23,7 @@ pip install -e ".[ui]"
 ## Run the no-API demo
 
 ```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
@@ -32,6 +33,7 @@ also works:
 
 ```bash
 pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
+browsertrace doctor
 browsertrace demo
 browsertrace
 ```
