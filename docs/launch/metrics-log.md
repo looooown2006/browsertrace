@@ -54,3 +54,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:34:48+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after owner-action issues updated to v0.1.6 full model I/O export |
 | 2026-05-09T10:37:48+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after Browser Use debugging landing page added |
 | 2026-05-09T10:39:45+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Browser Use adapter feedback issue: https://github.com/aaronlab/browsertrace/issues/11 |
+| 2026-05-09T10:41:48+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Stagehand debugging landing page added |

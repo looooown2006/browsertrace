@@ -15,6 +15,7 @@ to explain why a browser run failed.
 - Raw exported trace: https://aaronlab.github.io/browsertrace/trace.html
 - Debugging walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 - Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
 - Integrations: https://aaronlab.github.io/browsertrace/integrations.html
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/

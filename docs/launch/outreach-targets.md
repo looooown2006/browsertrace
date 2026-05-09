@@ -88,7 +88,8 @@ real reply or question to reference.
 2. Stagehand Discussions or Discord
    - Best angle: "For Stagehand + Playwright scripts, would a local timeline of
      screenshots, URLs, actions, and model I/O make failure triage easier?"
-   - Link order: live demo first, walkthrough second, repo third.
+   - Link order: Stagehand guide first, live trace second, repo third.
+   - Feedback sink: `https://github.com/aaronlab/browsertrace/issues/8`
    - Ask whether a first-class Stagehand wrapper should capture `act`,
      `extract`, `observe`, or `agent` calls first.
 3. Playwright community

@@ -128,11 +128,17 @@ wrap first:
 - agent()
 - lower-level Playwright page actions
 
+Stagehand guide:
+https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+
 Live exported trace:
-https://aaronlab.github.io/browsertrace/
+https://aaronlab.github.io/browsertrace/trace.html
 
 Repo:
 https://github.com/aaronlab/browsertrace
+
+Stagehand adapter feedback issue:
+https://github.com/aaronlab/browsertrace/issues/8
 
 If you have debugged a failed Stagehand run, what state did you wish you had at
 failure time?

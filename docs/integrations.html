@@ -202,6 +202,7 @@
         <a href="./">Live demo</a>
         <a href="./debug-browser-agent-failure.html">Walkthrough</a>
         <a href="./browser-use-debugging.html">Browser Use</a>
+        <a href="./stagehand-debugging.html">Stagehand</a>
         <a href="./launch/">Launch kit</a>
         <a href="https://github.com/aaronlab/browsertrace">GitHub</a>
       </nav>
@@ -245,6 +246,7 @@ with attach_tracer(agent, tracer, name="browser-use run"):
     <section class="band" aria-labelledby="stagehand">
       <h2 id="stagehand">Stagehand</h2>
       <p class="section-copy">Wrap a Stagehand page so high-level browser-agent calls become trace steps.</p>
+      <p class="section-copy"><a href="./stagehand-debugging.html">Open the Stagehand debugging guide</a> for the wrapper quickstart, export commands, and adapter feedback link.</p>
       <pre><code>from stagehand import Stagehand
 from browsertrace import Tracer
 from browsertrace.integrations.stagehand import wrap_stagehand
