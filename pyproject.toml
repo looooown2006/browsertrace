@@ -1,6 +1,6 @@
 [project]
 name = "browsertrace"
-version = "0.1.4"
+version = "0.1.5"
 description = "See what your AI browser agent did and why it failed."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -60,7 +60,7 @@ Homepage = "https://aaronlab.github.io/browsertrace/"
 Documentation = "https://aaronlab.github.io/browsertrace/"
 Repository = "https://github.com/aaronlab/browsertrace"
 Issues = "https://github.com/aaronlab/browsertrace/issues"
-Release = "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.4"
+Release = "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.5"
 
 [project.scripts]
 browsertrace = "browsertrace.cli:main"

@@ -34,19 +34,17 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.4"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.4"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
 ```
 
 ## See a failure trace in 60 seconds
 
 ```bash
-git clone https://github.com/aaronlab/browsertrace
-cd browsertrace
-pip install -e ".[ui]"
-python examples/no_api_failure_demo.py
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
+browsertrace demo
 browsertrace
 ```
 
@@ -55,7 +53,7 @@ Open `http://127.0.0.1:3000`, click
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.4/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.5/browsertrace-demo.html)
 from the latest release.
 
 For a walkthrough, read
@@ -196,7 +194,7 @@ For a no-network wrapper demo that does not require a Skyvern install, run
 
 See `examples/playwright_example.py`, `examples/failure_example.py`, and
 `examples/multipage_failure.py`. If you want a no-browser deterministic demo,
-run `examples/no_api_failure_demo.py`.
+run `browsertrace demo`.
 
 ## Storage and config
 
@@ -243,6 +241,7 @@ timestamps, and `first_error_index` so an LLM can jump straight to what broke.
 
 ```bash
 browsertrace                      # serve the web UI
+browsertrace demo                 # create a deterministic failed demo run
 browsertrace list                 # list recent runs in the terminal
 browsertrace show <id-or-prefix>  # print a run's timeline
 browsertrace export <id> -o run.html   # self-contained HTML bundle (screenshots inlined)
@@ -309,7 +308,7 @@ This is a v0.1 alpha. The fastest way to help:
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
-Launch discussion: [BrowserTrace v0.1.4](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace v0.1.5](https://github.com/aaronlab/browsertrace/discussions/6).
 
 Changelog: [CHANGELOG.md](CHANGELOG.md).
 

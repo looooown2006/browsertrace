@@ -7,6 +7,12 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.5 - 2026-05-09
+
+- Added `browsertrace demo`, a packaged no-browser/no-API demo command that
+  creates a deterministic failed checkout-agent trace after installation.
+- Updated launch copy and walkthroughs to use the lower-friction demo command.
+
 ## 0.1.4 - 2026-05-09
 
 - Added `browsertrace export --redact` for shareable HTML traces that omit

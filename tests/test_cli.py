@@ -118,6 +118,33 @@ def test_cli_export_redact_hides_model_io(cli, tmp_path):
     assert "Model I/O redacted" in body
 
 
+def test_cli_demo_creates_failed_demo_run(cli):
+    cli_mod, home = cli
+    buf = StringIO()
+
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["demo"])
+
+    assert rc == 0
+    out = buf.getvalue()
+    assert "demo: checkout agent fails on disabled button" in out
+    assert "browsertrace" in out
+
+    with sqlite3.connect(home / "db.sqlite") as conn:
+        run = conn.execute(
+            "SELECT id, status, error FROM runs WHERE name=?",
+            ("demo: checkout agent fails on disabled button",),
+        ).fetchone()
+        assert run is not None
+        assert run[1] == "failed"
+        assert "button was disabled" in run[2]
+        steps = conn.execute(
+            "SELECT COUNT(*) FROM steps WHERE run_id=?",
+            (run[0],),
+        ).fetchone()[0]
+    assert steps == 4
+
+
 def test_cli_no_args_routes_to_serve(cli, monkeypatch):
     """`browsertrace` with no args should call serve."""
     cli_mod, _ = cli

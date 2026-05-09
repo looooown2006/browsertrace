@@ -79,10 +79,8 @@ straight to the failed step.
 
 It is MIT licensed, local-first, and has a deterministic no-API demo:
 
-git clone https://github.com/aaronlab/browsertrace
-cd browsertrace
-pip install -e ".[ui]"
-python examples/no_api_failure_demo.py
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
+browsertrace demo
 browsertrace
 
 There is also a zero-install exported trace:

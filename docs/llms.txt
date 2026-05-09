@@ -18,7 +18,7 @@ to explain why a browser run failed.
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.4
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.5
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Core Capabilities
@@ -35,7 +35,7 @@ to explain why a browser run failed.
 git clone https://github.com/aaronlab/browsertrace
 cd browsertrace
 pip install -e ".[ui]"
-python examples/no_api_failure_demo.py
+browsertrace demo
 browsertrace
 ```
 

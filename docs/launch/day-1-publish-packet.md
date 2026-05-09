@@ -55,10 +55,8 @@ Trying it:
 ```text
 The fastest path is the no-API demo:
 
-git clone https://github.com/aaronlab/browsertrace
-cd browsertrace
-pip install -e ".[ui]"
-python examples/no_api_failure_demo.py
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
+browsertrace demo
 browsertrace
 
 Then open http://127.0.0.1:3000 and click the failed checkout demo.

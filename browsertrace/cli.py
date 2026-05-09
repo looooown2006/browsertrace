@@ -2,6 +2,7 @@
 
 Usage:
     browsertrace                 # start the web UI (default)
+    browsertrace demo            # create a deterministic failed demo run
     browsertrace list            # list runs in the terminal
     browsertrace show <run_id>   # print a run's timeline
     browsertrace export <id>     # write a portable HTML bundle to ./<id>.html
@@ -59,6 +60,16 @@ def cmd_list(args) -> int:
     for r in rows:
         dur = f"{r['ended_at'] - r['started_at']:.1f}s" if r["ended_at"] else "running"
         print(f"{r['id'][:8]}  {_fmt_status(r['status']):11}  {dur:>8}  {r['name'] or ''}")
+    return 0
+
+
+def cmd_demo(_args) -> int:
+    from .demo import DEMO_NAME, create_demo_run
+
+    run_id = create_demo_run(home=_home())
+    print(f"Created demo run: {DEMO_NAME}")
+    print(f"Run ID: {run_id}")
+    print("Run `browsertrace` and open http://127.0.0.1:3000")
     return 0
 
 
@@ -192,6 +203,9 @@ def main(argv: Optional[list[str]] = None) -> int:
     sub = parser.add_subparsers(dest="cmd")
 
     sub.add_parser("serve", help="Start the local web UI (default)")
+
+    p_demo = sub.add_parser("demo", help="Create a deterministic failed demo run")
+    p_demo.set_defaults(func=cmd_demo)
 
     p_list = sub.add_parser("list", help="List recent runs")
     p_list.add_argument("--limit", type=int, default=20)

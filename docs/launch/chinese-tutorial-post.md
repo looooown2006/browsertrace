@@ -92,10 +92,8 @@ BrowserTrace 关注的是这个交界面：浏览器状态 + agent action + mode
 BrowserTrace 有一个不需要 API key、不需要真实浏览器的 deterministic demo：
 
 ```bash
-git clone https://github.com/aaronlab/browsertrace
-cd browsertrace
-pip install -e ".[ui]"
-python examples/no_api_failure_demo.py
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.5"
+browsertrace demo
 browsertrace
 ```
 

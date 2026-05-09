@@ -34,7 +34,7 @@ def resolve_demo_run_id(base: str = BASE) -> str:
     if not runs:
         raise RuntimeError(
             "No failed BrowserTrace runs found. Run "
-            "`python examples/no_api_failure_demo.py` or set "
+            "`browsertrace demo` or set "
             "BROWSERTRACE_DEMO_RUN_ID."
         )
     return runs[0]["id"]
