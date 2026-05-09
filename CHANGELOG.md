@@ -12,6 +12,8 @@ UTC.
 - Added `browsertrace export --public` as a single sharing-safe export mode
   that omits prompt/model I/O, screenshots, and URLs.
 - Updated launch and tutorial copy to use the shorter public export command.
+- Added `browsertrace-demo-public.html` as a public-safe release asset for
+  privacy-sensitive reviews before installation.
 
 ## 0.1.9 - 2026-05-09
 

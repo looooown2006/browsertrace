@@ -88,3 +88,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:14:54+00:00 | 3 | 998 | 0 | 0 | 9 | 0 | 4 | after examples README install path updated to v0.1.10; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:16:00+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 4 | after good first issue opened for first-run demo troubleshooting: https://github.com/aaronlab/browsertrace/issues/14; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:18:11+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 4 | after profile and good-first issues added to v0.2 milestone; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:20:02+00:00 | 3 | 998 | 0 | 0 | 10 | 0 | 4 | after changelog public-safe release asset note added; traffic views 48/25 unique, clones 100/52 unique |
