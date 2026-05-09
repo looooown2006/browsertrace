@@ -208,9 +208,9 @@
 
     <section>
       <h2>Try the local demo first</h2>
-      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
-browsertrace demo
-browsertrace</code></pre>
+      <pre><code>uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace</code></pre>
       <p>Open <code>http://127.0.0.1:3000</code> and inspect the failed checkout-agent run before adding BrowserTrace to your own Playwright script.</p>
     </section>
 
