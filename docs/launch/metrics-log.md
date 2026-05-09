@@ -153,3 +153,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T15:06:30+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after CI/Pages verification and external PR monitoring; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:07:09+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after awesome-list monitoring update on issue 18; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:13:21+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use debugging guide published; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:17:48+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use loop example published; traffic views 52/29 unique, clones 103/54 unique |
