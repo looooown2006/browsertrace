@@ -6,6 +6,24 @@
 不要买 star、刷 star、互赞、求 upvote、求转发。对外只问一件事：正在做
 browser agent 的人，失败时最缺什么调试信息？
 
+## 10 分钟 Owner 解锁顺序
+
+如果你只有一小段时间，按这个顺序做；后面的验证、README 更新、指标记录和
+issue comment 都交给 Codex 继续处理：
+
+1. 在 https://pypi.org/manage/account/publishing/ 配置 PyPI Trusted
+   Publisher，字段完全照第 1 节填。
+2. 打开 https://github.com/aaronlab/browsertrace/settings，在 General ->
+   Social preview 上传 `docs/social-preview.png`。
+3. 在 GitHub 个人主页点 Profile -> Customize your pins，置顶
+   `aaronlab/browsertrace`。
+4. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
+   主素材用 `docs/demo.mp4`。
+
+第 1 步做完后告诉 Codex “PyPI 配好了”，我就可以运行发布 workflow，并把公开
+安装命令从 GitHub tag 改成正常的 `pip install`。第 2-4 步做完后，把帖子 URL
+或群名发给 Codex，我会记录指标并更新跟踪 issue。
+
 ## 1. 先解锁 PyPI
 
 这是当前最大安装转化阻塞。完成后公开文案可以从 GitHub 安装 URL 改成：

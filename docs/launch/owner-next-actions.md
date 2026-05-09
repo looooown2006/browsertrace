@@ -8,6 +8,26 @@ Chinese version: `docs/launch/owner-next-actions.zh-CN.md`
 Do not ask for stars, upvotes, reposts, vote swaps, or artificial engagement.
 Ask for workflow feedback from people building browser agents.
 
+## 10-Minute Owner Unblock
+
+If you only have one short session, do these in order and let Codex handle the
+follow-up verification, README updates, metrics, and issue comments:
+
+1. Configure PyPI Trusted Publisher at https://pypi.org/manage/account/publishing/
+   with the exact values in section 1.
+2. Upload `docs/social-preview.png` in
+   https://github.com/aaronlab/browsertrace/settings under General -> Social
+   preview.
+3. Pin `aaronlab/browsertrace` from the GitHub profile page with
+   Profile -> Customize your pins.
+4. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
+   `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
+
+After step 1, tell Codex "PyPI is configured" so it can run the publish workflow
+and replace GitHub-tag install commands with normal `pip install` commands.
+After steps 2-4, send the posted URLs or a short channel note so Codex can log
+metrics and update the tracking issues.
+
 ## 1. Unblock PyPI
 
 This is the highest-friction launch blocker. Public posts convert better after
