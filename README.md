@@ -51,6 +51,9 @@ Want to inspect an exported trace before installing anything? Open the
 [`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.1/browsertrace-demo.html)
 from the latest release.
 
+For a walkthrough, read
+[How to debug an AI browser-agent failure](https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html).
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash

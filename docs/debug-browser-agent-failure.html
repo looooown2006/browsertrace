@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="How to debug an AI browser-agent failure">
+  <meta property="og:description" content="Use screenshots, URLs, actions, and model I/O to find where a browser agent failed.">
+  <meta property="og:image" content="https://aaronlab.github.io/browsertrace/social-preview.png">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>How to Debug an AI Browser-Agent Failure</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #5f6b76;
+      --line: #d9e1e7;
+      --paper: #f7f9fb;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --code: #eef3f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 10px 0 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    a {
+      color: #0369a1;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      margin: 18px 0 24px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      margin: 24px 0 28px;
+    }
+
+    section {
+      border-top: 1px solid var(--line);
+      padding-top: 26px;
+      margin-top: 26px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    p,
+    li {
+      max-width: 760px;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    pre {
+      overflow-x: auto;
+      max-width: 820px;
+      background: var(--code);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    code {
+      background: var(--code);
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-size: 0.92em;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+    }
+
+    .callout {
+      max-width: 820px;
+      border-left: 4px solid var(--accent);
+      background: #ffffff;
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .repo {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="./">BrowserTrace live demo</a>
+      <a href="https://github.com/aaronlab/browsertrace">GitHub repo</a>
+    </nav>
+
+    <h1>How to debug an AI browser-agent failure</h1>
+    <p class="dek">When a browser agent fails, logs usually show tool calls and stack traces. They rarely show what the model saw, which page state changed, or where the first wrong assumption entered the run.</p>
+
+    <video controls muted playsinline poster="./demo-poster.png">
+      <source src="./demo.mp4" type="video/mp4">
+      <a href="./demo.mp4">Download the BrowserTrace demo video</a>
+    </video>
+
+    <section>
+      <h2>The failure pattern</h2>
+      <p>The hard browser-agent bugs are often visual or stateful. The selector matched the wrong element. A modal changed the page. The model assumed the article layout was stable. The button existed but was disabled. By the time the exception appears, the browser state that explains it is gone.</p>
+      <p>That is why browser-agent debugging needs more than LLM call logs. You need a step timeline with screenshots, URLs, actions, model input, model output, status, and the first failing step.</p>
+    </section>
+
+    <section>
+      <h2>Run a local trace</h2>
+      <pre><code>git clone https://github.com/aaronlab/browsertrace
+cd browsertrace
+pip install -e ".[ui]"
+python examples/no_api_failure_demo.py
+browsertrace</code></pre>
+      <p>Open <code>http://127.0.0.1:3000</code>, then click the failed checkout-agent run. You can also inspect the <a href="./">live exported trace</a> without installing anything.</p>
+    </section>
+
+    <section>
+      <h2>Inspect the first red step</h2>
+      <ol>
+        <li>Does the screenshot match what the model thought it saw?</li>
+        <li>Does the URL match the step's assumption?</li>
+        <li>Did the action target the expected element?</li>
+        <li>Did the model output mention a selector, label, or page state that was not true?</li>
+        <li>Was the current step wrong, or did an earlier step set up the wrong state?</li>
+      </ol>
+      <p>This finds the bug faster than reading a run log from the top, because it starts where the browser state and the model decision disagree.</p>
+    </section>
+
+    <section>
+      <h2>Record your own agent</h2>
+      <pre><code>from browsertrace import trace
+
+@trace
+def my_agent(run, query: str):
+    run.step(action=f"search: {query}", screenshot=...)
+    run.step(action="click first result", screenshot=...)
+
+my_agent("browser agent debugging")</code></pre>
+      <p>For Playwright, use <code>run.snapshot(page, action="...")</code> to capture the current URL and screenshot without extra boilerplate.</p>
+    </section>
+
+    <section>
+      <h2>Share a failure</h2>
+      <pre><code>browsertrace list
+browsertrace export &lt;run_id&gt; -o run.html</code></pre>
+      <p>The export is a self-contained HTML file. Attach it to an issue, send it to a teammate, or inspect it without running the local server.</p>
+    </section>
+
+    <section>
+      <div class="callout">
+        <strong>BrowserTrace</strong> is an MIT-licensed local flight recorder for Browser Use, Stagehand, Playwright + LLM scripts, Skyvern, and custom computer-use agents.
+        <br>
+        <a class="repo" href="https://github.com/aaronlab/browsertrace">github.com/aaronlab/browsertrace</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

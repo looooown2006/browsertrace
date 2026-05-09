@@ -8,6 +8,10 @@ Recommended media attachment for X, LinkedIn, Product Hunt, Jike, and Xiaohongsh
 - Poster: `docs/demo-poster.png`
 - Backup GIF: `docs/demo.gif`
 
+Value-first tutorial link for Reddit, Discord, and community posts:
+
+https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+
 ## X
 
 ```text
@@ -193,6 +197,7 @@ It is local-first, MIT licensed, and works with Browser Use, Stagehand, Playwrig
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
+Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 
 I am mainly looking for workflow feedback: if you are building browser agents, what context do you need at failure time that your current logs do not capture?
 ```
