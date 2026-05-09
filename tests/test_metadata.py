@@ -227,6 +227,21 @@ def test_readme_has_browser_agent_feedback_checklist():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_launch_discussion_near_feedback():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    feedback_section = readme.split("## Report A Browser-Agent Failure", 1)[1].split(
+        "## Why not just use ___?", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/discussions/6" in feedback_section
+    assert "browser-agent workflow feedback" in feedback_section
+    assert "stars" not in feedback_section.lower()
+    assert "upvotes" not in feedback_section.lower()
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_browser_use_debugging_guide():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -986,7 +1001,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T22:13:48+00:00" in launch
-    assert "after issue #70 closed and good-first issue #71 rotation" in launch
+    assert "2026-05-09T22:15:24+00:00" in launch
+    assert "after README launch discussion link for issue #71" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
