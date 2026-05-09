@@ -83,3 +83,30 @@ def test_stagehand_wrapper_example_creates_completed_trace(tmp_path, monkeypatch
     assert steps[0][2] == "ok"
     assert json.loads(steps[0][3])["method"] == "act"
     assert steps[0][4].endswith(".png")
+
+
+def test_browser_use_callback_demo_creates_completed_trace(tmp_path, monkeypatch):
+    monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))
+
+    runpy.run_path("examples/browser_use_callback_demo.py", run_name="__main__")
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        run = c.execute(
+            "SELECT id, name, status, error FROM runs ORDER BY started_at DESC LIMIT 1"
+        ).fetchone()
+        steps = c.execute(
+            "SELECT action, url, status, model_output "
+            "FROM steps WHERE run_id=? ORDER BY step_index",
+            (run[0],),
+        ).fetchall()
+
+    assert run[1] == "demo: browser-use callback flow"
+    assert run[2] == "completed"
+    assert run[3] is None
+    assert [step[0] for step in steps] == [
+        "search_google(query=BrowserTrace)",
+        "click(selector=#result-1)",
+    ]
+    assert steps[0][1] == "https://example.com/search"
+    assert steps[1][2] == "ok"
+    assert json.loads(steps[1][3])["thought"] == "open the first useful result"

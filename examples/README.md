@@ -21,6 +21,7 @@ Open `http://127.0.0.1:3000` and inspect
 | Example | Use when | Extra services | Command |
 |---|---|---:|---|
 | `no_api_failure_demo.py` | You want the fastest failing trace | None | `python examples/no_api_failure_demo.py` |
+| `browser_use_callback_demo.py` | You want to see Browser Use-shaped step callbacks recorded | None | `python examples/browser_use_callback_demo.py` |
 | `stagehand_wrapper_example.py` | You want to see Stagehand-style `act` and `extract` calls recorded | None | `python examples/stagehand_wrapper_example.py` |
 | `skyvern_wrapper_example.py` | You want to see Skyvern-style task calls recorded | None | `python examples/skyvern_wrapper_example.py` |
 | `basic_example.py` | You want the smallest manual SDK example | None | `python examples/basic_example.py` |
