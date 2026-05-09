@@ -120,7 +120,20 @@ Submit once per target. Do not repeatedly submit or ask for votes.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/10
 
-## 7. Record Metrics After Each Action
+## 7. Submit High-Fit GitHub Awesome List PRs
+
+Use:
+
+```text
+docs/launch/github-awesome-list-submissions.md
+```
+
+Start with `angrykoala/awesome-browser-automation`. Submit one focused PR and
+wait for maintainer feedback before trying lower-fit lists.
+
+Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
+
+## 8. Record Metrics After Each Action
 
 After every public post, profile update, PyPI publish, or directory submission:
 

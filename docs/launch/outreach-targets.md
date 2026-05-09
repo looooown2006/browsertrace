@@ -23,6 +23,7 @@ Post only where the community rules allow it. The ask is feedback from people bu
 | FOSSHUNTER | Open-source tool discovery | `https://fosshunter.com/submit` | Day 4 | Directory submission | Submit from owner account | Requires login; submit once and wait for review |
 | AgentsTide | AI agents and browser-agent directory | `https://agentstide.com/` | Day 4 | Directory suggestion | Submit/contact if available | Browser Agents category is a clear fit |
 | BuilderAI Tools | Open-source AI developer tools | `https://builderai.tools/submit` | Day 4 | Directory submission | Submit/contact if available | Use AI Observability & Evaluation or Agents & Orchestration framing |
+| GitHub awesome lists | Developers browsing curated browser automation and AI-agent tool lists | `docs/launch/github-awesome-list-submissions.md` | Day 4 or 6 | One focused PR per high-fit list | Submit from owner account | Start with `angrykoala/awesome-browser-automation`; do not mass-submit to low-fit forks |
 | console.dev | Devtools newsletter readers | `https://console.dev/` | Day 5 | Short editorial pitch | Contact from owner email/account | Lead with local-first browser-agent debugging and the redacted export release |
 | GitHub Discussions | Existing repo visitors | `https://github.com/aaronlab/browsertrace/discussions/6` | Daily | Feedback collection | Update launch discussion | Link from posts when people ask where to comment |
 

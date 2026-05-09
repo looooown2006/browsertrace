@@ -28,6 +28,7 @@ Shortest owner checklist: `docs/launch/owner-next-actions.md`
 - Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.10`
 - Press kit: `docs/launch/press-kit.md`
 - Search indexing submission: `docs/launch/search-indexing-submission.md`
+- GitHub awesome list submissions: `docs/launch/github-awesome-list-submissions.md`
 
 ## Day 1 Warm Launch
 
@@ -46,6 +47,10 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      in Google Search Console and Bing Webmaster Tools.
    - Search indexing tracking issue:
      https://github.com/aaronlab/browsertrace/issues/16
+   - GitHub awesome lists: start with `angrykoala/awesome-browser-automation`
+     using `docs/launch/github-awesome-list-submissions.md`.
+   - Awesome list tracking issue:
+     https://github.com/aaronlab/browsertrace/issues/18
 
 1. X
    - Use the `## X` draft in `docs/launch/channel-copy.md`.

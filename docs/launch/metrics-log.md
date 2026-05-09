@@ -99,3 +99,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:38:51+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after search indexing owner-action issue #16; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:39:48+00:00 | 3 | 998 | 1 | 0 | 12 | 1 | 6 | after launch discussion search-indexing update: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16862122; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:42:51+00:00 | 3 | 998 | 1 | 0 | 11 | 0 | 6 | after first external contributor PR merged: https://github.com/aaronlab/browsertrace/pull/17; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:46:09+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after GitHub awesome-list owner-action issue #18; traffic views 48/25 unique, clones 100/52 unique |
