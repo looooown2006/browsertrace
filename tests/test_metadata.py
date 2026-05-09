@@ -97,6 +97,40 @@ def test_homepage_has_software_source_code_json_ld():
     assert metadata["license"] == "https://opensource.org/license/mit"
 
 
+def test_core_guides_have_tech_article_json_ld():
+    project_root = Path(__file__).resolve().parents[1]
+    guide_pages = [
+        ("debug-browser-agent-failure.html", "How to debug an AI browser-agent failure"),
+        ("browser-use-debugging.html", "Debug Browser Use failures with BrowserTrace"),
+        ("stagehand-debugging.html", "Debug Stagehand runs with BrowserTrace"),
+        ("skyvern-debugging.html", "Debug Skyvern task failures with BrowserTrace"),
+        (
+            "playwright-llm-debugging.html",
+            "Debug Playwright + LLM browser-agent failures with BrowserTrace",
+        ),
+        (
+            "computer-use-agent-debugging.html",
+            "Debug custom computer-use agent failures with BrowserTrace",
+        ),
+    ]
+
+    for filename, headline in guide_pages:
+        page = (project_root / "docs" / filename).read_text()
+        match = re.search(
+            r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+            page,
+            re.S,
+        )
+
+        assert match is not None, filename
+        metadata = json.loads(match.group(1))
+        assert metadata["@context"] == "https://schema.org", filename
+        assert metadata["@type"] == "TechArticle", filename
+        assert metadata["headline"] == headline, filename
+        assert metadata["isPartOf"]["name"] == "BrowserTrace", filename
+        assert metadata["codeRepository"] == "https://github.com/aaronlab/browsertrace", filename
+
+
 def test_windows_powershell_first_run_docs_cover_env_vars():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
