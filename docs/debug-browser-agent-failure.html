@@ -199,8 +199,8 @@ my_agent("browser agent debugging")</code></pre>
     <section>
       <h2>Share a failure</h2>
       <pre><code>browsertrace list
-browsertrace export &lt;run_id&gt; -o run.html</code></pre>
-      <p>The export is a self-contained HTML file. Attach it to an issue, send it to a teammate, or inspect it without running the local server.</p>
+browsertrace export &lt;run_id&gt; --redact -o public.html</code></pre>
+      <p>The export is a self-contained HTML file. Use <code>--redact</code> before posting a real trace publicly; it keeps screenshots, actions, URLs, status, and errors while omitting prompt/model I/O.</p>
     </section>
 
     <section>

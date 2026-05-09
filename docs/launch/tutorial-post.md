@@ -65,9 +65,10 @@ For Playwright, use `run.snapshot(page, action=...)` to capture the current URL 
 ```bash
 browsertrace list
 browsertrace export <run_id> -o run.html
+browsertrace export <run_id> --redact -o public.html
 ```
 
-The export is a self-contained HTML file. You can attach it to an issue, send it to a teammate, or inspect it without running the local server.
+The export is a self-contained HTML file. You can attach it to an issue, send it to a teammate, or inspect it without running the local server. Use `--redact` before posting a real trace publicly; it keeps screenshots, actions, URLs, status, and errors while omitting prompt/model I/O.
 
 ## Why local-first?
 

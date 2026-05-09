@@ -148,9 +148,10 @@ async with tracer.run("my-task") as run:
 
 ```bash
 browsertrace export <run_id> -o run.html
+browsertrace export <run_id> --redact -o public.html
 ```
 
-这个 HTML 可以发给同事、贴到 issue、或者作为失败样例留档。
+这个 HTML 可以发给同事、贴到 issue、或者作为失败样例留档。如果要公开发真实 trace，用 `--redact`。它会保留截图、action、URL、状态和错误，但去掉 prompt / model output。
 
 ## 我现在最想要的反馈
 
