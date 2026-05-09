@@ -117,3 +117,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T13:23:22+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after launch discussion updated with uvx no-install trial: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16862345; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T13:25:33+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after Day 1 owner issue updated with uvx no-install trial: https://github.com/aaronlab/browsertrace/issues/9; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T13:27:56+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after directory submission sheet and issue #10 updated with uvx no-install trial; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T13:30:25+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after awesome-list submission notes and issue #18 updated with reviewer links and uvx trial; traffic views 52/29 unique, clones 103/54 unique |

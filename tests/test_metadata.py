@@ -136,3 +136,17 @@ def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
 
     assert "before pypi publishing is enabled" in sheet.lower()
     assert f'uvx --from "{github_spec}" browsertrace demo' in sheet
+
+
+def test_awesome_list_submission_notes_include_trial_and_demo_links():
+    project_root = Path(__file__).resolve().parents[1]
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10'
+    )
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+
+    assert "https://aaronlab.github.io/browsertrace/" in notes
+    assert "browsertrace-demo-public.html" in notes
+    assert f'uvx --from "{github_spec}" browsertrace demo' in notes
