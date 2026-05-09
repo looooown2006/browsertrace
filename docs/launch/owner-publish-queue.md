@@ -43,8 +43,12 @@ people building browser agents.
    - Keep the tone conversational and ask for builders who use Browser Use,
      Stagehand, Playwright + LLM, or computer-use agents.
 
-After each post, save the post URL and notable replies in the metrics table in
-`LAUNCH.md`.
+After each post, append a metrics row and save the post URL plus notable replies
+in `docs/launch/metrics-log.md`.
+
+```bash
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after X post: <post URL>"
+```
 
 ## Day 2 Developer Discovery
 
@@ -94,9 +98,7 @@ After each post, save the post URL and notable replies in the metrics table in
 Run after each major post:
 
 ```bash
-gh repo view aaronlab/browsertrace \
-  --json stargazerCount,forkCount,watchers,issues,pullRequests,url \
-  --jq '{stars: .stargazerCount, forks: .forkCount, watchers: .watchers.totalCount, issues: .issues.totalCount, pull_requests: .pullRequests.totalCount, url: .url}'
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after <channel>: <post URL>"
+uv run --python 3.11 python scripts/launch_metrics.py --json
 gh issue list --repo aaronlab/browsertrace --state all --limit 20
-gh api repos/aaronlab/browsertrace/releases/tags/v0.1.1 --jq '.assets[] | {name, download_count}'
 ```

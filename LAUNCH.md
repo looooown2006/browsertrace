@@ -62,18 +62,23 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
 Run this audit at the start and end of each launch day:
 
 ```bash
-gh repo view aaronlab/browsertrace \
-  --json stargazerCount,forkCount,watchers,issues,pullRequests,url \
-  --jq '{stars: .stargazerCount, forks: .forkCount, watchers: .watchers.totalCount, issues: .issues.totalCount, pull_requests: .pullRequests.totalCount, url: .url}'
-gh issue list --repo aaronlab/browsertrace --state all --limit 20
-gh api repos/aaronlab/browsertrace/releases/tags/v0.1.1 --jq '.assets[] | {name, download_count}'
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "start of launch day"
+uv run --python 3.11 python scripts/launch_metrics.py --json
 ```
 
-Record:
+Record owner-post URLs and qualitative feedback next to the metrics row in
+`docs/launch/metrics-log.md`. Check open feedback separately when triaging:
 
-| Date | Stars | New issues | New discussions | Notable comments | Next action |
-|---|---:|---:|---:|---|---|
-| 2026-05-09 | 3 | 0 | 0 | Baseline before growth push | Finish launch assets |
+```bash
+gh issue list --repo aaronlab/browsertrace --state all --limit 20
+gh discussion list --repo aaronlab/browsertrace --limit 20
+```
+
+Current baseline:
+
+| Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| 2026-05-09T08:30:00+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | Baseline before owner Day 1 publish actions |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
@@ -107,6 +112,7 @@ Reddit and Discord:
 - Press kit: `docs/launch/press-kit.md`
 - Response templates: `docs/launch/response-templates.md`
 - Outreach targets: `docs/launch/outreach-targets.md`
+- Metrics log: `docs/launch/metrics-log.md`
 - Tutorial draft: `docs/launch/tutorial-post.md`
 - Published tutorial: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 - Crawler files: `docs/robots.txt`, `docs/sitemap.xml`, `docs/llms.txt`
