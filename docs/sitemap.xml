@@ -19,6 +19,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aaronlab.github.io/browsertrace/llms.txt</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>

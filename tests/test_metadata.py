@@ -254,6 +254,25 @@ def test_core_guides_advertise_llms_txt():
         ), filename
 
 
+def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
+    project_root = Path(__file__).resolve().parents[1]
+    sitemap = (project_root / "docs" / "sitemap.xml").read_text()
+
+    for path in [
+        "",
+        "llms.txt",
+        "debug-browser-agent-failure.html",
+        "browser-use-debugging.html",
+        "stagehand-debugging.html",
+        "skyvern-debugging.html",
+        "playwright-llm-debugging.html",
+        "computer-use-agent-debugging.html",
+        "integrations.html",
+        "launch/",
+    ]:
+        assert f"https://aaronlab.github.io/browsertrace/{path}" in sitemap, path
+
+
 def test_launch_copy_includes_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
