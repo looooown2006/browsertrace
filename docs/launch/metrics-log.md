@@ -156,3 +156,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T15:17:48+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use loop example published; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:19:36+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after profile and feedback issue link computer-use guide; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:21:04+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after launch discussion computer-use update; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:23:24+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after search indexing checklist key URL update; traffic views 52/29 unique, clones 103/54 unique |
