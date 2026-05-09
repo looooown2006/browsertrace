@@ -3,25 +3,69 @@ description: Request or propose support for an agent/browser framework.
 title: "Integration: "
 labels: ["enhancement", "integration"]
 body:
+  - type: dropdown
+    id: stack
+    attributes:
+      label: Target stack
+      options:
+        - Browser Use
+        - Stagehand
+        - Playwright + LLM script
+        - Skyvern
+        - Custom computer-use agent
+        - Other
+    validations:
+      required: true
   - type: input
-    id: framework
+    id: version
     attributes:
-      label: Framework or runtime
-      placeholder: "Skyvern, Browser Use, Stagehand, Playwright, custom agent..."
-    validations:
-      required: true
-  - type: textarea
-    id: workflow
-    attributes:
-      label: Workflow
-      description: What actions, screenshots, model decisions, or errors should BrowserTrace capture?
-    validations:
-      required: true
-  - type: textarea
-    id: api
-    attributes:
-      label: Relevant API hooks
-      description: Link docs or paste small code snippets showing where BrowserTrace could attach.
+      label: Version or docs link
+      description: Mention the framework version, docs URL, or repo URL if available.
+      placeholder: "Example: stagehand 2.x, browser-use main, https://..."
     validations:
       required: false
-
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure you want to debug
+      description: Describe the browser-agent failure that current logs do not explain.
+      placeholder: "Example: the agent clicked the wrong result after observe(), but the logs did not show the screenshot or model output that caused it."
+    validations:
+      required: true
+  - type: checkboxes
+    id: capture
+    attributes:
+      label: What should BrowserTrace capture?
+      options:
+        - label: Screenshot at each step
+        - label: Current URL
+        - label: Action or tool call name
+        - label: Model input
+        - label: Model output
+        - label: Selector or element target
+        - label: DOM snapshot or extracted text
+        - label: Workflow state or task metadata
+        - label: Error message and failed step
+  - type: textarea
+    id: hooks
+    attributes:
+      label: Relevant hooks or API calls
+      description: Which functions should an adapter wrap or observe?
+      placeholder: "Example: Stagehand act/extract/observe/agent, Browser Use Agent.step, a Playwright page wrapper..."
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Minimal safe sample
+      description: Link docs or paste a small sanitized snippet showing where BrowserTrace could attach. Do not include private prompts, secrets, or customer data.
+    validations:
+      required: false
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help validate it?
+      options:
+        - label: I can test a preview adapter on my workflow
+        - label: I can share an anonymized exported trace
+        - label: I can contribute or review a PR

@@ -265,7 +265,8 @@ Real-world feedback shapes what ships first.
 This is a v0.1 alpha. The fastest way to help:
 
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
-2. If you build a Stagehand / Skyvern / computer use adapter, PRs welcome.
+2. If you need a Browser Use / Stagehand / Skyvern / Playwright adapter,
+   [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
 Launch discussion: [BrowserTrace v0.1.1](https://github.com/aaronlab/browsertrace/discussions/6).
