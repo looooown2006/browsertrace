@@ -10,12 +10,16 @@ keywords = [
     "ai",
     "agent",
     "agent-observability",
+    "ai-agent-debugging",
     "browser",
     "browser-agent",
+    "browser-agents",
     "browser-automation",
     "browser-use",
+    "computer-use",
     "debugging",
     "llm",
+    "llm-observability",
     "local-first",
     "observability",
     "playwright",
@@ -31,8 +35,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Software Development :: Debuggers",
     "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
 ]
 # SDK-only deps. The web UI deps are in [project.optional-dependencies.ui]
 # so users who only want to record traces don't have to install FastAPI etc.
@@ -61,6 +67,9 @@ Documentation = "https://aaronlab.github.io/browsertrace/"
 Repository = "https://github.com/aaronlab/browsertrace"
 Issues = "https://github.com/aaronlab/browsertrace/issues"
 Release = "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10"
+Changelog = "https://github.com/aaronlab/browsertrace/blob/main/CHANGELOG.md"
+Roadmap = "https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md"
+Discussions = "https://github.com/aaronlab/browsertrace/discussions/6"
 
 [project.scripts]
 browsertrace = "browsertrace.cli:main"
