@@ -84,3 +84,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T12:07:44+00:00 | 3 | 998 | 0 | 0 | 8 | 0 | 3 | after aaronlab profile README draft added; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:09:06+00:00 | 3 | 998 | 0 | 0 | 9 | 0 | 3 | after profile README owner-action issue opened: https://github.com/aaronlab/browsertrace/issues/13; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T12:11:10+00:00 | 3 | 998 | 0 | 0 | 9 | 0 | 4 | after launch discussion refreshed with public-safe demo and traffic metrics: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16861997; traffic views 48/25 unique, clones 100/52 unique |
+| 2026-05-09T12:13:07+00:00 | 3 | 998 | 0 | 0 | 9 | 0 | 4 | after owner-action and launch-blocker labels applied to launch queue; traffic views 48/25 unique, clones 100/52 unique |
