@@ -80,6 +80,9 @@ browsertrace demo
 browsertrace
 ```
 
+For changes in this pinned tag, read the
+[v0.1.14 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14).
+
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
 [`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo.html)
