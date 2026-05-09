@@ -16,6 +16,22 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
 ```
 
+### Check a healthy local install
+
+`browsertrace doctor` prints the local install and trace-store status before
+you open the UI:
+
+```text
+BrowserTrace doctor
+Python: 3.11.x
+Home: /tmp/browsertrace-demo
+Database: /tmp/browsertrace-demo/db.sqlite
+Runs: 0
+Steps: 0
+Next: browsertrace demo
+UI dependencies: available
+```
+
 Windows PowerShell:
 
 ```powershell
