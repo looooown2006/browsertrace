@@ -78,16 +78,16 @@ BrowserTrace records each step locally: screenshot, URL, action, model input,
 model output, status, and error. You open the local UI, click a run, and jump
 straight to the failed step.
 
-It is MIT licensed, local-first, and has a deterministic no-API demo:
+It is MIT licensed, local-first, and has a deterministic no-API demo. Before PyPI publishing is enabled, the quickest trial is uvx from the GitHub tag:
+
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+
+A persistent install from the same tag also works:
 
 pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 browsertrace demo
 browsertrace
-
-Before PyPI publishing is enabled, people can also try it with uvx:
-
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 
 There is also a zero-install exported trace:
 https://aaronlab.github.io/browsertrace/

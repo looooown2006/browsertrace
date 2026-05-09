@@ -41,19 +41,20 @@ to explain why a browser run failed.
 ## Quickstart
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
-browsertrace doctor
-browsertrace demo
-browsertrace
-```
-
-No-install uvx quickstart before PyPI publishing is enabled:
-
-```bash
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+```
+
+Persistent install from the GitHub release tag before PyPI publishing is
+enabled:
+
+```bash
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+browsertrace doctor
+browsertrace demo
+browsertrace
 ```
 
 `browsertrace doctor` prints local install and trace-store status without

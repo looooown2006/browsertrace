@@ -19,19 +19,21 @@ upvotes, swaps, or artificial engagement.
 
 ## Try-It Commands
 
-Before PyPI publishing is enabled, use the GitHub install or the no-install
-`uvx` path in directory replies when an editor asks how to try the project:
-
-```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
-browsertrace demo
-browsertrace
-```
+Before PyPI publishing is enabled, use the `uvx` path first in directory replies
+when an editor asks how to try the project:
 
 ```bash
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+```
+
+Persistent install from the GitHub release tag:
+
+```bash
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+browsertrace demo
+browsertrace
 ```
 
 ## One-Line Pitch

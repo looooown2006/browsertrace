@@ -30,26 +30,10 @@ computer-use agents.
 [integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml) ·
 [launch discussion](https://github.com/aaronlab/browsertrace/discussions/6)
 
-## Install
-
-```bash
-# SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
-
-# SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
-```
-
 ## See a failure trace in 60 seconds
 
-```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
-browsertrace doctor
-browsertrace demo
-browsertrace
-```
-
-No-install `uvx` trial before PyPI publishing is enabled:
+Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
+GitHub release tag:
 
 ```bash
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
@@ -60,6 +44,22 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
+
+## Install From The Release Tag
+
+PyPI publishing is not enabled yet. Until then, install from the GitHub release
+tag:
+
+```bash
+# SDK only
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+
+# SDK + local web UI
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+browsertrace doctor
+browsertrace demo
+browsertrace
+```
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
