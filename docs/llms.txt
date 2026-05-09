@@ -11,7 +11,8 @@ to explain why a browser run failed.
 ## Important Links
 
 - GitHub repository: https://github.com/aaronlab/browsertrace
-- Live exported trace demo: https://aaronlab.github.io/browsertrace/
+- Live demo page: https://aaronlab.github.io/browsertrace/
+- Raw exported trace: https://aaronlab.github.io/browsertrace/trace.html
 - Debugging walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.1
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
