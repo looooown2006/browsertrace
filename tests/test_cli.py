@@ -155,6 +155,25 @@ def test_cli_export_redact_screenshots_omits_inlined_images(cli, tmp_path):
     assert "Screenshot redacted" in body
 
 
+def test_cli_export_redact_urls_omits_step_urls(cli, tmp_path):
+    cli_mod, home = cli
+    tracer = Tracer(home=home)
+    with tracer.run("url-redaction") as run:
+        run.step(
+            action="open private page",
+            url="https://internal.example.test/account?token=secret-token",
+        )
+
+    out_file = tmp_path / "redacted-urls.html"
+    rc = cli_mod.main(["export", run.id, "--redact-urls", "-o", str(out_file)])
+
+    assert rc == 0
+    body = out_file.read_text()
+    assert "internal.example.test" not in body
+    assert "secret-token" not in body
+    assert "URL redacted" in body
+
+
 def test_cli_demo_creates_failed_demo_run(cli):
     cli_mod, home = cli
     buf = StringIO()

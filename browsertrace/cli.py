@@ -8,6 +8,7 @@ Usage:
     browsertrace export <id>     # write a portable HTML bundle to ./<id>.html
     browsertrace export <id> --redact  # omit model I/O from the HTML export
     browsertrace export <id> --redact-screenshots  # omit screenshots from the HTML export
+    browsertrace export <id> --redact-urls  # omit URLs from the HTML export
     browsertrace serve           # explicit alias of `browsertrace`
 """
 
@@ -164,13 +165,18 @@ def cmd_export(args) -> int:
         elif s["screenshot_path"] and Path(s["screenshot_path"]).exists():
             data = base64.b64encode(Path(s["screenshot_path"]).read_bytes()).decode()
             img_html = f"<img src='data:image/png;base64,{data}' alt='step {s['step_index']}'>"
+        url_html = (
+            "URL redacted"
+            if getattr(args, "redact_urls", False) and s["url"]
+            else _html_escape(s["url"] or "")
+        )
         parts.append(
             f"<div class='{klass}'>"
             f"<div>{img_html or no_screenshot_html}</div>"
             f"<div>"
             f"<div style='font-size:11px;color:#6b7280;font-weight:600'>STEP {s['step_index']}</div>"
             f"<div style='font-size:15px'>{_html_escape(s['action'] or '')} <span class='badge {badge}'>{s['status'] or 'ok'}</span></div>"
-            f"<div style='font-size:12px;color:#6b7280'><code>{_html_escape(s['url'] or '')}</code></div>"
+            f"<div style='font-size:12px;color:#6b7280'><code>{url_html}</code></div>"
         )
         if s["error"]:
             parts.append(f"<pre style='background:#fee2e2;color:#dc2626'>{_html_escape(s['error'])}</pre>")
@@ -244,6 +250,11 @@ def main(argv: Optional[list[str]] = None) -> int:
         "--redact-screenshots",
         action="store_true",
         help="Omit screenshots from the exported HTML",
+    )
+    p_export.add_argument(
+        "--redact-urls",
+        action="store_true",
+        help="Omit URLs from the exported HTML",
     )
     p_export.set_defaults(func=cmd_export)
 

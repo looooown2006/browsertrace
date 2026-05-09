@@ -213,7 +213,7 @@
 
     <section>
       <h2>Try it before wiring Browser Use</h2>
-      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
+      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.9"
 browsertrace demo
 browsertrace</code></pre>
       <p>Open <code>http://127.0.0.1:3000</code>, then inspect <code>demo: checkout agent fails on disabled button</code>. From a source checkout, <code>python examples/browser_use_callback_demo.py</code> records Browser Use-shaped callback steps without installing Browser Use.</p>
@@ -239,8 +239,8 @@ with attach_tracer(agent, tracer, name="browser-use checkout run"):
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html
 browsertrace export &lt;run_id&gt; --redact -o public.html
-browsertrace export &lt;run_id&gt; --redact --redact-screenshots -o public.html</code></pre>
-      <p>The full export includes model input, model output, and screenshots. Use <code>--redact</code> for prompt/model I/O, and add <code>--redact-screenshots</code> when screenshots may reveal private page data.</p>
+browsertrace export &lt;run_id&gt; --redact --redact-screenshots --redact-urls -o public.html</code></pre>
+      <p>The full export includes model input, model output, and screenshots. Use <code>--redact</code> for prompt/model I/O, and add <code>--redact-screenshots</code> and <code>--redact-urls</code> when screenshots or URLs may reveal private page data.</p>
     </section>
 
     <section>

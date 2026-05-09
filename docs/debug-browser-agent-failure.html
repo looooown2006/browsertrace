@@ -163,7 +163,7 @@
 
     <section>
       <h2>Run a local trace</h2>
-      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
+      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.9"
 browsertrace demo
 browsertrace</code></pre>
       <p>Open <code>http://127.0.0.1:3000</code>, then click the failed checkout-agent run. You can also inspect the <a href="./">live exported trace</a> without installing anything.</p>
@@ -198,8 +198,8 @@ my_agent("browser agent debugging")</code></pre>
       <h2>Share a failure</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; --redact -o public.html
-browsertrace export &lt;run_id&gt; --redact --redact-screenshots -o public.html</code></pre>
-      <p>The export is a self-contained HTML file. Use <code>--redact</code> before posting a real trace publicly to omit prompt/model I/O. Add <code>--redact-screenshots</code> when screenshots may reveal private page data.</p>
+browsertrace export &lt;run_id&gt; --redact --redact-screenshots --redact-urls -o public.html</code></pre>
+      <p>The export is a self-contained HTML file. Use <code>--redact</code> before posting a real trace publicly to omit prompt/model I/O. Add <code>--redact-screenshots</code> and <code>--redact-urls</code> when screenshots or URLs may reveal private page data.</p>
     </section>
 
     <section>

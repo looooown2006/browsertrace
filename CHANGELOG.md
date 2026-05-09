@@ -7,6 +7,13 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.9 - 2026-05-09
+
+- Added `browsertrace export --redact-urls` so exported HTML traces can omit
+  private domains, query strings, or internal paths from step URLs.
+- Updated public sharing docs to show prompt/model I/O, screenshot, and URL
+  redaction together.
+
 ## 0.1.8 - 2026-05-09
 
 - Added `browsertrace export --redact-screenshots` so exported HTML traces can

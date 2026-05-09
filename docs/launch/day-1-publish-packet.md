@@ -55,7 +55,7 @@ Trying it:
 ```text
 The fastest path is the no-API demo:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.9"
 browsertrace demo
 browsertrace
 
@@ -70,10 +70,10 @@ No signup and no cloud service are required. Export creates a standalone HTML
 trace only when you choose to share one. For public sharing, use:
 
 browsertrace export <run_id> --redact -o public.html
-browsertrace export <run_id> --redact --redact-screenshots -o public.html
+browsertrace export <run_id> --redact --redact-screenshots --redact-urls -o public.html
 
-Use `--redact` to omit prompt/model I/O. Add `--redact-screenshots` when
-screenshots may reveal private page data.
+Use `--redact` to omit prompt/model I/O. Add `--redact-screenshots` and
+`--redact-urls` when screenshots or URLs may reveal private page data.
 ```
 
 Integration:

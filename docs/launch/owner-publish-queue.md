@@ -12,7 +12,7 @@ people building browser agents.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.8
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.9
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
@@ -103,8 +103,8 @@ Browser Use, Stagehand, Playwright, or Skyvern communities.
   output.
 - For public trace sharing, ask them to run
   `browsertrace export <run_id> --redact -o public.html` before attaching files
-  to issues or posts. Add `--redact-screenshots` when screenshots may reveal
-  private page data.
+  to issues or posts. Add `--redact-screenshots` and `--redact-urls` when
+  screenshots or URLs may reveal private page data.
 - For integration requests, point to the v0.2 milestone and ask which adapter
   would unblock them first.
 
