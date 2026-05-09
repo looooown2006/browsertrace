@@ -98,6 +98,26 @@ def test_cli_export_writes_html_with_inlined_screenshots(cli, tmp_path):
     assert "data:image/png;base64" in body  # screenshot inlined
 
 
+def test_cli_export_redact_hides_model_io(cli, tmp_path):
+    cli_mod, home = cli
+    tracer = Tracer(home=home)
+    with tracer.run("sensitive-export") as run:
+        run.step(
+            action="ask model",
+            model_input={"prompt": "private checkout token sk-browsertrace-test"},
+            model_output={"selector": "#pay-now", "reason": "private model answer"},
+        )
+
+    out_file = tmp_path / "redacted.html"
+    rc = cli_mod.main(["export", run.id, "--redact", "-o", str(out_file)])
+
+    assert rc == 0
+    body = out_file.read_text()
+    assert "private checkout token" not in body
+    assert "private model answer" not in body
+    assert "Model I/O redacted" in body
+
+
 def test_cli_no_args_routes_to_serve(cli, monkeypatch):
     """`browsertrace` with no args should call serve."""
     cli_mod, _ = cli

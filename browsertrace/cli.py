@@ -5,6 +5,7 @@ Usage:
     browsertrace list            # list runs in the terminal
     browsertrace show <run_id>   # print a run's timeline
     browsertrace export <id>     # write a portable HTML bundle to ./<id>.html
+    browsertrace export <id> --redact  # omit model I/O from the HTML export
     browsertrace serve           # explicit alias of `browsertrace`
 """
 
@@ -154,7 +155,12 @@ def cmd_export(args) -> int:
         )
         if s["error"]:
             parts.append(f"<pre style='background:#fee2e2;color:#dc2626'>{_html_escape(s['error'])}</pre>")
-        if s["model_output"]:
+        if getattr(args, "redact", False) and (s["model_input"] or s["model_output"]):
+            parts.append(
+                "<details><summary>Model I/O redacted</summary>"
+                "<pre>Prompt and model output omitted from this export.</pre></details>"
+            )
+        elif s["model_output"]:
             parts.append(f"<details><summary>Model output</summary><pre>{_html_escape(s['model_output'])}</pre></details>")
         parts.append("</div></div>")
     parts.append("</body></html>")
@@ -198,6 +204,11 @@ def main(argv: Optional[list[str]] = None) -> int:
     p_export = sub.add_parser("export", help="Write a self-contained HTML bundle for a run")
     p_export.add_argument("run_id")
     p_export.add_argument("-o", "--out", help="Output path (default: <run_id>.html)")
+    p_export.add_argument(
+        "--redact",
+        action="store_true",
+        help="Omit model input/output from the exported HTML",
+    )
     p_export.set_defaults(func=cmd_export)
 
     args = parser.parse_args(argv)

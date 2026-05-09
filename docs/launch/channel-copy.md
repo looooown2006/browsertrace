@@ -66,7 +66,7 @@ BrowserTrace records each step as a local timeline:
 - Action
 - Model input/output
 - Step status and error
-- Exportable HTML trace
+- Exportable HTML trace, with a redacted sharing mode
 
 It is MIT licensed, local-first, and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
 
@@ -151,7 +151,7 @@ BrowserTrace keeps the missing context locally:
 - actions
 - model input/output
 - failed-step errors
-- exportable HTML traces
+- exportable HTML traces, including `--redact` for public sharing
 
 It is MIT licensed and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
 

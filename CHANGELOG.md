@@ -5,10 +5,15 @@ UTC.
 
 ## Unreleased
 
-- Pinned temporary GitHub install commands to `v0.1.3` while PyPI publishing is
+- No unreleased changes.
+
+## 0.1.4 - 2026-05-09
+
+- Added `browsertrace export --redact` for shareable HTML traces that omit
+  prompt/model I/O while keeping screenshots, actions, URLs, status, and errors.
+- Pinned temporary GitHub install commands to `v0.1.4` while PyPI publishing is
   waiting on owner-side Trusted Publisher setup.
-- Updated the public roadmap with deeper Stagehand and Skyvern integration
-  follow-up issues.
+- Updated the public roadmap and launch tooling to track the current release.
 
 ## 0.1.3 - 2026-05-09
 

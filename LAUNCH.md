@@ -1,7 +1,7 @@
 # BrowserTrace Launch Control Room
 
 Canonical repo: https://github.com/aaronlab/browsertrace
-Current release: `v0.1.3`
+Current release: `v0.1.4`
 Owner account: `aaronlab`
 
 ## Current State
@@ -17,7 +17,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - README animation: `docs/demo.gif`
 - Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
-- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.3`
+- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.4`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist
@@ -26,6 +26,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - [ ] `python examples/no_api_failure_demo.py` creates a failed run without API keys.
 - [ ] `browsertrace list` shows the deterministic demo run.
 - [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
+- [ ] `browsertrace export <run_id> --redact -o public.html` creates a public-safe report without model I/O.
 - [ ] `scripts/record_demo.py` records the latest failed run, or `BROWSERTRACE_DEMO_RUN_ID`.
 - [ ] `docs/demo.mp4` and `docs/demo-poster.png` clearly show the failed-step timeline.
 - [ ] README first screen has hook, demo, install, and 60-second demo path.

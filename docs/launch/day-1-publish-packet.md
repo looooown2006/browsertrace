@@ -69,7 +69,12 @@ Privacy:
 ```text
 It is local-first by default: SQLite plus screenshots under ~/.browsertrace/.
 No signup and no cloud service are required. Export creates a standalone HTML
-trace only when you choose to share one.
+trace only when you choose to share one. For public sharing, use:
+
+browsertrace export <run_id> --redact -o public.html
+
+That keeps screenshots, actions, URLs, status, and errors, while omitting
+prompt/model I/O.
 ```
 
 Integration:
