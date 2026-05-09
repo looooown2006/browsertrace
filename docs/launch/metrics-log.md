@@ -56,3 +56,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:39:45+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Browser Use adapter feedback issue: https://github.com/aaronlab/browsertrace/issues/11 |
 | 2026-05-09T10:41:48+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Stagehand debugging landing page added |
 | 2026-05-09T10:45:31+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Skyvern debugging landing page added |
+| 2026-05-09T10:47:56+00:00 | 3 | 998 | 0 | 0 | 7 | 0 | 0 | after Playwright LLM debugging landing page added |

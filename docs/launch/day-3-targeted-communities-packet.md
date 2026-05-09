@@ -169,7 +169,14 @@ Short reply for relevant threads:
 If the missing piece is the LLM decision context rather than Playwright's browser
 trace itself, I'm building a small local tool for that case:
 
-https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+Playwright + LLM guide:
+https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+
+Live exported trace:
+https://aaronlab.github.io/browsertrace/trace.html
+
+Repo:
+https://github.com/aaronlab/browsertrace
 
 It records screenshot, URL, action label, model input/output, and failed-step
 error into a local timeline. It is not a replacement for Playwright Trace Viewer;
