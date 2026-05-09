@@ -31,3 +31,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T09:33:19+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after custom GitHub Pages workflow deployment: https://github.com/aaronlab/browsertrace/actions/runs/25597763887 |
 | 2026-05-09T09:37:29+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after Skyvern example and issue update: https://github.com/aaronlab/browsertrace/issues/4#issuecomment-4412182416 |
 | 2026-05-09T09:40:39+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after Stagehand wrapper example: https://github.com/aaronlab/browsertrace/commit/6dcb4fd13d42519428cc4a406ed439975efd241f |
+| 2026-05-09T09:43:32+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after examples guide: https://github.com/aaronlab/browsertrace/tree/main/examples |
