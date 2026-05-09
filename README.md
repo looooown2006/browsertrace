@@ -107,6 +107,10 @@ If a first local run fails, the
 walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`,
 `browsertrace show`, and public-safe export.
 
+To inspect a failed step timeline in the terminal, use the
+[failed-run terminal inspection recipe](examples/#inspect-a-failed-run-in-the-terminal)
+with `browsertrace show <run_id>`.
+
 For help threads, the
 [public-safe attachment note](examples/#attach-a-public-safe-export-to-an-issue)
 shows how to attach an export to a GitHub issue or PR comment; public-safe
