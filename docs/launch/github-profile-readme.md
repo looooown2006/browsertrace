@@ -54,10 +54,7 @@ https://github.com/aaronlab/browsertrace/tree/main/examples
 
 Roadmap: https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
 
-Good first issue:
-https://github.com/aaronlab/browsertrace/issues/23
-
-Public-safe export docs issue:
+Open contribution issue:
 https://github.com/aaronlab/browsertrace/issues/25
 
 Public-safe demo export:
