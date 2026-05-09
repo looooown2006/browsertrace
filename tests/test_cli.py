@@ -139,6 +139,22 @@ def test_cli_export_redact_hides_model_io(cli, tmp_path):
     assert "Model I/O redacted" in body
 
 
+def test_cli_export_redact_screenshots_omits_inlined_images(cli, tmp_path):
+    cli_mod, home = cli
+    tracer = Tracer(home=home)
+    png = b"\x89PNG\r\n\x1a\n" + b"\x00" * 16
+    with tracer.run("screenshot-redaction") as run:
+        run.step(action="visible private page", screenshot=png)
+
+    out_file = tmp_path / "redacted-screenshots.html"
+    rc = cli_mod.main(["export", run.id, "--redact-screenshots", "-o", str(out_file)])
+
+    assert rc == 0
+    body = out_file.read_text()
+    assert "data:image/png;base64" not in body
+    assert "Screenshot redacted" in body
+
+
 def test_cli_demo_creates_failed_demo_run(cli):
     cli_mod, home = cli
     buf = StringIO()

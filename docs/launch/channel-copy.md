@@ -41,7 +41,7 @@ https://github.com/aaronlab/browsertrace
 ```text
 The shortest way to try BrowserTrace:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
 browsertrace demo
 browsertrace
 
@@ -149,7 +149,7 @@ BrowserTrace keeps the missing context locally:
 - actions
 - model input/output
 - failed-step errors
-- exportable HTML traces, including `--redact` for public sharing
+- exportable HTML traces, including `--redact` and `--redact-screenshots` for public sharing
 
 It is MIT licensed and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
 

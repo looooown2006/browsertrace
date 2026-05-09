@@ -2,5 +2,5 @@
 
 from .tracer import Run, Tracer, trace
 
-__version__ = "0.1.7"
+__version__ = "0.1.8"
 __all__ = ["Tracer", "Run", "trace"]

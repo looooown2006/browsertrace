@@ -7,6 +7,13 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.8 - 2026-05-09
+
+- Added `browsertrace export --redact-screenshots` so exported HTML traces can
+  omit screenshots when page state may reveal private data.
+- Updated sharing docs and launch copy to distinguish model I/O redaction from
+  screenshot redaction.
+
 ## 0.1.7 - 2026-05-09
 
 - Added a no-dependency Browser Use-shaped callback demo so users can inspect

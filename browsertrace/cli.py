@@ -7,6 +7,7 @@ Usage:
     browsertrace show <run_id>   # print a run's timeline
     browsertrace export <id>     # write a portable HTML bundle to ./<id>.html
     browsertrace export <id> --redact  # omit model I/O from the HTML export
+    browsertrace export <id> --redact-screenshots  # omit screenshots from the HTML export
     browsertrace serve           # explicit alias of `browsertrace`
 """
 
@@ -147,13 +148,20 @@ def cmd_export(args) -> int:
         "no screenshot"
         "</div>"
     )
+    redacted_screenshot_html = (
+        '<div style="color:#6b7280;text-align:center;padding:48px">'
+        "Screenshot redacted"
+        "</div>"
+    )
 
     for s in steps:
         is_err = (s["status"] or "ok") != "ok"
         klass = "step error" if is_err else "step"
         badge = "error" if is_err else "ok"
         img_html = ""
-        if s["screenshot_path"] and Path(s["screenshot_path"]).exists():
+        if getattr(args, "redact_screenshots", False) and s["screenshot_path"]:
+            img_html = redacted_screenshot_html
+        elif s["screenshot_path"] and Path(s["screenshot_path"]).exists():
             data = base64.b64encode(Path(s["screenshot_path"]).read_bytes()).decode()
             img_html = f"<img src='data:image/png;base64,{data}' alt='step {s['step_index']}'>"
         parts.append(
@@ -231,6 +239,11 @@ def main(argv: Optional[list[str]] = None) -> int:
         "--redact",
         action="store_true",
         help="Omit model input/output from the exported HTML",
+    )
+    p_export.add_argument(
+        "--redact-screenshots",
+        action="store_true",
+        help="Omit screenshots from the exported HTML",
     )
     p_export.set_defaults(func=cmd_export)
 

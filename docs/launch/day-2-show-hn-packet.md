@@ -79,7 +79,7 @@ straight to the failed step.
 
 It is MIT licensed, local-first, and has a deterministic no-API demo:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
 browsertrace demo
 browsertrace
 

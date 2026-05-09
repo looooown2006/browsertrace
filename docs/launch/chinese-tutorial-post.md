@@ -92,7 +92,7 @@ BrowserTrace 关注的是这个交界面：浏览器状态 + agent action + mode
 BrowserTrace 有一个不需要 API key、不需要真实浏览器的 deterministic demo：
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
 browsertrace demo
 browsertrace
 ```
@@ -147,9 +147,10 @@ async with tracer.run("my-task") as run:
 ```bash
 browsertrace export <run_id> -o run.html
 browsertrace export <run_id> --redact -o public.html
+browsertrace export <run_id> --redact --redact-screenshots -o public.html
 ```
 
-这个 HTML 可以发给同事、贴到 issue、或者作为失败样例留档。如果要公开发真实 trace，用 `--redact`。它会保留截图、action、URL、状态和错误，但去掉 prompt / model output。
+这个 HTML 可以发给同事、贴到 issue、或者作为失败样例留档。如果要公开发真实 trace，用 `--redact` 去掉 prompt / model output；如果截图里也有敏感页面数据，再加 `--redact-screenshots`。
 
 ## 我现在最想要的反馈
 

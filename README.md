@@ -34,16 +34,16 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
 ```
 
 ## See a failure trace in 60 seconds
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.8"
 browsertrace demo
 browsertrace
 ```
@@ -53,7 +53,7 @@ Open `http://127.0.0.1:3000`, click
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.7/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.8/browsertrace-demo.html)
 from the latest release.
 
 For a walkthrough, read
@@ -246,12 +246,13 @@ browsertrace list                 # list recent runs in the terminal
 browsertrace show <id-or-prefix>  # print a run's timeline
 browsertrace export <id> -o run.html   # self-contained HTML bundle (screenshots inlined)
 browsertrace export <id> --redact -o public.html   # omit model I/O for sharing
+browsertrace export <id> --redact --redact-screenshots -o public.html
 ```
 
 `export` produces a single HTML file you can email, attach to an issue, or
 upload anywhere. No server, no DB, fully portable. Use `--redact` before
-sharing a real trace publicly; it keeps screenshots, actions, URLs, status, and
-errors while omitting prompt/model I/O.
+sharing a real trace publicly to omit prompt/model I/O. Add
+`--redact-screenshots` when screenshots may reveal private page data.
 
 ## Why not just use ___?
 
@@ -312,7 +313,7 @@ This is a v0.1 alpha. The fastest way to help:
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
-Launch discussion: [BrowserTrace v0.1.7](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace v0.1.8](https://github.com/aaronlab/browsertrace/discussions/6).
 
 Changelog: [CHANGELOG.md](CHANGELOG.md).
 
