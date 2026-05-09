@@ -33,14 +33,14 @@ to explain why a browser run failed.
 - Store action labels, model inputs, model outputs, status, and error messages.
 - Inspect runs in a local web UI.
 - Export a self-contained HTML trace for sharing with teammates or issues.
+- Use `browsertrace export <run_id> --public -o public.html` before public
+  sharing to omit prompt/model I/O, screenshots, and URLs.
 - Run a deterministic no-API-key failure demo for quick evaluation.
 
 ## Quickstart
 
 ```bash
-git clone https://github.com/aaronlab/browsertrace
-cd browsertrace
-pip install -e ".[ui]"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
 browsertrace demo
 browsertrace
 ```
