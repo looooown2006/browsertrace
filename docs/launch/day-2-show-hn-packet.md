@@ -166,8 +166,8 @@ GitHub-tag pip install path until PyPI publishing is enabled.
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The current one is #41,
-which asks for a concise BrowserTrace command cheat sheet. For
+Yes. Good first issues are kept small and reviewable. The current one is #42,
+which asks for a concise browser-agent feedback checklist. For
 adapter work, the most useful first step is an integration request describing
 the framework and failure state you need to debug.
 ```
