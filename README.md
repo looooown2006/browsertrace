@@ -46,6 +46,10 @@ browsertrace
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
 
+Want to inspect an exported trace before installing anything? Download
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.1/browsertrace-demo.html)
+from the latest release and open it locally.
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash
