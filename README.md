@@ -195,7 +195,9 @@ async with tracer.run("my-task") as run:
     await run.snapshot(page, action="clicked login")
 ```
 
-For `playwright.sync_api`, use `run.snapshot_sync(page, ...)` instead.
+For `playwright.sync_api`, use `run.snapshot_sync(page, ...)` instead. The
+[Playwright sync API snapshot](examples/#playwright-sync-api-snapshot) recipe
+shows `snapshot_sync` for sync Playwright users.
 
 ### Context manager (more control)
 
