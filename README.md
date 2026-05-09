@@ -428,8 +428,8 @@ When reporting a real failure from Browser Use, Stagehand, Skyvern, Playwright +
 
 ## Why not just use ___?
 
-Detailed comparison page:
-https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+For a longer comparison with LLM tracing and hosted browser/runtime tools, see
+the [browser-agent debugging comparison](https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html).
 
 | Tool | Strength | Why you might still want BrowserTrace |
 |---|---|---|
