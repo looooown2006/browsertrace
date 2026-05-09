@@ -115,6 +115,11 @@ For GitLab pipelines, the
 stores `public.html` as a GitLab CI artifact.
 BrowserTrace does not upload traces by itself.
 
+For pytest tests, the
+[isolated trace storage recipe](examples/#testing-with-isolated-trace-storage)
+uses `BROWSERTRACE_HOME` with a temp directory for pytest isolation and needs
+no browser, network, or API key.
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash
