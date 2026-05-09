@@ -188,6 +188,24 @@ def test_llms_txt_points_to_current_contribution_path():
     )
 
 
+def test_core_guides_advertise_llms_txt():
+    project_root = Path(__file__).resolve().parents[1]
+
+    for filename in [
+        "debug-browser-agent-failure.html",
+        "browser-use-debugging.html",
+        "stagehand-debugging.html",
+        "skyvern-debugging.html",
+        "playwright-llm-debugging.html",
+        "computer-use-agent-debugging.html",
+    ]:
+        page = (project_root / "docs" / filename).read_text()
+        assert (
+            '<link rel="alternate" type="text/plain" title="llms.txt" href="./llms.txt">'
+            in page
+        ), filename
+
+
 def test_launch_copy_includes_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
