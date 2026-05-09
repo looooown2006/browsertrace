@@ -12,6 +12,9 @@ verification tokens, but the owner must sign in and verify ownership.
 | Sitemap | `https://aaronlab.github.io/browsertrace/sitemap.xml` |
 | Robots | `https://aaronlab.github.io/browsertrace/robots.txt` |
 | Repository | `https://github.com/aaronlab/browsertrace` |
+| Debugging walkthrough | `https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html` |
+| Computer-use guide | `https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html` |
+| Integrations | `https://aaronlab.github.io/browsertrace/integrations.html` |
 | Launch kit | `https://aaronlab.github.io/browsertrace/launch/` |
 
 ## Google Search Console
@@ -28,8 +31,8 @@ verification tokens, but the owner must sign in and verify ownership.
 https://aaronlab.github.io/browsertrace/sitemap.xml
 ```
 
-6. Use URL Inspection on the homepage and request indexing if the control is
-   available.
+6. Use URL Inspection on the homepage, debugging walkthrough, computer-use
+   guide, and integrations page. Request indexing if the control is available.
 
 ## Bing Webmaster Tools
 
