@@ -162,6 +162,9 @@ await page.extract("get the headline")      # auto-recorded
 page.bt_run.close()
 ```
 
+For a no-network wrapper demo that does not require a Stagehand install, run
+`python examples/stagehand_wrapper_example.py`.
+
 ### Skyvern integration
 
 Wrap a Skyvern-shaped client to record high-level task and workflow calls.

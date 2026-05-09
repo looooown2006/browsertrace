@@ -55,3 +55,31 @@ def test_skyvern_wrapper_example_creates_completed_trace(tmp_path, monkeypatch):
     assert json.loads(step[2])["kwargs"]["url"] == "https://example.com/invoice"
     assert json.loads(step[3])["task_run_id"] == "tsk_demo_001"
     assert json.loads(step[4])["skyvern_run_id"] == "tsk_demo_001"
+
+
+def test_stagehand_wrapper_example_creates_completed_trace(tmp_path, monkeypatch):
+    monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))
+
+    runpy.run_path("examples/stagehand_wrapper_example.py", run_name="__main__")
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        run = c.execute(
+            "SELECT id, name, status, error FROM runs ORDER BY started_at DESC LIMIT 1"
+        ).fetchone()
+        steps = c.execute(
+            "SELECT action, url, status, model_input, screenshot_path "
+            "FROM steps WHERE run_id=? ORDER BY step_index",
+            (run[0],),
+        ).fetchall()
+
+    assert run[1] == "demo: stagehand checkout flow"
+    assert run[2] == "completed"
+    assert run[3] is None
+    assert [step[0] for step in steps] == [
+        "act: click the checkout button",
+        "extract: extract the order total",
+    ]
+    assert steps[0][1] == "https://shop.example.test/cart"
+    assert steps[0][2] == "ok"
+    assert json.loads(steps[0][3])["method"] == "act"
+    assert steps[0][4].endswith(".png")
