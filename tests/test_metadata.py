@@ -472,7 +472,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:51:35+00:00" in launch
-    assert "after IndexNow refresh for updated docs and issue #16 comment" in launch
+    assert "2026-05-09T18:55:17+00:00" in launch
+    assert "after launch discussion update for #29 and Playwright LLM example" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
