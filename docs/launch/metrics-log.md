@@ -47,3 +47,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T10:19:14+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after redacted sharing docs in walkthrough and tutorial drafts |
 | 2026-05-09T10:20:20+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after Day 1 issue body update to v0.1.4 and redacted export command |
 | 2026-05-09T10:22:51+00:00 | 3 | 998 | 0 | 0 | 5 | 0 | 0 | after directory and newsletter outreach targets added |
+| 2026-05-09T10:23:58+00:00 | 3 | 998 | 0 | 0 | 6 | 0 | 0 | after directory/newsletter owner-action issue: https://github.com/aaronlab/browsertrace/issues/10 |
