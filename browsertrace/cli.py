@@ -124,16 +124,28 @@ def cmd_doctor(_args) -> int:
     return 0
 
 
+def _find_run(c: sqlite3.Connection, run_id: str) -> tuple[sqlite3.Row | None, int]:
+    rows = c.execute(
+        "SELECT * FROM runs WHERE id=? OR id LIKE ? ORDER BY started_at DESC LIMIT 2",
+        (run_id, f"{run_id}%"),
+    ).fetchall()
+    if not rows:
+        print(f"No run matching {run_id!r}.", file=sys.stderr)
+        return None, 2
+    if len(rows) > 1:
+        print(
+            f"More than one run matching {run_id!r}. Copy more characters from the run ID.",
+            file=sys.stderr,
+        )
+        return None, 2
+    return rows[0], 0
+
+
 def cmd_show(args) -> int:
     with _open() as c:
-        # Allow short prefix as well as full id.
-        run = c.execute(
-            "SELECT * FROM runs WHERE id=? OR id LIKE ? LIMIT 1",
-            (args.run_id, f"{args.run_id}%"),
-        ).fetchone()
-        if not run:
-            print(f"No run matching {args.run_id!r}.", file=sys.stderr)
-            return 2
+        run, rc = _find_run(c, args.run_id)
+        if run is None:
+            return rc
         steps = c.execute(
             "SELECT * FROM steps WHERE run_id=? ORDER BY step_index", (run["id"],)
         ).fetchall()
@@ -160,13 +172,9 @@ def cmd_export(args) -> int:
     """Write a self-contained HTML bundle for a run (screenshots inline as base64)."""
     import base64
     with _open() as c:
-        run = c.execute(
-            "SELECT * FROM runs WHERE id=? OR id LIKE ? LIMIT 1",
-            (args.run_id, f"{args.run_id}%"),
-        ).fetchone()
-        if not run:
-            print(f"No run matching {args.run_id!r}.", file=sys.stderr)
-            return 2
+        run, rc = _find_run(c, args.run_id)
+        if run is None:
+            return rc
         steps = c.execute(
             "SELECT * FROM steps WHERE run_id=? ORDER BY step_index", (run["id"],)
         ).fetchall()

@@ -207,6 +207,19 @@ browsertrace list
 browsertrace export <run_id> --public -o public.html
 ```
 
+### Run ID Prefixes For Export
+
+`browsertrace list` prints a short run ID prefix for each local run.
+`browsertrace export` accepts the full run ID or any unique prefix:
+
+```bash
+browsertrace list
+browsertrace export <run_id> --public -o public.html
+```
+
+If export reports more than one matching run, copy more characters from the full
+`Run ID:` printed by `browsertrace demo`, then rerun the export command.
+
 > Note: `--public` omits prompts/model I/O, screenshots, and URLs.
 > BrowserTrace does not upload the file anywhere; attach the generated
 > `public.html` file manually to share it.

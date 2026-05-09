@@ -6,7 +6,7 @@ import py_compile
 import sqlite3
 from pathlib import Path
 from io import StringIO
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 
 import pytest
 
@@ -81,6 +81,29 @@ def test_cli_show_unknown_run_id_returns_2(cli):
     Tracer(home=cli[1])
     rc = cli_mod.main(["show", "nonexistent-id"])
     assert rc == 2
+
+
+def test_cli_export_ambiguous_run_id_prefix_returns_2(cli, tmp_path):
+    cli_mod, home = cli
+    Tracer(home=home)
+    with sqlite3.connect(home / "db.sqlite") as conn:
+        conn.execute(
+            "INSERT INTO runs (id, name, status, started_at) VALUES (?, ?, ?, ?)",
+            ("abcdef01-0000-0000-0000-000000000000", "first", "completed", 1.0),
+        )
+        conn.execute(
+            "INSERT INTO runs (id, name, status, started_at) VALUES (?, ?, ?, ?)",
+            ("abcdef02-0000-0000-0000-000000000000", "second", "completed", 2.0),
+        )
+
+    err = StringIO()
+    out_file = tmp_path / "public.html"
+    with redirect_stderr(err):
+        rc = cli_mod.main(["export", "abcdef", "--public", "-o", str(out_file)])
+
+    assert rc == 2
+    assert "More than one run matching 'abcdef'" in err.getvalue()
+    assert not out_file.exists()
 
 
 def test_cli_export_writes_html_with_inlined_screenshots(cli, tmp_path):
