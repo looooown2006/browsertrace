@@ -330,3 +330,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T23:15:26+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #84 closed and good-first issue #85 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T23:18:13+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README port override note for issue #85; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T23:20:54+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #85 closed and good-first issue #86 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T23:23:38+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README isolated trace storage note for issue #86; traffic views 52/29 unique, clones 103/54 unique |
