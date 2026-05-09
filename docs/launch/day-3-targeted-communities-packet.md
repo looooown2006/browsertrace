@@ -8,8 +8,11 @@ Entry points checked:
 
 - Browser Use Discussions: https://github.com/browser-use/browser-use/discussions
 - Stagehand Discussions: https://github.com/browserbase/stagehand/discussions
+- Stagehand Discord: https://discord.gg/stagehand
 - Playwright community: https://playwright.dev/community/welcome
 - Skyvern Discussions: https://github.com/Skyvern-AI/skyvern/discussions
+- AgentKart submit: https://www.agentkart.ai/submit
+- console.dev: https://console.dev/
 
 ## Preflight Gate
 
@@ -40,6 +43,7 @@ Do not post if:
 2. Stagehand Discussions or Discord
 3. Playwright community channels
 4. Skyvern Discussions
+5. Directory/newsletter submissions that do not require community discussion
 
 Stop after one or two posts if the replies are low quality or negative. Improve
 the message before posting anywhere else.
@@ -209,6 +213,41 @@ Metrics:
 
 ```bash
 uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Skyvern discussion: <URL>"
+```
+
+## Directories And Newsletters
+
+Use these after `v0.1.4` because the release has the safer redacted export path.
+
+Best targets:
+
+- AgentKart: open-source AI agent marketplace submission.
+- AgDex: AI agent tools directory; developer tools and observability is the best
+  category fit.
+- Agent Hub: agent/MCP/skill directory; use only if they accept tool suggestions.
+- agentfirst.directory: agent-first tooling directory with a Browser Automation
+  category.
+- console.dev: devtools newsletter; send an editorial pitch only once.
+
+Pitch:
+
+```text
+BrowserTrace is an MIT local debugger for AI browser agents. It records each
+Browser Use / Stagehand / Skyvern / Playwright + LLM step as a timeline:
+screenshot, URL, action, model input/output, status, and error.
+
+The v0.1.4 release adds `browsertrace export --redact`, so people can share
+standalone HTML traces publicly without prompt/model I/O.
+
+Repo: https://github.com/aaronlab/browsertrace
+Live demo: https://aaronlab.github.io/browsertrace/
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.4
+```
+
+Metrics:
+
+```bash
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after directory/newsletter submission: <target or URL>"
 ```
 
 ## Triage After Posting

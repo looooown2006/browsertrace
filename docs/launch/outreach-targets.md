@@ -15,6 +15,11 @@ Post only where the community rules allow it. The ask is feedback from people bu
 | Skyvern users | Browser automation agent users | `https://github.com/Skyvern-AI/skyvern/discussions` | Day 6 | Adapter request and issue link | Comment where relevant | Avoid hijacking unrelated threads |
 | Reddit | AI agent or local LLM builders | `r/AI_Agents`, `r/Playwright`, or one high-fit subreddit | Day 3 or 5 | Value-first text post | Check subreddit rules before posting | Prefer one high-fit community over many posts |
 | Product Hunt | Makers and early adopters | Product Hunt maker dashboard | Day 4 draft, later launch | Product listing | Create draft from personal account | Launch only when gallery/demo assets are ready |
+| AgentKart | Open-source AI agent marketplace visitors | `https://www.agentkart.ai/submit` | Day 2 or 4 | Directory submission | Submit from owner account if login is required | Position as an agent debugging tool, not an agent runtime |
+| Agent Hub | People browsing AI agents, MCPs, and skills | `https://agent-hub.dev/` | Day 4 | Directory suggestion | Submit/contact if available | Fit is weaker unless framed as agent tooling |
+| AgDex | AI agent ecosystem directory readers | `https://agdex.ai/` | Day 4 | Directory suggestion | Submit/contact if available | Developer tools and observability category is the best fit |
+| agentfirst.directory | Agent-first tooling ecosystem | `https://agentfirst.directory/` | Day 4 | Directory suggestion | Submit/contact if available | Browser Automation category already includes related tools |
+| console.dev | Devtools newsletter readers | `https://console.dev/` | Day 5 | Short editorial pitch | Contact from owner email/account | Lead with local-first browser-agent debugging and the redacted export release |
 | GitHub Discussions | Existing repo visitors | `https://github.com/aaronlab/browsertrace/discussions/6` | Daily | Feedback collection | Update launch discussion | Link from posts when people ask where to comment |
 
 ## Priority Order
@@ -23,7 +28,45 @@ Post only where the community rules allow it. The ask is feedback from people bu
 2. Hacker News once the first-run path is clearly understandable.
 3. Browser Use and Stagehand communities because they match the product.
 4. Reddit only with a useful write-up and after checking local rules.
-5. Product Hunt after the visual assets are strong enough for a broader audience.
+5. Directory/newsletter submissions after `v0.1.4` links are stable.
+6. Product Hunt after the visual assets are strong enough for a broader audience.
+
+## Directory And Newsletter Pitch
+
+Use this for directories and newsletters that accept new tool suggestions. Keep
+the subject concrete and do not ask for stars.
+
+Subject:
+
+```text
+BrowserTrace: local flight recorder for AI browser agents
+```
+
+Body:
+
+```text
+BrowserTrace is an MIT-licensed local debugger for AI browser agents.
+
+It records each browser-agent step as a timeline with screenshots, URL, action,
+model input/output, status, and errors, then exports a standalone HTML trace.
+The v0.1.4 release adds `browsertrace export --redact` so real traces can be
+shared publicly without prompt/model I/O.
+
+Useful for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
+computer-use agents.
+
+Repo: https://github.com/aaronlab/browsertrace
+Live demo: https://aaronlab.github.io/browsertrace/
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.4
+```
+
+Submission notes:
+
+- Submit only once per directory/newsletter.
+- If a directory requires an account, use the owner's account.
+- If a directory has no visible submission form, use this as an owner email or
+  contact-form pitch.
+- Track every submission URL or email target in `docs/launch/metrics-log.md`.
 
 ## First Targeted Community Posts
 
@@ -34,6 +77,9 @@ real reply or question to reference.
    - Best angle: "I am building a local trace viewer for failed browser-use runs
      and want feedback on which fields matter at failure time."
    - Link order: walkthrough first, repo second.
+   - Best category: Show and tell or Q&A. Existing threads about selectors,
+     generated Playwright scripts, and audit trails are relevant only if the
+     reply directly answers the thread.
    - Do not open a Browser Use issue unless reporting an actual Browser Use bug
      or proposing a concrete adapter.
 2. Stagehand Discussions or Discord
@@ -45,7 +91,8 @@ real reply or question to reference.
 3. Playwright community
    - Best angle: "This is for Playwright scripts that include LLM decisions, not
      a replacement for Playwright trace viewer."
-   - Share only the debugging write-up unless people ask for the repo.
+   - Use Discord or LinkedIn only when the topic is LLM-guided automation.
+     Share only the debugging write-up unless people ask for the repo.
 4. Skyvern Discussions
    - Best angle: "I am planning a Skyvern adapter and want to know which failure
      artifacts are most useful: screenshots, step prompts, model outputs, or
