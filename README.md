@@ -94,6 +94,9 @@ For custom browser agents, read
 
 For all runnable examples, including no-browser Playwright + LLM and custom
 computer-use loops, see the [examples guide](examples/).
+To choose a runnable demo, use the
+[example matrix](examples/#example-matrix), which lists no-service examples and
+their commands.
 
 For a compact command cheat sheet covering `browsertrace doctor`, `browsertrace demo`,
 `browsertrace list`, `browsertrace show`, and public-safe export, see
