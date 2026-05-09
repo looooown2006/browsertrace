@@ -19,6 +19,10 @@ def test_collect_snapshot_calculates_goal_and_release_downloads():
                 "url": "https://github.com/aaronlab/browsertrace",
             }
         if args[:1] == ["api"]:
+            if args[1].endswith("/traffic/views"):
+                return {"count": 48, "uniques": 25}
+            if args[1].endswith("/traffic/clones"):
+                return {"count": 100, "uniques": 52}
             return {
                 "assets": [
                     {"name": "browsertrace-demo.html", "download_count": 10},
@@ -38,6 +42,10 @@ def test_collect_snapshot_calculates_goal_and_release_downloads():
     assert snapshot.goal_status == "incomplete"
     assert snapshot.release_downloads == 14
     assert snapshot.release_assets == 2
+    assert snapshot.traffic_views == 48
+    assert snapshot.traffic_view_uniques == 25
+    assert snapshot.traffic_clones == 100
+    assert snapshot.traffic_clone_uniques == 52
 
 
 def test_markdown_row_escapes_note_separator():
@@ -55,6 +63,10 @@ def test_markdown_row_escapes_note_separator():
         release_tag="v0.1.10",
         release_downloads=6,
         release_assets=4,
+        traffic_views=48,
+        traffic_view_uniques=25,
+        traffic_clones=100,
+        traffic_clone_uniques=52,
         stars_to_goal=998,
         goal_status="incomplete",
         note="after X | LinkedIn",
@@ -62,5 +74,5 @@ def test_markdown_row_escapes_note_separator():
 
     assert (
         launch_metrics.markdown_row(snapshot)
-        == "| 2026-05-09T08:30:00+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 6 | after X \\| LinkedIn |"
+        == "| 2026-05-09T08:30:00+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 6 | after X \\| LinkedIn; traffic views 48/25 unique, clones 100/52 unique |"
     )

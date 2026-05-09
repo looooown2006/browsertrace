@@ -35,6 +35,10 @@ class LaunchSnapshot:
     release_tag: str
     release_downloads: int
     release_assets: int
+    traffic_views: int
+    traffic_view_uniques: int
+    traffic_clones: int
+    traffic_clone_uniques: int
     stars_to_goal: int
     goal_status: str
     note: str
@@ -51,6 +55,26 @@ def gh_json(args: list[str]) -> dict[str, Any]:
         text=True,
     )
     return json.loads(completed.stdout)
+
+
+def collect_traffic(repo: str, runner: GitHubRunner) -> dict[str, int]:
+    try:
+        views_payload = runner(["api", f"repos/{repo}/traffic/views"])
+        clones_payload = runner(["api", f"repos/{repo}/traffic/clones"])
+    except (subprocess.CalledProcessError, json.JSONDecodeError, TypeError, ValueError):
+        return {
+            "traffic_views": 0,
+            "traffic_view_uniques": 0,
+            "traffic_clones": 0,
+            "traffic_clone_uniques": 0,
+        }
+
+    return {
+        "traffic_views": int(views_payload.get("count", 0)),
+        "traffic_view_uniques": int(views_payload.get("uniques", 0)),
+        "traffic_clones": int(clones_payload.get("count", 0)),
+        "traffic_clone_uniques": int(clones_payload.get("uniques", 0)),
+    }
 
 
 def collect_snapshot(
@@ -73,6 +97,7 @@ def collect_snapshot(
 
     stars = int(repo_payload["stargazerCount"])
     assets = release_payload.get("assets") or []
+    traffic = collect_traffic(repo, runner)
     captured_at = (now or datetime.now(timezone.utc)).replace(microsecond=0).isoformat()
 
     return LaunchSnapshot(
@@ -87,6 +112,10 @@ def collect_snapshot(
         release_tag=release_tag,
         release_downloads=sum(int(asset.get("download_count", 0)) for asset in assets),
         release_assets=len(assets),
+        traffic_views=traffic["traffic_views"],
+        traffic_view_uniques=traffic["traffic_view_uniques"],
+        traffic_clones=traffic["traffic_clones"],
+        traffic_clone_uniques=traffic["traffic_clone_uniques"],
         stars_to_goal=max(0, TARGET_STARS - stars),
         goal_status="complete" if stars >= TARGET_STARS else "incomplete",
         note=note,
@@ -106,14 +135,31 @@ def render_summary(snapshot: LaunchSnapshot) -> str:
             f"issues: {data['issues']}",
             f"pull_requests: {data['pull_requests']}",
             f"release_downloads: {data['release_downloads']}",
+            f"traffic_views: {data['traffic_views']}",
+            f"traffic_view_uniques: {data['traffic_view_uniques']}",
+            f"traffic_clones: {data['traffic_clones']}",
+            f"traffic_clone_uniques: {data['traffic_clone_uniques']}",
             f"goal_status: {data['goal_status']}",
             f"note: {data['note']}",
         ]
     )
 
 
+def render_note(snapshot: LaunchSnapshot) -> str:
+    note_parts = []
+    if snapshot.note:
+        note_parts.append(snapshot.note)
+    if snapshot.traffic_views or snapshot.traffic_clones:
+        note_parts.append(
+            "traffic views "
+            f"{snapshot.traffic_views}/{snapshot.traffic_view_uniques} unique, "
+            f"clones {snapshot.traffic_clones}/{snapshot.traffic_clone_uniques} unique"
+        )
+    return "; ".join(note_parts).replace("|", "\\|")
+
+
 def markdown_row(snapshot: LaunchSnapshot) -> str:
-    note = snapshot.note.replace("|", "\\|")
+    note = render_note(snapshot)
     return (
         f"| {snapshot.captured_at} | {snapshot.stars} | {snapshot.stars_to_goal} | "
         f"{snapshot.forks} | {snapshot.watchers} | {snapshot.issues} | "
