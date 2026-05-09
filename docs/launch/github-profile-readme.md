@@ -42,7 +42,7 @@ Live demo: https://aaronlab.github.io/browsertrace/
 Roadmap: https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
 
 Good first issue:
-https://github.com/aaronlab/browsertrace/issues/20
+https://github.com/aaronlab/browsertrace/issues/21
 
 Public-safe demo export:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html

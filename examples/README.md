@@ -16,6 +16,15 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 ```
 
+Windows PowerShell:
+
+```powershell
+$env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+```
+
 Persistent install from the GitHub release tag:
 
 ```bash
