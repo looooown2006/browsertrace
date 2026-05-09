@@ -67,7 +67,8 @@ Open `http://127.0.0.1:3000`, click
 ## Install From The Release Tag
 
 PyPI publishing is not enabled yet. Until then, install from the GitHub release
-tag:
+tag. Track publishing in the
+[PyPI tracking issue](https://github.com/aaronlab/browsertrace/issues/5):
 
 ```bash
 # SDK only

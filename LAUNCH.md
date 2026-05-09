@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T22:41:40+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #77 closed and good-first issue #78 rotation |
+| 2026-05-09T22:43:48+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README PyPI tracking issue link for issue #78 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
