@@ -216,3 +216,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T18:45:36+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after Windows public-safe export docs for issue #28; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:48:27+00:00 | 3 | 998 | 3 | 0 | 14 | 0 | 0 | after good-first issue #29 rotation and live profile sync; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:49:48+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #28 closed and good-first issue #29 kept open; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T18:51:35+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after IndexNow refresh for updated docs and issue #16 comment; traffic views 52/29 unique, clones 103/54 unique |
