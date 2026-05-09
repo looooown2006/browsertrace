@@ -23,7 +23,7 @@ pip install -e ".[ui]"
 ## Run the no-API demo
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.6"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
 browsertrace demo
 browsertrace
 ```

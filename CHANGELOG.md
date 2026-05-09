@@ -7,6 +7,16 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.7 - 2026-05-09
+
+- Added a no-dependency Browser Use-shaped callback demo so users can inspect
+  adapter output without installing Browser Use, using an API key, or launching
+  a browser.
+- Added a comparison page for BrowserTrace versus Playwright Trace Viewer,
+  LangSmith, Langfuse, and Browserbase.
+- Added a Playwright + LLM feedback issue and linked it from the guide and
+  launch packet.
+
 ## 0.1.6 - 2026-05-09
 
 - HTML exports now show both model input and model output by default, matching

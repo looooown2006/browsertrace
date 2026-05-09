@@ -34,16 +34,16 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.6"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.6"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
 ```
 
 ## See a failure trace in 60 seconds
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.6"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.7"
 browsertrace demo
 browsertrace
 ```
@@ -53,7 +53,7 @@ Open `http://127.0.0.1:3000`, click
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.6/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.7/browsertrace-demo.html)
 from the latest release.
 
 For a walkthrough, read
@@ -312,7 +312,7 @@ This is a v0.1 alpha. The fastest way to help:
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
-Launch discussion: [BrowserTrace v0.1.6](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace v0.1.7](https://github.com/aaronlab/browsertrace/discussions/6).
 
 Changelog: [CHANGELOG.md](CHANGELOG.md).
 

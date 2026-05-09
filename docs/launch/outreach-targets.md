@@ -28,7 +28,7 @@ Post only where the community rules allow it. The ask is feedback from people bu
 2. Hacker News once the first-run path is clearly understandable.
 3. Browser Use and Stagehand communities because they match the product.
 4. Reddit only with a useful write-up and after checking local rules.
-5. Directory/newsletter submissions after `v0.1.6` links are stable.
+5. Directory/newsletter submissions after `v0.1.7` links are stable.
 6. Product Hunt after the visual assets are strong enough for a broader audience.
 
 ## Directory And Newsletter Pitch
@@ -49,7 +49,7 @@ BrowserTrace is an MIT-licensed local debugger for AI browser agents.
 
 It records each browser-agent step as a timeline with screenshots, URL, action,
 model input/output, status, and errors, then exports a standalone HTML trace.
-The v0.1.6 release includes `browsertrace demo` for first-run onboarding and
+The v0.1.7 release includes `browsertrace demo` for first-run onboarding and
 `browsertrace export --redact` so real traces can be shared publicly without
 prompt/model I/O.
 
@@ -59,7 +59,7 @@ computer-use agents.
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.6
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.7
 ```
 
 Submission notes:
