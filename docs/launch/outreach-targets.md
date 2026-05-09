@@ -79,6 +79,7 @@ real reply or question to reference.
    - Best angle: "I am building a local trace viewer for failed browser-use runs
      and want feedback on which fields matter at failure time."
    - Link order: Browser Use guide first, live trace second, repo third.
+   - Feedback sink: `https://github.com/aaronlab/browsertrace/issues/11`
    - Best category: Show and tell or Q&A. Existing threads about selectors,
      generated Playwright scripts, and audit trails are relevant only if the
      reply directly answers the thread.

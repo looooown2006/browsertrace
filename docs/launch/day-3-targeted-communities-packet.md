@@ -79,6 +79,9 @@ https://aaronlab.github.io/browsertrace/trace.html
 Repo:
 https://github.com/aaronlab/browsertrace
 
+Browser Use adapter feedback issue:
+https://github.com/aaronlab/browsertrace/issues/11
+
 For Browser Use specifically, what would be most useful to capture?
 
 - Agent task and step number

@@ -202,6 +202,7 @@
     <div class="actions" aria-label="Primary actions">
       <a class="button primary" href="https://github.com/aaronlab/browsertrace">View repo</a>
       <a class="button" href="./trace.html">Open exported trace</a>
+      <a class="button" href="https://github.com/aaronlab/browsertrace/issues/11">Adapter feedback</a>
     </div>
 
     <section>
@@ -230,6 +231,7 @@ agent = Agent(task="...", llm=ChatOpenAI(model="gpt-4o"))
 with attach_tracer(agent, tracer, name="browser-use checkout run"):
     await agent.run()</code></pre>
       <p>The adapter hooks Browser Use step callbacks and records URL, screenshot, action summary, model thought/actions, status, and errors into the same local timeline.</p>
+      <p>For adapter field requests, use the Browser Use feedback issue and include the Browser Use version, failure shape, and which context your logs missed.</p>
     </section>
 
     <section>
@@ -253,7 +255,7 @@ browsertrace export &lt;run_id&gt; --redact -o public.html</code></pre>
 
     <section>
       <div class="note">
-        BrowserTrace is MIT licensed and local-first. It is built for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom computer-use agents.
+        BrowserTrace is MIT licensed and local-first. Browser Use adapter feedback is tracked in <a href="https://github.com/aaronlab/browsertrace/issues/11">issue #11</a>.
       </div>
     </section>
   </main>
