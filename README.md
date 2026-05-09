@@ -495,6 +495,8 @@ For concise contributor expectations and a welcoming baseline, read
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 To choose the right bug, feature, integration, or cloud/team template, use the
 [issue template chooser](https://github.com/aaronlab/browsertrace/issues/new/choose).
+Before opening a PR, use the [pull request template](.github/PULL_REQUEST_TEMPLATE.md)
+and include a linked issue and test commands.
 
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
 2. Pick a [good first issue](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
