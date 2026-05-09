@@ -173,3 +173,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T16:24:09+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after press kit trial and contribution paths deployed; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T16:28:39+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after launch packets synced with doctor and contribution path; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T16:31:52+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after owner launch checklists synced with doctor fallback; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T16:36:03+00:00 | 3 | 998 | 2 | 0 | 12 | 0 | 0 | after launch trial copy synced with doctor first-run path; traffic views 52/29 unique, clones 103/54 unique |
