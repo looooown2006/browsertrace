@@ -137,6 +137,36 @@ $env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"
 python examples/no_api_failure_demo.py
 browsertrace
 ```
+
+### Testing with isolated trace storage
+
+Use a temporary trace store when adding BrowserTrace to pytest suites so test
+runs do not write to `~/.browsertrace/`. This recipe uses no browser, network,
+or API key:
+
+```python
+def test_browsertrace_trace_uses_temp_store(tmp_path, monkeypatch):
+    monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))
+
+    from browsertrace import Tracer
+
+    tracer = Tracer()
+    with tracer.run("pytest isolated trace") as run:
+        run.step(
+            action="record deterministic step",
+            model_input={"task": "exercise trace storage"},
+            model_output={"status": "ok"},
+        )
+
+    assert (tmp_path / "db.sqlite").exists()
+```
+
+If your test module imports BrowserTrace before setting `BROWSERTRACE_HOME`,
+pass the temp path explicitly instead:
+
+```python
+tracer = Tracer(home=tmp_path)
+```
 ## Public Export Flow
 
 After creating a demo run, export it for safe sharing:

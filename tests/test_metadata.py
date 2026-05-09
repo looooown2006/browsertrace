@@ -229,6 +229,17 @@ def test_examples_readme_includes_windows_public_safe_export_flow():
     assert "BrowserTrace does not upload" in examples_readme
 
 
+def test_examples_readme_includes_pytest_isolated_storage_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### Testing with isolated trace storage" in examples_readme
+    assert "def test_browsertrace_trace_uses_temp_store" in examples_readme
+    assert 'monkeypatch.setenv("BROWSERTRACE_HOME", str(tmp_path))' in examples_readme
+    assert "Tracer()" in examples_readme
+    assert "no browser, network, or API key" in " ".join(examples_readme.split())
+
+
 def test_owner_profile_actions_include_browsertrace_pin_step():
     project_root = Path(__file__).resolve().parents[1]
     owner_docs = {
@@ -472,7 +483,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:55:17+00:00" in launch
-    assert "after launch discussion update for #29 and Playwright LLM example" in launch
+    assert "2026-05-09T18:58:29+00:00" in launch
+    assert "after pytest isolated trace storage docs for issue #29" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
