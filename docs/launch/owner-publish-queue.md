@@ -17,6 +17,8 @@ people building browser agents.
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
+Shortest owner checklist: `docs/launch/owner-next-actions.md`
+
 ## Media
 
 - Primary video: `docs/demo.mp4`
