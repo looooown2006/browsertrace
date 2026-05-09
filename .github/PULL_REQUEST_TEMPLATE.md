@@ -1,14 +1,20 @@
+Replace every placeholder before requesting review. Keep the PR small enough to
+review in one pass.
+
 ## Summary
 
-- <summary>
+- What changed:
+- Why it matters:
 
 ## Linked Issue
 
-- Fixes #<issue>
+- Fixes #123 or Refs #123
+- If there is no linked issue, say why this PR is still focused.
 
 ## Test Plan
 
-- [ ] `uv run --python 3.11 --extra dev pytest -q`
+- [ ] I ran `uv run --python 3.11 --extra dev pytest -q`
+- [ ] I included the exact error/output if a check could not be run.
 
 ## Demo / Screenshots
 

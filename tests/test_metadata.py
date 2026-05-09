@@ -360,6 +360,16 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
     assert "https://github.com/aaronlab/browsertrace/issues/28" in packet
 
 
+def test_pull_request_template_prompts_for_real_contributor_details():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (project_root / ".github" / "PULL_REQUEST_TEMPLATE.md").read_text()
+
+    assert "<summary>" not in template
+    assert "Replace every placeholder before requesting review." in template
+    assert "Fixes #123 or Refs #123" in template
+    assert "I ran `uv run --python 3.11 --extra dev pytest -q`" in template
+
+
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -413,10 +423,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:09:15+00:00" in launch
-    assert (
-        "after launch discussion contributor update: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16864016"
-        in launch
-    )
+    assert "2026-05-09T18:12:55+00:00" in launch
+    assert "after PR template contributor onboarding update" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
