@@ -28,3 +28,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T09:21:06+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | after PyPI issue title update: https://github.com/aaronlab/browsertrace/issues/5 |
 | 2026-05-09T09:25:05+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 0 | after integrations landing page published: https://aaronlab.github.io/browsertrace/integrations.html |
 | 2026-05-09T09:28:03+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after README and homepage integration link audit |
+| 2026-05-09T09:33:19+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after custom GitHub Pages workflow deployment: https://github.com/aaronlab/browsertrace/actions/runs/25597763887 |
