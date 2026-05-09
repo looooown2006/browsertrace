@@ -46,6 +46,14 @@ browsertrace demo
 browsertrace
 ```
 
+No-install uvx quickstart before PyPI publishing is enabled:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 Then open `http://127.0.0.1:3000` and inspect the failed checkout-agent run.
 
 ## Positioning

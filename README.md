@@ -48,6 +48,14 @@ browsertrace demo
 browsertrace
 ```
 
+No-install `uvx` trial before PyPI publishing is enabled:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
 

@@ -76,3 +76,20 @@ def test_windows_powershell_first_run_docs_cover_env_vars():
     assert '$env:BROWSERTRACE_PORT = "4000"' in docs_text
     assert "BROWSERTRACE_HOME=/tmp/browsertrace-demo" in docs_text
     assert "BROWSERTRACE_PORT=4000 browsertrace" in docs_text
+
+
+def test_docs_include_uvx_github_quickstart_before_pypi():
+    project_root = Path(__file__).resolve().parents[1]
+    docs_text = "\n".join(
+        [
+            (project_root / "README.md").read_text(),
+            (project_root / "docs" / "llms.txt").read_text(),
+        ]
+    )
+
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10'
+    )
+    assert f'uvx --from "{github_spec}" browsertrace demo' in docs_text
+    assert f'uvx --from "{github_spec}" browsertrace list' in docs_text
+    assert "before PyPI publishing is enabled" in docs_text
