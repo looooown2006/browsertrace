@@ -270,6 +270,20 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_code_of_conduct_near_contributing():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    contributing_section = readme.split("## Contributing", 1)[1].split(
+        "## License", 1
+    )[0]
+
+    assert "[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)" in contributing_section
+    assert "concise contributor expectations" in contributing_section
+    assert "welcoming baseline" in contributing_section
+    assert "@v0.1.14" in readme
+    assert "hosted sharing" not in readme
+
+
 def test_readme_links_browser_use_debugging_guide():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1029,7 +1043,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T22:25:24+00:00" in launch
-    assert "after issue #73 closed and good-first issue #74 rotation" in launch
+    assert "2026-05-09T22:27:50+00:00" in launch
+    assert "after README code of conduct link for issue #74" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
