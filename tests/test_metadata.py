@@ -177,6 +177,17 @@ def test_first_run_docs_include_doctor_command():
     assert "Print local install and trace-store status" in docs_text
 
 
+def test_llms_txt_points_to_current_contribution_path():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/23" in llms
+    assert (
+        "Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
+        in llms
+    )
+
+
 def test_launch_copy_includes_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
