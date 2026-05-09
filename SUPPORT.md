@@ -29,6 +29,8 @@ Please include:
 - Agent/browser stack.
 - Reproduction steps.
 - Exported trace or `browsertrace show <id>` output if it is safe to share.
+  Use `browsertrace export <run_id> --public -o public.html` before attaching a
+  real trace publicly.
 
 ## Feature and Integration Requests
 

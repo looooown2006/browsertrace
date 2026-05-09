@@ -32,6 +32,7 @@ Include:
   `BROWSERTRACE_HOME`.
 - HTML exports inline screenshots and model output. Review exports before
   sharing them publicly.
+- Use `browsertrace export <run_id> --public -o public.html` before public
+  sharing to omit prompt/model I/O, screenshots, and URLs.
 - Do not attach trace exports containing secrets, customer data, private URLs,
   cookies, tokens, or proprietary prompts to public issues.
-

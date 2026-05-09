@@ -31,7 +31,7 @@ browser-agent failures instead of speculative APIs.
 ```bash
 uv run --python 3.11 --extra dev pytest -q
 uv build
-python examples/no_api_failure_demo.py
+uv run --python 3.11 python -m browsertrace.cli demo
 browsertrace
 ```
 
@@ -72,4 +72,6 @@ For each PR, include:
 - What user problem it solves.
 - How to try it locally.
 - Test commands run.
-- Screenshots or exported traces for UI/demo changes.
+- Screenshots or exported traces for UI/demo changes. Use
+  `browsertrace export <run_id> --public -o public.html` before attaching a
+  real trace publicly.
