@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T19:41:15+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #37 closed and good-first issue #38 rotation |
+| 2026-05-09T19:44:13+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after environment variable quick reference docs for issue #38 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

@@ -119,6 +119,16 @@ with sync_playwright() as p:
 
 ## Troubleshooting
 
+### Environment variable quick reference
+
+Use these variables when you want to change local BrowserTrace behavior without
+editing code:
+
+| Variable | What it changes |
+|---|---|
+| `BROWSERTRACE_HOME` | changes the trace store directory |
+| `BROWSERTRACE_PORT` | changes the local UI port |
+
 ### Port Already in Use
 
 If `http://127.0.0.1:3000` is already in use, you may see an error like:
