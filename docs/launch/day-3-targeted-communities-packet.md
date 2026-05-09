@@ -190,8 +190,8 @@ https://aaronlab.github.io/browsertrace/
 Repo:
 https://github.com/aaronlab/browsertrace
 
-I'm considering a Skyvern adapter and want to know what would actually help
-debug failed workflows:
+BrowserTrace now has a basic Skyvern wrapper for high-level task/workflow calls.
+I want to know what a deeper adapter should capture to debug failed workflows:
 
 - screenshots
 - workflow state

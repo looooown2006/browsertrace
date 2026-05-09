@@ -40,7 +40,10 @@ That is fair. The project is intentionally v0.1 and scoped to the smallest usefu
 
 ## Does it support Skyvern?
 
-Not first-class yet. Skyvern support is a good next adapter because the debugging problem is similar: browser state plus model decision context. There is a tracked issue for a Skyvern adapter.
+Yes, there is now a basic Skyvern wrapper in `browsertrace.integrations.skyvern`
+that records high-level `run_task` and `run_workflow` calls. A deeper adapter
+that captures workflow state, selected elements, and richer run artifacts is
+still a good next step.
 
 ## Is this for production observability?
 

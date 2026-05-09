@@ -65,8 +65,8 @@ failed step, and export a shareable HTML trace.
 - Local SQLite storage.
 - Exports a self-contained HTML trace.
 - Includes a no-API-key deterministic failure demo.
-- Works with generic Python code and has Browser Use, Stagehand, and Playwright
-  examples.
+- Works with generic Python code and has Browser Use, Stagehand, Skyvern, and
+  Playwright examples or wrappers.
 
 ## Safe Ask
 

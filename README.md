@@ -20,7 +20,7 @@ BrowserTrace records each browser-agent step as a timeline: screenshot, URL,
 action, model input, model output, status, and error. Open the local UI and jump
 straight to the failure.
 
-Built for Browser Use, Stagehand, Playwright + LLM scripts, and custom
+Built for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
 computer-use agents.
 
 **Try it:** [live demo](https://aaronlab.github.io/browsertrace/) ·
@@ -161,6 +161,27 @@ await page.extract("get the headline")      # auto-recorded
 page.bt_run.close()
 ```
 
+### Skyvern integration
+
+Wrap a Skyvern-shaped client to record high-level task and workflow calls.
+
+```python
+from skyvern import Skyvern
+from browsertrace import Tracer
+from browsertrace.integrations.skyvern import wrap_skyvern
+
+tracer = Tracer()
+skyvern = wrap_skyvern(Skyvern(...), tracer, name="my skyvern run")
+
+await skyvern.run_task(
+    url="https://example.com",
+    prompt="extract the invoice total",
+    wait_for_completion=True,
+)
+
+skyvern.close()
+```
+
 ### Playwright
 
 See `examples/playwright_example.py`, `examples/failure_example.py`, and
@@ -261,8 +282,9 @@ Real-world feedback shapes what ships first.
 - [x] **CLI export**: `browsertrace export <run_id>` static HTML bundle
 - [x] **Search/filter**: Filter the run list by status and query text
 - [x] **AI summaries**: Optional OpenAI-compatible root-cause endpoint
+- [x] **Skyvern wrapper**: Trace high-level task/workflow calls
 - [ ] **Multi-run comparison**: "Did this regression appear after my last commit?"
-- [ ] **First-class Skyvern adapter**
+- [ ] **Deeper Skyvern adapter**: Capture workflow state and selected elements
 - [ ] **Optional cloud share links**
 
 ## Contributing
