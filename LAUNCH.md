@@ -62,7 +62,9 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
 Run this audit at the start and end of each launch day:
 
 ```bash
-gh repo view aaronlab/browsertrace --json stargazerCount,forkCount,watchers,totalPullRequests,totalIssues,url
+gh repo view aaronlab/browsertrace \
+  --json stargazerCount,forkCount,watchers,issues,pullRequests,url \
+  --jq '{stars: .stargazerCount, forks: .forkCount, watchers: .watchers.totalCount, issues: .issues.totalCount, pull_requests: .pullRequests.totalCount, url: .url}'
 gh issue list --repo aaronlab/browsertrace --state all --limit 20
 gh api repos/aaronlab/browsertrace/releases/tags/v0.1.1 --jq '.assets[] | {name, download_count}'
 ```
