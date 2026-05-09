@@ -6,7 +6,7 @@ LLM, and computer-use runs easier to inspect, export, and discuss.
 
 ## Current Release
 
-`v0.1.12` is the current launch release.
+`v0.1.13` is the current launch release.
 
 Shipped:
 
@@ -34,7 +34,7 @@ cannot be completed by a contributor PR.
 |---|---|---|
 | [#5 PyPI publishing](https://github.com/aaronlab/browsertrace/issues/5) | Owner action needed | Enables normal `pip install browsertrace` instead of GitHub install URLs. |
 | [#15 Social preview](https://github.com/aaronlab/browsertrace/issues/15) | Owner action needed | Makes shared repo links show the BrowserTrace card. |
-| [#16 Search console submission](https://github.com/aaronlab/browsertrace/issues/16) | Owner action needed | Starts long-tail indexing for the GitHub Pages docs and demos. |
+| [#16 Search console submission](https://github.com/aaronlab/browsertrace/issues/16) | Owner action needed for search consoles; IndexNow submitted | Starts long-tail indexing for the GitHub Pages docs and demos. |
 | [#9 Day 1 warm launch posts](https://github.com/aaronlab/browsertrace/issues/9) | Owner action needed | Publishes from the owner's X, LinkedIn, WeChat, and Jike accounts. |
 | [#10 Directory and newsletter submissions](https://github.com/aaronlab/browsertrace/issues/10) | Owner action needed | Reaches curated developer-tool directories and newsletters without repeated submissions. |
 | [#18 Awesome list submissions](https://github.com/aaronlab/browsertrace/issues/18) | Monitoring open PRs | Three focused PRs are open; wait for maintainer feedback before any more list submissions. |
@@ -43,8 +43,12 @@ Completed launch prep:
 
 - [#13 GitHub profile README](https://github.com/aaronlab/browsertrace/issues/13)
   now points the `aaronlab` profile at BrowserTrace.
-- GitHub Release `v0.1.12` includes the wheel, sdist, full demo export,
+- GitHub Release `v0.1.13` includes the wheel, sdist, full demo export,
   public-safe demo export, demo video, poster, and GIF.
+- `v0.1.13` also includes the `browsertrace doctor` onboarding fix for
+  pre-PyPI UI dependency guidance.
+- IndexNow submission is prepared and submitted for the main GitHub Pages
+  launch URLs.
 
 ## v0.2 Product Tracks
 
