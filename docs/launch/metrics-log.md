@@ -262,3 +262,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T20:39:45+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #49 closed and good-first issue #50 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T20:42:42+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after README isolated trace storage testing link for issue #50; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T20:44:40+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after issue #50 closed and good-first issue #51 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T20:47:32+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 0 | after README environment variable quick reference link for issue #51; traffic views 52/29 unique, clones 103/54 unique |

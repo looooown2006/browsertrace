@@ -271,6 +271,10 @@ generic observe-decide-act loop, run `examples/computer_use_loop_example.py`.
 | SQLite db + screenshots | `~/.browsertrace/` | `Tracer(home="...")` or `BROWSERTRACE_HOME=/path browsertrace` |
 | UI port | `3000` | `BROWSERTRACE_PORT=4000 browsertrace` |
 
+For a compact list, see the
+[environment variable quick reference](examples/#environment-variable-quick-reference),
+which covers `BROWSERTRACE_HOME` and `BROWSERTRACE_PORT`.
+
 Windows PowerShell equivalents:
 
 ```powershell
