@@ -472,7 +472,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:48:27+00:00" in launch
-    assert "after good-first issue #29 rotation and live profile sync" in launch
+    assert "2026-05-09T18:49:48+00:00" in launch
+    assert "after issue #28 closed and good-first issue #29 kept open" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
