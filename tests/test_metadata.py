@@ -294,6 +294,17 @@ def test_browser_use_guide_has_troubleshooting_section():
     assert "browsertrace export &lt;run_id&gt; --public -o public.html" in page
 
 
+def test_browser_use_guide_documents_callback_compatibility():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-use-debugging.html").read_text()
+
+    assert "Callback compatibility" in page
+    assert "on_step_start" in page
+    assert "on_step_end" in page
+    assert "register_new_step_callback" in page
+    assert "run-hook-only" in page
+
+
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
     project_root = Path(__file__).resolve().parents[1]
     sitemap = (project_root / "docs" / "sitemap.xml").read_text()
@@ -445,7 +456,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:18:45+00:00" in launch
-    assert "after Browser Use troubleshooting guide update for issue #11" in launch
+    assert "2026-05-09T18:21:16+00:00" in launch
+    assert "after Browser Use callback compatibility docs for issue #11" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

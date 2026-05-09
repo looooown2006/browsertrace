@@ -283,6 +283,12 @@ with attach_tracer(agent, tracer, name="browser-use checkout run"):
     </section>
 
     <section>
+      <h2>Callback compatibility</h2>
+      <p><code>attach_tracer</code> supports Browser Use agents that expose <code>register_new_step_callback</code>, plus older or forked agents with <code>on_step_start</code>, <code>on_step</code>, or <code>_new_step_callback</code> attributes.</p>
+      <p>Current Browser Use examples may also pass <code>on_step_start</code> or <code>on_step_end</code> directly to <code>agent.run(...)</code>. If your app is run-hook-only and does not expose an attachable agent callback, keep using <code>run.snapshot(...)</code> manually for now and comment on issue #11 with the Browser Use version and hook shape you need.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html
