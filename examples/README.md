@@ -68,6 +68,28 @@ pip install playwright
 playwright install chromium
 ```
 
+### Playwright sync API snapshot
+
+Use `snapshot_sync` when your code uses sync Playwright instead of
+`playwright.async_api`:
+
+```python
+from browsertrace import Tracer
+from playwright.sync_api import sync_playwright
+
+tracer = Tracer()
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    page = browser.new_page()
+
+    with tracer.run("sync Playwright example") as run:
+        page.goto("https://example.com")
+        run.snapshot_sync(page, action="opened example.com")
+
+    browser.close()
+```
+
 ## Troubleshooting
 
 ### Port Already in Use

@@ -258,6 +258,16 @@ def test_examples_readme_includes_github_actions_public_export_artifact_recipe()
     )
 
 
+def test_examples_readme_includes_playwright_sync_snapshot_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### Playwright sync API snapshot" in examples_readme
+    assert "from playwright.sync_api import sync_playwright" in examples_readme
+    assert "run.snapshot_sync(page, action=\"opened example.com\")" in examples_readme
+    assert "sync Playwright" in examples_readme
+
+
 def test_owner_profile_actions_include_browsertrace_pin_step():
     project_root = Path(__file__).resolve().parents[1]
     owner_docs = {
@@ -501,7 +511,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T19:05:58+00:00" in launch
-    assert "after issue #30 closed and good-first issue #31 rotation" in launch
+    assert "2026-05-09T19:08:22+00:00" in launch
+    assert "after Playwright sync snapshot docs for issue #31" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
