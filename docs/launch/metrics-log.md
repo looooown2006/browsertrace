@@ -183,3 +183,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T16:59:54+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after profile pinning owner-action issue opened and linked: https://github.com/aaronlab/browsertrace/issues/24; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:02:24+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after PyPI owner-action issue refreshed for v0.1.12: https://github.com/aaronlab/browsertrace/issues/5; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T17:04:51+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after v0.1.12 release notes added live demo, contribution, and discussion links; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T17:07:12+00:00 | 3 | 998 | 2 | 0 | 13 | 0 | 0 | after open issues attached to v0.2 milestone and milestone description refreshed; traffic views 52/29 unique, clones 103/54 unique |
