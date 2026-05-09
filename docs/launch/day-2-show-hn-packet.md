@@ -80,6 +80,7 @@ straight to the failed step.
 
 It is MIT licensed, local-first, and has a deterministic no-API demo. Before PyPI publishing is enabled, the quickest trial is uvx from the GitHub tag:
 
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 
@@ -152,6 +153,23 @@ Does data leave my machine?
 No by default. It stores SQLite data and screenshots under ~/.browsertrace/
 unless you override the home directory. The optional AI summary endpoint only
 calls an OpenAI-compatible API if you configure a key and request a summary.
+```
+
+`uvx` is not installed on my machine.
+
+```text
+Install uv from the official uv installation guide, then rerun the GitHub-tag
+command. If you do not want to use uvx, the README also has a persistent
+GitHub-tag pip install path until PyPI publishing is enabled.
+```
+
+Can I contribute a small fix?
+
+```text
+Yes. Good first issues are kept small and reviewable. The current one is #23,
+which asks for concise browsertrace doctor troubleshooting notes. For adapter
+work, the most useful first step is an integration request describing the
+framework and failure state you need to debug.
 ```
 
 ## Metrics
