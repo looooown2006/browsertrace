@@ -6,7 +6,7 @@ LLM, and computer-use runs easier to inspect, export, and discuss.
 
 ## Current Release
 
-`v0.1.10` is the current launch release.
+`v0.1.12` is the current launch release.
 
 Shipped:
 
@@ -14,10 +14,14 @@ Shipped:
 - Local web UI for inspecting runs.
 - Screenshots, URLs, actions, model input/output, status, and errors.
 - `browsertrace demo` for a deterministic first run without API keys.
+- `browsertrace doctor` for first-run environment checks before any trace
+  database exists.
 - `browsertrace export` for standalone HTML traces.
 - `browsertrace export --public` for public-safe sharing without prompt/model
   I/O, screenshots, or URLs.
 - Basic Browser Use, Stagehand, and Skyvern-shaped integration examples.
+- A generic computer-use loop example for custom observe-decide-act browser
+  agents.
 - GitHub Pages live demo, integration guides, launch kit, and public-safe demo
   asset.
 
@@ -26,13 +30,21 @@ Shipped:
 These are owner-only account actions. They are important for growth, but they
 cannot be completed by a contributor PR.
 
-| Issue | Why it matters |
-|---|---|
-| [#5 PyPI publishing](https://github.com/aaronlab/browsertrace/issues/5) | Enables normal `pip install browsertrace` instead of GitHub install URLs. |
-| [#13 GitHub profile README](https://github.com/aaronlab/browsertrace/issues/13) | Makes `aaronlab` profile traffic point to BrowserTrace during launch. |
-| [#15 Social preview](https://github.com/aaronlab/browsertrace/issues/15) | Makes shared repo links show the BrowserTrace card. |
-| [#16 Search console submission](https://github.com/aaronlab/browsertrace/issues/16) | Starts long-tail indexing for the GitHub Pages docs and demos. |
-| [#18 Awesome list submissions](https://github.com/aaronlab/browsertrace/issues/18) | Prepares high-fit curated-list submissions without mass-posting. |
+| Issue | Status | Why it matters |
+|---|---|---|
+| [#5 PyPI publishing](https://github.com/aaronlab/browsertrace/issues/5) | Owner action needed | Enables normal `pip install browsertrace` instead of GitHub install URLs. |
+| [#15 Social preview](https://github.com/aaronlab/browsertrace/issues/15) | Owner action needed | Makes shared repo links show the BrowserTrace card. |
+| [#16 Search console submission](https://github.com/aaronlab/browsertrace/issues/16) | Owner action needed | Starts long-tail indexing for the GitHub Pages docs and demos. |
+| [#9 Day 1 warm launch posts](https://github.com/aaronlab/browsertrace/issues/9) | Owner action needed | Publishes from the owner's X, LinkedIn, WeChat, and Jike accounts. |
+| [#10 Directory and newsletter submissions](https://github.com/aaronlab/browsertrace/issues/10) | Owner action needed | Reaches curated developer-tool directories and newsletters without repeated submissions. |
+| [#18 Awesome list submissions](https://github.com/aaronlab/browsertrace/issues/18) | Monitoring open PRs | Three focused PRs are open; wait for maintainer feedback before any more list submissions. |
+
+Completed launch prep:
+
+- [#13 GitHub profile README](https://github.com/aaronlab/browsertrace/issues/13)
+  now points the `aaronlab` profile at BrowserTrace.
+- GitHub Release `v0.1.12` includes the wheel, sdist, full demo export,
+  public-safe demo export, demo video, poster, and GIF.
 
 ## v0.2 Product Tracks
 
