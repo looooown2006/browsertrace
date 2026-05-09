@@ -489,6 +489,9 @@ More detail: [ROADMAP.md](ROADMAP.md).
 
 This is a v0.1 alpha. The fastest way to help:
 
+For the small, issue-based contribution path and local checks, read
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
 2. Pick a [good first issue](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
    if you want a small documentation or example task.
