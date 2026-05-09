@@ -28,7 +28,7 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 |---:|---|---|---|---|
 | 1 | `angrykoala/awesome-browser-automation` | Strong | `Tools` -> `AI` | Submitted: https://github.com/angrykoala/awesome-browser-automation/pull/112 |
 | 2 | `mxschmitt/awesome-playwright` | Medium | `Utils` | Submitted: https://github.com/mxschmitt/awesome-playwright/pull/136 |
-| 3 | `Jenqyang/Awesome-AI-Agents` | Medium | `Applications` -> `Tools` | Open only if agent observability/debugging tools fit |
+| 3 | `Jenqyang/Awesome-AI-Agents` | Medium | `Applications` -> `Tools` | Submitted: https://github.com/Jenqyang/Awesome-AI-Agents/pull/220 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -128,6 +128,8 @@ Target:
 ```text
 https://github.com/Jenqyang/Awesome-AI-Agents
 ```
+
+Status: submitted as https://github.com/Jenqyang/Awesome-AI-Agents/pull/220.
 
 Fit notes:
 
