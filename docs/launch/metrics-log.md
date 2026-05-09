@@ -113,3 +113,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T13:14:24+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after uvx GitHub no-install quickstart added to docs and v0.1.10 release; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T13:17:14+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after launch publish packets updated with uvx no-install trial; traffic views 48/25 unique, clones 100/52 unique |
 | 2026-05-09T13:19:30+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after longform launch posts updated with uvx no-install trial; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T13:21:35+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after PyPI blocker issue updated with uvx no-install workaround: https://github.com/aaronlab/browsertrace/issues/5#issuecomment-4412618379; traffic views 52/29 unique, clones 103/54 unique |
