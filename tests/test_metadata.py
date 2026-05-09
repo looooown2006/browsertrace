@@ -14,7 +14,7 @@ def test_package_version_matches_module_version():
     project_root = Path(__file__).resolve().parents[1]
     pyproject = tomllib.loads((project_root / "pyproject.toml").read_text())
 
-    assert pyproject["project"]["version"] == "0.1.11"
+    assert pyproject["project"]["version"] == "0.1.12"
     assert pyproject["project"]["version"] == browsertrace.__version__
 
 
@@ -123,7 +123,7 @@ def test_docs_include_uvx_github_quickstart_before_pypi():
     )
 
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
     assert f'uvx --from "{github_spec}" browsertrace demo' in docs_text
     assert f'uvx --from "{github_spec}" browsertrace list' in docs_text
@@ -146,7 +146,7 @@ def test_first_run_docs_include_doctor_command():
 def test_launch_copy_includes_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
 
     for relpath in [
@@ -162,7 +162,7 @@ def test_launch_copy_includes_uvx_github_trial_before_pypi():
 def test_longform_launch_posts_include_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
 
     for relpath in [
@@ -178,7 +178,7 @@ def test_longform_launch_posts_include_uvx_github_trial_before_pypi():
 def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
@@ -189,7 +189,7 @@ def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
     notes = (
         project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
@@ -203,7 +203,7 @@ def test_awesome_list_submission_notes_include_trial_and_demo_links():
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
 
     for relpath in [
@@ -218,7 +218,7 @@ def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
 def test_owner_next_actions_include_uvx_fallback_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
 
     for relpath in [
@@ -233,7 +233,7 @@ def test_owner_next_actions_include_uvx_fallback_before_pypi():
 def test_launch_control_room_has_current_audit_and_uvx_fallback():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
     )
     launch = (project_root / "LAUNCH.md").read_text()
 

@@ -5,7 +5,17 @@ UTC.
 
 ## Unreleased
 
-- No unreleased changes.
+- Refreshed the roadmap and launch queues with the current `v0.1.12` release,
+  open awesome-list PR status, and remaining owner-only blockers.
+- Clarified the first-contribution path for good-first issues and PR templates.
+
+## 0.1.12 - 2026-05-09
+
+- Added a custom computer-use debugging guide and a no-browser
+  observe-decide-act example for custom browser-agent loops.
+- Added copy buttons to core guide quickstarts so users can run the GitHub tag
+  demo with less manual selection.
+- Updated launch, guide, and owner-action docs to point at `v0.1.12`.
 
 ## 0.1.11 - 2026-05-09
 

@@ -29,6 +29,13 @@ Include the target stack, the failure state you need to debug, and the hooks
 BrowserTrace should wrap. This helps keep adapter work grounded in real
 browser-agent failures instead of speculative APIs.
 
+For a `good first issue`, docs fix, or small example improvement:
+
+- Comment if you plan to work on it so others can avoid duplicating effort.
+- Open a draft PR early if you are unsure about scope.
+- Link the issue in the PR body with `Fixes #<issue>` or `Refs #<issue>`.
+- Keep the first PR small enough to review in one pass.
+
 ## Useful Local Checks
 
 ```bash
@@ -37,6 +44,9 @@ uv build
 uv run --python 3.11 python -m browsertrace.cli demo
 browsertrace
 ```
+
+For docs-only changes, still run the full pytest command. It is quick and keeps
+release, workflow, and packaging checks covered.
 
 ## Contribution Areas
 
@@ -78,6 +88,7 @@ adapters, a good first PR should:
 
 For each PR, include:
 
+- Linked issue, if any.
 - What user problem it solves.
 - How to try it locally.
 - Test commands run.

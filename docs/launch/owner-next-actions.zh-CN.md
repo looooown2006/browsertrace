@@ -17,9 +17,9 @@ pip install "browsertrace[ui]"
 如果必须在 PyPI 配置前先发帖或回复，用已经验证过的 uvx 试用路径：
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 在 PyPI 配置 Trusted Publisher：
@@ -146,15 +146,15 @@ GitHub awesome lists：
 docs/launch/github-awesome-list-submissions.md
 ```
 
-已经准备好的本地 PR 分支：
+已经打开的 PR：
 
-| 目标 | 本地目录 | 分支 |
-|---|---|---|
-| `angrykoala/awesome-browser-automation` | `/Users/enyuanzhang/Desktop/github/awesome-browser-automation-browsertrace` | `add-browsertrace-ai-tool` |
-| `mxschmitt/awesome-playwright` | `/Users/enyuanzhang/Desktop/github/awesome-playwright-browsertrace` | `add-browsertrace-playwright-utility` |
-| `Jenqyang/Awesome-AI-Agents` | `/Users/enyuanzhang/Desktop/github/awesome-ai-agents-browsertrace` | `add-browsertrace-agent-tool` |
+| 目标 | PR |
+|---|---|
+| `angrykoala/awesome-browser-automation` | `https://github.com/angrykoala/awesome-browser-automation/pull/112` |
+| `mxschmitt/awesome-playwright` | `https://github.com/mxschmitt/awesome-playwright/pull/136` |
+| `Jenqyang/Awesome-AI-Agents` | `https://github.com/Jenqyang/Awesome-AI-Agents/pull/220` |
 
-先提交第一个最高匹配目标。每个列表只开一个 focused PR。
+现在只监控维护者反馈，不再追加提交新的 awesome-list PR。
 
 目录/newsletter 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/10
 

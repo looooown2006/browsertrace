@@ -1,6 +1,10 @@
 ## Summary
 
-- 
+- <summary>
+
+## Linked Issue
+
+- Fixes #<issue>
 
 ## Test Plan
 
@@ -10,4 +14,3 @@
 
 If this changes UI, examples, exports, or README launch flow, attach a
 screenshot, GIF, or exported trace.
-

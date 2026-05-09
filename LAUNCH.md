@@ -1,7 +1,7 @@
 # BrowserTrace Launch Control Room
 
 Canonical repo: https://github.com/aaronlab/browsertrace
-Current release: `v0.1.11`
+Current release: `v0.1.12`
 Owner account: `aaronlab`
 
 ## Current State
@@ -14,9 +14,9 @@ Owner account: `aaronlab`
 - If posting before PyPI is live, use the tested no-install `uvx` fallback:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 - Current audited star count should be checked before every public push:
@@ -29,8 +29,8 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - README animation: `docs/demo.gif`
 - Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
-- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.11`
-- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.11`
+- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.12`
+- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.12`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist
@@ -73,8 +73,9 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
 - Upload `docs/social-preview.png` as the GitHub repository social preview in Settings -> Social preview. If PNG generation is unavailable, use `docs/social-preview.svg` as source for a manual export first.
 - Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
   Console and Bing Webmaster Tools.
-- Open the prepared third-party awesome-list PRs from the owner's GitHub
-  account, starting with `angrykoala/awesome-browser-automation`.
+- Monitor the three open third-party awesome-list PRs and respond only if
+  maintainers ask for changes. Do not open additional list PRs until there is
+  maintainer feedback.
 - Publish X, LinkedIn, WeChat, Jike, Xiaohongshu, Reddit, Discord, and community posts.
 - Submit Show HN from a real Hacker News account and reply in your own voice.
 - Create or schedule the Product Hunt draft from a personal Product Hunt account.

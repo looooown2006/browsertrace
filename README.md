@@ -26,6 +26,7 @@ computer-use agents.
 **Try it:** [live demo](https://aaronlab.github.io/browsertrace/) ·
 [debugging walkthrough](https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html) ·
 [integrations](https://aaronlab.github.io/browsertrace/integrations.html) ·
+[computer-use guide](https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html) ·
 [examples](examples/) ·
 [integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml) ·
 [launch discussion](https://github.com/aaronlab/browsertrace/discussions/6)
@@ -36,10 +37,10 @@ Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
 GitHub release tag:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 If you see `uvx: command not found`, install `uv` from the
@@ -56,10 +57,10 @@ tag:
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -67,15 +68,18 @@ browsertrace
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
 [How to debug an AI browser-agent failure](https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html).
+For custom browser agents, read
+[Debug custom computer-use agent failures](https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html).
 
-For all runnable examples, see the [examples guide](examples/).
+For all runnable examples, including a no-browser custom computer-use loop,
+see the [examples guide](examples/).
 
 For a real browser demo with screenshots from Wikipedia:
 
@@ -210,7 +214,8 @@ For a no-network wrapper demo that does not require a Skyvern install, run
 
 See `examples/playwright_example.py`, `examples/failure_example.py`, and
 `examples/multipage_failure.py`. If you want a no-browser deterministic demo,
-run `browsertrace demo`.
+run `browsertrace demo`; for a generic observe-decide-act loop, run
+`examples/computer_use_loop_example.py`.
 
 ## Storage and config
 
@@ -347,7 +352,7 @@ This is a v0.1 alpha. The fastest way to help:
 4. If you have a public-safe screenshot or exported trace from a real failure,
    share it in the launch discussion.
 
-Launch discussion: [BrowserTrace v0.1.11](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace launch thread](https://github.com/aaronlab/browsertrace/discussions/6).
 
 Changelog: [CHANGELOG.md](CHANGELOG.md).
 

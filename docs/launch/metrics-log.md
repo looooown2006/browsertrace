@@ -150,3 +150,14 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T14:59:30+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 1 | after good-first issue #20 closed; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:01:44+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 1 | after social preview asset upload instructions verified; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T15:04:05+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 1 | after guide pages uvx-first quickstart sync; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:06:30+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after CI/Pages verification and external PR monitoring; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:07:09+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after awesome-list monitoring update on issue 18; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:13:21+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use debugging guide published; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:17:48+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use loop example published; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:19:36+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after profile and feedback issue link computer-use guide; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:21:04+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after launch discussion computer-use update; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:23:24+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after search indexing checklist key URL update; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:26:15+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after computer-use guide copy button; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:30:28+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 1 | after copy buttons added to guide quickstarts; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:36:42+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 0 | after v0.1.12 release published and verified; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T15:47:28+00:00 | 3 | 998 | 2 | 0 | 12 | 1 | 0 | after roadmap and contributor onboarding refresh; traffic views 52/29 unique, clones 103/54 unique |

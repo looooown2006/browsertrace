@@ -23,7 +23,7 @@ Post only where the community rules allow it. The ask is feedback from people bu
 | FOSSHUNTER | Open-source tool discovery | `https://fosshunter.com/submit` | Day 4 | Directory submission | Submit from owner account | Requires login; submit once and wait for review |
 | AgentsTide | AI agents and browser-agent directory | `https://agentstide.com/` | Day 4 | Directory suggestion | Submit/contact if available | Browser Agents category is a clear fit |
 | BuilderAI Tools | Open-source AI developer tools | `https://builderai.tools/submit` | Day 4 | Directory submission | Submit/contact if available | Use AI Observability & Evaluation or Agents & Orchestration framing |
-| GitHub awesome lists | Developers browsing curated browser automation and AI-agent tool lists | `docs/launch/github-awesome-list-submissions.md` | Day 4 or 6 | One focused PR per high-fit list | Submit from owner account | Start with `angrykoala/awesome-browser-automation`; do not mass-submit to low-fit forks |
+| GitHub awesome lists | Developers browsing curated browser automation and AI-agent tool lists | `docs/launch/github-awesome-list-submissions.md` | Monitoring | Three focused PRs are already open | Watch maintainer feedback | Do not open more list PRs until one of the current PRs gets feedback |
 | console.dev | Devtools newsletter readers | `https://console.dev/` | Day 5 | Short editorial pitch | Contact from owner email/account | Lead with local-first browser-agent debugging and the redacted export release |
 | GitHub Discussions | Existing repo visitors | `https://github.com/aaronlab/browsertrace/discussions/6` | Daily | Feedback collection | Update launch discussion | Link from posts when people ask where to comment |
 
@@ -33,7 +33,7 @@ Post only where the community rules allow it. The ask is feedback from people bu
 2. Hacker News once the first-run path is clearly understandable.
 3. Browser Use and Stagehand communities because they match the product.
 4. Reddit only with a useful write-up and after checking local rules.
-5. Directory/newsletter submissions after `v0.1.11` links are stable. Use
+5. Directory/newsletter submissions after `v0.1.12` links are stable. Use
    `docs/launch/directory-submission-sheet.md` as the queue.
 6. Product Hunt after the visual assets are strong enough for a broader audience.
 
@@ -55,15 +55,15 @@ BrowserTrace is an MIT-licensed local debugger for AI browser agents.
 
 It records each browser-agent step as a timeline with screenshots, URL, action,
 model input/output, status, and errors, then exports a standalone HTML trace.
-The v0.1.11 release includes `browsertrace demo` for first-run onboarding,
+The v0.1.12 release includes `browsertrace demo` for first-run onboarding,
 `browsertrace export --public` for public-safe sharing, and individual
 redaction flags when users want to keep some fields visible.
 
 Try locally before PyPI publishing is enabled:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 Useful for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
@@ -71,9 +71,9 @@ computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.11
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.12
 ```
 
 Submission notes:

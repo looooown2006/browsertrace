@@ -10,25 +10,25 @@ Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
 GitHub release tag:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 Windows PowerShell:
 
 ```powershell
 $env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 Persistent install from the GitHub release tag:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -42,7 +42,7 @@ For a downloadable public-safe export that omits prompt/model I/O, screenshots,
 and URLs, inspect the release asset:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html
 ```
 
 ## Example Matrix
@@ -53,6 +53,7 @@ https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-
 | `browser_use_callback_demo.py` | You want to see Browser Use-shaped step callbacks recorded | None | `python examples/browser_use_callback_demo.py` |
 | `stagehand_wrapper_example.py` | You want to see Stagehand-style `act` and `extract` calls recorded | None | `python examples/stagehand_wrapper_example.py` |
 | `skyvern_wrapper_example.py` | You want to see Skyvern-style task calls recorded | None | `python examples/skyvern_wrapper_example.py` |
+| `computer_use_loop_example.py` | You want a generic observe-decide-act computer-use trace | None | `python examples/computer_use_loop_example.py` |
 | `basic_example.py` | You want the smallest manual SDK example | None | `python examples/basic_example.py` |
 | `failure_example.py` | You want a deterministic failed run with richer steps | None | `python examples/failure_example.py` |
 | `playwright_example.py` | You have Playwright installed and want browser screenshots | Local Chromium | `python examples/playwright_example.py` |

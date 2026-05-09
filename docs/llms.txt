@@ -19,14 +19,16 @@ to explain why a browser run failed.
 - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
 - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use agent guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 - Integrations: https://aaronlab.github.io/browsertrace/integrations.html
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.md
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.11
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.12
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
+- Custom computer-use feedback: https://github.com/aaronlab/browsertrace/issues/3
 
 ## Core Capabilities
 
@@ -41,17 +43,17 @@ to explain why a browser run failed.
 ## Quickstart
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
 
 Persistent install from the GitHub release tag before PyPI publishing is
 enabled:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12"
 browsertrace doctor
 browsertrace demo
 browsertrace
