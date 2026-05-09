@@ -115,6 +115,10 @@ If a first local run fails, the
 walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`,
 `browsertrace show`, and public-safe export.
 
+If the local UI port is already in use, the
+[port already in use recipe](examples/#port-already-in-use) shows how to switch
+ports with `BROWSERTRACE_PORT`.
+
 To inspect a failed step timeline in the terminal, use the
 [failed-run terminal inspection recipe](examples/#inspect-a-failed-run-in-the-terminal)
 with `browsertrace show <run_id>`.
