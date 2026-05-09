@@ -97,6 +97,13 @@ browsertrace demo
 browsertrace
 ```
 
+在 PyPI 发布前，也可以用 uvx 直接从 GitHub tag 试用，不需要持久安装：
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 打开：
 
 ```text

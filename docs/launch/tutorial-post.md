@@ -28,6 +28,14 @@ browsertrace demo
 browsertrace
 ```
 
+Before PyPI publishing is enabled, you can also run the demo without a
+persistent install:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 Open `http://127.0.0.1:3000`, then click `demo: checkout agent fails on disabled button`.
 
 The timeline shows the steps the agent took, including screenshots, actions, model input/output, and the failed step.

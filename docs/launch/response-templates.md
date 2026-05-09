@@ -32,7 +32,14 @@ Today, use `browsertrace export <run_id> -o run.html` to create a self-contained
 
 ## Why no PyPI install yet?
 
-The current install path uses GitHub while the package is still early. PyPI publishing is tracked as a launch follow-up. Once credentials are available, the README install path should become `pip install browsertrace[ui]`.
+The current install path uses GitHub while the package is still early. PyPI publishing is tracked as a launch follow-up. Before PyPI is configured, the quickest no-install trial is:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
+Once credentials are available, the README install path should become `pip install browsertrace[ui]`.
 
 ## I found a bug.
 
