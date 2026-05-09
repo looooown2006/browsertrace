@@ -27,7 +27,7 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 | Priority | Target | Fit | Section | Owner action |
 |---:|---|---|---|---|
 | 1 | `angrykoala/awesome-browser-automation` | Strong | `Tools` -> `AI` | Submitted: https://github.com/angrykoala/awesome-browser-automation/pull/112 |
-| 2 | `mxschmitt/awesome-playwright` | Medium | `Utils` | Open only if framed as Playwright + LLM tooling |
+| 2 | `mxschmitt/awesome-playwright` | Medium | `Utils` | Submitted: https://github.com/mxschmitt/awesome-playwright/pull/136 |
 | 3 | `Jenqyang/Awesome-AI-Agents` | Medium | `Applications` -> `Tools` | Open only if agent observability/debugging tools fit |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
@@ -82,6 +82,8 @@ Target:
 ```text
 https://github.com/mxschmitt/awesome-playwright
 ```
+
+Status: submitted as https://github.com/mxschmitt/awesome-playwright/pull/136.
 
 Fit notes:
 
