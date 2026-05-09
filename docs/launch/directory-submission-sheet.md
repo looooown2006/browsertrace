@@ -17,6 +17,23 @@ upvotes, swaps, or artificial engagement.
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
 - Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
 
+## Try-It Commands
+
+Before PyPI publishing is enabled, use the GitHub install or the no-install
+`uvx` path in directory replies when an editor asks how to try the project:
+
+```bash
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+browsertrace demo
+browsertrace
+```
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+```
+
 ## One-Line Pitch
 
 BrowserTrace is a local flight recorder for AI browser agents: screenshots,
