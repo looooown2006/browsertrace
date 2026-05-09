@@ -75,6 +75,19 @@ Public-safe demo export for replies:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.12/browsertrace-demo-public.html
 ```
 
+Try locally before PyPI publishing is enabled:
+
+```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+```
+
+Good first issue for contributors:
+
+```text
+https://github.com/aaronlab/browsertrace/issues/23
+```
+
 Description:
 
 ```text
@@ -126,6 +139,13 @@ https://aaronlab.github.io/browsertrace/
 GitHub:
 https://github.com/aaronlab/browsertrace
 
+Try locally:
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
+
+Good first issue:
+https://github.com/aaronlab/browsertrace/issues/23
+
 I would especially like feedback from people running browser agents in tests or
 production. What would make this useful in your workflow?
 ```
@@ -153,6 +173,8 @@ Use the same rules as other launch channels:
 - Reply as the maker, not as a generated support account.
 - Lead with the live demo when people want to inspect it.
 - Link GitHub when people ask how to install, star, fork, or contribute.
+- Link https://github.com/aaronlab/browsertrace/issues/23 when someone asks for
+  a small first contribution.
 - Ask which browser-agent stack they use.
 - Convert concrete adapter requests into GitHub issues.
 

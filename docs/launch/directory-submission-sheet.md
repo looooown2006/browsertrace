@@ -23,6 +23,7 @@ Before PyPI publishing is enabled, use the `uvx` path first in directory replies
 when an editor asks how to try the project:
 
 ```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace list
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace

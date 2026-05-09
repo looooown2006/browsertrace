@@ -32,6 +32,7 @@ Submit only if all are true:
   the GitHub `uvx` path:
 
 ```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace
 ```
@@ -282,6 +283,7 @@ redaction flags when users want to keep some fields visible.
 Try locally before PyPI publishing is enabled:
 
 ```bash
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace doctor
 uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12" browsertrace demo
 ```
 

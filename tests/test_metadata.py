@@ -258,7 +258,20 @@ def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
     assert "before pypi publishing is enabled" in sheet.lower()
+    assert f'uvx --from "{github_spec}" browsertrace doctor' in sheet
     assert f'uvx --from "{github_spec}" browsertrace demo' in sheet
+
+
+def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
+    project_root = Path(__file__).resolve().parents[1]
+    github_spec = (
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.12'
+    )
+    packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
+
+    assert f'uvx --from "{github_spec}" browsertrace doctor' in packet
+    assert f'uvx --from "{github_spec}" browsertrace demo' in packet
+    assert "https://github.com/aaronlab/browsertrace/issues/23" in packet
 
 
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
@@ -286,6 +299,7 @@ def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
         "docs/launch/outreach-targets.md",
     ]:
         text = (project_root / relpath).read_text()
+        assert f'uvx --from "{github_spec}" browsertrace doctor' in text, relpath
         assert f'uvx --from "{github_spec}" browsertrace demo' in text, relpath
         assert "before pypi publishing is enabled" in text.lower(), relpath
 
