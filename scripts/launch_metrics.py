@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 REPO = "aaronlab/browsertrace"
-RELEASE_TAG = "v0.1.9"
+RELEASE_TAG = "v0.1.10"
 TARGET_STARS = 1001
 DEFAULT_LOG = Path("docs/launch/metrics-log.md")
 

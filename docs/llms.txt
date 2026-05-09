@@ -23,7 +23,7 @@ to explain why a browser run failed.
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.9
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
 

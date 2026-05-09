@@ -174,6 +174,34 @@ def test_cli_export_redact_urls_omits_step_urls(cli, tmp_path):
     assert "URL redacted" in body
 
 
+def test_cli_export_public_redacts_model_io_screenshots_and_urls(cli, tmp_path):
+    cli_mod, home = cli
+    tracer = Tracer(home=home)
+    png = b"\x89PNG\r\n\x1a\n" + b"\x00" * 16
+    with tracer.run("public-export") as run:
+        run.step(
+            action="open private checkout",
+            url="https://internal.example.test/account?token=secret-token",
+            screenshot=png,
+            model_input={"prompt": "private prompt"},
+            model_output={"answer": "private answer"},
+        )
+
+    out_file = tmp_path / "public.html"
+    rc = cli_mod.main(["export", run.id, "--public", "-o", str(out_file)])
+
+    assert rc == 0
+    body = out_file.read_text()
+    assert "private prompt" not in body
+    assert "private answer" not in body
+    assert "internal.example.test" not in body
+    assert "secret-token" not in body
+    assert "data:image/png;base64" not in body
+    assert "Model I/O redacted" in body
+    assert "Screenshot redacted" in body
+    assert "URL redacted" in body
+
+
 def test_cli_demo_creates_failed_demo_run(cli):
     cli_mod, home = cli
     buf = StringIO()

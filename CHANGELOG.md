@@ -7,6 +7,12 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.10 - 2026-05-09
+
+- Added `browsertrace export --public` as a single sharing-safe export mode
+  that omits prompt/model I/O, screenshots, and URLs.
+- Updated launch and tutorial copy to use the shorter public export command.
+
 ## 0.1.9 - 2026-05-09
 
 - Added `browsertrace export --redact-urls` so exported HTML traces can omit

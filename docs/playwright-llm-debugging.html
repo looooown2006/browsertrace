@@ -208,7 +208,7 @@
 
     <section>
       <h2>Try the local demo first</h2>
-      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.9"
+      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
 browsertrace demo
 browsertrace</code></pre>
       <p>Open <code>http://127.0.0.1:3000</code> and inspect the failed checkout-agent run before adding BrowserTrace to your own Playwright script.</p>
@@ -253,8 +253,8 @@ async with tracer.run("playwright llm agent") as run:
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html
 browsertrace export &lt;run_id&gt; --redact -o public.html
-browsertrace export &lt;run_id&gt; --redact --redact-screenshots --redact-urls -o public.html</code></pre>
-      <p>Use <code>--redact</code> before attaching a real trace to a public issue or community thread. Add <code>--redact-screenshots</code> and <code>--redact-urls</code> when screenshots or URLs may reveal private page data.</p>
+browsertrace export &lt;run_id&gt; --public -o public.html</code></pre>
+      <p>Use <code>--public</code> before attaching a real trace to a public issue or community thread. Use individual redaction flags when you want to keep some fields visible.</p>
     </section>
 
     <section>

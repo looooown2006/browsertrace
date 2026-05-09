@@ -9,6 +9,7 @@ Usage:
     browsertrace export <id> --redact  # omit model I/O from the HTML export
     browsertrace export <id> --redact-screenshots  # omit screenshots from the HTML export
     browsertrace export <id> --redact-urls  # omit URLs from the HTML export
+    browsertrace export <id> --public  # omit model I/O, screenshots, and URLs
     browsertrace serve           # explicit alias of `browsertrace`
 """
 
@@ -144,6 +145,11 @@ def cmd_export(args) -> int:
     if run["error"]:
         parts.append(f"<pre style='background:#fee2e2;color:#dc2626'>{_html_escape(run['error'])}</pre>")
 
+    public_export = getattr(args, "public", False)
+    redact_model_io = public_export or getattr(args, "redact", False)
+    redact_screenshots = public_export or getattr(args, "redact_screenshots", False)
+    redact_urls = public_export or getattr(args, "redact_urls", False)
+
     no_screenshot_html = (
         '<div style="color:#6b7280;text-align:center;padding:48px">'
         "no screenshot"
@@ -160,14 +166,14 @@ def cmd_export(args) -> int:
         klass = "step error" if is_err else "step"
         badge = "error" if is_err else "ok"
         img_html = ""
-        if getattr(args, "redact_screenshots", False) and s["screenshot_path"]:
+        if redact_screenshots and s["screenshot_path"]:
             img_html = redacted_screenshot_html
         elif s["screenshot_path"] and Path(s["screenshot_path"]).exists():
             data = base64.b64encode(Path(s["screenshot_path"]).read_bytes()).decode()
             img_html = f"<img src='data:image/png;base64,{data}' alt='step {s['step_index']}'>"
         url_html = (
             "URL redacted"
-            if getattr(args, "redact_urls", False) and s["url"]
+            if redact_urls and s["url"]
             else _html_escape(s["url"] or "")
         )
         parts.append(
@@ -180,7 +186,7 @@ def cmd_export(args) -> int:
         )
         if s["error"]:
             parts.append(f"<pre style='background:#fee2e2;color:#dc2626'>{_html_escape(s['error'])}</pre>")
-        if getattr(args, "redact", False) and (s["model_input"] or s["model_output"]):
+        if redact_model_io and (s["model_input"] or s["model_output"]):
             parts.append(
                 "<details><summary>Model I/O redacted</summary>"
                 "<pre>Prompt and model output omitted from this export.</pre></details>"
@@ -255,6 +261,11 @@ def main(argv: Optional[list[str]] = None) -> int:
         "--redact-urls",
         action="store_true",
         help="Omit URLs from the exported HTML",
+    )
+    p_export.add_argument(
+        "--public",
+        action="store_true",
+        help="Omit model input/output, screenshots, and URLs from the exported HTML",
     )
     p_export.set_defaults(func=cmd_export)
 

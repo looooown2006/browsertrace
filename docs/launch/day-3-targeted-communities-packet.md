@@ -245,7 +245,7 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Sky
 
 ## Directories And Newsletters
 
-Use these after `v0.1.9` because the release has the packaged demo command and
+Use these after `v0.1.10` because the release has the packaged demo command and
 safer redacted export path.
 
 Best targets:
@@ -265,15 +265,14 @@ BrowserTrace is an MIT local debugger for AI browser agents. It records each
 Browser Use / Stagehand / Skyvern / Playwright + LLM step as a timeline:
 screenshot, URL, action, model input/output, status, and error.
 
-The v0.1.9 release includes `browsertrace demo` for first-run onboarding,
-`browsertrace export --redact` for prompt/model I/O redaction, and
-`browsertrace export --redact-screenshots --redact-urls` when screenshots or
-URLs may reveal private page data.
+The v0.1.10 release includes `browsertrace demo` for first-run onboarding,
+`browsertrace export --public` for public-safe sharing, and individual
+redaction flags when users want to keep some fields visible.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.9
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
 ```
 
 Metrics:

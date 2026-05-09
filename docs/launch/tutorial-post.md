@@ -23,7 +23,7 @@ pip install -e ".[ui]"
 ## Run the no-API demo
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.9"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
 browsertrace demo
 browsertrace
 ```
@@ -66,11 +66,10 @@ For Playwright, use `run.snapshot(page, action=...)` to capture the current URL 
 ```bash
 browsertrace list
 browsertrace export <run_id> -o run.html
-browsertrace export <run_id> --redact -o public.html
-browsertrace export <run_id> --redact --redact-screenshots --redact-urls -o public.html
+browsertrace export <run_id> --public -o public.html
 ```
 
-The export is a self-contained HTML file. You can attach it to an issue, send it to a teammate, or inspect it without running the local server. Use `--redact` before posting a real trace publicly to omit prompt/model I/O. Add `--redact-screenshots` and `--redact-urls` when screenshots or URLs may reveal private page data.
+The export is a self-contained HTML file. You can attach it to an issue, send it to a teammate, or inspect it without running the local server. Use `--public` before posting a real trace publicly to omit prompt/model I/O, screenshots, and URLs. Use the individual redaction flags only when you want to keep some fields visible.
 
 ## Why local-first?
 
