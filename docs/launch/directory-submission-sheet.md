@@ -45,6 +45,10 @@ Use-shaped callback demo.
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Maybe | Live demo, repo, integrations | Not submitted |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Maybe | Live demo, repo, comparison | Not submitted |
 | agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Not submitted |
+| OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Maybe | Repo, live demo, public-safe export | Not submitted |
+| FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
+| AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Maybe | Live demo, repo, Browser Use guide | Not submitted |
+| BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Maybe | Repo, live demo, public-safe export | Not submitted |
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions | Yes | Browser Use guide, live trace, repo | Not posted |
 | Stagehand Discussions | Browser automation and agent builders | https://github.com/browserbase/stagehand/discussions | Yes | Stagehand guide, live trace, repo | Not posted |
 | Skyvern Discussions | Browser automation agent users | https://github.com/Skyvern-AI/skyvern/discussions | Yes | Skyvern guide, live trace, repo | Not posted |
