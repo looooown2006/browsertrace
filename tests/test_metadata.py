@@ -370,6 +370,17 @@ def test_pull_request_template_prompts_for_real_contributor_details():
     assert "I ran `uv run --python 3.11 --extra dev pytest -q`" in template
 
 
+def test_security_policy_has_private_report_path_without_email_placeholder():
+    project_root = Path(__file__).resolve().parents[1]
+    policy = (project_root / "SECURITY.md").read_text()
+    normalized = " ".join(policy.split())
+
+    assert "private GitHub vulnerability report" in normalized
+    assert "open a minimal public issue without exploit details" in normalized
+    assert "emailing the maintainer" not in policy
+    assert "browsertrace export <run_id> --public -o public.html" in policy
+
+
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -423,7 +434,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T18:12:55+00:00" in launch
-    assert "after PR template contributor onboarding update" in launch
+    assert "2026-05-09T18:16:10+00:00" in launch
+    assert "after security policy private-reporting path update" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

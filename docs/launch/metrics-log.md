@@ -205,3 +205,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T18:07:09+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after PR #27 merged, issue #26 closed, and good-first issue #28 opened; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:09:15+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after launch discussion contributor update: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16864016; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T18:12:55+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after PR template contributor onboarding update; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T18:16:10+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after security policy private-reporting path update; traffic views 52/29 unique, clones 103/54 unique |

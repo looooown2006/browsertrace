@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-09T18:12:55+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after PR template contributor onboarding update |
+| 2026-05-09T18:16:10+00:00 | 3 | 998 | 3 | 0 | 13 | 0 | 2 | after security policy private-reporting path update |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

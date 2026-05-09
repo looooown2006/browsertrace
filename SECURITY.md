@@ -15,8 +15,11 @@ trace exports as potentially sensitive.
 If you find a security issue, please do not open a public issue with exploit
 details or sensitive traces.
 
-Report privately by emailing the maintainer or by opening a GitHub security
-advisory if available for the repository.
+Use a private GitHub vulnerability report from the repository Security tab if
+that option is available. If private reporting is unavailable, open a minimal
+public issue without exploit details, secrets, private URLs, screenshots,
+prompts, model output, or customer data, and ask the maintainer to establish a
+private follow-up path.
 
 Include:
 
