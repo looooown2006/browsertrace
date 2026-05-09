@@ -19,6 +19,7 @@ to explain why a browser run failed.
 - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
 - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use agent guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 - Integrations: https://aaronlab.github.io/browsertrace/integrations.html
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
@@ -27,6 +28,7 @@ to explain why a browser run failed.
 - Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
+- Custom computer-use feedback: https://github.com/aaronlab/browsertrace/issues/3
 
 ## Core Capabilities
 

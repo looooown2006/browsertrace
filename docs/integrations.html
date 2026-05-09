@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BrowserTrace integration examples for Browser Use, Stagehand, Skyvern, and Playwright + LLM browser-agent scripts.">
+  <meta name="description" content="BrowserTrace integration examples for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom computer-use agents.">
   <meta property="og:title" content="BrowserTrace integrations">
-  <meta property="og:description" content="Trace Browser Use, Stagehand, Skyvern, and Playwright + LLM browser-agent runs locally.">
+  <meta property="og:description" content="Trace Browser Use, Stagehand, Skyvern, Playwright + LLM, and custom computer-use runs locally.">
   <meta property="og:image" content="https://aaronlab.github.io/browsertrace/social-preview.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -205,6 +205,7 @@
         <a href="./stagehand-debugging.html">Stagehand</a>
         <a href="./skyvern-debugging.html">Skyvern</a>
         <a href="./playwright-llm-debugging.html">Playwright + LLM</a>
+        <a href="./computer-use-agent-debugging.html">Computer Use</a>
         <a href="./launch/">Launch kit</a>
         <a href="https://github.com/aaronlab/browsertrace">GitHub</a>
       </nav>
@@ -225,6 +226,7 @@
           <span>Stagehand</span>
           <span>Skyvern</span>
           <span>Playwright + LLM</span>
+          <span>Computer Use</span>
         </div>
       </div>
       <img class="hero-image" src="./social-preview.png" alt="BrowserTrace timeline preview for AI browser-agent debugging">
@@ -301,6 +303,30 @@ async with tracer.run("playwright agent") as run:
         page,
         action="clicked selected element",
         model_input=decision["prompt"],
+        model_output=decision,
+    )</code></pre>
+    </section>
+
+    <section class="band" aria-labelledby="computer-use">
+      <h2 id="computer-use">Custom computer-use agents</h2>
+      <p class="section-copy">Place snapshots at the observe, decide, and act points in your own browser-agent loop.</p>
+      <p class="section-copy"><a href="./computer-use-agent-debugging.html">Open the computer-use debugging guide</a> for a generic wrapper pattern, export commands, and public-safe trace workflow.</p>
+      <pre><code>from browsertrace import Tracer
+
+tracer = Tracer()
+
+async with tracer.run("custom computer-use agent") as run:
+    await page.goto("https://example.com")
+    await run.snapshot(page, action="opened task page")
+
+    observation = await describe_page(page)
+    decision = await model.choose_next_action(observation)
+
+    await page.click(decision["selector"])
+    await run.snapshot(
+        page,
+        action=f"clicked {decision['selector']}",
+        model_input=observation,
         model_output=decision,
     )</code></pre>
     </section>
