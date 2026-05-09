@@ -9,7 +9,7 @@ upvotes, or artificial engagement.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Primary media: `docs/demo.mp4`
 - Backup image: `docs/demo-poster.png`
@@ -56,19 +56,19 @@ Trying it:
 ```text
 The fastest path is the no-API demo:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 browsertrace demo
 browsertrace
 
 Before PyPI publishing is enabled, the no-install uvx path is:
 
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 
 Then open http://127.0.0.1:3000 and click the failed checkout demo.
 
 If someone only wants to inspect a share-safe export first, send:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 ```
 
 Privacy:

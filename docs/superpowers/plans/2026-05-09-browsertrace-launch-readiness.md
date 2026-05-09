@@ -459,7 +459,7 @@ Insert this section immediately after `# BrowserTrace launch`:
 - [ ] `browsertrace list` shows the deterministic demo run.
 - [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
 - [ ] README first screen shows the value prop, GIF/screenshot, install, and 60-second demo.
-- [ ] GitHub repo has description, topics, MIT license, and `v0.1.10` release.
+- [ ] GitHub repo has description, topics, MIT license, and `v0.1.11` release.
 - [ ] Demo GIF is under 60 seconds and shows the failed-step timeline.
 - [ ] Show HN copy points to the repo and mentions no signup, no cloud, local-first.
 ```
@@ -495,7 +495,7 @@ Replace the current `配套素材清单` section with:
   - description
   - topics: `ai-agents`, `browser-automation`, `observability`, `debugging`, `llm`, `playwright`
   - MIT license
-  - `v0.1.10` release
+  - `v0.1.11` release
 ```
 
 - [ ] **Step 3: Verify launch checklist mentions final commands**
@@ -503,7 +503,7 @@ Replace the current `配套素材清单` section with:
 Run:
 
 ```bash
-rg -n "uv run --python 3.11|no_api_failure_demo|v0.1.10|Show HN" LAUNCH.md
+rg -n "uv run --python 3.11|no_api_failure_demo|v0.1.11|Show HN" LAUNCH.md
 ```
 
 Expected output contains all four patterns.

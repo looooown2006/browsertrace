@@ -172,7 +172,7 @@ The first screen should include:
 - Verify project metadata, extras, classifiers, and script entrypoint.
 - Confirm SDK-only install does not pull UI dependencies.
 - Confirm `browsertrace[ui]` provides the local UI.
-- Prepare a `v0.1.10` release path.
+- Prepare a `v0.1.11` release path.
 - Prepare PyPI publishing if credentials are available.
 
 ### Growth Assets

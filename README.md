@@ -34,16 +34,17 @@ computer-use agents.
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 ```
 
 ## See a failure trace in 60 seconds
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+browsertrace doctor
 browsertrace demo
 browsertrace
 ```
@@ -51,9 +52,10 @@ browsertrace
 No-install `uvx` trial before PyPI publishing is enabled:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 ```
 
 Open `http://127.0.0.1:3000`, click
@@ -61,9 +63,9 @@ Open `http://127.0.0.1:3000`, click
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
@@ -262,6 +264,7 @@ timestamps, and `first_error_index` so an LLM can jump straight to what broke.
 
 ```bash
 browsertrace                      # serve the web UI
+browsertrace doctor               # Print local install and trace-store status
 browsertrace demo                 # create a deterministic failed demo run
 browsertrace list                 # list recent runs in the terminal
 browsertrace show <id-or-prefix>  # print a run's timeline
@@ -337,7 +340,7 @@ This is a v0.1 alpha. The fastest way to help:
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
-Launch discussion: [BrowserTrace v0.1.10](https://github.com/aaronlab/browsertrace/discussions/6).
+Launch discussion: [BrowserTrace v0.1.11](https://github.com/aaronlab/browsertrace/discussions/6).
 
 Changelog: [CHANGELOG.md](CHANGELOG.md).
 

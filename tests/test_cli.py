@@ -229,6 +229,21 @@ def test_cli_demo_creates_failed_demo_run(cli):
     assert steps == 4
 
 
+def test_cli_doctor_reports_missing_database_without_failing(cli):
+    cli_mod, home = cli
+    buf = StringIO()
+
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["doctor"])
+
+    out = buf.getvalue()
+    assert rc == 0
+    assert "BrowserTrace doctor" in out
+    assert f"Home: {home}" in out
+    assert "Database: missing" in out
+    assert "Next: browsertrace demo" in out
+
+
 def test_cli_no_args_routes_to_serve(cli, monkeypatch):
     """`browsertrace` with no args should call serve."""
     cli_mod, _ = cli

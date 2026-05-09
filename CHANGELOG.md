@@ -7,6 +7,12 @@ UTC.
 
 - No unreleased changes.
 
+## 0.1.11 - 2026-05-09
+
+- Added `browsertrace doctor` to print local install, UI dependency, database,
+  run, and next-step status without requiring an existing trace database.
+- Updated GitHub install and `uvx` launch copy to point at `v0.1.11`.
+
 ## 0.1.10 - 2026-05-09
 
 - Added `browsertrace export --public` as a single sharing-safe export mode

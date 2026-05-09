@@ -60,7 +60,7 @@ def test_markdown_row_escapes_note_separator():
         watchers=0,
         issues=3,
         pull_requests=0,
-        release_tag="v0.1.10",
+        release_tag="v0.1.11",
         release_downloads=6,
         release_assets=4,
         traffic_views=48,

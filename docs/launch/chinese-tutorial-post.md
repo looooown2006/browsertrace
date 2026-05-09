@@ -92,7 +92,7 @@ BrowserTrace 关注的是这个交界面：浏览器状态 + agent action + mode
 BrowserTrace 有一个不需要 API key、不需要真实浏览器的 deterministic demo：
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 browsertrace demo
 browsertrace
 ```
@@ -100,8 +100,8 @@ browsertrace
 在 PyPI 发布前，也可以用 uvx 直接从 GitHub tag 试用，不需要持久安装：
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 ```
 
 打开：
@@ -128,7 +128,7 @@ https://aaronlab.github.io/browsertrace/
 HTML。它去掉了 prompt / model input/output、截图和 URL：
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 ```
 
 ## 在代码里怎么用
@@ -219,5 +219,5 @@ https://aaronlab.github.io/browsertrace/launch/
 Public-safe demo export:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 ```

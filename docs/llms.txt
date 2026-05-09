@@ -23,8 +23,8 @@ to explain why a browser run failed.
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.md
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.11
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
 
@@ -41,7 +41,8 @@ to explain why a browser run failed.
 ## Quickstart
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
+browsertrace doctor
 browsertrace demo
 browsertrace
 ```
@@ -49,10 +50,14 @@ browsertrace
 No-install uvx quickstart before PyPI publishing is enabled:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 ```
+
+`browsertrace doctor` prints local install and trace-store status without
+requiring an existing database.
 
 Then open `http://127.0.0.1:3000` and inspect the failed checkout-agent run.
 

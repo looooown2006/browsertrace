@@ -7,7 +7,7 @@ accounts.
 ## Fastest Path
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 browsertrace demo
 browsertrace
 ```
@@ -20,7 +20,7 @@ For a downloadable public-safe export that omits prompt/model I/O, screenshots,
 and URLs, inspect the release asset:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 ```
 
 ## Example Matrix

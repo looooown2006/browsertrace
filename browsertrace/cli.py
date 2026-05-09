@@ -5,6 +5,7 @@ Usage:
     browsertrace demo            # create a deterministic failed demo run
     browsertrace list            # list runs in the terminal
     browsertrace show <run_id>   # print a run's timeline
+    browsertrace doctor          # print local install and trace-store status
     browsertrace export <id>     # write a portable HTML bundle to ./<id>.html
     browsertrace export <id> --redact  # omit model I/O from the HTML export
     browsertrace export <id> --redact-screenshots  # omit screenshots from the HTML export
@@ -73,6 +74,47 @@ def cmd_demo(_args) -> int:
     print(f"Created demo run: {DEMO_NAME}")
     print(f"Run ID: {run_id}")
     print("Run `browsertrace` and open http://127.0.0.1:3000")
+    return 0
+
+
+def cmd_doctor(_args) -> int:
+    import importlib.util
+    import platform
+
+    home = _home()
+    db_path = _db_path()
+    print("BrowserTrace doctor")
+    print(f"Python: {platform.python_version()}")
+    print(f"Home: {home}")
+
+    if not db_path.exists():
+        print("Database: missing")
+        print("Runs: 0")
+        print("Next: browsertrace demo")
+    else:
+        try:
+            with sqlite3.connect(db_path) as conn:
+                runs = conn.execute("SELECT COUNT(*) FROM runs").fetchone()[0]
+                steps = conn.execute("SELECT COUNT(*) FROM steps").fetchone()[0]
+            print(f"Database: {db_path}")
+            print(f"Runs: {runs}")
+            print(f"Steps: {steps}")
+            print("Next: browsertrace")
+        except sqlite3.Error as exc:
+            print(f"Database: unreadable ({exc})")
+            print("Next: remove or move the database, then run browsertrace demo")
+
+    missing_ui = [
+        name
+        for name in ["fastapi", "uvicorn", "jinja2"]
+        if importlib.util.find_spec(name) is None
+    ]
+    if missing_ui:
+        print(f"UI dependencies: missing {', '.join(missing_ui)}")
+        print('Install: pip install "browsertrace[ui]"')
+    else:
+        print("UI dependencies: available")
+
     return 0
 
 
@@ -235,6 +277,9 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     p_demo = sub.add_parser("demo", help="Create a deterministic failed demo run")
     p_demo.set_defaults(func=cmd_demo)
+
+    p_doctor = sub.add_parser("doctor", help="Print local install and trace-store status")
+    p_doctor.set_defaults(func=cmd_doctor)
 
     p_list = sub.add_parser("list", help="List recent runs")
     p_list.add_argument("--limit", type=int, default=20)

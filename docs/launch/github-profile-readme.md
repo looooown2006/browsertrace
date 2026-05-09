@@ -45,7 +45,7 @@ Good first issue:
 https://github.com/aaronlab/browsertrace/issues/19
 
 Public-safe demo export:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 
 ## Current Focus
 

@@ -23,7 +23,7 @@ pip install -e ".[ui]"
 ## Run the no-API demo
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11"
 browsertrace demo
 browsertrace
 ```
@@ -32,8 +32,8 @@ Before PyPI publishing is enabled, you can also run the demo without a
 persistent install:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.10" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.11" browsertrace
 ```
 
 Open `http://127.0.0.1:3000`, then click `demo: checkout agent fails on disabled button`.
@@ -44,7 +44,7 @@ If you only want to inspect a share-safe export before installing anything, use
 the public-safe demo HTML:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 ```
 
 ## What to inspect first
@@ -98,6 +98,6 @@ Repo: https://github.com/aaronlab/browsertrace
 
 Live demo: https://aaronlab.github.io/browsertrace/
 
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.10/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.11/browsertrace-demo-public.html
 
 If you are building with Browser Use, Stagehand, Playwright + LLM scripts, Skyvern, or custom computer-use agents, the most useful feedback is: what state do you wish your traces captured at failure time?
