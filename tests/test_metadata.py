@@ -200,6 +200,18 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert "https://github.com/aaronlab/browsertrace/issues/25" in profile_draft
 
 
+def test_readme_has_public_safe_export_sharing_example():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    assert "## Share A Public-Safe Trace" in readme
+    assert "browsertrace demo" in readme
+    assert "browsertrace list" in readme
+    assert "browsertrace export <run_id> --public -o public.html" in readme
+    assert "prompts/model I/O, screenshots, and URLs" in readme
+    assert "hosted upload" in readme
+
+
 def test_owner_profile_actions_include_browsertrace_pin_step():
     project_root = Path(__file__).resolve().parents[1]
     owner_docs = {

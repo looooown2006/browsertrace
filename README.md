@@ -302,6 +302,24 @@ sharing a real trace publicly to omit prompt/model I/O, screenshots, and URLs.
 Use the individual `--redact`, `--redact-screenshots`, and `--redact-urls`
 flags when you want to keep some fields visible.
 
+## Share A Public-Safe Trace
+
+Use this flow when someone asks for a bug report or feedback thread example:
+
+```bash
+browsertrace demo
+browsertrace list
+browsertrace export <run_id> --public -o public.html
+```
+
+Attach `public.html` yourself to the issue, discussion, or message. BrowserTrace
+does not do a hosted upload.
+The `--public` export omits prompts/model I/O, screenshots, and URLs.
+That makes the standalone file safer to share publicly.
+
+Do not include private prompts, credentials, cookies, tokens, customer data, or
+private screenshots in docs, examples, issues, or community posts.
+
 ## Why not just use ___?
 
 Detailed comparison page:
