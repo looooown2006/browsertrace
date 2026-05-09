@@ -167,7 +167,7 @@ Replace the current draft-style document with these sections:
 ## Links
 ```
 
-The document must include the canonical repo URL `https://github.com/aaronlab/browsertrace`, the current release `v0.1.1`, and the current star count audit command:
+The document must include the canonical repo URL `https://github.com/aaronlab/browsertrace`, the current release `v0.1.10`, and the current star count audit command:
 
 ```bash
 gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
@@ -230,7 +230,7 @@ in the timeline, and a final link to `https://github.com/aaronlab/browsertrace`.
 Run:
 
 ```bash
-rg -n "aaronlab/browsertrace|v0.1.1|Show HN|Product Hunt|Owner-Only|Daily Metrics" LAUNCH.md docs/launch
+rg -n "aaronlab/browsertrace|v0.1.10|Show HN|Product Hunt|Owner-Only|Daily Metrics" LAUNCH.md docs/launch
 rg -n "upvote|stars please|vote for us" LAUNCH.md docs/launch
 git add LAUNCH.md docs/launch
 git commit -m "docs: add BrowserTrace launch control room"
@@ -352,10 +352,10 @@ for the latest pushed commit.
 Run:
 
 ```bash
-gh release view v0.1.1 --json tagName,name,isDraft,isPrerelease,assets,url
+gh release view v0.1.10 --json tagName,name,isDraft,isPrerelease,assets,url
 ```
 
-Expected: `v0.1.1` exists and includes wheel, sdist, and demo HTML assets.
+Expected: `v0.1.10` exists and includes wheel, sdist, and demo HTML assets.
 
 - [ ] **Step 5: Commit audit updates if needed**
 

@@ -18,6 +18,26 @@ def test_package_version_matches_module_version():
     assert pyproject["project"]["version"] == browsertrace.__version__
 
 
+def test_public_docs_do_not_reference_stale_v011_release():
+    project_root = Path(__file__).resolve().parents[1]
+    public_docs = [
+        project_root / "README.md",
+        project_root / "LAUNCH.md",
+        *sorted((project_root / "docs").rglob("*.md")),
+        *sorted((project_root / "docs").rglob("*.html")),
+        project_root / "docs" / "llms.txt",
+    ]
+
+    stale_release = re.compile(r"v0\.1\.1(?!\d)")
+    stale_mentions = [
+        str(path.relative_to(project_root))
+        for path in public_docs
+        if stale_release.search(path.read_text())
+    ]
+
+    assert stale_mentions == []
+
+
 def test_pyproject_has_launch_discovery_metadata():
     project_root = Path(__file__).resolve().parents[1]
     pyproject = tomllib.loads((project_root / "pyproject.toml").read_text())

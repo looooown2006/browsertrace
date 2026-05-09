@@ -121,3 +121,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T13:32:44+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after owner next-actions checklists updated with uvx fallback before PyPI; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T13:34:59+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after LAUNCH control room refreshed with current audit and uvx fallback; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-09T13:39:32+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after Day 3 outreach uvx fallback; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-09T13:42:02+00:00 | 3 | 998 | 1 | 0 | 12 | 0 | 6 | after stale public release-reference cleanup; traffic views 52/29 unique, clones 103/54 unique |
