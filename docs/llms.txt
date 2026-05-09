@@ -22,7 +22,7 @@ to explain why a browser run failed.
 - Integrations: https://aaronlab.github.io/browsertrace/integrations.html
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
-- Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.html
+- Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.md
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.10
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
