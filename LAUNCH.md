@@ -13,7 +13,9 @@ Owner account: `aaronlab`
 gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 ```
 
-- Primary launch asset: `docs/demo.gif`
+- Primary launch asset: `docs/demo.mp4`
+- README animation: `docs/demo.gif`
+- Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
 - Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.1`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
@@ -25,7 +27,7 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - [ ] `browsertrace list` shows the deterministic demo run.
 - [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
 - [ ] `scripts/record_demo.py` records the latest failed run, or `BROWSERTRACE_DEMO_RUN_ID`.
-- [ ] Demo GIF or screenshot sequence clearly shows the failed-step timeline.
+- [ ] `docs/demo.mp4` and `docs/demo-poster.png` clearly show the failed-step timeline.
 - [ ] README first screen has hook, demo, install, and 60-second demo path.
 - [ ] GitHub repo homepage points to `https://aaronlab.github.io/browsertrace/`.
 - [ ] Social preview image is ready at `docs/social-preview.png` or exported from `docs/social-preview.svg`.

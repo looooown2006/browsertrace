@@ -2,6 +2,12 @@
 
 All copy points to https://github.com/aaronlab/browsertrace and the live demo at https://aaronlab.github.io/browsertrace/. Ask for feedback or real use, not upvotes or stars.
 
+Recommended media attachment for X, LinkedIn, Product Hunt, Jike, and Xiaohongshu:
+
+- Video: `docs/demo.mp4`
+- Poster: `docs/demo-poster.png`
+- Backup GIF: `docs/demo.gif`
+
 ## X
 
 ```text
