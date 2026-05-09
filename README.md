@@ -95,6 +95,11 @@ For a compact command cheat sheet covering `browsertrace doctor`, `browsertrace 
 `browsertrace list`, `browsertrace show`, and public-safe export, see
 [BrowserTrace command cheat sheet](examples/#browsertrace-command-cheat-sheet).
 
+If a first local run fails, the
+[first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist)
+walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`,
+`browsertrace show`, and public-safe export.
+
 For a real browser demo with screenshots from Wikipedia:
 
 ```bash
