@@ -58,6 +58,7 @@ computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
+Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.6
 ```
 
@@ -77,7 +78,7 @@ real reply or question to reference.
 1. Browser Use Discussions
    - Best angle: "I am building a local trace viewer for failed browser-use runs
      and want feedback on which fields matter at failure time."
-   - Link order: walkthrough first, repo second.
+   - Link order: Browser Use guide first, live trace second, repo third.
    - Best category: Show and tell or Q&A. Existing threads about selectors,
      generated Playwright scripts, and audit trails are relevant only if the
      reply directly answers the thread.

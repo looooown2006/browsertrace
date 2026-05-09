@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Debug Browser Use agent failures with local screenshots, URLs, model I/O, failed-step timelines, and redacted HTML exports.">
+  <meta property="og:title" content="Debug Browser Use failures with BrowserTrace">
+  <meta property="og:description" content="Record Browser Use runs locally, inspect the failed step, and export public-safe traces.">
+  <meta property="og:image" content="https://aaronlab.github.io/browsertrace/social-preview.png">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://aaronlab.github.io/browsertrace/browser-use-debugging.html">
+  <title>Debug Browser Use Failures with BrowserTrace</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #5f6b76;
+      --line: #d9e1e7;
+      --paper: #f7f9fb;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --code: #102026;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: #0369a1;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar,
+    main,
+    footer {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 36px 0 54px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      max-width: 780px;
+      margin: 18px 0 24px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 22px 0 6px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    section {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+      margin-top: 30px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    p,
+    li {
+      max-width: 780px;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    pre {
+      max-width: 880px;
+      margin: 14px 0 0;
+      padding: 16px;
+      overflow: auto;
+      border-radius: 8px;
+      background: var(--code);
+      color: #eef7f6;
+      font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+    }
+
+    code {
+      background: #eef3f6;
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-size: 0.92em;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+    }
+
+    .note {
+      max-width: 820px;
+      border-left: 4px solid var(--accent);
+      background: var(--panel);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 0 34px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">BrowserTrace</div>
+      <nav aria-label="Primary">
+        <a href="./">Live demo</a>
+        <a href="./integrations.html">Integrations</a>
+        <a href="./debug-browser-agent-failure.html">Walkthrough</a>
+        <a href="https://github.com/aaronlab/browsertrace">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Debug Browser Use failures with a local trace timeline</h1>
+    <p class="dek">Browser Use agents fail in browser state, not just in logs. BrowserTrace records each step locally so you can inspect screenshots, URL, action, model I/O, status, and the first failed step.</p>
+    <div class="actions" aria-label="Primary actions">
+      <a class="button primary" href="https://github.com/aaronlab/browsertrace">View repo</a>
+      <a class="button" href="./trace.html">Open exported trace</a>
+    </div>
+
+    <section>
+      <h2>Why this exists</h2>
+      <p>When a Browser Use run fails late in a task, a stack trace usually tells you which exception happened. It often does not show what the agent saw, which URL it was on, which model decision selected the target, or whether the wrong assumption came from an earlier step.</p>
+      <p>BrowserTrace keeps that missing context in a local SQLite database plus screenshot files. No signup or cloud service is required.</p>
+    </section>
+
+    <section>
+      <h2>Try it before wiring Browser Use</h2>
+      <pre><code>pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.6"
+browsertrace demo
+browsertrace</code></pre>
+      <p>Open <code>http://127.0.0.1:3000</code>, then inspect <code>demo: checkout agent fails on disabled button</code>.</p>
+    </section>
+
+    <section>
+      <h2>Attach it to a Browser Use agent</h2>
+      <pre><code>from browser_use import Agent
+from browsertrace import Tracer
+from browsertrace.integrations.browser_use import attach_tracer
+
+tracer = Tracer()
+agent = Agent(task="...", llm=ChatOpenAI(model="gpt-4o"))
+
+with attach_tracer(agent, tracer, name="browser-use checkout run"):
+    await agent.run()</code></pre>
+      <p>The adapter hooks Browser Use step callbacks and records URL, screenshot, action summary, model thought/actions, status, and errors into the same local timeline.</p>
+    </section>
+
+    <section>
+      <h2>Share only what is safe</h2>
+      <pre><code>browsertrace list
+browsertrace export &lt;run_id&gt; -o full.html
+browsertrace export &lt;run_id&gt; --redact -o public.html</code></pre>
+      <p>The full export includes model input and model output. Use <code>--redact</code> for public issues or community posts; screenshots, URLs, actions, status, and errors remain visible while prompt/model I/O is omitted.</p>
+    </section>
+
+    <section>
+      <h2>What to inspect first</h2>
+      <ol>
+        <li>Did the screenshot match the model's assumption?</li>
+        <li>Did the selected action target the right element?</li>
+        <li>Did the URL change earlier than expected?</li>
+        <li>Did the model output mention a selector or label that was stale?</li>
+        <li>Was the red step wrong, or did an earlier step poison the state?</li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="note">
+        BrowserTrace is MIT licensed and local-first. It is built for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom computer-use agents.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Repo: <a href="https://github.com/aaronlab/browsertrace">github.com/aaronlab/browsertrace</a></p>
+  </footer>
+</body>
+</html>

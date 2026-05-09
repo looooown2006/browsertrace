@@ -70,8 +70,11 @@ The debugging problem I want to solve for Browser Use users is: the agent fails
 deep into a run, but the logs do not show what the browser looked like or which
 model output caused the wrong action.
 
+Browser Use guide:
+https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+
 Live exported trace:
-https://aaronlab.github.io/browsertrace/
+https://aaronlab.github.io/browsertrace/trace.html
 
 Repo:
 https://github.com/aaronlab/browsertrace
@@ -243,6 +246,7 @@ publicly without prompt/model I/O.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
+Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.6
 ```
 
