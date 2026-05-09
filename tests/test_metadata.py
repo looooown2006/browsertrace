@@ -197,7 +197,7 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html" in profile_draft
     assert f'uvx --from "{github_spec}" browsertrace doctor' in profile_draft
     assert f'uvx --from "{github_spec}" browsertrace demo' in profile_draft
-    assert "https://github.com/aaronlab/browsertrace/issues/25" in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/3" in profile_draft
 
 
 def test_readme_has_public_safe_export_sharing_example():
