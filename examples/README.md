@@ -206,6 +206,12 @@ browsertrace export <run_id> --public -o public.html
 
 This creates a share-safe HTML file suitable for sharing with others.
 
+### Attach a public-safe export to an issue
+
+When asking for help, attach `public.html` to a GitHub issue or PR comment and
+include the run status or error text from `browsertrace show <run_id>`. The
+public export omits prompt/model I/O, screenshots, and URLs.
+
 ## Where Traces Are Stored
 
 By default BrowserTrace stores SQLite data and screenshots in
