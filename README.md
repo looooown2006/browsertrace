@@ -308,6 +308,8 @@ This is a v0.1 alpha. The fastest way to help:
 
 Launch discussion: [BrowserTrace v0.1.3](https://github.com/aaronlab/browsertrace/discussions/6).
 
+Changelog: [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

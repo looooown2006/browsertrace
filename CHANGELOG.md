@@ -1,0 +1,41 @@
+# Changelog
+
+BrowserTrace uses small release tags while the project is still alpha. Dates are
+UTC.
+
+## Unreleased
+
+- Pinned temporary GitHub install commands to `v0.1.3` while PyPI publishing is
+  waiting on owner-side Trusted Publisher setup.
+- Updated the public roadmap with deeper Stagehand and Skyvern integration
+  follow-up issues.
+
+## 0.1.3 - 2026-05-09
+
+- Added a runnable examples guide under `examples/`.
+- Added no-network wrapper examples for Stagehand and Skyvern.
+- Added a checked-in GitHub Pages workflow.
+- Improved package metadata for future PyPI publishing.
+- Refreshed launch surfaces, discussion text, and release links to match the
+  current launch-ready branch.
+
+## 0.1.2 - 2026-05-09
+
+- Added `browsertrace.integrations.skyvern.wrap_skyvern`.
+- Added public `Run.close(error=None)` for integration-created runs.
+- Published release assets: wheel, sdist, demo HTML, demo video, and poster.
+- Updated the launch kit and public integration pages.
+
+## 0.1.1 - 2026-05-09
+
+- Prepared the first launch-ready release.
+- Added the deterministic no-API failure demo.
+- Added the live static demo and debugging walkthrough.
+- Added launch materials for owner-run social, Show HN, Product Hunt, and
+  targeted community posts.
+
+## 0.1.0 - 2026-05-09
+
+- Initial BrowserTrace SDK, local UI, CLI, SQLite storage, screenshots, model
+  input/output, step status, search/filter, export, and optional AI summary
+  endpoint.
