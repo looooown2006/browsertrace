@@ -35,3 +35,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-09T09:46:37+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after packaging metadata update: https://github.com/aaronlab/browsertrace/commit/415035846821195d7e42272a40c4f9d27d1b1f6f |
 | 2026-05-09T09:48:42+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after PyPI issue body refresh: https://github.com/aaronlab/browsertrace/issues/5 |
 | 2026-05-09T09:51:06+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after v0.1.2 discussion refresh: https://github.com/aaronlab/browsertrace/discussions/6 |
+| 2026-05-09T09:55:53+00:00 | 3 | 998 | 0 | 0 | 3 | 0 | 1 | after v0.1.3 release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.3 |
