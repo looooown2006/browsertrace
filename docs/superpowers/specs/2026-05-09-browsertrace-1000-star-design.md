@@ -2,7 +2,7 @@
 
 Date: 2026-05-09
 Project: `aaronlab/browsertrace`
-Goal owner: aaronagent
+Goal owner: aaronlab
 
 ## Objective
 
@@ -172,7 +172,7 @@ The first screen should include:
 - Verify project metadata, extras, classifiers, and script entrypoint.
 - Confirm SDK-only install does not pull UI dependencies.
 - Confirm `browsertrace[ui]` provides the local UI.
-- Prepare a `v0.1.0` release path.
+- Prepare a `v0.1.1` release path.
 - Prepare PyPI publishing if credentials are available.
 
 ### Growth Assets
@@ -229,7 +229,7 @@ agent run and the exact BrowserTrace moment where the bug becomes obvious.
 
 Before marking the active objective complete, verify:
 
-- The target repo is under the `aaronagent` GitHub account.
+- The target repo is under the `aaronlab` GitHub account.
 - The repo is public and open source.
 - The repo is AI-related.
 - The repo has more than 1000 GitHub stars from a current GitHub API or `gh`
@@ -237,4 +237,3 @@ Before marking the active objective complete, verify:
 - The checked repo is the same repo improved by this work.
 
 If any item is missing or uncertain, the objective remains incomplete.
-

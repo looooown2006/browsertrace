@@ -5,7 +5,7 @@ description = "See what your AI browser agent did and why it failed."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
-authors = [{name = "aaronagent"}]
+authors = [{name = "aaronlab"}]
 keywords = ["ai", "agent", "browser", "observability", "debugging", "llm", "playwright", "browser-use"]
 classifiers = [
     "Development Status :: 3 - Alpha",

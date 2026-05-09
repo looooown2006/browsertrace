@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make BrowserTrace correct, demoable, and launch-ready as the primary `aaronagent` AI open-source project for a 1000-star growth push.
+**Goal:** Make BrowserTrace correct, demoable, and launch-ready as the primary `aaronlab` AI open-source project for a 1000-star growth push.
 
 **Architecture:** Keep the existing small architecture: dependency-light SDK core, SQLite/filesystem storage, optional FastAPI/Jinja UI, and CLI commands. The plan avoids a rewrite and focuses on the first-user path: install, create a failed trace, view it locally, export it, and understand the project from the README.
 
@@ -459,7 +459,7 @@ Insert this section immediately after `# BrowserTrace launch`:
 - [ ] `browsertrace list` shows the deterministic demo run.
 - [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
 - [ ] README first screen shows the value prop, GIF/screenshot, install, and 60-second demo.
-- [ ] GitHub repo has description, topics, MIT license, and `v0.1.0` release.
+- [ ] GitHub repo has description, topics, MIT license, and `v0.1.1` release.
 - [ ] Demo GIF is under 60 seconds and shows the failed-step timeline.
 - [ ] Show HN copy points to the repo and mentions no signup, no cloud, local-first.
 ```
@@ -495,7 +495,7 @@ Replace the current `配套素材清单` section with:
   - description
   - topics: `ai-agents`, `browser-automation`, `observability`, `debugging`, `llm`, `playwright`
   - MIT license
-  - `v0.1.0` release
+  - `v0.1.1` release
 ```
 
 - [ ] **Step 3: Verify launch checklist mentions final commands**
@@ -503,7 +503,7 @@ Replace the current `配套素材清单` section with:
 Run:
 
 ```bash
-rg -n "uv run --python 3.11|no_api_failure_demo|v0.1.0|Show HN" LAUNCH.md
+rg -n "uv run --python 3.11|no_api_failure_demo|v0.1.1|Show HN" LAUNCH.md
 ```
 
 Expected output contains all four patterns.
@@ -613,7 +613,7 @@ gh repo view aaronlab/browsertrace --json name,owner,visibility,stargazerCount,r
 
 Expected audit interpretation:
 
-- Repo owner is `aaronagent`.
+- Repo owner is `aaronlab`.
 - Repo visibility is public.
 - Repo is AI-related by description/topics and project content.
 - Star count is checked from GitHub now.

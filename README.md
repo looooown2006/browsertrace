@@ -262,7 +262,7 @@ This is a v0.1 alpha. The fastest way to help:
 
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
 2. If you build a Stagehand / Skyvern / computer use adapter, PRs welcome.
-3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronagent` — it's launch fuel.
+3. If you have a screenshot of a beautiful failure trace, share it on X with `@aaronlab` — it's launch fuel.
 
 Launch discussion: [BrowserTrace v0.1.1](https://github.com/aaronlab/browsertrace/discussions/6).
 

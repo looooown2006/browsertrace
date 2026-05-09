@@ -7,7 +7,7 @@
 - [ ] `browsertrace list` shows the deterministic demo run.
 - [ ] `browsertrace export <run_id> -o demo.html` creates a standalone HTML report.
 - [ ] README first screen shows the value prop, GIF/screenshot, install, and 60-second demo.
-- [ ] GitHub repo has description, topics, MIT license, and `v0.1.0` release.
+- [ ] GitHub repo has description, topics, MIT license, and `v0.1.1` release.
 - [ ] Demo GIF is under 60 seconds and shows the failed-step timeline.
 - [ ] Show HN copy points to the repo and mentions no signup, no cloud, local-first.
 
@@ -186,13 +186,13 @@ github.com/aaronlab/browsertrace
   - description
   - topics: `ai-agents`, `browser-automation`, `observability`, `debugging`, `llm`, `playwright`
   - MIT license
-  - `v0.1.0` release
+  - `v0.1.1` release
 
 ---
 
 ## 发布顺序建议
 
-1. **Day 0（你）**：录 GIF、贴到 README、打 v0.1.0 tag、确认 repo public 之前所有 link 都对
+1. **Day 0（你）**：录 GIF、贴到 README、确认 v0.1.1 release、确认 repo public 之前所有 link 都对
 2. **Day 1 早**：在微信 AI 群发钩子（warm audience，最容易拿到第一波反馈）
 3. **Day 1 中**：发 X（草稿 2）+ 即刻
 4. **Day 1 晚**：发小红书
