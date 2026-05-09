@@ -205,6 +205,17 @@ run `browsertrace demo`.
 | SQLite db + screenshots | `~/.browsertrace/` | `Tracer(home="...")` or `BROWSERTRACE_HOME=/path browsertrace` |
 | UI port | `3000` | `BROWSERTRACE_PORT=4000 browsertrace` |
 
+Windows PowerShell equivalents:
+
+```powershell
+$env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"
+python examples/no_api_failure_demo.py
+browsertrace
+
+$env:BROWSERTRACE_PORT = "4000"
+browsertrace
+```
+
 ## What gets recorded per step
 
 | field           | type              | notes                                  |

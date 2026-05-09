@@ -60,3 +60,19 @@ def test_homepage_has_software_source_code_json_ld():
     assert metadata["codeRepository"] == "https://github.com/aaronlab/browsertrace"
     assert metadata["programmingLanguage"] == "Python"
     assert metadata["license"] == "https://opensource.org/license/mit"
+
+
+def test_windows_powershell_first_run_docs_cover_env_vars():
+    project_root = Path(__file__).resolve().parents[1]
+    docs_text = "\n".join(
+        [
+            (project_root / "README.md").read_text(),
+            (project_root / "examples" / "README.md").read_text(),
+        ]
+    )
+
+    assert 'powershell' in docs_text.lower()
+    assert '$env:BROWSERTRACE_HOME = "$env:TEMP\\browsertrace-demo"' in docs_text
+    assert '$env:BROWSERTRACE_PORT = "4000"' in docs_text
+    assert "BROWSERTRACE_HOME=/tmp/browsertrace-demo" in docs_text
+    assert "BROWSERTRACE_PORT=4000 browsertrace" in docs_text

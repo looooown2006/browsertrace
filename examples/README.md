@@ -69,6 +69,13 @@ kill <PID>
 BROWSERTRACE_PORT=4000 browsertrace
 ```
 
+Windows PowerShell:
+
+```powershell
+$env:BROWSERTRACE_PORT = "4000"
+browsertrace
+```
+
 ### Finding Your Demo Run
 
 To list all local BrowserTrace demo runs:
@@ -97,4 +104,12 @@ By default BrowserTrace stores SQLite data and screenshots in
 ```bash
 BROWSERTRACE_HOME=/tmp/browsertrace-demo python examples/stagehand_wrapper_example.py
 BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace
+```
+
+Windows PowerShell:
+
+```powershell
+$env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"
+python examples/no_api_failure_demo.py
+browsertrace
 ```
