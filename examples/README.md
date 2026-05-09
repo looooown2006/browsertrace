@@ -119,6 +119,18 @@ with sync_playwright() as p:
 
 ## Troubleshooting
 
+### First-run troubleshooting checklist
+
+Run these commands in order when a first run does not look right:
+
+```bash
+browsertrace doctor
+browsertrace demo
+browsertrace list
+browsertrace show <run_id>
+browsertrace export <run_id> --public -o public.html
+```
+
 ### Environment variable quick reference
 
 Use these variables when you want to change local BrowserTrace behavior without

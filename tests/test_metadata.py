@@ -317,6 +317,20 @@ def test_examples_readme_includes_public_safe_attachment_note():
     assert "hosted sharing" not in examples_readme
 
 
+def test_examples_readme_includes_first_run_troubleshooting_checklist():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+
+    assert "### First-run troubleshooting checklist" in examples_readme
+    assert "browsertrace doctor" in examples_readme
+    assert "browsertrace demo" in examples_readme
+    assert "browsertrace list" in examples_readme
+    assert "browsertrace show <run_id>" in examples_readme
+    assert "browsertrace export <run_id> --public -o public.html" in examples_readme
+    assert "@v0.1.14" in examples_readme
+    assert "hosted sharing" not in examples_readme
+
+
 def test_examples_readme_includes_pytest_isolated_storage_recipe():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -615,7 +629,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-09T19:50:39+00:00" in launch
-    assert "after issue #39 closed and good-first issue #40 rotation" in launch
+    assert "2026-05-09T19:53:30+00:00" in launch
+    assert "after first-run troubleshooting checklist docs for issue #40" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
