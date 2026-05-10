@@ -506,6 +506,8 @@ fix the bug, get back to building.
 Local BrowserTrace will always be free OSS. We're working on a hosted version
 for teams that need:
 
+None of these hosted features are required for the current local OSS workflow.
+
 - **One-click share links** for failed runs (send to a teammate, paste in a Slack
   thread, attach to a GitHub issue, no `git clone` required)
 - **CI ingestion** — upload traces from your test runs, get a digest of failures

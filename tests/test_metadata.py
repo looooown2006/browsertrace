@@ -256,6 +256,23 @@ def test_readme_links_private_reports_near_feedback():
     assert "hosted sharing" not in readme
 
 
+def test_readme_clarifies_cloud_features_are_not_required_for_local_oss():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    cloud_section = readme.split("## Cloud / Team (coming soon)", 1)[1].split(
+        "## Roadmap", 1
+    )[0]
+
+    assert (
+        "None of these hosted features are required for the current local OSS "
+        "workflow"
+    ) in cloud_section
+    assert "Local BrowserTrace will always be free OSS" in cloud_section
+    assert "open a cloud/team interest issue" in cloud_section
+    assert "stars" not in cloud_section.lower()
+    assert "upvotes" not in cloud_section.lower()
+
+
 def test_readme_links_contributor_guide_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1793,7 +1810,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:17:27+00:00" in launch
-    assert "after issue #122 closed and good-first issue #123 rotation" in launch
+    assert "2026-05-10T02:19:32+00:00" in launch
+    assert "after README local OSS cloud clarification for issue #123" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
