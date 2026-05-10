@@ -17,6 +17,10 @@ body:
       description: Describe the smallest useful version of the feature.
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        For a small docs or example fix after proposing a feature, use `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
   - type: dropdown
     id: area
     attributes:
@@ -32,4 +36,3 @@ body:
         - Other
     validations:
       required: true
-

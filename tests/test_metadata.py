@@ -2562,6 +2562,19 @@ def test_integration_request_template_requests_json_cli_troubleshooting_checks()
     assert "upvotes" not in template.lower()
 
 
+def test_feature_request_template_links_first_pr_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "feature_request.yml"
+    ).read_text()
+
+    assert "Describe the smallest useful version of the feature." in template
+    assert "CONTRIBUTING.md#first-pr-recipe" in template
+    assert "first contribution small and reviewable" in template
+    assert "stars" not in template.lower()
+    assert "upvotes" not in template.lower()
+
+
 def test_pull_request_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (project_root / ".github" / "PULL_REQUEST_TEMPLATE.md").read_text()
@@ -2696,7 +2709,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:26:18+00:00" in launch
-    assert "after issue #181 closed and good-first issue #182 rotation" in launch
+    assert "2026-05-10T07:28:49+00:00" in launch
+    assert "after feature request template First PR Recipe link for issue #182" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
