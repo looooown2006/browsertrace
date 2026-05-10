@@ -450,6 +450,20 @@ def test_readme_links_example_matrix_near_install_tag():
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_recent_runs_near_install_tag():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+
+    assert "examples/#show-only-recent-runs" in install_section
+    assert "`browsertrace list --limit 5` narrows recent runs" in install_section
+    assert "before choosing one to inspect or export" in install_section
+    assert "@v0.1.14" in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_explains_show_near_install_tag():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -552,6 +566,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3",
         "- Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6",
         "- Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`",
+        "- `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export",
         "- `browsertrace show <run_id>` inspects a listed run",
         "- `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export",
         "- `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port",
@@ -1324,7 +1339,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T00:02:31+00:00" in launch
-    assert "after issue #93 closed and good-first issue #94 rotation" in launch
+    assert "2026-05-10T00:04:25+00:00" in launch
+    assert "after README recent-runs note for issue #94" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

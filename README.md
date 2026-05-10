@@ -87,6 +87,7 @@ Useful local checks:
 - `browsertrace doctor` is a safe local status check for install and trace-store status.
 - `browsertrace demo` runs without API keys or external services.
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
+- `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export; see the [recent-runs recipe](examples/#show-only-recent-runs).
 - First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3.
 - Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6.
 - Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`.
