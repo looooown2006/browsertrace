@@ -2539,6 +2539,24 @@ def test_launch_copy_includes_pypi_trial_after_publish():
         assert "pypi" in text.lower(), relpath
 
 
+def test_x_launch_copy_fits_non_premium_post_limit():
+    project_root = Path(__file__).resolve().parents[1]
+    copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
+
+    def text_blocks_between(start_heading: str, end_heading: str) -> list[str]:
+        section = copy.split(start_heading, 1)[1].split(end_heading, 1)[0]
+        return re.findall(r"```text\n(.*?)\n```", section, re.S)
+
+    x_blocks = [
+        *text_blocks_between("## X", "## X Follow-Up"),
+        *text_blocks_between("## X Follow-Up", "## LinkedIn"),
+    ]
+
+    assert len(x_blocks) >= 2
+    for block in x_blocks:
+        assert len(block) <= 280, block
+
+
 def test_longform_launch_posts_include_pypi_trial_after_publish():
     project_root = Path(__file__).resolve().parents[1]
     pypi_spec = "browsertrace[ui]"

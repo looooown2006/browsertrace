@@ -40,29 +40,34 @@ browsertrace show <run_id> --json
 
 ## X
 
+Non-Premium-safe thread. Post each `text` block as one X post.
+
 ```text
 3 AM browser-agent debugging problem:
 
-The run failed.
-Logs say what code ran.
-They do not show what the agent saw, clicked, or decided.
+The run failed. Logs say what code ran, but not what the agent saw, clicked, or decided.
 
-So I built BrowserTrace.
+So I built BrowserTrace: a local trace viewer for AI browser-agent failures.
 
-Drop it into a Browser Use / Stagehand / Playwright + LLM run and it records a local timeline:
+No signup, no cloud, MIT.
+```
+
+```text
+It records each failed Browser Use / Stagehand / Playwright + LLM run as a local timeline:
+
 - screenshot
 - URL
 - action
 - model input/output
-- failed step
-
-No signup, no cloud, MIT.
+- error
 
 Live demo: https://aaronlab.github.io/browsertrace/
-https://github.com/aaronlab/browsertrace
+Repo: https://github.com/aaronlab/browsertrace
 ```
 
 ## X Follow-Up
+
+Non-Premium-safe follow-up. Post each `text` block as one X post.
 
 ```text
 The shortest way to try BrowserTrace:
@@ -71,15 +76,18 @@ uvx --from "browsertrace[ui]" browsertrace doctor
 uvx --from "browsertrace[ui]" browsertrace demo
 uvx --from "browsertrace[ui]" browsertrace
 
+Open localhost:3000 and click the failed checkout demo.
+```
+
+```text
 Persistent install from PyPI:
+
 pip install "browsertrace[ui]"
 browsertrace doctor
 browsertrace demo
 browsertrace
 
-Open localhost:3000 and click the failed checkout demo.
-
-I want feedback from people building browser agents.
+I want feedback from people building browser agents: what state should a trace capture when a run fails?
 ```
 
 ## LinkedIn

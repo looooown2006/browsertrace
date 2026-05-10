@@ -25,9 +25,10 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "before Da
 
 1. X
    - Attach `docs/demo.mp4`.
-   - Paste the `## X` draft from `docs/launch/channel-copy.md`.
-   - Post the `## X Follow-Up` draft 30-90 minutes later, or sooner if someone
-     asks how to try it.
+   - Paste each `## X` text block from `docs/launch/channel-copy.md` as a
+     non-Premium-safe thread.
+   - Post each `## X Follow-Up` text block 30-90 minutes later, or sooner if
+     someone asks how to try it.
    - Pin only if the post gets real replies.
 2. LinkedIn
    - Attach `docs/demo.mp4` or `docs/demo-poster.png`.

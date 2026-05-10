@@ -61,7 +61,8 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      https://github.com/aaronlab/browsertrace/issues/18
 
 1. X
-   - Use the `## X` draft in `docs/launch/channel-copy.md`.
+   - Use each `## X` text block in `docs/launch/channel-copy.md` as a
+     non-Premium-safe thread.
    - Attach `docs/demo.mp4`.
    - Pin the post for 48 hours only if it gets real replies.
 2. LinkedIn
