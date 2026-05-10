@@ -166,10 +166,10 @@ GitHub-tag pip install path until PyPI publishing is enabled.
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The current one is #122,
-which asks for a concise README default trace-store note near the release-tag
-install checks. For adapter work, the most useful first step is an integration
-request describing the framework and failure state you need to debug.
+Yes. Good first issues are kept small and reviewable. The current one is #123,
+which asks for a concise README note separating current local OSS usage from
+future hosted/team features. For adapter work, the most useful first step is an
+integration request describing the framework and failure state you need to debug.
 ```
 
 ## Metrics
