@@ -50,12 +50,14 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      in Google Search Console and Bing Webmaster Tools.
    - Search indexing tracking issue:
      https://github.com/aaronlab/browsertrace/issues/16
-   - GitHub awesome lists: eight high-fit PRs are already open, including
+   - GitHub awesome lists: nine high-fit PRs are already open, including
      `steel-dev/awesome-web-agents#56` and
      `ai-boost/awesome-harness-engineering#23`, plus
-     `Agent-Tools/awesome-autonomous-web#21`. Monitor maintainer feedback and
-     do not open additional list PRs unless the target is clearly high-fit and
-     non-duplicative.
+     `Agent-Tools/awesome-autonomous-web#21` and
+     `e2b-dev/awesome-ai-sdks#187`. The E2B PR requires an owner CLA signature
+     before it can pass `verification/cla-signed`. Monitor maintainer feedback
+     and do not open additional list PRs unless the target is clearly high-fit
+     and non-duplicative.
    - Awesome list tracking issue:
      https://github.com/aaronlab/browsertrace/issues/18
 
