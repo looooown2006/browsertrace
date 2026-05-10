@@ -166,8 +166,8 @@ GitHub-tag pip install path until PyPI publishing is enabled.
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The current one is #155,
-which asks for a concise first-PR recipe in the contributor guide.
+Yes. Good first issues are kept small and reviewable. The current one is #156,
+which asks for a README link to the first-PR recipe in the contributor guide.
 For adapter work, the most useful first step is an integration request
 describing the framework and failure state you need to debug.
 ```
