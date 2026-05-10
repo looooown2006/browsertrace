@@ -88,6 +88,7 @@ Useful local checks:
 - The healthy doctor output recipe shows expected `Home:`, `Database:`, `Runs:`, and `UI dependencies:` status lines; see [Check a healthy local install](examples/#check-a-healthy-local-install).
 - `browsertrace demo` runs without API keys or external services.
 - The deterministic no-API demo creates a trace without a browser, network, or API key; from a source checkout, run `python examples/no_api_failure_demo.py`.
+- The local trial requires no signup, cloud account, or hosted browser service.
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
 - The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html).
