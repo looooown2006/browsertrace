@@ -544,3 +544,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T08:08:51+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #187 closed and good-first issue #188 rotation; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T08:10:56+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after integrations First PR Recipe link for issue #188; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T08:13:00+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #188 closed and good-first issue #189 rotation; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T08:14:50+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after Browser Use guide First PR Recipe link for issue #189; traffic views 112/41 unique, clones 5965/1214 unique |

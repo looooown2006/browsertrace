@@ -209,6 +209,21 @@ def test_integrations_page_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in integrations.lower()
 
 
+def test_browser_use_guide_links_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    guide = (project_root / "docs" / "browser-use-debugging.html").read_text()
+
+    assert "First PR Recipe" in guide
+    assert (
+        "https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe"
+        in guide
+    )
+    assert "first contribution small and reviewable" in guide
+    assert "stars" not in guide.lower()
+    assert "upvotes" not in guide.lower()
+    assert "reposts" not in guide.lower()
+
+
 def test_docs_include_uvx_github_quickstart_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
@@ -2797,7 +2812,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T08:13:00+00:00" in launch
-    assert "after issue #188 closed and good-first issue #189 rotation" in launch
+    assert "2026-05-10T08:14:50+00:00" in launch
+    assert "after Browser Use guide First PR Recipe link for issue #189" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
