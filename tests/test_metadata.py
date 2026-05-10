@@ -2321,6 +2321,23 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_outreach_targets_link_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
+    assert "## Contribution Reply" in targets
+    contribution_reply = targets.split("## Contribution Reply", 1)[1].split(
+        "## Troubleshooting Reply", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/issues/164" in contribution_reply
+    assert "First PR Recipe" in contribution_reply
+    assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
+    assert "first contribution small and reviewable" in contribution_reply
+    assert "stars" not in contribution_reply.lower()
+    assert "upvotes" not in contribution_reply.lower()
+    assert "reposts" not in contribution_reply.lower()
+
+
 def test_search_indexing_submission_includes_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     submission = (
@@ -2487,7 +2504,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:52:51+00:00" in launch
-    assert "after issue #163 closed and good-first issue #164 rotation" in launch
+    assert "2026-05-10T05:56:32+00:00" in launch
+    assert "after outreach targets first PR recipe link for issue #164" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

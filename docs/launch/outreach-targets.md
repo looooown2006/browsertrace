@@ -88,6 +88,16 @@ Submission notes:
   command only when someone asks how to run it locally before PyPI publishing is
   enabled.
 
+## Contribution Reply
+
+Use this when someone asks for a small first contribution:
+
+Good first issue:
+https://github.com/aaronlab/browsertrace/issues/164
+
+First PR Recipe:
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 ## Troubleshooting Reply
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
