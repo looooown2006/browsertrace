@@ -9,6 +9,8 @@ to keep the first contribution small and reviewable.
 
 ## Unreleased
 
+## 0.1.17 - 2026-05-10
+
 - Added compact `stagehand_evidence` summaries for Stagehand observe/action
   results, including selectors, descriptions, and methods when available.
 - Improved standalone HTML exports with `lang`, `viewport`, and a responsive

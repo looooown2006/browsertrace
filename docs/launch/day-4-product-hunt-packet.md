@@ -72,7 +72,7 @@ https://github.com/aaronlab/browsertrace
 Public-safe demo export for replies:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 ```
 
 Try locally from PyPI:

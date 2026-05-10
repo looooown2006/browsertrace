@@ -1,6 +1,6 @@
 # BrowserTrace Directory And Newsletter Submission Sheet
 
-Use this sheet after `v0.1.16`. Submit only where the target accepts tool
+Use this sheet after `v0.1.17`. Submit only where the target accepts tool
 suggestions, launches, or editorial pitches. Do not ask for stars, votes,
 upvotes, swaps, or artificial engagement.
 
@@ -14,8 +14,8 @@ upvotes, swaps, or artificial engagement.
 - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
 - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 
 ## Try-It Commands
 
@@ -48,7 +48,7 @@ runs.
 BrowserTrace is an MIT-licensed local debugger for AI browser agents. It records
 each browser-agent step as a timeline with screenshot, URL, action, model
 input/output, status, and error, then exports a standalone HTML trace with
-optional redaction. The `v0.1.16` release includes the public-safe
+optional redaction. The `v0.1.17` release includes the public-safe
 `browsertrace export --public` mode, a packaged `browsertrace demo` command,
 Browser Use/Stagehand/Skyvern/Playwright guides, and a no-dependency Browser
 Use-shaped callback demo.
@@ -196,9 +196,9 @@ custom computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17
 ```
 
 ## console.dev Email Draft
@@ -232,7 +232,7 @@ Why it may fit console.dev:
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
 Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 
 This is not a sponsored review request. I would value any editorial feedback if
 it is not a fit.
@@ -261,7 +261,7 @@ with optional redaction. It is useful for Browser Use, Stagehand, Skyvern,
 Playwright + LLM scripts, and custom computer-use agents.
 
 Repository: https://github.com/aaronlab/browsertrace
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
 ```
 

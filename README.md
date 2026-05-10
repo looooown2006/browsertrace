@@ -114,9 +114,9 @@ For compact AI/coding-agent troubleshooting context, use
 project links and prompts.
 
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
-- The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html).
+- The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html).
 - The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands; see the [cheat sheet](examples/#browsertrace-command-cheat-sheet).
-- The v0.1.16 release notes summarize what changed in the current release; read the [v0.1.16 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16).
+- The v0.1.17 release notes summarize what changed in the current release; read the [v0.1.17 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17).
 - The PyPI package page is the canonical package listing after publishing: https://pypi.org/project/browsertrace/.
 - `uvx` can run the PyPI package without a persistent install, and `pip install` is the persistent install path.
 - `[ui]` is needed for the local web UI, while SDK-only install is enough for trace capture integrations.
@@ -152,13 +152,13 @@ If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
 
 For changes in this release, read the
-[v0.1.16 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16).
+[v0.1.17 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17).
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read

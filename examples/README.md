@@ -57,7 +57,7 @@ For a downloadable public-safe export that omits prompt/model I/O, screenshots,
 and URLs, inspect the release asset:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 ```
 
 ### Discover CLI options

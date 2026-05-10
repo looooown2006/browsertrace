@@ -14,7 +14,7 @@ https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
 
 Public-safe demo export for privacy-sensitive replies:
 
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 
 ## Contribution Reply
 

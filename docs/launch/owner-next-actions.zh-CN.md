@@ -44,7 +44,7 @@ issue comment 都交给 Codex 继续处理：
 
 ## 1. PyPI 已发布
 
-PyPI 已经不再是安装阻塞。BrowserTrace 已发布为 `0.1.16`：
+PyPI 已经不再是安装阻塞。BrowserTrace 已发布为 `0.1.17`：
 
 ```text
 https://pypi.org/project/browsertrace/

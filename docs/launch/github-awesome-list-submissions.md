@@ -12,8 +12,8 @@ Use these links only when a maintainer asks for more context. Keep the PR itself
 small and formatted to the target list.
 
 - Live demo: https://aaronlab.github.io/browsertrace/
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17
 
 The lightest local trial is the PyPI package with `uvx`:
 

@@ -14,7 +14,7 @@ def test_package_version_matches_module_version():
     project_root = Path(__file__).resolve().parents[1]
     pyproject = tomllib.loads((project_root / "pyproject.toml").read_text())
 
-    assert pyproject["project"]["version"] == "0.1.16"
+    assert pyproject["project"]["version"] == "0.1.17"
     assert pyproject["project"]["version"] == browsertrace.__version__
 
 
@@ -577,15 +577,16 @@ def test_changelog_links_first_pr_recipe_for_small_docs_fixes():
     assert "reposts" not in changelog.lower()
 
 
-def test_changelog_tracks_unreleased_export_and_discovery_updates():
+def test_changelog_tracks_017_export_discovery_and_stagehand_updates():
     project_root = Path(__file__).resolve().parents[1]
     changelog = (project_root / "CHANGELOG.md").read_text()
-    unreleased = changelog.split("## Unreleased", 1)[1].split("## 0.1.16", 1)[0]
+    release_notes = changelog.split("## 0.1.17", 1)[1].split("## 0.1.16", 1)[0]
 
-    assert "standalone HTML exports" in unreleased
-    assert "viewport" in unreleased
-    assert "Open Graph URL" in unreleased
-    assert "JSON-LD" in unreleased
+    assert "stagehand_evidence" in release_notes
+    assert "standalone HTML exports" in release_notes
+    assert "viewport" in release_notes
+    assert "Open Graph URL" in release_notes
+    assert "JSON-LD" in release_notes
 
 
 def test_code_of_conduct_links_first_pr_recipe_for_small_docs_fixes():
@@ -756,7 +757,7 @@ def test_roadmap_records_current_launch_state():
     project_root = Path(__file__).resolve().parents[1]
     roadmap = (project_root / "ROADMAP.md").read_text()
 
-    assert "`v0.1.16` is the current launch release." in roadmap
+    assert "`v0.1.17` is the current launch release." in roadmap
     assert 'pip install "browsertrace[ui]"' in roadmap
     assert "Twelve focused PRs are open" in roadmap
     assert "E2B CLA check has passed" in roadmap
@@ -912,10 +913,10 @@ def test_readme_links_release_notes_near_install_tag():
     )[0]
 
     assert (
-        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16"
+        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17"
         in install_section
     )
-    assert "v0.1.16 release notes" in install_section
+    assert "v0.1.17 release notes" in install_section
     assert "https://pypi.org/project/browsertrace/" in install_section
     assert 'pip install "browsertrace[ui]"' in install_section
     assert "hosted sharing" not in readme
@@ -929,11 +930,11 @@ def test_readme_explains_release_notes_near_install_checks():
     )[0]
 
     assert (
-        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16"
+        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17"
         in install_section
     )
     assert (
-        "The v0.1.16 release notes summarize what changed in the current release"
+        "The v0.1.17 release notes summarize what changed in the current release"
     ) in install_section
     assert 'pip install "browsertrace[ui]"' in install_section
     assert "hosted sharing" not in readme
@@ -1089,7 +1090,7 @@ def test_readme_links_static_demo_near_install_tag():
 
     assert "https://aaronlab.github.io/browsertrace/" in install_section
     assert (
-        "https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/"
+        "https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/"
         "browsertrace-demo-public.html"
     ) in install_section
     assert (
@@ -1646,7 +1647,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export",
         "- The live static demo and public-safe demo export let you inspect a trace before installing anything",
         "- The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands",
-        "- The v0.1.16 release notes summarize what changed in the current release",
+        "- The v0.1.17 release notes summarize what changed in the current release",
         "- The PyPI package page is the canonical package listing after publishing",
         "- `uvx` can run the PyPI package without a persistent install, and `pip install` is the persistent install path",
         "- `[ui]` is needed for the local web UI, while SDK-only install is enough for trace capture integrations",
@@ -2713,7 +2714,7 @@ def test_owner_docs_mark_pypi_publish_complete():
         assert "https://pypi.org/project/browsertrace/" in text
         assert "https://pypi.org/pypi/browsertrace/json" in text
         assert "HTTP 200" in text or "已发布" in text
-        assert "0.1.16" in text
+        assert "0.1.17" in text
 
 
 def test_day_1_publish_packet_includes_json_cli_reply_shortcut():

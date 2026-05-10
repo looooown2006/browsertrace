@@ -24,7 +24,7 @@ Open these in a browser:
 - https://github.com/aaronlab/browsertrace
 - https://aaronlab.github.io/browsertrace/
 - https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+- https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 
 Submit only if all are true:
 
@@ -95,7 +95,7 @@ https://aaronlab.github.io/browsertrace/
 
 And a public-safe downloadable export with prompts, model output, screenshots,
 and URLs omitted:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 
 I would especially value feedback from people building Browser Use, Stagehand,
 Playwright + LLM, Skyvern, or custom computer-use agents. What state do you

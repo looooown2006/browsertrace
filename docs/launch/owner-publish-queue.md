@@ -12,8 +12,8 @@ people building browser agents.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
@@ -25,7 +25,7 @@ Shortest owner checklist: `docs/launch/owner-next-actions.md`
 - Poster image: `docs/demo-poster.png`
 - Backup GIF: `docs/demo.gif`
 - Social preview: `docs/social-preview.png`
-- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.16`
+- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.17`
 - Press kit: `docs/launch/press-kit.md`
 - Search indexing submission: `docs/launch/search-indexing-submission.md`
 - GitHub awesome list submissions: `docs/launch/github-awesome-list-submissions.md`
@@ -112,7 +112,7 @@ Discord where allowed, and replies.
 0. PyPI publishing
    - Completed. `https://pypi.org/pypi/browsertrace/json` returns HTTP 200.
    - Package page: `https://pypi.org/project/browsertrace/`.
-   - Current PyPI version: `0.1.16`.
+   - Current PyPI version: `0.1.17`.
    - Use `pip install "browsertrace[ui]"` in public posts.
    - Future releases should use the manual `Publish` workflow after the version
      and GitHub release artifacts are ready.
