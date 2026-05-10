@@ -16,6 +16,15 @@ Public-safe demo export for privacy-sensitive replies:
 
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
+## Contribution Reply
+
+If someone asks how to make a small docs fix, point to the current good first
+issue:
+https://github.com/aaronlab/browsertrace/issues/169
+
+Then share the First PR Recipe:
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 ## Troubleshooting Reply
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
