@@ -758,7 +758,7 @@ def test_roadmap_records_current_launch_state():
 
     assert "`v0.1.16` is the current launch release." in roadmap
     assert 'pip install "browsertrace[ui]"' in roadmap
-    assert "Ten focused PRs are open" in roadmap
+    assert "Eleven focused PRs are open" in roadmap
     assert "E2B CLA check has passed" in roadmap
     assert "`v0.1.15` is the current launch release." not in roadmap
     assert "Three focused PRs are open" not in roadmap
@@ -2651,12 +2651,13 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
 
-    assert "eleven focused PRs are already open" in queue
+    assert "twelve focused PRs are already open" in queue
     assert "the three prepared PRs" not in queue
     assert "ai-boost/awesome-harness-engineering#23" in queue
     assert "Agent-Tools/awesome-autonomous-web#21" in queue
     assert "e2b-dev/awesome-ai-sdks#187" in queue
     assert "jim-schwoebel/awesome_ai_agents#266" in queue
+    assert "ranpox/awesome-computer-use#24" in queue
     assert "E2B CLA check has passed" in queue
     assert "steel-dev/awesome-web-agents#56" in queue
 
@@ -2769,7 +2770,7 @@ def test_directory_submission_sheet_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
-    assert "10 PRs open; monitor feedback; e2b CLA passed" in sheet
+    assert "11 PRs open; monitor feedback; e2b CLA passed" in sheet
     assert "3 PRs open" not in sheet
     assert "github-awesome-list-submissions.md" in sheet
 
@@ -3175,6 +3176,8 @@ def test_owner_next_actions_preserves_external_awesome_list_pr_numbers():
     assert "ai-boost/awesome-harness-engineering#23" in awesome_prs
     assert "Agent-Tools/awesome-autonomous-web#21" in awesome_prs
     assert "e2b-dev/awesome-ai-sdks#187" in awesome_prs
+    assert "jim-schwoebel/awesome_ai_agents#266" in awesome_prs
+    assert "ranpox/awesome-computer-use#24" in awesome_prs
     assert "E2B CLA check has passed" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#222" not in awesome_prs
@@ -3198,6 +3201,8 @@ def test_chinese_owner_next_actions_preserves_external_awesome_list_pr_numbers()
     assert "ai-boost/awesome-harness-engineering/pull/23" in awesome_prs
     assert "Agent-Tools/awesome-autonomous-web/pull/21" in awesome_prs
     assert "e2b-dev/awesome-ai-sdks/pull/187" in awesome_prs
+    assert "jim-schwoebel/awesome_ai_agents/pull/266" in awesome_prs
+    assert "ranpox/awesome-computer-use/pull/24" in awesome_prs
     assert "CLA 已通过" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents/pull/221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents/pull/222" not in awesome_prs
@@ -3371,7 +3376,7 @@ def test_outreach_targets_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
 
-    assert "Ten focused PRs are already open" in targets
+    assert "Eleven focused PRs are already open" in targets
     assert "E2B CLA check has passed" in targets
     assert "Three focused PRs" not in targets
     assert "Do not open more list PRs unless the target is clearly high-fit" in targets
@@ -3712,6 +3717,19 @@ def test_awesome_list_submission_notes_record_e2b_ai_sdks_pr():
     assert "creating, monitoring, debugging and deploying autonomous AI agents" in notes
     assert "verification/cla-signed" in notes
     assert "SUCCESS" in notes
+
+
+def test_awesome_list_submission_notes_record_ranpox_computer_use_pr():
+    project_root = Path(__file__).resolve().parents[1]
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+
+    assert "ranpox/awesome-computer-use" in notes
+    assert "https://github.com/ranpox/awesome-computer-use/pull/24" in notes
+    assert "Projects" in notes
+    assert "computer-use resources" in notes
+    assert "supernalintelligence/Awesome-Gui-Agents" in notes
 
 
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():

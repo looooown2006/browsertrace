@@ -61,7 +61,9 @@ browsertrace show <run_id> --json
 | 8 | `Agent-Tools/awesome-autonomous-web` | Strong | `Debugging & Trace Viewers` | Submitted: https://github.com/Agent-Tools/awesome-autonomous-web/pull/21 |
 | 9 | `e2b-dev/awesome-ai-sdks` | Strong | top-level tool entry | Submitted: https://github.com/e2b-dev/awesome-ai-sdks/pull/187; E2B CLA passed |
 | 10 | `jim-schwoebel/awesome_ai_agents` | Medium | `Building` -> `Tools` | Submitted: https://github.com/jim-schwoebel/awesome_ai_agents/pull/266 |
+| 11 | `ranpox/awesome-computer-use` | Strong | `Projects` | Submitted: https://github.com/ranpox/awesome-computer-use/pull/24 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
+| Skip | `supernalintelligence/Awesome-Gui-Agents` | Weak | n/a | Main list catalogs GUI agents, not developer/debugging tools; referenced contribution file is missing |
 
 ## 1. Awesome Browser Automation
 
@@ -451,11 +453,45 @@ Verification:
 git diff --check
 ```
 
+## 11. Awesome Computer Use
+
+Target:
+
+```text
+https://github.com/ranpox/awesome-computer-use
+```
+
+Status: submitted as https://github.com/ranpox/awesome-computer-use/pull/24.
+
+Fit notes:
+
+- The target list curates computer-use resources, including a `Projects`
+  section for open-source projects around GUI and browser computer use.
+- BrowserTrace fits as failed-run debugging tooling for browser-agent and
+  computer-use projects, not as an agent runtime.
+- The PR adds one neutral Projects entry and avoids star, vote, or engagement
+  language.
+
+Submitted entry:
+
+```markdown
+- [BrowserTrace](https://github.com/aaronlab/browsertrace) - Local-first trace viewer for debugging failed AI browser-agent and computer-use runs with screenshots, URLs, actions, model I/O, errors, and redacted HTML exports.
+```
+
+Verification:
+
+```bash
+git diff --check
+```
+
 ## Skip List
 
 - `e2b-dev/awesome-ai-agents`: the README says the list is only for AI
   assistants and agents, and points SDK/framework/tool submissions to
   `e2b-dev/awesome-sdks-for-ai-agents`.
+- `supernalintelligence/Awesome-Gui-Agents`: the README focuses on GUI agents
+  rather than developer/debugging tools, and its referenced contribution file is
+  not present in the repository.
 - Low-star forks with copied README content and no visible curation.
 - Broad AI app lists where BrowserTrace would be an unrelated developer tool.
 

@@ -675,3 +675,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T18:05:13+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after changelog documented export and discovery metadata updates; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T18:07:26+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after profile README added persistent pip install path: https://github.com/aaronlab/aaronlab/commit/34c4391; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T18:18:57+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after jim-schwoebel awesome_ai_agents PR #266: https://github.com/jim-schwoebel/awesome_ai_agents/pull/266; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T18:35:38+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after ranpox awesome-computer-use PR #24: https://github.com/ranpox/awesome-computer-use/pull/24; traffic views 112/41 unique, clones 5965/1214 unique |

@@ -48,12 +48,13 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      in Google Search Console and Bing Webmaster Tools.
    - Search indexing tracking issue:
      https://github.com/aaronlab/browsertrace/issues/16
-   - GitHub awesome lists: eleven focused PRs are already open, including
+   - GitHub awesome lists: twelve focused PRs are already open, including
      `steel-dev/awesome-web-agents#56` and
      `ai-boost/awesome-harness-engineering#23`, plus
      `Agent-Tools/awesome-autonomous-web#21` and
      `e2b-dev/awesome-ai-sdks#187`, and the broader
-     `jim-schwoebel/awesome_ai_agents#266` tools-list PR. The E2B CLA check has passed;
+     `jim-schwoebel/awesome_ai_agents#266` tools-list PR. The newest focused
+     computer-use list PR is `ranpox/awesome-computer-use#24`. The E2B CLA check has passed;
      monitor maintainer feedback and do not open additional list PRs unless the
      target is clearly high-fit and non-duplicative.
    - Awesome list tracking issue:
