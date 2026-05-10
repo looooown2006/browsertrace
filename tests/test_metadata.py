@@ -637,6 +637,23 @@ def test_readme_explains_list_status_filter_near_install_checks():
     assert "hosted sharing" not in readme
 
 
+def test_readme_includes_json_cli_automation_recipe_near_install_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert "For scripts, CI, or AI/coding-agent troubleshooting" in install_section
+    assert recipe in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_explains_demo_run_id_output_near_install_checks():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1870,7 +1887,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:42:39+00:00" in launch
-    assert "after issue #127 closed and good-first issue #128 rotation" in launch
+    assert "2026-05-10T02:44:48+00:00" in launch
+    assert "after README JSON CLI automation recipe for issue #128" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

@@ -417,3 +417,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T02:37:05+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #126 closed and good-first issue #127 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T02:39:40+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after browsertrace list status filter for issue #127; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T02:42:39+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #127 closed and good-first issue #128 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T02:44:48+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README JSON CLI automation recipe for issue #128; traffic views 52/29 unique, clones 103/54 unique |
