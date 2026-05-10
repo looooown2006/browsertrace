@@ -758,7 +758,7 @@ def test_roadmap_records_current_launch_state():
 
     assert "`v0.1.16` is the current launch release." in roadmap
     assert 'pip install "browsertrace[ui]"' in roadmap
-    assert "Eleven focused PRs are open" in roadmap
+    assert "Twelve focused PRs are open" in roadmap
     assert "E2B CLA check has passed" in roadmap
     assert "`v0.1.15` is the current launch release." not in roadmap
     assert "Three focused PRs are open" not in roadmap
@@ -2807,7 +2807,7 @@ def test_directory_submission_sheet_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
-    assert "11 PRs open; monitor feedback; e2b CLA passed" in sheet
+    assert "12 PRs open; monitor feedback; e2b CLA passed" in sheet
     assert "3 PRs open" not in sheet
     assert "github-awesome-list-submissions.md" in sheet
 
@@ -3413,7 +3413,7 @@ def test_outreach_targets_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
 
-    assert "Eleven focused PRs are already open" in targets
+    assert "Twelve focused PRs are already open" in targets
     assert "E2B CLA check has passed" in targets
     assert "Three focused PRs" not in targets
     assert "Do not open more list PRs unless the target is clearly high-fit" in targets
