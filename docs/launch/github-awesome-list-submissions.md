@@ -27,7 +27,7 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 
 If a maintainer or list reader asks how to make a small docs fix, point to the
 current good first issue:
-https://github.com/aaronlab/browsertrace/issues/208
+https://github.com/aaronlab/browsertrace/issues/210
 
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.

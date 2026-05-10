@@ -317,7 +317,7 @@ browsertrace show <run_id> --json
 ```
 
 - For small first contributions, start with the current good first issue:
-  https://github.com/aaronlab/browsertrace/issues/208
+  https://github.com/aaronlab/browsertrace/issues/210
   Then link the First PR Recipe:
   https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 
