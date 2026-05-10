@@ -645,3 +645,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T15:21:17+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 19 | after release downloads increased to 19 during monitoring; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T15:34:32+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 19 | after owner launch copy removed old profile redirect references: https://github.com/aaronlab/browsertrace/commit/c360ee9; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T15:37:39+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 19 | after Product Hunt reply guidance removed star mention from owner copy; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T15:40:50+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 19 | after response template install guidance synced to PyPI launch state; traffic views 112/41 unique, clones 5965/1214 unique |

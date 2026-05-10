@@ -46,8 +46,6 @@ For a persistent install:
 pip install "browsertrace[ui]"
 ```
 
-Once credentials are available, the README install path should become `pip install browsertrace[ui]`.
-
 ## I found a bug.
 
 Thanks for trying it. Please open an issue with the run shape, framework, Python version, and the smallest snippet that reproduces it. If the trace can be exported safely, attaching the HTML export would help a lot.
