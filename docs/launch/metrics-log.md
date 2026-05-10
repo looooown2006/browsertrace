@@ -401,3 +401,5 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T01:59:58+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README export success output note for issue #119; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T02:03:12+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #119 closed and good-first issue #120 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T02:04:56+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README show output fields note for issue #120; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T02:07:56+00:00 | 3 | 998 | 4 | 0 | 12 | 0 | 0 | after agentfirst.directory PR #30 metadata fix: https://github.com/bradvin/agentfirst.directory/pull/30#issuecomment-4414205805; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T02:08:41+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #120 closed and good-first issue #121 rotation; traffic views 52/29 unique, clones 103/54 unique |
