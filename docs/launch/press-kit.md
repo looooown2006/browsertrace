@@ -96,6 +96,16 @@ browsertrace
 - Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
 - Contributor guide: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md
 
+## Troubleshooting Reply
+
+For press/editorial follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Safe Ask
 
 Ask for workflow feedback from real browser-agent builders:
