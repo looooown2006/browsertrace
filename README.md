@@ -107,6 +107,7 @@ Useful local checks:
 - Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`.
 - The example matrix lists no-service examples.
 - `browsertrace show <run_id>` inspects a listed run from the terminal.
+- `browsertrace show <run_id>` prints the selected run's step timeline, including action labels, status, and errors.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
 - `browsertrace export <run_id> --public -o public.html` writes a self-contained HTML report you can attach to a bug report or issue.
 - `-o public.html` chooses the export filename; without `-o`, `browsertrace export` writes `<run_id>.html`.

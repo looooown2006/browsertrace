@@ -741,6 +741,7 @@ def test_readme_explains_show_near_install_tag():
 
     assert "`browsertrace show <run_id>` inspects a listed run" in install_section
     assert "from the terminal" in install_section
+    assert "action labels, status, and errors" in install_section
     assert "@v0.1.14" in install_section
     assert "hosted sharing" not in readme
 
@@ -992,6 +993,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export",
         "- A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches",
         "- `browsertrace show <run_id>` inspects a listed run",
+        "- `browsertrace show <run_id>` prints the selected run's step timeline, including action labels, status, and errors",
         "- `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export",
         "- `browsertrace export <run_id> --public -o public.html` writes a self-contained HTML report",
         "- `-o public.html` chooses the export filename",
@@ -1781,7 +1783,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:03:12+00:00" in launch
-    assert "after issue #119 closed and good-first issue #120 rotation" in launch
+    assert "2026-05-10T02:04:56+00:00" in launch
+    assert "after README show output fields note for issue #120" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
