@@ -2013,6 +2013,11 @@ browsertrace show <run_id> --json
     )
     assert recipe in reply_workflow
     assert "debugging/workflow details" in reply_workflow
+    assert "https://github.com/aaronlab/browsertrace/issues/166" in reply_workflow
+    assert "https://github.com/aaronlab/browsertrace/issues/165" not in reply_workflow
+    assert "First PR Recipe" in reply_workflow
+    assert "CONTRIBUTING.md#first-pr-recipe" in reply_workflow
+    assert "first contribution small and reviewable" in reply_workflow
     assert "stars" not in reply_workflow.lower()
     assert "upvotes" not in reply_workflow.lower()
     assert "reposts" not in reply_workflow.lower()
@@ -2525,7 +2530,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T06:05:57+00:00" in launch
-    assert "after issue #165 closed and good-first issue #166 rotation" in launch
+    assert "2026-05-10T06:07:46+00:00" in launch
+    assert "after owner publish queue first PR recipe link for issue #166" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
