@@ -2889,6 +2889,13 @@ def test_owner_short_checklists_surface_ready_email_submissions():
         assert "hello@console.dev" in unblock, relpath
         assert "AgDex" in unblock, relpath
         assert "agdex.ai@gmail.com" in unblock, relpath
+        assert "AgentKart" in unblock, relpath
+        assert "OSS AI Hub" in unblock, relpath
+        assert "FOSSHUNTER" in unblock, relpath
+        assert "AgentsTide" in unblock, relpath
+        assert "BuilderAI Tools" in unblock, relpath
+        assert "AI Observability & Evaluation" in unblock, relpath
+        assert "hello@agentstide.com" in unblock, relpath
         assert "stars" not in unblock.lower(), relpath
         assert "upvotes" not in unblock.lower(), relpath
 

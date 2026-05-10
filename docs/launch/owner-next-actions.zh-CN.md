@@ -16,6 +16,10 @@ issue comment 都交给 Codex 继续处理：
 2. 用 `docs/launch/directory-submission-sheet.md` 发送已经准备好的 owner
    email 投稿：发给 console.dev 的 `hello@console.dev`，以及发给 AgDex 的
    `agdex.ai@gmail.com`。
+3. 如果还有第二小段时间，用 `docs/launch/directory-submission-sheet.md`
+   提交这些浏览器表单目录：AgentKart、OSS AI Hub、FOSSHUNTER、AgentsTide、
+   BuilderAI Tools。AgentsTide 可用 `hello@agentstide.com` 作为邮件兜底，
+   BuilderAI Tools 分类用 `AI Observability & Evaluation`。
 
 发完后，把帖子 URL、群名、邮件已发送备注或回复发给 Codex，我会记录指标并
 更新跟踪 issue。

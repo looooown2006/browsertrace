@@ -18,6 +18,11 @@ follow-up verification, README updates, metrics, and issue comments:
 2. Send the ready owner-email submissions from
    `docs/launch/directory-submission-sheet.md`:
    `hello@console.dev` and `agdex.ai@gmail.com` for console.dev and AgDex.
+3. If you have a second short pass, submit the browser-form directories from
+   `docs/launch/directory-submission-sheet.md`:
+   AgentKart, OSS AI Hub, FOSSHUNTER, AgentsTide, and BuilderAI Tools. Use
+   `hello@agentstide.com` as the AgentsTide email fallback and
+   `AI Observability & Evaluation` for BuilderAI Tools.
 
 Send the posted URLs, email-sent note, or any replies so Codex can log metrics
 and update the tracking issues.
