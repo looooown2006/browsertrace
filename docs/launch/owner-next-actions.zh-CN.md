@@ -191,6 +191,20 @@ docs/launch/github-awesome-list-submissions.md
 
 Awesome list 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/18
 
+## 回复小贡献问题
+
+如果有人问怎么做一个小的文档贡献，先给当前 good first issue：
+
+```text
+https://github.com/aaronlab/browsertrace/issues/173
+```
+
+然后给 First PR Recipe：
+
+```text
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+```
+
 ## 回复本地首跑 / CI / agent 调试问题
 
 遇到 local first-run issues, CI failures, or AI/coding-agent troubleshooting replies 时，先问对方补充 debugging/workflow details；如果可以安全分享，再让对方贴这组 JSON CLI diagnostics：
