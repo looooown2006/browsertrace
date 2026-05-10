@@ -183,6 +183,9 @@ Use the same rules as other launch channels:
   a small first contribution.
 - Ask which browser-agent stack they use.
 - Convert concrete adapter requests into GitHub issues.
+- For security-sensitive reports or changes, or anything that includes private trace data,
+  point people to the private path in the Security Policy before they share details publicly:
+  https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md
 - For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
 
 ```bash

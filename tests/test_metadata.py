@@ -2525,6 +2525,16 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply_notes.lower()
 
 
+def test_product_hunt_packet_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
+    reply_notes = packet.split("## Reply Notes", 1)[1].split("## Metrics", 1)[0]
+
+    assert "https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md" in reply_notes
+    assert "security-sensitive reports or changes" in reply_notes
+    assert "private trace data" in reply_notes
+
+
 def test_show_hn_packet_includes_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-2-show-hn-packet.md").read_text()
