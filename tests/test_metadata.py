@@ -347,6 +347,18 @@ def test_playwright_llm_guide_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in guide.lower()
 
 
+def test_playwright_llm_guide_mentions_sync_snapshot_helper():
+    project_root = Path(__file__).resolve().parents[1]
+    guide = (project_root / "docs" / "playwright-llm-debugging.html").read_text()
+
+    assert "run.snapshot_sync(page, action=...)" in guide
+    assert (
+        "https://github.com/aaronlab/browsertrace/blob/main/examples/README.md"
+        "#playwright-sync-api-snapshot"
+    ) in guide
+    assert "Playwright's sync API" in guide
+
+
 def test_computer_use_guide_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     guide = (project_root / "docs" / "computer-use-agent-debugging.html").read_text()
