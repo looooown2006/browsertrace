@@ -108,7 +108,10 @@ https://github.com/aaronlab/browsertrace/discussions/6
 Contributing:
 
 ```text
-For a small first fix, use the First PR Recipe:
+For a small first fix, start with the current good first issue:
+https://github.com/aaronlab/browsertrace/issues/175
+
+Then use the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 ```
 

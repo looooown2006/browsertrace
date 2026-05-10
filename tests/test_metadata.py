@@ -2041,6 +2041,8 @@ browsertrace show <run_id> --json
     )
     assert recipe in reply_shortcuts
     assert "debugging/workflow details" in reply_shortcuts
+    assert "https://github.com/aaronlab/browsertrace/issues/175" in reply_shortcuts
+    assert "https://github.com/aaronlab/browsertrace/issues/174" not in reply_shortcuts
     assert "First PR Recipe" in reply_shortcuts
     assert "CONTRIBUTING.md#first-pr-recipe" in reply_shortcuts
     assert "first contribution small and reviewable" in reply_shortcuts
@@ -2682,7 +2684,10 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T06:53:08+00:00" in launch
-    assert "after IndexNow refresh for issue #175 launch docs" in launch
+    assert "2026-05-10T06:55:32+00:00" in launch
+    assert (
+        "after Day 1 publish packet current good-first link for issue #175"
+        in launch
+    )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
