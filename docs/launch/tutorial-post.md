@@ -94,6 +94,15 @@ Early browser-agent debugging often happens before you know what data is safe to
 
 Cloud sharing may make sense later for teams, but the first useful loop is local: record the failure, inspect the timeline, fix the agent.
 
+## Reply To Contribution Questions
+
+If someone asks how to make a small docs fix, point to the current good first
+issue:
+https://github.com/aaronlab/browsertrace/issues/170
+
+Then share the First PR Recipe:
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 ## Reply To Troubleshooting Questions
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
