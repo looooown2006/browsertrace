@@ -132,6 +132,14 @@ Browser Use, Stagehand, Playwright, or Skyvern communities.
   `browsertrace export <run_id> --public -o public.html` before attaching files
   to issues or posts. Use individual redaction flags only when they want to keep
   some fields visible.
+- For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 - For integration requests, point to the v0.2 milestone and ask which adapter
   would unblock them first.
 

@@ -1882,6 +1882,29 @@ browsertrace show <run_id> --json
     assert "reposts" not in templates.lower()
 
 
+def test_owner_publish_queue_includes_json_cli_reply_workflow():
+    project_root = Path(__file__).resolve().parents[1]
+    queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
+    reply_workflow = queue.split("## Reply Workflow", 1)[1].split(
+        "## Metrics Check", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply_workflow
+    )
+    assert recipe in reply_workflow
+    assert "debugging/workflow details" in reply_workflow
+    assert "stars" not in reply_workflow.lower()
+    assert "upvotes" not in reply_workflow.lower()
+    assert "reposts" not in reply_workflow.lower()
+
+
 def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -2029,7 +2052,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:26:56+00:00" in launch
-    assert "after issue #138 closed and good-first issue #139 rotation" in launch
+    assert "2026-05-10T03:28:50+00:00" in launch
+    assert "after owner publish queue JSON CLI reply workflow for issue #139" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
