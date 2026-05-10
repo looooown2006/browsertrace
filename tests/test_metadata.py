@@ -613,6 +613,19 @@ def test_roadmap_contribution_guidelines_link_first_pr_recipe():
     assert "upvotes" not in guidelines.lower()
 
 
+def test_roadmap_records_current_launch_state():
+    project_root = Path(__file__).resolve().parents[1]
+    roadmap = (project_root / "ROADMAP.md").read_text()
+
+    assert "`v0.1.16` is the current launch release." in roadmap
+    assert 'pip install "browsertrace[ui]"' in roadmap
+    assert "Ten focused PRs are open" in roadmap
+    assert "E2B CLA check has passed" in roadmap
+    assert "`v0.1.15` is the current launch release." not in roadmap
+    assert "Three focused PRs are open" not in roadmap
+    assert "pre-PyPI UI dependency guidance" not in roadmap
+
+
 def test_readme_links_contributor_guide_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
