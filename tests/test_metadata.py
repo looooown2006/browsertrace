@@ -1924,6 +1924,18 @@ def test_integration_request_template_requests_json_cli_troubleshooting_checks()
     assert "upvotes" not in template.lower()
 
 
+def test_pull_request_template_requests_json_cli_troubleshooting_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (project_root / ".github" / "PULL_REQUEST_TEMPLATE.md").read_text()
+
+    assert "issue reports, CI, or AI/coding-agent troubleshooting" in template
+    assert "browsertrace doctor --json" in template
+    assert "browsertrace list --status failed --json" in template
+    assert "browsertrace show <run_id> --json" in template
+    assert "stars" not in template.lower()
+    assert "upvotes" not in template.lower()
+
+
 def test_pull_request_template_prompts_for_real_contributor_details():
     project_root = Path(__file__).resolve().parents[1]
     template = (project_root / ".github" / "PULL_REQUEST_TEMPLATE.md").read_text()
@@ -1998,7 +2010,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:16:32+00:00" in launch
-    assert "after issue #136 closed and good-first issue #137 rotation" in launch
+    assert "2026-05-10T03:20:13+00:00" in launch
+    assert "after PR template JSON CLI diagnostics note for issue #137" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

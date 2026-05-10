@@ -16,6 +16,14 @@ review in one pass.
 - [ ] I ran `uv run --python 3.11 --extra dev pytest -q`
 - [ ] I included the exact error/output if a check could not be run.
 
+Optional for PRs that touch issue reports, CI, or AI/coding-agent troubleshooting:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Demo / Screenshots
 
 If this changes UI, examples, exports, or README launch flow, attach a
