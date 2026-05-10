@@ -93,6 +93,7 @@ Useful local checks:
 - Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`.
 - `browsertrace show <run_id>` inspects a listed run from the terminal.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
+- A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches; see the [run ID prefix recipe](examples/#run-id-prefixes-for-export).
 - `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
 - `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
 - `browsertrace --help` lists local CLI commands and options.
