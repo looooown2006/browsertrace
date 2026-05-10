@@ -560,8 +560,8 @@ More detail: [ROADMAP.md](ROADMAP.md).
 
 This is a v0.1 alpha. The fastest way to help:
 
-For the small, issue-based contribution path and local checks, read
-[CONTRIBUTING.md](CONTRIBUTING.md).
+For the small, issue-based contribution path, local checks, and First PR Recipe,
+read [CONTRIBUTING.md](CONTRIBUTING.md). The recipe keeps your first contribution small and reviewable.
 For concise contributor expectations and a welcoming baseline, read
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 To choose the right bug, feature, integration, or cloud/team template, use the
