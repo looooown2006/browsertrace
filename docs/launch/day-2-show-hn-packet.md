@@ -15,7 +15,7 @@ Rules checked:
 Run these checks before submitting:
 
 ```bash
-gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
+gh repo view aaronlab/browsertrace --json stargazerCount,forkCount,watchers,url,homepageUrl
 uv run --python 3.11 python scripts/launch_metrics.py --append --note "before Show HN"
 ```
 

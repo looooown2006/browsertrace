@@ -3598,6 +3598,7 @@ def test_owner_next_actions_use_hard_success_check():
     )
 
     for relpath in [
+        "docs/launch/day-2-show-hn-packet.md",
         "docs/launch/owner-next-actions.md",
         "docs/launch/owner-next-actions.zh-CN.md",
     ]:
