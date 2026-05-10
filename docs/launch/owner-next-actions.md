@@ -187,7 +187,7 @@ Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 
 If someone asks how to make a small docs fix, point to the current good first
 issue:
-https://github.com/aaronlab/browsertrace/issues/210
+https://github.com/aaronlab/browsertrace/issues/211
 
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
