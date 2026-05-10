@@ -53,9 +53,9 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      `ai-boost/awesome-harness-engineering#23`, plus
      `Agent-Tools/awesome-autonomous-web#21` and
      `e2b-dev/awesome-ai-sdks#187`, and the broader
-     `jim-schwoebel/awesome_ai_agents#266` tools-list PR. The E2B CLA check has
-     passed; monitor maintainer feedback and do not open additional list PRs
-     unless the target is clearly high-fit and non-duplicative.
+     `jim-schwoebel/awesome_ai_agents#266` tools-list PR. The E2B CLA check has passed;
+     monitor maintainer feedback and do not open additional list PRs unless the
+     target is clearly high-fit and non-duplicative.
    - Awesome list tracking issue:
      https://github.com/aaronlab/browsertrace/issues/18
 
