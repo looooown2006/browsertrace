@@ -2354,8 +2354,8 @@ def test_owner_publish_queue_links_security_policy_for_sensitive_reports():
         "## Metrics Check", 1
     )[0]
 
-    assert "SECURITY.md" in reply_workflow
-    assert "security-sensitive reports" in reply_workflow
+    assert "https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md" in reply_workflow
+    assert "security-sensitive reports or changes" in reply_workflow
     assert "private trace data" in reply_workflow
 
 
@@ -3118,7 +3118,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T10:05:36+00:00" in launch
-    assert "after owner publish queue Security Policy link for issue #213" in launch
+    assert "2026-05-10T10:08:16+00:00" in launch
+    assert "after incorporating external PR #214 owner queue wording" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
