@@ -52,6 +52,7 @@ browsertrace show <run_id> --json
 | 4 | `wjhou/awesome-computer-use-agents` | Strong | `frameworks/README.md` -> `Web/Browser Frameworks` | Submitted: https://github.com/wjhou/awesome-computer-use-agents/pull/2 |
 | 5 | `cdxeve/awesome-computer-use-agents` | Strong | `GUI-Based Agents` -> `Web Agents` | Submitted: https://github.com/cdxeve/awesome-computer-use-agents/pull/2 |
 | 6 | `steel-dev/awesome-web-agents` | Strong | `Dev Tools` | Submitted: https://github.com/steel-dev/awesome-web-agents/pull/56 |
+| 7 | `ai-boost/awesome-harness-engineering` | Strong | `Debugging & Developer Experience` | Submitted: https://github.com/ai-boost/awesome-harness-engineering/pull/23 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -287,6 +288,40 @@ Verification:
 GITHUB_TOKEN=$(gh auth token) npx -y awesome-lint@2.2.3 README.md
 /Users/enyuanzhang/.gem/ruby/2.6.0/bin/awesome_bot --allow-dupe --allow-redirect --white-list "https://github.com/steel-dev/awesome-web-agents,https://surf.new,https://openai.com/index/introducing-operator/,https://www.perplexity.ai/comet,https://openai.com/research/webgpt,https://dzone.com/articles/build-ai-browser-agent-llms-playwright-browser-use,https://dev.to/nodeshiftcloud/build-a-browser-use-agent-with-deepseek-a-step-by-step-guide-2n59" README.md
 git diff --check
+```
+
+## 7. Awesome Harness Engineering
+
+Target:
+
+```text
+https://github.com/ai-boost/awesome-harness-engineering
+```
+
+Status: submitted as https://github.com/ai-boost/awesome-harness-engineering/pull/23.
+
+Fit notes:
+
+- The list is focused on agent harness engineering: tools, patterns, evals,
+  permissions, observability, orchestration, and debugging.
+- BrowserTrace fits `Debugging & Developer Experience` because it makes failed
+  browser-agent and computer-use runs inspectable as local step timelines.
+- The PR adds one resource and explains the concrete harness problem it solves:
+  browser state, model decisions, actions, screenshots, URLs, and errors are
+  often split across separate logs when a web-agent run fails.
+
+Submitted entry:
+
+```markdown
+- [BrowserTrace](https://github.com/aaronlab/browsertrace) — Local-first trace viewer for failed AI browser-agent and computer-use runs: captures screenshots, URLs, model I/O, actions, errors, and public-safe HTML exports. Useful when web-agent failures need browser state and model decisions in one inspectable timeline rather than separate logs and screenshots. ![Stars](https://img.shields.io/github/stars/aaronlab/browsertrace?style=flat-square&label=%E2%98%85&color=yellow)
+```
+
+Verification:
+
+```bash
+git diff --check
+curl -L -s -o /dev/null -w 'browsertrace %{http_code} %{url_effective}\n' https://github.com/aaronlab/browsertrace
+curl -L -s -o /dev/null -w 'stars-badge %{http_code} %{url_effective}\n' 'https://img.shields.io/github/stars/aaronlab/browsertrace?style=flat-square&label=%E2%98%85&color=yellow'
 ```
 
 ## Skip List

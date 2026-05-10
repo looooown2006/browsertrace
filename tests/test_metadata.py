@@ -2789,6 +2789,7 @@ def test_owner_next_actions_preserves_external_awesome_list_pr_numbers():
     assert "wjhou/awesome-computer-use-agents#2" in awesome_prs
     assert "cdxeve/awesome-computer-use-agents#2" in awesome_prs
     assert "steel-dev/awesome-web-agents#56" in awesome_prs
+    assert "ai-boost/awesome-harness-engineering#23" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#222" not in awesome_prs
 
@@ -2808,6 +2809,7 @@ def test_chinese_owner_next_actions_preserves_external_awesome_list_pr_numbers()
     assert "wjhou/awesome-computer-use-agents/pull/2" in awesome_prs
     assert "cdxeve/awesome-computer-use-agents/pull/2" in awesome_prs
     assert "steel-dev/awesome-web-agents/pull/56" in awesome_prs
+    assert "ai-boost/awesome-harness-engineering/pull/23" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents/pull/221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents/pull/222" not in awesome_prs
 
@@ -3269,6 +3271,19 @@ def test_awesome_list_submission_notes_record_steel_web_agents_pr():
     assert "Dev Tools" in notes
     assert "action_required" in notes
     assert "GITHUB_TOKEN=$(gh auth token) npx -y awesome-lint@2.2.3 README.md" in notes
+
+
+def test_awesome_list_submission_notes_record_harness_engineering_pr():
+    project_root = Path(__file__).resolve().parents[1]
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+
+    assert "ai-boost/awesome-harness-engineering" in notes
+    assert "https://github.com/ai-boost/awesome-harness-engineering/pull/23" in notes
+    assert "Debugging & Developer Experience" in notes
+    assert "browser-agent and computer-use runs" in notes
+    assert "curl -L -s -o /dev/null" in notes
 
 
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
