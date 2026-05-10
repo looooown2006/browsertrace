@@ -61,6 +61,17 @@ body:
       description: Link docs or paste a small sanitized snippet showing where BrowserTrace could attach. Do not include private prompts, secrets, or customer data. If attaching a trace publicly, use `browsertrace export <run_id> --public -o public.html`.
     validations:
       required: false
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: JSON CLI troubleshooting output
+      description: For integration requests, CI, or AI/coding-agent troubleshooting, include these checks when the request comes from a local first run, failed trace, or CI issue.
+      placeholder: |
+        browsertrace doctor --json
+        browsertrace list --status failed --json
+        browsertrace show <run_id> --json
+    validations:
+      required: false
   - type: checkboxes
     id: help
     attributes:
