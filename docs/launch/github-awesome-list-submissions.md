@@ -49,6 +49,7 @@ browsertrace show <run_id> --json
 | 1 | `angrykoala/awesome-browser-automation` | Strong | `Tools` -> `AI` | Submitted: https://github.com/angrykoala/awesome-browser-automation/pull/112 |
 | 2 | `mxschmitt/awesome-playwright` | Medium | `Utils` | Submitted: https://github.com/mxschmitt/awesome-playwright/pull/136 |
 | 3 | `Jenqyang/Awesome-AI-Agents` | Medium | `Applications` -> `Tools` | Submitted: https://github.com/Jenqyang/Awesome-AI-Agents/pull/220 |
+| 4 | `wjhou/awesome-computer-use-agents` | Strong | `frameworks/README.md` -> `Web/Browser Frameworks` | Submitted: https://github.com/wjhou/awesome-computer-use-agents/pull/2 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -184,6 +185,42 @@ BrowserTrace is an MIT-licensed local debugger for AI browser agents. It is
 useful for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
 computer-use agents when a run fails and the developer needs screenshots, URLs,
 model I/O, selected actions, status, and errors in one timeline.
+```
+
+## 4. Awesome Computer Use Agents
+
+Target:
+
+```text
+https://github.com/wjhou/awesome-computer-use-agents
+```
+
+Status: submitted as https://github.com/wjhou/awesome-computer-use-agents/pull/2.
+
+Fit notes:
+
+- The list covers GUI/computer-use agents and includes a
+  `frameworks/README.md` page for open-source frameworks, tools, and libraries.
+- BrowserTrace fits as debugging and observability tooling for web/browser
+  computer-use agents.
+- The PR frames BrowserTrace as a failed-run inspection tool, not as an agent
+  runtime.
+
+Submitted entry:
+
+```markdown
+### BrowserTrace
+- **Stars**: 3
+- **Link**: [GitHub](https://github.com/aaronlab/browsertrace)
+- **Tags**: `web` `python` `debugging` `observability`
+
+Local flight recorder for AI browser agents.
+```
+
+Verification:
+
+```bash
+git diff --check
 ```
 
 ## Skip List
