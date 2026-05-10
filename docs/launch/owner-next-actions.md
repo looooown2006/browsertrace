@@ -15,14 +15,12 @@ follow-up verification, README updates, metrics, and issue comments:
 
 1. Configure PyPI Trusted Publisher at https://pypi.org/manage/account/publishing/
    with the exact values in section 1.
-2. Pin `aaronlab/browsertrace` from the GitHub profile page with
-   Profile -> Customize your pins.
-3. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
+2. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
 
 After step 1, tell Codex "PyPI is configured" so it can run the publish workflow
 and replace GitHub-tag install commands with normal `pip install` commands.
-After steps 2-3, send the posted URLs or a short channel note so Codex can log
+After step 2, send the posted URLs or a short channel note so Codex can log
 metrics and update the tracking issues.
 
 ## 1. Unblock PyPI
@@ -82,17 +80,8 @@ docs/launch/github-profile-readme.md
 
 Keep BrowserTrace as the first featured project during launch.
 
-Pin BrowserTrace on the public GitHub profile:
-
-```text
-Profile -> Customize your pins -> aaronlab/browsertrace
-```
-
-The GitHub API available here does not expose profile pinning, so this must be
-done once in the GitHub UI.
-
-Profile pinning tracking issue:
-https://github.com/aaronlab/browsertrace/issues/24
+Profile pin: completed. GraphQL now shows `aaronlab/browsertrace` in the
+public profile pinned repositories.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/13
 

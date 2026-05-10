@@ -38,9 +38,8 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
    - Profile README: keep the live `aaronlab/aaronlab` README aligned with
      `docs/launch/github-profile-readme.md`.
    - Keep BrowserTrace as the first featured project during launch.
-   - Pin BrowserTrace on the public GitHub profile with
-     `Profile -> Customize your pins -> aaronlab/browsertrace`.
-     Tracking issue: https://github.com/aaronlab/browsertrace/issues/24
+   - Profile pin: completed. The public GitHub profile now pins
+     `aaronlab/browsertrace`.
    - Keep `aaronlab/aaronagent` only as an old-traffic redirect.
    - Repository social preview: completed. GitHub reports
      `usesCustomOpenGraphImage=true`; keep `docs/social-preview.png` as the

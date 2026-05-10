@@ -13,13 +13,11 @@ issue comment 都交给 Codex 继续处理：
 
 1. 在 https://pypi.org/manage/account/publishing/ 配置 PyPI Trusted
    Publisher，字段完全照第 1 节填。
-2. 在 GitHub 个人主页点 Profile -> Customize your pins，置顶
-   `aaronlab/browsertrace`。
-3. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
+2. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。
 
 第 1 步做完后告诉 Codex “PyPI 配好了”，我就可以运行发布 workflow，并把公开
-安装命令从 GitHub tag 改成正常的 `pip install`。第 2-3 步做完后，把帖子 URL
+安装命令从 GitHub tag 改成正常的 `pip install`。第 2 步做完后，把帖子 URL
 或群名发给 Codex，我会记录指标并更新跟踪 issue。
 
 ## 1. 先解锁 PyPI
@@ -81,17 +79,8 @@ aaronlab/aaronlab
 docs/launch/github-profile-readme.md
 ```
 
-在 GitHub 个人主页置顶 BrowserTrace：
-
-```text
-Profile -> Customize your pins -> aaronlab/browsertrace
-```
-
-当前可用的 GitHub API 不暴露 profile pinning，所以这一步需要你在 GitHub UI
-里手动做一次。
-
-Profile pinning 跟踪 issue:
-https://github.com/aaronlab/browsertrace/issues/24
+Profile pin：已完成。GraphQL 现在可以看到 `aaronlab/browsertrace` 已经在
+公开 profile pinned repositories 里。
 
 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/13
 

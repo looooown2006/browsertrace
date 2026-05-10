@@ -2073,20 +2073,19 @@ def test_examples_readme_links_browser_use_run_hooks_guide():
     assert "Browser Use + LLM" in example_matrix
 
 
-def test_owner_profile_actions_include_browsertrace_pin_step():
+def test_owner_profile_actions_mark_browsertrace_pin_complete():
     project_root = Path(__file__).resolve().parents[1]
     owner_docs = {
-        "LAUNCH.md": "Pin BrowserTrace",
-        "docs/launch/owner-next-actions.md": "Pin BrowserTrace",
-        "docs/launch/owner-next-actions.zh-CN.md": "置顶 BrowserTrace",
-        "docs/launch/owner-publish-queue.md": "Pin BrowserTrace",
+        "docs/launch/owner-next-actions.md": "Profile pin: completed",
+        "docs/launch/owner-next-actions.zh-CN.md": "Profile pin：已完成",
+        "docs/launch/owner-publish-queue.md": "Profile pin: completed",
     }
 
     for relpath, phrase in owner_docs.items():
         text = (project_root / relpath).read_text()
         assert phrase in text, relpath
         assert "aaronlab/browsertrace" in text, relpath
-        assert "https://github.com/aaronlab/browsertrace/issues/24" in text, relpath
+        assert "https://github.com/aaronlab/browsertrace/issues/24" not in text, relpath
 
 
 def test_first_run_docs_include_doctor_command():
