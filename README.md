@@ -89,6 +89,7 @@ Useful local checks:
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
 - First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3.
 - Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6.
+- Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`.
 - `browsertrace show <run_id>` inspects a listed run from the terminal.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
 - `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
