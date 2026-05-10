@@ -60,7 +60,7 @@ Use-shaped callback demo.
 | Product Hunt | Broad launch audience once assets and comments are ready | Product Hunt maker dashboard | Yes | Live demo, release, repo | Not submitted |
 | Hacker News Show HN | OSS/devtools developers | https://news.ycombinator.com/submit | Yes | Repo, live demo, comparison | Not submitted |
 | console.dev | Devtools newsletter readers | https://console.dev/ | Yes, from owner email/contact | Live demo, repo, comparison | Not submitted |
-| AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Yes, owner account likely | Repo, live demo, Browser Use guide | Blocked: Sign-in button present; static form has no usable submit handler |
+| AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Yes, owner account likely | Repo, live demo, Browser Use guide | Owner login likely required; visible unauthenticated form has no action or method |
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Unknown | Live demo, repo, integrations | Blocked: no visible submit/contact route |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Yes, owner email | Live demo, repo, comparison | Contact page accepts tool submissions; send owner-email pitch to agdex.ai@gmail.com |
 | agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Submitted PR: https://github.com/bradvin/agentfirst.directory/pull/30 |
