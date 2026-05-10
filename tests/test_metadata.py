@@ -3940,8 +3940,13 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
         "browsertrace[ui]"
     )
     launch = (project_root / "LAUNCH.md").read_text()
+    metrics_log = (project_root / "docs" / "launch" / "metrics-log.md").read_text()
+    latest_metrics_row = next(
+        line for line in reversed(metrics_log.splitlines()) if line.startswith("| 20")
+    )
+    latest_metrics_timestamp = latest_metrics_row.split("|")[1].strip()
 
-    assert "2026-05-10T22:43:16+00:00" in launch
+    assert latest_metrics_timestamp in launch
     assert "current monitor pass" in launch
     assert "traffic views 112/41 unique, clones 5965/1214 unique" in launch
     assert f'uvx --from "{pypi_spec}" browsertrace doctor' in launch
