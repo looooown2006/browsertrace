@@ -20,6 +20,9 @@ issue comment 都交给 Codex 继续处理：
    提交这些浏览器表单目录：AgentKart、OSS AI Hub、FOSSHUNTER、AgentsTide、
    BuilderAI Tools。AgentsTide 可用 `hello@agentstide.com` 作为邮件兜底，
    BuilderAI Tools 分类用 `AI Observability & Evaluation`。
+4. 如果这一批已经做完，继续用 `docs/launch/directory-submission-sheet.md`
+   里的第二批目录字段说明提交 CLIHunt、DeepYard、OpenAgent.bot、
+   ForgeIndex、AgentShelf。
 
 发完后，把帖子 URL、群名、邮件已发送备注或回复发给 Codex，我会记录指标并
 更新跟踪 issue。

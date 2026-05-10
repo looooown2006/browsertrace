@@ -281,6 +281,15 @@ Best targets:
   path, with `hello@agentstide.com` as email fallback.
 - BuilderAI Tools: open-source AI developer tools directory; use
   `AI Observability & Evaluation`.
+- CLIHunt: AI agent and developer-tool registry; use category Other if no
+  developer-tools category is available.
+- DeepYard: OSS-first AI agent directory; use category Dev Tools.
+- OpenAgent.bot: open AI stack directory; submit BrowserTrace as a Tool with
+  repo, license, docs, and use-case details.
+- ForgeIndex: open-source local AI project index; use the Local Agents &
+  Automation fit.
+- AgentShelf: AI agent and tool directory; use Coding & Development or
+  Autonomous Agents after owner sign-up.
 - AgDex: AI agent tools directory; developer tools and observability is the best
   category fit.
 - Agent Hub: agent/MCP/skill directory; use only if they accept tool suggestions.

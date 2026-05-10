@@ -68,10 +68,69 @@ Use-shaped callback demo.
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
 | AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Yes, owner action | Live demo, repo, Browser Use guide | Submit Free Listing link visible; use owner email fallback at hello@agentstide.com |
 | BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Yes, owner email required | Repo, live demo, public-safe export | Submit Tool for Review form; use AI Observability & Evaluation; limit is 3 submissions per day |
+| CLIHunt | AI agent and developer-tool registry | https://clihunt.dev/ | Yes, owner account/form | Repo, install command, live demo | Submit Tool form accepts name, tagline, GitHub URL, category, and install command; use category Other if no developer-tools category is available |
+| DeepYard | OSS-first AI agent and developer-tool directory | https://deepyard.dev/submit | Yes, browser submission | Repo, live demo, public-safe export | Submit a Tool page includes Dev Tools; submissions are reviewed before listing |
+| OpenAgent.bot | Open AI stack project directory | https://openagent.bot/submit/ | Yes, browser submission | Repo, license/docs, live demo | Submit project as Tools; clear source, license, docs, and use-case details help review |
+| ForgeIndex | Open-source local AI project index | https://forgeindex.ai/ | Yes, owner Google form | Repo, live demo, local-first positioning | Official form; use Local Agents & Automation fit and local-first debugging angle |
+| AgentShelf | AI agent and tool directory | https://www.agentshelf.io/submit | Yes, owner account likely | Live demo, repo, Browser Use guide | List your AI tool path requires sign-up; use Coding & Development or Autonomous Agents when category is requested |
 | GitHub awesome lists | Curated developer discovery lists | docs/launch/github-awesome-list-submissions.md | Yes | Repo, live demo, relevant guide | 12 PRs open; monitor feedback; e2b CLA passed |
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions/4816 | Yes | Browser Use guide, live trace, repo | Posted; no comments yet |
 | Stagehand Discussions | Browser automation and agent builders | https://github.com/browserbase/stagehand/discussions/2102 | Yes | Stagehand guide, live trace, repo | Posted; no comments yet |
 | Skyvern Discussions | Browser automation agent users | https://github.com/Skyvern-AI/skyvern/discussions/5931 | Yes | Skyvern guide, live trace, repo | Posted; no comments yet |
+
+## Second-Pass Directory Field Notes
+
+Use these only after the first directory/email batch is submitted. Submit once,
+from the owner's account or browser, and wait for review.
+
+CLIHunt:
+
+```text
+Name: BrowserTrace
+Tagline: Local trace viewer for AI browser agents
+GitHub URL or Website: https://github.com/aaronlab/browsertrace
+Category: Other
+Install Command: uvx --from "browsertrace[ui]" browsertrace demo
+```
+
+DeepYard:
+
+```text
+Tool Name: BrowserTrace
+Website / GitHub URL: https://github.com/aaronlab/browsertrace
+Category: Dev Tools
+Description: BrowserTrace is an MIT-licensed local trace viewer for failed AI browser-agent runs, with screenshots, URLs, actions, model I/O, errors, and public-safe HTML exports.
+```
+
+OpenAgent.bot:
+
+```text
+Project name: BrowserTrace
+Repository URL: https://github.com/aaronlab/browsertrace
+Homepage URL: https://aaronlab.github.io/browsertrace/
+Category: Tools
+Summary: Local-first trace viewer for debugging Browser Use, Stagehand, Skyvern, Playwright + LLM, and custom computer-use agent runs.
+```
+
+ForgeIndex:
+
+```text
+Project: BrowserTrace
+Topic fit: Local Agents & Automation
+Repository: https://github.com/aaronlab/browsertrace
+Homepage: https://aaronlab.github.io/browsertrace/
+Summary: Open-source local debugger for AI browser-agent failures, with redacted shareable exports.
+```
+
+AgentShelf:
+
+```text
+Tool name: BrowserTrace
+Category: Coding & Development, or Autonomous Agents if only agent categories are available
+Website: https://aaronlab.github.io/browsertrace/
+Repository: https://github.com/aaronlab/browsertrace
+Short description: Local flight recorder for AI browser-agent failures.
+```
 
 ## Product Hunt Draft
 

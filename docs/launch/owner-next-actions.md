@@ -23,6 +23,9 @@ follow-up verification, README updates, metrics, and issue comments:
    AgentKart, OSS AI Hub, FOSSHUNTER, AgentsTide, and BuilderAI Tools. Use
    `hello@agentstide.com` as the AgentsTide email fallback and
    `AI Observability & Evaluation` for BuilderAI Tools.
+4. If that batch is already done, use the second-pass directory field notes in
+   `docs/launch/directory-submission-sheet.md` for CLIHunt, DeepYard,
+   OpenAgent.bot, ForgeIndex, and AgentShelf.
 
 Send the posted URLs, email-sent note, or any replies so Codex can log metrics
 and update the tracking issues.

@@ -2799,6 +2799,11 @@ def test_day_3_targeted_communities_tracks_directory_submission_queue():
         "FOSSHUNTER",
         "AgentsTide",
         "BuilderAI Tools",
+        "CLIHunt",
+        "DeepYard",
+        "OpenAgent.bot",
+        "ForgeIndex",
+        "AgentShelf",
         "AgDex",
         "console.dev",
     ]:
@@ -2864,6 +2869,16 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "Submit Tool for Review" in text
         assert "3 submissions per day" in text
         assert "AI Observability & Evaluation" in text
+        assert "CLIHunt" in text
+        assert "Other" in text
+        assert "DeepYard" in text
+        assert "Dev Tools" in text
+        assert "OpenAgent.bot" in text
+        assert "Tools" in text
+        assert "ForgeIndex" in text
+        assert "Local Agents & Automation" in text
+        assert "AgentShelf" in text
+        assert "Coding & Development" in text
 
 
 def test_directory_submission_sheet_includes_agdex_email_template():
