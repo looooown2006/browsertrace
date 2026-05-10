@@ -2100,6 +2100,32 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_chinese_owner_next_actions_include_json_cli_troubleshooting_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
+    ).read_text()
+    assert "## 回复本地首跑 / CI / agent 调试问题" in checklist
+    reply = checklist.split("## 回复本地首跑 / CI / agent 调试问题", 1)[1].split(
+        "## 7. 每做完一个动作就记录指标", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply
+    )
+    assert recipe in reply
+    assert "debugging/workflow details" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_bug_report_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (
@@ -2214,7 +2240,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T04:06:50+00:00" in launch
-    assert "after issue #146 closed and good-first issue #147 rotation" in launch
+    assert "2026-05-10T04:09:31+00:00" in launch
+    assert "after Chinese owner checklist JSON CLI diagnostics for issue #147" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

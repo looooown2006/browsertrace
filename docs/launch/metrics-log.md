@@ -454,3 +454,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T04:00:49+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #145 closed and good-first issue #146 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T04:03:53+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after owner next-actions JSON CLI diagnostics for issue #146; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T04:06:50+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #146 closed and good-first issue #147 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T04:09:31+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after Chinese owner checklist JSON CLI diagnostics for issue #147; traffic views 52/29 unique, clones 103/54 unique |
