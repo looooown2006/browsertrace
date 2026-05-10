@@ -655,3 +655,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T16:22:00+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 19 | after launch feedback issue #3 body synced to PyPI v0.1.16 surface; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T16:24:29+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 19 | after external Browser Use, Stagehand, and Skyvern discussion bodies synced to PyPI v0.1.16 commands; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T16:34:47+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 19 | after owner issue comments marked historical for v0.1.16 PyPI launch surface; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T16:40:08+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 19 | after open issue comments with old release text marked historical for v0.1.16; traffic views 112/41 unique, clones 5965/1214 unique |
