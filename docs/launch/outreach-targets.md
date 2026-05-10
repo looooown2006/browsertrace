@@ -18,7 +18,7 @@ Post only where the community rules allow it. The ask is feedback from people bu
 | AgentKart | Open-source AI agent marketplace visitors | `https://www.agentkart.ai/submit` | Day 2 or 4 | Directory submission | Submit from owner account if login is required | Position as an agent debugging tool, not an agent runtime |
 | Agent Hub | People browsing AI agents, MCPs, and skills | `https://agent-hub.dev/` | Day 4 | Directory suggestion | Submit/contact if available | Fit is weaker unless framed as agent tooling |
 | AgDex | AI agent ecosystem directory readers | `https://agdex.ai/` | Day 4 | Directory suggestion | Submit/contact if available | Developer tools and observability category is the best fit |
-| agentfirst.directory | Agent-first tooling ecosystem | `https://agentfirst.directory/` | Day 4 | Directory suggestion | Submit/contact if available | Browser Automation category already includes related tools |
+| agentfirst.directory | Agent-first tooling ecosystem | `https://agentfirst.directory/` | Submitted | Directory PR | Monitor https://github.com/bradvin/agentfirst.directory/pull/30 | Browser Automation category already includes related tools |
 | OSS AI Hub | Open-source AI tools and agents | `https://ossaihub.com/submit` | Day 4 | Directory submission | Submit/contact if available | Fit is strong because BrowserTrace is OSS AI-agent tooling |
 | FOSSHUNTER | Open-source tool discovery | `https://fosshunter.com/submit` | Day 4 | Directory submission | Submit from owner account | Requires login; submit once and wait for review |
 | AgentsTide | AI agents and browser-agent directory | `https://agentstide.com/` | Day 4 | Directory suggestion | Submit/contact if available | Browser Agents category is a clear fit |

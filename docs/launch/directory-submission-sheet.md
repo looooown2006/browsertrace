@@ -64,7 +64,7 @@ Use-shaped callback demo.
 | AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Maybe | Repo, live demo, Browser Use guide | Not submitted |
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Maybe | Live demo, repo, integrations | Not submitted |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Maybe | Live demo, repo, comparison | Not submitted |
-| agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Not submitted |
+| agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Submitted PR: https://github.com/bradvin/agentfirst.directory/pull/30 |
 | OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Maybe | Repo, live demo, public-safe export | Not submitted |
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
 | AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Maybe | Live demo, repo, Browser Use guide | Not submitted |
