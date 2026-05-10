@@ -3175,7 +3175,7 @@ def test_outreach_targets_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
 
-    assert "Nine focused PRs are already open" in targets
+    assert "Ten focused PRs are already open" in targets
     assert "E2B CLA check has passed" in targets
     assert "Three focused PRs" not in targets
     assert "Do not open more list PRs unless the target is clearly high-fit" in targets
