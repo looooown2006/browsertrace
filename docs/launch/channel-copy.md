@@ -16,6 +16,16 @@ Public-safe demo export for privacy-sensitive replies:
 
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
+## Troubleshooting Reply
+
+For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## X
 
 ```text
