@@ -642,6 +642,18 @@ def test_contributing_includes_first_pr_recipe():
     assert "reposts" not in recipe.lower()
 
 
+def test_first_pr_recipe_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    contributing = (project_root / "CONTRIBUTING.md").read_text()
+    recipe = contributing.split("## First PR Recipe", 1)[1].split(
+        "## Useful Local Checks", 1
+    )[0]
+
+    assert "[SECURITY.md](SECURITY.md)" in recipe
+    assert "security-sensitive reports" in recipe
+    assert "private trace data" in recipe
+
+
 def test_readme_links_code_of_conduct_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -3068,7 +3080,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:48:54+00:00" in launch
-    assert "after external PR #209 merged from aqilaziz" in launch
+    assert "2026-05-10T09:51:10+00:00" in launch
+    assert "after First PR Recipe Security Policy link for issue #210" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

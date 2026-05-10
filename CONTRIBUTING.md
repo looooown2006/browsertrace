@@ -48,6 +48,9 @@ For a docs fix or small example:
 5. Open a PR and link the issue in the body with `Fixes #<issue>` or
    `Refs #<issue>`.
 
+For security-sensitive reports or private trace data, follow
+[SECURITY.md](SECURITY.md) before sharing details publicly.
+
 ## Useful Local Checks
 
 ```bash
