@@ -2832,7 +2832,9 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "Submit Free Listing" in text
         assert "hello@agentstide.com" in text
         assert "BuilderAI Tools" in text
-        assert "owner email and Cloudflare Turnstile required" in text
+        assert "Submit Tool for Review" in text
+        assert "3 submissions per day" in text
+        assert "AI Observability & Evaluation" in text
 
 
 def test_directory_submission_sheet_includes_agdex_email_template():

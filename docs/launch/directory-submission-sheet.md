@@ -67,7 +67,7 @@ Use-shaped callback demo.
 | OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Yes, login required | Repo, live demo, public-safe export | Blocked: login required before submitting tools |
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
 | AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Yes, owner action | Live demo, repo, Browser Use guide | Submit Free Listing link visible; use owner email fallback at hello@agentstide.com |
-| BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Yes, owner email and Cloudflare Turnstile required | Repo, live demo, public-safe export | Blocked: owner email and Cloudflare Turnstile required |
+| BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Yes, owner email required | Repo, live demo, public-safe export | Submit Tool for Review form; use AI Observability & Evaluation; limit is 3 submissions per day |
 | GitHub awesome lists | Curated developer discovery lists | docs/launch/github-awesome-list-submissions.md | Yes | Repo, live demo, relevant guide | 12 PRs open; monitor feedback; e2b CLA passed |
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions/4816 | Yes | Browser Use guide, live trace, repo | Posted; no comments yet |
 | Stagehand Discussions | Browser automation and agent builders | https://github.com/browserbase/stagehand/discussions/2102 | Yes | Stagehand guide, live trace, repo | Posted; no comments yet |
