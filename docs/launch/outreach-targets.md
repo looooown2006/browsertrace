@@ -88,6 +88,16 @@ Submission notes:
   command only when someone asks how to run it locally before PyPI publishing is
   enabled.
 
+## Troubleshooting Reply
+
+For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## First Targeted Community Posts
 
 Use these only after the Day 1 warm posts have a live demo link and at least one
