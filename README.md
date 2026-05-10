@@ -96,6 +96,7 @@ Useful local checks:
 - The v0.1.14 release notes summarize what changed in the pinned GitHub tag; read the [v0.1.14 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14).
 - The PyPI tracking issue is the source for publishing status while install commands stay pinned to the GitHub tag; follow the [PyPI tracking issue](https://github.com/aaronlab/browsertrace/issues/5).
 - `uvx` is the no-install trial path, and pinned GitHub-tag `pip install` is the persistent install path.
+- `[ui]` is needed for the local web UI, while SDK-only install is enough for trace capture integrations.
 - The pinned GitHub-tag install path requires Python 3.11+.
 - `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export; see the [recent-runs recipe](examples/#show-only-recent-runs).
 - First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3.
