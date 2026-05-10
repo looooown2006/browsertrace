@@ -60,6 +60,7 @@ browsertrace show <run_id> --json
 | 7 | `ai-boost/awesome-harness-engineering` | Strong | `Debugging & Developer Experience` | Submitted: https://github.com/ai-boost/awesome-harness-engineering/pull/23 |
 | 8 | `Agent-Tools/awesome-autonomous-web` | Strong | `Debugging & Trace Viewers` | Submitted: https://github.com/Agent-Tools/awesome-autonomous-web/pull/21 |
 | 9 | `e2b-dev/awesome-ai-sdks` | Strong | top-level tool entry | Submitted: https://github.com/e2b-dev/awesome-ai-sdks/pull/187; E2B CLA passed |
+| 10 | `jim-schwoebel/awesome_ai_agents` | Medium | `Building` -> `Tools` | Submitted: https://github.com/jim-schwoebel/awesome_ai_agents/pull/266 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -418,6 +419,37 @@ Current check:
 
 - `verification/cla-signed` is `SUCCESS`; no further CLA action is needed
   unless the maintainers request changes.
+
+## 10. Awesome AI Agents Tools
+
+Target:
+
+```text
+https://github.com/jim-schwoebel/awesome_ai_agents
+```
+
+Status: submitted as https://github.com/jim-schwoebel/awesome_ai_agents/pull/266.
+
+Fit notes:
+
+- The target list has a broad `Building` -> `Tools` section with existing
+  observability, tracing, debugging, and browser-agent infrastructure entries.
+- BrowserTrace fits only as an AI browser-agent failure inspection tool, not as
+  a general agent runtime or consumer AI app.
+- The PR keeps the change to one README entry and uses the target list's
+  existing one-line `name + link + description` format.
+
+Submitted entry:
+
+```markdown
+- [BrowserTrace](https://github.com/aaronlab/browsertrace) - Local-first trace viewer for Browser Use, Stagehand, Skyvern, Playwright + LLM, and custom browser-agent runs with screenshots, URLs, model I/O, errors, and shareable HTML exports. [github](https://github.com/aaronlab/browsertrace) | [demo](https://aaronlab.github.io/browsertrace/)
+```
+
+Verification:
+
+```bash
+git diff --check
+```
 
 ## Skip List
 
