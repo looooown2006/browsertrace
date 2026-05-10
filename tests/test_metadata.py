@@ -162,6 +162,23 @@ def test_examples_readme_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in examples.lower()
 
 
+def test_issue_chooser_links_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    config = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "config.yml"
+    ).read_text()
+
+    assert "name: First PR Recipe" in config
+    assert (
+        "url: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe"
+        in config
+    )
+    assert "first contribution small and reviewable" in config
+    assert "stars" not in config.lower()
+    assert "upvotes" not in config.lower()
+    assert "reposts" not in config.lower()
+
+
 def test_docs_include_uvx_github_quickstart_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
@@ -2750,7 +2767,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:46:33+00:00" in launch
-    assert "after issue #185 closed and good-first issue #186 rotation" in launch
+    assert "2026-05-10T07:48:36+00:00" in launch
+    assert "after issue chooser First PR Recipe link for issue #186" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

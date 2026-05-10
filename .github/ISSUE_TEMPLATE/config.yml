@@ -3,3 +3,6 @@ contact_links:
   - name: Launch feedback
     url: https://github.com/aaronlab/browsertrace/issues/3
     about: Share first-run feedback, framework requests, and browser-agent debugging pain points.
+  - name: First PR Recipe
+    url: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe
+    about: Start with a first contribution small and reviewable before opening a larger integration issue.
