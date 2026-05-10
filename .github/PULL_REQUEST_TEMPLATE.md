@@ -3,6 +3,7 @@ review in one pass.
 
 For the first contribution flow, use
 `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
+Please also follow `CODE_OF_CONDUCT.md` in PR discussions and reviews.
 
 ## Summary
 

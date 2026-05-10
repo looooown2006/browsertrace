@@ -2877,6 +2877,8 @@ def test_pull_request_template_prompts_for_real_contributor_details():
     assert "Replace every placeholder before requesting review." in template
     assert "CONTRIBUTING.md#first-pr-recipe" in template
     assert "first contribution small and reviewable" in template
+    assert "CODE_OF_CONDUCT.md" in template
+    assert "PR discussions and reviews" in template
     assert "Fixes #123 or Refs #123" in template
     assert "I ran `uv run --python 3.11 --extra dev pytest -q`" in template
 
@@ -2991,7 +2993,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:12:04+00:00" in launch
-    assert "after issue #201 closed and good-first issue #202 rotation" in launch
+    assert "2026-05-10T09:14:45+00:00" in launch
+    assert "after PR template Code of Conduct link for issue #202" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
