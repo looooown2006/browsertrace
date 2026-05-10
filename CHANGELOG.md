@@ -9,6 +9,10 @@ to keep the first contribution small and reviewable.
 
 ## Unreleased
 
+## 0.1.15 - 2026-05-10
+
+- Added `create_run_hooks` for Browser Use apps that pass `on_step_start` and
+  `on_step_end` directly to `agent.run(...)`.
 - Improved Skyvern metadata extraction so nested task/workflow run IDs and
   statuses are promoted into step metadata.
 

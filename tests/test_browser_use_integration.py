@@ -13,6 +13,7 @@ import sqlite3
 import pytest
 
 from browsertrace import Tracer
+from browsertrace.integrations import browser_use
 from browsertrace.integrations.browser_use import attach_tracer
 
 
@@ -68,6 +69,40 @@ class _FakeAction:
 class _FakeCurrent:
     def __init__(self, thought):
         self.thought = thought
+
+
+class FakeBrowserSession:
+    async def get_browser_state_summary(self):
+        return FakeBrowserState(
+            url="https://example.com/after-click",
+            title="Result",
+            tabs=["Search", "Result"],
+        )
+
+
+class FakeHistory:
+    def model_thoughts(self):
+        return ["find the result", "open the result"]
+
+    def model_outputs(self):
+        return [{"next_goal": "open result"}]
+
+    def model_actions(self):
+        return [[{"click": {"selector": "#result-1"}}]]
+
+    def extracted_content(self):
+        return ["result title"]
+
+    def urls(self):
+        return ["https://example.com/search", "https://example.com/after-click"]
+
+
+class FakeRunHookAgent:
+    task = "Find the first search result"
+
+    def __init__(self):
+        self.browser_session = FakeBrowserSession()
+        self.history = FakeHistory()
 
 
 # ---------- tests ----------
@@ -200,3 +235,39 @@ def test_browser_use_run_context_manager_marks_failed_on_exception(tmp_path):
         ).fetchone()
     assert row[0] == "failed"
     assert "boom" in row[1]
+
+
+def test_create_run_hooks_records_browser_use_run_hook_step(tmp_path):
+    tracer = Tracer(home=tmp_path)
+    assert hasattr(browser_use, "create_run_hooks")
+    hooks = browser_use.create_run_hooks(tracer, name="run-hook-path")
+    agent = FakeRunHookAgent()
+
+    asyncio.run(hooks.on_step_start(agent))
+    asyncio.run(hooks.on_step_end(agent))
+    hooks.close()
+
+    with sqlite3.connect(tmp_path / "db.sqlite") as c:
+        run_row = c.execute(
+            "SELECT name, status FROM runs WHERE id=?", (hooks.run.id,)
+        ).fetchone()
+        step_row = c.execute(
+            "SELECT action, url, model_input, model_output, metadata "
+            "FROM steps WHERE run_id=?",
+            (hooks.run.id,),
+        ).fetchone()
+
+    assert run_row == ("run-hook-path", "completed")
+    assert "click(selector=#result-1)" in step_row[0]
+    assert step_row[1] == "https://example.com/after-click"
+
+    model_input = json.loads(step_row[2])
+    assert model_input["task"] == "Find the first search result"
+    assert model_input["browser_state"]["title"] == "Result"
+
+    model_output = json.loads(step_row[3])
+    assert model_output["thought"] == "open the result"
+    assert model_output["extracted_content"] == "result title"
+
+    metadata = json.loads(step_row[4])
+    assert metadata["hook"] == "browser_use_run_hooks"

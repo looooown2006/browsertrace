@@ -14,7 +14,7 @@ def test_package_version_matches_module_version():
     project_root = Path(__file__).resolve().parents[1]
     pyproject = tomllib.loads((project_root / "pyproject.toml").read_text())
 
-    assert pyproject["project"]["version"] == "0.1.14"
+    assert pyproject["project"]["version"] == "0.1.15"
     assert pyproject["project"]["version"] == browsertrace.__version__
 
 
@@ -383,7 +383,7 @@ def test_docs_include_uvx_github_quickstart_before_pypi():
     )
 
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     assert f'uvx --from "{github_spec}" browsertrace demo' in docs_text
     assert f'uvx --from "{github_spec}" browsertrace list' in docs_text
@@ -393,7 +393,7 @@ def test_docs_include_uvx_github_quickstart_before_pypi():
 def test_owner_launch_checklists_include_doctor_fallback_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
 
     for relpath in [
@@ -455,7 +455,7 @@ def test_code_of_conduct_links_first_pr_recipe_for_small_docs_fixes():
 def test_github_profile_draft_links_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     profile_draft = (
         project_root / "docs" / "launch" / "github-profile-readme.md"
@@ -521,7 +521,7 @@ def test_readme_has_browser_agent_feedback_checklist():
     assert "failure symptom" in readme
     assert "browsertrace show <run_id>" in readme
     assert "public-safe export" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -536,7 +536,7 @@ def test_readme_links_launch_discussion_near_feedback():
     assert "browser-agent workflow feedback" in feedback_section
     assert "stars" not in feedback_section.lower()
     assert "upvotes" not in feedback_section.lower()
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -550,7 +550,7 @@ def test_readme_links_private_reports_near_feedback():
     assert "[SECURITY.md](SECURITY.md)" in feedback_section
     assert "ordinary workflow feedback" in feedback_section
     assert "private or sensitive reports" in feedback_section
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -599,7 +599,7 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "https://github.com/aaronlab/browsertrace/issues/225" in contributing_section
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contributing_section
     assert "good first issue" in contributing_section
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -688,7 +688,7 @@ def test_readme_links_code_of_conduct_near_contributing():
     assert "[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)" in contributing_section
     assert "concise contributor expectations" in contributing_section
     assert "welcoming baseline" in contributing_section
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -704,7 +704,7 @@ def test_readme_links_issue_template_chooser_near_contributing():
         in contributing_section
     )
     assert "bug, feature, integration, or cloud/team template" in contributing_section
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -720,7 +720,7 @@ def test_readme_links_pull_request_template_near_contributing():
         in contributing_section
     )
     assert "linked issue and test commands" in contributing_section
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -732,12 +732,12 @@ def test_readme_links_release_notes_near_install_tag():
     )[0]
 
     assert (
-        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14"
+        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15"
         in install_section
     )
-    assert "v0.1.14 release notes" in install_section
+    assert "v0.1.15 release notes" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -749,14 +749,14 @@ def test_readme_explains_release_notes_near_install_checks():
     )[0]
 
     assert (
-        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14"
+        "https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15"
         in install_section
     )
     assert (
-        "The v0.1.14 release notes summarize what changed in the pinned "
+        "The v0.1.15 release notes summarize what changed in the pinned "
         "GitHub tag"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -770,7 +770,7 @@ def test_readme_links_pypi_tracking_issue_near_install_tag():
     assert "https://github.com/aaronlab/browsertrace/issues/5" in install_section
     assert "PyPI tracking issue" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -787,7 +787,7 @@ def test_readme_explains_pypi_tracking_near_install_checks():
         "install commands stay pinned to the GitHub tag"
     ) in install_section
     assert "PyPI publishing is not enabled yet" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -802,7 +802,7 @@ def test_readme_explains_uvx_trial_near_install_checks():
         "`uvx` is the no-install trial path, and pinned GitHub-tag "
         "`pip install` is the persistent install path"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -818,7 +818,7 @@ def test_readme_explains_ui_extra_near_install_checks():
         "`[ui]` is needed for the local web UI, while SDK-only install is enough "
         "for trace capture integrations"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -835,7 +835,7 @@ def test_readme_explains_sdk_only_terminal_commands_near_install_checks():
         "`browsertrace show`, and `browsertrace export`; `[ui]` is only needed "
         "for the local web UI"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -849,7 +849,7 @@ def test_readme_mentions_python_version_near_install_tag():
 
     assert "Requires Python 3.11+" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -864,7 +864,7 @@ def test_readme_explains_python_version_near_install_checks():
         "The pinned GitHub-tag install path requires Python 3.11+"
         in install_section
     )
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -878,7 +878,7 @@ def test_readme_links_first_run_troubleshooting_near_install_tag():
 
     assert "examples/#first-run-troubleshooting-checklist" in install_section
     assert "first-run troubleshooting checklist" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -899,7 +899,7 @@ def test_readme_explains_first_run_troubleshooting_near_install_tag():
         "public-safe export",
     ]:
         assert command in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -912,14 +912,14 @@ def test_readme_links_static_demo_near_install_tag():
 
     assert "https://aaronlab.github.io/browsertrace/" in install_section
     assert (
-        "https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/"
+        "https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/"
         "browsertrace-demo-public.html"
     ) in install_section
     assert (
         "The live static demo and public-safe demo export let you inspect a trace "
         "before installing anything"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -940,7 +940,7 @@ def test_readme_links_command_cheat_sheet_near_install_tag():
         "public-safe export commands",
     ]:
         assert command in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -953,7 +953,7 @@ def test_readme_explains_doctor_near_install_tag():
 
     assert "`browsertrace doctor` is a safe local status check" in install_section
     assert "install and trace-store status" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -968,7 +968,7 @@ def test_readme_links_healthy_doctor_output_near_install_tag():
     assert "healthy doctor output recipe shows expected" in install_section
     for status_line in ["`Home:`", "`Database:`", "`Runs:`", "`UI dependencies:`"]:
         assert status_line in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -981,7 +981,7 @@ def test_readme_explains_list_near_install_tag():
 
     assert "`browsertrace list` shows demo run IDs" in install_section
     assert "`browsertrace demo`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -996,7 +996,7 @@ def test_readme_explains_list_output_fields_near_install_checks():
         "`browsertrace list` shows run IDs with timestamps and status"
     ) in install_section
     assert "`browsertrace demo`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1010,7 +1010,7 @@ def test_readme_explains_list_json_near_install_checks():
     assert "`browsertrace list --json` prints recent runs as JSON" in install_section
     assert "id, name, status, and created timestamp" in install_section
     assert "`browsertrace list` shows run IDs with timestamps and status" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1024,7 +1024,7 @@ def test_readme_explains_list_status_filter_near_install_checks():
     assert "`browsertrace list --status failed` filters recent runs by status" in install_section
     assert "`browsertrace list --status completed --json`" in install_section
     assert "`browsertrace list --json`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1070,7 +1070,7 @@ def test_readme_explains_demo_run_id_output_near_install_checks():
         "`browsertrace show` or `browsertrace export`"
     ) in install_section
     assert "`browsertrace list` shows demo run IDs" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1082,7 +1082,7 @@ def test_readme_explains_demo_needs_no_api_keys_near_install_tag():
     )[0]
 
     assert "`browsertrace demo` runs without API keys or external services" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1097,7 +1097,7 @@ def test_readme_explains_no_api_demo_near_install_checks():
         "The deterministic no-API demo creates a trace without a browser, "
         "network, or API key"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1113,7 +1113,7 @@ def test_readme_explains_no_signup_trial_near_install_checks():
         "The local trial requires no signup, cloud account, or hosted browser "
         "service"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1127,7 +1127,7 @@ def test_readme_links_first_run_feedback_near_install_tag():
 
     assert "First-run feedback after `browsertrace demo`" in install_section
     assert "https://github.com/aaronlab/browsertrace/issues/3" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1140,7 +1140,7 @@ def test_readme_links_launch_discussion_near_install_tag():
 
     assert "Workflow discussion after `browsertrace demo`" in install_section
     assert "https://github.com/aaronlab/browsertrace/discussions/6" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1153,7 +1153,7 @@ def test_readme_links_example_matrix_near_install_tag():
 
     assert "examples/#example-matrix" in install_section
     assert "choose another runnable demo after `browsertrace demo`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1165,7 +1165,7 @@ def test_readme_explains_no_service_examples_near_install_checks():
     )[0]
 
     assert "The example matrix lists no-service examples" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1180,7 +1180,7 @@ def test_readme_links_recent_runs_near_install_tag():
     assert "examples/#show-only-recent-runs" in install_section
     assert "`browsertrace list --limit 5` narrows recent runs" in install_section
     assert "before choosing one to inspect or export" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1194,7 +1194,7 @@ def test_readme_links_run_id_prefix_near_install_tag():
     assert "examples/#run-id-prefixes-for-export" in install_section
     assert "A longer run ID prefix fixes ambiguous" in install_section
     assert "`browsertrace show` or `browsertrace export` matches" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1208,7 +1208,7 @@ def test_readme_explains_show_near_install_tag():
     assert "`browsertrace show <run_id>` inspects a listed run" in install_section
     assert "from the terminal" in install_section
     assert "action labels, status, and errors" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1222,7 +1222,7 @@ def test_readme_explains_show_json_near_install_tag():
     assert "`browsertrace show <run_id> --json` prints one run as JSON" in install_section
     assert "run details and step actions" in install_section
     assert "`browsertrace list --json`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1238,7 +1238,7 @@ def test_readme_explains_public_safe_export_near_install_tag():
         "public-safe HTML export"
     ) in install_section
     assert "from a listed run" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1250,7 +1250,7 @@ def test_readme_explains_public_safe_export_privacy_near_install_checks():
     )[0]
 
     assert "Public-safe export omits model I/O, screenshots, and URLs" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1266,7 +1266,7 @@ def test_readme_explains_redact_export_distinction_near_install_checks():
         "`--redact` only omits model I/O, while `--public` also omits "
         "screenshots and URLs"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1283,7 +1283,7 @@ def test_readme_explains_self_contained_export_near_install_checks():
         "self-contained HTML report you can attach to a bug report or issue"
     ) in install_section
     assert "Public-safe export omits model I/O, screenshots, and URLs" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1299,7 +1299,7 @@ def test_readme_explains_export_output_path_near_install_checks():
         "`browsertrace export` writes `<run_id>.html`"
     ) in install_section
     assert "`browsertrace export <run_id> --public -o public.html`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1314,7 +1314,7 @@ def test_readme_explains_export_success_output_near_install_checks():
         "`browsertrace export` prints `Wrote <path>` after writing the HTML file"
     ) in install_section
     assert "`browsertrace export <run_id> --public -o public.html`" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1330,7 +1330,7 @@ def test_readme_explains_port_override_near_install_tag():
         in install_section
     )
     assert "when 3000 is busy" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1346,7 +1346,7 @@ def test_readme_explains_localhost_ui_binding_near_install_checks():
         "changes only the port"
     ) in install_section
     assert "http://127.0.0.1:3000" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1365,7 +1365,7 @@ def test_readme_explains_local_ui_url_near_install_checks():
         "`browsertrace` prints `BrowserTrace UI: http://127.0.0.1:<port>` "
         "when the local server starts"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1381,7 +1381,7 @@ def test_readme_explains_demo_run_title_near_install_checks():
         "The demo run is named `demo: checkout agent fails on disabled button` "
         "in the local UI"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1401,7 +1401,7 @@ def test_readme_explains_isolated_trace_storage_near_install_tag():
         "By default, BrowserTrace stores local traces under `~/.browsertrace/`; "
         "set `BROWSERTRACE_HOME` to use an isolated trace store"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1416,7 +1416,7 @@ def test_readme_explains_windows_trace_home_near_install_checks():
         'Windows PowerShell users can set `$env:BROWSERTRACE_HOME = '
         '"$env:TEMP\\browsertrace-demo"` before running BrowserTrace commands'
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
 
@@ -1429,7 +1429,7 @@ def test_readme_explains_cli_help_near_install_tag():
     )[0]
 
     assert "`browsertrace --help` lists local CLI commands and options" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1444,7 +1444,7 @@ def test_readme_explains_export_help_near_install_tag():
         "`browsertrace export --help` lists export options before creating a "
         "public-safe HTML report"
     ) in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1469,7 +1469,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export",
         "- The live static demo and public-safe demo export let you inspect a trace before installing anything",
         "- The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands",
-        "- The v0.1.14 release notes summarize what changed in the pinned GitHub tag",
+        "- The v0.1.15 release notes summarize what changed in the pinned GitHub tag",
         "- The PyPI tracking issue is the source for publishing status while install commands stay pinned to the GitHub tag",
         "- `uvx` is the no-install trial path, and pinned GitHub-tag `pip install` is the persistent install path",
         "- `[ui]` is needed for the local web UI, while SDK-only install is enough for trace capture integrations",
@@ -1505,7 +1505,7 @@ def test_readme_groups_install_tips_as_compact_list():
     ]:
         assert tip in install_section
 
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -1516,7 +1516,9 @@ def test_readme_links_browser_use_debugging_guide():
     assert "https://aaronlab.github.io/browsertrace/browser-use-debugging.html" in readme
     assert "Browser Use callback compatibility" in readme
     assert "register_new_step_callback" in readme
-    assert "@v0.1.14" in readme
+    assert "create_run_hooks" in readme
+    assert "agent.run(on_step_start=hooks.on_step_start" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1526,7 +1528,7 @@ def test_readme_links_stagehand_debugging_guide():
 
     assert "https://aaronlab.github.io/browsertrace/stagehand-debugging.html" in readme
     assert "Stagehand `act` and `extract` debugging" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1536,7 +1538,7 @@ def test_readme_links_skyvern_debugging_guide():
 
     assert "https://aaronlab.github.io/browsertrace/skyvern-debugging.html" in readme
     assert "Skyvern task and workflow debugging" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1546,7 +1548,7 @@ def test_readme_links_playwright_llm_debugging_guide():
 
     assert "https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html" in readme
     assert "prompt, DOM, selector, retry, and error fields" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1556,7 +1558,7 @@ def test_readme_links_integrations_overview():
 
     assert "https://aaronlab.github.io/browsertrace/integrations.html" in readme
     assert "Browser Use, Stagehand, Skyvern, and Playwright guide paths" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1569,7 +1571,7 @@ def test_readme_links_adapter_request_near_integrations():
         in readme
     )
     assert "Browser Use, Stagehand, Skyvern, or Playwright adapter requests" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1583,7 +1585,7 @@ def test_readme_links_comparison_guide_with_named_text():
     )
     assert "LLM tracing" in readme
     assert "hosted browser/runtime tools" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1594,7 +1596,7 @@ def test_readme_links_llms_txt_for_ai_coding_agents():
     assert "docs/llms.txt" in readme
     assert "AI/coding agents" in readme
     assert "concise project context" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1609,7 +1611,7 @@ def test_readme_links_examples_command_cheat_sheet():
     assert "browsertrace list" in readme
     assert "browsertrace show" in readme
     assert "public-safe export" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1621,7 +1623,7 @@ def test_readme_links_example_matrix():
     assert "no-service examples" in readme
     assert "commands" in readme
     assert "runnable demo" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1636,7 +1638,7 @@ def test_readme_links_first_run_troubleshooting_checklist():
     assert "browsertrace list" in readme
     assert "browsertrace show" in readme
     assert "public-safe export" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1650,7 +1652,7 @@ def test_readme_links_doctor_output_example():
     assert "Database:" in readme
     assert "Runs:" in readme
     assert "UI dependencies:" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1662,7 +1664,7 @@ def test_readme_links_public_safe_attachment_note():
     assert "public-safe export" in readme
     assert "omits prompt/model I/O, screenshots, and URLs" in readme
     assert "GitHub issue or PR comment" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1673,7 +1675,7 @@ def test_readme_links_share_safe_export_recipe():
     assert "examples/#creating-a-share-safe-export" in readme
     assert "browsertrace export <run_id> --public -o public.html" in readme
     assert "omits prompt/model I/O, screenshots, and URLs" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1685,7 +1687,7 @@ def test_readme_links_github_actions_public_export_artifact_recipe():
     assert "GitHub Actions artifact" in readme
     assert "public.html" in readme
     assert "BrowserTrace does not upload traces by itself" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1697,7 +1699,7 @@ def test_readme_links_gitlab_ci_public_export_artifact_recipe():
     assert "GitLab CI artifact" in readme
     assert "public.html" in readme
     assert "BrowserTrace does not upload traces by itself" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1711,7 +1713,7 @@ def test_readme_links_isolated_trace_storage_testing_recipe():
     assert "temp directory" in readme
     assert "pytest" in readme
     assert "no browser, network, or API key" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1723,7 +1725,7 @@ def test_readme_links_trace_storage_location_recipe():
     assert "~/.browsertrace/" in readme
     assert "BROWSERTRACE_HOME" in readme
     assert "local traces" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1734,7 +1736,7 @@ def test_readme_links_playwright_sync_snapshot_recipe():
     assert "examples/#playwright-sync-api-snapshot" in readme
     assert "snapshot_sync" in readme
     assert "sync Playwright" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1746,7 +1748,7 @@ def test_readme_links_environment_variable_quick_reference():
     assert "environment variable quick reference" in readme
     assert "BROWSERTRACE_HOME" in readme
     assert "BROWSERTRACE_PORT" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1758,7 +1760,7 @@ def test_readme_links_cli_help_discovery_recipe():
     assert "CLI help" in readme
     assert "browsertrace --help" in readme
     assert "browsertrace export --help" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1770,7 +1772,7 @@ def test_readme_links_run_id_prefix_troubleshooting_recipe():
     assert "run ID prefix" in readme
     assert "browsertrace export <run_id>" in readme
     assert "longer unique prefix" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1781,7 +1783,7 @@ def test_readme_links_failed_run_terminal_inspection_recipe():
     assert "examples/#inspect-a-failed-run-in-the-terminal" in readme
     assert "failed step timeline" in readme
     assert "browsertrace show <run_id>" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1793,7 +1795,7 @@ def test_readme_links_recent_runs_list_limit_recipe():
     assert "recent runs" in readme
     assert "browsertrace list --limit 5" in readme
     assert "inspect or export" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1806,7 +1808,7 @@ def test_readme_links_demo_run_lookup_recipe():
     assert "run IDs" in readme
     assert "timestamps" in readme
     assert "status" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1818,7 +1820,7 @@ def test_readme_links_port_already_in_use_recipe():
     assert "port already in use" in readme
     assert "local UI port" in readme
     assert "BROWSERTRACE_PORT" in readme
-    assert "@v0.1.14" in readme
+    assert "@v0.1.15" in readme
     assert "hosted sharing" not in readme
 
 
@@ -1884,7 +1886,7 @@ def test_examples_readme_includes_doctor_output_example():
     assert "Database:" in examples_readme
     assert "Runs:" in examples_readme
     assert "UI dependencies:" in examples_readme
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1896,7 +1898,7 @@ def test_examples_readme_includes_cli_help_discovery_recipe():
     assert "browsertrace --help" in examples_readme
     assert "browsertrace export --help" in examples_readme
     assert "browsertrace export <run_id> --public -o public.html" in examples_readme
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1909,7 +1911,7 @@ def test_examples_readme_includes_environment_variable_quick_reference():
     assert "`BROWSERTRACE_PORT`" in examples_readme
     assert "changes the trace store" in examples_readme
     assert "changes the local UI port" in examples_readme
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1922,7 +1924,7 @@ def test_examples_readme_includes_public_safe_attachment_note():
     assert "GitHub issue or PR comment" in examples_readme
     assert "browsertrace export <run_id> --public -o public.html" in examples_readme
     assert "prompt/model I/O, screenshots, and URLs" in examples_readme
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1936,7 +1938,7 @@ def test_examples_readme_includes_first_run_troubleshooting_checklist():
     assert "browsertrace list" in examples_readme
     assert "browsertrace show <run_id>" in examples_readme
     assert "browsertrace export <run_id> --public -o public.html" in examples_readme
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1955,7 +1957,7 @@ browsertrace show <run_id> --json
     assert "### JSON CLI checks for automation" in troubleshooting_section
     assert "scripts, CI, or AI/coding-agent troubleshooting" in troubleshooting_section
     assert recipe in troubleshooting_section
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1969,7 +1971,7 @@ def test_examples_readme_links_llms_troubleshooting_context():
     assert "[`docs/llms.txt`](../docs/llms.txt)" in troubleshooting_section
     assert "AI/coding-agent troubleshooting context" in troubleshooting_section
     assert "JSON CLI checks" in troubleshooting_section
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -1984,7 +1986,7 @@ def test_examples_readme_includes_command_cheat_sheet():
     assert "`browsertrace list`" in examples_readme
     assert "`browsertrace show <run_id>`" in examples_readme
     assert "`browsertrace export <run_id> --public -o public.html`" in examples_readme
-    assert "@v0.1.14" in examples_readme
+    assert "@v0.1.15" in examples_readme
     assert "hosted sharing" not in examples_readme
 
 
@@ -2012,7 +2014,7 @@ def test_examples_readme_includes_github_actions_public_export_artifact_recipe()
     assert 'browsertrace export "$RUN_ID" --public -o public.html' in examples_readme
     assert "BrowserTrace does not upload traces by itself" in examples_readme
     assert (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
         in examples_readme
     )
 
@@ -2082,7 +2084,7 @@ def test_readme_explains_doctor_json_near_install_checks():
     assert "`browsertrace doctor --json` prints install and trace-store status as JSON" in install_section
     assert "database, run, step, and UI dependency fields" in install_section
     assert "`browsertrace doctor` is a safe local status check" in install_section
-    assert "@v0.1.14" in install_section
+    assert "@v0.1.15" in install_section
     assert "hosted sharing" not in readme
 
 
@@ -2116,7 +2118,7 @@ def test_llms_txt_includes_troubleshooting_prompt_snippet():
     assert "browsertrace export <run_id> --public -o public.html" in llms
     assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/225" in llms
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in llms
-    assert "@v0.1.14" in llms
+    assert "@v0.1.15" in llms
     assert "hosted sharing" not in llms
 
 
@@ -2136,7 +2138,7 @@ browsertrace show <run_id> --json
     assert recipe in troubleshooting_prompt
     assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/225" in llms
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in llms
-    assert "@v0.1.14" in llms
+    assert "@v0.1.15" in llms
     assert "hosted sharing" not in llms
 
 
@@ -2144,7 +2146,7 @@ def test_press_kit_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     contribution_links = press_kit.split("## Contribution Links", 1)[1].split(
         "## Troubleshooting Reply", 1
@@ -2223,6 +2225,8 @@ def test_browser_use_guide_documents_callback_compatibility():
     assert "on_step_end" in page
     assert "register_new_step_callback" in page
     assert "run-hook-only" in page
+    assert "create_run_hooks" in page
+    assert "agent.run(on_step_start=hooks.on_step_start" in page
 
 
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
@@ -2255,7 +2259,7 @@ def test_sitemap_lastmod_matches_current_launch_refresh():
 def test_launch_copy_includes_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
 
     for relpath in [
@@ -2272,7 +2276,7 @@ def test_launch_copy_includes_uvx_github_trial_before_pypi():
 def test_longform_launch_posts_include_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
 
     for relpath in [
@@ -2463,7 +2467,7 @@ browsertrace show <run_id> --json
 def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
@@ -2525,7 +2529,7 @@ def test_directory_submission_sheet_links_first_pr_recipe_for_small_contribution
 def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
     contributor_block = packet.split("Good first issue for contributors:", 1)[
@@ -3254,7 +3258,7 @@ def test_security_policy_has_private_report_path_without_email_placeholder():
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     notes = (
         project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
@@ -3370,7 +3374,7 @@ def test_awesome_list_submission_notes_record_e2b_ai_sdks_pr():
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
 
     for relpath in [
@@ -3386,7 +3390,7 @@ def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
 def test_owner_next_actions_include_uvx_fallback_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
 
     for relpath in [
@@ -3401,7 +3405,7 @@ def test_owner_next_actions_include_uvx_fallback_before_pypi():
 def test_launch_control_room_has_current_audit_and_uvx_fallback():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
-        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
+        'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15'
     )
     launch = (project_root / "LAUNCH.md").read_text()
 

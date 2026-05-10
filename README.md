@@ -42,10 +42,10 @@ Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
 GitHub release tag:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14" browsertrace
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
+uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
 ```
 
 If you see `uvx: command not found`, install `uv` from the
@@ -73,10 +73,10 @@ Requires Python 3.11+.
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
+pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
+pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -109,9 +109,9 @@ For compact AI/coding-agent troubleshooting context, use
 project links and prompts.
 
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
-- The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html).
+- The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html).
 - The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands; see the [cheat sheet](examples/#browsertrace-command-cheat-sheet).
-- The v0.1.14 release notes summarize what changed in the pinned GitHub tag; read the [v0.1.14 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14).
+- The v0.1.15 release notes summarize what changed in the pinned GitHub tag; read the [v0.1.15 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15).
 - The PyPI tracking issue is the source for publishing status while install commands stay pinned to the GitHub tag; follow the [PyPI tracking issue](https://github.com/aaronlab/browsertrace/issues/5).
 - `uvx` is the no-install trial path, and pinned GitHub-tag `pip install` is the persistent install path.
 - `[ui]` is needed for the local web UI, while SDK-only install is enough for trace capture integrations.
@@ -147,13 +147,13 @@ If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
 
 For changes in this pinned tag, read the
-[v0.1.14 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14).
+[v0.1.15 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15).
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
@@ -302,7 +302,7 @@ is recorded against the last step.
 ```python
 from browser_use import Agent
 from browsertrace import Tracer
-from browsertrace.integrations.browser_use import attach_tracer
+from browsertrace.integrations.browser_use import attach_tracer, create_run_hooks
 
 tracer = Tracer()
 agent = Agent(task="...", llm=ChatOpenAI(model="gpt-4o"))
@@ -314,9 +314,18 @@ with attach_tracer(agent, tracer, name="my run"):
 The adapter records the step URL, screenshot when exposed by Browser Use,
 action summary, model thought/actions, and compact browser-state context such
 as step count, title, tabs, and whether a screenshot was captured.
+For Browser Use apps that pass lifecycle hooks directly to `agent.run(...)`,
+use the run-hook helper instead:
+
+```python
+hooks = create_run_hooks(tracer, name="my run")
+with hooks:
+    await agent.run(on_step_start=hooks.on_step_start, on_step_end=hooks.on_step_end)
+```
+
 For Browser Use callback compatibility, see
 [Debug Browser Use failures with BrowserTrace](https://aaronlab.github.io/browsertrace/browser-use-debugging.html),
-including `register_new_step_callback` notes.
+including `register_new_step_callback` and `create_run_hooks` notes.
 
 ### Stagehand integration
 
@@ -429,7 +438,7 @@ For AI summaries before PyPI publishing is enabled, install the `ai` extra from
 the release tag you are using:
 
 ```bash
-pip install "browsertrace[ui,ai] @ git+https://github.com/aaronlab/browsertrace@v0.1.14"
+pip install "browsertrace[ui,ai] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
 ```
 
 ```bash

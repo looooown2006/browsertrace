@@ -422,7 +422,7 @@ def test_cli_doctor_missing_ui_deps_points_to_release_tag_install(cli, monkeypat
     assert "UI dependencies: missing fastapi, uvicorn, jinja2" in out
     assert (
         'Install: pip install "browsertrace[ui] @ '
-        'git+https://github.com/aaronlab/browsertrace@v0.1.14"'
+        'git+https://github.com/aaronlab/browsertrace@v0.1.15"'
     ) in out
     assert 'Install: pip install "browsertrace[ui]"' not in out
 
