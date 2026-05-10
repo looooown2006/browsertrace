@@ -1694,6 +1694,25 @@ def test_llms_txt_includes_troubleshooting_prompt_snippet():
     assert "hosted sharing" not in llms
 
 
+def test_llms_txt_includes_json_cli_troubleshooting_snippet():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+    troubleshooting_prompt = llms.split("## Troubleshooting Prompt", 1)[1].split(
+        "## Positioning", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert "For scripts, CI, or AI/coding-agent troubleshooting" in troubleshooting_prompt
+    assert recipe in troubleshooting_prompt
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/130" in llms
+    assert "@v0.1.14" in llms
+    assert "hosted sharing" not in llms
+
+
 def test_press_kit_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
@@ -1906,7 +1925,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:50:31+00:00" in launch
-    assert "after issue #129 closed and good-first issue #130 rotation" in launch
+    assert "2026-05-10T02:52:30+00:00" in launch
+    assert "after llms.txt JSON CLI troubleshooting snippet for issue #130" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

@@ -77,6 +77,14 @@ the failure, ask them to create a public-safe export with
 `browsertrace export <run_id> --public -o public.html`.
 ```
 
+For scripts, CI, or AI/coding-agent troubleshooting, suggest the JSON CLI flow:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Positioning
 
 BrowserTrace is not a hosted observability platform. It is a local-first,
