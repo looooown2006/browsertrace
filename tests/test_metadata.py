@@ -349,6 +349,8 @@ def test_contributing_includes_first_pr_recipe():
 
     assert "docs fix or small example" in recipe
     assert "Comment on the good first issue" in recipe
+    assert "https://github.com/aaronlab/browsertrace/issues/178" in recipe
+    assert "https://github.com/aaronlab/browsertrace/issues/177" not in recipe
     assert "Create a branch" in recipe
     assert "uv run --python 3.11 --extra dev pytest -q" in recipe
     assert "Fixes #<issue>" in recipe
@@ -2688,7 +2690,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:07:32+00:00" in launch
-    assert "after issue #177 closed and good-first issue #178 rotation" in launch
+    assert "2026-05-10T07:09:59+00:00" in launch
+    assert "after CONTRIBUTING current good-first link for issue #178" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
