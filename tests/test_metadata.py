@@ -328,6 +328,25 @@ browsertrace show <run_id> --json
     assert "upvotes" not in local_checks.lower()
 
 
+def test_contributing_includes_first_pr_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    contributing = (project_root / "CONTRIBUTING.md").read_text()
+    assert "## First PR Recipe" in contributing
+    recipe = contributing.split("## First PR Recipe", 1)[1].split(
+        "## Useful Local Checks", 1
+    )[0]
+
+    assert "docs fix or small example" in recipe
+    assert "Comment on the good first issue" in recipe
+    assert "Create a branch" in recipe
+    assert "uv run --python 3.11 --extra dev pytest -q" in recipe
+    assert "Fixes #<issue>" in recipe
+    assert "small enough to review in one pass" in recipe
+    assert "stars" not in recipe.lower()
+    assert "upvotes" not in recipe.lower()
+    assert "reposts" not in recipe.lower()
+
+
 def test_readme_links_code_of_conduct_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -2408,10 +2427,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T04:52:50+00:00" in launch
-    assert (
-        "after issue #154 closed and good-first issue #155 rotation"
-        in launch
-    )
+    assert "2026-05-10T04:55:42+00:00" in launch
+    assert "after first PR recipe for issue #155" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
