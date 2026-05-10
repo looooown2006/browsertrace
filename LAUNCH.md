@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T04:23:53+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #149 closed and good-first issue #150 rotation |
+| 2026-05-10T04:26:14+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after IndexNow refresh returned 200 for generic and Bing endpoints: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4414425601 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
