@@ -2028,6 +2028,29 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply_notes.lower()
 
 
+def test_show_hn_packet_includes_json_cli_troubleshooting_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (project_root / "docs" / "launch" / "day-2-show-hn-packet.md").read_text()
+    assert "## Troubleshooting Reply" in packet
+    reply = packet.split("## Troubleshooting Reply", 1)[1].split("## Metrics", 1)[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "Show HN technical follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply
+    )
+    assert recipe in reply
+    assert "debugging/workflow details" in reply
+    assert "human-written" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_channel_copy_includes_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
@@ -2362,9 +2385,9 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T04:41:06+00:00" in launch
+    assert "2026-05-10T04:43:44+00:00" in launch
     assert (
-        "after issue #152 closed and good-first issue #153 rotation"
+        "after Show HN JSON CLI diagnostics for issue #153"
         in launch
     )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch

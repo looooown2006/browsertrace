@@ -167,9 +167,19 @@ Can I contribute a small fix?
 
 ```text
 Yes. Good first issues are kept small and reviewable. The current one is #153,
-which asks for a concise pull-request template note about JSON CLI diagnostics.
+which asks for concise Show HN reply notes about JSON CLI diagnostics.
 For adapter work, the most useful first step is an integration request
 describing the framework and failure state you need to debug.
+```
+
+## Troubleshooting Reply
+
+Use this as notes for a human-written HN reply. For Show HN technical follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
 ```
 
 ## Metrics
