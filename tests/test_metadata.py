@@ -287,6 +287,31 @@ def test_integrations_page_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in integrations.lower()
 
 
+def test_integrations_page_has_discovery_metadata():
+    project_root = Path(__file__).resolve().parents[1]
+    integrations = (project_root / "docs" / "integrations.html").read_text()
+
+    assert (
+        '<link rel="alternate" type="text/plain" title="llms.txt" href="./llms.txt">'
+        in integrations
+    )
+
+    match = re.search(
+        r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+        integrations,
+        re.S,
+    )
+
+    assert match is not None
+    metadata = json.loads(match.group(1))
+    assert metadata["@context"] == "https://schema.org"
+    assert metadata["@type"] == "CollectionPage"
+    assert metadata["name"] == "BrowserTrace integrations"
+    assert metadata["url"] == "https://aaronlab.github.io/browsertrace/integrations.html"
+    assert metadata["isPartOf"]["name"] == "BrowserTrace"
+    assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
+
+
 def test_browser_use_guide_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     guide = (project_root / "docs" / "browser-use-debugging.html").read_text()
