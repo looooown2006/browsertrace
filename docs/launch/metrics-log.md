@@ -607,3 +607,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T11:05:16+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after launch discussion refreshed to v0.1.14 and good-first issue #223; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T11:08:13+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after pinning current good-first issue #223; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T11:10:57+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after sitemap lastmod refresh for launch pages; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T11:13:10+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after IndexNow refresh returned 200 for sitemap lastmod update; traffic views 112/41 unique, clones 5965/1214 unique |
