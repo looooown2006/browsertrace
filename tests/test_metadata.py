@@ -3266,7 +3266,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T11:00:50+00:00" in launch
-    assert "after maintainer claim-window guidance for good-first issues" in launch
+    assert "2026-05-10T11:05:16+00:00" in launch
+    assert "after launch discussion refreshed to v0.1.14 and good-first issue #223" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
