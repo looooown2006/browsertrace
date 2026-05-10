@@ -165,8 +165,8 @@ Current open high-fit PRs:
 - `steel-dev/awesome-web-agents#56`
 - `ai-boost/awesome-harness-engineering#23`
 - `Agent-Tools/awesome-autonomous-web#21`
-- `e2b-dev/awesome-ai-sdks#187` - blocked on owner CLA signature; sign at
-  `https://e2b.dev/docs/cla`, then comment `@cla-bot check` on the PR.
+- `e2b-dev/awesome-ai-sdks#187` - E2B CLA check has passed; monitor
+  maintainer feedback.
 
 Monitor maintainer feedback and do not open additional list PRs unless a target
 is clearly high-fit and non-duplicative. Respond only when maintainers request

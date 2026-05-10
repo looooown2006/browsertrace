@@ -69,7 +69,7 @@ Use-shaped callback demo.
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
 | AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Yes, owner email | Live demo, repo, Browser Use guide | Blocked: contact email only; send owner-email pitch |
 | BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Yes, owner email and Cloudflare Turnstile required | Repo, live demo, public-safe export | Blocked: owner email and Cloudflare Turnstile required |
-| GitHub awesome lists | Curated developer discovery lists | docs/launch/github-awesome-list-submissions.md | Yes | Repo, live demo, relevant guide | 9 PRs open; monitor feedback; e2b CLA blocked |
+| GitHub awesome lists | Curated developer discovery lists | docs/launch/github-awesome-list-submissions.md | Yes | Repo, live demo, relevant guide | 9 PRs open; monitor feedback; e2b CLA passed |
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions | Yes | Browser Use guide, live trace, repo | Not posted |
 | Stagehand Discussions | Browser automation and agent builders | https://github.com/browserbase/stagehand/discussions | Yes | Stagehand guide, live trace, repo | Not posted |
 | Skyvern Discussions | Browser automation agent users | https://github.com/Skyvern-AI/skyvern/discussions | Yes | Skyvern guide, live trace, repo | Not posted |

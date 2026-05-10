@@ -59,7 +59,7 @@ browsertrace show <run_id> --json
 | 6 | `steel-dev/awesome-web-agents` | Strong | `Dev Tools` | Submitted: https://github.com/steel-dev/awesome-web-agents/pull/56 |
 | 7 | `ai-boost/awesome-harness-engineering` | Strong | `Debugging & Developer Experience` | Submitted: https://github.com/ai-boost/awesome-harness-engineering/pull/23 |
 | 8 | `Agent-Tools/awesome-autonomous-web` | Strong | `Debugging & Trace Viewers` | Submitted: https://github.com/Agent-Tools/awesome-autonomous-web/pull/21 |
-| 9 | `e2b-dev/awesome-ai-sdks` | Strong | top-level tool entry | Submitted: https://github.com/e2b-dev/awesome-ai-sdks/pull/187; blocked on owner CLA |
+| 9 | `e2b-dev/awesome-ai-sdks` | Strong | top-level tool entry | Submitted: https://github.com/e2b-dev/awesome-ai-sdks/pull/187; E2B CLA passed |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -414,11 +414,10 @@ curl -L --max-time 20 -s -o /tmp/browsertrace-link-check.html -w '%{http_code}\n
 curl -L --max-time 20 -s -o /tmp/browsertrace-site-check.html -w '%{http_code}\n' https://aaronlab.github.io/browsertrace/
 ```
 
-Blocking check:
+Current check:
 
-- `verification/cla-signed` is failing because E2B requires the `aaronlab`
-  account to sign `https://e2b.dev/docs/cla`.
-- After the owner signs the CLA, comment `@cla-bot check` on the PR.
+- `verification/cla-signed` is `SUCCESS`; no further CLA action is needed
+  unless the maintainers request changes.
 
 ## Skip List
 

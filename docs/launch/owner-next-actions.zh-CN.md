@@ -169,7 +169,7 @@ docs/launch/github-awesome-list-submissions.md
 | `steel-dev/awesome-web-agents` | `https://github.com/steel-dev/awesome-web-agents/pull/56` |
 | `ai-boost/awesome-harness-engineering` | `https://github.com/ai-boost/awesome-harness-engineering/pull/23` |
 | `Agent-Tools/awesome-autonomous-web` | `https://github.com/Agent-Tools/awesome-autonomous-web/pull/21` |
-| `e2b-dev/awesome-ai-sdks` | `https://github.com/e2b-dev/awesome-ai-sdks/pull/187`，需要你用 `aaronlab` 签 CLA 后评论 `@cla-bot check` |
+| `e2b-dev/awesome-ai-sdks` | `https://github.com/e2b-dev/awesome-ai-sdks/pull/187`，CLA 已通过，继续等待维护者反馈 |
 
 现在只监控维护者反馈；不要再追加新的 awesome-list PR，除非先确认目标高度匹配、非重复，并且不会变成低质量群发。
 
