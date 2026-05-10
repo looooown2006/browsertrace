@@ -1,6 +1,9 @@
 Replace every placeholder before requesting review. Keep the PR small enough to
 review in one pass.
 
+For the first contribution flow, use
+`CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
+
 ## Summary
 
 - What changed:
