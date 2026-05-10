@@ -46,6 +46,14 @@ Once credentials are available, the README install path should become `pip insta
 
 Thanks for trying it. Please open an issue with the run shape, framework, Python version, and the smallest snippet that reproduces it. If the trace can be exported safely, attaching the HTML export would help a lot.
 
+## Can I contribute a small fix?
+
+Yes. The current good first issue is:
+https://github.com/aaronlab/browsertrace/issues/165
+
+Use the First PR Recipe:
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 ## Can you share JSON diagnostics?
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting,
