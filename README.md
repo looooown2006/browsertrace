@@ -118,6 +118,7 @@ Useful local checks:
 - `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
 - The local UI binds to `127.0.0.1` by default; `BROWSERTRACE_PORT` changes only the port.
 - After `browsertrace` starts the local UI, open `http://127.0.0.1:3000` and inspect the demo run.
+- `browsertrace` prints `BrowserTrace UI: http://127.0.0.1:<port>` when the local server starts.
 - The demo run is named `demo: checkout agent fails on disabled button` in the local UI.
 - `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
 - Windows PowerShell users can set `$env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"` before running BrowserTrace commands.

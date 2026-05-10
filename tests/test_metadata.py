@@ -881,6 +881,10 @@ def test_readme_explains_local_ui_url_near_install_checks():
         "After `browsertrace` starts the local UI, open "
         "`http://127.0.0.1:3000` and inspect the demo run"
     ) in install_section
+    assert (
+        "`browsertrace` prints `BrowserTrace UI: http://127.0.0.1:<port>` "
+        "when the local server starts"
+    ) in install_section
     assert "@v0.1.14" in install_section
     assert "PyPI publishing is not enabled yet" in install_section
     assert "hosted sharing" not in readme
@@ -1003,6 +1007,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port",
         "- The local UI binds to `127.0.0.1` by default",
         "- After `browsertrace` starts the local UI, open `http://127.0.0.1:3000` and inspect the demo run",
+        "- `browsertrace` prints `BrowserTrace UI: http://127.0.0.1:<port>` when the local server starts",
         "- The demo run is named `demo: checkout agent fails on disabled button` in the local UI",
         "- `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store",
         '- Windows PowerShell users can set `$env:BROWSERTRACE_HOME = "$env:TEMP\\browsertrace-demo"` before running BrowserTrace commands',
@@ -1783,7 +1788,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:08:41+00:00" in launch
-    assert "after issue #120 closed and good-first issue #121 rotation" in launch
+    assert "2026-05-10T02:10:50+00:00" in launch
+    assert "after README local UI URL output note for issue #121" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
