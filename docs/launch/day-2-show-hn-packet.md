@@ -166,7 +166,7 @@ GitHub-tag pip install path until PyPI publishing is enabled.
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The current one is #223,
+Yes. Good first issues are kept small and reviewable. The current one is #225,
 which asks for the Chinese owner next-actions troubleshooting reply to link the Security Policy.
 Use the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.

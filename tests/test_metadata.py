@@ -466,7 +466,7 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert f'uvx --from "{github_spec}" browsertrace doctor' in profile_draft
     assert f'uvx --from "{github_spec}" browsertrace demo' in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/3" in profile_draft
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in profile_draft
     assert "First PR Recipe" in profile_draft
     assert "CONTRIBUTING.md#first-pr-recipe" in profile_draft
@@ -596,7 +596,7 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "small, issue-based contribution path" in contributing_section
     assert "First PR Recipe" in contributing_section
     assert "first contribution small and reviewable" in contributing_section
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in contributing_section
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in contributing_section
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contributing_section
     assert "good first issue" in contributing_section
     assert "@v0.1.14" in readme
@@ -643,7 +643,7 @@ def test_contributing_includes_first_pr_recipe():
 
     assert "docs fix or small example" in recipe
     assert "Comment on the good first issue" in recipe
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in recipe
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in recipe
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in recipe
     assert "Create a branch" in recipe
     assert "uv run --python 3.11 --extra dev pytest -q" in recipe
@@ -2090,7 +2090,7 @@ def test_llms_txt_points_to_current_contribution_path():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
 
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/223" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/225" in llms
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in llms
     assert "First PR Recipe" in llms
     assert "CONTRIBUTING.md#first-pr-recipe" in llms
@@ -2114,7 +2114,7 @@ def test_llms_txt_includes_troubleshooting_prompt_snippet():
     assert "browsertrace list" in llms
     assert "browsertrace show <run_id>" in llms
     assert "browsertrace export <run_id> --public -o public.html" in llms
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/223" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/225" in llms
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in llms
     assert "@v0.1.14" in llms
     assert "hosted sharing" not in llms
@@ -2134,7 +2134,7 @@ browsertrace show <run_id> --json
 
     assert "For scripts, CI, or AI/coding-agent troubleshooting" in troubleshooting_prompt
     assert recipe in troubleshooting_prompt
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/223" in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/225" in llms
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in llms
     assert "@v0.1.14" in llms
     assert "hosted sharing" not in llms
@@ -2152,7 +2152,7 @@ def test_press_kit_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in press_kit
     assert f'uvx --from "{github_spec}" browsertrace demo' in press_kit
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/223" in press_kit
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/225" in press_kit
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in press_kit
     assert "First PR Recipe" in contribution_links
     assert "first contribution small and reviewable" in contribution_links
@@ -2315,7 +2315,7 @@ def test_response_templates_link_first_pr_recipe_for_small_contributions():
         "## Can you share JSON diagnostics?", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply
     assert "First PR Recipe" in reply
     assert "CONTRIBUTING.md#first-pr-recipe" in reply
@@ -2357,7 +2357,7 @@ browsertrace show <run_id> --json
     )
     assert recipe in reply_workflow
     assert "debugging/workflow details" in reply_workflow
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply_workflow
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply_workflow
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply_workflow
     assert "First PR Recipe" in reply_workflow
     assert "CONTRIBUTING.md#first-pr-recipe" in reply_workflow
@@ -2410,7 +2410,7 @@ browsertrace show <run_id> --json
     )
     assert recipe in reply_shortcuts
     assert "debugging/workflow details" in reply_shortcuts
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply_shortcuts
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply_shortcuts
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply_shortcuts
     assert "First PR Recipe" in reply_shortcuts
     assert "CONTRIBUTING.md#first-pr-recipe" in reply_shortcuts
@@ -2450,7 +2450,7 @@ browsertrace show <run_id> --json
     )
     assert recipe in triage
     assert "debugging/workflow details" in triage
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in triage
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in triage
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in triage
     assert "First PR Recipe" in triage
     assert "CONTRIBUTING.md#first-pr-recipe" in triage
@@ -2512,7 +2512,7 @@ def test_directory_submission_sheet_links_first_pr_recipe_for_small_contribution
         "## Troubleshooting Reply", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in contribution_reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contribution_reply
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
@@ -2534,7 +2534,7 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in packet
     assert f'uvx --from "{github_spec}" browsertrace demo' in packet
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in packet
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in packet
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in packet
     assert "First PR Recipe" in contributor_block
     assert "CONTRIBUTING.md#first-pr-recipe" in contributor_block
@@ -2551,7 +2551,7 @@ def test_show_hn_packet_links_current_good_first_issue():
         1
     ].split("## Troubleshooting Reply", 1)[0]
 
-    assert "current one is #223" in packet
+    assert "current one is #225" in packet
     assert "#213" not in packet
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
@@ -2664,7 +2664,7 @@ def test_channel_copy_links_first_pr_recipe_for_small_contributions():
         "## Troubleshooting Reply", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in contribution_reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contribution_reply
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
@@ -2718,7 +2718,7 @@ def test_tutorial_post_links_first_pr_recipe_for_small_contributions():
         "## Reply To Troubleshooting Questions", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply
     assert "First PR Recipe" in reply
     assert "CONTRIBUTING.md#first-pr-recipe" in reply
@@ -2778,7 +2778,7 @@ def test_chinese_tutorial_post_links_first_pr_recipe_for_small_contributions():
         "## 回复本地首跑 / CI / agent 调试问题", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply
     assert "First PR Recipe" in reply
     assert "CONTRIBUTING.md#first-pr-recipe" in reply
@@ -2876,7 +2876,7 @@ def test_owner_next_actions_link_first_pr_recipe_for_small_contributions():
         "## Reply To Troubleshooting Questions", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply
     assert "First PR Recipe" in reply
     assert "CONTRIBUTING.md#first-pr-recipe" in reply
@@ -2949,7 +2949,7 @@ def test_chinese_owner_next_actions_link_first_pr_recipe_for_small_contributions
         "## 回复本地首跑 / CI / agent 调试问题", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in reply
     assert "First PR Recipe" in reply
     assert "CONTRIBUTING.md#first-pr-recipe" in reply
@@ -3038,7 +3038,7 @@ def test_outreach_targets_link_first_pr_recipe_for_small_contributions():
         "## Troubleshooting Reply", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in contribution_reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contribution_reply
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
@@ -3058,7 +3058,7 @@ def test_search_indexing_submission_links_first_pr_recipe_for_small_contribution
         "## Troubleshooting Reply", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in contribution_reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contribution_reply
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
@@ -3276,7 +3276,7 @@ def test_awesome_list_submission_notes_link_first_pr_recipe_for_contributors():
         "## Troubleshooting Reply", 1
     )[0]
 
-    assert "https://github.com/aaronlab/browsertrace/issues/223" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/225" in contribution_reply
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contribution_reply
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
