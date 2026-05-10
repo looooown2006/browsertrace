@@ -126,7 +126,7 @@ Browser Use, Stagehand, Playwright, or Skyvern communities.
 
 - Use `docs/launch/response-templates.md` as notes, not as copy-paste replies.
 - For small contribution questions, point to the current good first issue:
-  https://github.com/aaronlab/browsertrace/issues/194
+  https://github.com/aaronlab/browsertrace/issues/195
   Then share the First PR Recipe:
   https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 - For bug reports, ask the user to open an issue with their agent stack, trace
