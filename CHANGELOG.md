@@ -9,6 +9,8 @@ to keep the first contribution small and reviewable.
 
 ## Unreleased
 
+- Added compact `stagehand_evidence` summaries for Stagehand observe/action
+  results, including selectors, descriptions, and methods when available.
 - Improved standalone HTML exports with `lang`, `viewport`, and a responsive
   single-column layout for narrow screens.
 - Added Open Graph URL, canonical, `llms.txt`, and JSON-LD discovery metadata
