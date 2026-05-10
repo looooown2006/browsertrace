@@ -107,6 +107,9 @@ https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-reci
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
 
+For security-sensitive reports or changes, or anything that includes private trace data, point people to the private path in the Security Policy before they share details publicly:
+https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md
+
 ```bash
 browsertrace doctor --json
 browsertrace list --status failed --json

@@ -2642,6 +2642,18 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_tutorial_post_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    tutorial = (project_root / "docs" / "launch" / "tutorial-post.md").read_text()
+    reply = tutorial.split("## Reply To Troubleshooting Questions", 1)[1].split(
+        "## Try it", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md" in reply
+    assert "security-sensitive reports or changes" in reply
+    assert "private trace data" in reply
+
+
 def test_tutorial_post_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     tutorial = (project_root / "docs" / "launch" / "tutorial-post.md").read_text()
