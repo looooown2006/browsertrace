@@ -2084,9 +2084,18 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
 def test_show_hn_packet_links_current_good_first_issue():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-2-show-hn-packet.md").read_text()
+    contribution_reply = packet.split("Can I contribute a small fix?", 1)[
+        1
+    ].split("## Troubleshooting Reply", 1)[0]
 
     assert "current one is #160" in packet
     assert "#159" not in packet
+    assert "First PR Recipe" in contribution_reply
+    assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
+    assert "first contribution small and reviewable" in contribution_reply
+    assert "stars" not in contribution_reply.lower()
+    assert "upvotes" not in contribution_reply.lower()
+    assert "reposts" not in contribution_reply.lower()
 
 
 def test_product_hunt_packet_includes_json_cli_reply_note():
@@ -2466,7 +2475,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:24:53+00:00" in launch
-    assert "after issue #159 closed and good-first issue #160 rotation" in launch
+    assert "2026-05-10T05:27:40+00:00" in launch
+    assert "after Show HN first PR recipe link for issue #160" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
