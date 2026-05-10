@@ -130,6 +130,44 @@ Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugg
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
 ```
 
+## console.dev Email Draft
+
+Use this only from the owner's email account. console.dev features interesting
+developer tools and beta releases; this is not a sponsored review request.
+
+```text
+To: hello@console.dev
+Subject: Devtools suggestion: BrowserTrace
+
+Hi console.dev team,
+
+I wanted to suggest BrowserTrace for your developer tools queue.
+
+BrowserTrace is an MIT-licensed local debugger for AI browser-agent runs. It
+records each browser-agent step as a timeline with screenshot, URL, action,
+model input/output, status, and error, then exports a standalone HTML trace
+with optional redaction.
+
+Why it may fit console.dev:
+- It is interesting and useful to developers building Browser Use, Stagehand,
+  Skyvern, Playwright + LLM, or custom computer-use agents.
+- It can be a regular-use developer tool for investigating failed AI browser
+  automation runs, especially when logs do not show what the agent saw.
+- It is local-first and open source, with a public-safe export path for sharing
+  traces without prompts, screenshots, URLs, or model output.
+
+Repo: https://github.com/aaronlab/browsertrace
+Live demo: https://aaronlab.github.io/browsertrace/
+Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+
+This is not a sponsored review request. I would value any editorial feedback if
+it is not a fit.
+```
+
+Do not ask for stars, votes, backlinks, or reciprocal placement. The ask is
+only editorial consideration for a relevant developer tool.
+
 ## AgDex Email Draft
 
 Use this only from the owner's email account.

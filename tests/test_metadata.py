@@ -2582,6 +2582,24 @@ def test_directory_submission_sheet_includes_agdex_email_template():
     assert "Do not ask for stars" in agdex
 
 
+def test_directory_submission_sheet_includes_console_dev_email_template():
+    project_root = Path(__file__).resolve().parents[1]
+    sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+
+    assert "## console.dev Email Draft" in sheet
+    console = sheet.split("## console.dev Email Draft", 1)[1].split(
+        "## AgDex Email Draft", 1
+    )[0]
+
+    assert "To: hello@console.dev" in console
+    assert "Subject: Devtools suggestion: BrowserTrace" in console
+    assert "interesting and useful to developers" in console
+    assert "regular-use developer tool" in console
+    assert "not a sponsored review request" in console
+    assert "BrowserTrace is an MIT-licensed local debugger" in console
+    assert "Do not ask for stars" in console
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
