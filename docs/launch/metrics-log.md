@@ -657,3 +657,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T16:34:47+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 19 | after owner issue comments marked historical for v0.1.16 PyPI launch surface; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T16:40:08+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 19 | after open issue comments with old release text marked historical for v0.1.16; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T16:44:27+00:00 | 3 | 998 | 6 | 0 | 10 | 0 | 22 | after monitoring pass: release downloads increased to 22; no new external feedback; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T16:47:46+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 22 | after good-first issue #234 opened for no-service examples expected-output docs; traffic views 112/41 unique, clones 5965/1214 unique |
