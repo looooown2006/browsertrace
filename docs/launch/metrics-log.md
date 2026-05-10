@@ -609,3 +609,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T11:10:57+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after sitemap lastmod refresh for launch pages; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T11:13:10+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after IndexNow refresh returned 200 for sitemap lastmod update; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T11:16:54+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after launch feedback issue linked security policy and current good-first issue; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T11:19:35+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after repo topic open-source replaced with trace-viewer; traffic views 112/41 unique, clones 5965/1214 unique |
