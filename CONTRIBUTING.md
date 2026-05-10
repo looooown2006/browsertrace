@@ -48,6 +48,15 @@ browsertrace
 For docs-only changes, still run the full pytest command. It is quick and keeps
 release, workflow, and packaging checks covered.
 
+For issue reports, CI, or AI/coding-agent troubleshooting, include the compact
+JSON CLI checks when the problem involves a local first run or trace inspection:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Contribution Areas
 
 Roadmap context:

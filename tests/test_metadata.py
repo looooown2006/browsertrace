@@ -287,6 +287,24 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "hosted sharing" not in readme
 
 
+def test_contributing_includes_json_cli_troubleshooting_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    contributing = (project_root / "CONTRIBUTING.md").read_text()
+    local_checks = contributing.split("## Useful Local Checks", 1)[1].split(
+        "## Contribution Areas", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert "issue reports, CI, or AI/coding-agent troubleshooting" in local_checks
+    assert recipe in local_checks
+    assert "stars" not in local_checks.lower()
+    assert "upvotes" not in local_checks.lower()
+
+
 def test_readme_links_code_of_conduct_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1952,7 +1970,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:02:00+00:00" in launch
-    assert "after issue #132 closed and good-first issue #133 rotation" in launch
+    assert "2026-05-10T03:04:51+00:00" in launch
+    assert "after CONTRIBUTING JSON CLI troubleshooting checks for issue #133" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

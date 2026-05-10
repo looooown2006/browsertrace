@@ -427,3 +427,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T02:58:11+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #131 closed and good-first issue #132 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T03:00:34+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after examples llms.txt troubleshooting context link for issue #132; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T03:02:00+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #132 closed and good-first issue #133 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T03:04:51+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after CONTRIBUTING JSON CLI troubleshooting checks for issue #133; traffic views 52/29 unique, clones 103/54 unique |
