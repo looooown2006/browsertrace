@@ -85,6 +85,7 @@ browsertrace
 Useful local checks:
 
 - `browsertrace doctor` is a safe local status check for install and trace-store status.
+- The healthy doctor output recipe shows expected `Home:`, `Database:`, `Runs:`, and `UI dependencies:` status lines; see [Check a healthy local install](examples/#check-a-healthy-local-install).
 - `browsertrace demo` runs without API keys or external services.
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
 - `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export; see the [recent-runs recipe](examples/#show-only-recent-runs).
