@@ -2379,6 +2379,16 @@ def test_owner_publish_queue_links_security_policy_for_sensitive_reports():
     assert "private trace data" in reply_workflow
 
 
+def test_owner_publish_queue_records_current_awesome_list_pr_count():
+    project_root = Path(__file__).resolve().parents[1]
+    queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
+
+    assert "seven high-fit PRs are already open" in queue
+    assert "the three prepared PRs" not in queue
+    assert "ai-boost/awesome-harness-engineering#23" in queue
+    assert "steel-dev/awesome-web-agents#56" in queue
+
+
 def test_day_1_publish_packet_includes_json_cli_reply_shortcut():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-1-publish-packet.md").read_text()
@@ -2466,6 +2476,15 @@ def test_directory_submission_sheet_records_agentfirst_pr_submission():
     assert "agentfirst.directory" in sheet
     assert "https://github.com/bradvin/agentfirst.directory/pull/30" in sheet
     assert "Submitted PR" in sheet
+
+
+def test_directory_submission_sheet_records_current_awesome_list_pr_count():
+    project_root = Path(__file__).resolve().parents[1]
+    sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+
+    assert "7 PRs open; monitor feedback" in sheet
+    assert "3 PRs open" not in sheet
+    assert "github-awesome-list-submissions.md" in sheet
 
 
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
@@ -2976,6 +2995,15 @@ browsertrace show <run_id> --json
     assert "stars" not in reply.lower()
     assert "upvotes" not in reply.lower()
     assert "reposts" not in reply.lower()
+
+
+def test_outreach_targets_records_current_awesome_list_pr_count():
+    project_root = Path(__file__).resolve().parents[1]
+    targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
+
+    assert "Seven focused PRs are already open" in targets
+    assert "Three focused PRs" not in targets
+    assert "Do not open more list PRs unless the target is clearly high-fit" in targets
 
 
 def test_outreach_targets_link_first_pr_recipe_for_small_contributions():
