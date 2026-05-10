@@ -704,3 +704,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T21:37:59+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after targeted Browser Use video-artifact correlation reply: https://github.com/browser-use/browser-use/issues/4623#issuecomment-4416412952; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T21:40:32+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after owner checklist direct copy-block links added; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T21:42:34+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after README first-screen artifact-boundary positioning added; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T21:44:03+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after llms.txt artifact-boundary positioning added; traffic views 112/41 unique, clones 5965/1214 unique |

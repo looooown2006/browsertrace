@@ -4,6 +4,10 @@ BrowserTrace is an MIT-licensed local flight recorder for AI browser agents.
 It records browser-agent runs as step timelines with screenshots, URLs, actions,
 model input/output, status, and errors.
 
+It is a local debugging artifact channel, not another prompt-history blob:
+screenshots, URLs, and model I/O stay in the local trace store, and public
+exports can omit prompts/model I/O, screenshots, and URLs.
+
 Use BrowserTrace when debugging Browser Use, Stagehand, Playwright + LLM scripts,
 Skyvern-style workflows, or custom computer-use agents where logs are not enough
 to explain why a browser run failed.
