@@ -2348,6 +2348,24 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_owner_next_actions_link_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (project_root / "docs" / "launch" / "owner-next-actions.md").read_text()
+    assert "## Reply To Contribution Questions" in checklist
+    reply = checklist.split("## Reply To Contribution Questions", 1)[1].split(
+        "## Reply To Troubleshooting Questions", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/issues/172" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/171" not in reply
+    assert "First PR Recipe" in reply
+    assert "CONTRIBUTING.md#first-pr-recipe" in reply
+    assert "first contribution small and reviewable" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_chinese_owner_next_actions_include_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     checklist = (
@@ -2624,7 +2642,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T06:35:27+00:00" in launch
-    assert "after issue #171 closed and good-first issue #172 rotation" in launch
+    assert "2026-05-10T06:38:23+00:00" in launch
+    assert "after owner next actions first PR recipe link for issue #172" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
