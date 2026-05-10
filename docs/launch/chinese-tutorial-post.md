@@ -192,6 +192,16 @@ https://github.com/aaronlab/browsertrace/discussions/6
 https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
 ```
 
+## 回复本地首跑 / CI / agent 调试问题
+
+遇到 local first-run issues, CI failures, or AI/coding-agent troubleshooting replies 时，先问对方补充 debugging/workflow details；如果可以安全分享，再让对方贴这组 JSON CLI diagnostics：
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Links
 
 GitHub:

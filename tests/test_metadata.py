@@ -2050,6 +2050,32 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_chinese_tutorial_post_includes_json_cli_troubleshooting_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    tutorial = (
+        project_root / "docs" / "launch" / "chinese-tutorial-post.md"
+    ).read_text()
+    assert "## 回复本地首跑 / CI / agent 调试问题" in tutorial
+    reply = tutorial.split("## 回复本地首跑 / CI / agent 调试问题", 1)[1].split(
+        "## Links", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply
+    )
+    assert recipe in reply
+    assert "debugging/workflow details" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_bug_report_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (
@@ -2164,7 +2190,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:55:45+00:00" in launch
-    assert "after issue #144 closed and good-first issue #145 rotation" in launch
+    assert "2026-05-10T03:58:04+00:00" in launch
+    assert "after Chinese tutorial JSON CLI diagnostics for issue #145" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
