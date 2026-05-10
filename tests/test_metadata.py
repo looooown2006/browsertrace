@@ -2487,6 +2487,20 @@ def test_directory_submission_sheet_records_current_awesome_list_pr_count():
     assert "github-awesome-list-submissions.md" in sheet
 
 
+def test_directory_submission_sheet_records_current_directory_submission_blockers():
+    project_root = Path(__file__).resolve().parents[1]
+    sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+
+    assert "AgentKart" in sheet
+    assert "Sign-in button present; static form has no usable submit handler" in sheet
+    assert "OSS AI Hub" in sheet
+    assert "login required before submitting tools" in sheet
+    assert "AgentsTide" in sheet
+    assert "contact email only" in sheet
+    assert "BuilderAI Tools" in sheet
+    assert "owner email and Cloudflare Turnstile required" in sheet
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()

@@ -613,3 +613,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T11:31:31+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after steel-dev awesome-web-agents PR #56: https://github.com/steel-dev/awesome-web-agents/pull/56; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T11:37:30+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after ai-boost awesome-harness-engineering PR #23: https://github.com/ai-boost/awesome-harness-engineering/pull/23; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T11:43:20+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after launch discussion discovery update: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16868924; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T11:49:38+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after directory submission blocker audit for AgentKart, OSS AI Hub, AgentsTide, and BuilderAI Tools; traffic views 112/41 unique, clones 5965/1214 unique |
