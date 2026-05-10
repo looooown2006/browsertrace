@@ -20,8 +20,8 @@ follow-up verification, README updates, metrics, and issue comments:
    `hello@console.dev` and `agdex.ai@gmail.com` for console.dev and AgDex.
 3. If you have a second short pass, submit the browser-form directories from
    `docs/launch/directory-submission-sheet.md`:
-   AgentKart, OSS AI Hub, FOSSHUNTER, AgentsTide, and BuilderAI Tools. Use
-   `hello@agentstide.com` as the AgentsTide email fallback and
+   4agent.dev, AgentKart, OSS AI Hub, FOSSHUNTER, AgentsTide, and BuilderAI
+   Tools. Use `hello@agentstide.com` as the AgentsTide email fallback and
    `AI Observability & Evaluation` for BuilderAI Tools.
 4. If that batch is already done, use the second-pass directory field notes in
    `docs/launch/directory-submission-sheet.md` for CLIHunt, DeepYard,

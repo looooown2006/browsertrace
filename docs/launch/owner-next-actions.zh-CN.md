@@ -17,9 +17,9 @@ issue comment 都交给 Codex 继续处理：
    email 投稿：发给 console.dev 的 `hello@console.dev`，以及发给 AgDex 的
    `agdex.ai@gmail.com`。
 3. 如果还有第二小段时间，用 `docs/launch/directory-submission-sheet.md`
-   提交这些浏览器表单目录：AgentKart、OSS AI Hub、FOSSHUNTER、AgentsTide、
-   BuilderAI Tools。AgentsTide 可用 `hello@agentstide.com` 作为邮件兜底，
-   BuilderAI Tools 分类用 `AI Observability & Evaluation`。
+   提交这些浏览器表单目录：4agent.dev、AgentKart、OSS AI Hub、FOSSHUNTER、
+   AgentsTide、BuilderAI Tools。AgentsTide 可用 `hello@agentstide.com`
+   作为邮件兜底，BuilderAI Tools 分类用 `AI Observability & Evaluation`。
 4. 如果这一批已经做完，继续用 `docs/launch/directory-submission-sheet.md`
    里的第二批目录字段说明提交 CLIHunt、DeepYard、OpenAgent.bot、
    ForgeIndex、AgentShelf。

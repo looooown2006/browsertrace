@@ -63,6 +63,7 @@ Use-shaped callback demo.
 | AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Yes, owner account likely | Repo, live demo, Browser Use guide | Owner login likely required; visible unauthenticated form has no action or method |
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Unknown | Live demo, repo, integrations | Blocked: no visible submit/contact route |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Yes, owner email | Live demo, repo, comparison | Contact page accepts tool submissions; send owner-email pitch to agdex.ai@gmail.com |
+| 4agent.dev | Agent-builder tool directory readers | https://4agent.dev/submit | Yes, browser submission | Live demo, repo, Browser Use guide | Submit Tool form is visible; use Observability or Browser category, and tags such as browser agents, debugging, Playwright, tracing |
 | agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Submitted PR: https://github.com/bradvin/agentfirst.directory/pull/30 |
 | OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Yes, browser submission | Repo, live demo, public-safe export | JavaScript submission page; submissions are reviewed for quality, relevance, and community value |
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
@@ -81,6 +82,23 @@ Use-shaped callback demo.
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions/4816 | Yes | Browser Use guide, live trace, repo | Posted; no comments yet |
 | Stagehand Discussions | Browser automation and agent builders | https://github.com/browserbase/stagehand/discussions/2102 | Yes | Stagehand guide, live trace, repo | Posted; no comments yet |
 | Skyvern Discussions | Browser automation agent users | https://github.com/Skyvern-AI/skyvern/discussions/5931 | Yes | Skyvern guide, live trace, repo | Posted; no comments yet |
+
+## First Browser-Form Directory Field Notes
+
+Use these after the Day 1 posts and owner-email submissions. Submit once from
+the owner's browser, and keep the ask to directory inclusion or editorial
+feedback.
+
+4agent.dev:
+
+```text
+Tool name: BrowserTrace
+Website URL: https://aaronlab.github.io/browsertrace/
+Repository: https://github.com/aaronlab/browsertrace
+Category: Observability, or Browser if only one category is accepted
+Tags: browser agents, debugging, Playwright, Browser Use, trace viewer
+Short description: Local-first trace viewer for failed AI browser-agent runs, with screenshots, URLs, actions, model I/O, errors, and public-safe HTML exports.
+```
 
 ## Second-Pass Directory Field Notes
 
