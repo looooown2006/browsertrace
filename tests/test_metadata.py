@@ -2506,6 +2506,17 @@ def test_browser_use_guide_documents_callback_compatibility():
     assert "agent.run(on_step_start=hooks.on_step_start" in page
 
 
+def test_browser_use_guide_documents_icon_only_click_targets():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-use-debugging.html").read_text()
+
+    assert "Debug icon-only click targets" in page
+    assert "visible-target versus accessible-target mismatch" in page
+    assert "candidate bounding boxes" in page
+    assert "aria-label=&quot;Create Test&quot;" in page
+    assert "browser-use/browser-use#4801" in page
+
+
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
     project_root = Path(__file__).resolve().parents[1]
     sitemap = (project_root / "docs" / "sitemap.xml").read_text()

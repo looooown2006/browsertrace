@@ -300,6 +300,19 @@ with hooks:
     </section>
 
     <section>
+      <h2>Debug icon-only click targets</h2>
+      <p>If the screenshot shows the target but Browser Use clicks a nearby toolbar button, treat it as a visible-target versus accessible-target mismatch. Icon-only buttons often rely on hover tooltips, and that tooltip text may not be present in the accessibility tree when the agent ranks candidate elements.</p>
+      <ul>
+        <li>Capture the live button HTML, not only the intended fixed markup.</li>
+        <li>Compare the accessibility snapshot before hover and after hover.</li>
+        <li>Record candidate bounding boxes for the intended icon, nearby toolbar buttons, and the element that was actually clicked.</li>
+        <li>Check whether the tooltip node appears only after hover and whether it is connected with <code>aria-describedby</code>.</li>
+      </ul>
+      <p>The best app-side fix is an accessible name on the real button, for example <code>aria-label=&quot;Create Test&quot;</code>. Until the app can change, make the task prompt structural, such as "click the plus icon immediately next to the search field in the Functional toolbar", or use a deterministic selector for that step.</p>
+      <p>Related community case: <a href="https://github.com/browser-use/browser-use/issues/4801">browser-use/browser-use#4801</a>.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html
