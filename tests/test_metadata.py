@@ -3274,7 +3274,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T11:13:10+00:00" in launch
-    assert "after IndexNow refresh returned 200 for sitemap lastmod update" in launch
+    assert "2026-05-10T11:16:54+00:00" in launch
+    assert "after launch feedback issue linked security policy and current good-first issue" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
