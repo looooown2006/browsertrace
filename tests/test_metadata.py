@@ -94,6 +94,16 @@ def test_readme_uses_pypi_install_after_publish():
     assert "PyPI publishing is not enabled yet" not in readme
 
 
+def test_readme_shows_pypi_badge_after_publish():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    header = readme.split("![demo]", 1)[0]
+
+    assert "[![PyPI]" in header
+    assert "https://img.shields.io/pypi/v/browsertrace.svg" in header
+    assert "https://pypi.org/project/browsertrace/" in header
+
+
 def test_homepage_has_software_source_code_json_ld():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
