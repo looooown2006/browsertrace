@@ -2481,6 +2481,30 @@ def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
         assert f"https://aaronlab.github.io/browsertrace/{path}" in sitemap, path
 
 
+def test_public_html_pages_have_open_graph_urls():
+    project_root = Path(__file__).resolve().parents[1]
+    public_pages = {
+        "docs/index.html": "https://aaronlab.github.io/browsertrace/",
+        "docs/debug-browser-agent-failure.html": "https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html",
+        "docs/integrations.html": "https://aaronlab.github.io/browsertrace/integrations.html",
+        "docs/compare-browser-agent-debugging.html": "https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html",
+        "docs/browser-use-debugging.html": "https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "docs/stagehand-debugging.html": "https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "docs/skyvern-debugging.html": "https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "docs/playwright-llm-debugging.html": "https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "docs/computer-use-agent-debugging.html": "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+        "docs/trace.html": "https://aaronlab.github.io/browsertrace/trace.html",
+        "docs/launch/index.html": "https://aaronlab.github.io/browsertrace/launch/",
+    }
+
+    for relpath, url in public_pages.items():
+        page = (project_root / relpath).read_text()
+        assert re.search(
+            rf"<meta property=['\"]og:url['\"] content=['\"]{re.escape(url)}['\"]>",
+            page,
+        ), relpath
+
+
 def test_sitemap_lastmod_matches_current_launch_refresh():
     project_root = Path(__file__).resolve().parents[1]
     sitemap = (project_root / "docs" / "sitemap.xml").read_text()
