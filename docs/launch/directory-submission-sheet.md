@@ -224,6 +224,8 @@ Why it may fit console.dev:
   Skyvern, Playwright + LLM, or custom computer-use agents.
 - It can be a regular-use developer tool for investigating failed AI browser
   automation runs, especially when logs do not show what the agent saw.
+- It is self-service: live demo, PyPI install, and no signup or sales call are
+  required to try the local demo.
 - It is local-first and open source, with a public-safe export path for sharing
   traces without prompts, screenshots, URLs, or model output.
 

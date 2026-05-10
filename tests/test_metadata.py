@@ -2924,6 +2924,8 @@ def test_directory_submission_sheet_includes_console_dev_email_template():
     assert "Subject: Devtools suggestion: BrowserTrace" in console
     assert "interesting and useful to developers" in console
     assert "regular-use developer tool" in console
+    assert "self-service" in console
+    assert "no signup or sales call" in console
     assert "not a sponsored review request" in console
     assert "BrowserTrace is an MIT-licensed local debugger" in console
     assert "Do not ask for stars" in console
