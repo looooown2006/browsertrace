@@ -2767,7 +2767,10 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:50:25+00:00" in launch
-    assert "after issue #186 closed and good-first issue #187 rotation" in launch
+    assert "2026-05-10T07:53:50+00:00" in launch
+    assert (
+        "after IndexNow refresh returned 200 for generic and Bing endpoints after #187 rotation"
+        in launch
+    )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
