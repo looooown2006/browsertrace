@@ -1928,6 +1928,29 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply_shortcuts.lower()
 
 
+def test_day_3_targeted_communities_include_json_cli_reply_note():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "day-3-targeted-communities-packet.md"
+    ).read_text()
+    triage = packet.split("## Triage After Posting", 1)[1].split("## Stop Rules", 1)[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in triage
+    )
+    assert recipe in triage
+    assert "debugging/workflow details" in triage
+    assert "stars" not in triage.lower()
+    assert "upvotes" not in triage.lower()
+    assert "reposts" not in triage.lower()
+
+
 def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -2075,7 +2098,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:35:46+00:00" in launch
-    assert "after issue #140 closed and good-first issue #141 rotation" in launch
+    assert "2026-05-10T03:37:59+00:00" in launch
+    assert "after Day 3 community reply JSON CLI diagnostics for issue #141" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

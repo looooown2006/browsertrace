@@ -308,6 +308,13 @@ Within 24 hours:
 - Link each issue from the relevant discussion reply.
 - Add useful quotes or summaries to `docs/launch/metrics-log.md`.
 - Update the v0.2 milestone if a clear adapter priority emerges.
+- For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
 
 ## Stop Rules
 
