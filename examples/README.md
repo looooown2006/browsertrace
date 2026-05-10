@@ -152,6 +152,10 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+For compact AI/coding-agent troubleshooting context, use
+[`docs/llms.txt`](../docs/llms.txt); it includes JSON CLI checks, project links,
+and prompts.
+
 ### Environment variable quick reference
 
 Use these variables when you want to change local BrowserTrace behavior without

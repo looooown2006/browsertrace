@@ -1568,6 +1568,20 @@ browsertrace show <run_id> --json
     assert "hosted sharing" not in examples_readme
 
 
+def test_examples_readme_links_llms_troubleshooting_context():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+    troubleshooting_section = examples_readme.split("## Troubleshooting", 1)[1].split(
+        "### Environment variable quick reference", 1
+    )[0]
+
+    assert "[`docs/llms.txt`](../docs/llms.txt)" in troubleshooting_section
+    assert "AI/coding-agent troubleshooting context" in troubleshooting_section
+    assert "JSON CLI checks" in troubleshooting_section
+    assert "@v0.1.14" in examples_readme
+    assert "hosted sharing" not in examples_readme
+
+
 def test_examples_readme_includes_command_cheat_sheet():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()
@@ -1938,7 +1952,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:58:11+00:00" in launch
-    assert "after issue #131 closed and good-first issue #132 rotation" in launch
+    assert "2026-05-10T03:00:34+00:00" in launch
+    assert "after examples llms.txt troubleshooting context link for issue #132" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
