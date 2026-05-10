@@ -570,8 +570,10 @@ Before opening a PR, use the [pull request template](.github/PULL_REQUEST_TEMPLA
 and include a linked issue and test commands.
 
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
-2. Pick a [good first issue](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
-   if you want a small documentation or example task.
+2. Pick the current good first issue:
+   https://github.com/aaronlab/browsertrace/issues/177
+   Use the [good first issue label](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
+   for the full queue of small documentation or example tasks.
 3. If you need a Browser Use / Stagehand / Skyvern / Playwright adapter,
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 4. If you have a public-safe screenshot or exported trace from a real failure,

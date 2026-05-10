@@ -314,6 +314,8 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "small, issue-based contribution path" in contributing_section
     assert "First PR Recipe" in contributing_section
     assert "first contribution small and reviewable" in contributing_section
+    assert "https://github.com/aaronlab/browsertrace/issues/177" in contributing_section
+    assert "https://github.com/aaronlab/browsertrace/issues/176" not in contributing_section
     assert "good first issue" in contributing_section
     assert "@v0.1.14" in readme
     assert "hosted sharing" not in readme
@@ -2686,7 +2688,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:03:01+00:00" in launch
-    assert "after issue #176 closed and good-first issue #177 rotation" in launch
+    assert "2026-05-10T07:05:31+00:00" in launch
+    assert "after README current good-first link for issue #177" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
