@@ -395,3 +395,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T01:45:04+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #116 closed and good-first issue #117 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T01:47:51+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README list output fields note for issue #117; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T01:49:49+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #117 closed and good-first issue #118 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T01:52:34+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README export output path note for issue #118; traffic views 52/29 unique, clones 103/54 unique |
