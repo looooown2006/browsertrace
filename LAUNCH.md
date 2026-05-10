@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T02:52:30+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after llms.txt JSON CLI troubleshooting snippet for issue #130 |
+| 2026-05-10T02:54:04+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #130 closed and good-first issue #131 rotation |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
