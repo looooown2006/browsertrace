@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T23:37:02+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 12 | current monitor pass after Stagehand CUA screenshot-timing research note added to adapter issue #8: https://github.com/aaronlab/browsertrace/issues/8#issuecomment-4416638489; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T23:41:30+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 12 | current monitor pass after IndexNow refresh returned 200 for generic and Bing endpoints: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4416646830; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
