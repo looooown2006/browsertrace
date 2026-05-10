@@ -3006,6 +3006,8 @@ def test_directory_submission_sheet_links_first_pr_recipe_for_small_contribution
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
     assert "first contribution small and reviewable" in contribution_reply
+    assert "short claim window" in contribution_reply
+    assert "`claimed` label" in contribution_reply
     assert "stars" not in contribution_reply.lower()
     assert "upvotes" not in contribution_reply.lower()
     assert "reposts" not in contribution_reply.lower()
@@ -3389,6 +3391,7 @@ def test_owner_next_actions_set_good_first_issue_claim_window():
 
     assert "short claim window" in reply
     assert "before implementing it yourself" in reply
+    assert "`claimed` label" in reply
     assert "already finished" in reply
     assert "good first issue label" in reply
 
@@ -3464,6 +3467,7 @@ def test_chinese_owner_next_actions_set_good_first_issue_claim_window():
 
     assert "短的认领窗口" in reply
     assert "不要马上自己实现同一个 issue" in reply
+    assert "`claimed` label" in reply
     assert "如果这个任务已经完成" in reply
     assert "当前 good first issue" in reply
 

@@ -202,8 +202,10 @@ Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 
 If someone says they want to work on it, acknowledge it and leave a short claim window
-before implementing it yourself. If that issue is already finished,
-point them to the good first issue label instead of letting the thread stall.
+before implementing it yourself. If GitHub cannot assign the contributor, add
+the `claimed` label so others know the issue has an active claimant. If
+that issue is already finished, point them to the good first issue label
+instead of letting the thread stall.
 
 ## Reply To Troubleshooting Questions
 

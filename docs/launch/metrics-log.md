@@ -727,3 +727,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T23:11:10+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after README links root llms.txt as primary AI/coding-agent discovery file; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T23:13:21+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after contributor claimed pinned good-first issue #234 and scope was confirmed: https://github.com/aaronlab/browsertrace/issues/234#issuecomment-4416593935; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T23:16:34+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after claimed label added to contributor-claimed good-first issue #234 because external assignee was not assignable; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T23:20:20+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after owner contributor-reply docs captured claimed-label workflow; traffic views 112/41 unique, clones 5965/1214 unique |

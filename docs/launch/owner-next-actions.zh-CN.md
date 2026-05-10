@@ -210,7 +210,7 @@ https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 ```
 
-如果对方说想做这个任务，先回复确认并留出一个短的认领窗口，不要马上自己实现同一个 issue。如果这个任务已经完成，改为指向当前 good first issue。
+如果对方说想做这个任务，先回复确认并留出一个短的认领窗口，不要马上自己实现同一个 issue。如果 GitHub 不能把 issue assign 给这个贡献者，就加 `claimed` label，避免其他人重复接同一个任务。如果这个任务已经完成，改为指向当前 good first issue。
 
 ## 回复本地首跑 / CI / agent 调试问题
 

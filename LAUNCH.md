@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T23:16:34+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | current monitor pass after claimed label added to contributor-claimed good-first issue #234 because external assignee was not assignable; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T23:20:20+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | current monitor pass after owner contributor-reply docs captured claimed-label workflow; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

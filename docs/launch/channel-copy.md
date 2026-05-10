@@ -25,6 +25,10 @@ https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 
+If they say they want to work on an issue, acknowledge the claim and leave a
+short claim window before implementing it yourself. If GitHub cannot assign
+them, add the `claimed` label so the handoff is visible.
+
 ## Troubleshooting Reply
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
