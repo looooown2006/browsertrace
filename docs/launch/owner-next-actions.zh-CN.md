@@ -151,6 +151,7 @@ docs/launch/github-awesome-list-submissions.md
 
 | 目标 | PR |
 |---|---|
+| `bradvin/agentfirst.directory` | `https://github.com/bradvin/agentfirst.directory/pull/30`，enrichment check 已通过 |
 | `angrykoala/awesome-browser-automation` | `https://github.com/angrykoala/awesome-browser-automation/pull/112` |
 | `mxschmitt/awesome-playwright` | `https://github.com/mxschmitt/awesome-playwright/pull/136` |
 | `Jenqyang/Awesome-AI-Agents` | `https://github.com/Jenqyang/Awesome-AI-Agents/pull/220` |

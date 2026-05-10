@@ -146,6 +146,7 @@ docs/launch/github-awesome-list-submissions.md
 
 Current open high-fit PRs:
 
+- `bradvin/agentfirst.directory#30` - enrichment check passed.
 - `angrykoala/awesome-browser-automation#112`
 - `mxschmitt/awesome-playwright#136`
 - `Jenqyang/Awesome-AI-Agents#220`
