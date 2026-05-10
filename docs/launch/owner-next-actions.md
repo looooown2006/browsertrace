@@ -32,6 +32,19 @@ follow-up verification, README updates, metrics, and issue comments:
 Send the posted URLs, email-sent note, or any replies so Codex can log metrics
 and update the tracking issues.
 
+Fast copy/paste blocks:
+
+- X: `docs/launch/channel-copy.md#x`
+- X follow-up: `docs/launch/channel-copy.md#x-follow-up`
+- LinkedIn: `docs/launch/channel-copy.md#linkedin`
+- WeChat group: `docs/launch/channel-copy.md#wechat-group`
+- Jike: `docs/launch/channel-copy.md#jike`
+- Show HN: `docs/launch/day-2-show-hn-packet.md#first-comment-draft`
+- Product Hunt: `docs/launch/day-4-product-hunt-packet.md#maker-comment`
+- console.dev email:
+  `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
+- AgDex email: `docs/launch/directory-submission-sheet.md#agdex-email-draft`
+
 ## 1. PyPI Published
 
 PyPI is no longer the install blocker. BrowserTrace is published as version

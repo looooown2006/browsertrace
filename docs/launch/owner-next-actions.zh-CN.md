@@ -29,6 +29,19 @@ issue comment 都交给 Codex 继续处理：
 发完后，把帖子 URL、群名、邮件已发送备注或回复发给 Codex，我会记录指标并
 更新跟踪 issue。
 
+快速复制入口：
+
+- X：`docs/launch/channel-copy.md#x`
+- X follow-up：`docs/launch/channel-copy.md#x-follow-up`
+- LinkedIn：`docs/launch/channel-copy.md#linkedin`
+- 微信群：`docs/launch/channel-copy.md#wechat-group`
+- 即刻：`docs/launch/channel-copy.md#jike`
+- Show HN：`docs/launch/day-2-show-hn-packet.md#first-comment-draft`
+- Product Hunt：`docs/launch/day-4-product-hunt-packet.md#maker-comment`
+- console.dev 邮件：
+  `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
+- AgDex 邮件：`docs/launch/directory-submission-sheet.md#agdex-email-draft`
+
 ## 1. PyPI 已发布
 
 PyPI 已经不再是安装阻塞。BrowserTrace 已发布为 `0.1.16`：
