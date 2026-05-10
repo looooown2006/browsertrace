@@ -75,17 +75,17 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
 
 - PyPI first publish is completed. Future PyPI releases should use the manual
   `Publish` workflow after the version and release artifacts are ready.
-- Create or update the `aaronlab/aaronlab` GitHub profile repository with
+- Keep the live `aaronlab/aaronlab` GitHub profile repository aligned with
   `docs/launch/github-profile-readme.md`.
-- Pin BrowserTrace (`aaronlab/browsertrace`) on the public GitHub profile so it
-  stays above older experiments during launch; track in
-  https://github.com/aaronlab/browsertrace/issues/24.
-- Upload `docs/social-preview.png` as the GitHub repository social preview in Settings -> Social preview. If PNG generation is unavailable, use `docs/social-preview.svg` as source for a manual export first.
+- Profile pin is completed: BrowserTrace (`aaronlab/browsertrace`) is pinned on
+  the public GitHub profile during launch.
+- GitHub social preview is completed. Keep `docs/social-preview.png` as the
+  reusable source asset for future launch previews.
 - Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
   Console and Bing Webmaster Tools.
-- Monitor the three open third-party awesome-list PRs and respond only if
-  maintainers ask for changes. Do not open additional list PRs until there is
-  maintainer feedback.
+- Monitor the twelve open third-party awesome-list and directory PRs and
+  respond only if maintainers ask for changes. Do not open additional list PRs
+  unless the target is clearly high-fit and non-duplicative.
 - Publish X, LinkedIn, WeChat, Jike, Xiaohongshu, Reddit, Discord, and community posts.
 - Submit Show HN from a real Hacker News account and reply in your own voice.
 - Create or schedule the Product Hunt draft from a personal Product Hunt account.
@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T11:19:35+00:00 | 3 | 998 | 5 | 0 | 13 | 0 | 0 | after repo topic open-source replaced with trace-viewer |
+| 2026-05-10T19:51:39+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | current monitor pass; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
