@@ -102,6 +102,7 @@ Useful local checks:
 - First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3.
 - Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6.
 - Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`.
+- The example matrix lists no-service examples.
 - `browsertrace show <run_id>` inspects a listed run from the terminal.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
 - A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches; see the [run ID prefix recipe](examples/#run-id-prefixes-for-export).
