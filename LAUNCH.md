@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T05:33:52+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after IndexNow refresh returned 200 for generic and Bing endpoints |
+| 2026-05-10T05:36:49+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after llms.txt first PR recipe link for issue #161 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

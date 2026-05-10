@@ -1770,6 +1770,12 @@ def test_llms_txt_points_to_current_contribution_path():
 
     assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/161" in llms
     assert "https://github.com/aaronlab/browsertrace/issues/160" not in llms
+    assert "First PR Recipe" in llms
+    assert "CONTRIBUTING.md#first-pr-recipe" in llms
+    assert "first contribution small and reviewable" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+    assert "reposts" not in llms.lower()
     assert (
         "Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
         in llms
@@ -2475,7 +2481,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:33:52+00:00" in launch
-    assert "after IndexNow refresh returned 200 for generic and Bing endpoints" in launch
+    assert "2026-05-10T05:36:49+00:00" in launch
+    assert "after llms.txt first PR recipe link for issue #161" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
