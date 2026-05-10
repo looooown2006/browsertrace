@@ -41,7 +41,7 @@ For a `good first issue`, docs fix, or small example improvement:
 For a docs fix or small example:
 
 1. Comment on the good first issue so maintainers know you are working on it.
-   Current good first issue: https://github.com/aaronlab/browsertrace/issues/178
+   Current good first issue: https://github.com/aaronlab/browsertrace/issues/179
 2. Create a branch with a short descriptive name.
 3. Make the smallest useful change and keep it small enough to review in one pass.
 4. Run `uv run --python 3.11 --extra dev pytest -q`.
