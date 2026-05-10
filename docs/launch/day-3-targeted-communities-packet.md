@@ -316,6 +316,9 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+- For small first contributions, link the First PR Recipe:
+  https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 ## Stop Rules
 
 - Do not post in more than two targeted communities on the same day unless

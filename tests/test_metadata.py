@@ -2042,6 +2042,9 @@ browsertrace show <run_id> --json
     )
     assert recipe in triage
     assert "debugging/workflow details" in triage
+    assert "First PR Recipe" in triage
+    assert "CONTRIBUTING.md#first-pr-recipe" in triage
+    assert "first contribution small and reviewable" in triage
     assert "stars" not in triage.lower()
     assert "upvotes" not in triage.lower()
     assert "reposts" not in triage.lower()
@@ -2484,7 +2487,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:46:19+00:00" in launch
-    assert "after issue #162 closed and good-first issue #163 rotation" in launch
+    assert "2026-05-10T05:49:41+00:00" in launch
+    assert "after Day 3 first PR recipe link for issue #163" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
