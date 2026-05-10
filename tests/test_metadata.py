@@ -2096,6 +2096,24 @@ def test_directory_submission_sheet_records_agentfirst_pr_submission():
     assert "Submitted PR" in sheet
 
 
+def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+    assert "## Contribution Reply" in sheet
+    contribution_reply = sheet.split("## Contribution Reply", 1)[1].split(
+        "## Troubleshooting Reply", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/issues/167" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/166" not in contribution_reply
+    assert "First PR Recipe" in contribution_reply
+    assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
+    assert "first contribution small and reviewable" in contribution_reply
+    assert "stars" not in contribution_reply.lower()
+    assert "upvotes" not in contribution_reply.lower()
+    assert "reposts" not in contribution_reply.lower()
+
+
 def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -2530,7 +2548,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T06:10:16+00:00" in launch
-    assert "after issue #166 closed and good-first issue #167 rotation" in launch
+    assert "2026-05-10T06:12:20+00:00" in launch
+    assert "after directory submission sheet first PR recipe link for issue #167" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

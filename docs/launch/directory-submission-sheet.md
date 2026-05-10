@@ -130,6 +130,15 @@ Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugg
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
 ```
 
+## Contribution Reply
+
+If a directory reviewer or visitor asks how to make a small docs fix, point to
+the current good first issue:
+https://github.com/aaronlab/browsertrace/issues/167
+
+Then share the First PR Recipe:
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 ## Troubleshooting Reply
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:

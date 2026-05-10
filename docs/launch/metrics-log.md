@@ -496,3 +496,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T06:05:57+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #165 closed and good-first issue #166 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T06:07:46+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after owner publish queue first PR recipe link for issue #166; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T06:10:16+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #166 closed and good-first issue #167 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T06:12:20+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after directory submission sheet first PR recipe link for issue #167; traffic views 52/29 unique, clones 103/54 unique |
