@@ -53,6 +53,7 @@ browsertrace show <run_id> --json
 | 5 | `cdxeve/awesome-computer-use-agents` | Strong | `GUI-Based Agents` -> `Web Agents` | Submitted: https://github.com/cdxeve/awesome-computer-use-agents/pull/2 |
 | 6 | `steel-dev/awesome-web-agents` | Strong | `Dev Tools` | Submitted: https://github.com/steel-dev/awesome-web-agents/pull/56 |
 | 7 | `ai-boost/awesome-harness-engineering` | Strong | `Debugging & Developer Experience` | Submitted: https://github.com/ai-boost/awesome-harness-engineering/pull/23 |
+| 8 | `Agent-Tools/awesome-autonomous-web` | Strong | `Debugging & Trace Viewers` | Submitted: https://github.com/Agent-Tools/awesome-autonomous-web/pull/21 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -323,6 +324,44 @@ git diff --check
 curl -L -s -o /dev/null -w 'browsertrace %{http_code} %{url_effective}\n' https://github.com/aaronlab/browsertrace
 curl -L -s -o /dev/null -w 'stars-badge %{http_code} %{url_effective}\n' 'https://img.shields.io/github/stars/aaronlab/browsertrace?style=flat-square&label=%E2%98%85&color=yellow'
 ```
+
+## 8. Awesome Autonomous Web
+
+Target:
+
+```text
+https://github.com/Agent-Tools/awesome-autonomous-web
+```
+
+Status: submitted as https://github.com/Agent-Tools/awesome-autonomous-web/pull/21.
+
+Fit notes:
+
+- The list is focused on tools that empower AI agents to interact with the web.
+- BrowserTrace fits as a debugging and trace-viewer tool for AI browser-agent
+  runs, adjacent to Browser Use, Stagehand, Skyvern, Playwright MCP, and other
+  browser automation stacks already listed.
+- The PR adds a narrow `Debugging & Trace Viewers` section rather than placing
+  BrowserTrace among agent runtimes or automation frameworks.
+
+Submitted entry:
+
+```markdown
+- **[BrowserTrace](https://github.com/aaronlab/browsertrace)** — Local-first trace viewer for AI browser agents. Records screenshots, URLs, actions, model I/O, status, and errors; exports redacted standalone HTML traces. Open-source.
+```
+
+Verification:
+
+```bash
+git diff --check
+curl -L --max-time 20 -s -o /tmp/browsertrace-link-check.html -w '%{http_code}\n' https://github.com/aaronlab/browsertrace
+npx -y awesome-lint README.md
+```
+
+Note: `awesome-lint README.md` reports existing baseline style issues across
+the target repository, including the list's established bold-link item format
+and table alignment. The PR keeps the local README style and changes only one
+focused entry.
 
 ## Skip List
 

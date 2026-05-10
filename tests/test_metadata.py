@@ -2383,9 +2383,10 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
 
-    assert "seven high-fit PRs are already open" in queue
+    assert "eight high-fit PRs are already open" in queue
     assert "the three prepared PRs" not in queue
     assert "ai-boost/awesome-harness-engineering#23" in queue
+    assert "Agent-Tools/awesome-autonomous-web#21" in queue
     assert "steel-dev/awesome-web-agents#56" in queue
 
 
@@ -2482,7 +2483,7 @@ def test_directory_submission_sheet_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
-    assert "7 PRs open; monitor feedback" in sheet
+    assert "8 PRs open; monitor feedback" in sheet
     assert "3 PRs open" not in sheet
     assert "github-awesome-list-submissions.md" in sheet
 
@@ -2823,6 +2824,7 @@ def test_owner_next_actions_preserves_external_awesome_list_pr_numbers():
     assert "cdxeve/awesome-computer-use-agents#2" in awesome_prs
     assert "steel-dev/awesome-web-agents#56" in awesome_prs
     assert "ai-boost/awesome-harness-engineering#23" in awesome_prs
+    assert "Agent-Tools/awesome-autonomous-web#21" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#222" not in awesome_prs
 
@@ -2843,6 +2845,7 @@ def test_chinese_owner_next_actions_preserves_external_awesome_list_pr_numbers()
     assert "cdxeve/awesome-computer-use-agents/pull/2" in awesome_prs
     assert "steel-dev/awesome-web-agents/pull/56" in awesome_prs
     assert "ai-boost/awesome-harness-engineering/pull/23" in awesome_prs
+    assert "Agent-Tools/awesome-autonomous-web/pull/21" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents/pull/221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents/pull/222" not in awesome_prs
 
@@ -3015,7 +3018,7 @@ def test_outreach_targets_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
 
-    assert "Seven focused PRs are already open" in targets
+    assert "Eight focused PRs are already open" in targets
     assert "Three focused PRs" not in targets
     assert "Do not open more list PRs unless the target is clearly high-fit" in targets
 
@@ -3326,6 +3329,19 @@ def test_awesome_list_submission_notes_record_harness_engineering_pr():
     assert "Debugging & Developer Experience" in notes
     assert "browser-agent and computer-use runs" in notes
     assert "curl -L -s -o /dev/null" in notes
+
+
+def test_awesome_list_submission_notes_record_autonomous_web_pr():
+    project_root = Path(__file__).resolve().parents[1]
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+
+    assert "Agent-Tools/awesome-autonomous-web" in notes
+    assert "https://github.com/Agent-Tools/awesome-autonomous-web/pull/21" in notes
+    assert "Debugging & Trace Viewers" in notes
+    assert "AI browser-agent runs" in notes
+    assert "awesome-lint README.md" in notes
 
 
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():

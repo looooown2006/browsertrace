@@ -181,6 +181,7 @@ Current open high-fit PRs:
 - `cdxeve/awesome-computer-use-agents#2`
 - `steel-dev/awesome-web-agents#56`
 - `ai-boost/awesome-harness-engineering#23`
+- `Agent-Tools/awesome-autonomous-web#21`
 
 Monitor maintainer feedback and do not open additional list PRs unless a target
 is clearly high-fit and non-duplicative. Respond only when maintainers request

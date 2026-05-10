@@ -188,6 +188,7 @@ docs/launch/github-awesome-list-submissions.md
 | `cdxeve/awesome-computer-use-agents` | `https://github.com/cdxeve/awesome-computer-use-agents/pull/2` |
 | `steel-dev/awesome-web-agents` | `https://github.com/steel-dev/awesome-web-agents/pull/56` |
 | `ai-boost/awesome-harness-engineering` | `https://github.com/ai-boost/awesome-harness-engineering/pull/23` |
+| `Agent-Tools/awesome-autonomous-web` | `https://github.com/Agent-Tools/awesome-autonomous-web/pull/21` |
 
 现在只监控维护者反馈；不要再追加新的 awesome-list PR，除非先确认目标高度匹配、非重复，并且不会变成低质量群发。
 
