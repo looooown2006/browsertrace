@@ -51,6 +51,7 @@ browsertrace show <run_id> --json
 | 3 | `Jenqyang/Awesome-AI-Agents` | Medium | `Applications` -> `Tools` | Submitted: https://github.com/Jenqyang/Awesome-AI-Agents/pull/220 |
 | 4 | `wjhou/awesome-computer-use-agents` | Strong | `frameworks/README.md` -> `Web/Browser Frameworks` | Submitted: https://github.com/wjhou/awesome-computer-use-agents/pull/2 |
 | 5 | `cdxeve/awesome-computer-use-agents` | Strong | `GUI-Based Agents` -> `Web Agents` | Submitted: https://github.com/cdxeve/awesome-computer-use-agents/pull/2 |
+| 6 | `steel-dev/awesome-web-agents` | Strong | `Dev Tools` | Submitted: https://github.com/steel-dev/awesome-web-agents/pull/56 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 
 ## 1. Awesome Browser Automation
@@ -251,6 +252,40 @@ Submitted entry:
 Verification:
 
 ```bash
+git diff --check
+```
+
+## 6. Awesome Web Agents
+
+Target:
+
+```text
+https://github.com/steel-dev/awesome-web-agents
+```
+
+Status: submitted as https://github.com/steel-dev/awesome-web-agents/pull/56.
+
+Fit notes:
+
+- The list is focused on tools, frameworks, and resources for AI web agents.
+- BrowserTrace fits the `Dev Tools` section because it helps operate and debug
+  web-agent runs rather than acting as an agent runtime.
+- The PR follows the target contribution policy: one item, bottom of the
+  best-fit section, neutral wording, and affiliation disclosure.
+- Target Actions currently show `action_required`, so maintainer approval is
+  needed before CI runs on the forked PR.
+
+Submitted entry:
+
+```markdown
+- [BrowserTrace](https://github.com/aaronlab/browsertrace) - Local-first trace viewer for debugging Playwright, Browser Use, Stagehand, and other web-agent runs with redacted shareable exports. ![GitHub Repo stars](https://img.shields.io/github/stars/aaronlab/browsertrace?style=social)
+```
+
+Verification:
+
+```bash
+GITHUB_TOKEN=$(gh auth token) npx -y awesome-lint@2.2.3 README.md
+/Users/enyuanzhang/.gem/ruby/2.6.0/bin/awesome_bot --allow-dupe --allow-redirect --white-list "https://github.com/steel-dev/awesome-web-agents,https://surf.new,https://openai.com/index/introducing-operator/,https://www.perplexity.ai/comet,https://openai.com/research/webgpt,https://dzone.com/articles/build-ai-browser-agent-llms-playwright-browser-use,https://dev.to/nodeshiftcloud/build-a-browser-use-agent-with-deepseek-a-step-by-step-guide-2n59" README.md
 git diff --check
 ```
 

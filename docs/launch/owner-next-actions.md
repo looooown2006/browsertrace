@@ -172,14 +172,18 @@ Use:
 docs/launch/github-awesome-list-submissions.md
 ```
 
-The three prepared PRs are already open:
+Current open high-fit PRs:
 
 - `angrykoala/awesome-browser-automation#112`
 - `mxschmitt/awesome-playwright#136`
 - `Jenqyang/Awesome-AI-Agents#220`
+- `wjhou/awesome-computer-use-agents#2`
+- `cdxeve/awesome-computer-use-agents#2`
+- `steel-dev/awesome-web-agents#56`
 
-Monitor maintainer feedback and do not open additional list PRs until one of
-these receives a response.
+Monitor maintainer feedback and do not open additional list PRs unless a target
+is clearly high-fit and non-duplicative. Respond only when maintainers request
+changes.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 

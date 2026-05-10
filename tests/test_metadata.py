@@ -2786,8 +2786,30 @@ def test_owner_next_actions_preserves_external_awesome_list_pr_numbers():
     assert "angrykoala/awesome-browser-automation#112" in awesome_prs
     assert "mxschmitt/awesome-playwright#136" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#220" in awesome_prs
+    assert "wjhou/awesome-computer-use-agents#2" in awesome_prs
+    assert "cdxeve/awesome-computer-use-agents#2" in awesome_prs
+    assert "steel-dev/awesome-web-agents#56" in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#221" not in awesome_prs
     assert "Jenqyang/Awesome-AI-Agents#222" not in awesome_prs
+
+
+def test_chinese_owner_next_actions_preserves_external_awesome_list_pr_numbers():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
+    ).read_text()
+    awesome_prs = checklist.split("已经打开的 PR：", 1)[1].split(
+        "目录/newsletter 跟踪 issue", 1
+    )[0]
+
+    assert "angrykoala/awesome-browser-automation/pull/112" in awesome_prs
+    assert "mxschmitt/awesome-playwright/pull/136" in awesome_prs
+    assert "Jenqyang/Awesome-AI-Agents/pull/220" in awesome_prs
+    assert "wjhou/awesome-computer-use-agents/pull/2" in awesome_prs
+    assert "cdxeve/awesome-computer-use-agents/pull/2" in awesome_prs
+    assert "steel-dev/awesome-web-agents/pull/56" in awesome_prs
+    assert "Jenqyang/Awesome-AI-Agents/pull/221" not in awesome_prs
+    assert "Jenqyang/Awesome-AI-Agents/pull/222" not in awesome_prs
 
 
 def test_owner_next_actions_link_security_policy_for_sensitive_reports():
@@ -3234,6 +3256,19 @@ browsertrace show <run_id> --json
     assert "stars" not in reply.lower()
     assert "upvotes" not in reply.lower()
     assert "reposts" not in reply.lower()
+
+
+def test_awesome_list_submission_notes_record_steel_web_agents_pr():
+    project_root = Path(__file__).resolve().parents[1]
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+
+    assert "steel-dev/awesome-web-agents" in notes
+    assert "https://github.com/steel-dev/awesome-web-agents/pull/56" in notes
+    assert "Dev Tools" in notes
+    assert "action_required" in notes
+    assert "GITHUB_TOKEN=$(gh auth token) npx -y awesome-lint@2.2.3 README.md" in notes
 
 
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
