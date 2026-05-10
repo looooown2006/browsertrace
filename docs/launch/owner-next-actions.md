@@ -176,7 +176,7 @@ The three prepared PRs are already open:
 
 - `angrykoala/awesome-browser-automation#112`
 - `mxschmitt/awesome-playwright#136`
-- `Jenqyang/Awesome-AI-Agents#220`
+- `Jenqyang/Awesome-AI-Agents#221`
 
 Monitor maintainer feedback and do not open additional list PRs until one of
 these receives a response.
@@ -187,7 +187,7 @@ Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 
 If someone asks how to make a small docs fix, point to the current good first
 issue:
-https://github.com/aaronlab/browsertrace/issues/220
+https://github.com/aaronlab/browsertrace/issues/221
 
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.

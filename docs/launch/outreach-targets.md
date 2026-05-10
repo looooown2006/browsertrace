@@ -93,7 +93,7 @@ Submission notes:
 Use this when someone asks for a small first contribution:
 
 Good first issue:
-https://github.com/aaronlab/browsertrace/issues/220
+https://github.com/aaronlab/browsertrace/issues/221
 
 First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
