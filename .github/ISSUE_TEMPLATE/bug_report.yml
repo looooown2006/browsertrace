@@ -48,3 +48,14 @@ body:
       description: Attach an exported HTML trace or paste relevant `browsertrace show <id>` output if possible. For public sharing, run `browsertrace export <run_id> --public -o public.html` to omit prompt/model I/O, screenshots, and URLs.
     validations:
       required: false
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: JSON CLI troubleshooting output
+      description: For issue reports, CI, or AI/coding-agent troubleshooting, include these checks when the problem involves a local first run or trace inspection.
+      placeholder: |
+        browsertrace doctor --json
+        browsertrace list --status failed --json
+        browsertrace show <run_id> --json
+    validations:
+      required: false

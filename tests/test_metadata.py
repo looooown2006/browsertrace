@@ -1896,6 +1896,20 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
     assert "https://github.com/aaronlab/browsertrace/issues/134" in packet
 
 
+def test_bug_report_template_requests_json_cli_troubleshooting_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "bug_report.yml"
+    ).read_text()
+
+    assert "issue reports, CI, or AI/coding-agent troubleshooting" in template
+    assert "browsertrace doctor --json" in template
+    assert "browsertrace list --status failed --json" in template
+    assert "browsertrace show <run_id> --json" in template
+    assert "stars" not in template.lower()
+    assert "upvotes" not in template.lower()
+
+
 def test_pull_request_template_prompts_for_real_contributor_details():
     project_root = Path(__file__).resolve().parents[1]
     template = (project_root / ".github" / "PULL_REQUEST_TEMPLATE.md").read_text()
@@ -1970,7 +1984,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:06:14+00:00" in launch
-    assert "after issue #133 closed and good-first issue #134 rotation" in launch
+    assert "2026-05-10T03:09:05+00:00" in launch
+    assert "after issue template JSON CLI troubleshooting checks for issue #134" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
