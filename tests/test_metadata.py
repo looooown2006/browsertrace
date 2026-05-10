@@ -654,6 +654,19 @@ browsertrace show <run_id> --json
     assert "hosted sharing" not in readme
 
 
+def test_readme_links_llms_troubleshooting_context_near_install_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+
+    assert "[`docs/llms.txt`](docs/llms.txt)" in install_section
+    assert "AI/coding-agent troubleshooting context" in install_section
+    assert "JSON CLI checks" in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_explains_demo_run_id_output_near_install_checks():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1925,7 +1938,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:54:04+00:00" in launch
-    assert "after issue #130 closed and good-first issue #131 rotation" in launch
+    assert "2026-05-10T02:56:43+00:00" in launch
+    assert "after README llms.txt troubleshooting context link for issue #131" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

@@ -104,6 +104,10 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+For compact AI/coding-agent troubleshooting context, use
+[`docs/llms.txt`](docs/llms.txt); it includes the same JSON CLI checks plus
+project links and prompts.
+
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
 - The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html).
 - The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands; see the [cheat sheet](examples/#browsertrace-command-cheat-sheet).
