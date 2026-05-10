@@ -207,5 +207,5 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 目标只有一个：GitHub 实时显示超过 1000 stars 才算完成。
 
 ```bash
-gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
+gh repo view aaronlab/browsertrace --json stargazerCount,forkCount,watchers,url,homepageUrl
 ```
