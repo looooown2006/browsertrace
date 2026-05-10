@@ -63,6 +63,16 @@ https://github.com/aaronlab/browsertrace/issues/154
 Public-safe demo export:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 
+## Troubleshooting
+
+For profile-reader follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+~~~bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+~~~
+
 ## Current Focus
 
 - AI browser-agent debugging
