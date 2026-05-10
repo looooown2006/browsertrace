@@ -603,6 +603,18 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "hosted sharing" not in readme
 
 
+def test_readme_contributing_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    contributing_section = readme.split("## Contributing", 1)[1].split(
+        "## License", 1
+    )[0]
+
+    assert "[SECURITY.md](SECURITY.md)" in contributing_section
+    assert "security-sensitive reports" in contributing_section
+    assert "private trace data" in contributing_section
+
+
 def test_contributing_includes_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     contributing = (project_root / "CONTRIBUTING.md").read_text()
@@ -3080,7 +3092,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:53:24+00:00" in launch
-    assert "after issue #210 closed and good-first issue #211 rotation" in launch
+    assert "2026-05-10T09:55:59+00:00" in launch
+    assert "after README contributing Security Policy link for issue #211" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
