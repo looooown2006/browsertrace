@@ -303,6 +303,20 @@ def test_readme_clarifies_cloud_features_are_not_required_for_local_oss():
     assert "upvotes" not in cloud_section.lower()
 
 
+def test_roadmap_contribution_guidelines_link_first_pr_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    roadmap = (project_root / "ROADMAP.md").read_text()
+    guidelines = roadmap.split("## Contribution Guidelines", 1)[1].split(
+        "## Success Signals", 1
+    )[0]
+
+    assert "Good roadmap PRs are narrow and testable" in guidelines
+    assert "CONTRIBUTING.md#first-pr-recipe" in guidelines
+    assert "first contribution small and reviewable" in guidelines
+    assert "stars" not in guidelines.lower()
+    assert "upvotes" not in guidelines.lower()
+
+
 def test_readme_links_contributor_guide_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -2724,7 +2738,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:36:08+00:00" in launch
-    assert "after issue #183 closed and good-first issue #184 rotation" in launch
+    assert "2026-05-10T07:38:59+00:00" in launch
+    assert "after roadmap First PR Recipe link for issue #184" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

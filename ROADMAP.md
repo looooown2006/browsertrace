@@ -72,8 +72,9 @@ Good roadmap PRs are narrow and testable:
   real trace publicly.
 - Include the exact command used to verify the change.
 
-Start with `CONTRIBUTING.md`, then open an integration request if the work
-depends on a specific browser-agent framework.
+Start with `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
+Then open an integration request if the work depends on a specific
+browser-agent framework.
 
 ## Success Signals
 
