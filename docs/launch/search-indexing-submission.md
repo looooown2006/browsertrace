@@ -50,6 +50,16 @@ Use this payload:
 }
 ```
 
+## Troubleshooting Reply
+
+For crawl/indexing follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Google Search Console
 
 1. Add a URL-prefix property for `https://aaronlab.github.io/browsertrace/`.

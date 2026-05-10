@@ -2172,6 +2172,32 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_search_indexing_submission_includes_json_cli_troubleshooting_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    submission = (
+        project_root / "docs" / "launch" / "search-indexing-submission.md"
+    ).read_text()
+    assert "## Troubleshooting Reply" in submission
+    reply = submission.split("## Troubleshooting Reply", 1)[1].split(
+        "## Google Search Console", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "crawl/indexing follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply
+    )
+    assert recipe in reply
+    assert "debugging/workflow details" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_bug_report_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (
@@ -2286,9 +2312,9 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T04:26:14+00:00" in launch
+    assert "2026-05-10T04:28:29+00:00" in launch
     assert (
-        "after IndexNow refresh returned 200 for generic and Bing endpoints"
+        "after search indexing JSON CLI diagnostics for issue #150"
         in launch
     )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
