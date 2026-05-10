@@ -90,6 +90,7 @@ Useful local checks:
 - The deterministic no-API demo creates a trace without a browser, network, or API key; from a source checkout, run `python examples/no_api_failure_demo.py`.
 - The local trial requires no signup, cloud account, or hosted browser service.
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
+- `browsertrace demo` prints a `Run ID:` line you can copy into `browsertrace show` or `browsertrace export`.
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
 - The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html).
 - The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands; see the [cheat sheet](examples/#browsertrace-command-cheat-sheet).

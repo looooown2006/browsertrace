@@ -391,3 +391,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T01:35:26+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after agentfirst.directory PR #30 submitted; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T01:38:23+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README SDK-only terminal command note for issue #115; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T01:40:14+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #115 closed and good-first issue #116 rotation; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T01:43:04+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README demo Run ID output note for issue #116; traffic views 52/29 unique, clones 103/54 unique |
