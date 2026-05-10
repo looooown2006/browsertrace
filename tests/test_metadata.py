@@ -2564,6 +2564,24 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "owner email and Cloudflare Turnstile required" in text
 
 
+def test_directory_submission_sheet_includes_agdex_email_template():
+    project_root = Path(__file__).resolve().parents[1]
+    sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+
+    assert "## AgDex Email Draft" in sheet
+    agdex = sheet.split("## AgDex Email Draft", 1)[1].split(
+        "## Contribution Reply", 1
+    )[0]
+
+    assert "To: agdex.ai@gmail.com" in agdex
+    assert "Tool name: BrowserTrace" in agdex
+    assert "Website URL: https://aaronlab.github.io/browsertrace/" in agdex
+    assert "Category: Developer tools / observability" in agdex
+    assert "Short description:" in agdex
+    assert "AI browser-agent" in agdex
+    assert "Do not ask for stars" in agdex
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()

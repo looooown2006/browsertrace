@@ -130,6 +130,33 @@ Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugg
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
 ```
 
+## AgDex Email Draft
+
+Use this only from the owner's email account.
+
+```text
+To: agdex.ai@gmail.com
+Subject: Tool submission: BrowserTrace
+
+Tool name: BrowserTrace
+Website URL: https://aaronlab.github.io/browsertrace/
+Category: Developer tools / observability
+
+Short description:
+BrowserTrace is an MIT-licensed local debugger for AI browser-agent runs. It
+records each browser-agent step as a timeline with screenshot, URL, action,
+model input/output, status, and error, then exports a standalone HTML trace
+with optional redaction. It is useful for Browser Use, Stagehand, Skyvern,
+Playwright + LLM scripts, and custom computer-use agents.
+
+Repository: https://github.com/aaronlab/browsertrace
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+```
+
+Do not ask for stars, votes, backlinks, or reciprocal placement. The ask is
+only editorial consideration for a relevant AI-agent developer tool.
+
 ## Contribution Reply
 
 If a directory reviewer or visitor asks how to make a small docs fix, point to
