@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T07:59:50+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after awesome-computer-use-agents PR #2 submitted |
+| 2026-05-10T08:03:30+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after computer-use agents overview PR #2 submitted |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

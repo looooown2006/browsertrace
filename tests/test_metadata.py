@@ -2767,7 +2767,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:59:50+00:00" in launch
-    assert "after awesome-computer-use-agents PR #2 submitted" in launch
+    assert "2026-05-10T08:03:30+00:00" in launch
+    assert "after computer-use agents overview PR #2 submitted" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
