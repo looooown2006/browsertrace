@@ -166,8 +166,8 @@ GitHub-tag pip install path until PyPI publishing is enabled.
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The current one is #216,
-which asks for a Show HN troubleshooting reply link to the Security Policy.
+Yes. Good first issues are kept small and reviewable. The current one is #217,
+which asks for Product Hunt reply notes to link the Security Policy.
 Use the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 For adapter work, the most useful first step is an integration request
