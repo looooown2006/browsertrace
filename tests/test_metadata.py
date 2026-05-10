@@ -459,6 +459,31 @@ def test_launch_kit_page_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in page.lower()
 
 
+def test_launch_kit_page_has_discovery_metadata():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "launch" / "index.html").read_text()
+
+    assert (
+        '<link rel="alternate" type="text/plain" title="llms.txt" href="../llms.txt">'
+        in page
+    )
+
+    match = re.search(
+        r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+        page,
+        re.S,
+    )
+
+    assert match is not None
+    metadata = json.loads(match.group(1))
+    assert metadata["@context"] == "https://schema.org"
+    assert metadata["@type"] == "WebPage"
+    assert metadata["name"] == "BrowserTrace launch kit"
+    assert metadata["url"] == "https://aaronlab.github.io/browsertrace/launch/"
+    assert metadata["isPartOf"]["name"] == "BrowserTrace"
+    assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
+
+
 def test_docs_include_pypi_quickstart_after_publish():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
