@@ -92,7 +92,7 @@ browsertrace
 
 ## Contribution Links
 
-- Good first issue: https://github.com/aaronlab/browsertrace/issues/197
+- Good first issue: https://github.com/aaronlab/browsertrace/issues/198
 - Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
 - Contributor guide: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md
 - First PR Recipe: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
