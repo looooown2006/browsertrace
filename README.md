@@ -106,6 +106,7 @@ Useful local checks:
 - `browsertrace show <run_id>` inspects a listed run from the terminal.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
 - Public-safe export omits model I/O, screenshots, and URLs.
+- `--redact` only omits model I/O, while `--public` also omits screenshots and URLs.
 - A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches; see the [run ID prefix recipe](examples/#run-id-prefixes-for-export).
 - `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
 - After `browsertrace` starts the local UI, open `http://127.0.0.1:3000` and inspect the demo run.
