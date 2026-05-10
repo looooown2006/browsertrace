@@ -2387,6 +2387,18 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply_shortcuts.lower()
 
 
+def test_day_1_publish_packet_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (project_root / "docs" / "launch" / "day-1-publish-packet.md").read_text()
+    reply_shortcuts = packet.split("## Reply Shortcuts", 1)[1].split(
+        "## Day 1 Log", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md" in reply_shortcuts
+    assert "security-sensitive reports or changes" in reply_shortcuts
+    assert "private trace data" in reply_shortcuts
+
+
 def test_day_3_targeted_communities_include_json_cli_reply_note():
     project_root = Path(__file__).resolve().parents[1]
     packet = (
