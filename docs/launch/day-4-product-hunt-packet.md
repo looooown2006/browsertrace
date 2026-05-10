@@ -72,14 +72,14 @@ https://github.com/aaronlab/browsertrace
 Public-safe demo export for replies:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 ```
 
-Try locally before PyPI publishing is enabled:
+Try locally from PyPI:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
 ```
 
 Good first issue for contributors:
@@ -146,8 +146,8 @@ GitHub:
 https://github.com/aaronlab/browsertrace
 
 Try locally:
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
 
 Good first issue:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue

@@ -9,6 +9,12 @@ to keep the first contribution small and reviewable.
 
 ## Unreleased
 
+## 0.1.16 - 2026-05-10
+
+- Published BrowserTrace to PyPI with Trusted Publishing.
+- Updated README, launch copy, release notes, and PyPI metadata to use the
+  public `pip install "browsertrace[ui]"` path.
+
 ## 0.1.15 - 2026-05-10
 
 - Added `create_run_hooks` for Browser Use apps that pass `on_step_start` and

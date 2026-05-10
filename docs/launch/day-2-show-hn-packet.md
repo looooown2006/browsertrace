@@ -24,7 +24,7 @@ Open these in a browser:
 - https://github.com/aaronlab/browsertrace
 - https://aaronlab.github.io/browsertrace/
 - https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+- https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 
 Submit only if all are true:
 
@@ -78,15 +78,15 @@ BrowserTrace records each step locally: screenshot, URL, action, model input,
 model output, status, and error. You open the local UI, click a run, and jump
 straight to the failed step.
 
-It is MIT licensed, local-first, and has a deterministic no-API demo. Before PyPI publishing is enabled, the quickest trial is uvx from the GitHub tag:
+It is MIT licensed, local-first, and has a deterministic no-API demo. The quickest trial is uvx from PyPI:
 
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 
-A persistent install from the same tag also works:
+A persistent install from PyPI also works:
 
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+pip install "browsertrace[ui]"
 browsertrace demo
 browsertrace
 
@@ -95,7 +95,7 @@ https://aaronlab.github.io/browsertrace/
 
 And a public-safe downloadable export with prompts, model output, screenshots,
 and URLs omitted:
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 
 I would especially value feedback from people building Browser Use, Stagehand,
 Playwright + LLM, Skyvern, or custom computer-use agents. What state do you
@@ -158,9 +158,7 @@ calls an OpenAI-compatible API if you configure a key and request a summary.
 `uvx` is not installed on my machine.
 
 ```text
-Install uv from the official uv installation guide, then rerun the GitHub-tag
-command. If you do not want to use uvx, the README also has a persistent
-GitHub-tag pip install path until PyPI publishing is enabled.
+Install uv from the official uv installation guide, then rerun the PyPI uvx command. If you do not want to use uvx, the README also has a persistent PyPI pip install path.
 ```
 
 Can I contribute a small fix?

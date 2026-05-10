@@ -632,3 +632,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T13:07:05+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 0 | after GitHub social preview and profile pin owner actions completed, plus E2B CLA check passed for PR #187; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T13:22:28+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 2 | after repo topic audit and PyPI pending publisher docs update; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T13:25:30+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 2 | after Agent Hub and AgDex directory route audit; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T13:34:49+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 2 | after PyPI pending publisher form guidance; PyPI still 404 and Publish workflow not run; traffic views 112/41 unique, clones 5965/1214 unique |

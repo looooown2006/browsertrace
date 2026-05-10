@@ -24,8 +24,8 @@ to explain why a browser run failed.
 - Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
 - Launch kit: https://aaronlab.github.io/browsertrace/launch/
 - Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.md
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Good first issue: https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 - First PR Recipe: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
@@ -46,17 +46,16 @@ to explain why a browser run failed.
 ## Quickstart
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
-Persistent install from the GitHub release tag before PyPI publishing is
-enabled:
+Persistent install from PyPI:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+pip install "browsertrace[ui]"
 browsertrace doctor
 browsertrace demo
 browsertrace

@@ -1,7 +1,7 @@
 # BrowserTrace Launch Control Room
 
 Canonical repo: https://github.com/aaronlab/browsertrace
-Current release: `v0.1.15`
+Current release: `v0.1.16`
 Owner account: `aaronlab`
 
 ## Current State
@@ -9,15 +9,22 @@ Owner account: `aaronlab`
 - Repo is public, MIT licensed, and positioned as a local flight recorder for AI browser agents.
 - Current account and repo are `aaronlab/browsertrace`; do not use the old
   `aaronagent` name in new launch links.
-- PyPI publishing is the highest-priority conversion blocker. Until PyPI is
-  live, public install commands must use the GitHub URL form.
-- If posting before PyPI is live, use the tested no-install `uvx` fallback:
+- PyPI publishing is complete for `browsertrace==0.1.16`.
+- Public install command:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+pip install "browsertrace[ui]"
+```
+
+- PyPI package page: https://pypi.org/project/browsertrace/
+- PyPI JSON: `https://pypi.org/pypi/browsertrace/json` returns HTTP 200.
+- The tested no-install PyPI path is:
+
+```bash
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 - Current audited star count should be checked before every public push:
@@ -30,8 +37,8 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 - README animation: `docs/demo.gif`
 - Static poster: `docs/demo-poster.png`
 - Live zero-install demo: https://aaronlab.github.io/browsertrace/
-- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.15`
-- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.15`
+- Downloadable demo trace: `browsertrace-demo.html` attached to release `v0.1.16`
+- Public-safe demo trace: `browsertrace-demo-public.html` attached to release `v0.1.16`
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
 ## Day 0 Asset Checklist
@@ -66,9 +73,8 @@ gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
 
 Codex can prepare assets, update the repo, write copy, audit links, and monitor GitHub. The owner must personally do these actions because they require platform login, 2FA, or human conversation:
 
-- Configure PyPI Trusted Publisher for project `browsertrace` with GitHub owner
-  `aaronlab`, repository `browsertrace`, workflow `publish.yml`, and environment
-  `pypi`; then run `gh workflow run Publish --repo aaronlab/browsertrace`.
+- PyPI first publish is completed. Future PyPI releases should use the manual
+  `Publish` workflow after the version and release artifacts are ready.
 - Create or update the `aaronlab/aaronlab` GitHub profile repository with
   `docs/launch/github-profile-readme.md`.
 - Pin BrowserTrace (`aaronlab/browsertrace`) on the public GitHub profile so it

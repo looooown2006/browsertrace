@@ -30,14 +30,20 @@ Yes. The Stagehand wrapper records `act` and `extract` calls and keeps the same 
 
 Today, use `browsertrace export <run_id> -o run.html` to create a self-contained HTML file. Hosted share links are on the roadmap, but the local OSS path comes first.
 
-## Why no PyPI install yet?
+## How do I install it?
 
-The current install path uses GitHub while the package is still early. PyPI publishing is tracked as a launch follow-up. Before PyPI is configured, the quickest no-install trial is:
+BrowserTrace is published on PyPI. The quickest no-install trial is:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
+```
+
+For a persistent install:
+
+```bash
+pip install "browsertrace[ui]"
 ```
 
 Once credentials are available, the README install path should become `pip install browsertrace[ui]`.

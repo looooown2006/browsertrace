@@ -23,13 +23,9 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-from . import __version__
 from .tracer import DEFAULT_HOME
 
-GITHUB_UI_INSTALL = (
-    "browsertrace[ui] @ "
-    f"git+https://github.com/aaronlab/browsertrace@v{__version__}"
-)
+PYPI_UI_INSTALL = "browsertrace[ui]"
 
 
 def _home() -> Path:
@@ -176,7 +172,7 @@ def cmd_doctor(args) -> int:
 
     if missing_ui:
         print(f"UI dependencies: missing {', '.join(missing_ui)}")
-        print(f'Install: pip install "{GITHUB_UI_INSTALL}"')
+        print(f'Install: pip install "{PYPI_UI_INSTALL}"')
     else:
         print("UI dependencies: available")
 

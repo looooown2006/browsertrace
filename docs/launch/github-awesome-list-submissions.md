@@ -12,15 +12,15 @@ Use these links only when a maintainer asks for more context. Keep the PR itself
 small and formatted to the target list.
 
 - Live demo: https://aaronlab.github.io/browsertrace/
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
 
-Before PyPI publishing is enabled, the lightest local trial is:
+The lightest local trial is the PyPI package with `uvx`:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 ## Contribution Reply

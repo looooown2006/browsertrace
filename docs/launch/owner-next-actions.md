@@ -13,68 +13,45 @@ Ask for workflow feedback from people building browser agents.
 If you only have one short session, do these in order and let Codex handle the
 follow-up verification, README updates, metrics, and issue comments:
 
-1. Configure a PyPI Pending Trusted Publisher from the PyPI account sidebar at
-   https://pypi.org/manage/account/publishing/ with the exact values in
-   section 1.
-2. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
+1. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
 
-After step 1, tell Codex "PyPI is configured" so it can run the publish workflow
-and replace GitHub-tag install commands with normal `pip install` commands.
-After step 2, send the posted URLs or a short channel note so Codex can log
-metrics and update the tracking issues.
+Send the posted URLs or a short channel note so Codex can log metrics and update
+the tracking issues.
 
-## 1. Unblock PyPI
+## 1. PyPI Published
 
-This is the highest-friction launch blocker. Public posts convert better after
-the install command becomes:
+PyPI is no longer the install blocker. BrowserTrace is published as version
+`0.1.16`:
+
+```text
+https://pypi.org/project/browsertrace/
+https://pypi.org/pypi/browsertrace/json -> HTTP 200
+```
+
+Use this install command in public posts:
 
 ```bash
 pip install "browsertrace[ui]"
 ```
 
-If you must post before PyPI is configured, use the tested no-install `uvx`
-trial path in replies:
+The no-install PyPI trial path is:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
-Configure PyPI Trusted Publisher:
-
-Use a PyPI account you control long-term. The PyPI username can be `aaronlab`
-if available, but it does not have to match GitHub. The `GitHub owner` field
-below must be `aaronlab`.
-
-`https://pypi.org/pypi/browsertrace/json` currently returns `404`, so the
-project is not published on PyPI yet. Use PyPI's account sidebar to create a
-Pending Trusted Publisher, not an existing project's Manage page. A pending
-publisher can create the project on first publish, but it does not reserve the
-project name; tell Codex immediately after this is configured so it can run the
-publish workflow.
-
-| Field | Value |
-|---|---|
-| PyPI project | `browsertrace` |
-| GitHub owner | `aaronlab` |
-| GitHub repository | `browsertrace` |
-| Workflow filename | `publish.yml` |
-| Environment name | `pypi` |
-
-Then run:
+Publish verification completed:
 
 ```bash
-gh workflow run Publish --repo aaronlab/browsertrace
-```
-
-Verification after publish:
-
-```bash
-python -m pip index versions browsertrace
-pipx run --spec "browsertrace[ui]" browsertrace --help
+uv venv --python 3.11 --seed /tmp/browsertrace-pypi-verify
+/tmp/browsertrace-pypi-verify/bin/python -m pip index versions browsertrace
+/tmp/browsertrace-pypi-verify/bin/python -m pip install "browsertrace[ui]"
+/tmp/browsertrace-pypi-verify/bin/browsertrace --help
+uvx --python 3.11 --from "browsertrace[ui]" browsertrace doctor --json
 ```
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/5

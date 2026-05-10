@@ -28,13 +28,13 @@ Submit only if all are true:
 - The post asks for adapter/workflow feedback, not stars.
 - The post is customized to the community and does not look cross-posted.
 - The post uses the walkthrough or live demo before asking people to install.
-- If someone asks how to try it locally before PyPI publishing is enabled, use
+- If someone asks how to try it locally, use
   the GitHub `uvx` path:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 - The public-safe demo export is used when someone asks for a downloadable
@@ -256,7 +256,7 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Sky
 
 ## Directories And Newsletters
 
-Use these after `v0.1.15` because the release has the packaged demo command and
+Use these after `v0.1.16` because the release has the packaged demo command and
 safer redacted export path.
 
 Best targets:
@@ -276,22 +276,22 @@ BrowserTrace is an MIT local debugger for AI browser agents. It records each
 Browser Use / Stagehand / Skyvern / Playwright + LLM step as a timeline:
 screenshot, URL, action, model input/output, status, and error.
 
-The v0.1.15 release includes `browsertrace demo` for first-run onboarding,
+The v0.1.16 release includes `browsertrace demo` for first-run onboarding,
 `browsertrace export --public` for public-safe sharing, and individual
 redaction flags when users want to keep some fields visible.
 
-Try locally before PyPI publishing is enabled:
+Try locally from PyPI:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
 ```
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
 ```
 
 Metrics:

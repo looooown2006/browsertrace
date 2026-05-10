@@ -400,7 +400,7 @@ def test_cli_doctor_json_reports_unreadable_database(cli):
     assert payload["next"] == "remove or move the database, then run browsertrace demo"
 
 
-def test_cli_doctor_missing_ui_deps_points_to_release_tag_install(cli, monkeypatch):
+def test_cli_doctor_missing_ui_deps_points_to_pypi_ui_install(cli, monkeypatch):
     cli_mod, _ = cli
     import importlib.util
 
@@ -420,11 +420,8 @@ def test_cli_doctor_missing_ui_deps_points_to_release_tag_install(cli, monkeypat
     out = buf.getvalue()
     assert rc == 0
     assert "UI dependencies: missing fastapi, uvicorn, jinja2" in out
-    assert (
-        'Install: pip install "browsertrace[ui] @ '
-        'git+https://github.com/aaronlab/browsertrace@v0.1.15"'
-    ) in out
-    assert 'Install: pip install "browsertrace[ui]"' not in out
+    assert 'Install: pip install "browsertrace[ui]"' in out
+    assert "git+https://github.com/aaronlab/browsertrace" not in out
 
 
 def test_cli_no_args_routes_to_serve(cli, monkeypatch):

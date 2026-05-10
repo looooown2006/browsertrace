@@ -7,26 +7,20 @@ tokens. The GitHub workflow is `.github/workflows/publish.yml`.
 
 As of 2026-05-10:
 
-- PyPI still returns `404` for `https://pypi.org/pypi/browsertrace/json`, so
-  the package is not published yet.
-- GitHub release `v0.1.15` has the wheel and sdist ready.
+- PyPI returns HTTP 200 for `https://pypi.org/pypi/browsertrace/json`.
+- The package is published at `https://pypi.org/project/browsertrace/`.
+- Current PyPI version: `0.1.16`.
 - The GitHub repository has a `pypi` environment.
-- The `Publish` workflow exists and has not been run yet.
+- The `Publish` workflow succeeded on run `25630113399`.
 - The `publish` job has `contents: read` and `id-token: write`, so it can
   download the built artifact and request the PyPI Trusted Publisher token.
 
 ## Owner Setup
 
-Use a PyPI account that the owner controls long-term. The PyPI username does
-not need to be `aaronlab`; the `owner` field below is the GitHub owner.
+Completed. The first trusted publish created the PyPI project through a pending
+trusted publisher configured from the owner's PyPI account.
 
-Because `https://pypi.org/pypi/browsertrace/json` still returns `404`,
-configure this as a Pending Trusted Publisher from the PyPI account sidebar,
-not from an existing project's Manage page. A pending publisher can create the
-project on the first trusted publish, but it does not reserve the project name,
-so run the GitHub `Publish` workflow soon after configuring it.
-
-Configure the Pending Trusted Publisher with these values:
+The trusted publisher was configured with these values:
 
 | Field | Value |
 |---|---|
@@ -34,10 +28,10 @@ Configure the Pending Trusted Publisher with these values:
 | GitHub owner | `aaronlab` |
 | GitHub repository | `browsertrace` |
 | Workflow filename | `publish.yml` |
-| Environment name | `pypi` |
+| Environment name | PyPI shows `(Any)` for the pending publisher used on first publish; the GitHub job itself still uses `environment: pypi` |
 
-If `browsertrace` already exists in the owner's PyPI projects later, use that
-project's `Publishing` page instead of the account-level pending publisher page.
+For future releases, review the project's `Publishing` page in PyPI and tighten
+the publisher environment to `pypi` if PyPI allows editing the active publisher.
 
 ## GitHub Setup
 
@@ -50,15 +44,15 @@ settings before the first publish:
 
 ## Publish
 
-After PyPI trusted publishing is configured:
+To publish a future release after bumping the version and creating the GitHub
+release artifacts:
 
 ```bash
 gh workflow run Publish --repo aaronlab/browsertrace
 ```
 
-The workflow is manual on purpose. GitHub releases should not attempt PyPI
-publishing until the trusted publisher is configured by the owner. The workflow
-builds the wheel and sdist, then publishes with OpenID Connect.
+The workflow is manual on purpose. It builds the wheel and sdist, then publishes
+with OpenID Connect.
 
 ## Verify
 
@@ -76,7 +70,7 @@ pip install "browsertrace[ui]"
 
 ## Small Docs Fixes
 
-PyPI trusted publishing setup is owner-only. For small docs fixes around release
-or packaging notes, use the
+PyPI account-side trusted publishing setup is owner-only. For small docs fixes
+around release or packaging notes, use the
 [First PR Recipe](https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe)
 to keep the first contribution small and reviewable.

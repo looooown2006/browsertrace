@@ -11,62 +11,43 @@ browser agent 的人，失败时最缺什么调试信息？
 如果你只有一小段时间，按这个顺序做；后面的验证、README 更新、指标记录和
 issue comment 都交给 Codex 继续处理：
 
-1. 在 PyPI 账号侧边栏的 https://pypi.org/manage/account/publishing/ 配置
-   PyPI Pending Trusted Publisher，字段完全照第 1 节填。
-2. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
+1. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。
 
-第 1 步做完后告诉 Codex “PyPI 配好了”，我就可以运行发布 workflow，并把公开
-安装命令从 GitHub tag 改成正常的 `pip install`。第 2 步做完后，把帖子 URL
-或群名发给 Codex，我会记录指标并更新跟踪 issue。
+发完后，把帖子 URL 或群名发给 Codex，我会记录指标并更新跟踪 issue。
 
-## 1. 先解锁 PyPI
+## 1. PyPI 已发布
 
-这是当前最大安装转化阻塞。完成后公开文案可以从 GitHub 安装 URL 改成：
+PyPI 已经不再是安装阻塞。BrowserTrace 已发布为 `0.1.16`：
+
+```text
+https://pypi.org/project/browsertrace/
+https://pypi.org/pypi/browsertrace/json -> HTTP 200
+```
+
+公开文案使用这个安装命令：
 
 ```bash
 pip install "browsertrace[ui]"
 ```
 
-如果必须在 PyPI 配置前先发帖或回复，用已经验证过的 uvx 试用路径：
+无持久安装的 PyPI 试用路径：
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
-在 PyPI 配置 Trusted Publisher：
-
-用你本人长期控制的 PyPI 账号。PyPI 用户名可以是 `aaronlab`，如果被占用也
-可以用你自己的常用用户名；这里的 `GitHub owner` 字段必须填 `aaronlab`。
-
-`https://pypi.org/pypi/browsertrace/json` 现在还是 `404`，所以 PyPI 上还没有
-正式的 `browsertrace` 项目。请从 PyPI 账号侧边栏创建 Pending Trusted
-Publisher，不要去已有项目的 Manage 页面找。Pending Publisher 可以在第一次
-trusted publish 时创建项目，但不会提前保留项目名；配好后马上告诉 Codex 跑
-发布 workflow。
-
-| 字段 | 值 |
-|---|---|
-| PyPI project | `browsertrace` |
-| GitHub owner | `aaronlab` |
-| GitHub repository | `browsertrace` |
-| Workflow filename | `publish.yml` |
-| Environment name | `pypi` |
-
-配置完后运行：
+发布验证已完成：
 
 ```bash
-gh workflow run Publish --repo aaronlab/browsertrace
-```
-
-验证：
-
-```bash
-python -m pip index versions browsertrace
-pipx run --spec "browsertrace[ui]" browsertrace --help
+uv venv --python 3.11 --seed /tmp/browsertrace-pypi-verify
+/tmp/browsertrace-pypi-verify/bin/python -m pip index versions browsertrace
+/tmp/browsertrace-pypi-verify/bin/python -m pip install "browsertrace[ui]"
+/tmp/browsertrace-pypi-verify/bin/browsertrace --help
+uvx --python 3.11 --from "browsertrace[ui]" browsertrace doctor --json
 ```
 
 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/5

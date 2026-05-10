@@ -332,21 +332,21 @@
 
     <div class="below">
       <span>Raw export: <a href="./trace.html">open trace.html</a></span>
-      <span>Release asset: <a href="https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo.html">download browsertrace-demo.html</a></span>
-      <span>Public-safe export: <a href="https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html">download browsertrace-demo-public.html</a></span>
+      <span>Release asset: <a href="https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo.html">download browsertrace-demo.html</a></span>
+      <span>Public-safe export: <a href="https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html">download browsertrace-demo-public.html</a></span>
       <span>Contributing: <a href="https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe">First PR Recipe</a> keeps the first contribution small and reviewable.</span>
     </div>
 
     <section class="quickstart" aria-labelledby="quickstart-title">
       <div>
         <h2 id="quickstart-title">Run the same failure locally</h2>
-        <p>Before PyPI publishing is enabled, try the deterministic no-API demo from the GitHub release tag.</p>
+        <p>Try the deterministic no-API demo from the PyPI package.</p>
       </div>
       <div class="command-block">
         <button class="copy-button" type="button" data-copy-target="quickstart-command">Copy</button>
-        <pre><code id="quickstart-command">uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace</code></pre>
+        <pre><code id="quickstart-command">uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace</code></pre>
       </div>
     </section>
   </main>

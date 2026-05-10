@@ -38,24 +38,23 @@ links, and troubleshooting prompts.
 
 ## See a failure trace in 60 seconds
 
-Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
-GitHub release tag:
+The quickest no-install path is `uvx` from PyPI:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 If you see `uvx: command not found`, install `uv` from the
 [official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/),
-or use the persistent GitHub-tag `pip install` path below.
+or use the persistent `pip install` path below.
 
 `browsertrace doctor` is safe to run before any trace exists. On a fresh
 machine, `Database: missing` and `Runs: 0` mean setup is working and the next
-step is `browsertrace demo`. If it reports missing UI dependencies, install the
-release tag with `[ui]` as shown below; PyPI publishing is still pending.
+step is `browsertrace demo`. If it reports missing UI dependencies, install
+the package with `[ui]` as shown below.
 For a healthy output sample, see
 [Check a healthy local install](examples/#check-a-healthy-local-install), which
 shows healthy `browsertrace doctor` output for the `Home:`, `Database:`,
@@ -64,19 +63,19 @@ shows healthy `browsertrace doctor` output for the `Home:`, `Database:`,
 Open `http://127.0.0.1:3000`, click
 `demo: checkout agent fails on disabled button`, and inspect the failed step.
 
-## Install From The Release Tag
+## Install From PyPI
 
-PyPI publishing is not enabled yet. Until then, install from the GitHub release
-tag. Track publishing in the
-[PyPI tracking issue](https://github.com/aaronlab/browsertrace/issues/5):
+BrowserTrace is published on PyPI:
+https://pypi.org/project/browsertrace/
+
 Requires Python 3.11+.
 
 ```bash
 # SDK only
-pip install "browsertrace @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+pip install browsertrace
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+pip install "browsertrace[ui]"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -109,14 +108,14 @@ For compact AI/coding-agent troubleshooting context, use
 project links and prompts.
 
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
-- The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html).
+- The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html).
 - The command cheat sheet summarizes `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export commands; see the [cheat sheet](examples/#browsertrace-command-cheat-sheet).
-- The v0.1.15 release notes summarize what changed in the pinned GitHub tag; read the [v0.1.15 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15).
-- The PyPI tracking issue is the source for publishing status while install commands stay pinned to the GitHub tag; follow the [PyPI tracking issue](https://github.com/aaronlab/browsertrace/issues/5).
-- `uvx` is the no-install trial path, and pinned GitHub-tag `pip install` is the persistent install path.
+- The v0.1.16 release notes summarize what changed in the current release; read the [v0.1.16 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16).
+- The PyPI package page is the canonical package listing after publishing: https://pypi.org/project/browsertrace/.
+- `uvx` can run the PyPI package without a persistent install, and `pip install` is the persistent install path.
 - `[ui]` is needed for the local web UI, while SDK-only install is enough for trace capture integrations.
 - SDK-only install can still use terminal commands like `browsertrace list`, `browsertrace show`, and `browsertrace export`; `[ui]` is only needed for the local web UI.
-- The pinned GitHub-tag install path requires Python 3.11+.
+- The PyPI install path requires Python 3.11+.
 - `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export; see the [recent-runs recipe](examples/#show-only-recent-runs).
 - First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3.
 - Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6.
@@ -146,14 +145,14 @@ project links and prompts.
 If install or demo startup fails, use the
 [first-run troubleshooting checklist](examples/#first-run-troubleshooting-checklist).
 
-For changes in this pinned tag, read the
-[v0.1.15 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15).
+For changes in this release, read the
+[v0.1.16 release notes](https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16).
 
 Want to inspect an exported trace before installing anything? Open the
 [live static demo](https://aaronlab.github.io/browsertrace/) or download
-[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo.html)
+[`browsertrace-demo.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo.html)
 or the public-safe
-[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html)
+[`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html)
 from the latest release.
 
 For a walkthrough, read
@@ -434,11 +433,10 @@ browsertrace
 Every trace is also a JSON object you can feed back to an LLM for self-debugging
 or pipe into other tools.
 
-For AI summaries before PyPI publishing is enabled, install the `ai` extra from
-the release tag you are using:
+For AI summaries, install the `ai` extra:
 
 ```bash
-pip install "browsertrace[ui,ai] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+pip install "browsertrace[ui,ai]"
 ```
 
 ```bash

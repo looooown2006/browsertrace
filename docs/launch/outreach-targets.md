@@ -33,7 +33,7 @@ Post only where the community rules allow it. The ask is feedback from people bu
 2. Hacker News once the first-run path is clearly understandable.
 3. Browser Use and Stagehand communities because they match the product.
 4. Reddit only with a useful write-up and after checking local rules.
-5. Directory/newsletter submissions after `v0.1.15` links are stable. Use
+5. Directory/newsletter submissions after `v0.1.16` links are stable. Use
    `docs/launch/directory-submission-sheet.md` as the queue.
 6. Product Hunt after the visual assets are strong enough for a broader audience.
 
@@ -55,16 +55,16 @@ BrowserTrace is an MIT-licensed local debugger for AI browser agents.
 
 It records each browser-agent step as a timeline with screenshots, URL, action,
 model input/output, status, and errors, then exports a standalone HTML trace.
-The v0.1.15 release includes `browsertrace demo` for first-run onboarding,
+The v0.1.16 release includes `browsertrace demo` for first-run onboarding,
 `browsertrace export --public` for public-safe sharing, and individual
 redaction flags when users want to keep some fields visible.
 
-Try locally before PyPI publishing is enabled:
+Try locally from PyPI:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 Useful for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
@@ -72,9 +72,9 @@ computer-use agents.
 
 Repo: https://github.com/aaronlab/browsertrace
 Live demo: https://aaronlab.github.io/browsertrace/
-Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
-Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
+Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
 ```
 
 Submission notes:
@@ -84,9 +84,8 @@ Submission notes:
 - If a directory has no visible submission form, use this as an owner email or
   contact-form pitch.
 - Track every submission URL or email target in `docs/launch/metrics-log.md`.
-- For community replies, share the live walkthrough first. Use the GitHub `uvx`
-  command only when someone asks how to run it locally before PyPI publishing is
-  enabled.
+- For community replies, share the live walkthrough first. Use the PyPI `uvx`
+  command only when someone asks how to run it locally.
 
 ## Contribution Reply
 

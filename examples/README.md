@@ -6,14 +6,13 @@ or network access.
 
 ## Fastest Path
 
-Use this before PyPI publishing is enabled. The quickest path is `uvx` from the
-GitHub release tag:
+The quickest no-install path is `uvx` from PyPI:
 
 ```bash
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace list
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 ### Check a healthy local install
@@ -36,15 +35,15 @@ Windows PowerShell:
 
 ```powershell
 $env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace doctor
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace demo
-uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15" browsertrace
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
-Persistent install from the GitHub release tag:
+Persistent install from PyPI:
 
 ```bash
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+pip install "browsertrace[ui]"
 browsertrace doctor
 browsertrace demo
 browsertrace
@@ -58,7 +57,7 @@ For a downloadable public-safe export that omits prompt/model I/O, screenshots,
 and URLs, inspect the release asset:
 
 ```text
-https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 ```
 
 ### Discover CLI options
@@ -354,7 +353,7 @@ standard GitHub artifact action.
 - name: Install BrowserTrace
   run: |
     python -m pip install \
-      "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+      "browsertrace[ui]"
 
 - name: Create public-safe BrowserTrace export
   shell: bash
@@ -380,7 +379,7 @@ review. BrowserTrace does not upload traces by itself; GitLab stores the
 browsertrace-public-export:
   image: python:3.11
   script:
-    - python -m pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.15"
+    - python -m pip install "browsertrace[ui]"
     - export BROWSERTRACE_HOME="$CI_PROJECT_DIR/.browsertrace"
     - RUN_ID=$(browsertrace demo | awk -F': ' '/Run ID:/ {print $2}')
     - browsertrace export "$RUN_ID" --public -o public.html

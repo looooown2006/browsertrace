@@ -12,8 +12,8 @@ people building browser agents.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
-- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.15
-- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-demo-public.html
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.16/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
@@ -25,7 +25,7 @@ Shortest owner checklist: `docs/launch/owner-next-actions.md`
 - Poster image: `docs/demo-poster.png`
 - Backup GIF: `docs/demo.gif`
 - Social preview: `docs/social-preview.png`
-- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.15`
+- Public-safe demo export: `browsertrace-demo-public.html` attached to release `v0.1.16`
 - Press kit: `docs/launch/press-kit.md`
 - Search indexing submission: `docs/launch/search-indexing-submission.md`
 - GitHub awesome list submissions: `docs/launch/github-awesome-list-submissions.md`
@@ -103,14 +103,12 @@ Use `docs/launch/day-3-targeted-communities-packet.md` before posting in
 Browser Use, Stagehand, Playwright, or Skyvern communities.
 
 0. PyPI publishing
-   - Configure PyPI Pending Trusted Publisher from the PyPI account sidebar
-     using `docs/release/pypi-publishing.md`. The project is still unpublished:
-     `https://pypi.org/pypi/browsertrace/json` returns `404`. A pending
-     publisher can create the PyPI project on first publish, but it does not
-     reserve the project name.
-   - Run the `Publish` workflow only after PyPI is configured.
-   - After publish verification, update public posts to use
-     `pip install "browsertrace[ui]"`.
+   - Completed. `https://pypi.org/pypi/browsertrace/json` returns HTTP 200.
+   - Package page: `https://pypi.org/project/browsertrace/`.
+   - Current PyPI version: `0.1.16`.
+   - Use `pip install "browsertrace[ui]"` in public posts.
+   - Future releases should use the manual `Publish` workflow after the version
+     and GitHub release artifacts are ready.
 1. Reddit or Discord
    - Use the value-first Reddit draft in `docs/launch/channel-copy.md`.
    - Lead with the debugging walkthrough, not the repo.
