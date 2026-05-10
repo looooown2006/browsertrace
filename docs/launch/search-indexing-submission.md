@@ -50,6 +50,21 @@ Use this payload:
 }
 ```
 
+## Contribution Reply
+
+Use this when someone asks for a small first contribution while discussing
+crawl/indexing follow-up:
+
+```text
+https://github.com/aaronlab/browsertrace/issues/174
+```
+
+Then share the First PR Recipe:
+
+```text
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+```
+
 ## Troubleshooting Reply
 
 For crawl/indexing follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:

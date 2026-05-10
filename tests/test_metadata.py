@@ -2476,6 +2476,26 @@ def test_outreach_targets_link_first_pr_recipe_for_small_contributions():
     assert "reposts" not in contribution_reply.lower()
 
 
+def test_search_indexing_submission_links_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    submission = (
+        project_root / "docs" / "launch" / "search-indexing-submission.md"
+    ).read_text()
+    assert "## Contribution Reply" in submission
+    contribution_reply = submission.split("## Contribution Reply", 1)[1].split(
+        "## Troubleshooting Reply", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/issues/174" in contribution_reply
+    assert "https://github.com/aaronlab/browsertrace/issues/173" not in contribution_reply
+    assert "First PR Recipe" in contribution_reply
+    assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
+    assert "first contribution small and reviewable" in contribution_reply
+    assert "stars" not in contribution_reply.lower()
+    assert "upvotes" not in contribution_reply.lower()
+    assert "reposts" not in contribution_reply.lower()
+
+
 def test_search_indexing_submission_includes_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     submission = (
@@ -2662,7 +2682,10 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T06:46:07+00:00" in launch
-    assert "after issue #173 closed and good-first issue #174 rotation" in launch
+    assert "2026-05-10T06:48:17+00:00" in launch
+    assert (
+        "after search indexing submission first PR recipe link for issue #174"
+        in launch
+    )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
