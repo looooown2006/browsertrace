@@ -8,6 +8,9 @@ companies, and experience levels.
 
 - Be respectful and constructive in issues, discussions, reviews, and pull
   requests.
+- For small docs or example fixes, use the
+  [First PR Recipe](https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe)
+  to keep the first contribution small and reviewable.
 - Keep feedback technical and specific. Explain the failing workflow, agent
   stack, trace field, or integration problem you are discussing.
 - Assume trace data may be sensitive. Do not post private screenshots, prompts,
