@@ -23,6 +23,11 @@ BrowserTrace records each browser-agent step as a timeline: screenshot, URL,
 action, model input, model output, status, and error. Open the local UI and jump
 straight to the failure.
 
+It is a local debugging artifact channel, not another prompt-history blob:
+screenshots, URLs, and model I/O stay in the local trace store, and
+`browsertrace export --public` omits prompts/model I/O, screenshots, and URLs
+for public bug reports.
+
 Built for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom
 computer-use agents.
 
