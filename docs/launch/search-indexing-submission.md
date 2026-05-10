@@ -56,7 +56,7 @@ Use this when someone asks for a small first contribution while discussing
 crawl/indexing follow-up:
 
 ```text
-https://github.com/aaronlab/browsertrace/issues/227
+https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 ```
 
 Then share the First PR Recipe:

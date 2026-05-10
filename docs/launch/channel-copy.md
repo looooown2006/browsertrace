@@ -20,7 +20,7 @@ https://github.com/aaronlab/browsertrace/releases/download/v0.1.15/browsertrace-
 
 If someone asks how to make a small docs fix, point to the current good first
 issue:
-https://github.com/aaronlab/browsertrace/issues/227
+https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.

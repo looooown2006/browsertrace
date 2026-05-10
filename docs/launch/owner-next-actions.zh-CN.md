@@ -202,7 +202,7 @@ Awesome list 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/18
 如果有人问怎么做一个小的文档贡献，先给当前 good first issue：
 
 ```text
-https://github.com/aaronlab/browsertrace/issues/227
+https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 ```
 
 然后给 First PR Recipe：

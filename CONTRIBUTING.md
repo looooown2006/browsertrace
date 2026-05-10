@@ -41,7 +41,7 @@ For a `good first issue`, docs fix, or small example improvement:
 For a docs fix or small example:
 
 1. Comment on the good first issue so maintainers know you are working on it.
-   Current good first issue: https://github.com/aaronlab/browsertrace/issues/227
+   Good first issue label: https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
    A maintainer should treat that comment as an active claim and leave a
    short claim window before maintainers take the same issue directly.
 2. Create a branch with a short descriptive name.
