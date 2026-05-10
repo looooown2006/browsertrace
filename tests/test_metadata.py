@@ -2274,6 +2274,32 @@ def test_awesome_list_submission_notes_include_trial_and_demo_links():
     assert f'uvx --from "{github_spec}" browsertrace demo' in notes
 
 
+def test_awesome_list_submission_notes_include_json_cli_reviewer_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+    assert "## Troubleshooting Reply" in notes
+    reply = notes.split("## Troubleshooting Reply", 1)[1].split(
+        "## Recommended Order", 1
+    )[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "awesome-list reviewer follow-up, local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply
+    )
+    assert recipe in reply
+    assert "debugging/workflow details" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -2312,9 +2338,9 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T04:30:52+00:00" in launch
+    assert "2026-05-10T04:33:15+00:00" in launch
     assert (
-        "after issue #150 closed and good-first issue #151 rotation"
+        "after awesome-list reviewer JSON CLI diagnostics for issue #151"
         in launch
     )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
