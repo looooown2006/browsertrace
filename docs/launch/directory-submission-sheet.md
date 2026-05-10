@@ -130,6 +130,16 @@ Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugg
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
 ```
 
+## Troubleshooting Reply
+
+For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## Tracking
 
 After each legitimate submission or post, append metrics:
