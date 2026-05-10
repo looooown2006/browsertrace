@@ -198,8 +198,8 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert f'uvx --from "{github_spec}" browsertrace doctor' in profile_draft
     assert f'uvx --from "{github_spec}" browsertrace demo' in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/3" in profile_draft
-    assert "https://github.com/aaronlab/browsertrace/issues/162" in profile_draft
-    assert "https://github.com/aaronlab/browsertrace/issues/161" not in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/163" in profile_draft
+    assert "https://github.com/aaronlab/browsertrace/issues/162" not in profile_draft
     assert "First PR Recipe" in profile_draft
     assert "CONTRIBUTING.md#first-pr-recipe" in profile_draft
     assert "first contribution small and reviewable" in profile_draft
@@ -1768,8 +1768,8 @@ def test_llms_txt_points_to_current_contribution_path():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
 
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/162" in llms
-    assert "https://github.com/aaronlab/browsertrace/issues/161" not in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/163" in llms
+    assert "https://github.com/aaronlab/browsertrace/issues/162" not in llms
     assert "First PR Recipe" in llms
     assert "CONTRIBUTING.md#first-pr-recipe" in llms
     assert "first contribution small and reviewable" in llms
@@ -1792,8 +1792,8 @@ def test_llms_txt_includes_troubleshooting_prompt_snippet():
     assert "browsertrace list" in llms
     assert "browsertrace show <run_id>" in llms
     assert "browsertrace export <run_id> --public -o public.html" in llms
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/162" in llms
-    assert "https://github.com/aaronlab/browsertrace/issues/161" not in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/163" in llms
+    assert "https://github.com/aaronlab/browsertrace/issues/162" not in llms
     assert "@v0.1.14" in llms
     assert "hosted sharing" not in llms
 
@@ -1812,8 +1812,8 @@ browsertrace show <run_id> --json
 
     assert "For scripts, CI, or AI/coding-agent troubleshooting" in troubleshooting_prompt
     assert recipe in troubleshooting_prompt
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/162" in llms
-    assert "https://github.com/aaronlab/browsertrace/issues/161" not in llms
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/163" in llms
+    assert "https://github.com/aaronlab/browsertrace/issues/162" not in llms
     assert "@v0.1.14" in llms
     assert "hosted sharing" not in llms
 
@@ -1830,8 +1830,8 @@ def test_press_kit_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in press_kit
     assert f'uvx --from "{github_spec}" browsertrace demo' in press_kit
-    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/162" in press_kit
-    assert "https://github.com/aaronlab/browsertrace/issues/161" not in press_kit
+    assert "Good first issue: https://github.com/aaronlab/browsertrace/issues/163" in press_kit
+    assert "https://github.com/aaronlab/browsertrace/issues/162" not in press_kit
     assert "First PR Recipe" in contribution_links
     assert "first contribution small and reviewable" in contribution_links
     assert "stars" not in contribution_links.lower()
@@ -2080,8 +2080,8 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in packet
     assert f'uvx --from "{github_spec}" browsertrace demo' in packet
-    assert "https://github.com/aaronlab/browsertrace/issues/162" in packet
-    assert "https://github.com/aaronlab/browsertrace/issues/161" not in packet
+    assert "https://github.com/aaronlab/browsertrace/issues/163" in packet
+    assert "https://github.com/aaronlab/browsertrace/issues/162" not in packet
     assert "First PR Recipe" in contributor_block
     assert "CONTRIBUTING.md#first-pr-recipe" in contributor_block
     assert "first contribution small and reviewable" in contributor_block
@@ -2097,8 +2097,8 @@ def test_show_hn_packet_links_current_good_first_issue():
         1
     ].split("## Troubleshooting Reply", 1)[0]
 
-    assert "current one is #162" in packet
-    assert "#161" not in packet
+    assert "current one is #163" in packet
+    assert "#162" not in packet
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
     assert "first contribution small and reviewable" in contribution_reply
@@ -2484,7 +2484,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:43:19+00:00" in launch
-    assert "after Day 1 first PR recipe link for issue #162" in launch
+    assert "2026-05-10T05:46:19+00:00" in launch
+    assert "after issue #162 closed and good-first issue #163 rotation" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
