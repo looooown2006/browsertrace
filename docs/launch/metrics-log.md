@@ -663,3 +663,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T17:05:17+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 22 | after good-first issue #236 opened for share-safe export links from integration guides: https://github.com/aaronlab/browsertrace/issues/236; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T17:13:41+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 22 | after IndexNow refresh returned 200 for generic and Bing endpoints after latest Pages/docs updates: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4415866467; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T17:19:20+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 22 | after Show HN contribution reply linked current good-first queue; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T17:24:17+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 22 | after LAUNCH hard success check aligned to goal command; traffic views 112/41 unique, clones 5965/1214 unique |

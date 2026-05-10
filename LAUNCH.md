@@ -30,7 +30,7 @@ uvx --from "browsertrace[ui]" browsertrace
 - Current audited star count should be checked before every public push:
 
 ```bash
-gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
+gh repo view aaronlab/browsertrace --json stargazerCount,forkCount,watchers,url,homepageUrl
 ```
 
 - Primary launch asset: `docs/demo.mp4`
