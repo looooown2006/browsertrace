@@ -191,6 +191,9 @@ def test_cli_export_writes_html_with_inlined_screenshots(cli, tmp_path):
     rc = cli_mod.main(["export", run.id, "-o", str(out_file)])
     assert rc == 0
     body = out_file.read_text()
+    assert body.startswith("<!doctype html><html lang='en'><head><meta charset='utf-8'>")
+    assert "<meta name='viewport' content='width=device-width, initial-scale=1'>" in body
+    assert "@media(max-width:720px){body{padding:14px}.step{grid-template-columns:1fr}}" in body
     assert "export-me" in body
     assert "data:image/png;base64" in body  # screenshot inlined
 

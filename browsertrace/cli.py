@@ -264,7 +264,8 @@ def cmd_export(args) -> int:
 
     out_path = Path(args.out) if args.out else Path(f"{run['id']}.html")
     parts = [
-        "<!doctype html><html><head><meta charset='utf-8'>",
+        "<!doctype html><html lang='en'><head><meta charset='utf-8'>",
+        "<meta name='viewport' content='width=device-width, initial-scale=1'>",
         f"<title>BrowserTrace export · {run['name'] or run['id']}</title>",
         "<style>",
         "body{font:14px/1.5 -apple-system,system-ui,sans-serif;color:#1a1a1a;background:#fafafa;margin:0;padding:24px;max-width:1100px;margin:auto}",
@@ -277,6 +278,7 @@ def cmd_export(args) -> int:
         "pre{background:#f3f4f6;padding:12px;border-radius:6px;font-size:12px;overflow:auto}",
         ".badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600;text-transform:uppercase}",
         ".badge.ok{background:#d1fae5;color:#059669}.badge.error{background:#fee2e2;color:#dc2626}",
+        "@media(max-width:720px){body{padding:14px}.step{grid-template-columns:1fr}}",
         "</style></head><body>",
         f"<h1>{_html_escape(run['name'] or run['id'])}</h1>",
         f"<div class=meta>id={run['id']} · status={run['status']} · {len(steps)} steps</div>",

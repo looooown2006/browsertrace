@@ -444,6 +444,15 @@ def test_trace_demo_page_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in page.lower()
 
 
+def test_trace_demo_page_has_mobile_export_metadata():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "trace.html").read_text()
+
+    assert "<html lang='en'>" in page
+    assert "<meta name='viewport' content='width=device-width, initial-scale=1'>" in page
+    assert "@media(max-width:720px){body{padding:14px}.step{grid-template-columns:1fr}}" in page
+
+
 def test_launch_kit_page_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     page = (project_root / "docs" / "launch" / "index.html").read_text()
