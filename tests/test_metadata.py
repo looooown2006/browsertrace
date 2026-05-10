@@ -223,6 +223,15 @@ def test_homepage_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in homepage.lower()
 
 
+def test_homepage_names_current_adapter_surfaces():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+
+    assert "Browser Use run hooks" in homepage
+    assert "Stagehand wrapper" in homepage
+    assert "Skyvern task/workflow wrapper" in homepage
+
+
 def test_integrations_page_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     integrations = (project_root / "docs" / "integrations.html").read_text()
