@@ -110,6 +110,7 @@ Useful local checks:
 - `--redact` only omits model I/O, while `--public` also omits screenshots and URLs.
 - A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches; see the [run ID prefix recipe](examples/#run-id-prefixes-for-export).
 - `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
+- The local UI binds to `127.0.0.1` by default; `BROWSERTRACE_PORT` changes only the port.
 - After `browsertrace` starts the local UI, open `http://127.0.0.1:3000` and inspect the demo run.
 - The demo run is named `demo: checkout agent fails on disabled button` in the local UI.
 - `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
