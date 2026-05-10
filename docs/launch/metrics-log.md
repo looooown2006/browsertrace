@@ -640,3 +640,5 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T14:04:42+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 0 | after README PyPI badge added for package credibility; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T14:09:01+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 0 | after owner launch status docs synced to posted discussions and agentfirst PR; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T15:04:09+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 11 | after outreach target status synced to posted ecosystem discussions; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T15:11:24+00:00 | 3 | 998 | 5 | 0 | 9 | 0 | 11 | after contributor PR #230 merged for issue #229: https://github.com/aaronlab/browsertrace/pull/230; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T15:12:20+00:00 | 3 | 998 | 5 | 0 | 10 | 0 | 11 | after new good-first issue #231 opened for Playwright + LLM and computer-use guide links: https://github.com/aaronlab/browsertrace/issues/231; traffic views 112/41 unique, clones 5965/1214 unique |
