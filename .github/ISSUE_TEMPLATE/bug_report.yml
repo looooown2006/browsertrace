@@ -48,6 +48,10 @@ body:
       description: Attach an exported HTML trace or paste relevant `browsertrace show <id>` output if possible. For public sharing, run `browsertrace export <run_id> --public -o public.html` to omit prompt/model I/O, screenshots, and URLs.
     validations:
       required: false
+  - type: markdown
+    attributes:
+      value: |
+        For a small docs fix after filing, use `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
   - type: textarea
     id: diagnostics
     attributes:
