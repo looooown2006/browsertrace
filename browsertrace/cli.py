@@ -64,6 +64,23 @@ def cmd_list(args) -> int:
             "ORDER BY started_at DESC LIMIT ?",
             (args.limit,),
         ).fetchall()
+    if args.json:
+        payload = []
+        for r in rows:
+            duration = r["ended_at"] - r["started_at"] if r["ended_at"] else None
+            payload.append(
+                {
+                    "id": r["id"],
+                    "name": r["name"] or "",
+                    "status": r["status"],
+                    "created_at": r["started_at"],
+                    "started_at": r["started_at"],
+                    "ended_at": r["ended_at"],
+                    "duration": duration,
+                }
+            )
+        print(json.dumps(payload, indent=2))
+        return 0
     if not rows:
         print("No runs yet.")
         return 0
@@ -297,6 +314,7 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     p_list = sub.add_parser("list", help="List recent runs")
     p_list.add_argument("--limit", type=int, default=20)
+    p_list.add_argument("--json", action="store_true", help="Print recent runs as JSON")
     p_list.set_defaults(func=cmd_list)
 
     p_show = sub.add_parser("show", help="Print a run's timeline")

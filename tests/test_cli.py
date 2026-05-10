@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import py_compile
 import sqlite3
 from pathlib import Path
@@ -60,6 +61,27 @@ def test_cli_list_prints_recent_runs(cli):
     assert rc == 0
     assert "first" in out
     assert "second" in out
+    assert not out.lstrip().startswith("[")
+
+
+def test_cli_list_json_prints_recent_runs_as_json(cli):
+    cli_mod, tmp_path = cli
+    first_id = _seed(tmp_path, "first")
+    second_id = _seed(tmp_path, "second", fail=True)
+    buf = StringIO()
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["list", "--json"])
+
+    runs = json.loads(buf.getvalue())
+    by_id = {run["id"]: run for run in runs}
+
+    assert rc == 0
+    assert {first_id, second_id} <= set(by_id)
+    assert by_id[first_id]["name"] == "first"
+    assert by_id[first_id]["status"] == "completed"
+    assert by_id[second_id]["name"] == "second"
+    assert by_id[second_id]["status"] == "failed"
+    assert isinstance(by_id[first_id]["created_at"], float)
 
 
 def test_cli_show_prints_steps_and_url(cli):
