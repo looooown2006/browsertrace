@@ -27,7 +27,7 @@ to explain why a browser run failed.
 - Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
 - Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
-- Good first issue: https://github.com/aaronlab/browsertrace/issues/211
+- Good first issue: https://github.com/aaronlab/browsertrace/issues/212
 - First PR Recipe: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 - Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
 - Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
