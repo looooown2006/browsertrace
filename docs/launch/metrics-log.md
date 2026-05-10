@@ -573,3 +573,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T09:17:11+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #202 closed and good-first issue #203 rotation; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T09:20:01+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue chooser Security Policy link for issue #203; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T09:22:21+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #203 closed and good-first issue #204 rotation; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T09:25:14+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after PR template Security Policy link for issue #204; traffic views 112/41 unique, clones 5965/1214 unique |
