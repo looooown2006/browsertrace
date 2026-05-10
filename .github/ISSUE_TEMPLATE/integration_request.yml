@@ -64,6 +64,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        For security-sensitive reports or private trace data, follow `SECURITY.md` before sharing details publicly.
+
         For a small docs or example fix after filing, use `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
   - type: textarea
     id: diagnostics
