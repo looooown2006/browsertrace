@@ -305,9 +305,68 @@ def test_cli_doctor_reports_missing_database_without_failing(cli):
     out = buf.getvalue()
     assert rc == 0
     assert "BrowserTrace doctor" in out
+    assert not out.lstrip().startswith("{")
     assert f"Home: {home}" in out
     assert "Database: missing" in out
     assert "Next: browsertrace demo" in out
+
+
+def test_cli_doctor_json_reports_missing_database(cli):
+    cli_mod, home = cli
+    buf = StringIO()
+
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["doctor", "--json"])
+
+    payload = json.loads(buf.getvalue())
+
+    assert rc == 0
+    assert payload["home"] == str(home)
+    assert payload["database"]["exists"] is False
+    assert payload["database"]["readable"] is False
+    assert payload["database"]["runs"] == 0
+    assert payload["database"]["steps"] == 0
+    assert payload["ui_dependencies"]["available"] is True
+    assert payload["ui_dependencies"]["missing"] == []
+    assert payload["next"] == "browsertrace demo"
+
+
+def test_cli_doctor_json_reports_existing_database_counts(cli):
+    cli_mod, home = cli
+    _seed(home, "doctor-json")
+    buf = StringIO()
+
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["doctor", "--json"])
+
+    payload = json.loads(buf.getvalue())
+
+    assert rc == 0
+    assert payload["database"]["exists"] is True
+    assert payload["database"]["readable"] is True
+    assert payload["database"]["path"] == str(home / "db.sqlite")
+    assert payload["database"]["runs"] == 1
+    assert payload["database"]["steps"] == 1
+    assert payload["next"] == "browsertrace"
+
+
+def test_cli_doctor_json_reports_unreadable_database(cli):
+    cli_mod, home = cli
+    (home / "db.sqlite").write_text("not sqlite", encoding="utf-8")
+    buf = StringIO()
+
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["doctor", "--json"])
+
+    payload = json.loads(buf.getvalue())
+
+    assert rc == 0
+    assert payload["database"]["exists"] is True
+    assert payload["database"]["readable"] is False
+    assert payload["database"]["runs"] == 0
+    assert payload["database"]["steps"] == 0
+    assert payload["database"]["error"]
+    assert payload["next"] == "remove or move the database, then run browsertrace demo"
 
 
 def test_cli_doctor_missing_ui_deps_points_to_release_tag_install(cli, monkeypatch):

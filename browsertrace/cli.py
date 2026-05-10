@@ -100,38 +100,73 @@ def cmd_demo(_args) -> int:
     return 0
 
 
-def cmd_doctor(_args) -> int:
+def cmd_doctor(args) -> int:
     import importlib.util
     import platform
 
     home = _home()
     db_path = _db_path()
-    print("BrowserTrace doctor")
-    print(f"Python: {platform.python_version()}")
-    print(f"Home: {home}")
-
-    if not db_path.exists():
-        print("Database: missing")
-        print("Runs: 0")
-        print("Next: browsertrace demo")
-    else:
+    python_version = platform.python_version()
+    database = {
+        "exists": db_path.exists(),
+        "readable": False,
+        "path": str(db_path),
+        "runs": 0,
+        "steps": 0,
+        "error": None,
+    }
+    next_step = "browsertrace demo"
+    if database["exists"]:
         try:
             with sqlite3.connect(db_path) as conn:
-                runs = conn.execute("SELECT COUNT(*) FROM runs").fetchone()[0]
-                steps = conn.execute("SELECT COUNT(*) FROM steps").fetchone()[0]
-            print(f"Database: {db_path}")
-            print(f"Runs: {runs}")
-            print(f"Steps: {steps}")
-            print("Next: browsertrace")
+                database["runs"] = conn.execute("SELECT COUNT(*) FROM runs").fetchone()[0]
+                database["steps"] = conn.execute("SELECT COUNT(*) FROM steps").fetchone()[0]
+            database["readable"] = True
+            next_step = "browsertrace"
         except sqlite3.Error as exc:
-            print(f"Database: unreadable ({exc})")
-            print("Next: remove or move the database, then run browsertrace demo")
+            database["error"] = str(exc)
+            next_step = "remove or move the database, then run browsertrace demo"
 
     missing_ui = [
         name
         for name in ["fastapi", "uvicorn", "jinja2"]
         if importlib.util.find_spec(name) is None
     ]
+    ui_dependencies = {"available": not missing_ui, "missing": missing_ui}
+
+    if args.json:
+        print(
+            json.dumps(
+                {
+                    "python": python_version,
+                    "home": str(home),
+                    "database": database,
+                    "ui_dependencies": ui_dependencies,
+                    "next": next_step,
+                },
+                indent=2,
+            )
+        )
+        return 0
+
+    print("BrowserTrace doctor")
+    print(f"Python: {python_version}")
+    print(f"Home: {home}")
+
+    if not database["exists"]:
+        print("Database: missing")
+        print("Runs: 0")
+        print("Next: browsertrace demo")
+    else:
+        if database["readable"]:
+            print(f"Database: {db_path}")
+            print(f"Runs: {database['runs']}")
+            print(f"Steps: {database['steps']}")
+            print("Next: browsertrace")
+        else:
+            print(f"Database: unreadable ({database['error']})")
+            print("Next: remove or move the database, then run browsertrace demo")
+
     if missing_ui:
         print(f"UI dependencies: missing {', '.join(missing_ui)}")
         print(f'Install: pip install "{GITHUB_UI_INSTALL}"')
@@ -338,6 +373,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     p_demo.set_defaults(func=cmd_demo)
 
     p_doctor = sub.add_parser("doctor", help="Print local install and trace-store status")
+    p_doctor.add_argument("--json", action="store_true", help="Print doctor status as JSON")
     p_doctor.set_defaults(func=cmd_doctor)
 
     p_list = sub.add_parser("list", help="List recent runs")

@@ -85,6 +85,7 @@ browsertrace
 Useful local checks:
 
 - `browsertrace doctor` is a safe local status check for install and trace-store status.
+- `browsertrace doctor --json` prints install and trace-store status as JSON with database, run, step, and UI dependency fields.
 - The healthy doctor output recipe shows expected `Home:`, `Database:`, `Runs:`, and `UI dependencies:` status lines; see [Check a healthy local install](examples/#check-a-healthy-local-install).
 - `browsertrace demo` runs without API keys or external services.
 - The deterministic no-API demo creates a trace without a browser, network, or API key; from a source checkout, run `python examples/no_api_failure_demo.py`.
