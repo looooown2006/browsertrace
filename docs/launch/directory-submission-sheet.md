@@ -64,7 +64,7 @@ Use-shaped callback demo.
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Unknown | Live demo, repo, integrations | Blocked: no visible submit/contact route |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Yes, owner email | Live demo, repo, comparison | Contact page accepts tool submissions; send owner-email pitch to agdex.ai@gmail.com |
 | agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Submitted PR: https://github.com/bradvin/agentfirst.directory/pull/30 |
-| OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Yes, login required | Repo, live demo, public-safe export | Blocked: login required before submitting tools |
+| OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Yes, browser submission | Repo, live demo, public-safe export | JavaScript submission page; submissions are reviewed for quality, relevance, and community value |
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
 | AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Yes, owner action | Live demo, repo, Browser Use guide | Submit Free Listing link visible; use owner email fallback at hello@agentstide.com |
 | BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Yes, owner email required | Repo, live demo, public-safe export | Submit Tool for Review form; use AI Observability & Evaluation; limit is 3 submissions per day |

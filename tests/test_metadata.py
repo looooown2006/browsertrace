@@ -2827,7 +2827,8 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "owner-email pitch" in text
         assert "agdex.ai@gmail.com" in text
         assert "OSS AI Hub" in text
-        assert "login required before submitting tools" in text
+        assert "JavaScript submission page" in text
+        assert "quality, relevance, and community value" in text
         assert "AgentsTide" in text
         assert "Submit Free Listing" in text
         assert "hello@agentstide.com" in text
