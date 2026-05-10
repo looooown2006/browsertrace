@@ -88,6 +88,7 @@ Useful local checks:
 - The healthy doctor output recipe shows expected `Home:`, `Database:`, `Runs:`, and `UI dependencies:` status lines; see [Check a healthy local install](examples/#check-a-healthy-local-install).
 - `browsertrace demo` runs without API keys or external services.
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
+- The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
 - `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export; see the [recent-runs recipe](examples/#show-only-recent-runs).
 - First-run feedback after `browsertrace demo`: https://github.com/aaronlab/browsertrace/issues/3.
 - Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6.
