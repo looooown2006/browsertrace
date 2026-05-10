@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T01:57:20+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after launch discussion update: https://github.com/aaronlab/browsertrace/discussions/6#discussioncomment-16866245 |
+| 2026-05-10T01:59:58+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README export success output note for issue #119 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
