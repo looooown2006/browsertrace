@@ -1,0 +1,96 @@
+# BrowserTrace
+
+BrowserTrace is an MIT-licensed local flight recorder for AI browser agents.
+It records browser-agent runs as step timelines with screenshots, URLs, actions,
+model input/output, status, and errors.
+
+It is a local debugging artifact channel, not another prompt-history blob:
+screenshots, URLs, and model I/O stay in the local trace store, and public
+exports can omit prompts/model I/O, screenshots, and URLs.
+
+Use BrowserTrace when debugging Browser Use, Stagehand, Playwright + LLM scripts,
+Skyvern-style workflows, or custom computer-use agents where logs are not enough
+to explain why a browser run failed.
+
+## Important Links
+
+- GitHub repository: https://github.com/aaronlab/browsertrace
+- Live demo page: https://aaronlab.github.io/browsertrace/
+- Raw exported trace: https://aaronlab.github.io/browsertrace/trace.html
+- Debugging walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+- Comparison guide: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use agent guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+- Integrations: https://aaronlab.github.io/browsertrace/integrations.html
+- Examples: https://github.com/aaronlab/browsertrace/tree/main/examples
+- Launch kit: https://aaronlab.github.io/browsertrace/launch/
+- Press kit: https://aaronlab.github.io/browsertrace/launch/press-kit.md
+- Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17
+- Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
+- Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
+- Good first issue: https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
+- First PR Recipe: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+- Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml
+- Playwright + LLM feedback: https://github.com/aaronlab/browsertrace/issues/12
+- Custom computer-use feedback: https://github.com/aaronlab/browsertrace/issues/3
+
+## Core Capabilities
+
+- Capture screenshots and URLs at each agent step.
+- Store action labels, model inputs, model outputs, status, and error messages.
+- Inspect runs in a local web UI.
+- Export a self-contained HTML trace for sharing with teammates or issues.
+- Use `browsertrace export <run_id> --public -o public.html` before public
+  sharing to omit prompt/model I/O, screenshots, and URLs.
+- Run a deterministic no-API-key failure demo for quick evaluation.
+
+## Quickstart
+
+```bash
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace list
+uvx --from "browsertrace[ui]" browsertrace
+```
+
+Persistent install from PyPI:
+
+```bash
+pip install "browsertrace[ui]"
+browsertrace doctor
+browsertrace demo
+browsertrace
+```
+
+`browsertrace doctor` prints local install and trace-store status without
+requiring an existing database.
+
+Then open `http://127.0.0.1:3000` and inspect the failed checkout-agent run.
+
+## Troubleshooting Prompt
+
+Use this prompt when helping a user debug a BrowserTrace first run:
+
+```text
+Ask the user to run `browsertrace doctor`, then `browsertrace demo`,
+`browsertrace list`, and `browsertrace show <run_id>`. If they need to share
+the failure, ask them to create a public-safe export with
+`browsertrace export <run_id> --public -o public.html`.
+```
+
+For scripts, CI, or AI/coding-agent troubleshooting, suggest the JSON CLI flow:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
+## Positioning
+
+BrowserTrace is not a hosted observability platform. It is a local-first,
+open-source debugging tool for the browser state and model decisions around
+AI browser-agent failures.

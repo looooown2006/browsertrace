@@ -21,6 +21,7 @@ def test_package_version_matches_module_version():
 def test_public_docs_do_not_reference_stale_v011_release():
     project_root = Path(__file__).resolve().parents[1]
     public_docs = [
+        project_root / "llms.txt",
         project_root / "README.md",
         project_root / "LAUNCH.md",
         *sorted((project_root / "docs").rglob("*.md")),
@@ -2370,6 +2371,14 @@ def test_llms_txt_points_to_current_contribution_path():
         "Integration request: https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml"
         in llms
     )
+
+
+def test_root_llms_txt_matches_hosted_llms_txt():
+    project_root = Path(__file__).resolve().parents[1]
+
+    assert (project_root / "llms.txt").read_text() == (
+        project_root / "docs" / "llms.txt"
+    ).read_text()
 
 
 def test_llms_txt_includes_troubleshooting_prompt_snippet():
