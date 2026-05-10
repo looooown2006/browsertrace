@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T05:12:44+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #157 closed and good-first issue #158 rotation |
+| 2026-05-10T05:16:54+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after profile README first PR recipe link for issue #158 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

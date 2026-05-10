@@ -200,6 +200,12 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert "https://github.com/aaronlab/browsertrace/issues/3" in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/158" in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/157" not in profile_draft
+    assert "First PR Recipe" in profile_draft
+    assert "CONTRIBUTING.md#first-pr-recipe" in profile_draft
+    assert "first contribution small and reviewable" in profile_draft
+    assert "stars" not in profile_draft.lower()
+    assert "upvotes" not in profile_draft.lower()
+    assert "reposts" not in profile_draft.lower()
 
 
 def test_github_profile_draft_includes_json_cli_troubleshooting_note():
@@ -2451,7 +2457,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:12:44+00:00" in launch
-    assert "after issue #157 closed and good-first issue #158 rotation" in launch
+    assert "2026-05-10T05:16:54+00:00" in launch
+    assert "after profile README first PR recipe link for issue #158" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
