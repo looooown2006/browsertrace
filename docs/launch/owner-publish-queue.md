@@ -103,7 +103,11 @@ Use `docs/launch/day-3-targeted-communities-packet.md` before posting in
 Browser Use, Stagehand, Playwright, or Skyvern communities.
 
 0. PyPI publishing
-   - Configure PyPI Trusted Publishing from `docs/release/pypi-publishing.md`.
+   - Configure PyPI Pending Trusted Publisher from the PyPI account sidebar
+     using `docs/release/pypi-publishing.md`. The project is still unpublished:
+     `https://pypi.org/pypi/browsertrace/json` returns `404`. A pending
+     publisher can create the PyPI project on first publish, but it does not
+     reserve the project name.
    - Run the `Publish` workflow only after PyPI is configured.
    - After publish verification, update public posts to use
      `pip install "browsertrace[ui]"`.

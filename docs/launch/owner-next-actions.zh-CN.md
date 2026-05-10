@@ -11,8 +11,8 @@ browser agent 的人，失败时最缺什么调试信息？
 如果你只有一小段时间，按这个顺序做；后面的验证、README 更新、指标记录和
 issue comment 都交给 Codex 继续处理：
 
-1. 在 https://pypi.org/manage/account/publishing/ 配置 PyPI Trusted
-   Publisher，字段完全照第 1 节填。
+1. 在 PyPI 账号侧边栏的 https://pypi.org/manage/account/publishing/ 配置
+   PyPI Pending Trusted Publisher，字段完全照第 1 节填。
 2. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。
 
@@ -38,6 +38,15 @@ uvx --from "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1
 ```
 
 在 PyPI 配置 Trusted Publisher：
+
+用你本人长期控制的 PyPI 账号。PyPI 用户名可以是 `aaronlab`，如果被占用也
+可以用你自己的常用用户名；这里的 `GitHub owner` 字段必须填 `aaronlab`。
+
+`https://pypi.org/pypi/browsertrace/json` 现在还是 `404`，所以 PyPI 上还没有
+正式的 `browsertrace` 项目。请从 PyPI 账号侧边栏创建 Pending Trusted
+Publisher，不要去已有项目的 Manage 页面找。Pending Publisher 可以在第一次
+trusted publish 时创建项目，但不会提前保留项目名；配好后马上告诉 Codex 跑
+发布 workflow。
 
 | 字段 | 值 |
 |---|---|

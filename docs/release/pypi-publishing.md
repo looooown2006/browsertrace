@@ -5,7 +5,7 @@ tokens. The GitHub workflow is `.github/workflows/publish.yml`.
 
 ## Current Status
 
-As of 2026-05-09:
+As of 2026-05-10:
 
 - PyPI still returns `404` for `https://pypi.org/pypi/browsertrace/json`, so
   the package is not published yet.
@@ -17,7 +17,16 @@ As of 2026-05-09:
 
 ## Owner Setup
 
-Configure a PyPI trusted publisher with these values:
+Use a PyPI account that the owner controls long-term. The PyPI username does
+not need to be `aaronlab`; the `owner` field below is the GitHub owner.
+
+Because `https://pypi.org/pypi/browsertrace/json` still returns `404`,
+configure this as a Pending Trusted Publisher from the PyPI account sidebar,
+not from an existing project's Manage page. A pending publisher can create the
+project on the first trusted publish, but it does not reserve the project name,
+so run the GitHub `Publish` workflow soon after configuring it.
+
+Configure the Pending Trusted Publisher with these values:
 
 | Field | Value |
 |---|---|
@@ -27,8 +36,8 @@ Configure a PyPI trusted publisher with these values:
 | Workflow filename | `publish.yml` |
 | Environment name | `pypi` |
 
-If PyPI requires a project to exist first, create the project through PyPI's
-pending publisher flow for the same values above.
+If `browsertrace` already exists in the owner's PyPI projects later, use that
+project's `Publishing` page instead of the account-level pending publisher page.
 
 ## GitHub Setup
 

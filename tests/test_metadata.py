@@ -2423,6 +2423,28 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     assert "steel-dev/awesome-web-agents#56" in queue
 
 
+def test_owner_docs_explain_pypi_pending_publisher_for_unpublished_project():
+    project_root = Path(__file__).resolve().parents[1]
+    docs = [
+        project_root / "docs" / "release" / "pypi-publishing.md",
+        project_root / "docs" / "launch" / "owner-next-actions.md",
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md",
+        project_root / "docs" / "launch" / "owner-publish-queue.md",
+    ]
+
+    for path in docs:
+        text = path.read_text()
+        normalized = " ".join(text.split())
+        assert "Pending Trusted Publisher" in text or "Pending Publisher" in text
+        assert "account sidebar" in text or "账号侧边栏" in text
+        assert "https://pypi.org/pypi/browsertrace/json" in text
+        assert "404" in text
+        assert (
+            "does not reserve the project name" in normalized
+            or "不会提前保留项目名" in normalized
+        )
+
+
 def test_day_1_publish_packet_includes_json_cli_reply_shortcut():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-1-publish-packet.md").read_text()
