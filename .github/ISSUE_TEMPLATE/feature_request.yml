@@ -20,6 +20,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        For security-sensitive reports or private trace data, follow `SECURITY.md` before sharing details publicly.
+
         For a small docs or example fix after proposing a feature, use `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
   - type: dropdown
     id: area
