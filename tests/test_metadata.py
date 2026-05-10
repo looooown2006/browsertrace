@@ -1984,6 +1984,26 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
     assert "https://github.com/aaronlab/browsertrace/issues/142" in packet
 
 
+def test_product_hunt_packet_includes_json_cli_reply_note():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
+    reply_notes = packet.split("## Reply Notes", 1)[1].split("## Metrics", 1)[0]
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert (
+        "local first-run issues, CI failures, or AI/coding-agent troubleshooting replies"
+        in reply_notes
+    )
+    assert recipe in reply_notes
+    assert "debugging/workflow details" in reply_notes
+    assert "upvotes" not in reply_notes.lower()
+    assert "reposts" not in reply_notes.lower()
+
+
 def test_bug_report_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (
@@ -2098,7 +2118,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:40:18+00:00" in launch
-    assert "after issue #141 closed and good-first issue #142 rotation" in launch
+    assert "2026-05-10T03:43:07+00:00" in launch
+    assert "after Product Hunt reply JSON CLI diagnostics for issue #142" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

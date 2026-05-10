@@ -177,6 +177,13 @@ Use the same rules as other launch channels:
   a small first contribution.
 - Ask which browser-agent stack they use.
 - Convert concrete adapter requests into GitHub issues.
+- For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
 
 ## Metrics
 
