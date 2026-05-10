@@ -367,3 +367,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T00:40:53+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README no-network demo note for issue #103; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T00:42:38+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #103 closed and good-first issue #104 rotation; traffic views 52/29 unique, clones 103/54 unique |
 | 2026-05-10T00:44:22+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after README uvx trial note for issue #104; traffic views 52/29 unique, clones 103/54 unique |
+| 2026-05-10T00:45:58+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #104 closed and good-first issue #105 rotation; traffic views 52/29 unique, clones 103/54 unique |
