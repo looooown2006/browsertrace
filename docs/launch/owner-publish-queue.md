@@ -94,13 +94,17 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "after X p
    - Use `docs/launch/outreach-targets.md` to pick one high-fit community.
    - Prefer Browser Use, Stagehand, Playwright, or Skyvern users over generic AI
      communities.
+   - Browser Use, Stagehand, and Skyvern GitHub Discussions are already posted;
+     monitor those threads instead of reposting.
    - Check rules first; if self-promotion is restricted, share the walkthrough
      only when it answers an existing debugging thread.
 
 ## Day 3-5 Broader Posts
 
-Use `docs/launch/day-3-targeted-communities-packet.md` before posting in
-Browser Use, Stagehand, Playwright, or Skyvern communities.
+Use `docs/launch/day-3-targeted-communities-packet.md` before any additional
+targeted community post. Browser Use, Stagehand, and Skyvern GitHub Discussions
+are already posted; the packet is now mainly for monitoring, Playwright, Reddit,
+Discord where allowed, and replies.
 
 0. PyPI publishing
    - Completed. `https://pypi.org/pypi/browsertrace/json` returns HTTP 200.

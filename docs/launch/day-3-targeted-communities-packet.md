@@ -29,7 +29,7 @@ Submit only if all are true:
 - The post is customized to the community and does not look cross-posted.
 - The post uses the walkthrough or live demo before asking people to install.
 - If someone asks how to try it locally, use
-  the GitHub `uvx` path:
+  the PyPI `uvx` path:
 
 ```bash
 uvx --from "browsertrace[ui]" browsertrace doctor
@@ -47,6 +47,15 @@ Do not post if:
 - The community rules prohibit self-promotion.
 - There is already a similar unanswered post from the owner.
 - The owner cannot follow up.
+
+Current posted threads, for monitoring only:
+
+- Browser Use: https://github.com/browser-use/browser-use/discussions/4816
+- Stagehand: https://github.com/browserbase/stagehand/discussions/2102
+- Skyvern: https://github.com/Skyvern-AI/skyvern/discussions/5931
+
+Do not repost to those three communities unless a maintainer asks for a new
+thread or the original thread receives concrete feedback that needs a follow-up.
 
 ## Priority Order
 
