@@ -2244,6 +2244,14 @@ def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
         assert f"https://aaronlab.github.io/browsertrace/{path}" in sitemap, path
 
 
+def test_sitemap_lastmod_matches_current_launch_refresh():
+    project_root = Path(__file__).resolve().parents[1]
+    sitemap = (project_root / "docs" / "sitemap.xml").read_text()
+
+    assert "<lastmod>2026-05-10</lastmod>" in sitemap
+    assert "<lastmod>2026-05-09</lastmod>" not in sitemap
+
+
 def test_launch_copy_includes_uvx_github_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -3266,7 +3274,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T11:08:13+00:00" in launch
-    assert "after pinning current good-first issue #223" in launch
+    assert "2026-05-10T11:10:57+00:00" in launch
+    assert "after sitemap lastmod refresh for launch pages" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
