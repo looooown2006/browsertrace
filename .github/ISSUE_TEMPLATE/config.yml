@@ -9,3 +9,6 @@ contact_links:
   - name: Code of Conduct
     url: https://github.com/aaronlab/browsertrace/blob/main/CODE_OF_CONDUCT.md
     about: Review expectations for constructive issues, discussions, reviews, and pull requests.
+  - name: Security Policy
+    url: https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md
+    about: Report sensitive issues without exposing exploit details or private trace data in public issues.

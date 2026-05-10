@@ -193,6 +193,21 @@ def test_issue_chooser_links_code_of_conduct_for_issue_expectations():
     assert "constructive issues, discussions, reviews, and pull requests" in config
 
 
+def test_issue_chooser_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    config = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "config.yml"
+    ).read_text()
+
+    assert "name: Security Policy" in config
+    assert (
+        "url: https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md"
+        in config
+    )
+    assert "sensitive issues" in config
+    assert "private trace data" in config
+
+
 def test_homepage_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
@@ -2993,7 +3008,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:17:11+00:00" in launch
-    assert "after issue #202 closed and good-first issue #203 rotation" in launch
+    assert "2026-05-10T09:20:01+00:00" in launch
+    assert "after issue chooser Security Policy link for issue #203" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
