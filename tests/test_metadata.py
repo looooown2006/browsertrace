@@ -654,6 +654,18 @@ def test_contributing_includes_first_pr_recipe():
     assert "reposts" not in recipe.lower()
 
 
+def test_contributing_sets_good_first_issue_claim_window():
+    project_root = Path(__file__).resolve().parents[1]
+    contributing = (project_root / "CONTRIBUTING.md").read_text()
+    recipe = contributing.split("## First PR Recipe", 1)[1].split(
+        "## Useful Local Checks", 1
+    )[0]
+
+    assert "active claim" in recipe
+    assert "short claim window" in recipe
+    assert "before maintainers take the same issue directly" in recipe
+
+
 def test_first_pr_recipe_links_security_policy_for_sensitive_reports():
     project_root = Path(__file__).resolve().parents[1]
     contributing = (project_root / "CONTRIBUTING.md").read_text()
@@ -2800,6 +2812,19 @@ def test_owner_next_actions_link_first_pr_recipe_for_small_contributions():
     assert "reposts" not in reply.lower()
 
 
+def test_owner_next_actions_set_good_first_issue_claim_window():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (project_root / "docs" / "launch" / "owner-next-actions.md").read_text()
+    reply = checklist.split("## Reply To Contribution Questions", 1)[1].split(
+        "## Reply To Troubleshooting Questions", 1
+    )[0]
+
+    assert "short claim window" in reply
+    assert "before implementing it yourself" in reply
+    assert "already finished" in reply
+    assert "current good first issue" in reply
+
+
 def test_chinese_owner_next_actions_include_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     checklist = (
@@ -2858,6 +2883,21 @@ def test_chinese_owner_next_actions_link_first_pr_recipe_for_small_contributions
     assert "stars" not in reply.lower()
     assert "upvotes" not in reply.lower()
     assert "reposts" not in reply.lower()
+
+
+def test_chinese_owner_next_actions_set_good_first_issue_claim_window():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
+    ).read_text()
+    reply = checklist.split("## 回复小贡献问题", 1)[1].split(
+        "## 回复本地首跑 / CI / agent 调试问题", 1
+    )[0]
+
+    assert "短的认领窗口" in reply
+    assert "不要马上自己实现同一个 issue" in reply
+    assert "如果这个任务已经完成" in reply
+    assert "当前 good first issue" in reply
 
 
 def test_directory_submission_sheet_includes_json_cli_troubleshooting_reply():
@@ -3226,7 +3266,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T10:56:36+00:00" in launch
-    assert "after issue #222 closed and good-first issue #223 rotation" in launch
+    assert "2026-05-10T11:00:50+00:00" in launch
+    assert "after maintainer claim-window guidance for good-first issues" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

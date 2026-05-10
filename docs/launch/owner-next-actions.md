@@ -192,6 +192,10 @@ https://github.com/aaronlab/browsertrace/issues/223
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 
+If someone says they want to work on it, acknowledge it and leave a short claim window
+before implementing it yourself. If that issue is already finished,
+point them to the current good first issue instead of letting the thread stall.
+
 ## Reply To Troubleshooting Questions
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:

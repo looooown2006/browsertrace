@@ -205,6 +205,8 @@ https://github.com/aaronlab/browsertrace/issues/223
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 ```
 
+如果对方说想做这个任务，先回复确认并留出一个短的认领窗口，不要马上自己实现同一个 issue。如果这个任务已经完成，改为指向当前 good first issue。
+
 ## 回复本地首跑 / CI / agent 调试问题
 
 遇到 local first-run issues, CI failures, or AI/coding-agent troubleshooting replies 时，先问对方补充 debugging/workflow details；如果可以安全分享，再让对方贴这组 JSON CLI diagnostics：
