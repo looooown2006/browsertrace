@@ -2546,15 +2546,22 @@ def test_directory_submission_sheet_records_current_awesome_list_pr_count():
 def test_directory_submission_sheet_records_current_directory_submission_blockers():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+    targets = (project_root / "docs" / "launch" / "outreach-targets.md").read_text()
 
-    assert "AgentKart" in sheet
-    assert "Sign-in button present; static form has no usable submit handler" in sheet
-    assert "OSS AI Hub" in sheet
-    assert "login required before submitting tools" in sheet
-    assert "AgentsTide" in sheet
-    assert "contact email only" in sheet
-    assert "BuilderAI Tools" in sheet
-    assert "owner email and Cloudflare Turnstile required" in sheet
+    for text in [sheet, targets]:
+        assert "AgentKart" in text
+        assert "Sign-in button present; static form has no usable submit handler" in text
+        assert "Agent Hub" in text
+        assert "no visible submit/contact route" in text
+        assert "AgDex" in text
+        assert "owner-email pitch" in text
+        assert "agdex.ai@gmail.com" in text
+        assert "OSS AI Hub" in text
+        assert "login required before submitting tools" in text
+        assert "AgentsTide" in text
+        assert "contact email only" in text
+        assert "BuilderAI Tools" in text
+        assert "owner email and Cloudflare Turnstile required" in text
 
 
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
