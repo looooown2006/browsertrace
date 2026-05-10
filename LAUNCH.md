@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T23:50:07+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 13 | current monitor pass after release downloads increased to 13 while star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T23:56:33+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after targeted Browser Use icon-only accessibility reply: https://github.com/browser-use/browser-use/issues/4801#issuecomment-4416674918; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
