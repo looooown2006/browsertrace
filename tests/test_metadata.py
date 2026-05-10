@@ -2804,6 +2804,10 @@ def test_day_3_targeted_communities_tracks_directory_submission_queue():
         "OpenAgent.bot",
         "ForgeIndex",
         "AgentShelf",
+        "CLIs.dev",
+        "DevTool Center",
+        "ToolHunter",
+        "ToolShelf",
         "AgDex",
         "console.dev",
     ]:
@@ -2879,6 +2883,14 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "Local Agents & Automation" in text
         assert "AgentShelf" in text
         assert "Coding & Development" in text
+        assert "CLIs.dev" in text
+        assert "AI agents and automation" in text
+        assert "DevTool Center" in text
+        assert "Developer Tools" in text
+        assert "ToolHunter" in text
+        assert "open-source CLI" in text
+        assert "ToolShelf" in text
+        assert "Developer Productivity" in text
 
 
 def test_directory_submission_sheet_includes_agdex_email_template():

@@ -26,6 +26,8 @@ follow-up verification, README updates, metrics, and issue comments:
 4. If that batch is already done, use the second-pass directory field notes in
    `docs/launch/directory-submission-sheet.md` for CLIHunt, DeepYard,
    OpenAgent.bot, ForgeIndex, and AgentShelf.
+5. If you still have time for developer-tool directories, use the same sheet for
+   CLIs.dev, DevTool Center, ToolHunter, and ToolShelf.
 
 Send the posted URLs, email-sent note, or any replies so Codex can log metrics
 and update the tracking issues.

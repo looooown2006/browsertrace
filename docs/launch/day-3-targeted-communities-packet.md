@@ -290,6 +290,13 @@ Best targets:
   Automation fit.
 - AgentShelf: AI agent and tool directory; use Coding & Development or
   Autonomous Agents after owner sign-up.
+- CLIs.dev: CLI discovery for AI agents and automation; include the `uvx`
+  install command and JSON troubleshooting commands.
+- DevTool Center: developer-tool directory; use free/open-source pricing and
+  debugging/observability tags.
+- ToolHunter: developer tools, AI agents, and open-source CLI directory.
+- ToolShelf: curated developer tools directory; use CLI Tools, AI Coding, or
+  Developer Productivity depending on the category picker.
 - AgDex: AI agent tools directory; developer tools and observability is the best
   category fit.
 - Agent Hub: agent/MCP/skill directory; use only if they accept tool suggestions.

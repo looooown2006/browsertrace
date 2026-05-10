@@ -73,6 +73,10 @@ Use-shaped callback demo.
 | OpenAgent.bot | Open AI stack project directory | https://openagent.bot/submit/ | Yes, browser submission | Repo, license/docs, live demo | Submit project as Tools; clear source, license, docs, and use-case details help review |
 | ForgeIndex | Open-source local AI project index | https://forgeindex.ai/ | Yes, owner Google form | Repo, live demo, local-first positioning | Official form; use Local Agents & Automation fit and local-first debugging angle |
 | AgentShelf | AI agent and tool directory | https://www.agentshelf.io/submit | Yes, owner account likely | Live demo, repo, Browser Use guide | List your AI tool path requires sign-up; use Coding & Development or Autonomous Agents when category is requested |
+| CLIs.dev | CLI discovery for AI agents and automation | https://clis.dev/ | Yes, browser/GitHub submission | Repo, install command, PyPI | Submit a CLI; BrowserTrace fits as an agent-friendly debugging CLI with `uvx` install and JSON commands |
+| DevTool Center | Developer tools directory | https://www.devtool.center/submit | Yes, browser submission | Live demo, repo, docs | Submit Tool form asks for name, description, URL, category, pricing, and tags; use Developer Tools / free or open source fit |
+| ToolHunter | Developer tools, AI agents, and open-source CLI directory | https://www.toolhunter.cc/ | Yes, browser submission | Repo, live demo, PyPI | Submit a Tool; use developer tools, AI agents, open-source CLI utilities angle |
+| ToolShelf | Curated developer tools directory with CLI and AI coding categories | https://toolshelf.dev/ | Yes, browser submission | Repo, docs, PyPI | Submit a Tool; use CLI Tools, AI Coding, or Developer Productivity depending on category choices |
 | GitHub awesome lists | Curated developer discovery lists | docs/launch/github-awesome-list-submissions.md | Yes | Repo, live demo, relevant guide | 12 PRs open; monitor feedback; e2b CLA passed |
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions/4816 | Yes | Browser Use guide, live trace, repo | Posted; no comments yet |
 | Stagehand Discussions | Browser automation and agent builders | https://github.com/browserbase/stagehand/discussions/2102 | Yes | Stagehand guide, live trace, repo | Posted; no comments yet |
@@ -130,6 +134,15 @@ Category: Coding & Development, or Autonomous Agents if only agent categories ar
 Website: https://aaronlab.github.io/browsertrace/
 Repository: https://github.com/aaronlab/browsertrace
 Short description: Local flight recorder for AI browser-agent failures.
+```
+
+Developer-tool directory addendum:
+
+```text
+CLIs.dev: submit BrowserTrace as a CLI for AI-agent debugging and automation.
+DevTool Center: use Developer Tools, free/open-source pricing, and tags such as AI agents, debugging, observability, Playwright, CLI.
+ToolHunter: use developer tools, AI agents, and open-source CLI utilities positioning.
+ToolShelf: use CLI Tools, AI Coding, or Developer Productivity depending on the category picker.
 ```
 
 ## Product Hunt Draft
