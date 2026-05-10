@@ -95,6 +95,27 @@ def test_cli_show_prints_steps_and_url(cli):
     assert "showme" in out
     assert "step 0" in out
     assert "https://example.com" in out
+    assert not out.lstrip().startswith("{")
+
+
+def test_cli_show_json_prints_run_and_steps_as_json(cli):
+    cli_mod, tmp_path = cli
+    rid = _seed(tmp_path, "show-json", fail=True)
+    buf = StringIO()
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["show", rid[:8], "--json"])
+
+    payload = json.loads(buf.getvalue())
+
+    assert rc == 0
+    assert payload["run"]["id"] == rid
+    assert payload["run"]["name"] == "show-json"
+    assert payload["run"]["status"] == "failed"
+    assert payload["run"]["error"] == "RuntimeError: intentional"
+    assert [step["action"] for step in payload["steps"]] == ["step 0", "step 1"]
+    assert payload["steps"][0]["step_index"] == 0
+    assert payload["steps"][0]["url"] == "https://example.com"
+    assert payload["steps"][0]["status"] == "ok"
 
 
 def test_cli_show_unknown_run_id_returns_2(cli):

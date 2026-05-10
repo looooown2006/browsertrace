@@ -167,6 +167,34 @@ def cmd_show(args) -> int:
             "SELECT * FROM steps WHERE run_id=? ORDER BY step_index", (run["id"],)
         ).fetchall()
 
+    if args.json:
+        print(
+            json.dumps(
+                {
+                    "run": {
+                        "id": run["id"],
+                        "name": run["name"] or "",
+                        "status": run["status"],
+                        "started_at": run["started_at"],
+                        "ended_at": run["ended_at"],
+                        "error": run["error"],
+                    },
+                    "steps": [
+                        {
+                            "step_index": s["step_index"],
+                            "action": s["action"] or "",
+                            "url": s["url"] or "",
+                            "status": s["status"] or "ok",
+                            "error": s["error"],
+                        }
+                        for s in steps
+                    ],
+                },
+                indent=2,
+            )
+        )
+        return 0
+
     print(f"Run:    {run['id']}")
     print(f"Name:   {run['name'] or '(unnamed)'}")
     print(f"Status: {_fmt_status(run['status'])}")
@@ -319,6 +347,7 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     p_show = sub.add_parser("show", help="Print a run's timeline")
     p_show.add_argument("run_id", help="Full id or unique prefix")
+    p_show.add_argument("--json", action="store_true", help="Print the run timeline as JSON")
     p_show.set_defaults(func=cmd_show)
 
     p_export = sub.add_parser("export", help="Write a self-contained HTML bundle for a run")
