@@ -46,6 +46,18 @@ Once credentials are available, the README install path should become `pip insta
 
 Thanks for trying it. Please open an issue with the run shape, framework, Python version, and the smallest snippet that reproduces it. If the trace can be exported safely, attaching the HTML export would help a lot.
 
+## Can you share JSON diagnostics?
+
+For local first-run issues, CI failures, or AI/coding-agent troubleshooting,
+ask for workflow/debugging details plus this JSON CLI output when it is safe to
+share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## This is too early.
 
 That is fair. The project is intentionally v0.1 and scoped to the smallest useful loop: record the browser-agent failure and inspect the step timeline locally. The next useful improvements are likely framework adapters, sharing, and regression comparison.

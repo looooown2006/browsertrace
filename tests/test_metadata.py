@@ -1863,6 +1863,25 @@ def test_longform_launch_posts_include_uvx_github_trial_before_pypi():
         assert "pypi" in text.lower(), relpath
 
 
+def test_response_templates_include_json_cli_diagnostics_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    templates = (
+        project_root / "docs" / "launch" / "response-templates.md"
+    ).read_text()
+    recipe = """```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```"""
+
+    assert "local first-run issues, CI failures, or AI/coding-agent troubleshooting" in templates
+    assert recipe in templates
+    assert "workflow/debugging details" in templates
+    assert "stars" not in templates.lower()
+    assert "upvotes" not in templates.lower()
+    assert "reposts" not in templates.lower()
+
+
 def test_directory_submission_sheet_includes_uvx_trial_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -2010,7 +2029,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T03:22:35+00:00" in launch
-    assert "after issue #137 closed and good-first issue #138 rotation" in launch
+    assert "2026-05-10T03:24:51+00:00" in launch
+    assert "after response templates JSON CLI diagnostics reply for issue #138" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
