@@ -2756,6 +2756,31 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_owner_next_actions_preserves_external_awesome_list_pr_numbers():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (project_root / "docs" / "launch" / "owner-next-actions.md").read_text()
+    awesome_prs = checklist.split(
+        "## 7. Monitor High-Fit GitHub Awesome List PRs", 1
+    )[1].split("## Reply To Contribution Questions", 1)[0]
+
+    assert "angrykoala/awesome-browser-automation#112" in awesome_prs
+    assert "mxschmitt/awesome-playwright#136" in awesome_prs
+    assert "Jenqyang/Awesome-AI-Agents#220" in awesome_prs
+    assert "Jenqyang/Awesome-AI-Agents#221" not in awesome_prs
+
+
+def test_owner_next_actions_link_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (project_root / "docs" / "launch" / "owner-next-actions.md").read_text()
+    reply = checklist.split("## Reply To Troubleshooting Questions", 1)[1].split(
+        "## 8. Record Metrics After Each Action", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md" in reply
+    assert "security-sensitive reports or changes" in reply
+    assert "private trace data" in reply
+
+
 def test_owner_next_actions_link_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     checklist = (project_root / "docs" / "launch" / "owner-next-actions.md").read_text()

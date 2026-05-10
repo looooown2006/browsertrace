@@ -176,7 +176,7 @@ The three prepared PRs are already open:
 
 - `angrykoala/awesome-browser-automation#112`
 - `mxschmitt/awesome-playwright#136`
-- `Jenqyang/Awesome-AI-Agents#221`
+- `Jenqyang/Awesome-AI-Agents#220`
 
 Monitor maintainer feedback and do not open additional list PRs until one of
 these receives a response.
@@ -195,6 +195,9 @@ https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-reci
 ## Reply To Troubleshooting Questions
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+For security-sensitive reports or changes, or anything that includes private trace data, point people to the private path in the Security Policy before they share details publicly:
+https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md
 
 ```bash
 browsertrace doctor --json
