@@ -917,6 +917,10 @@ def test_readme_explains_isolated_trace_storage_near_install_tag():
         "`BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes "
         "demo traces to an isolated trace store"
     ) in install_section
+    assert (
+        "By default, BrowserTrace stores local traces under `~/.browsertrace/`; "
+        "set `BROWSERTRACE_HOME` to use an isolated trace store"
+    ) in install_section
     assert "@v0.1.14" in install_section
     assert "hosted sharing" not in readme
 
@@ -1010,6 +1014,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- `browsertrace` prints `BrowserTrace UI: http://127.0.0.1:<port>` when the local server starts",
         "- The demo run is named `demo: checkout agent fails on disabled button` in the local UI",
         "- `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store",
+        "- By default, BrowserTrace stores local traces under `~/.browsertrace/`; set `BROWSERTRACE_HOME` to use an isolated trace store",
         '- Windows PowerShell users can set `$env:BROWSERTRACE_HOME = "$env:TEMP\\browsertrace-demo"` before running BrowserTrace commands',
         "- `browsertrace --help` lists local CLI commands and options",
         "- `browsertrace export --help` lists export options before creating a public-safe HTML report",
@@ -1788,7 +1793,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:12:45+00:00" in launch
-    assert "after issue #121 closed and good-first issue #122 rotation" in launch
+    assert "2026-05-10T02:15:20+00:00" in launch
+    assert "after README default trace store note for issue #122" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
