@@ -2305,6 +2305,20 @@ def test_response_templates_link_first_pr_recipe_for_small_contributions():
     assert "reposts" not in reply.lower()
 
 
+def test_response_templates_link_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    templates = (
+        project_root / "docs" / "launch" / "response-templates.md"
+    ).read_text()
+    reply = templates.split("## Can I contribute a small fix?", 1)[1].split(
+        "## Can you share JSON diagnostics?", 1
+    )[0]
+
+    assert "SECURITY.md" in reply
+    assert "security-sensitive reports" in reply
+    assert "private trace data" in reply
+
+
 def test_owner_publish_queue_includes_json_cli_reply_workflow():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
@@ -3092,7 +3106,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:58:06+00:00" in launch
-    assert "after issue #211 closed and good-first issue #212 rotation" in launch
+    assert "2026-05-10T10:00:48+00:00" in launch
+    assert "after response templates Security Policy link for issue #212" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

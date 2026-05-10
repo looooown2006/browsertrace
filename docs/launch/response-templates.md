@@ -54,6 +54,9 @@ https://github.com/aaronlab/browsertrace/issues/212
 Use the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 
+For security-sensitive reports or private trace data, follow:
+https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md before sharing details publicly.
+
 ## Can you share JSON diagnostics?
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting,
