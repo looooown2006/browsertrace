@@ -55,3 +55,7 @@ body:
       description: Mention privacy, retention, customer-data, or deployment constraints.
     validations:
       required: false
+  - type: markdown
+    attributes:
+      value: |
+        For a small docs or example fix after sharing cloud interest, use `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
