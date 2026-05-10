@@ -633,3 +633,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T13:22:28+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 2 | after repo topic audit and PyPI pending publisher docs update; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T13:25:30+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 2 | after Agent Hub and AgDex directory route audit; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T13:34:49+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 2 | after PyPI pending publisher form guidance; PyPI still 404 and Publish workflow not run; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T13:49:59+00:00 | 3 | 998 | 5 | 0 | 11 | 0 | 0 | after PyPI 0.1.16 publish verified: https://pypi.org/project/browsertrace/; GitHub release https://github.com/aaronlab/browsertrace/releases/tag/v0.1.16; traffic views 112/41 unique, clones 5965/1214 unique |
