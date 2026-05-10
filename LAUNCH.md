@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T08:19:56+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #190 closed and good-first issue #191 rotation |
+| 2026-05-10T08:22:24+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after Skyvern guide First PR Recipe link for issue #191 |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
