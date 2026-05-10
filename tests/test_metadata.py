@@ -94,6 +94,22 @@ def test_readme_uses_pypi_install_after_publish():
     assert "PyPI publishing is not enabled yet" not in readme
 
 
+def test_launch_plan_uses_pypi_install_after_publish():
+    project_root = Path(__file__).resolve().parents[1]
+    plan = (
+        project_root
+        / "docs"
+        / "superpowers"
+        / "plans"
+        / "2026-05-09-browsertrace-launch-readiness.md"
+    ).read_text()
+
+    assert "pip install browsertrace" in plan
+    assert 'pip install "browsertrace[ui]"' in plan
+    assert "pip install git+https://github.com/aaronlab/browsertrace" not in plan
+    assert "@ git+https://github.com/aaronlab/browsertrace" not in plan
+
+
 def test_readme_shows_pypi_badge_after_publish():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()

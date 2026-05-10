@@ -358,14 +358,17 @@ straight to the failure.
 Built for Browser Use, Stagehand, Playwright + LLM scripts, and custom
 computer-use agents.
 
-## Install
+## Install From PyPI
 
 ```bash
 # SDK only
-pip install git+https://github.com/aaronlab/browsertrace
+pip install browsertrace
 
 # SDK + local web UI
-pip install "browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace"
+pip install "browsertrace[ui]"
+browsertrace doctor
+browsertrace demo
+browsertrace
 ```
 
 ## See a failure trace in 60 seconds
