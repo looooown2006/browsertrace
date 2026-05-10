@@ -394,6 +394,21 @@ def test_pypi_publishing_notes_link_first_pr_recipe_for_small_docs_fixes():
     assert "reposts" not in notes.lower()
 
 
+def test_changelog_links_first_pr_recipe_for_small_docs_fixes():
+    project_root = Path(__file__).resolve().parents[1]
+    changelog = (project_root / "CHANGELOG.md").read_text()
+
+    assert "First PR Recipe" in changelog
+    assert (
+        "https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe"
+        in changelog
+    )
+    assert "first contribution small and reviewable" in changelog
+    assert "stars" not in changelog.lower()
+    assert "upvotes" not in changelog.lower()
+    assert "reposts" not in changelog.lower()
+
+
 def test_github_profile_draft_links_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
@@ -2948,7 +2963,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T08:57:38+00:00" in launch
-    assert "after issue #198 closed and good-first issue #199 rotation" in launch
+    assert "2026-05-10T09:00:02+00:00" in launch
+    assert "after changelog First PR Recipe link for issue #199" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

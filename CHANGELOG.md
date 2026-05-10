@@ -3,6 +3,10 @@
 BrowserTrace uses small release tags while the project is still alpha. Dates are
 UTC.
 
+For small docs fixes while reading release history, use the
+[First PR Recipe](https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe)
+to keep the first contribution small and reviewable.
+
 ## Unreleased
 
 - Improved Skyvern metadata extraction so nested task/workflow run IDs and
