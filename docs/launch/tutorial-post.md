@@ -12,15 +12,7 @@ That gap is painful because browser-agent bugs are often visual or stateful:
 
 BrowserTrace is a small open-source tool for recording that missing context locally.
 
-## Install
-
-```bash
-git clone https://github.com/aaronlab/browsertrace
-cd browsertrace
-pip install -e ".[ui]"
-```
-
-## Run the no-API demo
+## Run the no-API demo from PyPI
 
 ```bash
 uvx --from "browsertrace[ui]" browsertrace doctor
