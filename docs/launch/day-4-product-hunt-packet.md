@@ -178,7 +178,7 @@ Use the same rules as other launch channels:
 
 - Reply as the maker, not as a generated support account.
 - Lead with the live demo when people want to inspect it.
-- Link GitHub when people ask how to install, star, fork, or contribute.
+- Link GitHub when people ask how to install, fork, or contribute.
 - Link https://github.com/aaronlab/browsertrace/labels/good%20first%20issue when someone asks for
   a small first contribution.
 - Ask which browser-agent stack they use.
