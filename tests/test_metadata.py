@@ -2905,6 +2905,17 @@ def test_cloud_interest_template_links_first_pr_recipe():
     assert "upvotes" not in template.lower()
 
 
+def test_cloud_interest_template_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "cloud_interest.yml"
+    ).read_text()
+
+    assert "SECURITY.md" in template
+    assert "security-sensitive reports" in template
+    assert "private trace data" in template
+
+
 def test_pull_request_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (project_root / ".github" / "PULL_REQUEST_TEMPLATE.md").read_text()
@@ -3050,7 +3061,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:41:05+00:00" in launch
-    assert "after issue #207 closed and good-first issue #208 rotation" in launch
+    assert "2026-05-10T09:43:01+00:00" in launch
+    assert "after cloud interest Security Policy link for issue #208" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
