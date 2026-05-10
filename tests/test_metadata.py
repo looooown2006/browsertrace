@@ -3920,7 +3920,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T19:51:39+00:00" in launch
+    assert "2026-05-10T22:43:16+00:00" in launch
     assert "current monitor pass" in launch
     assert "traffic views 112/41 unique, clones 5965/1214 unique" in launch
     assert f'uvx --from "{pypi_spec}" browsertrace doctor' in launch
