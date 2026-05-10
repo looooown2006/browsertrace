@@ -134,7 +134,7 @@ Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.14
 
 If a directory reviewer or visitor asks how to make a small docs fix, point to
 the current good first issue:
-https://github.com/aaronlab/browsertrace/issues/212
+https://github.com/aaronlab/browsertrace/issues/213
 
 Then share the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
