@@ -164,10 +164,12 @@ Install uv from the official uv installation guide, then rerun the PyPI uvx comm
 Can I contribute a small fix?
 
 ```text
-Yes. Good first issues are kept small and reviewable. The good first issue label,
-which asks for the Chinese owner next-actions troubleshooting reply to link the Security Policy.
+Yes. The good first issue label keeps small fixes reviewable:
+https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
+
 Use the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+
 For adapter work, the most useful first step is an integration request
 describing the framework and failure state you need to debug.
 ```

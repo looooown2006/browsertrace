@@ -555,6 +555,24 @@ def test_github_profile_draft_includes_json_cli_troubleshooting_note():
     assert "reposts" not in note.lower()
 
 
+def test_show_hn_contribution_reply_points_to_current_good_first_queue():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "day-2-show-hn-packet.md"
+    ).read_text()
+    reply = packet.split("Can I contribute a small fix?", 1)[1].split(
+        "## Troubleshooting Reply", 1
+    )[0]
+
+    assert "https://github.com/aaronlab/browsertrace/labels/good%20first%20issue" in reply
+    assert "CONTRIBUTING.md#first-pr-recipe" in reply
+    assert "first contribution small and reviewable" in reply
+    assert "Chinese owner next-actions" not in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_readme_has_public_safe_export_sharing_example():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
