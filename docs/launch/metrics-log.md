@@ -715,3 +715,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T22:20:22+00:00 | 3 | 998 | 7 | 0 | 12 | 0 | 0 | after open issue bodies and launch feedback comment rotated to v0.1.17: https://github.com/aaronlab/browsertrace/issues/3#issuecomment-4416494774; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T22:25:52+00:00 | 3 | 998 | 7 | 0 | 12 | 0 | 2 | after owner directory queue added 4agent.dev submission notes; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T22:28:54+00:00 | 3 | 998 | 7 | 0 | 12 | 0 | 2 | after launch discussion #6 body/title rotated to v0.1.17; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T22:30:52+00:00 | 3 | 998 | 7 | 0 | 12 | 0 | 2 | after launch discussion #6 stale v0.1.16 comment refreshed to v0.1.17; traffic views 112/41 unique, clones 5965/1214 unique |
