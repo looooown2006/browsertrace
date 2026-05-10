@@ -64,3 +64,10 @@ After verification, update README install commands from GitHub URLs to:
 pip install browsertrace
 pip install "browsertrace[ui]"
 ```
+
+## Small Docs Fixes
+
+PyPI trusted publishing setup is owner-only. For small docs fixes around release
+or packaging notes, use the
+[First PR Recipe](https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe)
+to keep the first contribution small and reviewable.
