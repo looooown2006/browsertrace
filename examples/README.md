@@ -105,6 +105,13 @@ pip install playwright
 playwright install chromium
 ```
 
+## Contributing Example Fixes
+
+For a docs or example fix, start with the
+[First PR Recipe](../CONTRIBUTING.md#first-pr-recipe); it keeps the first contribution small and reviewable.
+Keep example changes narrow and include the command you used to verify the
+changed example or docs check.
+
 ### Playwright sync API snapshot
 
 Use `snapshot_sync` when your code uses sync Playwright instead of

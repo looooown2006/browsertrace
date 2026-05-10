@@ -150,6 +150,18 @@ def test_windows_powershell_first_run_docs_cover_env_vars():
     assert "BROWSERTRACE_PORT=4000 browsertrace" in docs_text
 
 
+def test_examples_readme_links_first_pr_recipe_for_small_contributions():
+    project_root = Path(__file__).resolve().parents[1]
+    examples = (project_root / "examples" / "README.md").read_text()
+
+    assert "First PR Recipe" in examples
+    assert "CONTRIBUTING.md#first-pr-recipe" in examples
+    assert "first contribution small and reviewable" in examples
+    assert "stars" not in examples.lower()
+    assert "upvotes" not in examples.lower()
+    assert "reposts" not in examples.lower()
+
+
 def test_docs_include_uvx_github_quickstart_before_pypi():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
@@ -2738,7 +2750,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:43:05+00:00" in launch
-    assert "after issue #184 closed and good-first issue #185 rotation" in launch
+    assert "2026-05-10T07:44:51+00:00" in launch
+    assert "after examples README First PR Recipe link for issue #185" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
