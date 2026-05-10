@@ -13,8 +13,12 @@ issue comment 都交给 Codex 继续处理：
 
 1. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。
+2. 用 `docs/launch/directory-submission-sheet.md` 发送已经准备好的 owner
+   email 投稿：发给 console.dev 的 `hello@console.dev`，以及发给 AgDex 的
+   `agdex.ai@gmail.com`。
 
-发完后，把帖子 URL 或群名发给 Codex，我会记录指标并更新跟踪 issue。
+发完后，把帖子 URL、群名、邮件已发送备注或回复发给 Codex，我会记录指标并
+更新跟踪 issue。
 
 ## 1. PyPI 已发布
 

@@ -15,9 +15,12 @@ follow-up verification, README updates, metrics, and issue comments:
 
 1. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
+2. Send the ready owner-email submissions from
+   `docs/launch/directory-submission-sheet.md`:
+   `hello@console.dev` and `agdex.ai@gmail.com` for console.dev and AgDex.
 
-Send the posted URLs or a short channel note so Codex can log metrics and update
-the tracking issues.
+Send the posted URLs, email-sent note, or any replies so Codex can log metrics
+and update the tracking issues.
 
 ## 1. PyPI Published
 

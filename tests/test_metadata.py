@@ -2713,6 +2713,25 @@ def test_directory_submission_sheet_includes_console_dev_email_template():
     assert "Do not ask for stars" in console
 
 
+def test_owner_short_checklists_surface_ready_email_submissions():
+    project_root = Path(__file__).resolve().parents[1]
+
+    for relpath, next_heading in [
+        ("docs/launch/owner-next-actions.md", "## 1. PyPI Published"),
+        ("docs/launch/owner-next-actions.zh-CN.md", "## 1. PyPI 已发布"),
+    ]:
+        text = (project_root / relpath).read_text()
+        unblock = text.split("## 10", 1)[1].split(next_heading, 1)[0]
+
+        assert "docs/launch/directory-submission-sheet.md" in unblock, relpath
+        assert "console.dev" in unblock, relpath
+        assert "hello@console.dev" in unblock, relpath
+        assert "AgDex" in unblock, relpath
+        assert "agdex.ai@gmail.com" in unblock, relpath
+        assert "stars" not in unblock.lower(), relpath
+        assert "upvotes" not in unblock.lower(), relpath
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
