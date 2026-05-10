@@ -302,7 +302,8 @@ Best targets:
 - Agent Hub: agent/MCP/skill directory; use only if they accept tool suggestions.
 - agentfirst.directory: agent-first tooling directory with a Browser Automation
   category.
-- console.dev: devtools newsletter; send an editorial pitch only once.
+- console.dev: devtools newsletter; send an editorial pitch only once and
+  mention the self-service live demo/PyPI trial plus redacted export path.
 
 Pitch:
 

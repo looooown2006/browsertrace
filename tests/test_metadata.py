@@ -2816,6 +2816,7 @@ def test_day_3_targeted_communities_tracks_directory_submission_queue():
     assert "docs/launch/directory-submission-sheet.md" in directories
     assert "hello@agentstide.com" in directories
     assert "AI Observability & Evaluation" in directories
+    assert "self-service live demo/PyPI trial" in directories
     assert "stars" not in directories.lower()
     assert "upvotes" not in directories.lower()
     assert "reposts" not in directories.lower()
@@ -2862,6 +2863,8 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "no visible submit/contact route" in text
         assert "AgDex" in text
         assert "owner-email pitch" in text
+        if text == targets:
+            assert "self-service live demo/PyPI trial" in text
         assert "agdex.ai@gmail.com" in text
         assert "OSS AI Hub" in text
         assert "JavaScript submission page" in text
