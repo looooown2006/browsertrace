@@ -742,6 +742,22 @@ def test_readme_explains_redact_export_distinction_near_install_checks():
     assert "hosted sharing" not in readme
 
 
+def test_readme_explains_self_contained_export_near_install_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+
+    assert (
+        "`browsertrace export <run_id> --public -o public.html` writes a "
+        "self-contained HTML report you can attach to a bug report or issue"
+    ) in install_section
+    assert "Public-safe export omits model I/O, screenshots, and URLs" in install_section
+    assert "@v0.1.14" in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_explains_port_override_near_install_tag():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -879,6 +895,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches",
         "- `browsertrace show <run_id>` inspects a listed run",
         "- `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export",
+        "- `browsertrace export <run_id> --public -o public.html` writes a self-contained HTML report",
         "- Public-safe export omits model I/O, screenshots, and URLs",
         "- `--redact` only omits model I/O, while `--public` also omits screenshots and URLs",
         "- `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port",
@@ -1654,7 +1671,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T01:22:34+00:00" in launch
-    assert "after issue #112 closed and good-first issue #113 rotation" in launch
+    assert "2026-05-10T01:24:50+00:00" in launch
+    assert "after README self-contained export note for issue #113" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

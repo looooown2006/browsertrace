@@ -105,6 +105,7 @@ Useful local checks:
 - The example matrix lists no-service examples.
 - `browsertrace show <run_id>` inspects a listed run from the terminal.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
+- `browsertrace export <run_id> --public -o public.html` writes a self-contained HTML report you can attach to a bug report or issue.
 - Public-safe export omits model I/O, screenshots, and URLs.
 - `--redact` only omits model I/O, while `--public` also omits screenshots and URLs.
 - A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches; see the [run ID prefix recipe](examples/#run-id-prefixes-for-export).
