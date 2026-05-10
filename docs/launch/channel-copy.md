@@ -38,6 +38,27 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+## Artifact Boundary Reply
+
+Use this when someone is debugging screenshot blobs, base64 payloads, oversized
+tool results, or model-context pollution in browser-agent runs.
+
+```text
+The pattern that has worked best for BrowserTrace is to keep browser artifacts
+and model messages separate:
+
+1. Store screenshots, URLs, and trace data as local artifacts for humans.
+2. Pass image pixels to the model only when that next model call needs a typed
+   image content block.
+3. Otherwise pass small metadata: artifact id, dimensions, digest, status, and
+   error.
+
+That avoids stuffing large screenshots or data URIs into every future model
+turn, while still keeping the failed browser state available for debugging.
+For public sharing, `browsertrace export --public` omits prompt/model I/O,
+screenshots, and URLs.
+```
+
 ## X
 
 Non-Premium-safe thread. Post each `text` block as one X post.
