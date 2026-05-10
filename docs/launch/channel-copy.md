@@ -205,9 +205,9 @@ Launch share post:
 ```text
 BrowserTrace is live on Product Hunt today.
 
-It is a local flight recorder for AI browser agents: screenshots, URLs, actions, model I/O, and failed-step timelines.
+Local flight recorder for AI browser-agent failures: screenshots, URLs, actions, model I/O, failed-step timelines.
 
-If you build with Browser Use, Stagehand, Playwright + LLM scripts, or computer-use agents, I would value your feedback in the comments.
+Builder feedback welcome from Browser Use, Stagehand, Skyvern, and Playwright + LLM workflows.
 
 [Product Hunt link]
 ```

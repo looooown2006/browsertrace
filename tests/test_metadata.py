@@ -2557,6 +2557,25 @@ def test_x_launch_copy_fits_non_premium_post_limit():
         assert len(block) <= 280, block
 
 
+def test_product_hunt_launch_share_copy_fits_non_premium_post_limit():
+    project_root = Path(__file__).resolve().parents[1]
+    docs = [
+        project_root / "docs" / "launch" / "channel-copy.md",
+        project_root / "docs" / "launch" / "day-4-product-hunt-packet.md",
+    ]
+
+    for path in docs:
+        copy = path.read_text()
+        section = copy.split("Launch share post:", 1)[-1]
+        section = section.split("## Reddit", 1)[0].split("## Reply Notes", 1)[0]
+        blocks = re.findall(r"```text\n(.*?)\n```", section, re.S)
+
+        assert blocks, path
+        for block in blocks:
+            if "Product Hunt" in block and "[Product Hunt link]" in block:
+                assert len(block) <= 280, (path, block)
+
+
 def test_longform_launch_posts_include_pypi_trial_after_publish():
     project_root = Path(__file__).resolve().parents[1]
     pypi_spec = "browsertrace[ui]"
