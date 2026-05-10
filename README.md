@@ -104,6 +104,7 @@ Useful local checks:
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
 - A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches; see the [run ID prefix recipe](examples/#run-id-prefixes-for-export).
 - `BROWSERTRACE_PORT=3001 browsertrace` starts the local UI on another port when 3000 is busy.
+- After `browsertrace` starts the local UI, open `http://127.0.0.1:3000` and inspect the demo run.
 - `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
 - `browsertrace --help` lists local CLI commands and options.
 - `browsertrace export --help` lists export options before creating a public-safe HTML report.
