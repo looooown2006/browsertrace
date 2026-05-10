@@ -202,5 +202,5 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 The goal remains incomplete until GitHub reports more than 1000 stars:
 
 ```bash
-gh repo view aaronlab/browsertrace --json stargazerCount,url,homepageUrl,owner
+gh repo view aaronlab/browsertrace --json stargazerCount,forkCount,watchers,url,homepageUrl
 ```

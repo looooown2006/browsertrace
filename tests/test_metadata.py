@@ -3578,19 +3578,20 @@ def test_owner_next_actions_include_uvx_fallback_before_pypi():
         assert "pypi" in text.lower(), relpath
 
 
-def test_chinese_owner_next_actions_uses_hard_success_check():
+def test_owner_next_actions_use_hard_success_check():
     project_root = Path(__file__).resolve().parents[1]
-    owner_next_actions_zh = (
-        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
-    ).read_text()
-
     expected = (
         "gh repo view aaronlab/browsertrace "
         "--json stargazerCount,forkCount,watchers,url,homepageUrl"
     )
 
-    assert expected in owner_next_actions_zh
-    assert "--json stargazerCount,url,homepageUrl,owner" not in owner_next_actions_zh
+    for relpath in [
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert expected in text, relpath
+        assert "--json stargazerCount,url,homepageUrl,owner" not in text, relpath
 
 
 def test_owner_docs_mark_social_preview_uploaded():
