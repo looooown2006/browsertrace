@@ -2592,7 +2592,7 @@ def test_directory_submission_sheet_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
-    assert "9 PRs open; monitor feedback; e2b CLA passed" in sheet
+    assert "10 PRs open; monitor feedback; e2b CLA passed" in sheet
     assert "3 PRs open" not in sheet
     assert "github-awesome-list-submissions.md" in sheet
 
