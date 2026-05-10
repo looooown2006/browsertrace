@@ -106,7 +106,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T05:30:43+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after issue #160 closed and good-first issue #161 rotation |
+| 2026-05-10T05:33:52+00:00 | 3 | 998 | 4 | 0 | 13 | 0 | 0 | after IndexNow refresh returned 200 for generic and Bing endpoints |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
