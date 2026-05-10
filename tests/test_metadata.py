@@ -2828,7 +2828,8 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
         assert "OSS AI Hub" in text
         assert "login required before submitting tools" in text
         assert "AgentsTide" in text
-        assert "contact email only" in text
+        assert "Submit Free Listing" in text
+        assert "hello@agentstide.com" in text
         assert "BuilderAI Tools" in text
         assert "owner email and Cloudflare Turnstile required" in text
 

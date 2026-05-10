@@ -66,7 +66,7 @@ Use-shaped callback demo.
 | agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Submitted PR: https://github.com/bradvin/agentfirst.directory/pull/30 |
 | OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Yes, login required | Repo, live demo, public-safe export | Blocked: login required before submitting tools |
 | FOSSHUNTER | Open-source tool discovery | https://fosshunter.com/submit | Yes, login required | Repo, live demo, release | Not submitted |
-| AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Yes, owner email | Live demo, repo, Browser Use guide | Blocked: contact email only; send owner-email pitch |
+| AgentsTide | AI agents and browser-agent directory | https://agentstide.com/ | Yes, owner action | Live demo, repo, Browser Use guide | Submit Free Listing link visible; use owner email fallback at hello@agentstide.com |
 | BuilderAI Tools | Open-source AI developer tools | https://builderai.tools/submit | Yes, owner email and Cloudflare Turnstile required | Repo, live demo, public-safe export | Blocked: owner email and Cloudflare Turnstile required |
 | GitHub awesome lists | Curated developer discovery lists | docs/launch/github-awesome-list-submissions.md | Yes | Repo, live demo, relevant guide | 12 PRs open; monitor feedback; e2b CLA passed |
 | Browser Use Discussions | Browser-agent practitioners | https://github.com/browser-use/browser-use/discussions/4816 | Yes | Browser Use guide, live trace, repo | Posted; no comments yet |
