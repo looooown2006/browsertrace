@@ -453,6 +453,29 @@ def test_trace_demo_page_has_mobile_export_metadata():
     assert "@media(max-width:720px){body{padding:14px}.step{grid-template-columns:1fr}}" in page
 
 
+def test_trace_demo_page_has_discovery_metadata():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "trace.html").read_text()
+
+    assert "<link rel='canonical' href='https://aaronlab.github.io/browsertrace/trace.html'>" in page
+    assert "<link rel='alternate' type='text/plain' title='llms.txt' href='./llms.txt'>" in page
+
+    match = re.search(
+        r"<script type='application/ld\+json'>\s*(.*?)\s*</script>",
+        page,
+        re.S,
+    )
+
+    assert match is not None
+    metadata = json.loads(match.group(1))
+    assert metadata["@context"] == "https://schema.org"
+    assert metadata["@type"] == "TechArticle"
+    assert metadata["headline"] == "BrowserTrace exported failure trace"
+    assert metadata["url"] == "https://aaronlab.github.io/browsertrace/trace.html"
+    assert metadata["isPartOf"]["name"] == "BrowserTrace"
+    assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
+
+
 def test_launch_kit_page_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     page = (project_root / "docs" / "launch" / "index.html").read_text()

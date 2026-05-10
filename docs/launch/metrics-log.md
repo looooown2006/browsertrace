@@ -670,3 +670,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T17:49:11+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after integrations page discovery metadata: https://github.com/aaronlab/browsertrace/commit/fb62556; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T17:51:17+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after launch kit discovery metadata update; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T17:55:09+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after mobile-friendly standalone export metadata update; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T17:59:06+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 23 | after raw exported trace discovery metadata update; traffic views 112/41 unique, clones 5965/1214 unique |
