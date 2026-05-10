@@ -2347,6 +2347,18 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply_workflow.lower()
 
 
+def test_owner_publish_queue_links_security_policy_for_sensitive_reports():
+    project_root = Path(__file__).resolve().parents[1]
+    queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
+    reply_workflow = queue.split("## Reply Workflow", 1)[1].split(
+        "## Metrics Check", 1
+    )[0]
+
+    assert "SECURITY.md" in reply_workflow
+    assert "security-sensitive reports" in reply_workflow
+    assert "private trace data" in reply_workflow
+
+
 def test_day_1_publish_packet_includes_json_cli_reply_shortcut():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-1-publish-packet.md").read_text()
@@ -3106,7 +3118,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T10:02:53+00:00" in launch
-    assert "after issue #212 closed and good-first issue #213 rotation" in launch
+    assert "2026-05-10T10:05:36+00:00" in launch
+    assert "after owner publish queue Security Policy link for issue #213" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

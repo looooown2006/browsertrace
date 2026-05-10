@@ -129,6 +129,8 @@ Browser Use, Stagehand, Playwright, or Skyvern communities.
   https://github.com/aaronlab/browsertrace/issues/213
   Then share the First PR Recipe:
   https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+- For security-sensitive reports or private trace data, point to
+  https://github.com/aaronlab/browsertrace/blob/main/SECURITY.md before public replies.
 - For bug reports, ask the user to open an issue with their agent stack, trace
   type, and whether the failing step involved screenshots, selectors, or model
   output.
