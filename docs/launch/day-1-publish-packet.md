@@ -105,6 +105,13 @@ The launch thread is here:
 https://github.com/aaronlab/browsertrace/discussions/6
 ```
 
+Contributing:
+
+```text
+For a small first fix, use the First PR Recipe:
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+```
+
 Troubleshooting:
 
 For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
