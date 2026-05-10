@@ -2784,6 +2784,34 @@ browsertrace show <run_id> --json
     assert "reposts" not in triage.lower()
 
 
+def test_day_3_targeted_communities_tracks_directory_submission_queue():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "day-3-targeted-communities-packet.md"
+    ).read_text()
+    directories = packet.split("## Directories And Newsletters", 1)[1].split(
+        "Pitch:", 1
+    )[0]
+
+    for target in [
+        "AgentKart",
+        "OSS AI Hub",
+        "FOSSHUNTER",
+        "AgentsTide",
+        "BuilderAI Tools",
+        "AgDex",
+        "console.dev",
+    ]:
+        assert target in directories
+
+    assert "docs/launch/directory-submission-sheet.md" in directories
+    assert "hello@agentstide.com" in directories
+    assert "AI Observability & Evaluation" in directories
+    assert "stars" not in directories.lower()
+    assert "upvotes" not in directories.lower()
+    assert "reposts" not in directories.lower()
+
+
 def test_directory_submission_sheet_includes_pypi_trial_after_publish():
     project_root = Path(__file__).resolve().parents[1]
     pypi_spec = "browsertrace[ui]"

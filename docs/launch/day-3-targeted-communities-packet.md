@@ -268,9 +268,19 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Sky
 Use these after `v0.1.16` because the release has the packaged demo command and
 safer redacted export path.
 
+Use `docs/launch/directory-submission-sheet.md` for exact entry points, link
+order, owner-only notes, and tracking instructions.
+
 Best targets:
 
-- AgentKart: open-source AI agent marketplace submission.
+- AgentKart: open-source AI agent marketplace submission; try from the owner
+  login.
+- OSS AI Hub: open-source AI tools directory with a JavaScript submission page.
+- FOSSHUNTER: open-source tool discovery; submit once from the owner account.
+- AgentsTide: AI agents and browser-agent directory; use the visible submit
+  path, with `hello@agentstide.com` as email fallback.
+- BuilderAI Tools: open-source AI developer tools directory; use
+  `AI Observability & Evaluation`.
 - AgDex: AI agent tools directory; developer tools and observability is the best
   category fit.
 - Agent Hub: agent/MCP/skill directory; use only if they accept tool suggestions.
