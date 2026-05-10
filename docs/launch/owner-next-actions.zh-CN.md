@@ -54,8 +54,8 @@ uvx --python 3.11 --from "browsertrace[ui]" browsertrace doctor --json
 
 ## 2. 维护 GitHub 个人 Profile README
 
-当前真正会渲染个人主页的 profile repo 是 `aaronlab/aaronlab`。旧 repo
-`aaronlab/aaronagent` 只作为旧流量 redirect 使用。
+当前真正会渲染个人主页的 profile repo 是 `aaronlab/aaronlab`。
+发布文案里不要使用旧的 profile redirect。
 
 正确的 repo 是：
 

@@ -4,9 +4,8 @@ This is the source draft for the live profile repository `aaronlab/aaronlab`.
 GitHub only renders a personal profile README when the repository name matches
 the account name exactly.
 
-Current note: the old public profile README repository `aaronlab/aaronagent`
-now acts as a redirect for old traffic. Keep the live profile README in
-`aaronlab/aaronlab`.
+Current note: keep the live profile README in `aaronlab/aaronlab`. Do not use
+the old profile redirect in launch copy.
 
 ## README Draft
 

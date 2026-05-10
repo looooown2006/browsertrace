@@ -40,7 +40,7 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
    - Keep BrowserTrace as the first featured project during launch.
    - Profile pin: completed. The public GitHub profile now pins
      `aaronlab/browsertrace`.
-   - Keep `aaronlab/aaronagent` only as an old-traffic redirect.
+   - Do not use the old profile redirect in launch copy.
    - Repository social preview: completed. GitHub reports
      `usesCustomOpenGraphImage=true`; keep `docs/social-preview.png` as the
      reusable launch and link-preview asset.

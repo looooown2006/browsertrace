@@ -58,8 +58,8 @@ Tracking issue: https://github.com/aaronlab/browsertrace/issues/5
 
 ## 2. Maintain The GitHub Profile README
 
-The live public profile README repo is now `aaronlab/aaronlab`. The old
-`aaronlab/aaronagent` repo is only a redirect for old traffic.
+The live public profile README repo is `aaronlab/aaronlab`. Do not use the old
+profile redirect in launch copy.
 
 Use this source draft when refreshing the profile README:
 
