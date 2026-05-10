@@ -2553,6 +2553,8 @@ def test_integration_request_template_requests_json_cli_troubleshooting_checks()
     ).read_text()
 
     assert "integration requests, CI, or AI/coding-agent troubleshooting" in template
+    assert "CONTRIBUTING.md#first-pr-recipe" in template
+    assert "first contribution small and reviewable" in template
     assert "browsertrace doctor --json" in template
     assert "browsertrace list --status failed --json" in template
     assert "browsertrace show <run_id> --json" in template
@@ -2694,7 +2696,10 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T07:21:35+00:00" in launch
-    assert "after issue #180 closed and good-first issue #181 rotation" in launch
+    assert "2026-05-10T07:24:02+00:00" in launch
+    assert (
+        "after integration request template First PR Recipe link for issue #181"
+        in launch
+    )
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
