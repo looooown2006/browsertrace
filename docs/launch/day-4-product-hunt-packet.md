@@ -88,6 +88,12 @@ Good first issue for contributors:
 https://github.com/aaronlab/browsertrace/issues/159
 ```
 
+First PR Recipe:
+
+```text
+https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
+```
+
 Description:
 
 ```text

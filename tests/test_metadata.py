@@ -2065,11 +2065,20 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
         'browsertrace[ui] @ git+https://github.com/aaronlab/browsertrace@v0.1.14'
     )
     packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
+    contributor_block = packet.split("Good first issue for contributors:", 1)[
+        1
+    ].split("Description:", 1)[0]
 
     assert f'uvx --from "{github_spec}" browsertrace doctor' in packet
     assert f'uvx --from "{github_spec}" browsertrace demo' in packet
     assert "https://github.com/aaronlab/browsertrace/issues/159" in packet
     assert "https://github.com/aaronlab/browsertrace/issues/158" not in packet
+    assert "First PR Recipe" in contributor_block
+    assert "CONTRIBUTING.md#first-pr-recipe" in contributor_block
+    assert "first contribution small and reviewable" in contributor_block
+    assert "stars" not in contributor_block.lower()
+    assert "upvotes" not in contributor_block.lower()
+    assert "reposts" not in contributor_block.lower()
 
 
 def test_show_hn_packet_links_current_good_first_issue():
@@ -2457,7 +2466,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T05:19:38+00:00" in launch
-    assert "after issue #158 closed and good-first issue #159 rotation" in launch
+    assert "2026-05-10T05:22:22+00:00" in launch
+    assert "after Product Hunt first PR recipe link for issue #159" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch
