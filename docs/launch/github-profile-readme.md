@@ -58,7 +58,7 @@ Launch feedback:
 https://github.com/aaronlab/browsertrace/issues/3
 
 Good first issue:
-https://github.com/aaronlab/browsertrace/issues/195
+https://github.com/aaronlab/browsertrace/issues/196
 
 First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
