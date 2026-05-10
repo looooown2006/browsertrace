@@ -49,7 +49,7 @@ Thanks for trying it. Please open an issue with the run shape, framework, Python
 ## Can I contribute a small fix?
 
 Yes. The current good first issue is:
-https://github.com/aaronlab/browsertrace/issues/200
+https://github.com/aaronlab/browsertrace/issues/201
 
 Use the First PR Recipe:
 https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
