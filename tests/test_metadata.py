@@ -1252,6 +1252,7 @@ def test_readme_links_llms_troubleshooting_context_near_install_checks():
         "For a walkthrough", 1
     )[0]
 
+    assert "[`llms.txt`](llms.txt)" in install_section
     assert "[`docs/llms.txt`](docs/llms.txt)" in install_section
     assert "AI/coding-agent troubleshooting context" in install_section
     assert "JSON CLI checks" in install_section
@@ -1793,7 +1794,8 @@ def test_readme_links_llms_txt_for_ai_coding_agents():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
 
-    assert "docs/llms.txt" in readme
+    assert "[`llms.txt`](llms.txt)" in readme
+    assert "[`docs/llms.txt`](docs/llms.txt)" in readme
     assert "AI/coding agents" in readme
     assert "concise project context" in readme
     assert 'pip install "browsertrace[ui]"' in readme

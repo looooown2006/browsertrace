@@ -724,3 +724,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T22:56:35+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after issue #9 owner launch queue refreshed to v0.1.17: https://github.com/aaronlab/browsertrace/issues/9#issuecomment-4416561753; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T23:03:12+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after v0.1.17 release notes wording updated to current PyPI install path; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T23:09:08+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after root llms.txt added for GitHub-side AI/crawler discovery; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T23:11:10+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | after README links root llms.txt as primary AI/coding-agent discovery file; traffic views 112/41 unique, clones 5965/1214 unique |

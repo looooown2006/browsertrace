@@ -39,8 +39,9 @@ computer-use agents.
 [integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml) ·
 [launch discussion](https://github.com/aaronlab/browsertrace/discussions/6)
 
-For AI/coding agents, [`docs/llms.txt`](docs/llms.txt) provides concise project context,
-links, and troubleshooting prompts.
+For AI/coding agents, [`llms.txt`](llms.txt) provides concise project context,
+links, and troubleshooting prompts. The hosted copy lives at
+[`docs/llms.txt`](docs/llms.txt).
 
 ## See a failure trace in 60 seconds
 
@@ -110,8 +111,8 @@ browsertrace show <run_id> --json
 ```
 
 For compact AI/coding-agent troubleshooting context, use
-[`docs/llms.txt`](docs/llms.txt); it includes the same JSON CLI checks plus
-project links and prompts.
+[`llms.txt`](llms.txt); it includes the same JSON CLI checks plus project links
+and prompts. The hosted copy is [`docs/llms.txt`](docs/llms.txt).
 
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
 - The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html).
