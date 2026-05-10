@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-10T23:03:12+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | current monitor pass after v0.1.17 release notes wording updated to current PyPI install path; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T23:09:08+00:00 | 3 | 998 | 9 | 0 | 11 | 0 | 12 | current monitor pass after root llms.txt added for GitHub-side AI/crawler discovery; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
