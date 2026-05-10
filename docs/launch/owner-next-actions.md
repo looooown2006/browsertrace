@@ -183,6 +183,16 @@ these receives a response.
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 
+## Reply To Troubleshooting Questions
+
+For local first-run issues, CI failures, or AI/coding-agent troubleshooting replies, ask for debugging/workflow details plus JSON CLI diagnostics when safe to share:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ## 8. Record Metrics After Each Action
 
 After every public post, profile update, PyPI publish, or directory submission:
