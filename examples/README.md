@@ -141,6 +141,17 @@ browsertrace show <run_id>
 browsertrace export <run_id> --public -o public.html
 ```
 
+### JSON CLI checks for automation
+
+For scripts, CI, or AI/coding-agent troubleshooting, use JSON output to check
+the local install, find failed runs, and inspect one run:
+
+```bash
+browsertrace doctor --json
+browsertrace list --status failed --json
+browsertrace show <run_id> --json
+```
+
 ### Environment variable quick reference
 
 Use these variables when you want to change local BrowserTrace behavior without
