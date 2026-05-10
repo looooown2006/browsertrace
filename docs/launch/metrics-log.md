@@ -706,3 +706,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-10T21:42:34+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after README first-screen artifact-boundary positioning added; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T21:44:03+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after llms.txt artifact-boundary positioning added; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-10T21:48:21+00:00 | 3 | 998 | 6 | 0 | 11 | 0 | 26 | after OWASP AOS browser/GUI artifact traceability issue: https://github.com/OWASP/www-project-agent-observability-standard/issues/74; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-10T21:50:43+00:00 | 3 | 998 | 6 | 0 | 12 | 0 | 26 | after BrowserTrace AOS mapping research issue opened: https://github.com/aaronlab/browsertrace/issues/237; traffic views 112/41 unique, clones 5965/1214 unique |
