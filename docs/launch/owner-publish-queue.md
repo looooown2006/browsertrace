@@ -48,7 +48,7 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      in Google Search Console and Bing Webmaster Tools.
    - Search indexing tracking issue:
      https://github.com/aaronlab/browsertrace/issues/16
-   - GitHub awesome lists: nine high-fit PRs are already open, including
+   - GitHub awesome lists: ten high-fit PRs are already open, including
      `steel-dev/awesome-web-agents#56` and
      `ai-boost/awesome-harness-engineering#23`, plus
      `Agent-Tools/awesome-autonomous-web#21` and

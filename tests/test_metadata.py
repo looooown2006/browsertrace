@@ -2504,7 +2504,7 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
 
-    assert "nine high-fit PRs are already open" in queue
+    assert "ten high-fit PRs are already open" in queue
     assert "the three prepared PRs" not in queue
     assert "ai-boost/awesome-harness-engineering#23" in queue
     assert "Agent-Tools/awesome-autonomous-web#21" in queue
