@@ -84,6 +84,37 @@ def test_cli_list_json_prints_recent_runs_as_json(cli):
     assert isinstance(by_id[first_id]["created_at"], float)
 
 
+def test_cli_list_status_filter_prints_matching_human_runs(cli):
+    cli_mod, tmp_path = cli
+    _seed(tmp_path, "completed-run")
+    _seed(tmp_path, "failed-run", fail=True)
+    buf = StringIO()
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["list", "--status", "failed"])
+
+    out = buf.getvalue()
+
+    assert rc == 0
+    assert "failed-run" in out
+    assert "completed-run" not in out
+
+
+def test_cli_list_status_filter_applies_to_json_output(cli):
+    cli_mod, tmp_path = cli
+    completed_id = _seed(tmp_path, "completed-run")
+    _seed(tmp_path, "failed-run", fail=True)
+    buf = StringIO()
+    with redirect_stdout(buf):
+        rc = cli_mod.main(["list", "--status", "completed", "--json"])
+
+    runs = json.loads(buf.getvalue())
+
+    assert rc == 0
+    assert [run["id"] for run in runs] == [completed_id]
+    assert runs[0]["name"] == "completed-run"
+    assert runs[0]["status"] == "completed"
+
+
 def test_cli_show_prints_steps_and_url(cli):
     cli_mod, tmp_path = cli
     rid = _seed(tmp_path, "showme", fail=True)

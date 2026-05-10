@@ -93,6 +93,7 @@ Useful local checks:
 - After `browsertrace demo`, `browsertrace list` shows demo run IDs you can open or export.
 - `browsertrace list` shows run IDs with timestamps and status.
 - `browsertrace list --json` prints recent runs as JSON with id, name, status, and created timestamp.
+- `browsertrace list --status failed` filters recent runs by status; combine with JSON, for example `browsertrace list --status completed --json`.
 - `browsertrace demo` prints a `Run ID:` line you can copy into `browsertrace show` or `browsertrace export`.
 - The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export; see the [checklist](examples/#first-run-troubleshooting-checklist).
 - The live static demo and public-safe demo export let you inspect a trace before installing anything; open the [live static demo](https://aaronlab.github.io/browsertrace/) or download [`browsertrace-demo-public.html`](https://github.com/aaronlab/browsertrace/releases/download/v0.1.14/browsertrace-demo-public.html).

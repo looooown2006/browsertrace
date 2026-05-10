@@ -623,6 +623,20 @@ def test_readme_explains_list_json_near_install_checks():
     assert "hosted sharing" not in readme
 
 
+def test_readme_explains_list_status_filter_near_install_checks():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    install_section = readme.split("## Install From The Release Tag", 1)[1].split(
+        "For a walkthrough", 1
+    )[0]
+
+    assert "`browsertrace list --status failed` filters recent runs by status" in install_section
+    assert "`browsertrace list --status completed --json`" in install_section
+    assert "`browsertrace list --json`" in install_section
+    assert "@v0.1.14" in install_section
+    assert "hosted sharing" not in readme
+
+
 def test_readme_explains_demo_run_id_output_near_install_checks():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
@@ -1029,6 +1043,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- After `browsertrace demo`, `browsertrace list` shows demo run IDs",
         "- `browsertrace list` shows run IDs with timestamps and status",
         "- `browsertrace list --json` prints recent runs as JSON",
+        "- `browsertrace list --status failed` filters recent runs by status",
         "- `browsertrace demo` prints a `Run ID:` line",
         "- The first-run troubleshooting checklist walks through `browsertrace doctor`, `browsertrace demo`, `browsertrace list`, `browsertrace show`, and public-safe export",
         "- The live static demo and public-safe demo export let you inspect a trace before installing anything",
@@ -1855,7 +1870,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T02:37:05+00:00" in launch
-    assert "after issue #126 closed and good-first issue #127 rotation" in launch
+    assert "2026-05-10T02:39:40+00:00" in launch
+    assert "after browsertrace list status filter for issue #127" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

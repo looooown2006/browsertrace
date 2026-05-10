@@ -59,11 +59,18 @@ def _fmt_status(s: str) -> str:
 
 def cmd_list(args) -> int:
     with _open() as c:
-        rows = c.execute(
-            "SELECT id, name, status, started_at, ended_at FROM runs "
-            "ORDER BY started_at DESC LIMIT ?",
-            (args.limit,),
-        ).fetchall()
+        if args.status:
+            rows = c.execute(
+                "SELECT id, name, status, started_at, ended_at FROM runs "
+                "WHERE status = ? ORDER BY started_at DESC LIMIT ?",
+                (args.status, args.limit),
+            ).fetchall()
+        else:
+            rows = c.execute(
+                "SELECT id, name, status, started_at, ended_at FROM runs "
+                "ORDER BY started_at DESC LIMIT ?",
+                (args.limit,),
+            ).fetchall()
     if args.json:
         payload = []
         for r in rows:
@@ -379,6 +386,11 @@ def main(argv: Optional[list[str]] = None) -> int:
     p_list = sub.add_parser("list", help="List recent runs")
     p_list.add_argument("--limit", type=int, default=20)
     p_list.add_argument("--json", action="store_true", help="Print recent runs as JSON")
+    p_list.add_argument(
+        "--status",
+        choices=["completed", "failed", "running"],
+        help="Only list runs with this status",
+    )
     p_list.set_defaults(func=cmd_list)
 
     p_show = sub.add_parser("show", help="Print a run's timeline")
