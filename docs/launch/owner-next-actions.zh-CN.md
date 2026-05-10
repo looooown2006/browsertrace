@@ -13,15 +13,13 @@ issue comment 都交给 Codex 继续处理：
 
 1. 在 https://pypi.org/manage/account/publishing/ 配置 PyPI Trusted
    Publisher，字段完全照第 1 节填。
-2. 打开 https://github.com/aaronlab/browsertrace/settings，在 General ->
-   Social preview 上传 `docs/social-preview.png`。
-3. 在 GitHub 个人主页点 Profile -> Customize your pins，置顶
+2. 在 GitHub 个人主页点 Profile -> Customize your pins，置顶
    `aaronlab/browsertrace`。
-4. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
+3. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。
 
 第 1 步做完后告诉 Codex “PyPI 配好了”，我就可以运行发布 workflow，并把公开
-安装命令从 GitHub tag 改成正常的 `pip install`。第 2-4 步做完后，把帖子 URL
+安装命令从 GitHub tag 改成正常的 `pip install`。第 2-3 步做完后，把帖子 URL
 或群名发给 Codex，我会记录指标并更新跟踪 issue。
 
 ## 1. 先解锁 PyPI
@@ -97,23 +95,16 @@ https://github.com/aaronlab/browsertrace/issues/24
 
 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/13
 
-## 3. 上传 GitHub Social Preview
+## 3. GitHub Social Preview
 
-打开 GitHub 仓库设置：
+Social preview：已完成。GitHub 现在对 `aaronlab/browsertrace` 返回
+`usesCustomOpenGraphImage=true`。
 
-```text
-Settings -> General -> Social preview
-```
-
-上传：
+以后 Product Hunt 图集、发布素材、链接预览测试仍然复用这个文件：
 
 ```text
 docs/social-preview.png
 ```
-
-这样别人分享 repo 链接时会显示 BrowserTrace 卡片，而不是 GitHub 默认图。
-
-跟踪 issue: https://github.com/aaronlab/browsertrace/issues/15
 
 ## 4. 提交搜索引擎收录
 

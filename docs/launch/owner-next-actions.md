@@ -15,17 +15,14 @@ follow-up verification, README updates, metrics, and issue comments:
 
 1. Configure PyPI Trusted Publisher at https://pypi.org/manage/account/publishing/
    with the exact values in section 1.
-2. Upload `docs/social-preview.png` in
-   https://github.com/aaronlab/browsertrace/settings under General -> Social
-   preview.
-3. Pin `aaronlab/browsertrace` from the GitHub profile page with
+2. Pin `aaronlab/browsertrace` from the GitHub profile page with
    Profile -> Customize your pins.
-4. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
+3. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
 
 After step 1, tell Codex "PyPI is configured" so it can run the publish workflow
 and replace GitHub-tag install commands with normal `pip install` commands.
-After steps 2-4, send the posted URLs or a short channel note so Codex can log
+After steps 2-3, send the posted URLs or a short channel note so Codex can log
 metrics and update the tracking issues.
 
 ## 1. Unblock PyPI
@@ -99,20 +96,17 @@ https://github.com/aaronlab/browsertrace/issues/24
 
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/13
 
-## 3. Upload The GitHub Social Preview
+## 3. GitHub Social Preview
 
-GitHub link previews still need the repository-level image uploaded manually.
-Use the ready asset:
+Social preview: completed. GitHub now reports
+`usesCustomOpenGraphImage=true` for `aaronlab/browsertrace`.
+
+Keep the reusable asset here for future launches, Product Hunt galleries, and
+manual link-preview checks:
 
 ```text
 docs/social-preview.png
 ```
-
-In GitHub, open repository Settings -> General -> Social preview and upload the
-PNG. This should happen before external posts so shared links show the
-BrowserTrace card instead of a generated GitHub card.
-
-Tracking issue: https://github.com/aaronlab/browsertrace/issues/15
 
 ## 4. Submit The Sitemap To Search Consoles
 

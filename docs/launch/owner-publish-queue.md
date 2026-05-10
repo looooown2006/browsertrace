@@ -42,10 +42,9 @@ Use `docs/launch/day-1-publish-packet.md` as the single owner-facing checklist.
      `Profile -> Customize your pins -> aaronlab/browsertrace`.
      Tracking issue: https://github.com/aaronlab/browsertrace/issues/24
    - Keep `aaronlab/aaronagent` only as an old-traffic redirect.
-   - Repository social preview: upload `docs/social-preview.png` in Settings ->
-     General -> Social preview before external posts.
-   - Social preview tracking issue:
-     https://github.com/aaronlab/browsertrace/issues/15
+   - Repository social preview: completed. GitHub reports
+     `usesCustomOpenGraphImage=true`; keep `docs/social-preview.png` as the
+     reusable launch and link-preview asset.
    - Search indexing: submit `https://aaronlab.github.io/browsertrace/sitemap.xml`
      in Google Search Console and Bing Webmaster Tools.
    - Search indexing tracking issue:

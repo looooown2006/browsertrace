@@ -3433,6 +3433,28 @@ def test_owner_next_actions_include_uvx_fallback_before_pypi():
         assert "pypi" in text.lower(), relpath
 
 
+def test_owner_docs_mark_social_preview_uploaded():
+    project_root = Path(__file__).resolve().parents[1]
+    owner_next_actions = (
+        project_root / "docs" / "launch" / "owner-next-actions.md"
+    ).read_text()
+    owner_next_actions_zh = (
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
+    ).read_text()
+    owner_publish_queue = (
+        project_root / "docs" / "launch" / "owner-publish-queue.md"
+    ).read_text()
+
+    assert "Social preview: completed" in owner_next_actions
+    assert "usesCustomOpenGraphImage=true" in owner_next_actions
+    assert "Social preview：已完成" in owner_next_actions_zh
+    assert "usesCustomOpenGraphImage=true" in owner_next_actions_zh
+    assert "Repository social preview: completed" in owner_publish_queue
+    assert "https://github.com/aaronlab/browsertrace/issues/15" not in (
+        owner_next_actions + owner_next_actions_zh + owner_publish_queue
+    )
+
+
 def test_launch_control_room_has_current_audit_and_uvx_fallback():
     project_root = Path(__file__).resolve().parents[1]
     github_spec = (
