@@ -577,6 +577,17 @@ def test_changelog_links_first_pr_recipe_for_small_docs_fixes():
     assert "reposts" not in changelog.lower()
 
 
+def test_changelog_tracks_unreleased_export_and_discovery_updates():
+    project_root = Path(__file__).resolve().parents[1]
+    changelog = (project_root / "CHANGELOG.md").read_text()
+    unreleased = changelog.split("## Unreleased", 1)[1].split("## 0.1.16", 1)[0]
+
+    assert "standalone HTML exports" in unreleased
+    assert "viewport" in unreleased
+    assert "Open Graph URL" in unreleased
+    assert "JSON-LD" in unreleased
+
+
 def test_code_of_conduct_links_first_pr_recipe_for_small_docs_fixes():
     project_root = Path(__file__).resolve().parents[1]
     code_of_conduct = (project_root / "CODE_OF_CONDUCT.md").read_text()

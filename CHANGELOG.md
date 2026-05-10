@@ -9,6 +9,11 @@ to keep the first contribution small and reviewable.
 
 ## Unreleased
 
+- Improved standalone HTML exports with `lang`, `viewport`, and a responsive
+  single-column layout for narrow screens.
+- Added Open Graph URL, canonical, `llms.txt`, and JSON-LD discovery metadata
+  to public Pages demo, launch, integration, and exported-trace surfaces.
+
 ## 0.1.16 - 2026-05-10
 
 - Published BrowserTrace to PyPI with Trusted Publishing.
