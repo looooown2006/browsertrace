@@ -179,6 +179,20 @@ def test_issue_chooser_links_first_pr_recipe_for_small_contributions():
     assert "reposts" not in config.lower()
 
 
+def test_issue_chooser_links_code_of_conduct_for_issue_expectations():
+    project_root = Path(__file__).resolve().parents[1]
+    config = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "config.yml"
+    ).read_text()
+
+    assert "name: Code of Conduct" in config
+    assert (
+        "url: https://github.com/aaronlab/browsertrace/blob/main/CODE_OF_CONDUCT.md"
+        in config
+    )
+    assert "constructive issues, discussions, reviews, and pull requests" in config
+
+
 def test_homepage_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
@@ -2977,7 +2991,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     )
     launch = (project_root / "LAUNCH.md").read_text()
 
-    assert "2026-05-10T09:07:02+00:00" in launch
-    assert "after issue #200 closed and good-first issue #201 rotation" in launch
+    assert "2026-05-10T09:09:45+00:00" in launch
+    assert "after issue chooser Code of Conduct link for issue #201" in launch
     assert f'uvx --from "{github_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{github_spec}" browsertrace demo' in launch

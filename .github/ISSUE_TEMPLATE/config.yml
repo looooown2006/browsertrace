@@ -6,3 +6,6 @@ contact_links:
   - name: First PR Recipe
     url: https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe
     about: Start with a first contribution small and reviewable before opening a larger integration issue.
+  - name: Code of Conduct
+    url: https://github.com/aaronlab/browsertrace/blob/main/CODE_OF_CONDUCT.md
+    about: Review expectations for constructive issues, discussions, reviews, and pull requests.
