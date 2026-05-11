@@ -3113,6 +3113,20 @@ def test_stagehand_guide_documents_custom_tool_replay_gaps():
     assert "browserbase/stagehand#1558" in page
 
 
+def test_stagehand_guide_documents_semantic_verification_boundaries():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "stagehand-debugging.html").read_text()
+
+    assert "Debug semantic verification boundaries" in page
+    assert "inspectable action boundary" in page
+    assert "action proposal" in page
+    assert "target evidence" in page
+    assert "semantic endpoint evidence" in page
+    assert "verification result" in page
+    assert "executed, blocked, escalated" in page
+    assert "browserbase/stagehand#1880" in page
+
+
 def test_skyvern_guide_documents_action_confidence_authorization():
     project_root = Path(__file__).resolve().parents[1]
     page = (project_root / "docs" / "skyvern-debugging.html").read_text()
