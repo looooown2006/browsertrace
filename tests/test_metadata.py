@@ -314,6 +314,8 @@ def test_homepage_intro_uses_mobile_friendly_copy():
     assert "font-size: clamp(34px, 6vw, 60px)" not in homepage
     assert "@media (max-width: 620px)" in homepage
     assert "@media (max-width: 420px)" in homepage
+    assert "max-width: min(100%, 20ch)" in homepage
+    assert "max-width: 16ch" not in homepage
 
 
 def test_homepage_intro_uses_natural_title_wrapping():
@@ -338,7 +340,8 @@ def test_homepage_mobile_title_has_line_length_guard():
     homepage = (project_root / "docs" / "index.html").read_text()
 
     assert "@media (max-width: 620px)" in homepage
-    assert "max-width: 16ch;" in homepage
+    assert "max-width: min(100%, 20ch);" in homepage
+    assert "max-width: 16ch;" not in homepage
 
 
 def test_homepage_intro_actions_do_not_squeeze_copy_column():
