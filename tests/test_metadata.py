@@ -764,6 +764,31 @@ def test_github_profile_draft_includes_json_cli_troubleshooting_note():
     assert "reposts" not in note.lower()
 
 
+def test_github_profile_draft_links_stack_guides_from_troubleshooting_note():
+    project_root = Path(__file__).resolve().parents[1]
+    profile_draft = (
+        project_root / "docs" / "launch" / "github-profile-readme.md"
+    ).read_text()
+    assert "## Troubleshooting" in profile_draft
+    note = profile_draft.split("## Troubleshooting", 1)[1].split(
+        "## Current Focus", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "Stack-Specific Reply Links" in note
+    for guide in stack_guides:
+        assert guide in note
+    assert "stars" not in note.lower()
+    assert "upvotes" not in note.lower()
+    assert "reposts" not in note.lower()
+
+
 def test_show_hn_contribution_reply_points_to_current_good_first_queue():
     project_root = Path(__file__).resolve().parents[1]
     packet = (
