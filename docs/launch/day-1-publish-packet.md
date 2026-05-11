@@ -9,6 +9,7 @@ upvotes, or artificial engagement.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+- Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 - Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 - Launch discussion: https://github.com/aaronlab/browsertrace/discussions/6
 - Primary media: `docs/demo.mp4`

@@ -3157,6 +3157,26 @@ def test_launch_copy_includes_pypi_trial_after_publish():
         assert "pypi" in text.lower(), relpath
 
 
+def test_owner_launch_copy_surfaces_failure_patterns_page():
+    project_root = Path(__file__).resolve().parents[1]
+    failure_patterns_url = (
+        "https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html"
+    )
+
+    for relpath in [
+        "docs/launch/channel-copy.md",
+        "docs/launch/day-1-publish-packet.md",
+        "docs/launch/day-2-show-hn-packet.md",
+        "docs/launch/day-4-product-hunt-packet.md",
+        "docs/launch/directory-submission-sheet.md",
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+        "docs/launch/owner-publish-queue.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert failure_patterns_url in text, relpath
+
+
 def test_x_launch_copy_fits_non_premium_post_limit():
     project_root = Path(__file__).resolve().parents[1]
     copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()

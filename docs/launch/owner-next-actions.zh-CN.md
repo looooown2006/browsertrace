@@ -46,6 +46,8 @@ session recovery。这些都是用具体失败场景来征集真实 workflow 反
 
 快速复制入口：
 
+- Failure patterns page：
+  `https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html`
 - Fresh Browser Use angle：
   `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle`
 - Fresh Browser Use remote-CDP angle：

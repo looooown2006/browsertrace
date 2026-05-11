@@ -50,6 +50,8 @@ and update the tracking issues.
 
 Fast copy/paste blocks:
 
+- Failure patterns page:
+  `https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html`
 - Fresh Browser Use angle:
   `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle`
 - Fresh Browser Use remote-CDP angle:

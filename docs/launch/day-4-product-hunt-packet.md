@@ -69,6 +69,12 @@ Secondary URL for maker comment and replies:
 https://github.com/aaronlab/browsertrace
 ```
 
+Failure patterns URL for technical replies:
+
+```text
+https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
+```
+
 Public-safe demo export for replies:
 
 ```text

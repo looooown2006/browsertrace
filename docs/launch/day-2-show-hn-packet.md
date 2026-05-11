@@ -24,6 +24,7 @@ Open these in a browser:
 - https://github.com/aaronlab/browsertrace
 - https://aaronlab.github.io/browsertrace/
 - https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+- https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 - https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 - https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 

@@ -9,6 +9,7 @@ upvotes, swaps, or artificial engagement.
 - Repo: https://github.com/aaronlab/browsertrace
 - Live demo: https://aaronlab.github.io/browsertrace/
 - Raw trace: https://aaronlab.github.io/browsertrace/trace.html
+- Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 - Comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
 - Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
