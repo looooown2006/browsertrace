@@ -2699,6 +2699,27 @@ browsertrace show <run_id> --json
     assert "reposts" not in templates.lower()
 
 
+def test_response_templates_include_stagehand_custom_tool_replay_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    templates = (
+        project_root / "docs" / "launch" / "response-templates.md"
+    ).read_text()
+
+    assert "## Stagehand custom tools are skipped during replay" in templates
+    reply = templates.split(
+        "## Stagehand custom tools are skipped during replay", 1
+    )[1].split("## Can I contribute a small fix?", 1)[0]
+
+    assert "replay contract" in reply
+    assert "diagnostic trace contract" in reply
+    assert "replay-safe" in reply
+    assert "redacted argument summary" in reply
+    assert "raw credentials" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_response_templates_link_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     templates = (

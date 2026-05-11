@@ -36,6 +36,25 @@ Yes. There is a Browser Use integration in `browsertrace.integrations.browser_us
 
 Yes. The Stagehand wrapper records `act` and `extract` calls and keeps the same run timeline. The README has a minimal example.
 
+## Stagehand custom tools are skipped during replay
+
+For a useful technical reply, separate the replay contract and the diagnostic trace contract.
+
+For replay, the cache needs enough data to call the current tool implementation
+again: tool name, serialized arguments, step id, original status/error, and
+whether the tool is replay-safe. Credential-fill or other side-effectful tools
+should usually require explicit opt-in.
+
+For debugging, the trace can preserve a richer boundary even when replay is
+disabled: tool name, redacted argument summary, result summary, status/error,
+step index, timestamp, URL or page id before/after, and optional screenshot or
+observation ids. That makes a skipped custom tool visible instead of letting
+later browser steps continue against missing page state.
+
+Avoid storing raw credentials or sensitive tool args by default. Prefer a
+redacted shape plus a runtime hook that can rehydrate secrets when replay is
+explicitly enabled.
+
 ## Can I share traces with a teammate?
 
 Today, use `browsertrace export <run_id> -o run.html` to create a self-contained HTML file. Hosted share links are on the roadmap, but the local OSS path comes first.
