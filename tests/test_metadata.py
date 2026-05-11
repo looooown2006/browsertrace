@@ -3977,6 +3977,28 @@ def test_tutorial_post_links_stack_debugging_guides_for_replies():
     assert "reposts" not in guide_section.lower()
 
 
+def test_tutorial_post_includes_aos_mapping_research_note():
+    project_root = Path(__file__).resolve().parents[1]
+    tutorial = (project_root / "docs" / "launch" / "tutorial-post.md").read_text()
+
+    assert "## AOS Mapping Research" in tutorial
+    research_note = tutorial.split("## AOS Mapping Research", 1)[1].split(
+        "## Try it", 1
+    )[0]
+
+    assert "not an AOS compliance claim" in research_note
+    assert "tool request/result" in research_note
+    assert "step correlation" in research_note
+    assert "URI-style screenshot/video artifacts" in research_note
+    assert "URL metadata" in research_note
+    assert "model I/O summaries" in research_note
+    assert "explicit redaction state" in research_note
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in research_note
+    assert "stars" not in research_note.lower()
+    assert "upvotes" not in research_note.lower()
+    assert "reposts" not in research_note.lower()
+
+
 def test_tutorial_post_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     tutorial = (project_root / "docs" / "launch" / "tutorial-post.md").read_text()
