@@ -14,6 +14,16 @@ Browserbase is a hosted browser runtime with recordings. BrowserTrace is runtime
 
 Detailed comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
 
+## How is this different from Browserbase browser-trace skill?
+
+The browser-trace skill is a good fit when you want raw CDP telemetry: DevTools
+events, screenshots, DOM dumps, and per-page buckets around a running browser
+automation. BrowserTrace sits one layer higher: it gives a local Python UI and
+HTML export for the agent-facing failure story, including the action label,
+URL, screenshot, model input/output, status, and error.
+
+Detailed comparison: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
+
 ## Does data leave my machine?
 
 No by default. The local tracer stores SQLite data and screenshots under `~/.browsertrace/` unless you override `BROWSERTRACE_HOME`. The optional AI summary endpoint only calls an OpenAI-compatible API if you configure an API key and request a summary.
