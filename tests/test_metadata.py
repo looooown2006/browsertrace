@@ -2720,6 +2720,27 @@ def test_response_templates_include_stagehand_custom_tool_replay_reply():
     assert "reposts" not in reply.lower()
 
 
+def test_response_templates_include_skyvern_vnc_cdp_debug_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    templates = (
+        project_root / "docs" / "launch" / "response-templates.md"
+    ).read_text()
+
+    assert "## Skyvern VNC and CDP debug integration" in templates
+    reply = templates.split(
+        "## Skyvern VNC and CDP debug integration", 1
+    )[1].split("## Can I contribute a small fix?", 1)[0]
+
+    assert "linked artifacts for the same step" in reply
+    assert "VNC screenshot or recording artifact id" in reply
+    assert "CDP DOM snapshot" in reply
+    assert "connect/probe result" in reply
+    assert "redaction state" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_response_templates_link_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     templates = (

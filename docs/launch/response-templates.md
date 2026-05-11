@@ -55,6 +55,23 @@ Avoid storing raw credentials or sensitive tool args by default. Prefer a
 redacted shape plus a runtime hook that can rehydrate secrets when replay is
 explicitly enabled.
 
+## Skyvern VNC and CDP debug integration
+
+For a useful technical reply, suggest treating VNC and CDP data as linked artifacts for the same step instead of two unrelated debug streams.
+
+For each automation step or failure boundary, the useful shape is: step id,
+task id, workflow id, URL and frame/page id,
+VNC screenshot or recording artifact id with timestamp and dimensions,
+CDP DOM snapshot or selected element summary, scoped
+console/network/performance slices, action or tool name, status/error, retry
+or recovery decision, and redaction state for screenshots, URLs, headers,
+cookies, and form values.
+
+Also call out debug-session lifecycle events. For reverse-proxy, WebSocket,
+VNC, or CDP connection failures, the connect/probe result, capture start,
+capture stop, timeout, cleanup, and resource leak detection can be more useful
+than screenshots alone.
+
 ## Can I share traces with a teammate?
 
 Today, use `browsertrace export <run_id> -o run.html` to create a self-contained HTML file. Hosted share links are on the roadmap, but the local OSS path comes first.
