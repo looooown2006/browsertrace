@@ -745,3 +745,4 @@ uv run --python 3.11 python scripts/launch_metrics.py --json
 | 2026-05-11T00:11:41+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after Product Hunt packet added concrete Browser Use icon-only failure shape; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-11T00:13:34+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after console.dev and AgDex email drafts added concrete Browser Use failure case; traffic views 112/41 unique, clones 5965/1214 unique |
 | 2026-05-11T00:16:25+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after llms.txt added Browser Use icon-only failure shape; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T00:18:31+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after IndexNow refresh for llms.txt failure-shape update: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4416725910; traffic views 112/41 unique, clones 5965/1214 unique |
