@@ -3777,6 +3777,10 @@ def test_show_hn_packet_uses_concrete_browser_use_failure_shape():
     assert "screenshot shows the right plus icon" in first_comment
     assert "tooltip text is not an" in first_comment
     assert "target evidence" in first_comment
+    assert "persistent browser recovery" in first_comment
+    assert "Profile lock files" in first_comment
+    assert "CDP attach/probe timing" in first_comment
+    assert "recovery action" in first_comment
     assert "stars" not in first_comment.lower()
     assert "upvotes" not in first_comment.lower()
     assert "reposts" not in first_comment.lower()
@@ -3903,6 +3907,11 @@ def test_product_hunt_packet_uses_concrete_browser_use_failure_shape():
     assert "Browser Use agent saw the right plus icon" in maker_comment
     assert "tooltip text was not" in maker_comment
     assert "target evidence" in maker_comment
+    assert "persistent browser recovery" in maker_comment
+    assert "Profile lock files" in maker_comment
+    assert "CDP attach/probe" in maker_comment
+    assert "recovery action" in maker_comment
+    assert "stars" not in maker_comment.lower()
     assert "upvotes" not in maker_comment.lower()
     assert "reposts" not in maker_comment.lower()
 

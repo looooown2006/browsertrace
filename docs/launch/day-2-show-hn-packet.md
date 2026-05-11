@@ -86,6 +86,11 @@ event-bus lock timing determines whether one bad session blocks others. That
 needs method timing and browser/session evidence, not just a generic timeout
 line.
 
+For custom computer-use agents, I also keep seeing persistent browser recovery
+fail before screenshots or URLs exist. Profile lock files and process names are
+not enough; the useful trace boundary is session mode, a redacted profile id,
+CDP attach/probe timing, recovery action, and final connection state.
+
 BrowserTrace records each step locally: screenshot, URL, action, model input,
 model output, status, and error. You open the local UI, click a run, and jump
 straight to the failed step.

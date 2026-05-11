@@ -152,6 +152,11 @@ while a state-collection request never returns. If event-bus lock timing is part
 of the failure, you need method timing, browser/session IDs, and recovery state
 beside the failed step.
 
+For custom computer-use agents, persistent browser recovery can fail before any
+screenshot or URL exists. Profile lock files and process names are not enough;
+the useful evidence is session mode, a redacted profile id, CDP attach/probe
+timing, recovery action, and final connection state.
+
 BrowserTrace keeps the missing context locally:
 
 - screenshots

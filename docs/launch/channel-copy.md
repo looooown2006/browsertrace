@@ -266,6 +266,8 @@ Hi HN,
 
 I've been building browser-using AI agents and kept hitting the same debugging loop: a multi-minute run fails, the logs show tool calls, but I cannot see what the agent actually saw at the browser step where things went wrong.
 
+Another failure class happens even earlier: persistent browser recovery can fail before any screenshot exists. For that, profile lock files are not enough; I want session_mode, redacted profile id, CDP attach/probe timing, recovery action, and final connection state in the trace.
+
 BrowserTrace is a small Python library plus local web UI that records each browser-agent step: screenshot, URL, action, model input, model output, status, and error. You open localhost:3000, click the run, and jump to the failed step.
 
 It is intentionally local-first:
@@ -318,6 +320,8 @@ Maker comment:
 I built BrowserTrace after losing too much time debugging browser-agent failures from logs alone.
 
 The agent would fail at step 47, but by then the browser was gone. I could see which code ran, but not what the model saw, clicked, or returned.
+
+Some failures happen before the first page screenshot too: persistent browser recovery, profile lock state, CDP attach/probe timing, and whether the agent reused, attached, reset, or fell back to an isolated session.
 
 BrowserTrace keeps the missing context locally:
 - screenshots
