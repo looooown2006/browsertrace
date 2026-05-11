@@ -240,6 +240,11 @@
             <td>Use BrowserTrace when you want a local, runtime-agnostic trace that works with your own Playwright, Browser Use, Stagehand, Skyvern, or custom code.</td>
           </tr>
           <tr>
+            <td>You need a raw CDP firehose, screenshots, DOM snapshots, and per-page event buckets around a running automation.</td>
+            <td><a href="https://github.com/browserbase/skills/tree/main/skills/browser-trace">Browserbase browser-trace skill</a></td>
+            <td>Use BrowserTrace when you want a compact Python/local UI for the agent decision timeline instead of a lower-level artifact directory.</td>
+          </tr>
+          <tr>
             <td>You need a small OSS artifact to attach to a bug report, issue, pull request, or teammate review.</td>
             <td>BrowserTrace</td>
             <td>Export a standalone HTML trace with screenshots, URL, action, model input/output, status, errors, and optional redaction.</td>
@@ -264,6 +269,12 @@
       <h2>BrowserTrace vs Browserbase recordings</h2>
       <p>Browserbase is a hosted browser platform with session observability and live debugging. BrowserTrace is not a hosted browser runtime. It runs with the browser stack you already use and writes local traces that can be exported as HTML.</p>
       <p>Use Browserbase when you want managed browser sessions. Use BrowserTrace when you want a lightweight OSS trace around a local or self-managed browser-agent run.</p>
+    </section>
+
+    <section>
+      <h2>BrowserTrace vs Browserbase browser-trace skill</h2>
+      <p>The Browserbase browser-trace skill is useful when you want low-level browser telemetry: a read-only CDP client, raw DevTools events, screenshots, DOM dumps, and searchable per-page buckets around a running automation.</p>
+      <p>BrowserTrace sits one layer higher. It gives browser-agent builders a local step timeline with the action label, screenshot, URL, model input/output, status, error, and a public-safe HTML export. Use the browser-trace skill for raw CDP investigation; use BrowserTrace when the debugging artifact needs to explain the failed agent decision.</p>
     </section>
 
     <section>

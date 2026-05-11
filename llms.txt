@@ -102,3 +102,8 @@ browsertrace show <run_id> --json
 BrowserTrace is not a hosted observability platform. It is a local-first,
 open-source debugging tool for the browser state and model decisions around
 AI browser-agent failures.
+
+It complements raw CDP capture tools such as the Browserbase browser-trace
+skill. That skill records DevTools events, screenshots, DOM dumps, and per-page
+buckets; BrowserTrace focuses on the agent-facing step timeline, model I/O,
+status/error context, and public-safe HTML export.

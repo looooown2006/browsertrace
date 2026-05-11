@@ -525,6 +525,7 @@ the [browser-agent debugging comparison](https://aaronlab.github.io/browsertrace
 |---|---|---|
 | Langfuse / LangSmith / Helicone | LLM call tracing, prompt/cost/latency, evals, monitoring | BrowserTrace adds the visual browser failure story: screenshot, URL, action, model I/O, status, and first failed step |
 | Browserbase | Hosted browser runtime, live debugging, session recordings | BrowserTrace is local-first and runtime-agnostic for Playwright, Browser Use, Stagehand, Skyvern, and custom code |
+| Browserbase browser-trace skill | Raw CDP firehose, screenshots, DOM dumps, and per-page searchable buckets | BrowserTrace is a Python local viewer for agent step timelines, model I/O, and public-safe failure reports |
 | Playwright Trace Viewer | Deep Playwright action, DOM, console, network, and timing inspection | BrowserTrace adds the LLM decision context and a standalone browser-agent failure report |
 | Laminar | Agent observability with browser session replay | BrowserTrace is smaller, local-first, and focused on shareable failed browser-agent traces |
 | **BrowserTrace** | **Local replay debugger built around the browser-agent failure loop** | OSS, runtime-agnostic, no signup, JSON API for AI self-debug |
