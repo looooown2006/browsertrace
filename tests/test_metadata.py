@@ -5165,6 +5165,17 @@ def test_search_indexing_submission_links_stack_debugging_guides_for_replies():
     assert "reposts" not in guide_section.lower()
 
 
+def test_search_indexing_submission_includes_failure_patterns_url():
+    project_root = Path(__file__).resolve().parents[1]
+    submission = (
+        project_root / "docs" / "launch" / "search-indexing-submission.md"
+    ).read_text()
+    url = "https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html"
+
+    assert f"| Failure patterns | `{url}` |" in submission
+    assert f'"{url}"' in submission
+
+
 def test_bug_report_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (
