@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T19:44:54+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 31 | current monitor pass after failure-patterns overview added Browser Use new-tab, Stagehand semantic verification, and Skyvern VNC/CDP sections; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T19:48:07+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 31 | current monitor pass after owner email send packet surfaced concrete failure patterns for console.dev and AgDex; external listing PRs still open and star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

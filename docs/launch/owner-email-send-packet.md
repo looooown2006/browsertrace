@@ -38,6 +38,10 @@ It is useful for developers building Browser Use, Stagehand, Skyvern,
 Playwright + LLM, or custom computer-use agents, especially when a failed run
 needs screenshot, URL, model decision, and failed-step evidence in one place.
 
+The current failure-patterns page covers concrete cases such as Browser Use
+new-tab desync, Stagehand semantic verification boundary, and Skyvern VNC/CDP
+debug integration.
+
 Failure patterns page:
 https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 
@@ -70,6 +74,9 @@ Example use case:
 Debugging a Browser Use, Stagehand, Skyvern, Playwright + LLM, or custom
 computer-use run where logs do not show the screenshot, URL, action, model
 decision, and failed-step evidence together.
+
+Concrete cases covered include Browser Use new-tab desync, Stagehand semantic
+verification boundary, and Skyvern VNC/CDP debug integration.
 
 Failure patterns page:
 https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html

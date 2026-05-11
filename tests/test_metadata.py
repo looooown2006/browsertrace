@@ -4046,6 +4046,9 @@ def test_owner_email_send_packet_is_short_and_linked():
     assert "https://github.com/aaronlab/browsertrace" in packet
     assert "https://aaronlab.github.io/browsertrace/" in packet
     assert "browser-agent-failure-patterns.html" in packet
+    assert "Browser Use new-tab desync" in packet
+    assert "Stagehand semantic verification boundary" in packet
+    assert "Skyvern VNC/CDP debug integration" in packet
     assert "browsertrace-demo-public.html" in packet
     assert "Do not ask for stars" in packet
     assert "upvotes" not in packet.lower()
