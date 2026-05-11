@@ -470,6 +470,14 @@ def test_integrations_page_includes_aos_mapping_research_table():
     assert rows["Action label or tool call"][2] == "partially mapped"
     assert rows["Status and error"][1] == "steps/toolCallResult with isError"
     assert rows["Status and error"][2] == "partially mapped"
+    assert "research-only toolCallResult result shape" in rows["Status and error"][3]
+    assert "run status" in rows["Status and error"][3]
+    assert "step status" in rows["Status and error"][3]
+    assert "error message/type" in rows["Status and error"][3]
+    assert "action/tool label" in rows["Status and error"][3]
+    assert "step id" in rows["Status and error"][3]
+    assert "public export/redaction state" in rows["Status and error"][3]
+    assert "not an AOS compliance claim" in rows["Status and error"][3]
     assert rows["Screenshot or future video artifact"][1] == (
         "FileWithUri preferred over inline FileWithBytes"
     )
