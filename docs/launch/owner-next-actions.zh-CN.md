@@ -18,7 +18,9 @@ Browser Use angle，可以放在 Day 1 正式帖子之前或一起发：
 timing。两者都是用具体失败场景来征集真实 workflow 反馈。
 
 1. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
-   主素材用 `docs/demo.mp4`。
+   主素材用 `docs/demo.mp4`。平台支持 alt text 时，用
+   `docs/launch/day-1-publish-packet.md#media-alt-text` 里的
+   `Media Alt Text`。
 2. 用 `docs/launch/directory-submission-sheet.md` 发送已经准备好的 owner
    email 投稿：发给 console.dev 的 `hello@console.dev`，以及发给 AgDex 的
    `agdex.ai@gmail.com`。

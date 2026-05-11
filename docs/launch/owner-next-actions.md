@@ -20,7 +20,9 @@ Fastest fresh technical post: publish either Browser Use angle from
 timing. Both ask for real workflow feedback through concrete failure modes.
 
 1. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
-   `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
+   `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`. When the
+   platform supports alt text, use `Media Alt Text` from
+   `docs/launch/day-1-publish-packet.md#media-alt-text`.
 2. Send the ready owner-email submissions from
    `docs/launch/directory-submission-sheet.md`:
    `hello@console.dev` and `agdex.ai@gmail.com` for console.dev and AgDex.

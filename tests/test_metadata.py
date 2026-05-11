@@ -4076,6 +4076,25 @@ def test_owner_next_actions_include_uvx_fallback_before_pypi():
         assert "pypi" in text.lower(), relpath
 
 
+def test_owner_next_actions_surface_launch_media_alt_text():
+    project_root = Path(__file__).resolve().parents[1]
+
+    expected = [
+        ("docs/launch/owner-next-actions.md", "Media Alt Text", "Fast copy/paste blocks"),
+        ("docs/launch/owner-next-actions.zh-CN.md", "Media Alt Text", "快速复制入口"),
+    ]
+
+    for relpath, phrase, end_marker in expected:
+        text = (project_root / relpath).read_text()
+        unblock = text.split("10", 1)[1].split(end_marker, 1)[0]
+        assert "docs/launch/day-1-publish-packet.md#media-alt-text" in unblock, relpath
+        assert phrase in unblock, relpath
+        assert "docs/demo.mp4" in unblock, relpath
+        assert "stars" not in unblock.lower(), relpath
+        assert "upvotes" not in unblock.lower(), relpath
+        assert "reposts" not in unblock.lower(), relpath
+
+
 def test_owner_next_actions_use_hard_success_check():
     project_root = Path(__file__).resolve().parents[1]
     expected = (
