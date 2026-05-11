@@ -28,7 +28,7 @@ No signup, no cloud, MIT.
 ```
 
 ```text
-It records each failed Browser Use / Stagehand / Playwright + LLM run as a local timeline:
+It records each failed Browser Use / Stagehand / Skyvern / Playwright + LLM run as a local timeline:
 
 - screenshot
 - URL
@@ -63,7 +63,7 @@ BrowserTrace records each step as a local timeline:
 - Step status and error
 - Exportable HTML trace, with a redacted sharing mode
 
-It is MIT licensed, local-first, and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
+It is MIT licensed, local-first, and designed for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom computer-use agents.
 
 Live demo: https://aaronlab.github.io/browsertrace/
 Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
@@ -92,7 +92,7 @@ Live demo: https://aaronlab.github.io/browsertrace/
 Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 GitHub: https://github.com/aaronlab/browsertrace
 
-如果你在用 Browser Use / Stagehand / Playwright + LLM / computer use，想听听你觉得还应该记录什么。
+如果你在用 Browser Use / Stagehand / Skyvern / Playwright + LLM / computer use，想听听你觉得还应该记录什么。
 ```
 
 ## Jike
@@ -104,7 +104,7 @@ GitHub: https://github.com/aaronlab/browsertrace
 
 BrowserTrace 会把每一步录成 timeline：截图、URL、动作、模型输入输出、错误信息。打开本地 UI 就能直接跳到失败步骤。
 
-适合 Browser Use / Stagehand / Playwright + LLM / computer-use agent。
+适合 Browser Use / Stagehand / Skyvern / Playwright + LLM / computer-use agent。
 
 Live demo: https://aaronlab.github.io/browsertrace/
 Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
