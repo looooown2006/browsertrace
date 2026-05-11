@@ -5499,6 +5499,34 @@ def test_integration_request_template_links_stack_debugging_guides():
     assert "reposts" not in template.lower()
 
 
+def test_integration_request_template_requests_persistent_browser_recovery_evidence():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "integration_request.yml"
+    ).read_text()
+    recovery_prompt = template.split(
+        "Persistent browser recovery evidence, if relevant", 1
+    )[1].split("Relevant hooks or API calls", 1)[0]
+
+    assert "custom computer-use or persistent-browser failures" in recovery_prompt
+    assert "before the first screenshot or URL" in recovery_prompt
+    assert "session_mode" in recovery_prompt
+    assert "redacted profile id or user data directory token" in recovery_prompt
+    assert "browser/session/target id" in recovery_prompt
+    assert "profile lock or stale process signal" in recovery_prompt
+    assert "CDP attach/probe timing and timeout" in recovery_prompt
+    assert "approval source" in recovery_prompt
+    assert "recovery action" in recovery_prompt
+    assert "final connection state" in recovery_prompt
+    assert (
+        "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html"
+        in recovery_prompt
+    )
+    assert "stars" not in recovery_prompt.lower()
+    assert "upvotes" not in recovery_prompt.lower()
+    assert "reposts" not in recovery_prompt.lower()
+
+
 def test_feature_request_template_links_first_pr_recipe():
     project_root = Path(__file__).resolve().parents[1]
     template = (
