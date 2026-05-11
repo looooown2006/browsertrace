@@ -910,6 +910,28 @@ def test_support_page_links_stack_debugging_guides():
     assert "reposts" not in support.lower()
 
 
+def test_support_page_includes_aos_mapping_research_note():
+    project_root = Path(__file__).resolve().parents[1]
+    support = (project_root / "SUPPORT.md").read_text()
+
+    assert "## AOS Mapping Research" in support
+    research_note = support.split("## AOS Mapping Research", 1)[1].split(
+        "## Bugs", 1
+    )[0]
+
+    assert "not an AOS compliance claim" in research_note
+    assert "tool request/result" in research_note
+    assert "step correlation" in research_note
+    assert "URI-style screenshot/video artifacts" in research_note
+    assert "URL metadata" in research_note
+    assert "model I/O summaries" in research_note
+    assert "explicit redaction state" in research_note
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in research_note
+    assert "stars" not in research_note.lower()
+    assert "upvotes" not in research_note.lower()
+    assert "reposts" not in research_note.lower()
+
+
 def test_readme_clarifies_cloud_features_are_not_required_for_local_oss():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
