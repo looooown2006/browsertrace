@@ -287,6 +287,9 @@ def test_homepage_and_readme_link_failure_patterns_page():
         in readme
     )
     assert "browser-agent-failure-patterns.html" in readme
+    assert "Browser Use new-tab desync" in readme
+    assert "Stagehand semantic verification boundary" in readme
+    assert "Skyvern multi-session VNC control drift" in readme
     assert "stars" not in homepage.lower()
     assert "upvotes" not in homepage.lower()
     assert "reposts" not in homepage.lower()
