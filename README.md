@@ -532,6 +532,8 @@ closest BrowserTrace concepts to tool request/result records, step correlation,
 URI-style screenshot/video artifacts, URL metadata, model I/O summaries, and
 explicit redaction state.
 
+Live mapping table: https://aaronlab.github.io/browsertrace/integrations.html#aos-mapping
+
 Tracker: https://github.com/aaronlab/browsertrace/issues/237
 
 ## Why not just use ___?
