@@ -10,6 +10,15 @@ update the launch tracking issues.
 Do not ask for stars, backlinks, reciprocal placement, or artificial engagement.
 The ask is editorial consideration for a relevant developer tool.
 
+Latest verification, 2026-05-11 UTC:
+
+- console.dev still presents itself as a weekly devtools newsletter reviewing
+  a small number of interesting developer tools, and the latest public issue
+  does not mention BrowserTrace. Send the editorial suggestion below; do not use
+  the paid advertising route unless you intentionally want a sponsored campaign.
+- AgDex still shows a Developer Tools & Observability section, does not list
+  BrowserTrace, and publishes `agdex.ai@gmail.com` as its contact email.
+
 ## 1. console.dev
 
 ```text

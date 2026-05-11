@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T18:25:10+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 30 | current monitor pass after forks increased to 17; goodfirstissues.com and github-help-wanted.com are now visible referrers, and old aaronagent redirect paths still appear in popular paths; no tracked external listing is merged yet; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T18:29:44+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 30 | current monitor pass after owner email send packet re-verified console.dev and AgDex submission fit/contact details; no external listing is merged yet; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
