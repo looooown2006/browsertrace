@@ -54,6 +54,12 @@ to explain why a browser run failed.
   an accessible name. Route users to the Browser Use guide and ask for live
   button HTML, accessibility snapshot, candidate bounding boxes, and the
   clicked element.
+- Browser Use remote CDP hang: a browser-state request can stall while the
+  websocket still appears open, and event-bus lock timing can decide whether
+  one stale browser session blocks unrelated sessions. Route users to the
+  Browser Use guide and ask for event id, browser/session/target id, and the
+  exact CDP method, request id, start/end/duration. Include websocket ping/pong
+  timestamps, lock timing, and recovery or unhealthy-session decisions.
 
 ## Quickstart
 

@@ -2701,6 +2701,18 @@ def test_llms_txt_includes_browser_use_icon_only_failure_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_browser_use_remote_cdp_failure_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Browser Use remote CDP hang" in llms
+    assert "websocket still appears open" in llms
+    assert "event-bus lock timing" in llms
+    assert "CDP method, request id, start/end/duration" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_json_cli_troubleshooting_snippet():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -2905,6 +2917,17 @@ def test_browser_use_guide_documents_icon_only_click_targets():
     assert "candidate bounding boxes" in page
     assert "aria-label=&quot;Create Test&quot;" in page
     assert "browser-use/browser-use#4801" in page
+
+
+def test_browser_use_guide_documents_remote_cdp_hangs():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-use-debugging.html").read_text()
+
+    assert "Debug remote CDP hangs" in page
+    assert "websocket still looks connected" in page
+    assert "event-bus lock timing" in page
+    assert "CDP method, request id, start/end/duration" in page
+    assert "browser-use/browser-use#4579" in page
 
 
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():

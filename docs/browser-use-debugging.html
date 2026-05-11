@@ -313,6 +313,21 @@ with hooks:
     </section>
 
     <section>
+      <h2>Debug remote CDP hangs</h2>
+      <p>For Browserless or other remote-CDP providers, a failed Browser Use run may not be only a screenshot problem. A stale remote browser session can make one CDP request stop returning while the websocket still looks connected. If recovery holds a shared event-bus lock during that wait, one degraded browser session can delay unrelated sessions.</p>
+      <p>When you see screenshot capture, DOM snapshot, or browser-state collection timeouts, collect timing evidence before changing retry policy:</p>
+      <ul>
+        <li>Event id plus browser/session/target id.</li>
+        <li>CDP method, request id, start/end/duration, and result, error, or timeout.</li>
+        <li>Websocket ping/pong timestamps near the stuck request.</li>
+        <li>event-bus lock timing: wait, acquire, release, and whether recovery waits run while the lock is held.</li>
+        <li>Whether the browser session was marked unhealthy, retried, or reused after the failed state request.</li>
+      </ul>
+      <p>In BrowserTrace terms, treat this as method-timing and browser-session evidence, not just a red screenshot step. The trace should explain whether the CDP method failed fast, never returned, or blocked later state collection through recovery and lock timing.</p>
+      <p>Related community case: <a href="https://github.com/browser-use/browser-use/issues/4579">browser-use/browser-use#4579</a>.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html
