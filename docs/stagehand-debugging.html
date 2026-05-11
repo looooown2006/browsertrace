@@ -293,6 +293,22 @@ page.bt_run.close()</code></pre>
     </section>
 
     <section>
+      <h2>Debug custom tool replay gaps</h2>
+      <p>If a Stagehand cache can replay normal page actions but skips a <code>custom_tool</code>, separate the replay contract from the diagnostic trace contract before changing cache behavior.</p>
+      <p>For replay, the cache needs enough data to call the current tool implementation again: tool name, serialized arguments, stable tool-call or step id, original status or error, and whether the tool is replay-safe. Credential-fill, payment, submit, or other side-effectful tools should require explicit opt-in before replay.</p>
+      <p>For debugging, the trace can preserve a richer boundary even when replay is disabled:</p>
+      <ol>
+        <li>Tool name and redacted argument summary.</li>
+        <li>Returned result summary, status, and error.</li>
+        <li>Timestamp or step index.</li>
+        <li>URL or page id before and after the tool call.</li>
+        <li>Optional screenshot or observation id before and after the tool call.</li>
+      </ol>
+      <p>That makes a skipped custom tool visible instead of letting the run continue with missing page state. Avoid storing raw credentials or sensitive tool args by default; prefer a redacted shape plus a runtime hook that can rehydrate secrets when replay is explicitly allowed.</p>
+      <p>Related community case: <a href="https://github.com/browserbase/stagehand/issues/1558">browserbase/stagehand#1558</a>.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html

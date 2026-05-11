@@ -2713,6 +2713,19 @@ def test_llms_txt_includes_browser_use_remote_cdp_failure_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_stagehand_custom_tool_replay_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Stagehand custom tool replay gap" in llms
+    assert "replay contract" in llms
+    assert "diagnostic trace contract" in llms
+    assert "replay-safe" in llms
+    assert "raw credentials" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_json_cli_troubleshooting_snippet():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -2928,6 +2941,18 @@ def test_browser_use_guide_documents_remote_cdp_hangs():
     assert "event-bus lock timing" in page
     assert "CDP method, request id, start/end/duration" in page
     assert "browser-use/browser-use#4579" in page
+
+
+def test_stagehand_guide_documents_custom_tool_replay_gaps():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "stagehand-debugging.html").read_text()
+
+    assert "Debug custom tool replay gaps" in page
+    assert "replay contract" in page
+    assert "diagnostic trace contract" in page
+    assert "replay-safe" in page
+    assert "raw credentials" in page
+    assert "browserbase/stagehand#1558" in page
 
 
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
