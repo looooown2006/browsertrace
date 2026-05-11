@@ -187,6 +187,28 @@ docs/launch/outreach-targets.md
 
 Submit once per target. Do not repeatedly submit or ask for votes.
 
+Already-open GitHub listing PRs and issues:
+
+| Target | PR or issue |
+|---|---|
+| `bradvin/agentfirst.directory` | `https://github.com/bradvin/agentfirst.directory/pull/30`, enrichment check passed |
+| `angrykoala/awesome-browser-automation` | `https://github.com/angrykoala/awesome-browser-automation/pull/112` |
+| `mxschmitt/awesome-playwright` | `https://github.com/mxschmitt/awesome-playwright/pull/136` |
+| `Jenqyang/Awesome-AI-Agents` | `https://github.com/Jenqyang/Awesome-AI-Agents/pull/220` |
+| `wjhou/awesome-computer-use-agents` | `https://github.com/wjhou/awesome-computer-use-agents/pull/2` |
+| `cdxeve/awesome-computer-use-agents` | `https://github.com/cdxeve/awesome-computer-use-agents/pull/2` |
+| `steel-dev/awesome-web-agents` | `https://github.com/steel-dev/awesome-web-agents/pull/56` |
+| `ai-boost/awesome-harness-engineering` | `https://github.com/ai-boost/awesome-harness-engineering/pull/23` |
+| `Agent-Tools/awesome-autonomous-web` | `https://github.com/Agent-Tools/awesome-autonomous-web/pull/21` |
+| `e2b-dev/awesome-ai-sdks` | `https://github.com/e2b-dev/awesome-ai-sdks/pull/187`, CLA check passed |
+| `jim-schwoebel/awesome_ai_agents` | `https://github.com/jim-schwoebel/awesome_ai_agents/pull/266` |
+| `ranpox/awesome-computer-use` | `https://github.com/ranpox/awesome-computer-use/pull/24` |
+| `clihub-ai/clihub` | `https://github.com/clihub-ai/clihub/pull/1`, forked PR CI needs maintainer approval before it can run |
+| `victorcheeney/clis` | `https://github.com/victorcheeney/clis/issues/3`, CLIs.dev directory issue opened |
+
+Monitor maintainer feedback only. Do not open more awesome-list PRs unless the
+target is high-fit, non-duplicative, and not a low-quality mass submission.
+
 Tracking issue: https://github.com/aaronlab/browsertrace/issues/10
 
 ## 7. Monitor High-Fit GitHub Awesome List PRs
