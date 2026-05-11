@@ -91,6 +91,37 @@ The useful fix is usually on the app side: put an accessible name on the real bu
 For agent debugging, BrowserTrace keeps the failed-step timeline local so this evidence is easier to inspect.
 ```
 
+## Fresh Browser Use Remote CDP Angle
+
+Use this for Browser Use, Browserless, remote-CDP, and pooled-browser users.
+It is a technical debugging note, not a launch ask.
+
+Short post:
+
+```text
+Fresh Browser Use debugging note:
+
+Remote CDP failures are not always "the screenshot failed".
+
+A stale remote browser session can leave the websocket looking open while one CDP request never returns. If the event bus holds a global lock during that recovery path, one bad session can block unrelated browser sessions.
+```
+
+Follow-up with link:
+
+```text
+The evidence I would capture for this class of bug:
+
+- event id and browser/session/target id
+- CDP method, request id, start/end/duration
+- websocket ping/pong near the stuck request
+- event-bus lock wait/acquire/release timing
+- whether recovery waits happen while the lock is held
+
+BrowserTrace is trying to make these browser-agent failure boundaries inspectable instead of hiding them in logs.
+
+Guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+```
+
 ## X
 
 Non-Premium-safe thread. Post each `text` block as one X post.

@@ -13,10 +13,11 @@ Ask for workflow feedback from people building browser agents.
 If you only have one short session, do these in order and let Codex handle the
 follow-up verification, README updates, metrics, and issue comments:
 
-Fastest fresh technical post: publish the `Fresh Browser Use Debugging Angle`
-from `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle` before or
-alongside the Day 1 posts. It points to the Browser Use icon-only target guide
-and asks for real workflow feedback through a concrete failure mode.
+Fastest fresh technical post: publish either Browser Use angle from
+`docs/launch/channel-copy.md` before or alongside the Day 1 posts:
+`#fresh-browser-use-debugging-angle` for icon-only target failures, or
+`#fresh-browser-use-remote-cdp-angle` for remote-CDP hangs and event-bus lock
+timing. Both ask for real workflow feedback through concrete failure modes.
 
 1. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`.
@@ -46,6 +47,8 @@ Fast copy/paste blocks:
 
 - Fresh Browser Use angle:
   `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle`
+- Fresh Browser Use remote-CDP angle:
+  `docs/launch/channel-copy.md#fresh-browser-use-remote-cdp-angle`
 - X: `docs/launch/channel-copy.md#x`
 - X follow-up: `docs/launch/channel-copy.md#x-follow-up`
 - LinkedIn: `docs/launch/channel-copy.md#linkedin`

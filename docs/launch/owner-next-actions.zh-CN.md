@@ -11,11 +11,11 @@ browser agent 的人，失败时最缺什么调试信息？
 如果你只有一小段时间，按这个顺序做；后面的验证、README 更新、指标记录和
 issue comment 都交给 Codex 继续处理：
 
-最快的一条技术帖：先用
-`docs/launch/channel-copy.md#fresh-browser-use-debugging-angle` 里的
-`Fresh Browser Use Debugging Angle`，可以放在 Day 1 正式帖子之前或一起发。
-它指向 Browser Use icon-only target 调试指南，用一个具体失败场景来征集真实
-workflow 反馈。
+最快的一条技术帖：先用 `docs/launch/channel-copy.md` 里的任意一个
+Browser Use angle，可以放在 Day 1 正式帖子之前或一起发：
+`#fresh-browser-use-debugging-angle` 针对 icon-only target 失败，
+`#fresh-browser-use-remote-cdp-angle` 针对 remote-CDP hang 和 event-bus lock
+timing。两者都是用具体失败场景来征集真实 workflow 反馈。
 
 1. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。
@@ -44,6 +44,8 @@ workflow 反馈。
 
 - Fresh Browser Use angle：
   `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle`
+- Fresh Browser Use remote-CDP angle：
+  `docs/launch/channel-copy.md#fresh-browser-use-remote-cdp-angle`
 - X：`docs/launch/channel-copy.md#x`
 - X follow-up：`docs/launch/channel-copy.md#x-follow-up`
 - LinkedIn：`docs/launch/channel-copy.md#linkedin`
