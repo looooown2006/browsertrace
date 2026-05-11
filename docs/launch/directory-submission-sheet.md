@@ -191,7 +191,9 @@ Name: BrowserTrace
 Tagline: Local trace viewer for AI browser agents
 GitHub URL or Website: https://github.com/aaronlab/browsertrace
 Category: Other
-Install Command: uvx --from "browsertrace[ui]" browsertrace demo
+Install Command: uvx --from "browsertrace[ui]" browsertrace
+Optional demo command: uvx --from "browsertrace[ui]" browsertrace demo
+Open UI after demo: uvx --from "browsertrace[ui]" browsertrace
 ```
 
 DeepYard:
