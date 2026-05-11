@@ -2670,6 +2670,28 @@ browsertrace show <run_id> --json
     assert "hosted sharing" not in llms
 
 
+def test_llms_txt_links_stack_guides_from_troubleshooting_prompt():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+    troubleshooting_prompt = llms.split("## Troubleshooting Prompt", 1)[1].split(
+        "## Positioning", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "Stack-specific troubleshooting links" in troubleshooting_prompt
+    for guide in stack_guides:
+        assert guide in troubleshooting_prompt
+    assert "stars" not in troubleshooting_prompt.lower()
+    assert "upvotes" not in troubleshooting_prompt.lower()
+    assert "reposts" not in troubleshooting_prompt.lower()
+
+
 def test_press_kit_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
