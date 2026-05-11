@@ -1197,6 +1197,7 @@ def test_readme_links_contributor_guide_near_contributing():
     )[0]
 
     assert "[CONTRIBUTING.md](CONTRIBUTING.md)" in contributing_section
+    assert "[First PR Recipe](CONTRIBUTING.md#first-pr-recipe)" in contributing_section
     assert "small, issue-based contribution path" in contributing_section
     assert "First PR Recipe" in contributing_section
     assert "first contribution small and reviewable" in contributing_section
