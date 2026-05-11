@@ -3890,6 +3890,32 @@ def test_owner_email_send_packet_is_short_and_linked():
         assert "docs/launch/owner-email-send-packet.md" in text, relpath
 
 
+def test_owner_social_post_packet_is_short_and_linked():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "owner-social-post-packet.md"
+    ).read_text()
+
+    assert "## X" in packet
+    assert "## LinkedIn" in packet
+    assert "## WeChat Group" in packet
+    assert "## Jike" in packet
+    assert "docs/demo.mp4" in packet
+    assert "https://github.com/aaronlab/browsertrace" in packet
+    assert "https://aaronlab.github.io/browsertrace/" in packet
+    assert "browser-agent-failure-patterns.html" in packet
+    assert "Do not ask for stars" in packet
+    assert "upvotes" not in packet.lower()
+
+    for relpath in [
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+        "docs/launch/owner-publish-queue.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert "docs/launch/owner-social-post-packet.md" in text, relpath
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()

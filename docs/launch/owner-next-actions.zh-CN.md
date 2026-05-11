@@ -26,7 +26,8 @@ session recovery。这些都是用具体失败场景来征集真实 workflow 反
 1. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。平台支持 alt text 时，用
    `docs/launch/day-1-publish-packet.md#media-alt-text` 里的
-   `Media Alt Text`。
+   `Media Alt Text`。最短复制版在
+   `docs/launch/owner-social-post-packet.md`。
 2. 用 `docs/launch/directory-submission-sheet.md` 发送已经准备好的 owner
    email 投稿：发给 console.dev 的 `hello@console.dev`，以及发给 AgDex 的
    `agdex.ai@gmail.com`。最短复制版在
@@ -66,6 +67,8 @@ session recovery。这些都是用具体失败场景来征集真实 workflow 反
 - LinkedIn：`docs/launch/channel-copy.md#linkedin`
 - 微信群：`docs/launch/channel-copy.md#wechat-group`
 - 即刻：`docs/launch/channel-copy.md#jike`
+- 5 分钟 owner 社交帖发送包：
+  `docs/launch/owner-social-post-packet.md`
 - Show HN：`docs/launch/day-2-show-hn-packet.md#first-comment-draft`
 - Product Hunt：`docs/launch/day-4-product-hunt-packet.md#maker-comment`
 - console.dev 邮件：

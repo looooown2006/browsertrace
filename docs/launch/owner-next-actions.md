@@ -31,6 +31,8 @@ modes.
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`. When the
    platform supports alt text, use `Media Alt Text` from
    `docs/launch/day-1-publish-packet.md#media-alt-text`.
+   The shortest copy/paste version is
+   `docs/launch/owner-social-post-packet.md`.
 2. Send the ready owner-email submissions from
    `docs/launch/directory-submission-sheet.md`:
    `hello@console.dev` and `agdex.ai@gmail.com` for console.dev and AgDex.
@@ -72,6 +74,8 @@ Fast copy/paste blocks:
 - LinkedIn: `docs/launch/channel-copy.md#linkedin`
 - WeChat group: `docs/launch/channel-copy.md#wechat-group`
 - Jike: `docs/launch/channel-copy.md#jike`
+- 5-minute owner social post packet:
+  `docs/launch/owner-social-post-packet.md`
 - Show HN: `docs/launch/day-2-show-hn-packet.md#first-comment-draft`
 - Product Hunt: `docs/launch/day-4-product-hunt-packet.md#maker-comment`
 - console.dev email:
