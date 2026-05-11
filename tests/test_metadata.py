@@ -5227,7 +5227,7 @@ def test_launch_control_room_has_current_audit_and_uvx_fallback():
     latest_metrics_timestamp = latest_metrics_row.split("|")[1].strip()
 
     assert latest_metrics_timestamp in launch
+    assert latest_metrics_row in launch
     assert "current monitor pass" in launch
-    assert "traffic views 112/41 unique, clones 5965/1214 unique" in launch
     assert f'uvx --from "{pypi_spec}" browsertrace doctor' in launch
     assert f'uvx --from "{pypi_spec}" browsertrace demo' in launch
