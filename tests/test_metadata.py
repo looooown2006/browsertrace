@@ -4255,12 +4255,13 @@ def test_launch_monitoring_runbook_covers_current_targets():
         "browser-use/browser-use#4816",
         "browserbase/stagehand#2102",
         "Skyvern-AI/skyvern#5931",
-        "aaronlab/browsertrace#316",
         "aaronlab/browsertrace#317",
+        "aaronlab/browsertrace#319",
         "Scottcjn/awesome-agents#16",
     ]:
         assert target in runbook
 
+    assert "aaronlab/browsertrace#316" not in runbook
     assert "aaronlab/browsertrace#270" not in runbook
     assert "aaronlab/browsertrace#307" not in runbook
     assert "docs/launch/monitoring-runbook.md" in launch
