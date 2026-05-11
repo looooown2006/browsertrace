@@ -29,7 +29,8 @@ session recovery。这些都是用具体失败场景来征集真实 workflow 反
    `Media Alt Text`。
 2. 用 `docs/launch/directory-submission-sheet.md` 发送已经准备好的 owner
    email 投稿：发给 console.dev 的 `hello@console.dev`，以及发给 AgDex 的
-   `agdex.ai@gmail.com`。
+   `agdex.ai@gmail.com`。最短复制版在
+   `docs/launch/owner-email-send-packet.md`。
 3. 如果还有第二小段时间，用 `docs/launch/directory-submission-sheet.md`
    提交这些浏览器表单目录：4agent.dev、AgentKart、OSS AI Hub、FOSSHUNTER、
    AgentsTide、BuilderAI Tools。AgentsTide 可用 `hello@agentstide.com`
@@ -70,6 +71,8 @@ session recovery。这些都是用具体失败场景来征集真实 workflow 反
 - console.dev 邮件：
   `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
 - AgDex 邮件：`docs/launch/directory-submission-sheet.md#agdex-email-draft`
+- 5 分钟 owner 邮件发送包：
+  `docs/launch/owner-email-send-packet.md`
 - 第一批浏览器表单目录：
   `docs/launch/directory-submission-sheet.md#first-browser-form-directory-field-notes`
 

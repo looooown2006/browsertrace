@@ -34,6 +34,8 @@ modes.
 2. Send the ready owner-email submissions from
    `docs/launch/directory-submission-sheet.md`:
    `hello@console.dev` and `agdex.ai@gmail.com` for console.dev and AgDex.
+   The shortest copy/paste version is
+   `docs/launch/owner-email-send-packet.md`.
 3. If you have a second short pass, submit the browser-form directories from
    `docs/launch/directory-submission-sheet.md`:
    4agent.dev, AgentKart, OSS AI Hub, FOSSHUNTER, AgentsTide, and BuilderAI
@@ -75,6 +77,8 @@ Fast copy/paste blocks:
 - console.dev email:
   `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
 - AgDex email: `docs/launch/directory-submission-sheet.md#agdex-email-draft`
+- 5-minute owner email packet:
+  `docs/launch/owner-email-send-packet.md`
 - First browser-form directories:
   `docs/launch/directory-submission-sheet.md#first-browser-form-directory-field-notes`
 

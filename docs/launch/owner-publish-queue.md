@@ -19,6 +19,7 @@ people building browser agents.
 - Feedback issue: https://github.com/aaronlab/browsertrace/issues/3
 
 Shortest owner checklist: `docs/launch/owner-next-actions.md`
+Shortest owner email packet: `docs/launch/owner-email-send-packet.md`
 
 Current listing status: the tracked external GitHub list and directory
 submissions are still open and have not listed BrowserTrace on their default
