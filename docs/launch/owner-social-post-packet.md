@@ -44,6 +44,8 @@ Repo: https://github.com/aaronlab/browsertrace
 Concrete failure patterns:
 https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 
+Examples: Browser Use new-tab desync, Stagehand semantic verification boundary, Skyvern VNC/CDP debug integration.
+
 I am looking for feedback from people building browser agents: what state should a trace capture when a run fails?
 ```
 
@@ -69,6 +71,8 @@ Live demo: https://aaronlab.github.io/browsertrace/
 Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 Repo: https://github.com/aaronlab/browsertrace
 
+The failure-patterns page includes Browser Use new-tab desync, Stagehand semantic verification boundary, and Skyvern VNC/CDP debug integration.
+
 I am looking for feedback from people debugging real browser-agent runs. What should it record that your current logs miss?
 ```
 
@@ -92,6 +96,8 @@ Live demo: https://aaronlab.github.io/browsertrace/
 Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 GitHub: https://github.com/aaronlab/browsertrace
 
+里面有几个具体案例：Browser Use new-tab desync、Stagehand semantic verification boundary、Skyvern VNC/CDP debug integration。
+
 如果你在用 Browser Use / Stagehand / Skyvern / Playwright + LLM / computer use，想听听你觉得还应该记录什么。
 ```
 
@@ -109,6 +115,8 @@ BrowserTrace 会把每一步录成 timeline：截图、URL、动作、模型输�
 Live demo: https://aaronlab.github.io/browsertrace/
 Failure patterns: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 GitHub: https://github.com/aaronlab/browsertrace
+
+具体 failure patterns 包括 Browser Use new-tab desync、Stagehand semantic verification boundary、Skyvern VNC/CDP debug integration。
 
 想找正在做 browser agent 的朋友试一下，主要求真实反馈。
 ```
