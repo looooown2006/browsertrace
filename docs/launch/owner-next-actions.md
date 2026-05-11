@@ -56,6 +56,8 @@ Fast copy/paste blocks:
   `docs/launch/channel-copy.md#fresh-browser-use-remote-cdp-angle`
 - Fresh computer-use persistent browser recovery angle:
   `docs/launch/channel-copy.md#fresh-computer-use-persistent-browser-recovery-angle`
+- Fresh Chinese computer-use recovery angle:
+  `docs/launch/channel-copy.md#fresh-chinese-computer-use-recovery-angle`
 - X: `docs/launch/channel-copy.md#x`
 - X follow-up: `docs/launch/channel-copy.md#x-follow-up`
 - LinkedIn: `docs/launch/channel-copy.md#linkedin`

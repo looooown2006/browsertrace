@@ -169,6 +169,28 @@ The useful trace boundary starts before the page opens:
 Guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 ```
 
+## Fresh Chinese Computer-Use Recovery Angle
+
+Use this for WeChat, Jike, or Chinese AI-builder groups when the audience is
+building custom computer-use agents or persistent browser sessions.
+
+```text
+最近遇到一个 browser agent 调试点：有些失败发生在第一张截图之前。
+
+比如 persistent browser session 复用失败，profile lock 或进程名看起来像线索，但不一定可信。真正需要记录的是：
+
+- session_mode
+- redacted profile id
+- CDP attach/probe timing
+- recovery action
+- final connection state
+
+我在 BrowserTrace 里把这个 failure shape 写成了 computer-use 调试指南，想听听做 browser agent / computer-use agent 的人：你们遇到过哪些 session recovery 问题？
+
+Guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+Repo: https://github.com/aaronlab/browsertrace
+```
+
 ## X
 
 Non-Premium-safe thread. Post each `text` block as one X post.

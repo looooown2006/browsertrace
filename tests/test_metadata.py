@@ -3750,6 +3750,7 @@ def test_owner_short_checklists_surface_ready_email_submissions():
         assert "AI Observability & Evaluation" in unblock, relpath
         assert "hello@agentstide.com" in unblock, relpath
         assert "fresh-browser-use-debugging-angle" in unblock, relpath
+        assert "fresh-chinese-computer-use-recovery-angle" in unblock, relpath
         assert "Browser Use" in unblock, relpath
         assert "stars" not in unblock.lower(), relpath
         assert "upvotes" not in unblock.lower(), relpath
@@ -4128,6 +4129,26 @@ def test_channel_copy_includes_fresh_computer_use_recovery_angle():
         "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html"
         in section
     )
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
+
+
+def test_channel_copy_includes_fresh_chinese_computer_use_recovery_angle():
+    project_root = Path(__file__).resolve().parents[1]
+    copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
+    section = copy.split(
+        "## Fresh Chinese Computer-Use Recovery Angle", 1
+    )[1].split("## X", 1)[0]
+
+    assert "第一张截图之前" in section
+    assert "profile lock" in section
+    assert "session_mode" in section
+    assert "redacted profile id" in section
+    assert "CDP attach/probe timing" in section
+    assert "recovery action" in section
+    assert "final connection state" in section
+    assert "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html" in section
     assert "stars" not in section.lower()
     assert "upvotes" not in section.lower()
     assert "reposts" not in section.lower()
