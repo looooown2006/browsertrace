@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T05:45:41+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 26 | current monitor pass after PyPI project URLs prepared for Stagehand Skyvern and Playwright guide discovery; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T06:03:07+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after README Try it row linked direct Browser Use Stagehand Skyvern and Playwright guide pages in dd56dce, #251 closed and replacement good-first issue #252 opened; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
