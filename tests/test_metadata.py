@@ -895,6 +895,29 @@ browsertrace show <run_id> --json
     assert "upvotes" not in local_checks.lower()
 
 
+def test_contributing_links_stack_guides_for_adapter_context():
+    project_root = Path(__file__).resolve().parents[1]
+    contributing = (project_root / "CONTRIBUTING.md").read_text()
+    contribution_areas = contributing.split("## Contribution Areas", 1)[1].split(
+        "## Adapter Contribution Checklist", 1
+    )[0]
+    adapter_checklist = contributing.split("## Adapter Contribution Checklist", 1)[1].split(
+        "## Design Principles", 1
+    )[0]
+    stack_guides = """- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html"""
+
+    assert "Framework guide context:" in contribution_areas
+    assert stack_guides in contribution_areas
+    assert "Browser Use, Stagehand, Skyvern, Playwright + LLM, or custom computer-use" in adapter_checklist
+    assert "stars" not in contribution_areas.lower()
+    assert "upvotes" not in contribution_areas.lower()
+    assert "reposts" not in contribution_areas.lower()
+
+
 def test_contributing_includes_first_pr_recipe():
     project_root = Path(__file__).resolve().parents[1]
     contributing = (project_root / "CONTRIBUTING.md").read_text()

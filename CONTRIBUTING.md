@@ -88,6 +88,14 @@ https://github.com/aaronlab/browsertrace/blob/main/ROADMAP.md
 - Debugging workflow: clearer failure markers, search, filters, and summaries.
 - Documentation: short examples from real browser-agent failures.
 
+Framework guide context:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Adapter Contribution Checklist
 
 For Browser Use, Stagehand, Skyvern, Playwright + LLM, or custom computer-use
