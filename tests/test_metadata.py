@@ -288,6 +288,22 @@ def test_homepage_intro_actions_column_is_bounded():
     assert "width: min(100%, 320px)" in actions_css.group("body")
 
 
+def test_homepage_intro_uses_single_column_at_tablet_widths():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+
+    tablet_media = re.search(
+        r"@media \(max-width: 980px\) \{(?P<body>.*?)\n    \}",
+        homepage,
+        re.S,
+    )
+
+    assert tablet_media is not None
+    assert ".intro" in tablet_media.group("body")
+    assert "grid-template-columns: 1fr" in tablet_media.group("body")
+    assert "justify-self: start" in tablet_media.group("body")
+
+
 def test_integrations_page_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     integrations = (project_root / "docs" / "integrations.html").read_text()
