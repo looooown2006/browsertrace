@@ -2752,6 +2752,20 @@ def test_llms_txt_includes_playwright_artifact_boundary_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_computer_use_persistent_browser_recovery_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Computer-use persistent browser recovery" in llms
+    assert "profile lock" in llms
+    assert "CDP attach/probe" in llms
+    assert "session_mode" in llms
+    assert "recovery action" in llms
+    assert "redacted profile id" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_json_cli_troubleshooting_snippet():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -3003,6 +3017,18 @@ def test_playwright_guide_documents_artifact_boundary():
     assert "typed image content block" in page
     assert "artifact id, dimensions, digest, status, and error" in page
     assert "browser artifact boundary" in page
+
+
+def test_computer_use_guide_documents_persistent_browser_recovery():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "computer-use-agent-debugging.html").read_text()
+
+    assert "Debug persistent browser session recovery" in page
+    assert "profile lock" in page
+    assert "CDP attach/probe" in page
+    assert "session_mode" in page
+    assert "recovery action" in page
+    assert "redacted profile id" in page
 
 
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():

@@ -75,6 +75,13 @@ to explain why a browser run failed.
   files as durable local artifacts, not base64 screenshots copied into every
   future model turn. Pass image pixels only when the next model call needs a
   typed image content block; otherwise pass compact metadata such as artifact id, dimensions, digest, status, and error.
+- Computer-use persistent browser recovery: persistent browser agents can fail
+  before screenshot or URL capture because profile reuse, profile lock state, or
+  stale process detection blocks launch or attach. Capture launch/connect/recovery
+  events with `session_mode`, browser/session/target id, redacted profile id,
+  CDP attach/probe timing, timeout/error, detected process ids, approval source,
+  recovery action, and final connection state. Redact local profile paths and
+  process details by default.
 
 ## Quickstart
 
