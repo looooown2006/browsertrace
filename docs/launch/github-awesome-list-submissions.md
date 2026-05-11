@@ -47,6 +47,17 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+## Stack-Specific Reply Links
+
+Use the closest guide when an awesome-list maintainer or reader asks for
+workflow-specific debugging context:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Recommended Order
 
 | Priority | Target | Fit | Section | Owner action |
