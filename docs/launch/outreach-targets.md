@@ -118,6 +118,17 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+## Stack-Specific Reply Links
+
+Use the closest guide when a community reply needs workflow-specific debugging
+context:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## First Targeted Community Posts
 
 Use these only after the Day 1 warm posts have a live demo link and at least one
