@@ -234,6 +234,7 @@ https://aaronlab.github.io/browsertrace/
 No-install PyPI uvx path:
 uvx --from "browsertrace[ui]" browsertrace doctor
 uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 
 I'd like feedback from people who are building or testing browser agents. What browser state do you wish your current traces captured?
 ```
@@ -280,6 +281,17 @@ BrowserTrace keeps the missing context locally:
 - exportable HTML traces, including `--public` for public sharing
 
 It is MIT licensed and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
+
+Live demo:
+https://aaronlab.github.io/browsertrace/
+
+GitHub:
+https://github.com/aaronlab/browsertrace
+
+Try locally:
+uvx --from "browsertrace[ui]" browsertrace doctor
+uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 
 I would especially like feedback from people running browser agents in tests or production. What would make this useful in your workflow?
 ```
