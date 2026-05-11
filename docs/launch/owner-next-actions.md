@@ -13,6 +13,11 @@ Ask for workflow feedback from people building browser agents.
 If you only have one short session, do these in order and let Codex handle the
 follow-up verification, README updates, metrics, and issue comments:
 
+Current listing status: the tracked external GitHub list and directory
+submissions are still open and have not listed BrowserTrace on their default
+branches yet. Do not wait for those maintainers before publishing owner-channel
+posts or sending the prepared directory emails.
+
 Fastest fresh technical post: publish either Browser Use angle from
 `docs/launch/channel-copy.md` before or alongside the Day 1 posts:
 `#fresh-browser-use-debugging-angle` for icon-only target failures, or

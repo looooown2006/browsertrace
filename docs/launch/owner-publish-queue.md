@@ -20,6 +20,11 @@ people building browser agents.
 
 Shortest owner checklist: `docs/launch/owner-next-actions.md`
 
+Current listing status: the tracked external GitHub list and directory
+submissions are still open and have not listed BrowserTrace on their default
+branches yet. Owner-channel posts and the prepared directory emails should not
+wait for those merges.
+
 ## Media
 
 - Primary video: `docs/demo.mp4`
