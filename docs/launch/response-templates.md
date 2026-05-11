@@ -72,7 +72,7 @@ VNC, or CDP connection failures, the connect/probe result, capture start,
 capture stop, timeout, cleanup, and resource leak detection can be more useful
 than screenshots alone.
 
-## Stack-Specific Guides
+## Stack-Specific Reply Links
 
 Use the closest guide when a reply needs workflow-specific context:
 

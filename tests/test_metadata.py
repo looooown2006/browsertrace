@@ -2929,8 +2929,8 @@ def test_response_templates_link_stack_debugging_guides():
         project_root / "docs" / "launch" / "response-templates.md"
     ).read_text()
 
-    assert "## Stack-Specific Guides" in templates
-    guide_section = templates.split("## Stack-Specific Guides", 1)[1].split(
+    assert "## Stack-Specific Reply Links" in templates
+    guide_section = templates.split("## Stack-Specific Reply Links", 1)[1].split(
         "## Can I share traces with a teammate?", 1
     )[0]
     stack_guides = [
