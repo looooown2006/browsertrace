@@ -33,6 +33,7 @@ computer-use agents.
 
 **Try it:** [live demo](https://aaronlab.github.io/browsertrace/) ·
 [debugging walkthrough](https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html) ·
+[Failure patterns](https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html) ·
 [integrations](https://aaronlab.github.io/browsertrace/integrations.html) ·
 [Browser Use guide](https://aaronlab.github.io/browsertrace/browser-use-debugging.html) ·
 [Stagehand guide](https://aaronlab.github.io/browsertrace/stagehand-debugging.html) ·

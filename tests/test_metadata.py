@@ -276,6 +276,22 @@ def test_homepage_names_current_adapter_surfaces():
     assert "Skyvern task/workflow wrapper" in homepage
 
 
+def test_homepage_and_readme_link_failure_patterns_page():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+    readme = (project_root / "README.md").read_text()
+
+    assert 'href="./browser-agent-failure-patterns.html">Failure patterns</a>' in homepage
+    assert (
+        "[Failure patterns](https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html)"
+        in readme
+    )
+    assert "browser-agent-failure-patterns.html" in readme
+    assert "stars" not in homepage.lower()
+    assert "upvotes" not in homepage.lower()
+    assert "reposts" not in homepage.lower()
+
+
 def test_homepage_intro_uses_mobile_friendly_copy():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
@@ -569,6 +585,43 @@ def test_trace_demo_page_has_discovery_metadata():
     assert metadata["@type"] == "TechArticle"
     assert metadata["headline"] == "BrowserTrace exported failure trace"
     assert metadata["url"] == "https://aaronlab.github.io/browsertrace/trace.html"
+    assert metadata["isPartOf"]["name"] == "BrowserTrace"
+    assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
+
+
+def test_failure_patterns_page_has_discovery_metadata_and_examples():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-agent-failure-patterns.html").read_text()
+
+    assert '<link rel="canonical" href="https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html">' in page
+    assert '<link rel="alternate" type="text/plain" title="llms.txt" href="./llms.txt">' in page
+    assert "Browser agent failure patterns" in page
+    assert "icon-only target mismatch" in page
+    assert "remote CDP hang" in page
+    assert "screenshot blob" in page
+    assert "custom-tool replay gap" in page
+    assert "action confidence gap" in page
+    assert "persistent browser recovery" in page
+    assert "browser-use/browser-use#4801" in page
+    assert "browser-use/browser-use#4579" in page
+    assert "browserbase/stagehand#1558" in page
+    assert "Skyvern-AI/skyvern#3260" in page
+    assert "stars" not in page.lower()
+    assert "upvotes" not in page.lower()
+    assert "reposts" not in page.lower()
+
+    match = re.search(
+        r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+        page,
+        re.S,
+    )
+
+    assert match is not None
+    metadata = json.loads(match.group(1))
+    assert metadata["@context"] == "https://schema.org"
+    assert metadata["@type"] == "TechArticle"
+    assert metadata["headline"] == "Browser agent failure patterns"
+    assert metadata["url"] == "https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html"
     assert metadata["isPartOf"]["name"] == "BrowserTrace"
     assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
 
@@ -2694,6 +2747,10 @@ def test_llms_txt_includes_browser_use_icon_only_failure_shape():
     llms = (project_root / "docs" / "llms.txt").read_text()
 
     assert "## Known Failure Shapes" in llms
+    assert (
+        "Failure patterns page: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html"
+        in llms
+    )
     assert "Browser Use icon-only target mismatch" in llms
     assert "tooltip text is not" in llms
     assert "candidate bounding boxes" in llms
@@ -2924,6 +2981,7 @@ def test_core_guides_advertise_llms_txt():
 
     for filename in [
         "debug-browser-agent-failure.html",
+        "browser-agent-failure-patterns.html",
         "browser-use-debugging.html",
         "stagehand-debugging.html",
         "skyvern-debugging.html",
@@ -3039,6 +3097,7 @@ def test_sitemap_exposes_llms_txt_and_core_discovery_pages():
         "",
         "llms.txt",
         "debug-browser-agent-failure.html",
+        "browser-agent-failure-patterns.html",
         "browser-use-debugging.html",
         "stagehand-debugging.html",
         "skyvern-debugging.html",
@@ -3057,6 +3116,7 @@ def test_public_html_pages_have_open_graph_urls():
         "docs/debug-browser-agent-failure.html": "https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html",
         "docs/integrations.html": "https://aaronlab.github.io/browsertrace/integrations.html",
         "docs/compare-browser-agent-debugging.html": "https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html",
+        "docs/browser-agent-failure-patterns.html": "https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html",
         "docs/browser-use-debugging.html": "https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
         "docs/stagehand-debugging.html": "https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
         "docs/skyvern-debugging.html": "https://aaronlab.github.io/browsertrace/skyvern-debugging.html",

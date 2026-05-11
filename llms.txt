@@ -18,6 +18,7 @@ to explain why a browser run failed.
 - Live demo page: https://aaronlab.github.io/browsertrace/
 - Raw exported trace: https://aaronlab.github.io/browsertrace/trace.html
 - Debugging walkthrough: https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+- Failure patterns page: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 - Comparison guide: https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html
 - Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
@@ -49,6 +50,7 @@ to explain why a browser run failed.
 
 ## Known Failure Shapes
 
+- Failure patterns page: https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 - Browser Use icon-only target mismatch: the screenshot shows the right plus
   icon, but the agent clicks a nearby toolbar button because tooltip text is not
   an accessible name. Route users to the Browser Use guide and ask for live
