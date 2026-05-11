@@ -395,6 +395,11 @@ still appears open, and event-bus lock timing can decide whether one stale
 browser session blocks others. BrowserTrace is aimed at keeping that kind of
 method timing, browser/session evidence, and failed-step context inspectable.
 
+A third failure case: persistent browser recovery can fail before any screenshot
+or URL exists. BrowserTrace docs now call out the useful setup evidence:
+session_mode, redacted profile id, profile lock or stale process signal,
+CDP attach/probe timing, recovery action, and final connection state.
+
 Why it may fit console.dev:
 - It is interesting and useful to developers building Browser Use, Stagehand,
   Skyvern, Playwright + LLM, or custom computer-use agents.
@@ -443,6 +448,11 @@ text is not an accessible name.
 Second use case: diagnosing a remote-CDP browser-agent run where a browser state
 collection request hangs while the websocket appears connected, so method
 timing and browser/session evidence matter as much as the final timeout.
+
+Third use case: diagnosing persistent browser recovery before the first
+screenshot exists, where profile lock state, redacted profile id,
+session_mode, CDP attach/probe timing, recovery action, and final connection
+state are the useful debugging evidence.
 
 Repository: https://github.com/aaronlab/browsertrace
 Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html

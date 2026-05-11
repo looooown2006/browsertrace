@@ -3701,6 +3701,10 @@ def test_directory_submission_sheet_includes_agdex_email_template():
     assert "AI browser-agent" in agdex
     assert "screenshot shows the" in agdex
     assert "tooltip" in agdex
+    assert "persistent browser recovery" in agdex
+    assert "profile lock" in agdex
+    assert "CDP attach/probe timing" in agdex
+    assert "recovery action" in agdex
     assert "Do not ask for stars" in agdex
 
 
@@ -3724,6 +3728,10 @@ def test_directory_submission_sheet_includes_console_dev_email_template():
     assert "A concrete failure case" in console
     assert "Browser Use agent can see the right plus icon" in console
     assert "failed-step evidence" in console
+    assert "persistent browser recovery" in console
+    assert "profile lock" in console
+    assert "CDP attach/probe timing" in console
+    assert "recovery action" in console
     assert "Do not ask for stars" in console
 
 
