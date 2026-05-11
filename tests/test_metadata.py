@@ -273,7 +273,7 @@ def test_homepage_names_current_adapter_surfaces():
     assert "Skyvern task/workflow wrapper" in homepage
 
 
-def test_homepage_intro_actions_column_is_bounded():
+def test_homepage_intro_actions_do_not_squeeze_copy_column():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
 
@@ -282,26 +282,18 @@ def test_homepage_intro_actions_column_is_bounded():
 
     assert intro_css is not None
     assert actions_css is not None
-    assert "grid-template-columns: minmax(0, 1fr) auto;" not in intro_css.group("body")
-    assert "minmax(260px, 320px)" in intro_css.group("body")
-    assert "justify-self: end" in actions_css.group("body")
-    assert "width: min(100%, 320px)" in actions_css.group("body")
+    assert "grid-template-columns: 1fr" in intro_css.group("body")
+    assert "minmax(260px, 320px)" not in intro_css.group("body")
+    assert "justify-content: flex-start" in actions_css.group("body")
+    assert "justify-self: start" in actions_css.group("body")
+    assert "width: 100%" in actions_css.group("body")
 
 
-def test_homepage_intro_uses_single_column_at_tablet_widths():
+def test_homepage_intro_no_longer_needs_tablet_sidebar_override():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
 
-    tablet_media = re.search(
-        r"@media \(max-width: 980px\) \{(?P<body>.*?)\n    \}",
-        homepage,
-        re.S,
-    )
-
-    assert tablet_media is not None
-    assert ".intro" in tablet_media.group("body")
-    assert "grid-template-columns: 1fr" in tablet_media.group("body")
-    assert "justify-self: start" in tablet_media.group("body")
+    assert "@media (max-width: 980px)" not in homepage
 
 
 def test_integrations_page_links_first_pr_recipe_for_small_contributions():
