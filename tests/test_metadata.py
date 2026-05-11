@@ -1818,6 +1818,44 @@ def test_readme_links_integrations_overview():
     assert "hosted sharing" not in readme
 
 
+def test_readme_try_it_row_links_direct_integration_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+
+    match = re.search(
+        r"\*\*Try it:\*\* (?P<links>.*?)\n\nFor AI/coding agents",
+        readme,
+        re.S,
+    )
+
+    assert match is not None
+    try_it_links = match.group("links")
+    assert (
+        "[Browser Use guide](https://aaronlab.github.io/browsertrace/browser-use-debugging.html)"
+        in try_it_links
+    )
+    assert (
+        "[Stagehand guide](https://aaronlab.github.io/browsertrace/stagehand-debugging.html)"
+        in try_it_links
+    )
+    assert (
+        "[Skyvern guide](https://aaronlab.github.io/browsertrace/skyvern-debugging.html)"
+        in try_it_links
+    )
+    assert (
+        "[Playwright + LLM guide](https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html)"
+        in try_it_links
+    )
+    assert "[live demo](https://aaronlab.github.io/browsertrace/)" in try_it_links
+    assert (
+        "[integrations](https://aaronlab.github.io/browsertrace/integrations.html)"
+        in try_it_links
+    )
+    assert "stars" not in try_it_links.lower()
+    assert "upvotes" not in try_it_links.lower()
+    assert "reposts" not in try_it_links.lower()
+
+
 def test_readme_links_adapter_request_near_integrations():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
