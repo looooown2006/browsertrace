@@ -2564,7 +2564,7 @@ def test_sitemap_lastmod_matches_current_launch_refresh():
     project_root = Path(__file__).resolve().parents[1]
     sitemap = (project_root / "docs" / "sitemap.xml").read_text()
 
-    assert "<lastmod>2026-05-10</lastmod>" in sitemap
+    assert "<lastmod>2026-05-11</lastmod>" in sitemap
     assert "<lastmod>2026-05-09</lastmod>" not in sitemap
 
 

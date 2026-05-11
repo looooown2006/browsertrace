@@ -2,79 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aaronlab.github.io/browsertrace/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/integrations.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/llms.txt</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/compare-browser-agent-debugging.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/browser-use-debugging.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/stagehand-debugging.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/skyvern-debugging.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/trace.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/launch/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aaronlab.github.io/browsertrace/launch/press-kit.md</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
