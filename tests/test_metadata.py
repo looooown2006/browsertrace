@@ -300,6 +300,23 @@ def test_homepage_intro_uses_mobile_friendly_copy():
     assert "@media (max-width: 420px)" in homepage
 
 
+def test_homepage_intro_uses_natural_title_wrapping():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+    h1_css = re.search(r"h1\s*\{(?P<body>.*?)\n    \}", homepage, re.S)
+    dek_html = re.search(r'<p class="dek">(?P<body>.*?)</p>', homepage, re.S)
+
+    assert h1_css is not None
+    assert dek_html is not None
+    assert '<h1 id="title">Replay failed browser runs</h1>' in homepage
+    assert "text-wrap: balance" in h1_css.group("body")
+    assert "Playwright&nbsp;+&nbsp;LLM" in dek_html.group("body")
+    assert "and computer-use&nbsp;agents" in dek_html.group("body")
+    assert "custom&nbsp;computer-use&nbsp;agents" not in dek_html.group("body")
+    assert 'class="title-line"' not in homepage
+    assert ".title-line" not in homepage
+
+
 def test_homepage_intro_actions_do_not_squeeze_copy_column():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
