@@ -692,6 +692,23 @@ def test_code_of_conduct_links_first_pr_recipe_for_small_docs_fixes():
     assert "fake engagement" in code_of_conduct
 
 
+def test_code_of_conduct_links_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    code_of_conduct = (project_root / "CODE_OF_CONDUCT.md").read_text()
+
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in code_of_conduct
+    assert "reposts" not in code_of_conduct.lower()
+
+
 def test_github_profile_draft_links_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     pypi_spec = "browsertrace[ui]"

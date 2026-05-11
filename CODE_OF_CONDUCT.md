@@ -13,6 +13,13 @@ companies, and experience levels.
   to keep the first contribution small and reviewable.
 - Keep feedback technical and specific. Explain the failing workflow, agent
   stack, trace field, or integration problem you are discussing.
+- When reporting stack-specific debugging feedback, check the closest guide
+  first:
+  - Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+  - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+  - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+  - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+  - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 - Assume trace data may be sensitive. Do not post private screenshots, prompts,
   model outputs, URLs, cookies, tokens, customer data, or proprietary workflows.
 - Use `browsertrace export <run_id> --public -o public.html` before sharing a
