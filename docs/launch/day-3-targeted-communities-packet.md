@@ -314,6 +314,8 @@ Best targets:
 - FOSSHUNTER: open-source tool discovery; submit once from the owner account.
 - AgentsTide: AI agents and browser-agent directory; use the visible submit
   path, with `hello@agentstide.com` as email fallback.
+- AgentsIndex: AI agent tool directory; submit after owner sign-in under
+  Observability and Monitoring.
 - BuilderAI Tools: open-source AI developer tools directory; use
   `AI Observability & Evaluation`.
 - CLIHunt: AI agent and developer-tool registry; use category Other if no

@@ -3700,6 +3700,7 @@ def test_day_3_targeted_communities_tracks_directory_submission_queue():
         "OSS AI Hub",
         "FOSSHUNTER",
         "AgentsTide",
+        "AgentsIndex",
         "BuilderAI Tools",
         "CLIHunt",
         "DeepYard",
@@ -3717,6 +3718,7 @@ def test_day_3_targeted_communities_tracks_directory_submission_queue():
 
     assert "docs/launch/directory-submission-sheet.md" in directories
     assert "hello@agentstide.com" in directories
+    assert "Observability and Monitoring" in directories
     assert "AI Observability & Evaluation" in directories
     assert "self-service live demo/PyPI trial" in directories
     assert "stars" not in directories.lower()
@@ -3741,6 +3743,20 @@ def test_directory_submission_sheet_records_agentfirst_pr_submission():
     assert "agentfirst.directory" in sheet
     assert "https://github.com/bradvin/agentfirst.directory/pull/30" in sheet
     assert "Submitted PR" in sheet
+
+
+def test_directory_submission_sheet_records_agentsindex_owner_submission():
+    project_root = Path(__file__).resolve().parents[1]
+    sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
+
+    assert "AgentsIndex" in sheet
+    assert "https://agentsindex.ai/submit" in sheet
+    assert "owner sign-in" in sheet
+    assert "Observability and Monitoring" in sheet
+    assert "public-safe export" in sheet
+    assert "stars" not in sheet.split("AgentsIndex:", 1)[1].split(
+        "AgentKart:", 1
+    )[0].lower()
 
 
 def test_directory_submission_sheet_avoids_stale_awesome_list_pr_count():

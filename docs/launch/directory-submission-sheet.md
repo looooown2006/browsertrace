@@ -64,6 +64,7 @@ Use-shaped callback demo.
 | AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Yes, owner account likely | Repo, live demo, Browser Use guide | Owner login likely required; Submit Agent form asks for agent name, description, and GitHub repository; skip if only runnable autonomous agents are accepted |
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Unknown | Live demo, repo, integrations | Blocked: no visible submit/contact route |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Yes, owner email | Live demo, repo, comparison | Contact page accepts tool submissions; send owner-email pitch to agdex.ai@gmail.com |
+| AgentsIndex | AI agent tool directory with observability category | https://agentsindex.ai/submit | Yes, owner sign-in | Live demo, repo, public-safe export | Submit tool after owner sign-in; use Observability and Monitoring fit and local-first browser-agent debugging angle |
 | 4agent.dev | Agent-builder tool directory readers | https://4agent.dev/submit | Yes, browser submission | Live demo, repo, Browser Use guide | Submit Tool form is visible; use Observability or Browser category, and tags such as browser agents, debugging, Playwright, tracing |
 | agentfirst.directory | Agent-first tooling ecosystem | https://agentfirst.directory/ | Maybe | Comparison, live demo, repo | Submitted PR: https://github.com/bradvin/agentfirst.directory/pull/30 |
 | OSS AI Hub | Open-source AI tools and agents | https://ossaihub.com/submit | Yes, browser submission | Repo, live demo, public-safe export | JavaScript submission page; submissions are reviewed for quality, relevance, and community value |
@@ -100,6 +101,21 @@ Repository: https://github.com/aaronlab/browsertrace
 Category: Observability, or Browser if only one category is accepted
 Tags: browser agents, debugging, Playwright, Browser Use, trace viewer
 Short description: Local-first trace viewer for failed AI browser-agent runs, with screenshots, URLs, actions, model I/O, errors, and public-safe HTML exports.
+```
+
+AgentsIndex:
+
+```text
+Tool name: BrowserTrace
+Website URL: https://aaronlab.github.io/browsertrace/
+Repository: https://github.com/aaronlab/browsertrace
+Category: Observability and Monitoring
+Short description:
+Local-first trace viewer for debugging failed AI browser-agent and computer-use
+runs with screenshots, URLs, actions, model I/O, status, errors, and redacted
+shareable HTML exports.
+Owner note: submit from the owner's signed-in browser session at
+https://agentsindex.ai/submit.
 ```
 
 AgentKart:
