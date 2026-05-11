@@ -4239,6 +4239,7 @@ def test_launch_monitoring_runbook_covers_current_targets():
         "browserbase/stagehand#2102",
         "Skyvern-AI/skyvern#5931",
         "aaronlab/browsertrace#316",
+        "aaronlab/browsertrace#317",
         "Scottcjn/awesome-agents#16",
     ]:
         assert target in runbook

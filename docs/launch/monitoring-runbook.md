@@ -108,6 +108,7 @@ Reply only when maintainers ask a concrete question or request a change.
 Open BrowserTrace targets:
 
 - `aaronlab/browsertrace#316`
+- `aaronlab/browsertrace#317`
 
 ```bash
 gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
@@ -116,8 +117,10 @@ gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
 gh pr list --repo aaronlab/browsertrace --state open --limit 20 \
   --json number,title,author,updatedAt,url,isDraft
 
-gh issue view 316 --repo aaronlab/browsertrace \
-  --json number,title,state,comments,updatedAt,url
+for num in 316 317; do
+  gh issue view "$num" --repo aaronlab/browsertrace \
+    --json number,title,state,comments,updatedAt,url
+done
 ```
 
 Check relevant notifications:
