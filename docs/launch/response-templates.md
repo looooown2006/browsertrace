@@ -72,6 +72,16 @@ VNC, or CDP connection failures, the connect/probe result, capture start,
 capture stop, timeout, cleanup, and resource leak detection can be more useful
 than screenshots alone.
 
+## Stack-Specific Guides
+
+Use the closest guide when a reply needs workflow-specific context:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Can I share traces with a teammate?
 
 Today, use `browsertrace export <run_id> -o run.html` to create a self-contained HTML file. Hosted share links are on the roadmap, but the local OSS path comes first.

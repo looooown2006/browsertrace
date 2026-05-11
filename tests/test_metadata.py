@@ -2923,6 +2923,31 @@ def test_response_templates_include_stagehand_custom_tool_replay_reply():
     assert "reposts" not in reply.lower()
 
 
+def test_response_templates_link_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    templates = (
+        project_root / "docs" / "launch" / "response-templates.md"
+    ).read_text()
+
+    assert "## Stack-Specific Guides" in templates
+    guide_section = templates.split("## Stack-Specific Guides", 1)[1].split(
+        "## Can I share traces with a teammate?", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in guide_section
+    assert "stars" not in guide_section.lower()
+    assert "upvotes" not in guide_section.lower()
+    assert "reposts" not in guide_section.lower()
+
+
 def test_response_templates_include_skyvern_vnc_cdp_debug_reply():
     project_root = Path(__file__).resolve().parents[1]
     templates = (
