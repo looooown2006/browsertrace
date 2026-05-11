@@ -118,7 +118,7 @@ gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
 gh pr list --repo aaronlab/browsertrace --state open --limit 20 \
   --json number,title,author,updatedAt,url,isDraft
 
-for num in 320; do
+for num in 324; do
   gh issue view "$num" --repo aaronlab/browsertrace \
     --json number,title,state,comments,updatedAt,url
 done

@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T23:26:58+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 35 | current monitor pass after owner-action issues #9 and #10 refreshed with PR #323 merge, current good-first #324, and latest CI/Pages; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T23:30:34+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 35 | current monitor pass after #324 was claimed by looooown2006 and maintainer scope was confirmed; waiting for focused README link PR; external listing PRs still open and community discussions still have no replies; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
