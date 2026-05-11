@@ -36,6 +36,7 @@ Track the research in https://github.com/aaronlab/browsertrace/issues/237.
 
 - [ ] I ran `uv run --python 3.11 --extra dev pytest -q`
 - [ ] I ran `git diff --check`
+- [ ] I checked `git diff --stat` and `git diff --summary` for unexpected deleted or renamed files.
 - [ ] I included the exact error/output if a check could not be run.
 
 Optional for PRs that touch issue reports, CI, or AI/coding-agent troubleshooting:

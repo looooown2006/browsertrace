@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T22:45:19+00:00 | 3 | 998 | 17 | 0 | 10 | 1 | 35 | current monitor pass after monitoring runbook replaced stale BrowserTrace target #316 with dynamic open issue/PR checks and current #317/#319 watch targets; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T22:49:20+00:00 | 3 | 998 | 17 | 0 | 10 | 1 | 35 | current monitor pass after #319 deletion-risk review led to First PR Recipe and PR template diff-stat/diff-summary checks for unexpected deleted or renamed files; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
