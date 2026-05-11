@@ -40,6 +40,13 @@ the public-safe demo HTML:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 ```
 
+For a compact list of browser-agent failure patterns and trace evidence to
+collect, use:
+
+```text
+https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
+```
+
 ## What to inspect first
 
 Start at the first red step. Ask:

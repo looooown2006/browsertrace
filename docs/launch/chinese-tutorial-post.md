@@ -51,6 +51,12 @@ Live demo:
 https://aaronlab.github.io/browsertrace/
 ```
 
+Failure patterns:
+
+```text
+https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
+```
+
 ## BrowserTrace 是什么
 
 BrowserTrace 可以理解成 AI browser agent 的本地飞行记录仪。

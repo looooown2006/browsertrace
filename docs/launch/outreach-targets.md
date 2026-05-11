@@ -48,6 +48,10 @@ Post only where the community rules allow it. The ask is feedback from people bu
    `docs/launch/directory-submission-sheet.md` as the queue.
 6. Product Hunt after the visual assets are strong enough for a broader audience.
 
+Use this technical link when a community or editor needs concrete failure
+patterns instead of a general product page:
+https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
+
 ## Directory And Newsletter Pitch
 
 Use this for directories and newsletters that accept new tool suggestions. Keep

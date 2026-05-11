@@ -54,6 +54,9 @@ Current posted threads, for monitoring only:
 - Stagehand: https://github.com/browserbase/stagehand/discussions/2102
 - Skyvern: https://github.com/Skyvern-AI/skyvern/discussions/5931
 
+Technical link for future targeted replies:
+https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
+
 Do not repost to those three communities unless a maintainer asks for a new
 thread or the original thread receives concrete feedback that needs a follow-up.
 

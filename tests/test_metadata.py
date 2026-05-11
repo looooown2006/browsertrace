@@ -3177,6 +3177,23 @@ def test_owner_launch_copy_surfaces_failure_patterns_page():
         assert failure_patterns_url in text, relpath
 
 
+def test_secondary_launch_materials_surface_failure_patterns_page():
+    project_root = Path(__file__).resolve().parents[1]
+    failure_patterns_url = (
+        "https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html"
+    )
+
+    for relpath in [
+        "docs/launch/press-kit.md",
+        "docs/launch/outreach-targets.md",
+        "docs/launch/day-3-targeted-communities-packet.md",
+        "docs/launch/tutorial-post.md",
+        "docs/launch/chinese-tutorial-post.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert failure_patterns_url in text, relpath
+
+
 def test_x_launch_copy_fits_non_premium_post_limit():
     project_root = Path(__file__).resolve().parents[1]
     copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
