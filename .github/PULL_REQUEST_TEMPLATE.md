@@ -35,6 +35,7 @@ Track the research in https://github.com/aaronlab/browsertrace/issues/237.
 ## Test Plan
 
 - [ ] I ran `uv run --python 3.11 --extra dev pytest -q`
+- [ ] I ran `git diff --check`
 - [ ] I included the exact error/output if a check could not be run.
 
 Optional for PRs that touch issue reports, CI, or AI/coding-agent troubleshooting:
