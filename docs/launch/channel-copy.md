@@ -63,6 +63,31 @@ For public sharing, `browsertrace export --public` omits prompt/model I/O,
 screenshots, and URLs.
 ```
 
+## Fresh Browser Use Debugging Angle
+
+Use this after the icon-only Browser Use failure write-up is live. It is a
+technical story, not a launch ask.
+
+Short post:
+
+```text
+Fresh Browser Use debugging note:
+
+If the screenshot shows a plus icon but the agent clicks a nearby toolbar button, treat it as a visible-target vs accessible-target mismatch.
+
+I wrote up the repro evidence to capture: live HTML, accessibility snapshot, candidate boxes, and the clicked element.
+```
+
+Follow-up with link:
+
+```text
+Guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+
+The useful fix is usually on the app side: put an accessible name on the real button, e.g. aria-label="Create Test".
+
+For agent debugging, BrowserTrace keeps the failed-step timeline local so this evidence is easier to inspect.
+```
+
 ## X
 
 Non-Premium-safe thread. Post each `text` block as one X post.

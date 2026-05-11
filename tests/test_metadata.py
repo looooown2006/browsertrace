@@ -3149,6 +3149,22 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_channel_copy_includes_fresh_browser_use_debugging_angle():
+    project_root = Path(__file__).resolve().parents[1]
+    copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
+    section = copy.split("## Fresh Browser Use Debugging Angle", 1)[1].split(
+        "## X", 1
+    )[0]
+
+    assert "visible-target vs accessible-target mismatch" in section
+    assert "https://aaronlab.github.io/browsertrace/browser-use-debugging.html" in section
+    assert 'aria-label="Create Test"' in section
+    assert "candidate boxes" in section
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
+
+
 def test_channel_copy_links_security_policy_for_sensitive_reports():
     project_root = Path(__file__).resolve().parents[1]
     copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
