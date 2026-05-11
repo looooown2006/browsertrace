@@ -110,6 +110,9 @@ Contributing:
 
 ```text
 For a small first fix, start with the good first issue label:
+https://github.com/aaronlab/browsertrace/issues/242
+
+If that issue is already claimed or closed, use:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 
 Then use the First PR Recipe:
