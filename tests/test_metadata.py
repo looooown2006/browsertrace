@@ -4096,6 +4096,30 @@ def test_chinese_owner_next_actions_link_security_policy_for_sensitive_reports()
     assert "private trace data" in reply
 
 
+def test_chinese_owner_next_actions_link_stack_guides_for_troubleshooting_replies():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
+    ).read_text()
+    reply = checklist.split("## 回复本地首跑 / CI / agent 调试问题", 1)[1].split(
+        "## 7. 每做完一个动作就记录指标", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "Stack 调试指南链接" in reply
+    for guide in stack_guides:
+        assert guide in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_chinese_owner_next_actions_link_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     checklist = (
