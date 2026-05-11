@@ -3000,6 +3000,8 @@ def test_owner_short_checklists_surface_ready_email_submissions():
         assert "BuilderAI Tools" in unblock, relpath
         assert "AI Observability & Evaluation" in unblock, relpath
         assert "hello@agentstide.com" in unblock, relpath
+        assert "fresh-browser-use-debugging-angle" in unblock, relpath
+        assert "Browser Use" in unblock, relpath
         assert "stars" not in unblock.lower(), relpath
         assert "upvotes" not in unblock.lower(), relpath
 
