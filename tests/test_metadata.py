@@ -360,6 +360,36 @@ def test_homepage_intro_actions_do_not_squeeze_copy_column():
     assert "width: 100%" in actions_css.group("body")
 
 
+def test_homepage_mobile_nav_and_actions_do_not_push_trace_down():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+    mobile_css = re.search(
+        r"@media \(max-width: 620px\) \{(?P<body>.*?)\n    \}\n\n    @media \(max-width: 420px\)",
+        homepage,
+        re.S,
+    )
+
+    assert mobile_css is not None
+    mobile_body = mobile_css.group("body")
+    assert re.search(
+        r"\.topbar\s*\{[^}]*flex-wrap: nowrap;[^}]*align-items: center;",
+        mobile_body,
+        re.S,
+    )
+    assert re.search(
+        r"nav\s*\{[^}]*flex-wrap: nowrap;[^}]*overflow-x: auto;[^}]*min-width: 0;",
+        mobile_body,
+        re.S,
+    )
+    assert re.search(r"nav a\s*\{[^}]*white-space: nowrap;", mobile_body, re.S)
+    assert re.search(
+        r"\.actions\s*\{[^}]*flex-wrap: nowrap;[^}]*overflow-x: auto;",
+        mobile_body,
+        re.S,
+    )
+    assert re.search(r"\.actions \.button\s*\{[^}]*flex: 0 0 auto;", mobile_body, re.S)
+
+
 def test_homepage_intro_no_longer_needs_tablet_sidebar_override():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()

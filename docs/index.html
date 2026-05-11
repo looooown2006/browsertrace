@@ -278,6 +278,29 @@
     }
 
     @media (max-width: 620px) {
+      .topbar {
+        width: min(1180px, calc(100% - 24px));
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+      nav {
+        flex: 1 1 auto;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        min-width: 0;
+        scrollbar-width: none;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
       main {
         width: min(1180px, calc(100% - 24px));
         padding-top: 22px;
@@ -297,6 +320,21 @@
       .meta {
         gap: 8px;
         font-size: 13px;
+      }
+
+      .actions {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .actions::-webkit-scrollbar {
+        display: none;
+      }
+
+      .actions .button {
+        flex: 0 0 auto;
       }
     }
 
