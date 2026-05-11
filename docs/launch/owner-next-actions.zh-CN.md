@@ -217,13 +217,7 @@ Awesome list 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/18
 
 ## 回复小贡献问题
 
-如果有人问怎么做一个小的文档贡献，先给当前 good first issue：
-
-```text
-#248: Docs: add environment variable example values
-```
-
-如果这个 issue 已经被认领或关闭，再给 good first issue label：
+如果有人问怎么做一个小的文档贡献，先给当前 good first issue 队列：
 
 ```text
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue

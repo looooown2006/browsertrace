@@ -3119,7 +3119,7 @@ def test_product_hunt_packet_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     pypi_spec = "browsertrace[ui]"
     packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
-    contributor_block = packet.split("Good first issue for contributors:", 1)[
+    contributor_block = packet.split("Good first issue queue for contributors:", 1)[
         1
     ].split("Description:", 1)[0]
 
@@ -3142,7 +3142,7 @@ def test_show_hn_packet_links_current_good_first_issue():
         1
     ].split("## Troubleshooting Reply", 1)[0]
 
-    assert "good first issue label" in packet
+    assert "good first issue queue" in packet
     assert "#213" not in packet
     assert "First PR Recipe" in contribution_reply
     assert "CONTRIBUTING.md#first-pr-recipe" in contribution_reply
@@ -3564,6 +3564,25 @@ def test_owner_next_actions_set_good_first_issue_claim_window():
     assert "`claimed` label" in reply
     assert "already finished" in reply
     assert "good first issue label" in reply
+
+
+def test_active_contribution_copy_uses_good_first_queue_after_claim():
+    project_root = Path(__file__).resolve().parents[1]
+    queue_url = "https://github.com/aaronlab/browsertrace/labels/good%20first%20issue"
+
+    for relpath in [
+        "docs/launch/channel-copy.md",
+        "docs/launch/day-1-publish-packet.md",
+        "docs/launch/day-2-show-hn-packet.md",
+        "docs/launch/day-4-product-hunt-packet.md",
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+        "docs/launch/response-templates.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert queue_url in text, relpath
+        assert "https://github.com/aaronlab/browsertrace/issues/248" not in text, relpath
+        assert "#248: Docs: add environment variable example values" not in text, relpath
 
 
 def test_chinese_owner_next_actions_include_json_cli_troubleshooting_reply():

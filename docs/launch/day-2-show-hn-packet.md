@@ -176,10 +176,7 @@ Install uv from the official uv installation guide, then rerun the PyPI uvx comm
 Can I contribute a small fix?
 
 ```text
-Yes. The current pinned good first issue keeps small fixes reviewable:
-https://github.com/aaronlab/browsertrace/issues/248
-
-If that issue is already claimed or closed, use the good first issue label:
+Yes. The good first issue queue keeps small fixes reviewable:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 
 Use the First PR Recipe:

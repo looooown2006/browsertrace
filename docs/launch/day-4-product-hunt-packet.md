@@ -89,12 +89,9 @@ uvx --from "browsertrace[ui]" browsertrace demo
 uvx --from "browsertrace[ui]" browsertrace
 ```
 
-Good first issue for contributors:
+Good first issue queue for contributors:
 
 ```text
-https://github.com/aaronlab/browsertrace/issues/248
-
-If that issue is already claimed or closed:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 ```
 

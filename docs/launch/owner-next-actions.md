@@ -214,10 +214,7 @@ Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 ## Reply To Contribution Questions
 
 If someone asks how to make a small docs fix, point to the current good first
-issue:
-`#248`: Docs: add environment variable example values
-
-If that issue is already claimed or closed, use the good first issue label:
+issue queue:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
 
 Then share the First PR Recipe:
