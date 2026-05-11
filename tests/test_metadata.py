@@ -2740,6 +2740,18 @@ def test_llms_txt_includes_skyvern_action_confidence_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_playwright_artifact_boundary_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Playwright + LLM artifact boundary" in llms
+    assert "base64 screenshots" in llms
+    assert "typed image content block" in llms
+    assert "artifact id, dimensions, digest, status, and error" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_json_cli_troubleshooting_snippet():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -2980,6 +2992,17 @@ def test_skyvern_guide_documents_action_confidence_authorization():
     assert "authorization decision" in page
     assert "execution result" in page
     assert "Skyvern-AI/skyvern#5637" in page
+
+
+def test_playwright_guide_documents_artifact_boundary():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "playwright-llm-debugging.html").read_text()
+
+    assert "Keep browser artifacts out of long-term model context" in page
+    assert "base64 screenshots" in page
+    assert "typed image content block" in page
+    assert "artifact id, dimensions, digest, status, and error" in page
+    assert "browser artifact boundary" in page
 
 
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():

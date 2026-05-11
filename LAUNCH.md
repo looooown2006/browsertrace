@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T14:29:22+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after Skyvern action confidence and authorization failure shape added to guide and llms.txt; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T14:35:23+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after Playwright LLM artifact boundary guidance added to guide and llms.txt; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
