@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T00:07:45+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after IndexNow refresh for 2026-05-11 sitemap: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4416698835; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T00:09:39+00:00 | 3 | 998 | 9 | 0 | 12 | 0 | 19 | current monitor pass after Show HN packet added concrete Browser Use icon-only failure shape; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

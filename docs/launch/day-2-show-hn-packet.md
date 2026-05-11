@@ -24,6 +24,7 @@ Open these in a browser:
 - https://github.com/aaronlab/browsertrace
 - https://aaronlab.github.io/browsertrace/
 - https://aaronlab.github.io/browsertrace/debug-browser-agent-failure.html
+- https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 - https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 
 Submit only if all are true:
@@ -73,6 +74,11 @@ I built BrowserTrace after repeatedly losing the state of failed browser-agent
 runs. Logs showed tool calls, but not what the model saw in the browser, which
 screenshot led to the decision, or where the first wrong assumption entered the
 run.
+
+One concrete failure shape: the screenshot shows the right plus icon, but the
+agent clicks a nearby toolbar button because the tooltip text is not an
+accessible name. That needs screenshot, URL, action, model decision, and
+target evidence in one place; a normal stack trace usually cannot explain it.
 
 BrowserTrace records each step locally: screenshot, URL, action, model input,
 model output, status, and error. You open the local UI, click a run, and jump

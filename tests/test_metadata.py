@@ -3063,6 +3063,22 @@ def test_show_hn_packet_links_current_good_first_issue():
     assert "reposts" not in contribution_reply.lower()
 
 
+def test_show_hn_packet_uses_concrete_browser_use_failure_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (project_root / "docs" / "launch" / "day-2-show-hn-packet.md").read_text()
+    first_comment = packet.split("## First Comment Draft", 1)[1].split(
+        "## Response Rules", 1
+    )[0]
+
+    assert "https://aaronlab.github.io/browsertrace/browser-use-debugging.html" in packet
+    assert "screenshot shows the right plus icon" in first_comment
+    assert "tooltip text is not an" in first_comment
+    assert "target evidence" in first_comment
+    assert "stars" not in first_comment.lower()
+    assert "upvotes" not in first_comment.lower()
+    assert "reposts" not in first_comment.lower()
+
+
 def test_product_hunt_packet_includes_json_cli_reply_note():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
