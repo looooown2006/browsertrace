@@ -34,7 +34,8 @@ workflow 反馈。
    ForgeIndex、AgentShelf。
 5. 如果还有时间做开发者工具目录，继续用同一个 sheet 提交 DevTool Center、
    ToolHunter、ToolShelf。CLIs.dev 已提交：
-   https://github.com/victorcheeney/clis/issues/3。
+   https://github.com/victorcheeney/clis/issues/3；CliHub registry PR 已打开：
+   https://github.com/clihub-ai/clihub/pull/1。
 
 发完后，把帖子 URL、群名、邮件已发送备注或回复发给 Codex，我会记录指标并
 更新跟踪 issue。

@@ -83,7 +83,7 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
   reusable source asset for future launch previews.
 - Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
   Console and Bing Webmaster Tools.
-- Monitor the twelve open third-party awesome-list and directory PRs plus the
+- Monitor the thirteen open third-party awesome-list and directory PRs plus the
   CLIs.dev submission issue, and respond only if maintainers ask for changes.
   Do not open additional list PRs unless the target is clearly high-fit and
   non-duplicative.
@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T02:44:01+00:00 | 3 | 998 | 11 | 0 | 12 | 0 | 26 | current monitor pass after replacement good-first issue #244 opened and pinned following #243 merge: https://github.com/aaronlab/browsertrace/issues/244; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T02:55:58+00:00 | 3 | 998 | 11 | 0 | 12 | 0 | 26 | current monitor pass after CliHub registry PR opened: https://github.com/clihub-ai/clihub/pull/1; tracked in issue #18: https://github.com/aaronlab/browsertrace/issues/18#issuecomment-4417222020; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

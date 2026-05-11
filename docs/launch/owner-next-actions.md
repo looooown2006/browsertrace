@@ -36,7 +36,8 @@ and asks for real workflow feedback through a concrete failure mode.
    OpenAgent.bot, ForgeIndex, and AgentShelf.
 5. If you still have time for developer-tool directories, use the same sheet for
    DevTool Center, ToolHunter, and ToolShelf. CLIs.dev has already been
-   submitted as https://github.com/victorcheeney/clis/issues/3.
+   submitted as https://github.com/victorcheeney/clis/issues/3, and the
+   CliHub registry PR is open at https://github.com/clihub-ai/clihub/pull/1.
 
 Send the posted URLs, email-sent note, or any replies so Codex can log metrics
 and update the tracking issues.

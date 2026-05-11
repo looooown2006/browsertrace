@@ -2744,13 +2744,14 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
 
-    assert "twelve focused PRs are already open" in queue
+    assert "thirteen focused PRs are open" in queue
     assert "the three prepared PRs" not in queue
     assert "ai-boost/awesome-harness-engineering#23" in queue
     assert "Agent-Tools/awesome-autonomous-web#21" in queue
     assert "e2b-dev/awesome-ai-sdks#187" in queue
     assert "jim-schwoebel/awesome_ai_agents#266" in queue
     assert "ranpox/awesome-computer-use#24" in queue
+    assert "clihub-ai/clihub#1" in queue
     assert "E2B CLA check has passed" in queue
     assert "steel-dev/awesome-web-agents#56" in queue
 
