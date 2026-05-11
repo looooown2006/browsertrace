@@ -49,3 +49,12 @@ browsertrace show <run_id> --json
 
 If this changes UI, examples, exports, or README launch flow, attach a
 screenshot, GIF, or exported trace.
+For public PR evidence, prefer a public-safe export when trace evidence is
+useful:
+
+```bash
+browsertrace export <run_id> --public -o public.html
+```
+
+Do not attach private prompts, credentials, customer data, unredacted screenshots,
+or unredacted traces publicly.
