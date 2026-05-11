@@ -2299,6 +2299,25 @@ def test_examples_readme_includes_cli_help_discovery_recipe():
     assert "hosted sharing" not in examples_readme
 
 
+def test_examples_readme_links_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    examples_readme = (project_root / "examples" / "README.md").read_text()
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "### Stack-specific debugging guides" in examples_readme
+    for guide in stack_guides:
+        assert guide in examples_readme
+    assert "stars" not in examples_readme.lower()
+    assert "upvotes" not in examples_readme.lower()
+    assert "reposts" not in examples_readme.lower()
+
+
 def test_examples_readme_includes_environment_variable_quick_reference():
     project_root = Path(__file__).resolve().parents[1]
     examples_readme = (project_root / "examples" / "README.md").read_text()

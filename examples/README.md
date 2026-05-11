@@ -102,6 +102,16 @@ A healthy `browsertrace --help` output should list the main commands, including
 | `multipage_failure.py` | You want a multi-page Playwright failure demo | Local Chromium | `python examples/multipage_failure.py` |
 | `browseruse_example.py` | You already use Browser Use and want to attach tracing | Browser Use + LLM | `python examples/browseruse_example.py` |
 
+### Stack-specific debugging guides
+
+Use the guide closest to the example or agent stack you are trying:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 Browser Use users who pass run hooks directly to
 `agent.run(on_step_start=..., on_step_end=...)` should use
 `create_run_hooks`; see the
