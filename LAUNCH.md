@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T02:21:31+00:00 | 3 | 998 | 10 | 0 | 12 | 0 | 25 | current monitor pass after awesome-list skip guard added for ZJU-REAL/Awesome-GUI-Agents weak tool fit; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T02:23:56+00:00 | 3 | 998 | 10 | 0 | 12 | 0 | 25 | current monitor pass after old aaronagent redirect README refreshed to v0.1.17 PyPI path and issue #242: https://github.com/aaronlab/aaronagent/commit/4588ab3; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
