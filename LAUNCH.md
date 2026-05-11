@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T23:44:16+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 35 | current monitor pass after contributor PR #327 merged, issue #326 closed, and replacement good-first issue #328 opened for README BROWSERTRACE_HOME isolated trace storage recipe link; merge CI 25703968694 succeeded; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T23:56:59+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 35 | current monitor pass: external listing PRs still open/not listed; issue #328 claimed and pinned; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
