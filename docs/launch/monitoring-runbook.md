@@ -31,6 +31,7 @@ Tracked PR targets:
 - `e2b-dev/awesome-ai-sdks#187`
 - `jim-schwoebel/awesome_ai_agents#266`
 - `ranpox/awesome-computer-use#24`
+- `trycua/acu#26`
 - `clihub-ai/clihub#1`
 
 Use this jq null-safe loop so PRs with no comments do not fail the monitor pass:
@@ -70,6 +71,7 @@ Agent-Tools/awesome-autonomous-web 21
 e2b-dev/awesome-ai-sdks 187
 jim-schwoebel/awesome_ai_agents 266
 ranpox/awesome-computer-use 24
+trycua/acu 26
 clihub-ai/clihub 1
 EOF
 ```
@@ -126,7 +128,7 @@ SINCE_UTC="${SINCE_UTC:?Set SINCE_UTC to the monitor start time, e.g. YYYY-MM-DD
 gh api 'notifications?all=true&participating=true&per_page=50' |
   jq -c --arg since "$SINCE_UTC" '[.[] |
     select((.updated_at >= $since) and
-    (.repository.full_name | test("browsertrace|agentfirst|awesome|clihub|clis|browser-use|stagehand|skyvern"; "i"))) |
+    (.repository.full_name | test("browsertrace|agentfirst|awesome|trycua|clihub|clis|browser-use|stagehand|skyvern"; "i"))) |
     {repo:.repository.full_name, subject:.subject.title, type:.subject.type, updated_at, unread, reason, url:.subject.url, latest_comment_url:.subject.latest_comment_url}
   ]'
 ```

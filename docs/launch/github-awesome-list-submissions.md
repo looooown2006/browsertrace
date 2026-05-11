@@ -73,6 +73,7 @@ workflow-specific debugging context:
 | 9 | `e2b-dev/awesome-ai-sdks` | Strong | top-level tool entry | Submitted: https://github.com/e2b-dev/awesome-ai-sdks/pull/187; E2B CLA passed |
 | 10 | `jim-schwoebel/awesome_ai_agents` | Medium | `Building` -> `Tools` | Submitted: https://github.com/jim-schwoebel/awesome_ai_agents/pull/266 |
 | 11 | `ranpox/awesome-computer-use` | Strong | `Projects` | Submitted: https://github.com/ranpox/awesome-computer-use/pull/24 |
+| 12 | `trycua/acu` | Strong | `Open Source` -> `Automation` | Submitted: https://github.com/trycua/acu/pull/26 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 | Skip | `supernalintelligence/Awesome-Gui-Agents` | Weak | n/a | Main list catalogs GUI agents, not developer/debugging tools; referenced contribution file is missing |
 | Skip | `ZJU-REAL/Awesome-GUI-Agents` | Weak | n/a | Strong topic match, but current README is primarily papers, datasets, and benchmarks rather than developer/debugging tools |
@@ -488,6 +489,39 @@ Submitted entry:
 
 ```markdown
 - [BrowserTrace](https://github.com/aaronlab/browsertrace) - Local-first trace viewer for debugging failed AI browser-agent and computer-use runs with screenshots, URLs, actions, model I/O, errors, and redacted HTML exports.
+```
+
+Verification:
+
+```bash
+git diff --check
+```
+
+## 12. ACU - Awesome Agents for Computer Use
+
+Target:
+
+```text
+https://github.com/trycua/acu
+```
+
+Status: submitted as https://github.com/trycua/acu/pull/26.
+
+Fit notes:
+
+- The target list curates resources about AI agents for Computer Use, including
+  open-source projects, frameworks, tools, and automation.
+- BrowserTrace fits as local debugging and trace tooling for failed
+  browser-agent and computer-use runs.
+- The PR adds one neutral `Open Source` -> `Automation` entry and does not ask
+  for stars, votes, or reciprocal placement.
+
+Submitted entry:
+
+```markdown
+- [BrowserTrace](https://github.com/aaronlab/browsertrace)
+  - Local-first trace viewer for failed browser-agent and computer-use runs
+  - Records screenshots, URLs, actions, model I/O, status, errors, and public-safe HTML exports
 ```
 
 Verification:
