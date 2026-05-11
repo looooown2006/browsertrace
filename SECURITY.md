@@ -21,6 +21,16 @@ public issue without exploit details, secrets, private URLs, screenshots,
 prompts, model output, or customer data, and ask the maintainer to establish a
 private follow-up path.
 
+For non-sensitive browser-agent workflow questions, use the closest public
+debugging guide for context. Security-sensitive details should still stay
+private.
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 Include:
 
 - A short description of the issue.

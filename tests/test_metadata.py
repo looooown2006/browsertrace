@@ -4190,6 +4190,28 @@ def test_security_policy_has_private_report_path_without_email_placeholder():
     assert "browsertrace export <run_id> --public -o public.html" in policy
 
 
+def test_security_policy_links_non_sensitive_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    policy = (project_root / "SECURITY.md").read_text()
+    normalized = " ".join(policy.split())
+
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "For non-sensitive browser-agent workflow questions" in normalized
+    assert "Security-sensitive details should still stay private" in normalized
+    for guide in stack_guides:
+        assert guide in policy
+    assert "stars" not in policy.lower()
+    assert "upvotes" not in policy.lower()
+    assert "reposts" not in policy.lower()
+
+
 def test_awesome_list_submission_notes_include_trial_and_demo_links():
     project_root = Path(__file__).resolve().parents[1]
     pypi_spec = (
