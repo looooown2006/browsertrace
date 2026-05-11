@@ -87,6 +87,27 @@ BrowserTrace 关注的是这个交界面：浏览器状态 + agent action + mode
 
 它不是替代 Playwright Trace Viewer，而是补上 LLM 决策上下文。
 
+## 有些失败发生在第一张截图之前
+
+还有一类 computer-use agent 问题更早：浏览器还没打开页面，第一张 screenshot
+和 URL 都没有，persistent browser session recovery 已经失败了。
+
+这时只看 profile lock 文件或进程名不够。更有用的 trace 边界应该记录：
+
+- `session_mode`
+- redacted profile id
+- browser/session id
+- CDP attach/probe timing
+- timeout 或 error
+- approval source
+- recovery action
+- final connection state
+
+这类信息能解释 agent 到底是复用已有浏览器、attach 到 remote debugging
+endpoint、fallback 到 isolated session，还是被要求人工确认后 reset。否则你只
+能看到“浏览器启动失败”，但不知道失败发生在 profile、CDP attach、锁判断，还
+是 recovery policy。
+
 ## 60 秒试一下
 
 BrowserTrace 有一个不需要 API key、不需要真实浏览器的 deterministic demo：

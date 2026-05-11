@@ -52,6 +52,20 @@ Start at the first red step. Ask:
 
 That sequence usually finds the bug faster than reading logs from the top.
 
+## When failure happens before screenshots
+
+Some computer-use failures happen before the first page screenshot or URL
+exists. Persistent browser sessions can fail during profile selection, launch,
+CDP attach/probe, or recovery.
+
+In that case, do not rely only on a profile lock file or process name. The trace
+needs an earlier boundary: `session_mode`, redacted profile id, browser/session
+id when available, CDP attach/probe timing, timeout or error, approval source,
+recovery action, and final connection state.
+
+That is why the computer-use guide treats browser session recovery as traceable
+evidence, not just setup code before the agent starts.
+
 ## Record your own run
 
 The simplest API is the decorator:

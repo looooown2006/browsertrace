@@ -4241,6 +4241,26 @@ def test_tutorial_post_links_stack_debugging_guides_for_replies():
     assert "reposts" not in guide_section.lower()
 
 
+def test_tutorial_post_includes_persistent_browser_recovery_section():
+    project_root = Path(__file__).resolve().parents[1]
+    tutorial = (project_root / "docs" / "launch" / "tutorial-post.md").read_text()
+
+    assert "## When failure happens before screenshots" in tutorial
+    section = tutorial.split("## When failure happens before screenshots", 1)[
+        1
+    ].split("## Record your own run", 1)[0]
+
+    assert "profile lock" in section
+    assert "session_mode" in section
+    assert "redacted profile id" in section
+    assert "CDP attach/probe timing" in section
+    assert "recovery action" in section
+    assert "final connection state" in section
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
+
+
 def test_tutorial_post_includes_aos_mapping_research_note():
     project_root = Path(__file__).resolve().parents[1]
     tutorial = (project_root / "docs" / "launch" / "tutorial-post.md").read_text()
@@ -4344,6 +4364,28 @@ def test_chinese_tutorial_post_links_stack_debugging_guides_for_replies():
     assert "stars" not in guide_section.lower()
     assert "upvotes" not in guide_section.lower()
     assert "reposts" not in guide_section.lower()
+
+
+def test_chinese_tutorial_post_includes_persistent_browser_recovery_section():
+    project_root = Path(__file__).resolve().parents[1]
+    tutorial = (
+        project_root / "docs" / "launch" / "chinese-tutorial-post.md"
+    ).read_text()
+
+    assert "## 有些失败发生在第一张截图之前" in tutorial
+    section = tutorial.split("## 有些失败发生在第一张截图之前", 1)[1].split(
+        "## 60 秒试一下", 1
+    )[0]
+
+    assert "profile lock" in section
+    assert "session_mode" in section
+    assert "redacted profile id" in section
+    assert "CDP attach/probe timing" in section
+    assert "recovery action" in section
+    assert "final connection state" in section
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
 
 
 def test_chinese_tutorial_post_includes_aos_mapping_research_note():
