@@ -35,7 +35,8 @@ and asks for real workflow feedback through a concrete failure mode.
    `docs/launch/directory-submission-sheet.md` for CLIHunt, DeepYard,
    OpenAgent.bot, ForgeIndex, and AgentShelf.
 5. If you still have time for developer-tool directories, use the same sheet for
-   CLIs.dev, DevTool Center, ToolHunter, and ToolShelf.
+   DevTool Center, ToolHunter, and ToolShelf. CLIs.dev has already been
+   submitted as https://github.com/victorcheeney/clis/issues/3.
 
 Send the posted URLs, email-sent note, or any replies so Codex can log metrics
 and update the tracking issues.

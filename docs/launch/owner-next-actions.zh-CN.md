@@ -32,8 +32,9 @@ workflow 反馈。
 4. 如果这一批已经做完，继续用 `docs/launch/directory-submission-sheet.md`
    里的第二批目录字段说明提交 CLIHunt、DeepYard、OpenAgent.bot、
    ForgeIndex、AgentShelf。
-5. 如果还有时间做开发者工具目录，继续用同一个 sheet 提交 CLIs.dev、
-   DevTool Center、ToolHunter、ToolShelf。
+5. 如果还有时间做开发者工具目录，继续用同一个 sheet 提交 DevTool Center、
+   ToolHunter、ToolShelf。CLIs.dev 已提交：
+   https://github.com/victorcheeney/clis/issues/3。
 
 发完后，把帖子 URL、群名、邮件已发送备注或回复发给 Codex，我会记录指标并
 更新跟踪 issue。
