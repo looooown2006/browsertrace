@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T18:13:09+00:00 | 3 | 998 | 16 | 0 | 13 | 1 | 28 | current monitor pass after high-fit trycua/acu computer-use list PR #26 opened and #18 updated: https://github.com/aaronlab/browsertrace/issues/18#issuecomment-4423501256; tracking docs updated; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T18:25:10+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 30 | current monitor pass after forks increased to 17; goodfirstissues.com and github-help-wanted.com are now visible referrers, and old aaronagent redirect paths still appear in popular paths; no tracked external listing is merged yet; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
