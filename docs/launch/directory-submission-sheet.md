@@ -237,6 +237,11 @@ records each browser-agent step as a timeline with screenshot, URL, action,
 model input/output, status, and error, then exports a standalone HTML trace
 with optional redaction.
 
+A concrete failure case: a Browser Use agent can see the right plus icon in a
+screenshot, but click a nearby toolbar button because the tooltip text is not an
+accessible name. BrowserTrace keeps the screenshot, URL, action, model decision,
+and failed-step evidence together so that kind of bug can be inspected.
+
 Why it may fit console.dev:
 - It is interesting and useful to developers building Browser Use, Stagehand,
   Skyvern, Playwright + LLM, or custom computer-use agents.
@@ -277,6 +282,10 @@ records each browser-agent step as a timeline with screenshot, URL, action,
 model input/output, status, and error, then exports a standalone HTML trace
 with optional redaction. It is useful for Browser Use, Stagehand, Skyvern,
 Playwright + LLM scripts, and custom computer-use agents.
+
+Example use case: debugging a Browser Use run where the screenshot shows the
+right plus icon, but the agent clicks a nearby toolbar button because tooltip
+text is not an accessible name.
 
 Repository: https://github.com/aaronlab/browsertrace
 Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html

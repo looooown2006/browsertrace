@@ -2955,6 +2955,8 @@ def test_directory_submission_sheet_includes_agdex_email_template():
     assert "Category: Developer tools / observability" in agdex
     assert "Short description:" in agdex
     assert "AI browser-agent" in agdex
+    assert "screenshot shows the" in agdex
+    assert "tooltip" in agdex
     assert "Do not ask for stars" in agdex
 
 
@@ -2975,6 +2977,9 @@ def test_directory_submission_sheet_includes_console_dev_email_template():
     assert "no signup or sales call" in console
     assert "not a sponsored review request" in console
     assert "BrowserTrace is an MIT-licensed local debugger" in console
+    assert "A concrete failure case" in console
+    assert "Browser Use agent can see the right plus icon" in console
+    assert "failed-step evidence" in console
     assert "Do not ask for stars" in console
 
 
