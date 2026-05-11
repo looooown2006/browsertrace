@@ -2692,6 +2692,28 @@ def test_llms_txt_links_stack_guides_from_troubleshooting_prompt():
     assert "reposts" not in troubleshooting_prompt.lower()
 
 
+def test_llms_txt_includes_aos_mapping_research_note():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "## AOS Mapping Research" in llms
+    research_note = llms.split("## AOS Mapping Research", 1)[1].split(
+        "## Positioning", 1
+    )[0]
+
+    assert "not an AOS compliance claim" in research_note
+    assert "tool request/result" in research_note
+    assert "step correlation" in research_note
+    assert "URI-style screenshot/video artifacts" in research_note
+    assert "URL metadata" in research_note
+    assert "model I/O summaries" in research_note
+    assert "explicit redaction state" in research_note
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in research_note
+    assert "stars" not in research_note.lower()
+    assert "upvotes" not in research_note.lower()
+    assert "reposts" not in research_note.lower()
+
+
 def test_press_kit_includes_current_trial_and_contribution_paths():
     project_root = Path(__file__).resolve().parents[1]
     press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
