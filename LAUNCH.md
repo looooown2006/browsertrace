@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T06:42:01+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after owner next-actions checklists added CliHub and CLIs.dev registry submissions to explicit monitoring list; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T06:46:16+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after #254 completed in e4208f3 and replacement good-first issue #255 opened: https://github.com/aaronlab/browsertrace/issues/255; CI success 25654666373 and Pages success 25654687847; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
