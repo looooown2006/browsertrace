@@ -3189,6 +3189,31 @@ browsertrace show <run_id> --json
     assert "reposts" not in triage.lower()
 
 
+def test_day_3_targeted_communities_link_stack_debugging_guides_for_replies():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "day-3-targeted-communities-packet.md"
+    ).read_text()
+
+    assert "## Stack-Specific Reply Links" in packet
+    guide_section = packet.split("## Stack-Specific Reply Links", 1)[1].split(
+        "## Stop Rules", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in guide_section
+    assert "stars" not in guide_section.lower()
+    assert "upvotes" not in guide_section.lower()
+    assert "reposts" not in guide_section.lower()
+
+
 def test_day_3_targeted_communities_tracks_directory_submission_queue():
     project_root = Path(__file__).resolve().parents[1]
     packet = (

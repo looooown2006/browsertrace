@@ -358,6 +358,17 @@ browsertrace show <run_id> --json
   Then link the First PR Recipe:
   https://github.com/aaronlab/browsertrace/blob/main/CONTRIBUTING.md#first-pr-recipe keeps the first contribution small and reviewable.
 
+## Stack-Specific Reply Links
+
+Use the closest guide when a targeted-community reply turns into a
+workflow-specific debugging question:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Stop Rules
 
 - Do not post in more than two targeted communities on the same day unless
