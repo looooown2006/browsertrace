@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T08:51:34+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after #275 completed in 4a2ba21 and replacement good-first issue #276 opened: https://github.com/aaronlab/browsertrace/issues/276; CI success 25660093409 and Pages success 25660093406; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T08:55:28+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after duplicate #276 closed as already covered by press kit stack-guide test and replacement good-first issue #277 opened: https://github.com/aaronlab/browsertrace/issues/277; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
