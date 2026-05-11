@@ -317,6 +317,14 @@ def test_homepage_intro_uses_natural_title_wrapping():
     assert ".title-line" not in homepage
 
 
+def test_homepage_mobile_title_has_line_length_guard():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+
+    assert "@media (max-width: 620px)" in homepage
+    assert "max-width: 16ch;" in homepage
+
+
 def test_homepage_intro_actions_do_not_squeeze_copy_column():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()
