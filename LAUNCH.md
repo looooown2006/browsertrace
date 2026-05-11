@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T20:31:07+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 31 | current monitor pass after contributor PR #310 merged and issue #303 closed; integration request template now asks for persistent-browser recovery evidence; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T20:34:30+00:00 | 3 | 998 | 17 | 0 | 11 | 0 | 33 | current monitor pass after issue #237 was claimed and new good-first issue #311 was opened for first-PR diff-check docs; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
