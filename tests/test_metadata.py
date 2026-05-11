@@ -4228,6 +4228,7 @@ def test_launch_monitoring_runbook_covers_current_targets():
     assert "docs/launch/metrics-log.md" in runbook
     assert "jq null-safe" in runbook
     assert "SINCE_UTC" in runbook
+    assert "fromdateiso8601" in runbook
     assert "2026-05-11T17:00:00Z" not in runbook
 
     for target in [

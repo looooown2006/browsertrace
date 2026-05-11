@@ -129,7 +129,7 @@ Check relevant notifications:
 SINCE_UTC="${SINCE_UTC:?Set SINCE_UTC to the monitor start time, e.g. YYYY-MM-DDTHH:MM:SSZ}"
 gh api 'notifications?all=true&participating=true&per_page=50' |
   jq -c --arg since "$SINCE_UTC" '[.[] |
-    select((.updated_at >= $since) and
+    select(((.updated_at | fromdateiso8601) >= ($since | fromdateiso8601)) and
     (.repository.full_name | test("browsertrace|agentfirst|awesome|trycua|clihub|clis|browser-use|stagehand|skyvern"; "i"))) |
     {repo:.repository.full_name, subject:.subject.title, type:.subject.type, updated_at, unread, reason, url:.subject.url, latest_comment_url:.subject.latest_comment_url}
   ]'
