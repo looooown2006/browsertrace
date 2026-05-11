@@ -2914,7 +2914,8 @@ def test_directory_submission_sheet_records_current_directory_submission_blocker
     for text in [sheet, targets]:
         assert "AgentKart" in text
         assert "Owner login likely required" in text
-        assert "visible unauthenticated form has no action or method" in text.lower()
+        assert "Submit Agent form asks for agent name, description, and GitHub repository" in text
+        assert "skip if only runnable autonomous agents are accepted" in text
         assert "Agent Hub" in text
         assert "no visible submit/contact route" in text
         assert "AgDex" in text

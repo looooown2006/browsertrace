@@ -60,7 +60,7 @@ Use-shaped callback demo.
 | Product Hunt | Broad launch audience once assets and comments are ready | Product Hunt maker dashboard | Yes | Live demo, release, repo | Not submitted |
 | Hacker News Show HN | OSS/devtools developers | https://news.ycombinator.com/submit | Yes | Repo, live demo, comparison | Not submitted |
 | console.dev | Devtools newsletter readers | https://console.dev/ | Yes, from owner email/contact | Live demo, repo, comparison | Not submitted |
-| AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Yes, owner account likely | Repo, live demo, Browser Use guide | Owner login likely required; visible unauthenticated form has no action or method |
+| AgentKart | Open-source AI agent marketplace readers | https://www.agentkart.ai/submit | Yes, owner account likely | Repo, live demo, Browser Use guide | Owner login likely required; Submit Agent form asks for agent name, description, and GitHub repository; skip if only runnable autonomous agents are accepted |
 | Agent Hub | Agent/MCP/skill directory readers | https://agent-hub.dev/ | Unknown | Live demo, repo, integrations | Blocked: no visible submit/contact route |
 | AgDex | AI agent ecosystem directory readers | https://agdex.ai/ | Yes, owner email | Live demo, repo, comparison | Contact page accepts tool submissions; send owner-email pitch to agdex.ai@gmail.com |
 | 4agent.dev | Agent-builder tool directory readers | https://4agent.dev/submit | Yes, browser submission | Live demo, repo, Browser Use guide | Submit Tool form is visible; use Observability or Browser category, and tags such as browser agents, debugging, Playwright, tracing |
@@ -98,6 +98,84 @@ Repository: https://github.com/aaronlab/browsertrace
 Category: Observability, or Browser if only one category is accepted
 Tags: browser agents, debugging, Playwright, Browser Use, trace viewer
 Short description: Local-first trace viewer for failed AI browser-agent runs, with screenshots, URLs, actions, model I/O, errors, and public-safe HTML exports.
+```
+
+AgentKart:
+
+```text
+Agent Name: BrowserTrace
+Description:
+BrowserTrace is not an autonomous agent; it is an MIT-licensed debugging tool
+for AI browser-agent projects. It records failed Browser Use, Stagehand,
+Skyvern, Playwright + LLM, and custom computer-use runs with screenshots, URLs,
+actions, model I/O, status, errors, and public-safe HTML exports.
+GitHub Repository: https://github.com/aaronlab/browsertrace
+Owner note: if AgentKart only accepts runnable autonomous agents, skip this
+submission instead of misclassifying BrowserTrace. Owner login likely required.
+```
+
+OSS AI Hub:
+
+```text
+Tool name: BrowserTrace
+Website URL: https://aaronlab.github.io/browsertrace/
+GitHub URL: https://github.com/aaronlab/browsertrace
+Category: Developer Tools, AI Agents, or Observability if offered
+Short description:
+Open-source local trace viewer for debugging failed AI browser-agent and
+computer-use runs.
+Full description:
+BrowserTrace records screenshots, URLs, actions, model input/output, status,
+and errors for Browser Use, Stagehand, Skyvern, Playwright + LLM, and custom
+computer-use workflows. It runs locally, includes a PyPI package, and can export
+public-safe HTML traces for sharing without sensitive screenshots, URLs,
+prompts, or model output.
+```
+
+FOSSHUNTER:
+
+```text
+Tool name: BrowserTrace
+Repository: https://github.com/aaronlab/browsertrace
+Website: https://aaronlab.github.io/browsertrace/
+Category: Agentic Development, or AI Automation if Agentic Development is not available
+Short description:
+MIT-licensed local debugger for AI browser-agent failures, with screenshots,
+URLs, actions, model I/O, errors, and redacted HTML exports.
+Owner note: login is required before the submit form is available.
+```
+
+AgentsTide:
+
+```text
+Agent/tool name: BrowserTrace
+Website: https://aaronlab.github.io/browsertrace/
+Repository: https://github.com/aaronlab/browsertrace
+Category: Browser Agents, or Coding if Browser Agents is not available
+Pricing: Free / open source
+Short description:
+BrowserTrace is a local debugging tool for teams building browser agents. It
+records the failed-step timeline for Browser Use, Stagehand, Skyvern,
+Playwright + LLM, and custom computer-use runs, then exports public-safe HTML
+traces for review.
+Owner note: if AgentsTide only accepts autonomous agent products, submit only
+as a browser-agent developer tool or skip.
+```
+
+BuilderAI Tools:
+
+```text
+Tool Name: BrowserTrace
+Website URL: https://aaronlab.github.io/browsertrace/
+GitHub URL: https://github.com/aaronlab/browsertrace
+Description:
+BrowserTrace is an MIT-licensed local debugger for failed AI browser-agent
+runs. It records screenshots, URLs, actions, model I/O, status, errors, and
+exports public-safe HTML traces for Browser Use, Stagehand, Skyvern,
+Playwright + LLM, and custom computer-use workflows.
+Category: AI Observability & Evaluation
+Tags: browser agents, debugging, observability, Playwright, open source
+Your Email: use the owner's email address
 ```
 
 ## Second-Pass Directory Field Notes
