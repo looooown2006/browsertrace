@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T20:56:24+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 33 | current monitor pass after contributor PR #312 merged and issue #237 closed; AOS mapping research table is live-docs ready with responsive mobile table; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T20:59:18+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 33 | current monitor pass after issue #311 was claimed by looooown2006 and maintainer scope was confirmed for first-PR diff-check docs; waiting for focused docs PR; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
