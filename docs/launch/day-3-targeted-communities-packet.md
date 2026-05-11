@@ -307,7 +307,7 @@ Best targets:
 
 Pitch:
 
-```text
+````text
 BrowserTrace is an MIT local debugger for AI browser agents. It records each
 Browser Use / Stagehand / Skyvern / Playwright + LLM step as a timeline:
 screenshot, URL, action, model input/output, status, and error.
@@ -321,6 +321,7 @@ Try locally from PyPI:
 ```bash
 uvx --from "browsertrace[ui]" browsertrace doctor
 uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 Repo: https://github.com/aaronlab/browsertrace
@@ -328,7 +329,7 @@ Live demo: https://aaronlab.github.io/browsertrace/
 Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 Release: https://github.com/aaronlab/browsertrace/releases/tag/v0.1.17
-```
+````
 
 Metrics:
 
