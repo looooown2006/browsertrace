@@ -198,6 +198,37 @@ Pricing: Free
 Tags: AI agents, debugging, observability, Playwright, CLI
 ```
 
+ToolHunter submit guidance:
+
+```text
+Tool name: BrowserTrace
+Tagline: Local debugger for AI browser-agent failures
+Website: https://aaronlab.github.io/browsertrace/
+Repository: https://github.com/aaronlab/browsertrace
+Category or positioning: Developer Tools, AI agents, open-source CLI utilities
+Short description:
+BrowserTrace is an MIT-licensed local trace viewer for failed Browser Use,
+Stagehand, Skyvern, Playwright + LLM, and custom computer-use runs. It records
+screenshots, URLs, actions, model I/O, status, errors, and public-safe HTML
+exports.
+Install command: pip install "browsertrace[ui]"
+```
+
+ToolShelf submit guidance:
+
+```text
+Tool name: BrowserTrace
+Tagline: Replay failed AI browser-agent runs
+Website: https://aaronlab.github.io/browsertrace/
+Repository: https://github.com/aaronlab/browsertrace
+Category: CLI Tools, or AI Coding if only one category is accepted
+Pricing/license: Free, open source, MIT
+Short description:
+Local-first CLI and web UI for debugging AI browser-agent failures with
+screenshots, URLs, actions, model I/O, error status, and redacted HTML exports.
+Tags: CLI, AI agents, debugging, observability, Playwright
+```
+
 ## Product Hunt Draft
 
 Tagline:
