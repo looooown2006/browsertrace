@@ -3043,6 +3043,28 @@ def test_owner_publish_queue_links_security_policy_for_sensitive_reports():
     assert "private trace data" in reply_workflow
 
 
+def test_owner_publish_queue_links_stack_debugging_guides_for_replies():
+    project_root = Path(__file__).resolve().parents[1]
+    queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
+    reply_workflow = queue.split("## Reply Workflow", 1)[1].split(
+        "## Metrics Check", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "workflow-specific guide" in reply_workflow
+    for guide in stack_guides:
+        assert guide in reply_workflow
+    assert "stars" not in reply_workflow.lower()
+    assert "upvotes" not in reply_workflow.lower()
+    assert "reposts" not in reply_workflow.lower()
+
+
 def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
