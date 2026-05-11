@@ -669,6 +669,19 @@ def test_launch_kit_page_has_discovery_metadata():
     assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
 
 
+def test_launch_kit_page_links_owner_short_packets():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "launch" / "index.html").read_text()
+
+    for href in [
+        "owner-social-post-packet.md",
+        "owner-email-send-packet.md",
+        "owner-launch-submission-packet.md",
+        "monitoring-runbook.md",
+    ]:
+        assert f'href="{href}"' in page, href
+
+
 def test_docs_include_pypi_quickstart_after_publish():
     project_root = Path(__file__).resolve().parents[1]
     docs_text = "\n".join(
