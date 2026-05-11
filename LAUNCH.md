@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T02:55:58+00:00 | 3 | 998 | 11 | 0 | 12 | 0 | 26 | current monitor pass after CliHub registry PR opened: https://github.com/clihub-ai/clihub/pull/1; tracked in issue #18: https://github.com/aaronlab/browsertrace/issues/18#issuecomment-4417222020; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T03:02:41+00:00 | 3 | 998 | 11 | 0 | 12 | 0 | 26 | current monitor pass after targeted Browser Use remote-CDP lock timing reply: https://github.com/browser-use/browser-use/issues/4579#issuecomment-4417247888; adapter note: https://github.com/aaronlab/browsertrace/issues/11#issuecomment-4417248748; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
