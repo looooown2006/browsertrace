@@ -491,6 +491,16 @@ for workflow-specific debugging context:
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
 - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 
+## AOS Mapping Research
+
+If a directory reviewer asks how BrowserTrace relates to OWASP AOS, keep the
+answer research-only. BrowserTrace is not an AOS compliance claim yet. Current
+research maps the closest BrowserTrace concepts to tool request/result records,
+step correlation, URI-style screenshot/video artifacts, URL metadata, model I/O summaries,
+and explicit redaction state.
+
+Tracker: https://github.com/aaronlab/browsertrace/issues/237
+
 ## Tracking
 
 After each legitimate submission or post, append metrics:
