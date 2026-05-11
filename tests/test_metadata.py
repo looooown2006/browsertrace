@@ -4177,6 +4177,31 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply.lower()
 
 
+def test_search_indexing_submission_links_stack_debugging_guides_for_replies():
+    project_root = Path(__file__).resolve().parents[1]
+    submission = (
+        project_root / "docs" / "launch" / "search-indexing-submission.md"
+    ).read_text()
+
+    assert "## Stack-Specific Reply Links" in submission
+    guide_section = submission.split("## Stack-Specific Reply Links", 1)[1].split(
+        "## Google Search Console", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in guide_section
+    assert "stars" not in guide_section.lower()
+    assert "upvotes" not in guide_section.lower()
+    assert "reposts" not in guide_section.lower()
+
+
 def test_bug_report_template_requests_json_cli_troubleshooting_checks():
     project_root = Path(__file__).resolve().parents[1]
     template = (
