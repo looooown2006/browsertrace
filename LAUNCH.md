@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T18:36:51+00:00 | 3 | 998 | 17 | 0 | 12 | 1 | 31 | current monitor pass after contributor PR #306 merged for wrong-target evidence prompts, closing good-first issue #305; CI passed and Pages was manually verified because the merge only touched issue templates; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T18:39:34+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 31 | current monitor pass after good-first issue #307 opened to add public-safe export reminder to the PR template; contributor queue replenished after #306 merged; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
