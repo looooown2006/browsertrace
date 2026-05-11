@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T06:12:51+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after IndexNow refresh returned HTTP 200 for generic and Bing endpoints after profile/owner launch docs updates: https://github.com/aaronlab/browsertrace/issues/16#issuecomment-4418009525; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T06:16:39+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after AOS browser/GUI artifact mapping research note added to #237: https://github.com/aaronlab/browsertrace/issues/237#issuecomment-4418026648; upstream OWASP AOS #74 still open with no maintainer reply; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
