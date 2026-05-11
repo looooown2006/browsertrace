@@ -228,6 +228,7 @@ Already-open GitHub listing PRs and issues:
 | `jim-schwoebel/awesome_ai_agents` | `https://github.com/jim-schwoebel/awesome_ai_agents/pull/266` |
 | `ranpox/awesome-computer-use` | `https://github.com/ranpox/awesome-computer-use/pull/24` |
 | `trycua/acu` | `https://github.com/trycua/acu/pull/26` |
+| `Scottcjn/awesome-agents` | `https://github.com/Scottcjn/awesome-agents/pull/16` |
 | `clihub-ai/clihub` | `https://github.com/clihub-ai/clihub/pull/1`, forked PR CI needs maintainer approval before it can run |
 | `victorcheeney/clis` | `https://github.com/victorcheeney/clis/issues/3`, CLIs.dev directory issue opened |
 
@@ -260,6 +261,7 @@ Current open high-fit PRs:
 - `jim-schwoebel/awesome_ai_agents#266`
 - `ranpox/awesome-computer-use#24`
 - `trycua/acu#26`
+- `Scottcjn/awesome-agents#16`
 - `clihub-ai/clihub#1` - registry PR is open; forked PR CI needs
   maintainer approval before it can run.
 - `victorcheeney/clis#3` - CLIs.dev directory issue is open.

@@ -5019,6 +5019,8 @@ def test_owner_next_actions_preserves_external_awesome_list_pr_numbers():
     assert "e2b-dev/awesome-ai-sdks#187" in awesome_prs
     assert "jim-schwoebel/awesome_ai_agents#266" in awesome_prs
     assert "ranpox/awesome-computer-use#24" in awesome_prs
+    assert "trycua/acu#26" in awesome_prs
+    assert "Scottcjn/awesome-agents#16" in awesome_prs
     assert "clihub-ai/clihub#1" in awesome_prs
     assert "victorcheeney/clis#3" in awesome_prs
     assert "E2B CLA check has passed" in awesome_prs
@@ -5046,6 +5048,8 @@ def test_chinese_owner_next_actions_preserves_external_awesome_list_pr_numbers()
     assert "e2b-dev/awesome-ai-sdks/pull/187" in awesome_prs
     assert "jim-schwoebel/awesome_ai_agents/pull/266" in awesome_prs
     assert "ranpox/awesome-computer-use/pull/24" in awesome_prs
+    assert "trycua/acu/pull/26" in awesome_prs
+    assert "Scottcjn/awesome-agents/pull/16" in awesome_prs
     assert "clihub-ai/clihub/pull/1" in awesome_prs
     assert "victorcheeney/clis/issues/3" in awesome_prs
     assert "CLA 已通过" in awesome_prs
