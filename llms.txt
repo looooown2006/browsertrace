@@ -83,6 +83,12 @@ to explain why a browser run failed.
   linked action proposal, authorization decision, and execution result records,
   including target evidence, policy/scope checks, approvals, state delta, error,
   and retry decision.
+- Skyvern VNC/CDP debug integration: visual and browser-state evidence should
+  share the same task, workflow, and step ids. Preserve VNC screenshot or
+  recording artifact ids, CDP DOM snapshot or selected-element summaries, URL,
+  frame/page id, action/tool name, status/error, retry or recovery decision,
+  connection lifecycle events, and redaction state for screenshots, URLs,
+  headers, cookies, and form values.
 - Playwright + LLM artifact boundary: keep screenshots, URLs, and raw trace
   files as durable local artifacts, not base64 screenshots copied into every
   future model turn. Pass image pixels only when the next model call needs a

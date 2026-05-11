@@ -2843,6 +2843,22 @@ def test_llms_txt_includes_skyvern_action_confidence_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_skyvern_vnc_cdp_debug_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Skyvern VNC/CDP debug integration" in llms
+    assert "task, workflow, and step ids" in llms
+    assert "VNC screenshot or" in llms
+    assert "CDP DOM snapshot" in llms
+    assert "frame/page id" in llms
+    assert "retry or recovery decision" in llms
+    assert "connection lifecycle events" in llms
+    assert "redaction state" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_playwright_artifact_boundary_shape():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
