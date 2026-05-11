@@ -1200,6 +1200,9 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "small, issue-based contribution path" in contributing_section
     assert "First PR Recipe" in contributing_section
     assert "first contribution small and reviewable" in contributing_section
+    assert "Before starting a good first issue" in contributing_section
+    assert "comment on it first" in contributing_section
+    assert "maintainers can treat it as claimed" in contributing_section
     assert "https://github.com/aaronlab/browsertrace/labels/good%20first%20issue" in contributing_section
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contributing_section
     assert "good first issue" in contributing_section
