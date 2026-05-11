@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T01:06:59+00:00 | 3 | 998 | 10 | 0 | 11 | 0 | 23 | current monitor pass after CLIs.dev submission path updated to /submit GitHub issue template; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T01:10:06+00:00 | 3 | 998 | 10 | 0 | 11 | 0 | 23 | current monitor pass after CLIs.dev GitHub issue template fields added to owner submission sheet; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

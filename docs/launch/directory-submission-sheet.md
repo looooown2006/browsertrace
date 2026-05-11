@@ -163,6 +163,29 @@ ToolHunter: use developer tools, AI agents, and open-source CLI utilities positi
 ToolShelf: use CLI Tools, AI Coding, or Developer Productivity depending on the category picker.
 ```
 
+CLIs.dev GitHub issue template fields:
+
+```text
+Title: Add CLI: BrowserTrace
+CLI Name: BrowserTrace
+Canonical Source URL: https://github.com/aaronlab/browsertrace
+Category: AI & LLM Tools
+Install Command: pip install "browsertrace[ui]"
+Website or Docs URL: https://aaronlab.github.io/browsertrace/
+Description:
+BrowserTrace is an MIT-licensed local CLI and web UI for debugging AI
+browser-agent failures. It records Browser Use, Stagehand, Skyvern,
+Playwright + LLM, and custom computer-use runs as timelines with screenshots,
+URLs, action labels, model input/output, status, errors, and public-safe HTML
+exports. It is useful for humans and agents because `browsertrace doctor
+--json`, `browsertrace list --json`, and `browsertrace show <run_id> --json`
+provide machine-readable diagnostics, while the local UI helps inspect the
+failed browser step.
+Agent Compatibility: check "Supports JSON Output (--json flag or similar)"
+Language: Python
+Source Type: Open-source CLI
+```
+
 ## Product Hunt Draft
 
 Tagline:
