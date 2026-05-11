@@ -273,6 +273,21 @@ def test_homepage_names_current_adapter_surfaces():
     assert "Skyvern task/workflow wrapper" in homepage
 
 
+def test_homepage_intro_actions_column_is_bounded():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+
+    intro_css = re.search(r"\.intro\s*\{(?P<body>.*?)\n    \}", homepage, re.S)
+    actions_css = re.search(r"\.actions\s*\{(?P<body>.*?)\n    \}", homepage, re.S)
+
+    assert intro_css is not None
+    assert actions_css is not None
+    assert "grid-template-columns: minmax(0, 1fr) auto;" not in intro_css.group("body")
+    assert "minmax(260px, 320px)" in intro_css.group("body")
+    assert "justify-self: end" in actions_css.group("body")
+    assert "width: min(100%, 320px)" in actions_css.group("body")
+
+
 def test_integrations_page_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     integrations = (project_root / "docs" / "integrations.html").read_text()
