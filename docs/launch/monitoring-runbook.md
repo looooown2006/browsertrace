@@ -109,8 +109,7 @@ Current BrowserTrace watch targets are dynamic. Check open issues and PRs first,
 then inspect any recently claimed issue or open contributor PR. Current focused
 targets:
 
-- `aaronlab/browsertrace#317`
-- `aaronlab/browsertrace#319`
+- `aaronlab/browsertrace#320`
 
 ```bash
 gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
@@ -119,14 +118,9 @@ gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
 gh pr list --repo aaronlab/browsertrace --state open --limit 20 \
   --json number,title,author,updatedAt,url,isDraft
 
-for num in 317; do
+for num in 320; do
   gh issue view "$num" --repo aaronlab/browsertrace \
     --json number,title,state,comments,updatedAt,url
-done
-
-for num in 319; do
-  gh pr view "$num" --repo aaronlab/browsertrace \
-    --json number,title,state,comments,reviews,reviewDecision,updatedAt,url
 done
 ```
 
