@@ -538,6 +538,9 @@ git diff --check
 - `supernalintelligence/Awesome-Gui-Agents`: the README focuses on GUI agents
   rather than developer/debugging tools, and its referenced contribution file is
   not present in the repository.
+- `opendilab/awesome-ui-agents`: strong topic match, but the `Tools` section
+  uses a paper-style format with authors, year, key, and code links rather than
+  a general developer/debugging tool format.
 - `ZJU-REAL/Awesome-GUI-Agents`: the repository is a strong topic match, but
   the current README focuses on papers, datasets, and benchmarks rather than
   developer/debugging tools.
