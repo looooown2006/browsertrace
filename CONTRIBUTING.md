@@ -129,4 +129,5 @@ For each PR, include:
 - Test commands run.
 - Screenshots or exported traces for UI/demo changes. Use
   `browsertrace export <run_id> --public -o public.html` before attaching a
-  real trace publicly.
+  real trace publicly. The examples guide has a focused recipe for
+  [attaching a public-safe export to an issue](examples/README.md#attach-a-public-safe-export-to-an-issue).

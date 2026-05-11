@@ -1298,6 +1298,22 @@ def test_first_pr_recipe_links_security_policy_for_sensitive_reports():
     assert "private trace data" in recipe
 
 
+def test_contributing_links_public_safe_export_attachment_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    contributing = (project_root / "CONTRIBUTING.md").read_text()
+    pull_requests = contributing.split("## Pull Requests", 1)[1]
+
+    assert "browsertrace export <run_id> --public -o public.html" in pull_requests
+    assert (
+        "examples/README.md#attach-a-public-safe-export-to-an-issue"
+        in pull_requests
+    )
+    assert "real trace publicly" in pull_requests
+    assert "stars" not in pull_requests.lower()
+    assert "upvotes" not in pull_requests.lower()
+    assert "reposts" not in pull_requests.lower()
+
+
 def test_readme_links_code_of_conduct_near_contributing():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
