@@ -125,6 +125,15 @@ Gallery order:
 3. `docs/social-preview.png`
 4. `docs/demo.gif`
 
+## Media Alt Text
+
+Use this for Product Hunt gallery assets when alt text is available:
+
+```text
+BrowserTrace timeline for a failed AI browser-agent run, showing a screenshot,
+URL, action, model output, status, and the failed step highlighted in red.
+```
+
 ## Maker Comment
 
 Edit before posting.

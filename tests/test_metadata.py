@@ -3218,6 +3218,27 @@ def test_product_hunt_packet_links_security_policy_for_sensitive_reports():
     assert "private trace data" in reply_notes
 
 
+def test_owner_launch_packets_include_media_alt_text():
+    project_root = Path(__file__).resolve().parents[1]
+    day_1 = (
+        project_root / "docs" / "launch" / "day-1-publish-packet.md"
+    ).read_text()
+    product_hunt = (
+        project_root / "docs" / "launch" / "day-4-product-hunt-packet.md"
+    ).read_text()
+
+    for packet in [day_1, product_hunt]:
+        assert "## Media Alt Text" in packet
+        section = packet.split("## Media Alt Text", 1)[1].split("##", 1)[0]
+        assert "BrowserTrace timeline" in section
+        assert "failed AI browser-agent run" in section
+        assert "screenshot" in section
+        assert "failed step" in section
+        assert "stars" not in section.lower()
+        assert "upvotes" not in section.lower()
+        assert "reposts" not in section.lower()
+
+
 def test_show_hn_packet_includes_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-2-show-hn-packet.md").read_text()

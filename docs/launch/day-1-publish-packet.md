@@ -15,6 +15,16 @@ upvotes, or artificial engagement.
 - Backup image: `docs/demo-poster.png`
 - Copy source: `docs/launch/channel-copy.md`
 
+## Media Alt Text
+
+Use this when the platform supports alt text for `docs/demo.mp4` or
+`docs/demo-poster.png`:
+
+```text
+BrowserTrace timeline for a failed AI browser-agent run, showing a screenshot,
+URL, action, model output, status, and the failed step highlighted in red.
+```
+
 Run a baseline snapshot:
 
 ```bash
