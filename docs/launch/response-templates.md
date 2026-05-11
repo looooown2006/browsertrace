@@ -63,7 +63,7 @@ Thanks for trying it. Please open an issue with the run shape, framework, Python
 ## Can I contribute a small fix?
 
 Yes. The current pinned good first issue is:
-https://github.com/aaronlab/browsertrace/issues/244
+https://github.com/aaronlab/browsertrace/issues/246
 
 If that issue is already claimed or closed, use:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
