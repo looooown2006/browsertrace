@@ -273,6 +273,30 @@ def test_homepage_names_current_adapter_surfaces():
     assert "Skyvern task/workflow wrapper" in homepage
 
 
+def test_homepage_intro_uses_mobile_friendly_copy():
+    project_root = Path(__file__).resolve().parents[1]
+    homepage = (project_root / "docs" / "index.html").read_text()
+
+    assert "Replay failed browser runs" in homepage
+    assert "Replay an AI browser-agent failure</h1>" not in homepage
+    assert "Inspect a real failed browser-agent run" in homepage
+    assert (
+        'aria-label="Browser Use run hooks" title="Browser Use run hooks">Browser Use</span>'
+        in homepage
+    )
+    assert (
+        'aria-label="Stagehand wrapper" title="Stagehand wrapper">Stagehand</span>'
+        in homepage
+    )
+    assert (
+        'aria-label="Skyvern task/workflow wrapper" title="Skyvern task/workflow wrapper">Skyvern</span>'
+        in homepage
+    )
+    assert "font-size: clamp(34px, 6vw, 60px)" not in homepage
+    assert "@media (max-width: 620px)" in homepage
+    assert "@media (max-width: 420px)" in homepage
+
+
 def test_homepage_intro_actions_do_not_squeeze_copy_column():
     project_root = Path(__file__).resolve().parents[1]
     homepage = (project_root / "docs" / "index.html").read_text()

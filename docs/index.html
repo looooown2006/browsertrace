@@ -113,7 +113,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(34px, 6vw, 60px);
+      font-size: 60px;
       line-height: 1.02;
       letter-spacing: 0;
     }
@@ -262,6 +262,10 @@
     }
 
     @media (max-width: 820px) {
+      h1 {
+        font-size: 48px;
+      }
+
       .trace {
         height: 72vh;
         min-height: 460px;
@@ -269,6 +273,42 @@
 
       .quickstart {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        width: min(1180px, calc(100% - 24px));
+        padding-top: 22px;
+      }
+
+      h1 {
+        font-size: 34px;
+        line-height: 1.08;
+      }
+
+      .title-line {
+        display: block;
+      }
+
+      .dek {
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      .meta {
+        gap: 8px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .dek {
+        font-size: 16px;
       }
     }
   </style>
@@ -296,15 +336,15 @@
   <main>
     <section class="intro" aria-labelledby="title">
       <div>
-        <h1 id="title">Replay an AI browser-agent failure</h1>
-        <p class="dek">This live BrowserTrace export shows a failed browser-agent run with screenshots, URL, action, model output, status, and the first red step. Use it with Browser Use run hooks, the Stagehand wrapper, the Skyvern task/workflow wrapper, Playwright + LLM scripts, and custom computer-use agents.</p>
+        <h1 id="title" aria-label="Replay failed browser runs"><span class="title-line">Replay failed</span> <span class="title-line">browser runs</span></h1>
+        <p class="dek">Inspect a real failed browser-agent run with screenshots, URLs, actions, model output, status, and the first red step. Works with Browser Use, Stagehand, Skyvern, Playwright + LLM, and custom computer-use agents.</p>
         <div class="meta" aria-label="Project details">
           <span>MIT</span>
           <span>Local-first</span>
           <span>No signup</span>
-          <span>Browser Use run hooks</span>
-          <span>Stagehand wrapper</span>
-          <span>Skyvern task/workflow wrapper</span>
+          <span aria-label="Browser Use run hooks" title="Browser Use run hooks">Browser Use</span>
+          <span aria-label="Stagehand wrapper" title="Stagehand wrapper">Stagehand</span>
+          <span aria-label="Skyvern task/workflow wrapper" title="Skyvern task/workflow wrapper">Skyvern</span>
           <span>Playwright + LLM</span>
           <span>Computer Use</span>
         </div>
