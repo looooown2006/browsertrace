@@ -140,6 +140,11 @@ screenshot, but clicked a nearby toolbar button because the tooltip text was not
 an accessible name. That is the kind of bug where screenshot, URL, action,
 model decision, and target evidence need to sit together.
 
+Another recent failure shape: a remote browser session over CDP can look alive
+while a state-collection request never returns. If event-bus lock timing is part
+of the failure, you need method timing, browser/session IDs, and recovery state
+beside the failed step.
+
 BrowserTrace keeps the missing context locally:
 
 - screenshots

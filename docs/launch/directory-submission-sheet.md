@@ -388,6 +388,11 @@ screenshot, but click a nearby toolbar button because the tooltip text is not an
 accessible name. BrowserTrace keeps the screenshot, URL, action, model decision,
 and failed-step evidence together so that kind of bug can be inspected.
 
+Another failure case: remote CDP state collection can hang while the websocket
+still appears open, and event-bus lock timing can decide whether one stale
+browser session blocks others. BrowserTrace is aimed at keeping that kind of
+method timing, browser/session evidence, and failed-step context inspectable.
+
 Why it may fit console.dev:
 - It is interesting and useful to developers building Browser Use, Stagehand,
   Skyvern, Playwright + LLM, or custom computer-use agents.
@@ -432,6 +437,10 @@ Playwright + LLM scripts, and custom computer-use agents.
 Example use case: debugging a Browser Use run where the screenshot shows the
 right plus icon, but the agent clicks a nearby toolbar button because tooltip
 text is not an accessible name.
+
+Second use case: diagnosing a remote-CDP browser-agent run where a browser state
+collection request hangs while the websocket appears connected, so method
+timing and browser/session evidence matter as much as the final timeout.
 
 Repository: https://github.com/aaronlab/browsertrace
 Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html

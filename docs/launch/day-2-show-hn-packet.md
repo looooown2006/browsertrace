@@ -80,6 +80,12 @@ agent clicks a nearby toolbar button because the tooltip text is not an
 accessible name. That needs screenshot, URL, action, model decision, and
 target evidence in one place; a normal stack trace usually cannot explain it.
 
+Another failure shape is remote CDP state collection: a stale remote browser can
+leave the websocket looking open while one CDP request never returns, and
+event-bus lock timing determines whether one bad session blocks others. That
+needs method timing and browser/session evidence, not just a generic timeout
+line.
+
 BrowserTrace records each step locally: screenshot, URL, action, model input,
 model output, status, and error. You open the local UI, click a run, and jump
 straight to the failed step.

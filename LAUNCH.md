@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T03:05:40+00:00 | 3 | 998 | 11 | 0 | 12 | 0 | 26 | current monitor pass after owner copy added Browser Use remote-CDP hang angle; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T03:08:35+00:00 | 3 | 998 | 11 | 0 | 12 | 0 | 26 | current monitor pass after HN Product Hunt console.dev and AgDex copy added Browser Use remote-CDP failure shape; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
