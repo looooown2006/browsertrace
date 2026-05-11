@@ -3943,6 +3943,33 @@ def test_owner_launch_submission_packet_is_short_and_linked():
         assert "docs/launch/owner-launch-submission-packet.md" in text, relpath
 
 
+def test_launch_monitoring_runbook_covers_current_targets():
+    project_root = Path(__file__).resolve().parents[1]
+    runbook = (project_root / "docs" / "launch" / "monitoring-runbook.md").read_text()
+    launch = (project_root / "LAUNCH.md").read_text()
+
+    assert "gh repo view aaronlab/browsertrace --json stargazerCount,forkCount,watchers,url,homepageUrl" in runbook
+    assert "git status --short --branch" in runbook
+    assert "gh run list --repo aaronlab/browsertrace --branch main --limit 8" in runbook
+    assert "scripts/launch_metrics.py --append" in runbook
+    assert "docs/launch/metrics-log.md" in runbook
+    assert "jq null-safe" in runbook
+
+    for target in [
+        "bradvin/agentfirst.directory#30",
+        "e2b-dev/awesome-ai-sdks#187",
+        "clihub-ai/clihub#1",
+        "victorcheeney/clis#3",
+        "browser-use/browser-use#4816",
+        "browserbase/stagehand#2102",
+        "Skyvern-AI/skyvern#5931",
+        "aaronlab/browsertrace#270",
+    ]:
+        assert target in runbook
+
+    assert "docs/launch/monitoring-runbook.md" in launch
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
