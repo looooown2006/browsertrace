@@ -197,6 +197,28 @@
       padding: 4px 8px;
     }
 
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .mapping-table th,
+    .mapping-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .mapping-table tr:last-child td {
+      border-bottom: 0;
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 18px 0 34px;
@@ -247,6 +269,66 @@
         </div>
       </div>
       <img class="hero-image" src="./social-preview.png" alt="BrowserTrace timeline preview for AI browser-agent debugging">
+    </section>
+
+    <section class="band" aria-labelledby="aos-mapping">
+      <h2 id="aos-mapping">AOS mapping research</h2>
+      <p class="section-copy">This is research-only mapping, not an AOS compliance claim. BrowserTrace is tracking how browser-agent artifacts could map to OWASP Agent Observability Standard concepts while upstream browser/GUI artifact guidance is still open.</p>
+      <p class="section-copy">Tracker: <a href="https://github.com/aaronlab/browsertrace/issues/237">BrowserTrace issue #237</a>.</p>
+      <table class="mapping-table">
+        <thead>
+          <tr>
+            <th>BrowserTrace field</th>
+            <th>Closest AOS shape</th>
+            <th>Status</th>
+            <th>Current note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Run id and step id</td>
+            <td>Step context plus tool execution or correlation id</td>
+            <td>partially mapped</td>
+            <td>BrowserTrace has run ids and ordered steps; an export-level AOS correlation convention is still needed.</td>
+          </tr>
+          <tr>
+            <td>Action label or tool call</td>
+            <td><code>steps/toolCallRequest</code></td>
+            <td>partially mapped</td>
+            <td>Action labels and integration method metadata exist, but normalized tool ids and execution ids are not standardized yet.</td>
+          </tr>
+          <tr>
+            <td>Status and error</td>
+            <td><code>steps/toolCallResult</code> with <code>isError</code></td>
+            <td>partially mapped</td>
+            <td>Run and step status/error fields exist; BrowserTrace still needs a documented AOS result shape.</td>
+          </tr>
+          <tr>
+            <td>Screenshot or future video artifact</td>
+            <td><code>FileWithUri</code> preferred over inline <code>FileWithBytes</code></td>
+            <td>research gap</td>
+            <td>BrowserTrace keeps screenshots as local artifacts; browser screenshot/video examples are still unresolved upstream.</td>
+          </tr>
+          <tr>
+            <td>Current browser URL</td>
+            <td>Separate event or resource attribute</td>
+            <td>research gap</td>
+            <td>Keep URL separate from screenshot evidence so future mappings can redact each field independently; the AOS attribute placement is still open.</td>
+          </tr>
+          <tr>
+            <td>Model input and output</td>
+            <td>Message, reasoning, or linked model-message summary</td>
+            <td>research gap</td>
+            <td>Use compact summaries where possible, but do not force full prompt or model I/O into every tool-result payload.</td>
+          </tr>
+          <tr>
+            <td>Public export redaction state</td>
+            <td>Artifact and field-level metadata</td>
+            <td>research gap</td>
+            <td>Future mappings should preserve explicit omitted or redacted markers instead of silently dropping sensitive evidence.</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section class="band" aria-labelledby="browser-use">

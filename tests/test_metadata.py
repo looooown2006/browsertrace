@@ -440,6 +440,40 @@ def test_integrations_page_has_discovery_metadata():
     assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
 
 
+def test_integrations_page_includes_aos_mapping_research_table():
+    project_root = Path(__file__).resolve().parents[1]
+    integrations = (project_root / "docs" / "integrations.html").read_text()
+    section = integrations.split('<h2 id="aos-mapping">AOS mapping research</h2>', 1)[
+        1
+    ].split('<section class="band" aria-labelledby="browser-use">', 1)[0]
+    rows = {
+        cells[0]: cells
+        for cells in re.findall(r"<tr>\s*((?:<td>.*?</td>\s*){4})</tr>", section, re.S)
+        for cells in [[re.sub(r"<.*?>", "", cell).strip() for cell in re.findall(r"<td>(.*?)</td>", cells, re.S)]]
+    }
+
+    assert "not an AOS compliance claim" in section
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in section
+    assert rows["Run id and step id"][2] == "partially mapped"
+    assert rows["Action label or tool call"][1] == "steps/toolCallRequest"
+    assert rows["Action label or tool call"][2] == "partially mapped"
+    assert rows["Status and error"][1] == "steps/toolCallResult with isError"
+    assert rows["Status and error"][2] == "partially mapped"
+    assert rows["Screenshot or future video artifact"][1] == (
+        "FileWithUri preferred over inline FileWithBytes"
+    )
+    assert rows["Screenshot or future video artifact"][2] == "research gap"
+    assert rows["Current browser URL"][2] == "research gap"
+    assert "redact each field independently" in rows["Current browser URL"][3]
+    assert rows["Model input and output"][2] == "research gap"
+    assert "do not force full prompt or model I/O" in rows["Model input and output"][3]
+    assert rows["Public export redaction state"][2] == "research gap"
+    assert "explicit omitted or redacted markers" in rows["Public export redaction state"][3]
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
+
+
 def test_browser_use_guide_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     guide = (project_root / "docs" / "browser-use-debugging.html").read_text()
