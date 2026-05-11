@@ -32,7 +32,8 @@ timelines.
 - Exports standalone HTML traces.
 - Supports public-safe exports that omit prompts, model I/O, screenshots, and
   URLs.
-- Supports Browser Use callback and run-hook tracing.
+- Supports Browser Use run hooks, the Stagehand wrapper, and the Skyvern task/workflow wrapper.
+- Includes Playwright + LLM examples and custom computer-use examples.
 - MIT licensed and local-first.
 
 Repo: https://github.com/aaronlab/browsertrace

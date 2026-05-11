@@ -661,7 +661,10 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     assert f'uvx --from "{pypi_spec}" browsertrace demo' in profile_draft
     assert f'uvx --from "{pypi_spec}" browsertrace' in profile_draft
     assert 'pip install "browsertrace[ui]"' in profile_draft
-    assert "Browser Use callback and run-hook tracing" in profile_draft
+    assert "Browser Use run hooks" in profile_draft
+    assert "Stagehand wrapper" in profile_draft
+    assert "Skyvern task/workflow wrapper" in profile_draft
+    assert "Playwright + LLM examples" in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/3" in profile_draft
     assert "https://github.com/aaronlab/browsertrace/labels/good%20first%20issue" in profile_draft
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in profile_draft
