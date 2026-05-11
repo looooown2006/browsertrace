@@ -719,13 +719,27 @@ def test_launch_kit_page_links_owner_short_packets():
     project_root = Path(__file__).resolve().parents[1]
     page = (project_root / "docs" / "launch" / "index.html").read_text()
 
+    assert "Owner packets" in page
+    owner_packets = page.split('<h2 id="owner-packets">Owner packets</h2>', 1)[1].split(
+        '<h2 id="links">Links</h2>',
+        1,
+    )[0]
+
     for href in [
         "owner-social-post-packet.md",
         "owner-email-send-packet.md",
         "owner-launch-submission-packet.md",
         "monitoring-runbook.md",
     ]:
-        assert f'href="{href}"' in page, href
+        assert f'href="{href}"' in owner_packets, href
+
+    assert "X, LinkedIn, WeChat, and Jike" in owner_packets
+    assert "console.dev and AgDex" in owner_packets
+    assert "Show HN and Product Hunt" in owner_packets
+    assert "Post-launch checks" in owner_packets
+    assert "stars" not in owner_packets.lower()
+    assert "votes" not in owner_packets.lower()
+    assert "reposts" not in owner_packets.lower()
 
 
 def test_docs_include_pypi_quickstart_after_publish():
