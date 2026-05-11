@@ -89,6 +89,11 @@ to explain why a browser run failed.
   frame/page id, action/tool name, status/error, retry or recovery decision,
   connection lifecycle events, and redaction state for screenshots, URLs,
   headers, cookies, and form values.
+- Skyvern multi-session VNC control drift: local or self-hosted VNC views can
+  drift from the workflow session or lose Take Control after reconnects.
+  Preserve VNC stream identity, CDP target identity, manual-control lease state,
+  workflow/task/session/display ids, isolation metadata, display conflict or
+  stale-stream failure causes, and reconnect/cleanup events.
 - Playwright + LLM artifact boundary: keep screenshots, URLs, and raw trace
   files as durable local artifacts, not base64 screenshots copied into every
   future model turn. Pass image pixels only when the next model call needs a

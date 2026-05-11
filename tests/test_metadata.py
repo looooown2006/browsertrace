@@ -637,6 +637,7 @@ def test_failure_patterns_page_has_discovery_metadata_and_examples():
     assert "semantic verification boundary" in page
     assert "action confidence gap" in page
     assert "VNC/CDP debug integration" in page
+    assert "multi-session VNC control drift" in page
     assert "persistent browser recovery" in page
     assert "browser-use/browser-use#4801" in page
     assert "browser-use/browser-use#4758" in page
@@ -644,6 +645,7 @@ def test_failure_patterns_page_has_discovery_metadata_and_examples():
     assert "browserbase/stagehand#1558" in page
     assert "browserbase/stagehand#1880" in page
     assert "Skyvern-AI/skyvern#3260" in page
+    assert "Skyvern-AI/skyvern#4392" in page
     assert "stars" not in page.lower()
     assert "upvotes" not in page.lower()
     assert "reposts" not in page.lower()
@@ -2905,6 +2907,20 @@ def test_llms_txt_includes_skyvern_vnc_cdp_debug_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_skyvern_multi_session_vnc_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Skyvern multi-session VNC control drift" in llms
+    assert "VNC stream identity" in llms
+    assert "CDP target identity" in llms
+    assert "manual-control lease" in llms
+    assert "display conflict" in llms
+    assert "Take Control" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_playwright_artifact_boundary_shape():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -3214,6 +3230,18 @@ def test_skyvern_guide_documents_vnc_cdp_debug_integration():
     assert "CDP DOM snapshot" in page
     assert "retry or recovery decision" in page
     assert "Skyvern-AI/skyvern#3260" in page
+
+
+def test_skyvern_guide_documents_multi_session_vnc_control():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "skyvern-debugging.html").read_text()
+
+    assert "Debug multi-session VNC and Take Control drift" in page
+    assert "VNC stream identity" in page
+    assert "CDP target identity" in page
+    assert "manual-control lease" in page
+    assert "display conflict" in page
+    assert "Skyvern-AI/skyvern#4392" in page
 
 
 def test_playwright_guide_documents_artifact_boundary():

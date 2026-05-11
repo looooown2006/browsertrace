@@ -319,6 +319,18 @@ skyvern.close()</code></pre>
     </section>
 
     <section>
+      <h2 id="debug-multi-session-vnc-and-take-control-drift">Debug multi-session VNC and Take Control drift</h2>
+      <p>In local or self-hosted deployments, a VNC stream can become a shared UI resource while workflows, CDP targets, and manual control state are per-session concerns. When those identities are implicit, a reviewer cannot tell whether the browser failed, the stream attached to the wrong display, or Take Control was lost after reconnect.</p>
+      <ul>
+        <li>Preserve VNC stream identity, CDP target identity, workflow id, task id, browser session id, browser context id, page id, and redacted display id.</li>
+        <li>Record the manual-control lease: agent/manual owner, acquire/renew/release timestamps, persisted-across-reconnect flag, and release reason.</li>
+        <li>Store isolation metadata: own X display, container, or browser context versus a shared display.</li>
+        <li>Classify failure causes such as no VNC server, connected without frames, stale VNC stream, manual-control lease lost, or display conflict.</li>
+      </ul>
+      <p>Related community case: <a href="https://github.com/Skyvern-AI/skyvern/issues/4392">Skyvern-AI/skyvern#4392</a>.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html
