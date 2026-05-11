@@ -213,7 +213,7 @@ Tracking issue: https://github.com/aaronlab/browsertrace/issues/18
 
 If someone asks how to make a small docs fix, point to the current good first
 issue:
-`#246`: Docs: add expected-output note for JSON CLI checks
+`#248`: Docs: add environment variable example values
 
 If that issue is already claimed or closed, use the good first issue label:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue

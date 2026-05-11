@@ -218,7 +218,7 @@ Awesome list 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/18
 如果有人问怎么做一个小的文档贡献，先给当前 good first issue：
 
 ```text
-#246: Docs: add expected-output note for JSON CLI checks
+#248: Docs: add environment variable example values
 ```
 
 如果这个 issue 已经被认领或关闭，再给 good first issue label：
