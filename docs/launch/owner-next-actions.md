@@ -27,7 +27,10 @@ and asks for real workflow feedback through a concrete failure mode.
    `docs/launch/directory-submission-sheet.md`:
    4agent.dev, AgentKart, OSS AI Hub, FOSSHUNTER, AgentsTide, and BuilderAI
    Tools. Use `hello@agentstide.com` as the AgentsTide email fallback and
-   `AI Observability & Evaluation` for BuilderAI Tools.
+   `AI Observability & Evaluation` for BuilderAI Tools. Field-ready copy is
+   under `First Browser-Form Directory Field Notes`; skip AgentKart or
+   AgentsTide if the target only accepts runnable autonomous agents rather than
+   developer tools for agents.
 4. If that batch is already done, use the second-pass directory field notes in
    `docs/launch/directory-submission-sheet.md` for CLIHunt, DeepYard,
    OpenAgent.bot, ForgeIndex, and AgentShelf.
@@ -51,6 +54,8 @@ Fast copy/paste blocks:
 - console.dev email:
   `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
 - AgDex email: `docs/launch/directory-submission-sheet.md#agdex-email-draft`
+- First browser-form directories:
+  `docs/launch/directory-submission-sheet.md#first-browser-form-directory-field-notes`
 
 ## 1. PyPI Published
 

@@ -26,6 +26,9 @@ workflow 反馈。
    提交这些浏览器表单目录：4agent.dev、AgentKart、OSS AI Hub、FOSSHUNTER、
    AgentsTide、BuilderAI Tools。AgentsTide 可用 `hello@agentstide.com`
    作为邮件兜底，BuilderAI Tools 分类用 `AI Observability & Evaluation`。
+   这一批的字段已经整理在 `First Browser-Form Directory Field Notes`。如果
+   AgentKart 或 AgentsTide 只接受可运行的 autonomous agent，不接受 agent
+   开发工具，就跳过，不要把 BrowserTrace 硬归类成 agent。
 4. 如果这一批已经做完，继续用 `docs/launch/directory-submission-sheet.md`
    里的第二批目录字段说明提交 CLIHunt、DeepYard、OpenAgent.bot、
    ForgeIndex、AgentShelf。
@@ -49,6 +52,8 @@ workflow 反馈。
 - console.dev 邮件：
   `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
 - AgDex 邮件：`docs/launch/directory-submission-sheet.md#agdex-email-draft`
+- 第一批浏览器表单目录：
+  `docs/launch/directory-submission-sheet.md#first-browser-form-directory-field-notes`
 
 ## 1. PyPI 已发布
 
