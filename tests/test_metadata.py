@@ -3825,6 +3825,31 @@ def test_chinese_tutorial_post_links_security_policy_for_sensitive_reports():
     assert "private trace data" in reply
 
 
+def test_chinese_tutorial_post_links_stack_debugging_guides_for_replies():
+    project_root = Path(__file__).resolve().parents[1]
+    tutorial = (
+        project_root / "docs" / "launch" / "chinese-tutorial-post.md"
+    ).read_text()
+
+    assert "## Stack 调试指南链接" in tutorial
+    guide_section = tutorial.split("## Stack 调试指南链接", 1)[1].split(
+        "## Links", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in guide_section
+    assert "stars" not in guide_section.lower()
+    assert "upvotes" not in guide_section.lower()
+    assert "reposts" not in guide_section.lower()
+
+
 def test_chinese_tutorial_post_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     tutorial = (

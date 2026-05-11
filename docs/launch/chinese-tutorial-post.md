@@ -219,6 +219,16 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+## Stack 调试指南链接
+
+如果中文教程的回复变成某个具体工作流的调试问题，优先给最接近的指南：
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Links
 
 GitHub:
