@@ -74,6 +74,7 @@ workflow-specific debugging context:
 | 10 | `jim-schwoebel/awesome_ai_agents` | Medium | `Building` -> `Tools` | Submitted: https://github.com/jim-schwoebel/awesome_ai_agents/pull/266 |
 | 11 | `ranpox/awesome-computer-use` | Strong | `Projects` | Submitted: https://github.com/ranpox/awesome-computer-use/pull/24 |
 | 12 | `trycua/acu` | Strong | `Open Source` -> `Automation` | Submitted: https://github.com/trycua/acu/pull/26 |
+| 13 | `Scottcjn/awesome-agents` | Strong | `Monitoring and Observability` | Submitted: https://github.com/Scottcjn/awesome-agents/pull/16 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 | Skip | `supernalintelligence/Awesome-Gui-Agents` | Weak | n/a | Main list catalogs GUI agents, not developer/debugging tools; referenced contribution file is missing |
 | Skip | `ZJU-REAL/Awesome-GUI-Agents` | Weak | n/a | Strong topic match, but current README is primarily papers, datasets, and benchmarks rather than developer/debugging tools |
@@ -529,6 +530,47 @@ Verification:
 ```bash
 git diff --check
 ```
+
+## 13. Awesome Agents
+
+Target:
+
+```text
+https://github.com/Scottcjn/awesome-agents
+```
+
+Status: submitted as https://github.com/Scottcjn/awesome-agents/pull/16.
+
+Fit notes:
+
+- The target list explicitly covers AI agent platforms, frameworks, protocols,
+  tools, resources, and observability tools.
+- BrowserTrace fits the `Monitoring and Observability` section as a debugging
+  and trace viewer for failed browser-agent and computer-use runs.
+- The PR adds one neutral entry, follows the required
+  `[Name](link) - Description.` format, and does not include engagement
+  requests or reciprocal placement.
+- `Scottcjn/awesome-agents#12` proposes `agenttrace`, but BrowserTrace is not a duplicate.
+  It focuses on browser-agent/computer-use failure evidence rather than general
+  coding-agent session telemetry.
+
+Submitted entry:
+
+```markdown
+- [BrowserTrace](https://github.com/aaronlab/browsertrace) - Local-first trace viewer for debugging failed AI browser-agent and computer-use runs with screenshots, URLs, actions, model output, status, and redacted shareable exports.
+```
+
+Verification:
+
+```bash
+git diff --check
+curl -L -s -o /dev/null -w '%{http_code}\n' https://github.com/aaronlab/browsertrace
+npx --yes awesome-lint README.md
+```
+
+Note: `awesome-lint` reports existing target-repository issues such as duplicate
+links, ToC/license checks, and unrelated list-item formatting. The BrowserTrace
+row is not in the reported failures.
 
 ## Skip List
 

@@ -3516,7 +3516,7 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
 
-    assert "fourteen focused PRs are open" in queue
+    assert "fifteen focused PRs are open" in queue
     assert "the three prepared PRs" not in queue
     assert "ai-boost/awesome-harness-engineering#23" in queue
     assert "Agent-Tools/awesome-autonomous-web#21" in queue
@@ -3524,6 +3524,7 @@ def test_owner_publish_queue_records_current_awesome_list_pr_count():
     assert "jim-schwoebel/awesome_ai_agents#266" in queue
     assert "ranpox/awesome-computer-use#24" in queue
     assert "trycua/acu#26" in queue
+    assert "Scottcjn/awesome-agents#16" in queue
     assert "clihub-ai/clihub#1" in queue
     assert "E2B CLA check has passed" in queue
     assert "steel-dev/awesome-web-agents#56" in queue
@@ -3746,7 +3747,10 @@ def test_directory_submission_sheet_avoids_stale_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()
 
-    assert "Tracked PRs are open; monitor feedback; e2b CLA passed" in sheet
+    assert (
+        "Tracked PRs are open, including Scottcjn/awesome-agents#16; monitor feedback; e2b CLA passed"
+        in sheet
+    )
     assert "12 PRs open" not in sheet
     assert "3 PRs open" not in sheet
     assert "github-awesome-list-submissions.md" in sheet
@@ -3981,6 +3985,8 @@ def test_launch_monitoring_runbook_covers_current_targets():
         "browserbase/stagehand#2102",
         "Skyvern-AI/skyvern#5931",
         "aaronlab/browsertrace#270",
+        "aaronlab/browsertrace#307",
+        "Scottcjn/awesome-agents#16",
     ]:
         assert target in runbook
 
@@ -5646,6 +5652,25 @@ def test_awesome_list_submission_notes_record_ranpox_computer_use_pr():
     assert "Projects" in notes
     assert "computer-use resources" in notes
     assert "supernalintelligence/Awesome-Gui-Agents" in notes
+
+
+def test_awesome_list_submission_notes_record_scottcjn_awesome_agents_pr():
+    project_root = Path(__file__).resolve().parents[1]
+    notes = (
+        project_root / "docs" / "launch" / "github-awesome-list-submissions.md"
+    ).read_text()
+    section = notes.split("## 13. Awesome Agents", 1)[1].split(
+        "## Skip List", 1
+    )[0]
+
+    assert "Scottcjn/awesome-agents" in notes
+    assert "https://github.com/Scottcjn/awesome-agents/pull/16" in notes
+    assert "Monitoring and Observability" in section
+    assert "not a duplicate" in section
+    assert "npx --yes awesome-lint README.md" in section
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
 
 
 def test_targeted_outreach_copy_includes_uvx_trial_before_pypi():

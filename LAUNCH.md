@@ -85,7 +85,7 @@ Codex can prepare assets, update the repo, write copy, audit links, and monitor 
   reusable source asset for future launch previews.
 - Submit `https://aaronlab.github.io/browsertrace/sitemap.xml` in Google Search
   Console and Bing Webmaster Tools.
-- Monitor the fourteen open third-party awesome-list and directory PRs plus the
+- Monitor the fifteen open third-party awesome-list and directory PRs plus the
   CLIs.dev submission issue, and respond only if maintainers ask for changes.
   Do not open additional list PRs unless the target is clearly high-fit and
   non-duplicative.
@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T18:53:13+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 31 | current monitor pass after owner HN/Product Hunt short submission packet aligned Skyvern with the detailed launch packets; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T19:07:08+00:00 | 3 | 998 | 17 | 0 | 13 | 1 | 31 | current monitor pass after Scottcjn/awesome-agents PR #16 opened and tracking docs updated; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

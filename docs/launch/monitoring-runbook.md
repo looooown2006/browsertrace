@@ -32,6 +32,7 @@ Tracked PR targets:
 - `jim-schwoebel/awesome_ai_agents#266`
 - `ranpox/awesome-computer-use#24`
 - `trycua/acu#26`
+- `Scottcjn/awesome-agents#16`
 - `clihub-ai/clihub#1`
 
 Use this jq null-safe loop so PRs with no comments do not fail the monitor pass:
@@ -72,6 +73,7 @@ e2b-dev/awesome-ai-sdks 187
 jim-schwoebel/awesome_ai_agents 266
 ranpox/awesome-computer-use 24
 trycua/acu 26
+Scottcjn/awesome-agents 16
 clihub-ai/clihub 1
 EOF
 ```
@@ -108,7 +110,7 @@ Open BrowserTrace targets:
 - `aaronlab/browsertrace#270`
 - `aaronlab/browsertrace#303`
 - `aaronlab/browsertrace#304`
-- `aaronlab/browsertrace#305`
+- `aaronlab/browsertrace#307`
 
 ```bash
 gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
