@@ -186,6 +186,18 @@ Language: Python
 Source Type: Open-source CLI
 ```
 
+DevTool Center submit fields:
+
+```text
+Tool Name: BrowserTrace
+Description:
+BrowserTrace is an MIT-licensed local debugger for failed AI browser-agent runs. It records screenshots, URLs, actions, model I/O, status, errors, and exports public-safe HTML traces for Browser Use, Stagehand, Skyvern, Playwright + LLM, and custom computer-use workflows.
+Tool URL: https://aaronlab.github.io/browsertrace/
+Category: AI Helpers
+Pricing: Free
+Tags: AI agents, debugging, observability, Playwright, CLI
+```
+
 ## Product Hunt Draft
 
 Tagline:
