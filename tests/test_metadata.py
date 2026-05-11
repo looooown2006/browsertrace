@@ -3800,6 +3800,28 @@ def test_channel_copy_links_stack_debugging_guides_for_replies():
     assert "reposts" not in guide_section.lower()
 
 
+def test_channel_copy_includes_aos_mapping_research_note():
+    project_root = Path(__file__).resolve().parents[1]
+    copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
+
+    assert "## AOS Mapping Research" in copy
+    research_note = copy.split("## AOS Mapping Research", 1)[1].split(
+        "## Artifact Boundary Reply", 1
+    )[0]
+
+    assert "not an AOS compliance claim" in research_note
+    assert "tool request/result" in research_note
+    assert "step correlation" in research_note
+    assert "URI-style screenshot/video artifacts" in research_note
+    assert "URL metadata" in research_note
+    assert "model I/O summaries" in research_note
+    assert "explicit redaction state" in research_note
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in research_note
+    assert "stars" not in research_note.lower()
+    assert "upvotes" not in research_note.lower()
+    assert "reposts" not in research_note.lower()
+
+
 def test_channel_copy_includes_fresh_browser_use_debugging_angle():
     project_root = Path(__file__).resolve().parents[1]
     copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()

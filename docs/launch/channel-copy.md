@@ -52,6 +52,16 @@ Use the closest guide when a technical reply needs workflow-specific context:
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
 - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 
+## AOS Mapping Research
+
+Use this when someone asks whether BrowserTrace maps to OWASP AOS.
+BrowserTrace is not an AOS compliance claim yet. Current research maps the
+closest BrowserTrace concepts to tool request/result records, step correlation,
+URI-style screenshot/video artifacts, URL metadata, model I/O summaries, and
+explicit redaction state.
+
+Tracker: https://github.com/aaronlab/browsertrace/issues/237
+
 ## Artifact Boundary Reply
 
 Use this when someone is debugging screenshot blobs, base64 payloads, oversized
