@@ -683,6 +683,10 @@ def test_github_profile_draft_links_current_trial_and_contribution_paths():
     ).read_text()
 
     assert "https://github.com/aaronlab/browsertrace" in profile_draft
+    assert "https://aaronlab.github.io/browsertrace/browser-use-debugging.html" in profile_draft
+    assert "https://aaronlab.github.io/browsertrace/stagehand-debugging.html" in profile_draft
+    assert "https://aaronlab.github.io/browsertrace/skyvern-debugging.html" in profile_draft
+    assert "https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html" in profile_draft
     assert "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html" in profile_draft
     assert f'uvx --from "{pypi_spec}" browsertrace doctor' in profile_draft
     assert f'uvx --from "{pypi_spec}" browsertrace demo' in profile_draft

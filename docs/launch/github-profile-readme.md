@@ -57,8 +57,13 @@ browsertrace demo
 browsertrace
 ~~~
 
-Computer-use guide:
-https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+Stack guides:
+
+- Browser Use: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 
 Runnable examples:
 https://github.com/aaronlab/browsertrace/tree/main/examples
