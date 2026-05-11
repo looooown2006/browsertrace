@@ -293,7 +293,7 @@ page.bt_run.close()</code></pre>
     </section>
 
     <section>
-      <h2>Debug custom tool replay gaps</h2>
+      <h2 id="debug-custom-tool-replay-gaps">Debug custom tool replay gaps</h2>
       <p>If a Stagehand cache can replay normal page actions but skips a <code>custom_tool</code>, separate the replay contract from the diagnostic trace contract before changing cache behavior.</p>
       <p>For replay, the cache needs enough data to call the current tool implementation again: tool name, serialized arguments, stable tool-call or step id, original status or error, and whether the tool is replay-safe. Credential-fill, payment, submit, or other side-effectful tools should require explicit opt-in before replay.</p>
       <p>For debugging, the trace can preserve a richer boundary even when replay is disabled:</p>
@@ -309,7 +309,7 @@ page.bt_run.close()</code></pre>
     </section>
 
     <section>
-      <h2>Debug semantic verification boundaries</h2>
+      <h2 id="debug-semantic-verification-boundaries">Debug semantic verification boundaries</h2>
       <p>If you add a semantic verification layer around <code>act</code>, keep the verifier result as an inspectable action boundary, not only a boolean. The useful debugging question is not just whether verification passed; it is why the target was authorized, blocked, or marked ambiguous.</p>
       <ol>
         <li>Record the action proposal: instruction, action type, selected selector, role, text, and confidence when available.</li>

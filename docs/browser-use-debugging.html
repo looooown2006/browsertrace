@@ -300,7 +300,7 @@ with hooks:
     </section>
 
     <section>
-      <h2>Debug icon-only click targets</h2>
+      <h2 id="debug-icon-only-click-targets">Debug icon-only click targets</h2>
       <p>If the screenshot shows the target but Browser Use clicks a nearby toolbar button, treat it as a visible-target versus accessible-target mismatch. Icon-only buttons often rely on hover tooltips, and that tooltip text may not be present in the accessibility tree when the agent ranks candidate elements.</p>
       <ul>
         <li>Capture the live button HTML, not only the intended fixed markup.</li>
@@ -313,7 +313,7 @@ with hooks:
     </section>
 
     <section>
-      <h2>Debug new-tab desync</h2>
+      <h2 id="debug-new-tab-desync">Debug new-tab desync</h2>
       <p>If a click or Enter action opens a new tab, Browser Use may keep reasoning from the stale page context unless the action result makes that browser-state delta explicit. The symptom is usually repeated retries against the old page while the expected element exists in the new tab.</p>
       <ul>
         <li>Record page ids and tab indexes before and after the action.</li>
@@ -327,7 +327,7 @@ with hooks:
     </section>
 
     <section>
-      <h2>Debug remote CDP hangs</h2>
+      <h2 id="debug-remote-cdp-hangs">Debug remote CDP hangs</h2>
       <p>For Browserless or other remote-CDP providers, a failed Browser Use run may not be only a screenshot problem. A stale remote browser session can make one CDP request stop returning while the websocket still looks connected. If recovery holds a shared event-bus lock during that wait, one degraded browser session can delay unrelated sessions.</p>
       <p>When you see screenshot capture, DOM snapshot, or browser-state collection timeouts, collect timing evidence before changing retry policy:</p>
       <ul>

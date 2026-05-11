@@ -246,6 +246,19 @@
     </section>
 
     <section class="pattern">
+      <h2>Browser Use new-tab desync</h2>
+      <p>A click or Enter action can open a new tab while the agent keeps reasoning from the stale page context. The symptom is repeated retries against the old page even though the expected element exists in the new tab.</p>
+      <h3>Trace evidence to keep</h3>
+      <ul>
+        <li>Page ids, tab indexes, URL, and title before and after the action.</li>
+        <li><code>pages_before</code>, <code>pages_after</code>, and <code>new_pages</code> with probe status.</li>
+        <li>The action id that created the new page and the focused page before and after the step.</li>
+        <li>Recommended recovery action such as <code>switch_tab</code>, stored as evidence instead of inferred from later retries.</li>
+      </ul>
+      <p>Related community case: <a href="https://github.com/browser-use/browser-use/issues/4758">browser-use/browser-use#4758</a>. BrowserTrace guide: <a href="./browser-use-debugging.html#debug-new-tab-desync">Debug new-tab desync</a>.</p>
+    </section>
+
+    <section class="pattern">
       <h2>Browser Use remote CDP hang</h2>
       <p>A remote browser session can look connected while one CDP request never returns. Screenshot capture, DOM snapshot, browser-state collection, and recovery can then spend the whole timeout window or block other sessions through lock timing.</p>
       <h3>Trace evidence to keep</h3>
@@ -285,6 +298,19 @@
     </section>
 
     <section class="pattern">
+      <h2>Stagehand semantic verification boundary</h2>
+      <p>A semantic verification layer around <code>act</code> can prevent unsafe or ambiguous actions, but the verifier result needs to be visible as its own action boundary instead of collapsed into a boolean.</p>
+      <h3>Trace evidence to keep</h3>
+      <ul>
+        <li>Action proposal with instruction, action type, selector, role, text, and confidence when available.</li>
+        <li>Target evidence: URL, screenshot id, DOM snapshot id, candidate elements, and semantic endpoint evidence.</li>
+        <li>Verification result with verifier type, status, reason, and whether execution was allowed.</li>
+        <li>Execution outcome: executed, blocked, escalated, failed, URL after, and error.</li>
+      </ul>
+      <p>Related community case: <a href="https://github.com/browserbase/stagehand/issues/1880">browserbase/stagehand#1880</a>. BrowserTrace guide: <a href="./stagehand-debugging.html#debug-semantic-verification-boundaries">Debug semantic verification boundaries</a>.</p>
+    </section>
+
+    <section class="pattern">
       <h2>Skyvern action confidence gap</h2>
       <p>Confidence is useful diagnostic metadata, but it is not authorization and does not prove a click, submit, or extraction target was correct. High confidence can still pair with stale context, the wrong target, or a consequence larger than the model expected.</p>
       <h3>Trace evidence to keep</h3>
@@ -295,6 +321,19 @@
         <li>VNC screenshot and CDP DOM/console/network slices linked to the same workflow step.</li>
       </ul>
       <p>Related community cases: <a href="https://github.com/Skyvern-AI/skyvern/issues/5637">Skyvern-AI/skyvern#5637</a> and <a href="https://github.com/Skyvern-AI/skyvern/issues/3260">Skyvern-AI/skyvern#3260</a>. BrowserTrace guide: <a href="./skyvern-debugging.html#debug-action-confidence-and-authorization">Debug action confidence and authorization</a>.</p>
+    </section>
+
+    <section class="pattern">
+      <h2>Skyvern VNC/CDP debug integration</h2>
+      <p>Visual VNC evidence and CDP browser-state evidence are much harder to use when they are stored as separate logs. Link them to the same task, workflow, and step ids so a reviewer can see which visual window each DOM, console, or network slice explains.</p>
+      <h3>Trace evidence to keep</h3>
+      <ul>
+        <li>Connect/probe start, success, timeout, cleanup, and retry or recovery decision.</li>
+        <li>VNC screenshot or recording artifact ids linked to CDP DOM snapshot or selected-element summaries.</li>
+        <li>Task id, workflow id, step id, URL, frame/page id, action/tool name, status, and error.</li>
+        <li>Redaction state for screenshots, URLs, headers, cookies, and form values before public export.</li>
+      </ul>
+      <p>Related community case: <a href="https://github.com/Skyvern-AI/skyvern/issues/3260">Skyvern-AI/skyvern#3260</a>. BrowserTrace guide: <a href="./skyvern-debugging.html#debug-vnc-and-cdp-evidence-together">Debug VNC and CDP evidence together</a>.</p>
     </section>
 
     <section class="pattern">

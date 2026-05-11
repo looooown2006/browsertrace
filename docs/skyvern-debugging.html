@@ -293,7 +293,7 @@ skyvern.close()</code></pre>
     </section>
 
     <section>
-      <h2>Debug action confidence and authorization</h2>
+      <h2 id="debug-action-confidence-and-authorization">Debug action confidence and authorization</h2>
       <p>For Skyvern-style browser agents, confidence is diagnostic. It is not the same as authorized execution, and it does not prove the selected action is correct. The failure to watch for is high confidence plus the wrong target, stale context, incomplete browser state, or an unsafe action boundary.</p>
       <p>When Skyvern or a deeper adapter exposes the data, preserve three linked records for consequential actions:</p>
       <ol>
@@ -306,7 +306,7 @@ skyvern.close()</code></pre>
     </section>
 
     <section>
-      <h2>Debug VNC and CDP evidence together</h2>
+      <h2 id="debug-vnc-and-cdp-evidence-together">Debug VNC and CDP evidence together</h2>
       <p>When a Skyvern workflow needs both VNC visual debugging and CDP browser-state capture, keep both streams linked to the same task or workflow step. Separate screenshots, DOM summaries, console or network snippets, and performance data are much less useful if the trace cannot show which action window they explain.</p>
       <ul>
         <li>Record connect/probe start, success, timeout, or cleanup events before the first browser action.</li>

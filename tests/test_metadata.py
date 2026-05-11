@@ -631,13 +631,18 @@ def test_failure_patterns_page_has_discovery_metadata_and_examples():
     assert "Browser agent failure patterns" in page
     assert "icon-only target mismatch" in page
     assert "remote CDP hang" in page
+    assert "new-tab desync" in page
     assert "screenshot blob" in page
     assert "custom-tool replay gap" in page
+    assert "semantic verification boundary" in page
     assert "action confidence gap" in page
+    assert "VNC/CDP debug integration" in page
     assert "persistent browser recovery" in page
     assert "browser-use/browser-use#4801" in page
+    assert "browser-use/browser-use#4758" in page
     assert "browser-use/browser-use#4579" in page
     assert "browserbase/stagehand#1558" in page
+    assert "browserbase/stagehand#1880" in page
     assert "Skyvern-AI/skyvern#3260" in page
     assert "stars" not in page.lower()
     assert "upvotes" not in page.lower()
@@ -657,6 +662,17 @@ def test_failure_patterns_page_has_discovery_metadata_and_examples():
     assert metadata["url"] == "https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html"
     assert metadata["isPartOf"]["name"] == "BrowserTrace"
     assert metadata["isPartOf"]["codeRepository"] == "https://github.com/aaronlab/browsertrace"
+
+
+def test_failure_patterns_page_guide_fragment_links_have_targets():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-agent-failure-patterns.html").read_text()
+    fragment_links = re.findall(r'href="(?P<href>\./(?P<path>[^"#]+)#(?P<fragment>[^"]+))"', page)
+
+    assert fragment_links
+    for href, path, fragment in fragment_links:
+        target = (project_root / "docs" / path).read_text()
+        assert f'id="{fragment}"' in target, href
 
 
 def test_launch_kit_page_links_first_pr_recipe_for_small_contributions():

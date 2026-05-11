@@ -299,7 +299,7 @@ async with tracer.run("custom computer-use agent") as run:
     </section>
 
     <section>
-      <h2>Debug persistent browser session recovery</h2>
+      <h2 id="debug-persistent-browser-session-recovery">Debug persistent browser session recovery</h2>
       <p>Some computer-use agents fail before a screenshot or URL exists because the persistent browser profile cannot be reused safely. A trace should capture the browser launch, connect, and recovery boundary instead of relying only on a stale profile lock file or process name.</p>
       <ul>
         <li>Record <code>session_mode</code>, browser/session/target id, and a redacted profile id or user data directory token.</li>
