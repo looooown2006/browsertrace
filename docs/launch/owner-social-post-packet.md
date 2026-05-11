@@ -44,9 +44,9 @@ Repo: https://github.com/aaronlab/browsertrace
 Concrete failure patterns:
 https://aaronlab.github.io/browsertrace/browser-agent-failure-patterns.html
 
-Examples: Browser Use new-tab desync, Stagehand semantic verification boundary, Skyvern VNC/CDP debug integration.
+Examples: Browser Use new-tab desync, Stagehand semantic verification, Skyvern VNC/CDP debug.
 
-I am looking for feedback from people building browser agents: what state should a trace capture when a run fails?
+If you build browser agents: what state should a trace capture when a run fails?
 ```
 
 ## LinkedIn
