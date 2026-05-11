@@ -105,6 +105,8 @@ Open BrowserTrace targets:
 
 - `aaronlab/browsertrace#270`
 - `aaronlab/browsertrace#303`
+- `aaronlab/browsertrace#304`
+- `aaronlab/browsertrace#305`
 
 ```bash
 gh issue list --repo aaronlab/browsertrace --state open --limit 40 \
@@ -156,11 +158,43 @@ gh api graphql \
 
 Reply only if there is useful technical context to add.
 
-## 5. Metrics
+## 5. Traffic and Discovery Sources
+
+Use traffic data to choose the next legitimate growth action. Do not treat
+traffic as goal completion; only `stargazerCount > 1000` completes the goal.
+
+```bash
+gh api repos/aaronlab/browsertrace/traffic/views |
+  jq -c '{count, uniques, views:[.views[-10:][]?]}'
+
+gh api repos/aaronlab/browsertrace/traffic/clones |
+  jq -c '{count, uniques, clones:[.clones[-10:][]?]}'
+
+gh api repos/aaronlab/browsertrace/traffic/popular/referrers |
+  jq -c '.[]'
+
+gh api repos/aaronlab/browsertrace/traffic/popular/paths |
+  jq -c '.[]'
+```
+
+Use the source signal conservatively:
+
+- If `goodfirstissues.com` or `github-help-wanted.com` appears, keep a small
+  queue of high-quality, non-duplicative good-first issues.
+- If old `aaronagent` paths appear, audit redirect copy before adding more
+  public links.
+- If the Pages homepage or guide pages appear, improve those pages only when a
+  real layout, copy, or conversion problem is observed.
+- Do not open additional directory/list PRs from traffic alone; only use high-fit
+  targets that accept developer tools and are not duplicates.
+
+## 6. Metrics
 
 Append a row only when there is a meaningful state change, such as a new post,
 submission, accepted listing, maintainer request, contributor reply, release,
-or shipped launch asset.
+or shipped launch asset. A traffic insight can justify a row when it directly
+causes a concrete action, such as opening a focused good-first issue or updating
+a redirect.
 
 ```bash
 uv run --python 3.11 python scripts/launch_metrics.py --append --note "<note>"
@@ -169,7 +203,7 @@ uv run --python 3.11 python scripts/launch_metrics.py --append --note "<note>"
 Keep `docs/launch/metrics-log.md` and the `Current latest audit` row in
 `LAUNCH.md` aligned with the latest meaningful metrics row.
 
-## 6. After Each Push
+## 7. After Each Push
 
 ```bash
 gh run list --repo aaronlab/browsertrace --branch main --limit 8
