@@ -16,6 +16,16 @@ Good topics:
 - What trace data you wish BrowserTrace captured.
 - Whether portable HTML exports are enough for your team.
 
+## Stack-Specific Guides
+
+Check the closest guide before filing a detailed report:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Bugs
 
 Open a bug report:

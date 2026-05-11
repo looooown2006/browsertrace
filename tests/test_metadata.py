@@ -820,6 +820,25 @@ def test_readme_links_private_reports_near_feedback():
     assert "hosted sharing" not in readme
 
 
+def test_support_page_links_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    support = (project_root / "SUPPORT.md").read_text()
+
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in support
+    assert "stars" not in support.lower()
+    assert "upvotes" not in support.lower()
+    assert "reposts" not in support.lower()
+
+
 def test_readme_clarifies_cloud_features_are_not_required_for_local_oss():
     project_root = Path(__file__).resolve().parents[1]
     readme = (project_root / "README.md").read_text()
