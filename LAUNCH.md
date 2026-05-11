@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T13:19:01+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after #300 completed in 51f1eb9 and replacement good-first issue #301 opened: https://github.com/aaronlab/browsertrace/issues/301; CI success 25672553574; SUPPORT/test-only push did not trigger Pages; live homepage 320px screenshot checked after wrapping report; no actionable community reply; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T13:25:15+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after profile README aligned with BrowserTrace stack-specific reply links in aaronlab/aaronlab e7f69be; external PRs and community discussions still have no actionable maintainer feedback; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
