@@ -119,6 +119,9 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+For automation-oriented usage notes, see
+[JSON CLI checks for automation](examples/#json-cli-checks-for-automation).
+
 For compact AI/coding-agent troubleshooting context, use
 [`llms.txt`](llms.txt); it includes the same JSON CLI checks plus project links
 and prompts. The hosted copy is [`docs/llms.txt`](docs/llms.txt).

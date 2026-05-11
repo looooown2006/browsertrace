@@ -1693,6 +1693,10 @@ browsertrace show <run_id> --json
 
     assert "For scripts, CI, or AI/coding-agent troubleshooting" in install_section
     assert recipe in install_section
+    assert (
+        "[JSON CLI checks for automation](examples/#json-cli-checks-for-automation)"
+        in install_section
+    )
     assert "hosted sharing" not in readme
 
 
