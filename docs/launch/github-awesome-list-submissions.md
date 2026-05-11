@@ -64,6 +64,7 @@ browsertrace show <run_id> --json
 | 11 | `ranpox/awesome-computer-use` | Strong | `Projects` | Submitted: https://github.com/ranpox/awesome-computer-use/pull/24 |
 | Skip | `e2b-dev/awesome-ai-agents` | Weak | n/a | Main list is for agents, not tools |
 | Skip | `supernalintelligence/Awesome-Gui-Agents` | Weak | n/a | Main list catalogs GUI agents, not developer/debugging tools; referenced contribution file is missing |
+| Skip | `ZJU-REAL/Awesome-GUI-Agents` | Weak | n/a | Strong topic match, but current README is primarily papers, datasets, and benchmarks rather than developer/debugging tools |
 
 ## 1. Awesome Browser Automation
 
@@ -492,6 +493,9 @@ git diff --check
 - `supernalintelligence/Awesome-Gui-Agents`: the README focuses on GUI agents
   rather than developer/debugging tools, and its referenced contribution file is
   not present in the repository.
+- `ZJU-REAL/Awesome-GUI-Agents`: the repository is a strong topic match, but
+  the current README focuses on papers, datasets, and benchmarks rather than
+  developer/debugging tools.
 - Low-star forks with copied README content and no visible curation.
 - Broad AI app lists where BrowserTrace would be an unrelated developer tool.
 
