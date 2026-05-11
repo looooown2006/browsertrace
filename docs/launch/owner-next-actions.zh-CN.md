@@ -215,7 +215,7 @@ Awesome list 跟踪 issue: https://github.com/aaronlab/browsertrace/issues/18
 如果有人问怎么做一个小的文档贡献，先给当前 good first issue：
 
 ```text
-#242: Docs: add public-safe export verification note
+#244: Docs: add expected-output note for isolated pytest trace store
 ```
 
 如果这个 issue 已经被认领或关闭，再给 good first issue label：
