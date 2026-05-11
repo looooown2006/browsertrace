@@ -3916,6 +3916,33 @@ def test_owner_social_post_packet_is_short_and_linked():
         assert "docs/launch/owner-social-post-packet.md" in text, relpath
 
 
+def test_owner_launch_submission_packet_is_short_and_linked():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "owner-launch-submission-packet.md"
+    ).read_text()
+
+    assert "## Show HN" in packet
+    assert "Show HN: BrowserTrace - record and replay AI browser-agent runs to find bugs" in packet
+    assert "## Product Hunt" in packet
+    assert "Tagline:" in packet
+    assert "Replay failed AI browser-agent runs" in packet
+    assert "Maker comment:" in packet
+    assert "https://github.com/aaronlab/browsertrace" in packet
+    assert "https://aaronlab.github.io/browsertrace/" in packet
+    assert "browser-agent-failure-patterns.html" in packet
+    assert "Do not ask for votes" in packet
+    assert "upvotes" not in packet.lower()
+
+    for relpath in [
+        "docs/launch/owner-next-actions.md",
+        "docs/launch/owner-next-actions.zh-CN.md",
+        "docs/launch/owner-publish-queue.md",
+    ]:
+        text = (project_root / relpath).read_text()
+        assert "docs/launch/owner-launch-submission-packet.md" in text, relpath
+
+
 def test_directory_submission_sheet_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     sheet = (project_root / "docs" / "launch" / "directory-submission-sheet.md").read_text()

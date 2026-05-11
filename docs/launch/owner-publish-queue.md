@@ -21,6 +21,7 @@ people building browser agents.
 Shortest owner checklist: `docs/launch/owner-next-actions.md`
 Shortest owner social post packet: `docs/launch/owner-social-post-packet.md`
 Shortest owner email packet: `docs/launch/owner-email-send-packet.md`
+Shortest HN/Product Hunt packet: `docs/launch/owner-launch-submission-packet.md`
 
 Current listing status: the tracked external GitHub list and directory
 submissions are still open and have not listed BrowserTrace on their default

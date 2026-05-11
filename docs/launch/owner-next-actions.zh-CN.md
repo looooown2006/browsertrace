@@ -71,6 +71,8 @@ session recovery。这些都是用具体失败场景来征集真实 workflow 反
   `docs/launch/owner-social-post-packet.md`
 - Show HN：`docs/launch/day-2-show-hn-packet.md#first-comment-draft`
 - Product Hunt：`docs/launch/day-4-product-hunt-packet.md#maker-comment`
+- 5 分钟 HN/Product Hunt 提交包：
+  `docs/launch/owner-launch-submission-packet.md`
 - console.dev 邮件：
   `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
 - AgDex 邮件：`docs/launch/directory-submission-sheet.md#agdex-email-draft`

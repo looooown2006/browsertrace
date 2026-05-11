@@ -78,6 +78,8 @@ Fast copy/paste blocks:
   `docs/launch/owner-social-post-packet.md`
 - Show HN: `docs/launch/day-2-show-hn-packet.md#first-comment-draft`
 - Product Hunt: `docs/launch/day-4-product-hunt-packet.md#maker-comment`
+- 5-minute HN/Product Hunt submission packet:
+  `docs/launch/owner-launch-submission-packet.md`
 - console.dev email:
   `docs/launch/directory-submission-sheet.md#consoledev-email-draft`
 - AgDex email: `docs/launch/directory-submission-sheet.md#agdex-email-draft`
