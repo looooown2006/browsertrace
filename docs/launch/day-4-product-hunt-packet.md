@@ -86,6 +86,7 @@ Try locally from PyPI:
 ```bash
 uvx --from "browsertrace[ui]" browsertrace doctor
 uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 ```
 
 Good first issue for contributors:
@@ -167,6 +168,7 @@ https://github.com/aaronlab/browsertrace
 Try locally:
 uvx --from "browsertrace[ui]" browsertrace doctor
 uvx --from "browsertrace[ui]" browsertrace demo
+uvx --from "browsertrace[ui]" browsertrace
 
 Good first issue:
 https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
