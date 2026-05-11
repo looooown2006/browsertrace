@@ -1217,6 +1217,7 @@ def test_contributing_includes_first_pr_recipe():
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in recipe
     assert "Create a branch" in recipe
     assert "uv run --python 3.11 --extra dev pytest -q" in recipe
+    assert "git diff --check" in recipe
     assert "Fixes #<issue>" in recipe
     assert "small enough to review in one pass" in recipe
     assert "stars" not in recipe.lower()
@@ -5650,6 +5651,7 @@ def test_pull_request_template_prompts_for_real_contributor_details():
     assert "PR discussions and reviews" in template
     assert "Fixes #123 or Refs #123" in template
     assert "I ran `uv run --python 3.11 --extra dev pytest -q`" in template
+    assert "I ran `git diff --check`" in template
 
 
 def test_pull_request_template_links_security_policy_for_sensitive_changes():

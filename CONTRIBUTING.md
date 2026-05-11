@@ -46,7 +46,8 @@ For a docs fix or small example:
    short claim window before maintainers take the same issue directly.
 2. Create a branch with a short descriptive name.
 3. Make the smallest useful change and keep it small enough to review in one pass.
-4. Run `uv run --python 3.11 --extra dev pytest -q`.
+4. Run `uv run --python 3.11 --extra dev pytest -q` and
+   `git diff --check`.
 5. Open a PR and link the issue in the body with `Fixes #<issue>` or
    `Refs #<issue>`.
 
