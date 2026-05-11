@@ -520,6 +520,15 @@ For ordinary workflow feedback and broader browser-agent workflow feedback, use 
 For private or sensitive reports, follow [SECURITY.md](SECURITY.md) instead of
 opening a public issue.
 
+### AOS Mapping Research
+
+BrowserTrace is not an AOS compliance claim yet. Current research maps the
+closest BrowserTrace concepts to tool request/result records, step correlation,
+URI-style screenshot/video artifacts, URL metadata, model I/O summaries, and
+explicit redaction state.
+
+Tracker: https://github.com/aaronlab/browsertrace/issues/237
+
 ## Why not just use ___?
 
 For a longer comparison with LLM tracing and hosted browser/runtime tools, see

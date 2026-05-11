@@ -870,6 +870,27 @@ def test_readme_links_private_reports_near_feedback():
     assert "hosted sharing" not in readme
 
 
+def test_readme_includes_aos_mapping_research_note_near_feedback():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    feedback_section = readme.split("## Report A Browser-Agent Failure", 1)[1].split(
+        "## Why not just use ___?", 1
+    )[0]
+
+    assert "### AOS Mapping Research" in feedback_section
+    assert "not an AOS compliance claim" in feedback_section
+    assert "tool request/result" in feedback_section
+    assert "step correlation" in feedback_section
+    assert "URI-style screenshot/video artifacts" in feedback_section
+    assert "URL metadata" in feedback_section
+    assert "model I/O summaries" in feedback_section
+    assert "explicit redaction state" in feedback_section
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in feedback_section
+    assert "stars" not in feedback_section.lower()
+    assert "upvotes" not in feedback_section.lower()
+    assert "reposts" not in feedback_section.lower()
+
+
 def test_support_page_links_stack_debugging_guides():
     project_root = Path(__file__).resolve().parents[1]
     support = (project_root / "SUPPORT.md").read_text()
