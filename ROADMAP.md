@@ -78,6 +78,14 @@ Start with `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution sm
 Then open an integration request if the work depends on a specific
 browser-agent framework.
 
+Stack-specific guide context:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Success Signals
 
 The project is moving in the right direction when:

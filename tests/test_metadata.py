@@ -887,6 +887,28 @@ def test_roadmap_contribution_guidelines_link_first_pr_recipe():
     assert "upvotes" not in guidelines.lower()
 
 
+def test_roadmap_links_stack_debugging_guides_for_contributors():
+    project_root = Path(__file__).resolve().parents[1]
+    roadmap = (project_root / "ROADMAP.md").read_text()
+    guidelines = roadmap.split("## Contribution Guidelines", 1)[1].split(
+        "## Success Signals", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "Stack-specific guide context" in guidelines
+    for guide in stack_guides:
+        assert guide in guidelines
+    assert "stars" not in guidelines.lower()
+    assert "upvotes" not in guidelines.lower()
+    assert "reposts" not in guidelines.lower()
+
+
 def test_roadmap_records_current_launch_state():
     project_root = Path(__file__).resolve().parents[1]
     roadmap = (project_root / "ROADMAP.md").read_text()
