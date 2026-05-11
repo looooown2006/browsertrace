@@ -139,6 +139,36 @@ BrowserTrace is trying to make these browser-agent failure boundaries inspectabl
 Guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 ```
 
+## Fresh Computer-Use Persistent Browser Recovery Angle
+
+Use this for custom computer-use agents, persistent browser profiles, and local
+browser session recovery failures. It is a technical debugging note, not a
+launch ask.
+
+Short post:
+
+```text
+Fresh computer-use debugging note:
+
+Persistent browser failures often happen before any screenshot exists.
+
+Do not trust profile lock files or process names alone. Capture session_mode, redacted profile id, CDP attach/probe timing, recovery action, and final connection state.
+```
+
+Follow-up with link:
+
+```text
+The useful trace boundary starts before the page opens:
+
+- profile selection and session_mode
+- profile lock or stale process signal
+- CDP attach/probe timing and timeout
+- approval source and recovery action
+- final connection state
+
+Guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+```
+
 ## X
 
 Non-Premium-safe thread. Post each `text` block as one X post.

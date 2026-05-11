@@ -4057,6 +4057,27 @@ def test_channel_copy_includes_fresh_browser_use_debugging_angle():
     assert "reposts" not in section.lower()
 
 
+def test_channel_copy_includes_fresh_computer_use_recovery_angle():
+    project_root = Path(__file__).resolve().parents[1]
+    copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()
+    section = copy.split(
+        "## Fresh Computer-Use Persistent Browser Recovery Angle", 1
+    )[1].split("## X", 1)[0]
+
+    assert "Persistent browser failures often happen before any screenshot exists" in section
+    assert "profile lock" in section
+    assert "CDP attach/probe timing" in section
+    assert "session_mode" in section
+    assert "recovery action" in section
+    assert (
+        "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html"
+        in section
+    )
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
+
+
 def test_channel_copy_links_security_policy_for_sensitive_reports():
     project_root = Path(__file__).resolve().parents[1]
     copy = (project_root / "docs" / "launch" / "channel-copy.md").read_text()

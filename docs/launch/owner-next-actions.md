@@ -17,7 +17,10 @@ Fastest fresh technical post: publish either Browser Use angle from
 `docs/launch/channel-copy.md` before or alongside the Day 1 posts:
 `#fresh-browser-use-debugging-angle` for icon-only target failures, or
 `#fresh-browser-use-remote-cdp-angle` for remote-CDP hangs and event-bus lock
-timing. Both ask for real workflow feedback through concrete failure modes.
+timing. If your audience builds custom computer-use agents, use
+`#fresh-computer-use-persistent-browser-recovery-angle` for persistent browser
+session recovery. These ask for real workflow feedback through concrete failure
+modes.
 
 1. Publish the Day 1 X/LinkedIn/WeChat/Jike posts from
    `docs/launch/day-1-publish-packet.md`, using `docs/demo.mp4`. When the
@@ -51,6 +54,8 @@ Fast copy/paste blocks:
   `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle`
 - Fresh Browser Use remote-CDP angle:
   `docs/launch/channel-copy.md#fresh-browser-use-remote-cdp-angle`
+- Fresh computer-use persistent browser recovery angle:
+  `docs/launch/channel-copy.md#fresh-computer-use-persistent-browser-recovery-angle`
 - X: `docs/launch/channel-copy.md#x`
 - X follow-up: `docs/launch/channel-copy.md#x-follow-up`
 - LinkedIn: `docs/launch/channel-copy.md#linkedin`

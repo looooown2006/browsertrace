@@ -15,7 +15,9 @@ issue comment 都交给 Codex 继续处理：
 Browser Use angle，可以放在 Day 1 正式帖子之前或一起发：
 `#fresh-browser-use-debugging-angle` 针对 icon-only target 失败，
 `#fresh-browser-use-remote-cdp-angle` 针对 remote-CDP hang 和 event-bus lock
-timing。两者都是用具体失败场景来征集真实 workflow 反馈。
+timing。如果你的受众在做 custom computer-use agents，用
+`#fresh-computer-use-persistent-browser-recovery-angle` 针对 persistent browser
+session recovery。这些都是用具体失败场景来征集真实 workflow 反馈。
 
 1. 用 `docs/launch/day-1-publish-packet.md` 发 X、LinkedIn、微信群、即刻，
    主素材用 `docs/demo.mp4`。平台支持 alt text 时，用
@@ -48,6 +50,8 @@ timing。两者都是用具体失败场景来征集真实 workflow 反馈。
   `docs/launch/channel-copy.md#fresh-browser-use-debugging-angle`
 - Fresh Browser Use remote-CDP angle：
   `docs/launch/channel-copy.md#fresh-browser-use-remote-cdp-angle`
+- Fresh computer-use persistent browser recovery angle：
+  `docs/launch/channel-copy.md#fresh-computer-use-persistent-browser-recovery-angle`
 - X：`docs/launch/channel-copy.md#x`
 - X follow-up：`docs/launch/channel-copy.md#x-follow-up`
 - LinkedIn：`docs/launch/channel-copy.md#linkedin`
