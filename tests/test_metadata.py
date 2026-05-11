@@ -3944,6 +3944,27 @@ def test_integration_request_template_links_security_policy_for_sensitive_report
     assert "private trace data" in template
 
 
+def test_integration_request_template_links_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    template = (
+        project_root / ".github" / "ISSUE_TEMPLATE" / "integration_request.yml"
+    ).read_text()
+
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    for guide in stack_guides:
+        assert guide in template
+    assert "stars" not in template.lower()
+    assert "upvotes" not in template.lower()
+    assert "reposts" not in template.lower()
+
+
 def test_feature_request_template_links_first_pr_recipe():
     project_root = Path(__file__).resolve().parents[1]
     template = (
