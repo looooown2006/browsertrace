@@ -3076,6 +3076,20 @@ def test_browser_use_guide_documents_icon_only_click_targets():
     assert "browser-use/browser-use#4801" in page
 
 
+def test_browser_use_guide_documents_new_tab_desync():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "browser-use-debugging.html").read_text()
+
+    assert "Debug new-tab desync" in page
+    assert "stale page context" in page
+    assert "<code>pages_before</code>" in page
+    assert "<code>pages_after</code>" in page
+    assert "<code>new_pages</code>" in page
+    assert "<code>switch_tab</code>" in page
+    assert "browser topology change" in page
+    assert "browser-use/browser-use#4758" in page
+
+
 def test_browser_use_guide_documents_remote_cdp_hangs():
     project_root = Path(__file__).resolve().parents[1]
     page = (project_root / "docs" / "browser-use-debugging.html").read_text()

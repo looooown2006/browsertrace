@@ -313,6 +313,20 @@ with hooks:
     </section>
 
     <section>
+      <h2>Debug new-tab desync</h2>
+      <p>If a click or Enter action opens a new tab, Browser Use may keep reasoning from the stale page context unless the action result makes that browser-state delta explicit. The symptom is usually repeated retries against the old page while the expected element exists in the new tab.</p>
+      <ul>
+        <li>Record page ids and tab indexes before and after the action.</li>
+        <li>Capture <code>pages_before</code>, <code>pages_after</code>, and <code>new_pages</code> with URL/title probe status.</li>
+        <li>Link the new page back to the action id that created it.</li>
+        <li>Store the focused page before and after the action, not only the currently selected tab index.</li>
+        <li>Keep any recommended next action, such as <code>switch_tab</code>, as trace evidence instead of inferring it from later retries.</li>
+      </ul>
+      <p>In BrowserTrace terms, treat this as a browser topology change. The trace should explain whether the agent switched to the new page, stayed on the stale page, or attempted later actions before the new tab finished loading.</p>
+      <p>Related community case: <a href="https://github.com/browser-use/browser-use/issues/4758">browser-use/browser-use#4758</a>.</p>
+    </section>
+
+    <section>
       <h2>Debug remote CDP hangs</h2>
       <p>For Browserless or other remote-CDP providers, a failed Browser Use run may not be only a screenshot problem. A stale remote browser session can make one CDP request stop returning while the websocket still looks connected. If recovery holds a shared event-bus lock during that wait, one degraded browser session can delay unrelated sessions.</p>
       <p>When you see screenshot capture, DOM snapshot, or browser-state collection timeouts, collect timing evidence before changing retry policy:</p>
