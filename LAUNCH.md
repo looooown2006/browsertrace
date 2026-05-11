@@ -112,7 +112,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T02:14:34+00:00 | 3 | 998 | 10 | 0 | 12 | 0 | 25 | current monitor pass after targeted Skyvern action-confidence audit reply: https://github.com/Skyvern-AI/skyvern/issues/5637#issuecomment-4417071022; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T02:16:32+00:00 | 3 | 998 | 10 | 0 | 12 | 0 | 25 | current monitor pass after Skyvern action-confidence adapter research note added to issue #4: https://github.com/aaronlab/browsertrace/issues/4#issuecomment-4417077998; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
