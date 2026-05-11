@@ -2786,6 +2786,21 @@ def test_llms_txt_includes_browser_use_remote_cdp_failure_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_browser_use_new_tab_desync_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Browser Use new-tab desync" in llms
+    assert "stale page context" in llms
+    assert "`pages_before`" in llms
+    assert "`pages_after`" in llms
+    assert "`new_pages`" in llms
+    assert "`recommended_next_action`" in llms
+    assert "`switch_tab`" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_stagehand_custom_tool_replay_shape():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -2795,6 +2810,21 @@ def test_llms_txt_includes_stagehand_custom_tool_replay_shape():
     assert "diagnostic trace contract" in llms
     assert "replay-safe" in llms
     assert "raw credentials" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
+def test_llms_txt_includes_stagehand_semantic_verification_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Stagehand semantic verification boundary" in llms
+    assert "inspectable action record" in llms
+    assert "action proposal" in llms
+    assert "candidate elements" in llms
+    assert "verifier type" in llms
+    assert "verification status/reason" in llms
+    assert "executed, blocked, or escalated" in llms
     assert "stars" not in llms.lower()
     assert "upvotes" not in llms.lower()
 

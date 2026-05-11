@@ -62,12 +62,22 @@ to explain why a browser run failed.
   Browser Use guide and ask for event id, browser/session/target id, and the
   exact CDP method, request id, start/end/duration. Include websocket ping/pong
   timestamps, lock timing, and recovery or unhealthy-session decisions.
+- Browser Use new-tab desync: a click or Enter action can open a new tab while
+  the agent keeps acting on the stale page context. Preserve page ids, tab
+  indexes, focused page before/after, `pages_before`, `pages_after`,
+  `new_pages`, action id, URL/title probe status, and any
+  `recommended_next_action` such as `switch_tab`.
 - Stagehand custom tool replay gap: when cached normal page actions replay but
   a custom tool is skipped, separate the replay contract from the diagnostic trace contract.
   For replay, capture tool name, serialized args, stable
   tool-call or step id, status/error, and whether the tool is replay-safe. For
   debugging, preserve a redacted boundary with URL/page id, result summary,
   screenshot or observation ids, and errors. Avoid storing raw credentials.
+- Stagehand semantic verification boundary: verification should create an
+  inspectable action record, not only a boolean. Preserve the action proposal,
+  selected selector/role/text, target evidence, candidate elements, screenshot
+  or DOM snapshot ids, verifier type, verification status/reason, and execution
+  outcome such as executed, blocked, or escalated.
 - Skyvern action confidence gap: confidence is diagnostic, not authorized execution
   or proof that the selected action is correct. For consequential actions, preserve
   linked action proposal, authorization decision, and execution result records,
