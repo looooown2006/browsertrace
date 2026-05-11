@@ -448,12 +448,23 @@ def test_integrations_page_includes_aos_mapping_research_table():
     ].split('<section class="band" aria-labelledby="browser-use">', 1)[0]
     rows = {
         cells[0]: cells
-        for cells in re.findall(r"<tr>\s*((?:<td>.*?</td>\s*){4})</tr>", section, re.S)
-        for cells in [[re.sub(r"<.*?>", "", cell).strip() for cell in re.findall(r"<td>(.*?)</td>", cells, re.S)]]
+        for cells in re.findall(
+            r"<tr>\s*((?:<td(?:\s+[^>]*)?>.*?</td>\s*){4})</tr>",
+            section,
+            re.S,
+        )
+        for cells in [
+            [
+                re.sub(r"<.*?>", "", cell).strip()
+                for cell in re.findall(r"<td(?:\s+[^>]*)?>(.*?)</td>", cells, re.S)
+            ]
+        ]
     }
 
     assert "not an AOS compliance claim" in section
     assert "https://github.com/aaronlab/browsertrace/issues/237" in section
+    assert 'data-label="BrowserTrace field"' in section
+    assert ".mapping-table td::before" in integrations
     assert rows["Run id and step id"][2] == "partially mapped"
     assert rows["Action label or tool call"][1] == "steps/toolCallRequest"
     assert rows["Action label or tool call"][2] == "partially mapped"
