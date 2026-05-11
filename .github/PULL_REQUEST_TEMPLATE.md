@@ -7,6 +7,14 @@ Please also follow `CODE_OF_CONDUCT.md` in PR discussions and reviews.
 For security-sensitive changes or private trace data, follow `SECURITY.md` before
 sharing details publicly.
 
+Relevant stack guides when changing an adapter, example, or stack-specific doc:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Summary
 
 - What changed:
