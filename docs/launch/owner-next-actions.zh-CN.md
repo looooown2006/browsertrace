@@ -256,6 +256,18 @@ browsertrace show <run_id> --json
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
 - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 
+### AOS mapping research 回复
+
+如果有人问 BrowserTrace 和 OWASP AOS 的对应关系，保持研究口径：
+
+- BrowserTrace is not an AOS compliance claim yet.
+- Current AOS mapping research maps BrowserTrace concepts to tool request/result
+  records, step correlation, URI-style screenshot/video artifacts, URL metadata,
+  model I/O summaries, and explicit redaction state.
+- Tracker: https://github.com/aaronlab/browsertrace/issues/237
+
+不要把这段写成认证、审计通过、标准覆盖或任何互动请求。
+
 ## 7. 每做完一个动作就记录指标
 
 ```bash

@@ -4231,6 +4231,29 @@ def test_chinese_owner_next_actions_link_stack_guides_for_troubleshooting_replie
     assert "reposts" not in reply.lower()
 
 
+def test_chinese_owner_next_actions_include_aos_mapping_reply_note():
+    project_root = Path(__file__).resolve().parents[1]
+    checklist = (
+        project_root / "docs" / "launch" / "owner-next-actions.zh-CN.md"
+    ).read_text()
+    reply = checklist.split("## 回复本地首跑 / CI / agent 调试问题", 1)[1].split(
+        "## 7. 每做完一个动作就记录指标", 1
+    )[0]
+
+    assert "AOS mapping research" in reply
+    assert "not an AOS compliance claim" in reply
+    assert "tool request/result" in reply
+    assert "step correlation" in reply
+    assert "URI-style screenshot/video artifacts" in reply
+    assert "URL metadata" in reply
+    assert "model I/O summaries" in reply
+    assert "explicit redaction state" in reply
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_chinese_owner_next_actions_link_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     checklist = (
