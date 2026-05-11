@@ -53,6 +53,14 @@ body:
       value: |
         For security-sensitive reports or private trace data, follow `SECURITY.md` before sharing details publicly.
 
+        Stack guides that may help narrow the bug report:
+
+        - Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+        - Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+        - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+        - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+        - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
         For a small docs fix after filing, use `CONTRIBUTING.md#first-pr-recipe`; it keeps the first contribution small and reviewable.
   - type: textarea
     id: diagnostics
