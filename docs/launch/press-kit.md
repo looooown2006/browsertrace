@@ -27,6 +27,16 @@ workflow-specific context:
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
 - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 
+## AOS Mapping Research
+
+BrowserTrace is not an AOS compliance claim yet. Current research maps the
+closest BrowserTrace concepts to tool request/result records, step correlation,
+URI-style screenshot/video artifacts, URL metadata, model I/O summaries, and
+explicit redaction state.
+
+Track the browser/GUI artifact mapping research here:
+https://github.com/aaronlab/browsertrace/issues/237
+
 ## Short Description
 
 BrowserTrace is a local flight recorder for AI browser agents. It records each
