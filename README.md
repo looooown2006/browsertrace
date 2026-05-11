@@ -156,7 +156,7 @@ and prompts. The hosted copy is [`docs/llms.txt`](docs/llms.txt).
 - `browsertrace` prints `BrowserTrace UI: http://127.0.0.1:<port>` when the local server starts.
 - The demo run is named `demo: checkout agent fails on disabled button` in the local UI.
 - `BROWSERTRACE_HOME=/tmp/browsertrace-demo browsertrace demo` writes demo traces to an isolated trace store.
-- By default, BrowserTrace stores local traces under `~/.browsertrace/`; set `BROWSERTRACE_HOME` to use an isolated trace store.
+- By default, BrowserTrace stores local traces under `~/.browsertrace/`; set `BROWSERTRACE_HOME` to use an isolated trace store. For pytest/local isolation, see the [isolated trace storage recipe](examples/#testing-with-isolated-trace-storage).
 - Windows PowerShell users can set `$env:BROWSERTRACE_HOME = "$env:TEMP\browsertrace-demo"` before running BrowserTrace commands.
 - `browsertrace --help` lists local CLI commands and options.
 - `browsertrace export --help` lists export options before creating a public-safe HTML report.
