@@ -2666,6 +2666,28 @@ def test_press_kit_includes_current_trial_and_contribution_paths():
     assert "reposts" not in contribution_links.lower()
 
 
+def test_press_kit_links_stack_debugging_guides():
+    project_root = Path(__file__).resolve().parents[1]
+    press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()
+    guide_section = press_kit.split("## Stack-Specific Guides", 1)[1].split(
+        "## Short Description", 1
+    )[0]
+    stack_guides = [
+        "Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html",
+        "Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html",
+        "Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html",
+        "Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html",
+        "Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html",
+    ]
+
+    assert "## Stack-Specific Guides" in press_kit
+    for guide in stack_guides:
+        assert guide in guide_section
+    assert "stars" not in guide_section.lower()
+    assert "upvotes" not in guide_section.lower()
+    assert "reposts" not in guide_section.lower()
+
+
 def test_press_kit_includes_json_cli_troubleshooting_reply():
     project_root = Path(__file__).resolve().parents[1]
     press_kit = (project_root / "docs" / "launch" / "press-kit.md").read_text()

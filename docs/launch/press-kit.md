@@ -16,6 +16,17 @@ or short descriptions for people who want to share BrowserTrace.
 - Public-safe demo export: https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 - Feedback discussion: https://github.com/aaronlab/browsertrace/discussions/6
 
+## Stack-Specific Guides
+
+Use these when an editor, community moderator, or reader asks for the closest
+workflow-specific context:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Short Description
 
 BrowserTrace is a local flight recorder for AI browser agents. It records each
