@@ -39,7 +39,7 @@ Another failure class happens even earlier: persistent browser recovery can fail
 
 BrowserTrace is a small Python library plus local web UI that records each browser-agent step: screenshot, URL, action, model input, model output, status, and error. You open localhost:3000, click the run, and jump to the failed step.
 
-It is intentionally local-first: no signup, no cloud, SQLite plus filesystem, MIT licensed, and works with Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
+It is intentionally local-first: no signup, no cloud, SQLite plus filesystem, MIT licensed, and works with Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom computer-use agents.
 
 The repo has a no-API deterministic demo and a live exported HTML trace if you want to inspect the output before installing anything:
 https://aaronlab.github.io/browsertrace/
@@ -94,7 +94,7 @@ Some failures happen before the first page screenshot too: persistent browser re
 
 BrowserTrace keeps the missing context locally: screenshots, URLs, actions, model input/output, failed-step errors, and exportable HTML traces, including `--public` for public sharing.
 
-It is MIT licensed and designed for Browser Use, Stagehand, Playwright + LLM scripts, and custom computer-use agents.
+It is MIT licensed and designed for Browser Use, Stagehand, Skyvern, Playwright + LLM scripts, and custom computer-use agents.
 
 Live demo:
 https://aaronlab.github.io/browsertrace/
