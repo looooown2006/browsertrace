@@ -1064,6 +1064,10 @@ def test_readme_includes_aos_mapping_research_note_near_feedback():
     assert "URL metadata" in feedback_section
     assert "model I/O summaries" in feedback_section
     assert "explicit redaction state" in feedback_section
+    assert (
+        "https://aaronlab.github.io/browsertrace/integrations.html#aos-mapping"
+        in feedback_section
+    )
     assert "https://github.com/aaronlab/browsertrace/issues/237" in feedback_section
     assert "stars" not in feedback_section.lower()
     assert "upvotes" not in feedback_section.lower()
