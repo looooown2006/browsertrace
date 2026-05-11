@@ -3180,6 +3180,27 @@ def test_owner_publish_queue_links_stack_debugging_guides_for_replies():
     assert "reposts" not in reply_workflow.lower()
 
 
+def test_owner_publish_queue_includes_aos_mapping_reply_note():
+    project_root = Path(__file__).resolve().parents[1]
+    queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()
+    reply_workflow = queue.split("## Reply Workflow", 1)[1].split(
+        "## Metrics Check", 1
+    )[0]
+
+    assert "AOS mapping research" in reply_workflow
+    assert "not an AOS compliance claim" in reply_workflow
+    assert "tool request/result" in reply_workflow
+    assert "step correlation" in reply_workflow
+    assert "URI-style screenshot/video artifacts" in reply_workflow
+    assert "URL metadata" in reply_workflow
+    assert "model I/O summaries" in reply_workflow
+    assert "explicit redaction state" in reply_workflow
+    assert "https://github.com/aaronlab/browsertrace/issues/237" in reply_workflow
+    assert "stars" not in reply_workflow.lower()
+    assert "upvotes" not in reply_workflow.lower()
+    assert "reposts" not in reply_workflow.lower()
+
+
 def test_owner_publish_queue_records_current_awesome_list_pr_count():
     project_root = Path(__file__).resolve().parents[1]
     queue = (project_root / "docs" / "launch" / "owner-publish-queue.md").read_text()

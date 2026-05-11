@@ -144,6 +144,11 @@ Discord where allowed, and replies.
   - Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
   - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
   - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+- For AOS mapping research questions, say BrowserTrace is not an AOS compliance claim yet.
+  The current research maps BrowserTrace concepts to tool request/result
+  records, step correlation, URI-style screenshot/video artifacts, URL metadata,
+  model I/O summaries, and explicit redaction state.
+  Tracker: https://github.com/aaronlab/browsertrace/issues/237
 - For small contribution questions, point to the good first issue label:
   https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
   Then share the First PR Recipe:
