@@ -2726,6 +2726,20 @@ def test_llms_txt_includes_stagehand_custom_tool_replay_shape():
     assert "upvotes" not in llms.lower()
 
 
+def test_llms_txt_includes_skyvern_action_confidence_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "Skyvern action confidence gap" in llms
+    assert "confidence is diagnostic" in llms
+    assert "authorized execution" in llms
+    assert "action proposal" in llms
+    assert "authorization decision" in llms
+    assert "execution result" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_json_cli_troubleshooting_snippet():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
@@ -2953,6 +2967,19 @@ def test_stagehand_guide_documents_custom_tool_replay_gaps():
     assert "replay-safe" in page
     assert "raw credentials" in page
     assert "browserbase/stagehand#1558" in page
+
+
+def test_skyvern_guide_documents_action_confidence_authorization():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "skyvern-debugging.html").read_text()
+
+    assert "Debug action confidence and authorization" in page
+    assert "confidence is diagnostic" in page
+    assert "authorized execution" in page
+    assert "action proposal" in page
+    assert "authorization decision" in page
+    assert "execution result" in page
+    assert "Skyvern-AI/skyvern#5637" in page
 
 
 def test_sitemap_exposes_llms_txt_and_core_discovery_pages():

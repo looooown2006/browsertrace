@@ -293,6 +293,19 @@ skyvern.close()</code></pre>
     </section>
 
     <section>
+      <h2>Debug action confidence and authorization</h2>
+      <p>For Skyvern-style browser agents, confidence is diagnostic. It is not the same as authorized execution, and it does not prove the selected action is correct. The failure to watch for is high confidence plus the wrong target, stale context, incomplete browser state, or an unsafe action boundary.</p>
+      <p>When Skyvern or a deeper adapter exposes the data, preserve three linked records for consequential actions:</p>
+      <ol>
+        <li><strong>action proposal</strong>: intended operation, target metadata, confidence, screenshot or DOM evidence, and candidate element references.</li>
+        <li><strong>authorization decision</strong>: policy or scope checks, required approvals, allowed, blocked, or escalated status, and reason.</li>
+        <li><strong>execution result</strong>: what actually happened, URL or state delta, status, error, and retry decision.</li>
+      </ol>
+      <p>Those linked IDs let a reviewer separate "high confidence plus allowed plus wrong target" from "high confidence plus blocked" or "low confidence plus escalated". That makes policy tuning possible without treating model confidence itself as the policy.</p>
+      <p>Related community case: <a href="https://github.com/Skyvern-AI/skyvern/issues/5637">Skyvern-AI/skyvern#5637</a>.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html

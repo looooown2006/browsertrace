@@ -66,6 +66,11 @@ to explain why a browser run failed.
   tool-call or step id, status/error, and whether the tool is replay-safe. For
   debugging, preserve a redacted boundary with URL/page id, result summary,
   screenshot or observation ids, and errors. Avoid storing raw credentials.
+- Skyvern action confidence gap: confidence is diagnostic, not authorized execution
+  or proof that the selected action is correct. For consequential actions, preserve
+  linked action proposal, authorization decision, and execution result records,
+  including target evidence, policy/scope checks, approvals, state delta, error,
+  and retry decision.
 
 ## Quickstart
 
