@@ -263,6 +263,38 @@ Metrics:
 uv run --python 3.11 python scripts/launch_metrics.py --append --note "after Skyvern discussion: <URL>"
 ```
 
+## Custom Computer-Use Agents
+
+Use this only in communities or existing threads where people are building
+custom computer-use agents, persistent browser profiles, or local browser
+session recovery logic.
+
+Short reply for relevant threads:
+
+```text
+If the failure happens before the first screenshot or URL exists, I would trace
+the persistent browser recovery boundary instead of only the agent step:
+
+- session_mode
+- redacted profile id
+- profile lock or stale process signal
+- CDP attach/probe timing and timeout
+- approval source and recovery action
+- final connection state
+
+Computer-use guide:
+https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
+Repo:
+https://github.com/aaronlab/browsertrace
+```
+
+Metrics:
+
+```bash
+uv run --python 3.11 python scripts/launch_metrics.py --append --note "after computer-use community reply: <URL>"
+```
+
 ## Directories And Newsletters
 
 Use these after `v0.1.17` because the release has the packaged demo command and

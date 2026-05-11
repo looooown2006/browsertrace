@@ -72,6 +72,22 @@ VNC, or CDP connection failures, the connect/probe result, capture start,
 capture stop, timeout, cleanup, and resource leak detection can be more useful
 than screenshots alone.
 
+## Persistent browser recovery fails before screenshots
+
+For a useful technical reply, move the trace boundary earlier than the first
+browser step. Persistent browser sessions can fail during profile selection,
+launch, attach, or recovery before a screenshot or URL exists.
+
+The useful evidence shape is: `session_mode`, redacted profile id or user data
+directory token, browser/session/target id when available, profile lock or stale
+process signal, CDP attach/probe timing and timeout, detected process ids,
+approval source, recovery action, and final connection state.
+
+For public sharing, keep local profile paths, usernames, process details,
+cookies, and profile contents redacted by default.
+
+Guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Stack-Specific Reply Links
 
 Use the closest guide when a reply needs workflow-specific context:

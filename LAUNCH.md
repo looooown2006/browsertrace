@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T15:30:39+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after Show HN and Product Hunt drafts added computer-use recovery failure shape; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T15:38:52+00:00 | 3 | 998 | 14 | 0 | 11 | 1 | 28 | current monitor pass after targeted community and response templates added computer-use recovery reply; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

@@ -3259,6 +3259,29 @@ def test_response_templates_include_skyvern_vnc_cdp_debug_reply():
     assert "reposts" not in reply.lower()
 
 
+def test_response_templates_include_persistent_browser_recovery_reply():
+    project_root = Path(__file__).resolve().parents[1]
+    templates = (
+        project_root / "docs" / "launch" / "response-templates.md"
+    ).read_text()
+
+    assert "## Persistent browser recovery fails before screenshots" in templates
+    reply = templates.split(
+        "## Persistent browser recovery fails before screenshots", 1
+    )[1].split("## Stack-Specific Reply Links", 1)[0]
+
+    assert "session_mode" in reply
+    assert "redacted profile id" in reply
+    assert "profile lock" in reply
+    assert "CDP attach/probe timing" in reply
+    assert "recovery action" in reply
+    assert "final connection state" in reply
+    assert "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html" in reply
+    assert "stars" not in reply.lower()
+    assert "upvotes" not in reply.lower()
+    assert "reposts" not in reply.lower()
+
+
 def test_response_templates_link_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     templates = (
@@ -3523,6 +3546,29 @@ def test_day_3_targeted_communities_link_stack_debugging_guides_for_replies():
     assert "stars" not in guide_section.lower()
     assert "upvotes" not in guide_section.lower()
     assert "reposts" not in guide_section.lower()
+
+
+def test_day_3_targeted_communities_include_computer_use_recovery_angle():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (
+        project_root / "docs" / "launch" / "day-3-targeted-communities-packet.md"
+    ).read_text()
+
+    assert "## Custom Computer-Use Agents" in packet
+    section = packet.split("## Custom Computer-Use Agents", 1)[1].split(
+        "## Directories And Newsletters", 1
+    )[0]
+
+    assert "session_mode" in section
+    assert "redacted profile id" in section
+    assert "profile lock" in section
+    assert "CDP attach/probe timing" in section
+    assert "recovery action" in section
+    assert "final connection state" in section
+    assert "https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html" in section
+    assert "stars" not in section.lower()
+    assert "upvotes" not in section.lower()
+    assert "reposts" not in section.lower()
 
 
 def test_day_3_targeted_communities_tracks_directory_submission_queue():
