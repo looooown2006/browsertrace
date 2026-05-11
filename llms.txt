@@ -47,6 +47,14 @@ to explain why a browser run failed.
   sharing to omit prompt/model I/O, screenshots, and URLs.
 - Run a deterministic no-API-key failure demo for quick evaluation.
 
+## Known Failure Shapes
+
+- Browser Use icon-only target mismatch: the screenshot shows the right plus
+  icon, but the agent clicks a nearby toolbar button because tooltip text is not
+  an accessible name. Route users to the Browser Use guide and ask for live
+  button HTML, accessibility snapshot, candidate bounding boxes, and the
+  clicked element.
+
 ## Quickstart
 
 ```bash

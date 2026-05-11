@@ -2399,6 +2399,18 @@ def test_llms_txt_includes_troubleshooting_prompt_snippet():
     assert "hosted sharing" not in llms
 
 
+def test_llms_txt_includes_browser_use_icon_only_failure_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    llms = (project_root / "docs" / "llms.txt").read_text()
+
+    assert "## Known Failure Shapes" in llms
+    assert "Browser Use icon-only target mismatch" in llms
+    assert "tooltip text is not" in llms
+    assert "candidate bounding boxes" in llms
+    assert "stars" not in llms.lower()
+    assert "upvotes" not in llms.lower()
+
+
 def test_llms_txt_includes_json_cli_troubleshooting_snippet():
     project_root = Path(__file__).resolve().parents[1]
     llms = (project_root / "docs" / "llms.txt").read_text()
