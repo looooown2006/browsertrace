@@ -82,6 +82,16 @@ Use the closest guide when a reply needs workflow-specific context:
 - Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
 - Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
 
+## Does this map to OWASP AOS?
+
+This is not an AOS compliance claim yet. The current research direction maps
+BrowserTrace concepts to tool request/result records, step correlation,
+URI-style screenshot/video artifacts, URL metadata, model I/O summaries, and
+explicit redaction state.
+
+The active browser/GUI artifact mapping tracker is:
+https://github.com/aaronlab/browsertrace/issues/237
+
 ## Can I share traces with a teammate?
 
 Today, use `browsertrace export <run_id> -o run.html` to create a self-contained HTML file. Hosted share links are on the roadmap, but the local OSS path comes first.
