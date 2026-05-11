@@ -306,6 +306,19 @@ skyvern.close()</code></pre>
     </section>
 
     <section>
+      <h2>Debug VNC and CDP evidence together</h2>
+      <p>When a Skyvern workflow needs both VNC visual debugging and CDP browser-state capture, keep both streams linked to the same task or workflow step. Separate screenshots, DOM summaries, console or network snippets, and performance data are much less useful if the trace cannot show which action window they explain.</p>
+      <ul>
+        <li>Record connect/probe start, success, timeout, or cleanup events before the first browser action.</li>
+        <li>Link VNC screenshot or recording artifact ids with CDP DOM snapshot or selected-element summaries for the same time window.</li>
+        <li>Preserve task id, workflow id, step id, URL, frame/page id, action/tool name, status, error, and retry or recovery decision.</li>
+        <li>Track redaction state for screenshots, URLs, headers, cookies, and form values before public export.</li>
+      </ul>
+      <p>In BrowserTrace terms, connection and debug-session lifecycle is trace evidence too. A failed run can start before a screenshot exists if the browser session never attaches cleanly.</p>
+      <p>Related community case: <a href="https://github.com/Skyvern-AI/skyvern/issues/3260">Skyvern-AI/skyvern#3260</a>.</p>
+    </section>
+
+    <section>
       <h2>Share only what is safe</h2>
       <pre><code>browsertrace list
 browsertrace export &lt;run_id&gt; -o full.html

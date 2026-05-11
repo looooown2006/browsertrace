@@ -3140,6 +3140,20 @@ def test_skyvern_guide_documents_action_confidence_authorization():
     assert "Skyvern-AI/skyvern#5637" in page
 
 
+def test_skyvern_guide_documents_vnc_cdp_debug_integration():
+    project_root = Path(__file__).resolve().parents[1]
+    page = (project_root / "docs" / "skyvern-debugging.html").read_text()
+
+    assert "Debug VNC and CDP evidence together" in page
+    assert "VNC visual debugging" in page
+    assert "CDP browser-state capture" in page
+    assert "connect/probe start" in page
+    assert "VNC screenshot or recording artifact ids" in page
+    assert "CDP DOM snapshot" in page
+    assert "retry or recovery decision" in page
+    assert "Skyvern-AI/skyvern#3260" in page
+
+
 def test_playwright_guide_documents_artifact_boundary():
     project_root = Path(__file__).resolve().parents[1]
     page = (project_root / "docs" / "playwright-llm-debugging.html").read_text()
