@@ -139,6 +139,17 @@ browsertrace list --status failed --json
 browsertrace show <run_id> --json
 ```
 
+## Stack-Specific Reply Links
+
+Use the closest guide when a Day 1 reply turns into a workflow-specific
+debugging question:
+
+- Browser Use guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+- Stagehand guide: https://aaronlab.github.io/browsertrace/stagehand-debugging.html
+- Skyvern guide: https://aaronlab.github.io/browsertrace/skyvern-debugging.html
+- Playwright + LLM guide: https://aaronlab.github.io/browsertrace/playwright-llm-debugging.html
+- Computer-use guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
+
 ## Day 1 Log
 
 | Channel | Published URL or group | Posted at | Replies to follow up | Metrics row added |
