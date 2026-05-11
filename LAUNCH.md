@@ -113,7 +113,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T06:16:39+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after AOS browser/GUI artifact mapping research note added to #237: https://github.com/aaronlab/browsertrace/issues/237#issuecomment-4418026648; upstream OWASP AOS #74 still open with no maintainer reply; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
+| 2026-05-11T06:21:48+00:00 | 3 | 998 | 12 | 0 | 11 | 0 | 28 | current monitor pass after #252 completed in 94b5d52 and replacement good-first issue #253 opened: https://github.com/aaronlab/browsertrace/issues/253; CI success 25653782364 and Pages success 25653803698; star goal remains incomplete; traffic views 112/41 unique, clones 5965/1214 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
