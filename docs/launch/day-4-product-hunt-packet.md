@@ -75,6 +75,12 @@ Public-safe demo export for replies:
 https://github.com/aaronlab/browsertrace/releases/download/v0.1.17/browsertrace-demo-public.html
 ```
 
+Browser Use debugging guide for replies:
+
+```text
+https://aaronlab.github.io/browsertrace/browser-use-debugging.html
+```
+
 Try locally from PyPI:
 
 ```bash
@@ -125,6 +131,11 @@ from logs alone.
 
 The agent would fail at step 47, but by then the browser state was gone. I
 could see which code ran, but not what the model saw, clicked, or returned.
+
+One recent failure shape: a Browser Use agent saw the right plus icon in the
+screenshot, but clicked a nearby toolbar button because the tooltip text was not
+an accessible name. That is the kind of bug where screenshot, URL, action,
+model decision, and target evidence need to sit together.
 
 BrowserTrace keeps the missing context locally:
 

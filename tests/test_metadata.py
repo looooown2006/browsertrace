@@ -3099,6 +3099,21 @@ browsertrace show <run_id> --json
     assert "reposts" not in reply_notes.lower()
 
 
+def test_product_hunt_packet_uses_concrete_browser_use_failure_shape():
+    project_root = Path(__file__).resolve().parents[1]
+    packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
+    maker_comment = packet.split("## Maker Comment", 1)[1].split(
+        "## Launch Share Copy", 1
+    )[0]
+
+    assert "https://aaronlab.github.io/browsertrace/browser-use-debugging.html" in packet
+    assert "Browser Use agent saw the right plus icon" in maker_comment
+    assert "tooltip text was not" in maker_comment
+    assert "target evidence" in maker_comment
+    assert "upvotes" not in maker_comment.lower()
+    assert "reposts" not in maker_comment.lower()
+
+
 def test_product_hunt_packet_links_security_policy_for_sensitive_reports():
     project_root = Path(__file__).resolve().parents[1]
     packet = (project_root / "docs" / "launch" / "day-4-product-hunt-packet.md").read_text()
