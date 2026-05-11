@@ -204,6 +204,9 @@ Current open high-fit PRs:
   maintainer feedback.
 - `jim-schwoebel/awesome_ai_agents#266`
 - `ranpox/awesome-computer-use#24`
+- `clihub-ai/clihub#1` - registry PR is open; forked PR CI needs
+  maintainer approval before it can run.
+- `victorcheeney/clis#3` - CLIs.dev directory issue is open.
 
 Monitor maintainer feedback and do not open additional list PRs unless a target
 is clearly high-fit and non-duplicative. Respond only when maintainers request
