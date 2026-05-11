@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T17:48:54+00:00 | 3 | 998 | 16 | 0 | 12 | 1 | 28 | current monitor pass after good-first issue #304 opened for owner packet section on launch kit page; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-11T17:52:24+00:00 | 3 | 998 | 16 | 0 | 12 | 1 | 28 | current monitor pass after monitoring runbook notification query changed from fixed timestamp to SINCE_UTC; star goal remains incomplete; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 

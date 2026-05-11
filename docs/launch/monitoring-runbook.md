@@ -120,9 +120,10 @@ gh pr view 270 --repo aaronlab/browsertrace \
 Check relevant notifications:
 
 ```bash
+SINCE_UTC="${SINCE_UTC:?Set SINCE_UTC to the monitor start time, e.g. YYYY-MM-DDTHH:MM:SSZ}"
 gh api 'notifications?all=true&participating=true&per_page=50' |
-  jq -c '[.[] |
-    select((.updated_at >= "2026-05-11T17:00:00Z") and
+  jq -c --arg since "$SINCE_UTC" '[.[] |
+    select((.updated_at >= $since) and
     (.repository.full_name | test("browsertrace|agentfirst|awesome|clihub|clis|browser-use|stagehand|skyvern"; "i"))) |
     {repo:.repository.full_name, subject:.subject.title, type:.subject.type, updated_at, unread, reason, url:.subject.url, latest_comment_url:.subject.latest_comment_url}
   ]'
