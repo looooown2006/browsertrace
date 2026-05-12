@@ -115,7 +115,7 @@ Current latest audit:
 
 | Captured at | Stars | To 1001 | Forks | Watchers | Issues | PRs | Release downloads | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-05-11T23:56:59+00:00 | 3 | 998 | 17 | 0 | 10 | 0 | 35 | current monitor pass: external listing PRs still open/not listed; issue #328 claimed and pinned; traffic views 294/111 unique, clones 12398/2207 unique |
+| 2026-05-12T00:00:39+00:00 | 3 | 998 | 17 | 0 | 11 | 0 | 35 | current monitor pass after issue #329 opened and pinned as unclaimed good-first follow-up while #328 remains claimed; external listing PRs still open/not listed; traffic views 294/111 unique, clones 12398/2207 unique |
 
 The active objective is incomplete until `stargazerCount > 1000`.
 
