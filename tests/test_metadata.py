@@ -194,6 +194,21 @@ def test_windows_powershell_first_run_docs_cover_env_vars():
     assert "BROWSERTRACE_PORT=4000 browsertrace" in docs_text
 
 
+def test_readme_browsertrace_home_note_links_isolated_storage_recipe():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    first_run_notes = readme.split(
+        "`BROWSERTRACE_PORT=3001 browsertrace` starts the local UI", 1
+    )[1].split("If install or demo startup fails", 1)[0]
+
+    assert "`BROWSERTRACE_HOME` to use an isolated trace store" in first_run_notes
+    assert (
+        "[isolated trace storage recipe](examples/#testing-with-isolated-trace-storage)"
+        in first_run_notes
+    )
+    assert '$env:BROWSERTRACE_HOME = "$env:TEMP\\browsertrace-demo"' in first_run_notes
+
+
 def test_examples_readme_links_first_pr_recipe_for_small_contributions():
     project_root = Path(__file__).resolve().parents[1]
     examples = (project_root / "examples" / "README.md").read_text()
