@@ -613,10 +613,8 @@ For security-sensitive reports or private trace data, follow
 [SECURITY.md](SECURITY.md) before sharing details publicly.
 
 1. Try it on a real agent. Open an issue with what broke or what you wished worked.
-2. Pick the good first issue label:
-   https://github.com/aaronlab/browsertrace/labels/good%20first%20issue
-   Use the [good first issue label](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
-   for the full queue of small documentation or example tasks.
+2. Pick from the [good first issue queue](https://github.com/aaronlab/browsertrace/labels/good%20first%20issue)
+   for small documentation or example tasks.
 3. If you need a Browser Use / Stagehand / Skyvern / Playwright adapter,
    [open an integration request](https://github.com/aaronlab/browsertrace/issues/new?template=integration_request.yml).
 4. If you have a public-safe screenshot or exported trace from a real failure,

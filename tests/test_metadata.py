@@ -1210,6 +1210,9 @@ def test_readme_links_contributor_guide_near_contributing():
     contributing_section = readme.split("## Contributing", 1)[1].split(
         "## License", 1
     )[0]
+    good_first_issue_url = (
+        "https://github.com/aaronlab/browsertrace/labels/good%20first%20issue"
+    )
 
     assert "[CONTRIBUTING.md](CONTRIBUTING.md)" in contributing_section
     assert "[First PR Recipe](CONTRIBUTING.md#first-pr-recipe)" in contributing_section
@@ -1219,7 +1222,9 @@ def test_readme_links_contributor_guide_near_contributing():
     assert "Before starting a good first issue" in contributing_section
     assert "comment on it first" in contributing_section
     assert "maintainers can treat it as claimed" in contributing_section
-    assert "https://github.com/aaronlab/browsertrace/labels/good%20first%20issue" in contributing_section
+    assert "[good first issue queue]" in contributing_section
+    assert good_first_issue_url in contributing_section
+    assert contributing_section.count(good_first_issue_url) == 1
     assert "https://github.com/aaronlab/browsertrace/issues/213" not in contributing_section
     assert "good first issue" in contributing_section
     assert 'pip install "browsertrace[ui]"' in readme
