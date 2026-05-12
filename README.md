@@ -140,8 +140,7 @@ and prompts. The hosted copy is [`docs/llms.txt`](docs/llms.txt).
 - Workflow discussion after `browsertrace demo`: https://github.com/aaronlab/browsertrace/discussions/6.
 - Use the [example matrix](examples/#example-matrix) to choose another runnable demo after `browsertrace demo`.
 - The example matrix lists no-service examples.
-- `browsertrace show <run_id>` inspects a listed run from the terminal.
-- `browsertrace show <run_id>` prints the selected run's step timeline, including action labels, status, and errors.
+- `browsertrace show <run_id>` inspects a listed run from the terminal and prints its step timeline with action labels, status, and errors.
 - `browsertrace show <run_id> --json` prints one run as JSON with run details and step actions.
 - `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export from a listed run.
 - `browsertrace export <run_id> --public -o public.html` writes a self-contained HTML report you can attach to a bug report or issue.

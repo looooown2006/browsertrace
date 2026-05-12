@@ -2159,8 +2159,7 @@ def test_readme_groups_install_tips_as_compact_list():
         "- The example matrix lists no-service examples",
         "- `browsertrace list --limit 5` narrows recent runs before choosing one to inspect or export",
         "- A longer run ID prefix fixes ambiguous `browsertrace show` or `browsertrace export` matches",
-        "- `browsertrace show <run_id>` inspects a listed run",
-        "- `browsertrace show <run_id>` prints the selected run's step timeline, including action labels, status, and errors",
+        "- `browsertrace show <run_id>` inspects a listed run from the terminal and prints its step timeline with action labels, status, and errors",
         "- `browsertrace show <run_id> --json` prints one run as JSON",
         "- `browsertrace export <run_id> --public -o public.html` creates a public-safe HTML export",
         "- `browsertrace export <run_id> --public -o public.html` writes a self-contained HTML report",
@@ -2887,6 +2886,19 @@ def test_readme_explains_doctor_json_near_install_checks():
     assert "`browsertrace doctor` is a safe local status check" in install_section
     assert 'pip install "browsertrace[ui]"' in install_section
     assert "hosted sharing" not in readme
+
+
+def test_readme_first_run_notes_have_single_browsertrace_show_bullet():
+    project_root = Path(__file__).resolve().parents[1]
+    readme = (project_root / "README.md").read_text()
+    first_run_notes = readme.split("## Install From PyPI", 1)[1].split(
+        "If install or demo startup fails", 1
+    )[0]
+
+    assert first_run_notes.count("- `browsertrace show <run_id>`") == 1
+    assert "inspects a listed run from the terminal" in first_run_notes
+    assert "prints its step timeline with action labels, status, and errors" in first_run_notes
+    assert "- `browsertrace show <run_id> --json`" in first_run_notes
 
 
 def test_llms_txt_points_to_current_contribution_path():
