@@ -99,7 +99,7 @@ Fresh Browser Use debugging note:
 
 If the screenshot shows a plus icon but the agent clicks a nearby toolbar button, treat it as a visible-target vs accessible-target mismatch.
 
-I wrote up the repro evidence to capture: live HTML, accessibility snapshot, candidate boxes, and the clicked element.
+Capture: live HTML, accessibility snapshot, candidate boxes, and the clicked element.
 ```
 
 Follow-up with link:
@@ -107,9 +107,9 @@ Follow-up with link:
 ```text
 Guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
 
-The useful fix is usually on the app side: put an accessible name on the real button, e.g. aria-label="Create Test".
+Durable fix: put an accessible name on the real button, e.g. aria-label="Create Test".
 
-For agent debugging, BrowserTrace keeps the failed-step timeline local so this evidence is easier to inspect.
+BrowserTrace keeps the failed-step timeline local so screenshot, URL, action, and model output stay inspectable.
 ```
 
 ## Fresh Browser Use Remote CDP Angle
@@ -122,9 +122,9 @@ Short post:
 ```text
 Fresh Browser Use debugging note:
 
-Remote CDP failures are not always "the screenshot failed".
+Remote CDP failures are not always screenshot failures.
 
-A stale remote browser session can leave the websocket looking open while one CDP request never returns. If the event bus holds a global lock during that recovery path, one bad session can block unrelated browser sessions.
+A stale remote browser session can keep the websocket open while one CDP request never returns. If recovery holds a global event-bus lock, one bad session can block unrelated sessions.
 ```
 
 Follow-up with link:
@@ -132,12 +132,14 @@ Follow-up with link:
 ```text
 The evidence I would capture for this class of bug:
 
-- event id and browser/session/target id
-- CDP method, request id, start/end/duration
+- event id + browser/session/target id
+- CDP method/request id/duration
 - websocket ping/pong near the stuck request
 - event-bus lock wait/acquire/release timing
-- whether recovery waits happen while the lock is held
+- whether recovery waited while holding the lock
+```
 
+```text
 BrowserTrace is trying to make these browser-agent failure boundaries inspectable instead of hiding them in logs.
 
 Guide: https://aaronlab.github.io/browsertrace/browser-use-debugging.html
@@ -162,12 +164,12 @@ Do not trust profile lock files or process names alone. Capture session_mode, re
 Follow-up with link:
 
 ```text
-The useful trace boundary starts before the page opens:
+Trace before the page opens:
 
-- profile selection and session_mode
-- profile lock or stale process signal
-- CDP attach/probe timing and timeout
-- approval source and recovery action
+- profile selection + session_mode
+- lock/stale-process signal
+- CDP attach/probe timing
+- approval source + recovery action
 - final connection state
 
 Guide: https://aaronlab.github.io/browsertrace/computer-use-agent-debugging.html
